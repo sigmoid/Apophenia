@@ -20,7 +20,7 @@ class CursorComponent : public Opal::Component
     virtual Opal::Component *Clone() override;
 
     private:
-    float mSpeed = 200;
+    float mMaxSpeed = 300, mCurrentSpeed, mAcceleration = 500;
     int mUpBinding = GLFW_KEY_W, mDownBinding = GLFW_KEY_S;
     Opal::TransformComponent *mTransform;
 };

@@ -1,6 +1,7 @@
 #include "CursorComponent.h"
 #include <iostream>
 #include "../../Opal/Input/InputHandler.h"
+#include "../../Opal/OpalMath.h"
 
 CursorComponent::CursorComponent()
 {
@@ -19,14 +20,38 @@ void CursorComponent::OnStart()
 
 void CursorComponent::Update(float dTime) 
 {
+    bool takingInput = false;
+
     if(Opal::InputHandler::GetKey(mUpBinding))
     {
-        mTransform->Position.y -= mSpeed * dTime;
+        takingInput = !takingInput;
+        mCurrentSpeed -= mAcceleration * dTime;
     }
     if(Opal::InputHandler::GetKey(mDownBinding))
     {
-        mTransform->Position.y += mSpeed * dTime;
+        takingInput = !takingInput;
+        mCurrentSpeed += mAcceleration * dTime;
     }
+
+    if(mCurrentSpeed > mMaxSpeed)
+    {
+        mCurrentSpeed = mMaxSpeed;
+    }
+    if(mCurrentSpeed < -mMaxSpeed)
+    {
+        mCurrentSpeed = -mMaxSpeed;
+    }
+
+    if(!takingInput && (mCurrentSpeed > dTime * mAcceleration || mCurrentSpeed < -dTime * mAcceleration))
+    {
+        mCurrentSpeed = Opal::OpalMath::Approach(mCurrentSpeed, 0, dTime);
+    }
+    else if(!takingInput)
+    {
+        mCurrentSpeed = 0;
+    }
+
+    mTransform->Position.y += mCurrentSpeed * dTime;
 }
 
 void CursorComponent::Render(Opal::BatchRenderer2D *ctx) 
