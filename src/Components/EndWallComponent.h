@@ -6,15 +6,14 @@
 #include "../../Opal/Collision/AABBCollision.h"
 #include "../../Opal/EntityComponent/TransformComponent.h"
 
+#include <vector>
 #include <string>
-#include <glm/vec4.hpp>
 
-class SentenceFragmentComponent : public Opal::Component
+class EndWallComponent : public Opal::Component
 {
     public:
-    SentenceFragmentComponent();
-    SentenceFragmentComponent(std::string text, float speed, glm::vec4 color);
-
+    EndWallComponent();
+    EndWallComponent(float speed);
     virtual void OnAdded() override;
     virtual void OnStart() override;
     virtual void Update(float dTime) override;
@@ -24,14 +23,7 @@ class SentenceFragmentComponent : public Opal::Component
     virtual void Deserialize() override;
     virtual Opal::Component *Clone() override;
 
-    void Interact();
-    bool GetActive();
-
-    std::string Text;
-    float Speed = 100;
-    glm::vec4 Color = glm::vec4(0.9,0.9,0.9,1.0);
-
     private:
+    float mSpeed;
     Opal::TransformComponent *mTransform;
-    bool mActive = true;
 };

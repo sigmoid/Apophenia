@@ -6,6 +6,9 @@
 #include "../../Opal/Collision/AABBCollision.h"
 #include "../../Opal/EntityComponent/TransformComponent.h"
 
+#include <vector>
+#include <string>
+
 class CursorComponent : public Opal::Component
 {
     public:
@@ -19,8 +22,13 @@ class CursorComponent : public Opal::Component
     virtual void Deserialize() override;
     virtual Opal::Component *Clone() override;
 
+    bool GetAlive();
+    std::vector<std::string> GetResponse();
+
     private:
     float mMaxSpeed = 300, mCurrentSpeed, mAcceleration = 500;
     int mUpBinding = GLFW_KEY_W, mDownBinding = GLFW_KEY_S;
     Opal::TransformComponent *mTransform;
+    std::vector<std::string> mCurrentResponse;
+    bool mAlive = true;
 };

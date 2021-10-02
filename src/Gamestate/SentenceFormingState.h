@@ -13,6 +13,8 @@
 #include <glm/vec2.hpp>
 #include <glm/vec4.hpp>
 
+#include <string>
+
 class SentenceFormingState : public Opal::Gamestate
 {
     public:
@@ -41,5 +43,11 @@ class SentenceFormingState : public Opal::Gamestate
     void UpdateCursorLine();
     void DrawCursorLine();
 
+    void CreateSentenceFragment(glm::vec3 pos, std::string text);
+    void RenderSentenceFragments();
+    glm::vec4 mFragmentColor = glm::vec4(0.9, 0.9, 0.9, 1.0f);
+
     void CreatePlayer();
+
+    void CreateEndWall(float x);
 };

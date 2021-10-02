@@ -2,6 +2,8 @@
 #include <iostream>
 #include "../../Opal/Input/InputHandler.h"
 #include "../../Opal/OpalMath.h"
+#include "SentenceFragmentComponent.h"
+#include "EndWallComponent.h"
 
 CursorComponent::CursorComponent()
 {
@@ -59,9 +61,29 @@ void CursorComponent::Render(Opal::BatchRenderer2D *ctx)
 
 }
 
+bool CursorComponent::GetAlive()
+{
+    return mAlive;
+}
+
+std::vector<std::string> CursorComponent::GetResponse()
+{
+    return mCurrentResponse;
+}
+
 void CursorComponent::OnCollision(Opal::Entity *other, glm::vec2 resolution, Opal::AABB otherAABB) 
 {
-    std::cout << "Cursor hit something!" << std::endl;
+    if(other->GetComponent<EndWallComponent>() != nullptr)
+    {
+        mAlive = false;
+    }
+
+    SentenceFragmentComponent *otherComp = other->GetComponent<SentenceFragmentComponent>(); 
+    if(otherComp != nullptr && otherComp->GetActive())
+    {
+        mCurrentResponse.push_back(other->GetComponent<SentenceFragmentComponent>()->Text);
+        otherComp->Interact();
+    }
 }
 
 void CursorComponent::Serialize() 

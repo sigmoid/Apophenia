@@ -18,7 +18,7 @@ void PlayState::Tick()
 
 void PlayState::Render() 
 {
-    mTextRenderer->RenderString("Hello, world!", 1920/2 - 300, 1080/2, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f);
+    mTextRenderer->RenderString("How are you feeling?", 1920/2 - 500, 1080/2, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f);
 
     mTextPass->Record();
     mTextRenderer->RecordCommands();
