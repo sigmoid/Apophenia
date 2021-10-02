@@ -1,0 +1,36 @@
+project(Apophenia)
+cmake_minimum_required(VERSION 3.10)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -std=c++17  " )
+
+add_subdirectory(Opal)
+
+file(GLOB SOURCES
+    src/*.h
+    src/*.cpp
+    src/Gamestate/*.h
+    src/Gamestate/*.cpp
+)
+
+add_executable(${PROJECT_NAME} ${SOURCES})
+
+IF(WIN32)
+ELSE()
+find_package(glfw3 3.3 REQUIRED)
+find_package(Freetype REQUIRED)
+ENDIF()
+
+target_include_directories(${PROJECT_NAME} PUBLIC
+"${PROJECT_BINARY_DIR}"
+"${PROJECT_SOURCE_DIR}/Opal")
+
+find_package(Vulkan REQUIRED)
+
+
+
+if (VULKAN_FOUND)
+    message(STATUS "Found Vulkan, Including and Linking now")
+    include_directories(${Vulkan_INCLUDE_DIRS})
+    target_link_libraries (${PROJECT_NAME} ${Vulkan_LIBRARIES} glfw Opal ${FREETYPE_LIBRARIES})
+    target_include_directories(${PROJECT_NAME} PRIVATE ${FREETYPE_INCLUDE_DIRS})
+endif (VULKAN_FOUND)

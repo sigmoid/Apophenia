@@ -1,0 +1,3 @@
+[submodule "Opal"]
+	path = Opal
+	url = https://github.com/sigmoid/Opal.git
