@@ -10,6 +10,8 @@ file(GLOB SOURCES
     src/*.cpp
     src/Gamestate/*.h
     src/Gamestate/*.cpp
+    src/Components/*.h
+    src/Components/*.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

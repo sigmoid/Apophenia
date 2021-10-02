@@ -1,5 +1,7 @@
 #include "PlayState.h"
+#include "SentenceFormingState.h"
 #include "../../Opal/Game.h"
+#include "../../Opal/Input/InputHandler.h"
 
 PlayState::PlayState()
 {
@@ -8,7 +10,10 @@ PlayState::PlayState()
 
 void PlayState::Tick() 
 {
-
+    if(Opal::InputHandler::GetKey(GLFW_KEY_SPACE))
+    {
+        mGame->PushState<SentenceFormingState>();
+    }
 }
 
 void PlayState::Render() 
