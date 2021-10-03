@@ -29,7 +29,7 @@ class CursorComponent : public Opal::Component
     private:
     float mMaxSpeed = 700, mCurrentSpeed, mAcceleration = 850;
     int mUpBinding = GLFW_KEY_W, mDownBinding = GLFW_KEY_S;
-    Opal::TransformComponent *mTransform;
+    Opal::TransformComponent *mTransform = nullptr;
     std::vector<std::string> mCurrentResponse;
     bool mAlive = true;
 };

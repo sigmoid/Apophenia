@@ -32,8 +32,8 @@ class SentenceFormingState : public Opal::Gamestate
     static Opal::BatchRenderer2D *mBatch;
     static Opal::Texture *mCursorTexture;
     static Opal::LineRenderer *mLineRenderer;
-    Opal::Scene *mScene;
-    Opal::Entity *mCursorEntity;
+    Opal::Scene *mScene = nullptr;
+    Opal::Entity *mCursorEntity = nullptr;
 
     std::vector<glm::vec2> mLinePoints;
     glm::vec4 mLineColor = glm::vec4(0.9f, 0.9f, 0.9f, 0.8f);

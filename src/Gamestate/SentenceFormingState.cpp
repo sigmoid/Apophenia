@@ -27,13 +27,6 @@ SentenceFormingState::SentenceFormingState()
 
 void SentenceFormingState::Tick() 
 {
-    if(Opal::InputHandler::GetKey(GLFW_KEY_ESCAPE))
-    {
-        free(mScene);
-        mGame->PopState();
-        return;
-    }
-
     if(mScreenShakeTimer > 0)
     {
         Opal::Camera::ActiveCamera->MoveCamera(glm::vec2((rand() % mScreenShakeIntensity * 1000) / 1000.0f - (float)mScreenShakeIntensity/2, (rand() % mScreenShakeIntensity * 1000) / 1000.0f - (float)mScreenShakeIntensity/2));
@@ -77,6 +70,7 @@ void SentenceFormingState::Render()
 {
     mBatch->StartBatch();
     mScene->Render(mBatch);
+    mBatch->BatchSprite(mCursorEntity->GetComponent<Opal::SpriteComponent>()->GetSprite());
     mBatch->RenderBatch();
 
     //mTextRenderer->RenderString("This is a response!", 1920/2 - 300, 1080/2, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f);
@@ -98,7 +92,6 @@ void SentenceFormingState::Render()
 
 void SentenceFormingState::Begin() 
 {
-    std::cout << "BEGIN:" << std::endl;
     if(mTextRenderer == nullptr)
     {
         mTextPass = mGame->Renderer->CreateRenderPass(true);
