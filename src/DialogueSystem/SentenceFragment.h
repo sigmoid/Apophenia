@@ -5,4 +5,5 @@
 struct SentenceFragment
 {
     std::string Text;
+    float Attraction;
 };

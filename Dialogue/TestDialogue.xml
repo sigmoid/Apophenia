@@ -22,15 +22,15 @@
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>I</Text></Fragment>
+                    <Fragment><Text>I</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>am</Text></Fragment>
-                    <Fragment><Text>feel</Text></Fragment>
+                    <Fragment><Text>am</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>feel</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>great</Text></Fragment>
-                    <Fragment><Text>just fine</Text></Fragment>
+                    <Fragment><Text>great</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>just fine</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -58,14 +58,14 @@
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>I think</Text></Fragment>
+                    <Fragment><Text>I think</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>it went ok</Text></Fragment>
-                    <Fragment><Text>it went well</Text></Fragment>
+                    <Fragment><Text>it went ok</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>it went well</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>but we'll see</Text></Fragment>
+                    <Fragment><Text>but we'll see</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -97,11 +97,11 @@ How's that going?</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>It's fine,</Text></Fragment>
+                    <Fragment><Text>It's fine,</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>I worked on it all night last night</Text></Fragment>
-                    <Fragment><Text>it's pretty easy stuff</Text></Fragment>
+                    <Fragment><Text>I worked on it all night last night</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>it's pretty easy stuff</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -130,11 +130,11 @@ You need to sleep.</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>You're right...</Text></Fragment>
+                    <Fragment><Text>You're right...</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>I just had a lot of energy</Text></Fragment>
-                    <Fragment><Text>I'll do better tonight</Text></Fragment>
+                    <Fragment><Text>I just had a lot of energy</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I'll do better tonight</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -162,17 +162,17 @@ You've got a lot on your plate.</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Everything is</Text></Fragment>
+                    <Fragment><Text>Everything is</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>falling apart</Text></Fragment>
-                    <Fragment><Text>fine</Text></Fragment>
+                    <Fragment><Text>falling apart</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>fine</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>I have class soon</Text></Fragment>
+                    <Fragment><Text>I have class soon</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>talk to you later</Text></Fragment>
+                    <Fragment><Text>talk to you later</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -201,17 +201,17 @@ You've got a lot on your plate.</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Everything is</Text></Fragment>
+                    <Fragment><Text>Everything is</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>falling apart</Text></Fragment>
-                    <Fragment><Text>fine</Text></Fragment>
+                    <Fragment><Text>falling apart</Text><Attraction>800</Attraction></Fragment>
+                    <Fragment><Text>fine</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>I have class soon</Text></Fragment>
+                    <Fragment><Text>I have class soon</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>talk to you later</Text></Fragment>
+                    <Fragment><Text>talk to you later</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>

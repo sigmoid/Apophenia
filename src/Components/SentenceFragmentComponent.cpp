@@ -5,12 +5,13 @@ SentenceFragmentComponent::SentenceFragmentComponent()
     TypeName = "SentenceFragmentComponent";
 }
 
-SentenceFragmentComponent::SentenceFragmentComponent(std::string text, float speed, glm::vec4 color)
+SentenceFragmentComponent::SentenceFragmentComponent(std::string text, float speed, glm::vec4 color, float attraction)
 {
     TypeName = "SentenceFragmentComponent";
     Text = text;
     Speed = speed;
     Color = color;
+    Attraction = attraction;
 }
 
 void SentenceFragmentComponent::OnAdded()

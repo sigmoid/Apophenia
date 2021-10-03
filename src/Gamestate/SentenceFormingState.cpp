@@ -19,6 +19,8 @@ Opal::RenderPass *SentenceFormingState::mTextPass = nullptr;
 Opal::BatchRenderer2D *SentenceFormingState::mBatch = nullptr;
 Opal::Texture *SentenceFormingState::mCursorTexture = nullptr;
 Opal::LineRenderer *SentenceFormingState::mLineRenderer = nullptr;
+Opal::Font *SentenceFormingState::mFont = nullptr;
+
 
 SentenceFormingState::SentenceFormingState()
 {
@@ -97,9 +99,9 @@ void SentenceFormingState::Begin()
         mTextPass = mGame->Renderer->CreateRenderPass(true);
         mTextPass->SetClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
-        Opal::Font typeFace(mGame->Renderer,"../fonts/JosefinSans-Light.ttf", 90);
+        mFont = new Opal::Font(mGame->Renderer,"../fonts/JosefinSans-Light.ttf", 90);
 
-        mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, typeFace, glm::vec2(mGame->GetWidth() - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
+        mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(mGame->GetWidth() - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
         mLineRenderer = new Opal::LineRenderer();
         mLineRenderer->Init(mGame->Renderer);
 
@@ -145,7 +147,7 @@ void SentenceFormingState::CreatePlayingField()
                     }
                 }
             }
-            CreateSentenceFragment(glm::vec3(start + inc * i, ypos, 0), resp.Fragments[i][j].Text);
+            CreateSentenceFragment(glm::vec3(start + inc * i, ypos, 0), resp.Fragments[i][j].Text, resp.Fragments[i][j].Attraction);
             Opal::AABB newBox;
             newBox.min = glm::vec2(start+inc*i, ypos-mFragmentSize/2);
             newBox.max = glm::vec2(start+inc*i + 10, ypos + mFragmentSize/2);
@@ -202,15 +204,18 @@ void SentenceFormingState::CreatePlayer()
 }
 
 
-void SentenceFormingState::CreateSentenceFragment(glm::vec3 pos, std::string text)
+void SentenceFormingState::CreateSentenceFragment(glm::vec3 pos, std::string text, float attraction)
 {
+    //Kludge, haven't actually implemented text measuring yet
+    float width = 16 * text.length();
+
     Opal::Entity *mFragmentEntity = new Opal::Entity();
 
     Opal::TransformComponent *transform = new Opal::TransformComponent( pos, glm::vec3(1,1,1), 0);
     mFragmentEntity->AddComponent(transform);
-    SentenceFragmentComponent *frag = new SentenceFragmentComponent(text,mLineSpeed, mFragmentColor);
+    SentenceFragmentComponent *frag = new SentenceFragmentComponent(text,mLineSpeed, mFragmentColor, attraction);
     mFragmentEntity->AddComponent(frag);
-    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(64,mFragmentSize), glm::vec2(0,-mFragmentSize/2), true);
+    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(fmax(64, width),mFragmentSize), glm::vec2(0,-mFragmentSize/2), true);
     collider->SetIsTrigger(true);
     collider->SetIsStatic(true);
     mFragmentEntity->AddComponent(collider);
@@ -229,6 +234,10 @@ void SentenceFormingState::RenderSentenceFragments()
         if(frag != nullptr)
         {
             glm::vec3 pos = entities[i]->GetComponent<Opal::TransformComponent>()->Position;
+            if(frag->Attraction > 0)
+            {
+                pos += glm::vec3((rand() % 1000) / 100 - 5, (rand() % 1000) / 100 - 5, 0);
+            }
             mTextRenderer->RenderString(frag->Text, pos.x, pos.y, frag->Color.r, frag->Color.g, frag->Color.b, frag->Color.a, 1.0f);
         }
     }

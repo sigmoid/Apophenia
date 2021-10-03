@@ -13,7 +13,7 @@ class SentenceFragmentComponent : public Opal::Component
 {
     public:
     SentenceFragmentComponent();
-    SentenceFragmentComponent(std::string text, float speed, glm::vec4 color);
+    SentenceFragmentComponent(std::string text, float speed, glm::vec4 color, float attraction);
 
     virtual void OnAdded() override;
     virtual void OnStart() override;
@@ -30,6 +30,7 @@ class SentenceFragmentComponent : public Opal::Component
     std::string Text;
     float Speed = 100;
     glm::vec4 Color = glm::vec4(0.9,0.9,0.9,1.0);
+    float Attraction = 0;
 
     private:
     Opal::TransformComponent *mTransform;

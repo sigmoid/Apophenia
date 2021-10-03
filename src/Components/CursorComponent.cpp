@@ -3,6 +3,7 @@
 #include "../../Opal/Input/InputHandler.h"
 #include "../../Opal/OpalMath.h"
 #include "../../Opal/EntityComponent/VelocityComponent.h"
+#include "../../Opal/EntityComponent/Scene.h"
 #include "SentenceFragmentComponent.h"
 #include "EndWallComponent.h"
 
@@ -30,6 +31,29 @@ void CursorComponent::Reset()
 
 void CursorComponent::Update(float dTime) 
 {
+    std::vector<Opal::Entity *> ents = Opal::Scene::GetActiveScene()->GetAllEntities();
+
+    for(int i = 0; i < ents.size(); i++)
+    {
+        SentenceFragmentComponent *otherSentence = ents[i]->GetComponent<SentenceFragmentComponent>();
+
+        if(otherSentence != nullptr && otherSentence->Attraction != 0)
+        {
+            Opal::TransformComponent *otherTrans = ents[i]->GetComponent<Opal::TransformComponent>();
+            if(otherTrans == nullptr)
+            {
+                std::cout << "No transform on sentence fragment?!" << std::endl;
+            }
+            else
+            {
+                if(0 < (otherTrans->Position.x - mTransform->Position.x) && (otherTrans->Position.x - mTransform->Position.x) < 1000 && abs(mTransform->Position.y - otherTrans->Position.y) > 50)
+                {
+                    mCurrentSpeed += otherSentence->Attraction * dTime * (((otherTrans->Position.y - mTransform->Position.y) < 0) ? -1 : 1);
+                }
+            }
+        }
+    }
+
     bool takingInput = false;
 
     if(Opal::InputHandler::GetKey(mUpBinding))
