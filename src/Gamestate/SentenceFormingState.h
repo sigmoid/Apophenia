@@ -56,6 +56,9 @@ class SentenceFormingState : public Opal::Gamestate
     void CreateEndWall(float x);
     Opal::Entity *mEndWall;
 
+    void RenderCurrentSelection();
+    std::string ConcatSelection(std::vector<std::string> selection);
+
     void StartScreenShake();
     float mScreenShakeTimer = 0;
     float mScreenShakeTime = 0.4f;

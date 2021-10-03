@@ -42,12 +42,8 @@ void SentenceFormingState::Tick()
     if(!mCursorEntity->GetComponent<CursorComponent>()->GetAlive())
     {
         auto response = mCursorEntity->GetComponent<CursorComponent>()->GetResponse();
-        std::string responseString = "";
-        for(int i = 0; i < response.size(); i++)
-        {
-            responseString += response[i] + ((i == response.size()-1) ? "" : " "); 
-        }
-        if(!DialogueManager::Instance->ProcessResponse(responseString))
+        std::string responseStr = ConcatSelection(response);
+        if(!DialogueManager::Instance->ProcessResponse(responseStr))
         {
             for(int i = 0; i < mFragmentEnts.size();i++)
             {
@@ -78,6 +74,7 @@ void SentenceFormingState::Render()
 
     //mTextRenderer->RenderString("This is a response!", 1920/2 - 300, 1080/2, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f);
     RenderSentenceFragments();
+    RenderCurrentSelection();
 
     mTextPass->Record();
     mBatch->RecordCommands();
@@ -98,7 +95,7 @@ void SentenceFormingState::Begin()
         mTextPass = mGame->Renderer->CreateRenderPass(true);
         mTextPass->SetClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
-        Opal::Font typeFace(mGame->Renderer,"../fonts/JosefinSans.ttf", 90);
+        Opal::Font typeFace(mGame->Renderer,"../fonts/JosefinSans-Light.ttf", 90);
 
         mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, typeFace, glm::vec2(mGame->GetWidth() - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
         mLineRenderer = new Opal::LineRenderer();
@@ -272,4 +269,20 @@ void SentenceFormingState::UpdateCursorLine()
 void SentenceFormingState::StartScreenShake()
 {
     mScreenShakeTimer = mScreenShakeTime;
+}
+
+void SentenceFormingState::RenderCurrentSelection()
+{
+    std::string resp = ConcatSelection(mCursorEntity->GetComponent<CursorComponent>()->GetResponse());
+    mTextRenderer->RenderString(resp, 200, 1080-150, mFragmentColor.r, mFragmentColor.g, mFragmentColor.b, mFragmentColor.a, 1.0f);
+}
+
+std::string SentenceFormingState::ConcatSelection(std::vector<std::string> selection)
+{
+    std::string res = "";
+    for(int i = 0; i < selection.size(); i++)
+    {
+        res += selection[i] + ((i == selection.size()-1) ? "" : " "); 
+    }
+    return res;
 }

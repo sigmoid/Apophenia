@@ -35,9 +35,9 @@ void PlayState::Begin()
     mTextPass = mGame->Renderer->CreateRenderPass(true);
     UpdateColor();
 
-    Opal::Font typeFace(mGame->Renderer,"../fonts/JosefinSans.ttf", 120);
+    Opal::Font typeFace(mGame->Renderer,"../fonts/JosefinSans-Light.ttf", 120);
 
-    mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, typeFace, glm::vec2(mGame->GetWidth(), mGame->GetHeight()), Opal::Camera::ActiveCamera);
+    mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, typeFace, glm::vec2(mGame->GetWidth() - 300, mGame->GetHeight()), Opal::Camera::ActiveCamera);
 }
 
 void PlayState::End() 
