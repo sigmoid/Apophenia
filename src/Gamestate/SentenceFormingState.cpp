@@ -27,6 +27,13 @@ SentenceFormingState::SentenceFormingState()
 
 void SentenceFormingState::Tick() 
 {
+    if(Opal::InputHandler::GetKey(GLFW_KEY_ESCAPE))
+    {
+        free(mScene);
+        mGame->PopState();
+        return;
+    }
+
     if(mScreenShakeTimer > 0)
     {
         Opal::Camera::ActiveCamera->MoveCamera(glm::vec2((rand() % mScreenShakeIntensity * 1000) / 1000.0f - (float)mScreenShakeIntensity/2, (rand() % mScreenShakeIntensity * 1000) / 1000.0f - (float)mScreenShakeIntensity/2));
@@ -83,6 +90,7 @@ void SentenceFormingState::Render()
 
     mGame->Renderer->SubmitRenderPass(mTextPass);
 
+    // dEBUG mLineRenderer->DrawLine(glm::vec2(0,0), glm::vec2(1000,1000), glm::vec4(1,0,0,1), 3);
     DrawCursorLine();
 
     mLineRenderer->Render();
@@ -90,6 +98,7 @@ void SentenceFormingState::Render()
 
 void SentenceFormingState::Begin() 
 {
+    std::cout << "BEGIN:" << std::endl;
     if(mTextRenderer == nullptr)
     {
         mTextPass = mGame->Renderer->CreateRenderPass(true);
@@ -256,8 +265,9 @@ void SentenceFormingState::UpdateCursorLine()
     }
 
     if(cutoffpoint != -1)
+    {
         mLinePoints.erase(mLinePoints.begin(), mLinePoints.begin()+cutoffpoint);
-
+    }
     mLineTimer -= mGame->GetDeltaTime();
     if(mLineTimer <= 0)
     {

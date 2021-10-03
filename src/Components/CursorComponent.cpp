@@ -2,6 +2,7 @@
 #include <iostream>
 #include "../../Opal/Input/InputHandler.h"
 #include "../../Opal/OpalMath.h"
+#include "../../Opal/EntityComponent/VelocityComponent.h"
 #include "SentenceFragmentComponent.h"
 #include "EndWallComponent.h"
 
@@ -18,6 +19,7 @@ void CursorComponent::OnAdded()
 void CursorComponent::OnStart() 
 {
     mTransform = mParent->GetComponent<Opal::TransformComponent>();
+    mCurrentSpeed = 0;
 }
 
 void CursorComponent::Reset()
@@ -59,7 +61,7 @@ void CursorComponent::Update(float dTime)
         mCurrentSpeed = 0;
     }
 
-    mTransform->Position.y += mCurrentSpeed * dTime;
+    mParent->GetComponent<Opal::VelocityComponent>()->SetVelocity(glm::vec3(0,mCurrentSpeed, 0));
 }
 
 void CursorComponent::Render(Opal::BatchRenderer2D *ctx) 

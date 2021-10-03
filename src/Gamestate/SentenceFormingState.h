@@ -39,7 +39,7 @@ class SentenceFormingState : public Opal::Gamestate
     glm::vec4 mLineColor = glm::vec4(0.9f, 0.9f, 0.9f, 0.8f);
     float mLineSpeed = 500;
     float mLineCutoff = -1;
-    float mLineTimeStep = 0.05f, mLineTimer;
+    float mLineTimeStep = 0.05f, mLineTimer = 0;
     void UpdateCursorLine();
     void DrawCursorLine();
 
@@ -52,6 +52,8 @@ class SentenceFormingState : public Opal::Gamestate
     float mFragmentSize = 130;
 
     void CreatePlayer();
+
+    int mCOUNTER = 0;
 
     void CreateEndWall(float x);
     Opal::Entity *mEndWall;
