@@ -20,4 +20,6 @@ class PlayState : public Opal::Gamestate
     private:
     Opal::FontRenderer *mTextRenderer;
     Opal::RenderPass *mTextPass;
+
+    void UpdateColor();
 };

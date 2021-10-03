@@ -3,6 +3,7 @@
 #include "../Opal/Game.h"
 
 #include "Gamestate/PlayState.h"
+#include "DialogueSystem/DialogueManager.h"
 
 int main(int argc, char **argv)
 {
@@ -13,6 +14,8 @@ int main(int argc, char **argv)
     //game.ToggleDebugInfo(true);
 
     game.Renderer->CreateOrthoCamera(1920, 1080, -1000, 1000);
+
+    DialogueManager dialogue("../Dialogue/TestDialogue.xml");
 
     game.PushState<PlayState>();
 

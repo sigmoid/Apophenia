@@ -23,10 +23,11 @@ class CursorComponent : public Opal::Component
     virtual Opal::Component *Clone() override;
 
     bool GetAlive();
+    void Reset();
     std::vector<std::string> GetResponse();
 
     private:
-    float mMaxSpeed = 300, mCurrentSpeed, mAcceleration = 500;
+    float mMaxSpeed = 700, mCurrentSpeed, mAcceleration = 850;
     int mUpBinding = GLFW_KEY_W, mDownBinding = GLFW_KEY_S;
     Opal::TransformComponent *mTransform;
     std::vector<std::string> mCurrentResponse;

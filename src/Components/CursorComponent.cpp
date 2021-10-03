@@ -20,6 +20,12 @@ void CursorComponent::OnStart()
     mTransform = mParent->GetComponent<Opal::TransformComponent>();
 }
 
+void CursorComponent::Reset()
+{
+    mAlive = true;
+    mCurrentResponse.clear();
+}
+
 void CursorComponent::Update(float dTime) 
 {
     bool takingInput = false;

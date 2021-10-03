@@ -1,0 +1,235 @@
+<!-- Colors -->
+<!-- Basic White            
+    <Color>
+        <r>0.9</r>
+        <g>0.9</g>
+        <b>0.9</b>
+        <a>1.0</a>
+    </Color>
+    -->
+
+ <!-- Warm            
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.1882</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+<Game>
+    <Prompt>
+        <Text>How are you doing?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I</Text></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>am</Text></Fragment>
+                    <Fragment><Text>feel</Text></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>great</Text></Fragment>
+                    <Fragment><Text>just fine</Text></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>50</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>That's great. I'm glad to hear that. 
+        How did the interview go?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I think</Text></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>it went ok</Text></Fragment>
+                    <Fragment><Text>it went well</Text></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>but we'll see</Text></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>50</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>I am just fine</Trigger>
+            <Trigger>I feel just fine</Trigger> 
+            <Trigger>I am great</Trigger>
+            <Trigger>I feel great</Trigger>   
+        </Triggers>
+    </Prompt>
+
+        <Prompt>
+        <Text>Yeah, you never know.
+How about the TA job?
+How's that going?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>It's fine,</Text></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I worked on it all night last night</Text></Fragment>
+                    <Fragment><Text>it's pretty easy stuff</Text></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>50</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>I think it went ok but we'll see</Trigger>
+            <Trigger>I think it went well but we'll see</Trigger>
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>That's not good.
+You need to sleep.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>You're right...</Text></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I just had a lot of energy</Text></Fragment>
+                    <Fragment><Text>I'll do better tonight</Text></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>50</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>It's fine, I worked on it all night last night</Trigger>
+        </Triggers>
+    </Prompt>
+
+<Prompt>
+        <Text>I just hope you're not stressing yourself out too much.
+You've got a lot on your plate.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Everything is</Text></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>falling apart</Text></Fragment>
+                    <Fragment><Text>fine</Text></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I have class soon</Text></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>talk to you later</Text></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>50</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>You're right... I'll do better tonight</Trigger>
+            <Trigger>You're right... I just had a lot of energy</Trigger>
+            <Trigger>It's fine, it's pretty easy stuff</Trigger>
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>!!!END!!!</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Everything is</Text></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>falling apart</Text></Fragment>
+                    <Fragment><Text>fine</Text></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I have class soon</Text></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>talk to you later</Text></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>50</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Everything is fine I have class soon talk to you later</Trigger>
+        </Triggers>
+    </Prompt>
+</Game>

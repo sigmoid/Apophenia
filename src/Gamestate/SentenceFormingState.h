@@ -27,13 +27,13 @@ class SentenceFormingState : public Opal::Gamestate
     virtual void Resume() override;
 
     private:
-    Opal::FontRenderer *mTextRenderer;
-    Opal::RenderPass *mTextPass;
+    static Opal::FontRenderer *mTextRenderer;
+    static Opal::RenderPass *mTextPass;
+    static Opal::BatchRenderer2D *mBatch;
+    static Opal::Texture *mCursorTexture;
+    static Opal::LineRenderer *mLineRenderer;
     Opal::Scene *mScene;
-    Opal::BatchRenderer2D *mBatch;
-    Opal::Texture *mCursorTexture;
     Opal::Entity *mCursorEntity;
-    Opal::LineRenderer *mLineRenderer;
 
     std::vector<glm::vec2> mLinePoints;
     glm::vec4 mLineColor = glm::vec4(0.9f, 0.9f, 0.9f, 0.8f);
@@ -43,11 +43,21 @@ class SentenceFormingState : public Opal::Gamestate
     void UpdateCursorLine();
     void DrawCursorLine();
 
+    void CreatePlayingField();
+
     void CreateSentenceFragment(glm::vec3 pos, std::string text);
     void RenderSentenceFragments();
     glm::vec4 mFragmentColor = glm::vec4(0.9, 0.9, 0.9, 1.0f);
+    std::vector<Opal::Entity *> mFragmentEnts;
+    float mFragmentSize = 130;
 
     void CreatePlayer();
 
     void CreateEndWall(float x);
+    Opal::Entity *mEndWall;
+
+    void StartScreenShake();
+    float mScreenShakeTimer = 0;
+    float mScreenShakeTime = 0.4f;
+    int mScreenShakeIntensity = 30;
 };

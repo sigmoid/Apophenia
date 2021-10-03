@@ -6,9 +6,19 @@
 #include "../../Opal/EntityComponent/SpriteComponent.h"
 #include "../../Opal/EntityComponent/BoxColliderComponent2D.h"
 #include "../../Opal/EntityComponent/VelocityComponent.h"
+#include "../../Opal/Collision/AABBCollision.h"
 #include "../Components/CursorComponent.h"
 #include "../Components/SentenceFragmentComponent.h"
 #include "../Components/EndWallComponent.h"
+#include "../DialogueSystem/DialogueManager.h"
+#include "../DialogueSystem/Response.h"
+
+// Static members
+Opal::FontRenderer *SentenceFormingState::mTextRenderer = nullptr;
+Opal::RenderPass *SentenceFormingState::mTextPass = nullptr;
+Opal::BatchRenderer2D *SentenceFormingState::mBatch = nullptr;
+Opal::Texture *SentenceFormingState::mCursorTexture = nullptr;
+Opal::LineRenderer *SentenceFormingState::mLineRenderer = nullptr;
 
 SentenceFormingState::SentenceFormingState()
 {
@@ -17,17 +27,46 @@ SentenceFormingState::SentenceFormingState()
 
 void SentenceFormingState::Tick() 
 {
+    if(mScreenShakeTimer > 0)
+    {
+        Opal::Camera::ActiveCamera->MoveCamera(glm::vec2((rand() % mScreenShakeIntensity * 1000) / 1000.0f - (float)mScreenShakeIntensity/2, (rand() % mScreenShakeIntensity * 1000) / 1000.0f - (float)mScreenShakeIntensity/2));
+        mScreenShakeTimer -= mGame->GetDeltaTime();
+
+        if(mScreenShakeTimer <= 0)
+        {
+            Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0,0));
+        }
+    }
     mScene->Update(mGame->GetDeltaTime());
     UpdateCursorLine();
     if(!mCursorEntity->GetComponent<CursorComponent>()->GetAlive())
     {
-        free(mCursorTexture);
-        free(mScene);
-        free(mBatch);
-        free(mTextPass);
-        free(mTextRenderer);
-        free(mLineRenderer);
-        mGame->PopState();
+        auto response = mCursorEntity->GetComponent<CursorComponent>()->GetResponse();
+        std::string responseString = "";
+        for(int i = 0; i < response.size(); i++)
+        {
+            responseString += response[i] + ((i == response.size()-1) ? "" : " "); 
+        }
+        if(!DialogueManager::Instance->ProcessResponse(responseString))
+        {
+            for(int i = 0; i < mFragmentEnts.size();i++)
+            {
+                mScene->RemoveEntity(mFragmentEnts[i]);
+            }
+            mFragmentEnts.clear();
+            mScene->RemoveEntity(mEndWall);
+
+            mCursorEntity->GetComponent<CursorComponent>()->Reset();
+
+            CreatePlayingField();
+
+            StartScreenShake();
+        }
+        else
+        {
+            free(mScene);
+            mGame->PopState();
+        }
     }
 }
 
@@ -54,33 +93,68 @@ void SentenceFormingState::Render()
 
 void SentenceFormingState::Begin() 
 {
-    mTextPass = mGame->Renderer->CreateRenderPass(true);
-    mTextPass->SetClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+    if(mTextRenderer == nullptr)
+    {
+        mTextPass = mGame->Renderer->CreateRenderPass(true);
+        mTextPass->SetClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
-    Opal::Font typeFace(mGame->Renderer,"../fonts/JosefinSans.ttf", 90);
+        Opal::Font typeFace(mGame->Renderer,"../fonts/JosefinSans.ttf", 90);
 
-    mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, typeFace, glm::vec2(mGame->GetWidth(), mGame->GetHeight()), Opal::Camera::ActiveCamera);
-    mLineRenderer = new Opal::LineRenderer();
-    mLineRenderer->Init(mGame->Renderer);
+        mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, typeFace, glm::vec2(mGame->GetWidth() - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
+        mLineRenderer = new Opal::LineRenderer();
+        mLineRenderer->Init(mGame->Renderer);
 
-    std::vector<Opal::Texture*> textures;
-    mCursorTexture = mGame->Renderer->CreateTexture("../textures/cursor.png");
-    textures.push_back(mCursorTexture);
-    mBatch = mGame->Renderer->CreateBatch(mTextPass, 1000, textures, true);
+        std::vector<Opal::Texture*> textures;
+        mCursorTexture = mGame->Renderer->CreateTexture("../textures/cursor.png");
+        textures.push_back(mCursorTexture);
+        mBatch = mGame->Renderer->CreateBatch(mTextPass, 1000, textures, true);
+    }
     mScene = new Opal::Scene(mBatch);
     CreatePlayer();
 
-    CreateSentenceFragment(glm::vec3(1920, 1080/2, 0), "I");
-
-    CreateSentenceFragment(glm::vec3(1920 * 1.5f, 300, 0), "feel");
-    CreateSentenceFragment(glm::vec3(1920 * 1.5f, 900, 0), "am");
-
-    CreateSentenceFragment(glm::vec3(1920 * 2.f, 300, 0), "fine");
-    CreateSentenceFragment(glm::vec3(1920 * 2.f, 900, 0), "great");
-
-    CreateEndWall(1920 * 2.5f);
+    CreatePlayingField();
 
     mScene->Start();
+}
+
+void SentenceFormingState::CreatePlayingField()
+{
+    Response resp = DialogueManager::Instance->GetCurrentResponse();  
+
+    float start = 1920;
+    float inc = 1920 * .7f;
+    for(int i = 0; i < resp.Fragments.size(); i++)
+    {
+        std::vector<Opal::AABB> yPositions;
+        for(int j = 0; j < resp.Fragments[i].size(); j++)
+        {
+            int padding = 200;
+            float ypos;
+            bool needNew = true;
+            while(needNew)
+            {
+                needNew = false;
+                ypos = rand() % (1080 - padding*2) + padding; 
+                Opal::AABB thisBox;
+                thisBox.min = glm::vec2(start+inc*i, ypos - mFragmentSize/2);
+                thisBox.max = glm::vec2(start+inc*i + 10, ypos+ mFragmentSize/2);
+                for(int k = 0; k < yPositions.size(); k++)
+                {
+                    if(Opal::AABBCollision::GetResolution(thisBox,yPositions[k]) != glm::vec2(0,0))
+                    {
+                        needNew = true;
+                    }
+                }
+            }
+            CreateSentenceFragment(glm::vec3(start + inc * i, ypos, 0), resp.Fragments[i][j].Text);
+            Opal::AABB newBox;
+            newBox.min = glm::vec2(start+inc*i, ypos-mFragmentSize/2);
+            newBox.max = glm::vec2(start+inc*i + 10, ypos + mFragmentSize/2);
+            yPositions.push_back(newBox);
+        }
+    }
+
+    CreateEndWall(start + inc * (resp.Fragments.size()));
 }
 
 void SentenceFormingState::End() 
@@ -107,6 +181,7 @@ void SentenceFormingState::CreateEndWall(float x)
     mEndWallEnt->AddComponent(endComp);
 
     mScene->AddEntity(mEndWallEnt);
+    mEndWall = mEndWallEnt;
 }
 
 void SentenceFormingState::CreatePlayer()
@@ -136,12 +211,13 @@ void SentenceFormingState::CreateSentenceFragment(glm::vec3 pos, std::string tex
     mFragmentEntity->AddComponent(transform);
     SentenceFragmentComponent *frag = new SentenceFragmentComponent(text,mLineSpeed, mFragmentColor);
     mFragmentEntity->AddComponent(frag);
-    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(64,400), glm::vec2(0,-200), true);
+    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(64,mFragmentSize), glm::vec2(0,-mFragmentSize/2), true);
     collider->SetIsTrigger(true);
     collider->SetIsStatic(true);
     mFragmentEntity->AddComponent(collider);
 
     mScene->AddEntity(mFragmentEntity);
+    mFragmentEnts.push_back(mFragmentEntity);
 }
 
 void SentenceFormingState::RenderSentenceFragments()
@@ -191,4 +267,9 @@ void SentenceFormingState::UpdateCursorLine()
         mLinePoints.push_back(glm::vec2(mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.x + 32, mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.y + 32));
         mLineTimer = mLineTimeStep;
     }
+}
+
+void SentenceFormingState::StartScreenShake()
+{
+    mScreenShakeTimer = mScreenShakeTime;
 }
