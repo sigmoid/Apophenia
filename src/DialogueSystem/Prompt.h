@@ -12,4 +12,7 @@ struct Prompt
     glm::vec4 Color;
     std::vector<std::string> Triggers;
     Response Response;
+    bool IsEnd = false;
+
+    std::string TransitionText = "";
 };

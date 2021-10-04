@@ -6,7 +6,11 @@ DialogueManager *DialogueManager::Instance = nullptr;
 DialogueManager::DialogueManager(std::string filepath)
 {
     Instance = this;
-    LoadGame(filepath);
+}
+
+bool DialogueManager::IsConversationOver()
+{
+    return mPrompts[mCurrentPromptIdx].IsEnd;
 }
 
 // returns 'true' if the response was valid
@@ -34,8 +38,9 @@ Response DialogueManager::GetCurrentResponse()
     return GetCurrentPrompt().Response;
 }
 
-void DialogueManager::LoadGame(std::string filepath)
+void DialogueManager::LoadConversation(std::string filepath)
 {
+    mPrompts.clear();
     mPrompts = DialogueSerializer::DeserializeFile(filepath);
     mCurrentPromptIdx = 0;
     return;

@@ -124,6 +124,8 @@ void SentenceFormingState::CreatePlayingField()
 
     float start = 1920;
     float inc = 1920 * .7f;
+
+    mLineSpeed = resp.Speed;
     for(int i = 0; i < resp.Fragments.size(); i++)
     {
         std::vector<Opal::AABB> yPositions;
@@ -147,7 +149,7 @@ void SentenceFormingState::CreatePlayingField()
                     }
                 }
             }
-            CreateSentenceFragment(glm::vec3(start + inc * i, ypos, 0), resp.Fragments[i][j].Text, resp.Fragments[i][j].Attraction);
+            CreateSentenceFragment(glm::vec3(start + inc * i, ypos, 0), resp.Fragments[i][j].Text, resp.Fragments[i][j].Attraction, resp.Speed);
             Opal::AABB newBox;
             newBox.min = glm::vec2(start+inc*i, ypos-mFragmentSize/2);
             newBox.max = glm::vec2(start+inc*i + 10, ypos + mFragmentSize/2);
@@ -204,7 +206,7 @@ void SentenceFormingState::CreatePlayer()
 }
 
 
-void SentenceFormingState::CreateSentenceFragment(glm::vec3 pos, std::string text, float attraction)
+void SentenceFormingState::CreateSentenceFragment(glm::vec3 pos, std::string text, float attraction, float speed)
 {
     //Kludge, haven't actually implemented text measuring yet
     float width = 16 * text.length();
@@ -213,7 +215,7 @@ void SentenceFormingState::CreateSentenceFragment(glm::vec3 pos, std::string tex
 
     Opal::TransformComponent *transform = new Opal::TransformComponent( pos, glm::vec3(1,1,1), 0);
     mFragmentEntity->AddComponent(transform);
-    SentenceFragmentComponent *frag = new SentenceFragmentComponent(text,mLineSpeed, mFragmentColor, attraction);
+    SentenceFragmentComponent *frag = new SentenceFragmentComponent(text,speed, mFragmentColor, attraction);
     mFragmentEntity->AddComponent(frag);
     Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(fmax(64, width),mFragmentSize), glm::vec2(0,-mFragmentSize/2), true);
     collider->SetIsTrigger(true);

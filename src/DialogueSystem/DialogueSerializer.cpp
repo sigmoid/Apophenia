@@ -3,6 +3,8 @@
 
 #include <vector>
 #include <string>
+#include <algorithm>
+#include <iostream>
 
 std::vector<Prompt> DialogueSerializer::DeserializeFile(std::string filepath)
 {
@@ -21,7 +23,12 @@ std::vector<Prompt> DialogueSerializer::DeserializeFile(std::string filepath)
 Prompt DialogueSerializer::DeserializePrompt(tinyxml2::XMLElement *root)
 {
     Prompt res;
+    res.IsEnd = root->BoolAttribute("IsEnd", false);
+    const char * tmp = root->Attribute("TransitionText");
+    if(tmp != nullptr)
+        res.TransitionText = tmp; 
     res.Text = root->FirstChildElement("Text")->GetText();
+    std::replace(res.Text.begin(), res.Text.end(), '\t', ' ');
     res.Response = DeserializeResponse(root->FirstChildElement("Response"));
     tinyxml2::XMLElement *colorRoot = root->FirstChildElement("Color");
     res.Color.r = colorRoot->FirstChildElement("r")->FloatText();

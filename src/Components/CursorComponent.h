@@ -28,6 +28,7 @@ class CursorComponent : public Opal::Component
 
     private:
     float mMaxSpeed = 700, mCurrentSpeed, mAcceleration = 850;
+    float mUpperBound = 1080 - 100, mLowerBound = 100;
     int mUpBinding = GLFW_KEY_W, mDownBinding = GLFW_KEY_S;
     Opal::TransformComponent *mTransform = nullptr;
     std::vector<std::string> mCurrentResponse;

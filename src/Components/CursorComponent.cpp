@@ -33,6 +33,8 @@ void CursorComponent::Update(float dTime)
 {
     std::vector<Opal::Entity *> ents = Opal::Scene::GetActiveScene()->GetAllEntities();
 
+    bool beingDragged = false;
+
     for(int i = 0; i < ents.size(); i++)
     {
         SentenceFragmentComponent *otherSentence = ents[i]->GetComponent<SentenceFragmentComponent>();
@@ -46,9 +48,16 @@ void CursorComponent::Update(float dTime)
             }
             else
             {
-                if(0 < (otherTrans->Position.x - mTransform->Position.x) && (otherTrans->Position.x - mTransform->Position.x) < 1000 && abs(mTransform->Position.y - otherTrans->Position.y) > 50)
+                float dist = glm::distance(otherTrans->Position, mTransform->Position);
+                if(0 < (otherTrans->Position.x - mTransform->Position.x) && (otherTrans->Position.x - mTransform->Position.x) < 1000 && dist > 200)
                 {
-                    mCurrentSpeed += otherSentence->Attraction * dTime * (((otherTrans->Position.y - mTransform->Position.y) < 0) ? -1 : 1);
+                    // dist /= 1000;
+                    // dist = fmin(dist, 1.0f);
+                    // dist *= dist * 0.5f;
+                    // dist += 0.5f;
+
+                    mCurrentSpeed += 250 * (otherSentence->Attraction / dist) * dTime * (((otherTrans->Position.y - mTransform->Position.y) < 0) ? -1 : 1);
+                    beingDragged = true;
                 }
             }
         }
@@ -76,13 +85,23 @@ void CursorComponent::Update(float dTime)
         mCurrentSpeed = -mMaxSpeed;
     }
 
-    if(!takingInput && (mCurrentSpeed > dTime * mAcceleration || mCurrentSpeed < -dTime * mAcceleration))
+    if(!takingInput && !beingDragged && (mCurrentSpeed > dTime * mAcceleration || mCurrentSpeed < -dTime * mAcceleration))
     {
         mCurrentSpeed = Opal::OpalMath::Approach(mCurrentSpeed, 0, dTime);
     }
-    else if(!takingInput)
+    else if(!takingInput && !beingDragged)
     {
         mCurrentSpeed = 0;
+    }
+
+    if(mTransform->Position.y > mUpperBound ||mTransform->Position.y < mLowerBound)
+    {
+        // Alternative option, just stops you
+        //mTransform->Position.y = Opal::OpalMath::Approach(mTransform->Position.y, (mLowerBound + mUpperBound) / 2, 0.01f);
+        //mCurrentSpeed = 0;
+
+        // Bounce off the boundary
+        mCurrentSpeed = -mCurrentSpeed;
     }
 
     mParent->GetComponent<Opal::VelocityComponent>()->SetVelocity(glm::vec3(0,mCurrentSpeed, 0));

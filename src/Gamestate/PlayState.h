@@ -6,6 +6,8 @@
 #include "../../Opal/Graphics/RenderPass.h"
 #include "../../Opal/Graphics/Camera.h"
 
+#include <array>
+
 class PlayState : public Opal::Gamestate
 {
 
@@ -18,8 +20,23 @@ class PlayState : public Opal::Gamestate
     virtual void Resume() override;
 
     private:
+
+    void IncrementConversation();
+
     Opal::FontRenderer *mTextRenderer;
     Opal::RenderPass *mTextPass;
+
+    std::array<std::string, 3> mConversationSequence =
+    {
+        "../Dialogue/Conversation_3.xml",
+        "../Dialogue/Conversation_2.xml",
+        "../Dialogue/Conversation_3.xml"
+    };
+
+    int mCurrentConversation = 0;
+
+    float mTransitionTimer = 0, mTransitionDuration = 5;
+    glm::vec4 mPreviousColor = glm::vec4(101.0f/255.0f, 130.0f/255.0f, 191.0f/255.0f, 1);
 
     void UpdateColor();
 };

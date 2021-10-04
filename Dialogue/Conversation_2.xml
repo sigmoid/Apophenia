@@ -1,0 +1,380 @@
+<!-- Colors -->
+<!-- Basic White            
+    <Color>
+        <r>0.9</r>
+        <g>0.9</g>
+        <b>0.9</b>
+        <a>1.0</a>
+    </Color>
+    -->
+
+ <!-- Warm            
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.1882</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+
+ <!-- Purple            
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+<Game>
+    <Prompt TransitionText="Next Day">
+        <Text>So how is grading the first assignment going?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>It's going</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>well</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>terribly</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I'm about</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>halfway done</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>60</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>Wow halfway? It's only been a day. How did you manage that?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Well, I</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>had a lot of time yesterday</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>stayed up late last night</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>60</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>It's going well I'm about halfway done</Trigger>
+        </Triggers>
+    </Prompt>
+
+        <Prompt>
+        <Text>Okay, well, just make sure you're taking care of your other classes before this job.
+You're a good student, I don't want to change that.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Thanks,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I will</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>60</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Well, I had a lot of time yesterday</Trigger>
+            <Trigger>Well, I stayed up late last night</Trigger>
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>Who's teaching your Database Systems class?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I forget</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>their name,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>but they seem</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>cool</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>uptight</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>60</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Thanks, I will</Trigger>
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>Well, let me know when you find out.
+a student said you had trouble during lab yesterday.
+What happened there?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>It's been</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>a few years</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>since I took this class</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>so I need to review</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>so I forgot everything</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>60</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>I forget their name, but they seem cool</Trigger>
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>I figured. Most TA's struggle with that. It comes back to you.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Good to hear.</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I'm sure it does.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>What's</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>coming up next?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>60</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>It's been a few years since I took this class so I need to review</Trigger>
+        </Triggers>
+    </Prompt>
+    <Prompt>
+        <Text>Well, we're just digging deeper into C++ next lecture. So study up on polymorphism.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Great, so</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>just inheritance</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>right?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>60</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Good to hear. What's coming up next?</Trigger>
+            <Trigger>I'm sure it does. What's coming up next?</Trigger>
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>Yes, but also multi-inheritence, object slicing, and the memory model behind it all.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Oh right,</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Oh fuck,</Text><Attraction>600</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I remember</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>what even is object slicing?</Text><Attraction>600</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>80</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Great, so just inheritance right?</Trigger>
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>What's on your plate now?
+Do you have time to do the next assignment before class next week?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Of course! I</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>What? No I</Text><Attraction>600</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>can get that done tomorrow.</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>have so much to do</Text><Attraction>600</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>Like, I have to</Text><Attraction>600</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>work on Databases</Text><Attraction>600</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>work on my game</Text><Attraction>600</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>prepare for interviews</Text><Attraction>600</Attraction></Fragment>
+                    <Fragment><Text>sleep</Text><Attraction>600</Attraction></Fragment>
+                </FragmentGroup>
+
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>80</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Oh right, I remember</Trigger>
+        </Triggers>
+    </Prompt>
+    
+    <Prompt IsEnd="True">
+        <Text>Good. No rush. I'll see you next week. Have a nice weekend</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>You too,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>Professor</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>60</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Of course! I can get that done tomorrow.</Trigger>
+        </Triggers>
+    </Prompt>
+</Game>

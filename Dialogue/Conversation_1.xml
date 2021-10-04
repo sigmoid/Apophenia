@@ -17,7 +17,7 @@
     </Color>
     -->   
 <Game>
-    <Prompt>
+    <Prompt TransitionText="Apophenia">
         <Text>How are you doing?</Text>
         <Response>
             <Fragments>
@@ -196,8 +196,8 @@ You've got a lot on your plate.</Text>
         </Triggers>
     </Prompt>
 
-    <Prompt IsEnd="true">
-        <Text>Ok, have a good day, love you</Text>
+    <Prompt IsEnd="True">
+        <Text>Alright, have a good day. Love you.</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>

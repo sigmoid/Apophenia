@@ -15,6 +15,8 @@ class DialogueManager
     bool ProcessResponse(std::string response);
     Prompt GetCurrentPrompt();
     Response GetCurrentResponse();
+    bool IsConversationOver();
+    void LoadConversation(std::string filepath);
 
     static DialogueManager *Instance;
 
@@ -24,5 +26,4 @@ class DialogueManager
 
     std::vector<Prompt> mPrompts;
 
-    void LoadGame(std::string filepath);
 };

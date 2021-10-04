@@ -1,0 +1,337 @@
+<!-- Colors -->
+<!-- Basic White            
+    <Color>
+        <r>0.9</r>
+        <g>0.9</g>
+        <b>0.9</b>
+        <a>1.0</a>
+    </Color>
+    -->
+
+ <!-- Warm            
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.1882</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+<Game>
+    <Prompt TransitionText="Next Night">
+        <Text>Hey what's up? It's almost midnight here.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Mom,</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I am</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>losing it</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>What? What's wrong?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>can't write</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>this paper</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>it's due tonight</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Mom, I am losing it</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>That's not important right now.
+Breathe.
+Just Breathe right now.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Okay...</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>Alright...</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>Breathing...</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>50</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>I can't write this paper it's due tonight</Trigger>
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>You need to worry about this in the morning, and go to bed right now.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>You're right...</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I'm just, like,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>not tired lately.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>50</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Okay... Alright... Breathing...</Trigger>
+        </Triggers>
+    </Prompt>
+
+<Prompt>
+        <Text>I know, but your body needs sleep whether it's telling you that or not.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Well this</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>paper is</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>due in a few hours</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I just</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>need to finish it.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>50</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>You're right... I'm just, like, not tired lately.</Trigger>
+        </Triggers>
+    </Prompt>
+
+<Prompt>
+        <Text>How far are you?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>The central</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>ludic metaphor</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>in Case's WBWWB</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>is...</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>50</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Well this paper is due in a few hours I just need to finish it.</Trigger>
+        </Triggers>
+    </Prompt>
+
+<Prompt>
+        <Text>That's it?
+How long have you been working on it.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I dunno</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>maybe an hour?</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>at least 4 hours.</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>50</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>The central ludic metaphor in Case's WBWWB is...</Trigger>
+        </Triggers>
+</Prompt>
+
+<Prompt>
+        <Text>What's keeping you from writing?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I can't</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>keep my</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>get my</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>thoughts straight</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>head straight</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>50</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>I dunno maybe an hour?</Trigger>
+        </Triggers>
+    </Prompt>
+
+<Prompt>
+        <Text>Well, based on your voice. It sounds like anxiety. Maybe you should see a doctor?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I can't</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>keep my</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>get my</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>thoughts straight</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>head straight</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>50</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>I can't keep my thoughts straight</Trigger>
+            <Trigger>I can't keep my head straight</Trigger>
+            <Trigger>I can't get my thoughts straight</Trigger>
+            <Trigger>I can't get my head straight</Trigger>
+        </Triggers>
+    </Prompt>
+    
+</Game>
