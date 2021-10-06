@@ -5,9 +5,11 @@
 #include "../../Opal/EntityComponent/Entity.h"
 #include "../../Opal/Collision/AABBCollision.h"
 #include "../../Opal/EntityComponent/TransformComponent.h"
+#include "../../Opal/Graphics/Mesh2D.h"
 
 #include <vector>
 #include <string>
+#include <glm/vec4.hpp>
 
 class CursorComponent : public Opal::Component
 {
@@ -25,12 +27,26 @@ class CursorComponent : public Opal::Component
     bool GetAlive();
     void Reset();
     std::vector<std::string> GetResponse();
+    Opal::Mesh2D *GetMesh();
 
     private:
+    float mNoiseScale = 0.05, mNoiseFreq = 1;
+    float mTimeSinceBirth = 0;
     float mMaxSpeed = 700, mCurrentSpeed, mAcceleration = 850;
     float mUpperBound = 1080 - 100, mLowerBound = 100;
+    float mAttractionModifier = 25.0f;
     int mUpBinding = GLFW_KEY_W, mDownBinding = GLFW_KEY_S;
     Opal::TransformComponent *mTransform = nullptr;
     std::vector<std::string> mCurrentResponse;
     bool mAlive = true;
+
+    float mRadius = 34.0f, mNumTris = 128, mNoiseIntensity = 10;
+    float mAttractionScale = 1200.0f;
+    int mAttractionFalloff = 5;
+    glm::vec4 mMeshColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
+    void UpdateVerts();
+    std::vector<glm::vec2> mAttractionPoints;
+    std::vector<float> mAttractionValues;
+    Opal::Mesh2D *mMesh;
+    std::vector<float> mVertices;
 };

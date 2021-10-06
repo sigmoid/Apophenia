@@ -6,6 +6,26 @@
 #include <algorithm>
 #include <iostream>
 
+std::vector<std::string> DialogueSerializer::DeserializeStoryline(std::string filepath)
+{
+    std::vector<std::string> res;
+
+    tinyxml2::XMLDocument doc;
+    doc.LoadFile(filepath.c_str());
+
+    std::string base = doc.RootElement()->Attribute("Filepath");
+
+    //Todo: Not yet used for anything
+    std::string storyName = doc.RootElement()->Attribute("Story");
+
+    for(tinyxml2::XMLElement *convo = doc.RootElement()->FirstChildElement(); convo != nullptr; convo = convo->NextSiblingElement())
+    {
+        res.push_back(base + convo->GetText());
+    }
+
+    return res;
+}
+
 std::vector<Prompt> DialogueSerializer::DeserializeFile(std::string filepath)
 {
     tinyxml2::XMLDocument doc;

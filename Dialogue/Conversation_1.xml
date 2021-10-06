@@ -39,7 +39,7 @@
                 <b>0.0000</b>
                 <a>1.0</a>
             </Color>
-            <Speed>50</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.6118</r>
@@ -74,7 +74,7 @@ How did the interview go?</Text>
                 <b>0.0000</b>
                 <a>1.0</a>
             </Color>
-            <Speed>50</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.6118</r>
@@ -110,7 +110,7 @@ How's that going?</Text>
                 <b>0.0000</b>
                 <a>1.0</a>
             </Color>
-            <Speed>50</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.6118</r>
@@ -143,7 +143,7 @@ You need to sleep.</Text>
                 <b>0.0000</b>
                 <a>1.0</a>
             </Color>
-            <Speed>50</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.6118</r>
@@ -181,7 +181,7 @@ You've got a lot on your plate.</Text>
                 <b>0.0000</b>
                 <a>1.0</a>
             </Color>
-            <Speed>50</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.6118</r>
@@ -220,7 +220,7 @@ You've got a lot on your plate.</Text>
                 <b>0.0000</b>
                 <a>1.0</a>
             </Color>
-            <Speed>50</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.6118</r>

@@ -5,6 +5,7 @@
 #include "../DialogueSystem/DialogueManager.h"
 #include "../DialogueSystem/Prompt.h"
 #include "../../Opal/OpalMath.h"
+#include "../DialogueSystem/DialogueSerializer.h"
 
 PlayState::PlayState()
 {
@@ -54,7 +55,7 @@ void PlayState::Render()
 
 void PlayState::Begin() 
 {
-
+    mConversationSequence = DialogueSerializer::DeserializeStoryline("../Dialogue/DialogueProgression.xml");
     mTextPass = mGame->Renderer->CreateRenderPass(true);
 
     Opal::Font typeFace(mGame->Renderer,"../fonts/JosefinSans-Light.ttf", 120);

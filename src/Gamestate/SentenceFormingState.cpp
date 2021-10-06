@@ -17,6 +17,7 @@
 Opal::FontRenderer *SentenceFormingState::mTextRenderer = nullptr;
 Opal::RenderPass *SentenceFormingState::mTextPass = nullptr;
 Opal::BatchRenderer2D *SentenceFormingState::mBatch = nullptr;
+Opal::MeshRenderer2D *SentenceFormingState::mMeshRenderer = nullptr;
 Opal::Texture *SentenceFormingState::mCursorTexture = nullptr;
 Opal::LineRenderer *SentenceFormingState::mLineRenderer = nullptr;
 Opal::Font *SentenceFormingState::mFont = nullptr;
@@ -72,8 +73,11 @@ void SentenceFormingState::Render()
 {
     mBatch->StartBatch();
     mScene->Render(mBatch);
-    mBatch->BatchSprite(mCursorEntity->GetComponent<Opal::SpriteComponent>()->GetSprite());
     mBatch->RenderBatch();
+
+
+    mMeshRenderer->StartFrame();
+    mMeshRenderer->Submit(mCursorEntity->GetComponent<CursorComponent>()->GetMesh());
 
     //mTextRenderer->RenderString("This is a response!", 1920/2 - 300, 1080/2, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f);
     RenderSentenceFragments();
@@ -82,6 +86,7 @@ void SentenceFormingState::Render()
     mTextPass->Record();
     mBatch->RecordCommands();
     mTextRenderer->RecordCommands();
+    mMeshRenderer->RecordCommands();
     mTextPass->EndRecord();
 
     mGame->Renderer->SubmitRenderPass(mTextPass);
@@ -100,6 +105,8 @@ void SentenceFormingState::Begin()
         mTextPass->SetClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
         mFont = new Opal::Font(mGame->Renderer,"../fonts/JosefinSans-Light.ttf", 90);
+
+        mMeshRenderer = mGame->Renderer->CreateMeshRenderer(mTextPass);
 
         mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(mGame->GetWidth() - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
         mLineRenderer = new Opal::LineRenderer();
@@ -193,11 +200,11 @@ void SentenceFormingState::CreatePlayer()
 
     Opal::TransformComponent *transform = new Opal::TransformComponent( glm::vec3(1920/4, 1080/2, 0), glm::vec3(1,1,1), 0);
     mCursorEntity->AddComponent(transform);
-    Opal::SpriteComponent *sprite = new Opal::SpriteComponent(mCursorTexture);
-    mCursorEntity->AddComponent(sprite);
+    //Opal::SpriteComponent *sprite = new Opal::SpriteComponent(mCursorTexture);
+    //mCursorEntity->AddComponent(sprite);
     CursorComponent *cursor = new CursorComponent();
     mCursorEntity->AddComponent(cursor);
-    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(64,64), glm::vec2(0,0), false);
+    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(64,64), glm::vec2(-32,-32), false);
     mCursorEntity->AddComponent(collider);
     Opal::VelocityComponent *velocity = new Opal::VelocityComponent();
     mCursorEntity->AddComponent(velocity);
@@ -238,7 +245,7 @@ void SentenceFormingState::RenderSentenceFragments()
             glm::vec3 pos = entities[i]->GetComponent<Opal::TransformComponent>()->Position;
             if(frag->Attraction > 0)
             {
-                pos += glm::vec3((rand() % 1000) / 100 - 5, (rand() % 1000) / 100 - 5, 0);
+                pos += glm::vec3((rand() % 1000) / 100 - 5, (rand() % 1000) / 100 - 5, 0) * (frag->Attraction / 600);
             }
             mTextRenderer->RenderString(frag->Text, pos.x, pos.y, frag->Color.r, frag->Color.g, frag->Color.b, frag->Color.a, 1.0f);
         }
@@ -275,7 +282,7 @@ void SentenceFormingState::UpdateCursorLine()
     mLineTimer -= mGame->GetDeltaTime();
     if(mLineTimer <= 0)
     {
-        mLinePoints.push_back(glm::vec2(mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.x + 32, mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.y + 32));
+        mLinePoints.push_back(glm::vec2(mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.x, mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.y));
         mLineTimer = mLineTimeStep;
     }
 }

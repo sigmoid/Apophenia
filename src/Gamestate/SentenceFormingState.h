@@ -6,6 +6,7 @@
 #include "../../Opal/Graphics/BatchRenderer2D.h"
 #include "../../Opal/Graphics/LineRenderer.h"
 #include "../../Opal/Graphics/Texture.h"
+#include "../../Opal/Graphics/MeshRenderer2D.h"
 #include "../../Opal/Game.h"
 
 #include "../../Opal/EntityComponent/Scene.h"
@@ -30,6 +31,7 @@ class SentenceFormingState : public Opal::Gamestate
     static Opal::FontRenderer *mTextRenderer;
     static Opal::RenderPass *mTextPass;
     static Opal::BatchRenderer2D *mBatch;
+    static Opal::MeshRenderer2D *mMeshRenderer;
     static Opal::Texture *mCursorTexture;
     static Opal::LineRenderer *mLineRenderer;
     Opal::Scene *mScene = nullptr;

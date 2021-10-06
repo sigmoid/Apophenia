@@ -5,10 +5,13 @@
 #include "SentenceFragment.h"
 
 #include "../../Opal/vendor/tinyxml2/tinyxml2.h"
+#include <vector>
+#include <string>
 
 class DialogueSerializer
 {
     public:
+    static std::vector<std::string> DeserializeStoryline(std::string filepath);
     static std::vector<Prompt> DeserializeFile(std::string filepath);
     static Prompt DeserializePrompt(tinyxml2::XMLElement *root);
     static Response DeserializeResponse(tinyxml2::XMLElement *root);

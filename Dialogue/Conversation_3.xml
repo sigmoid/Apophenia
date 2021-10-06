@@ -93,13 +93,13 @@ Just Breathe right now.</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Okay...</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Okay...</Text><Attraction>500</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>Alright...</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Alright...</Text><Attraction>250</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>Breathing...</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Breathing...</Text><Attraction>10</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -108,7 +108,7 @@ Just Breathe right now.</Text>
                 <b>0.0000</b>
                 <a>1.0</a>
             </Color>
-            <Speed>50</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.6118</r>
@@ -141,7 +141,7 @@ Just Breathe right now.</Text>
                 <b>0.0000</b>
                 <a>1.0</a>
             </Color>
-            <Speed>50</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.6118</r>
@@ -180,7 +180,7 @@ Just Breathe right now.</Text>
                 <b>0.0000</b>
                 <a>1.0</a>
             </Color>
-            <Speed>50</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.6118</r>
@@ -216,7 +216,7 @@ Just Breathe right now.</Text>
                 <b>0.0000</b>
                 <a>1.0</a>
             </Color>
-            <Speed>50</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.6118</r>
@@ -248,7 +248,7 @@ How long have you been working on it.</Text>
                 <b>0.0000</b>
                 <a>1.0</a>
             </Color>
-            <Speed>50</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.6118</r>
@@ -283,7 +283,7 @@ How long have you been working on it.</Text>
                 <b>0.0000</b>
                 <a>1.0</a>
             </Color>
-            <Speed>50</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.6118</r>
@@ -297,19 +297,21 @@ How long have you been working on it.</Text>
     </Prompt>
 
 <Prompt>
-        <Text>Well, based on your voice. It sounds like anxiety. Maybe you should see a doctor?</Text>
+        <Text>Do you think it's anxiety related?</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>I can't</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Maybe...</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>No mom</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>keep my</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>get my</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I have been</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>thoughts straight</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>head straight</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>stressed out lately</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>but I don't need help</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -318,7 +320,7 @@ How long have you been working on it.</Text>
                 <b>0.0000</b>
                 <a>1.0</a>
             </Color>
-            <Speed>50</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.6118</r>
@@ -333,5 +335,155 @@ How long have you been working on it.</Text>
             <Trigger>I can't get my head straight</Trigger>
         </Triggers>
     </Prompt>
-    
+
+<!-- Todo, brach off where you deny anxiety and eventually come back to the main story line-->
+
+<Prompt>
+        <Text>If I made you an appointment, would you see a therapist again?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I don't think</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I need to</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>it just sounds</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>like an expensive hassle</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Maybe... I have been stressed out lately</Trigger>
+        </Triggers>
+</Prompt>
+
+<Prompt>
+        <Text>I actually got an email from your university.
+They offer free counseling.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Oh really?</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Who sent that?</Text><Attraction>1500</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>That sounds good,</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Are they really</Text><Attraction>1500</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I could do that</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>monitoring me?</Text><Attraction>1500</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>I don't think I need to it just sounds like an expensive hassle</Trigger>
+        </Triggers>
+</Prompt>
+
+<!-- paranoia branch -->
+<Prompt>
+        <Text>What? No! What are you talking about?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I have been</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>noticing things...</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>people staring,</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>strange ads,</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>"glitches"</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Who sent that? Are they really monitoring me?</Trigger>
+        </Triggers>
+</Prompt>
+
+<!-- back to the main branch -->
+
+<Prompt>
+        <Text>Great! It'll do it.
+We should also schedule a doctor's appointment?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Yeah,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>sounds good,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>thanks</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Oh Really? That sounds good, I could do that</Trigger>
+        </Triggers>
+</Prompt>
 </Game>

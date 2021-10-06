@@ -50,7 +50,7 @@
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>60</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -81,7 +81,7 @@
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>60</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -112,7 +112,7 @@ You're a good student, I don't want to change that.</Text>
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>60</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -150,7 +150,7 @@ You're a good student, I don't want to change that.</Text>
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>60</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -189,7 +189,7 @@ What happened there?</Text>
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>60</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -223,7 +223,7 @@ What happened there?</Text>
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>60</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -255,7 +255,7 @@ What happened there?</Text>
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>60</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -288,7 +288,7 @@ What happened there?</Text>
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>80</Speed>
+            <Speed>900</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -335,7 +335,7 @@ Do you have time to do the next assignment before class next week?</Text>
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>80</Speed>
+            <Speed>900</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -365,7 +365,7 @@ Do you have time to do the next assignment before class next week?</Text>
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>60</Speed>
+            <Speed>600</Speed>
         </Response>
     <Color>
         <r>0.2549</r>

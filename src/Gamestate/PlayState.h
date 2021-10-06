@@ -26,12 +26,7 @@ class PlayState : public Opal::Gamestate
     Opal::FontRenderer *mTextRenderer;
     Opal::RenderPass *mTextPass;
 
-    std::array<std::string, 3> mConversationSequence =
-    {
-        "../Dialogue/Conversation_3.xml",
-        "../Dialogue/Conversation_2.xml",
-        "../Dialogue/Conversation_3.xml"
-    };
+    std::vector<std::string> mConversationSequence;
 
     int mCurrentConversation = 0;
 
