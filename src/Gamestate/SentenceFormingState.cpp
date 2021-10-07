@@ -183,7 +183,7 @@ void SentenceFormingState::CreateEndWall(float x)
 
     Opal::TransformComponent *transform = new Opal::TransformComponent( glm::vec3(x, 0, 0), glm::vec3(1,1,1), 0);
     mEndWallEnt->AddComponent(transform);
-    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(60,2000), glm::vec2(0,0), true);
+    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(600,2000), glm::vec2(0,0), true);
     collider->SetIsTrigger(true);
     collider->SetIsStatic(true);
     mEndWallEnt->AddComponent(collider);
@@ -216,7 +216,7 @@ void SentenceFormingState::CreatePlayer()
 void SentenceFormingState::CreateSentenceFragment(glm::vec3 pos, std::string text, float attraction, float speed)
 {
     //Kludge, haven't actually implemented text measuring yet
-    float width = 16 * text.length();
+    float width = mTextRenderer->MeasureText(text);
 
     Opal::Entity *mFragmentEntity = new Opal::Entity();
 
@@ -224,7 +224,7 @@ void SentenceFormingState::CreateSentenceFragment(glm::vec3 pos, std::string tex
     mFragmentEntity->AddComponent(transform);
     SentenceFragmentComponent *frag = new SentenceFragmentComponent(text,speed, mFragmentColor, attraction);
     mFragmentEntity->AddComponent(frag);
-    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(fmax(64, width),mFragmentSize), glm::vec2(0,-mFragmentSize/2), true);
+    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(fmax(64, width),mFragmentSize), glm::vec2(0,-mFragmentSize), true);
     collider->SetIsTrigger(true);
     collider->SetIsStatic(true);
     mFragmentEntity->AddComponent(collider);
@@ -248,6 +248,9 @@ void SentenceFormingState::RenderSentenceFragments()
                 pos += glm::vec3((rand() % 1000) / 100 - 5, (rand() % 1000) / 100 - 5, 0) * (frag->Attraction / 600);
             }
             mTextRenderer->RenderString(frag->Text, pos.x, pos.y, frag->Color.r, frag->Color.g, frag->Color.b, frag->Color.a, 1.0f);
+
+            // Draw colliders
+            //mLineRenderer->DrawRect(entities[i]->GetComponent<Opal::BoxColliderComponent2D>()->GetAABB().min, entities[i]->GetComponent<Opal::BoxColliderComponent2D>()->GetAABB().max, glm::vec4(0,1,0,1), 2);
         }
     }
 }

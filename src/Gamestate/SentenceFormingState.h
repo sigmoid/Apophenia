@@ -51,7 +51,7 @@ class SentenceFormingState : public Opal::Gamestate
     void RenderSentenceFragments();
     glm::vec4 mFragmentColor = glm::vec4(0.9, 0.9, 0.9, 1.0f);
     std::vector<Opal::Entity *> mFragmentEnts;
-    float mFragmentSize = 130;
+    float mFragmentSize = 80;
     static Opal::Font *mFont;
 
     void CreatePlayer();
