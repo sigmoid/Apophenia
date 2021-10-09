@@ -64,7 +64,6 @@ Prompt DialogueSerializer::DeserializePrompt(tinyxml2::XMLElement *root)
     }
     return res;
 }
-
 Response DialogueSerializer::DeserializeResponse(tinyxml2::XMLElement *root)
 {
     Response res;

@@ -1,0 +1,599 @@
+<!-- Colors -->
+<!-- Basic White            
+    <Color>
+        <r>0.9</r>
+        <g>0.9</g>
+        <b>0.9</b>
+        <a>1.0</a>
+    </Color>
+    -->
+
+ <!-- Warm            
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    -->  
+<Game>
+    <Prompt TransitionText="Weeks Later">
+        <Text>Hey how's it going?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I feel like</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>things just keep</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>getting worse</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.1882</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I feel like things just keep getting worse</Trigger>   
+        </Triggers>
+        <Text>What's going on?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I keep missing</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>deadlines</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>and I can't</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>even boot up</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>a computer</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>without freaking out</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I keep missing deadlines and I can't even boot up a computer without freaking out</Trigger>   
+        </Triggers>
+        <Text>I think we need to do something about this. It's been going on too long.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I think once</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I see the</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>therapist, things</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>will improve</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I think once I see the therapist, things will improve</Trigger>   
+        </Triggers>
+        <Text>Hopefully. Did you at least sleep well last night?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Yes</Text><Attraction>500</Attraction></Fragment>
+                    <Fragment><Text>Not really</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Yes</Trigger>   
+        </Triggers>
+        <Text>Really?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>No</Text><Attraction>500</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Not really</Trigger>
+            <Trigger>No</Trigger>   
+        </Triggers>
+        <Text>I think if you would just get a good nights sleep, you would feel better.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I am trying.</Text><Attraction>0</Attraction>.</Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>No caffeine,</Text><Attraction>0</Attraction>,</Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>no alcohol,</Text><Attraction>0</Attraction>,</Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>no screens after 8.</Text><Attraction>0</Attraction>,</Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I'm meditating,</Text><Attraction>0</Attraction>,</Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>taking baths,</Text><Attraction>0</Attraction>,</Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>and not working,</Text><Attraction>0</Attraction>,</Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>but I end up</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>just lying there</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>for hours</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I am trying. No caffeine, no alcohol, no screens after 8. I'm meditating, taking baths, and not working, but I end up just lying there for hours</Trigger>   
+        </Triggers>
+        <Text>I know. We just need to get you sleeping. Is the anxiety what's keeping you up?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Well, not exactly</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>my mind</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>just races</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Well, not exactly my mind just races</Trigger>   
+        </Triggers>
+        <Text>What has been on your mind?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Lots of things.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>Homework I have,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>grading assignments,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>major life events</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Lots of things. Homework I have, grading assignments, major life events</Trigger>   
+        </Triggers>
+        <Text>Major life events?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Yeah, like</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>how do the</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>events of my</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>childhood impact</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>my personality</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Yeah, like how do the events of my childhood impact my personality</Trigger>   
+        </Triggers>
+        <Text>Don't you think, if you have too much going on in your head, maybe you should dial back your responsibilities?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I feel like</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I've already cut</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>everything I can</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I feel like I've already cut everything I can</Trigger>   
+        </Triggers>
+        <Text>Well. What I mean is... Do you really need to be a TA right now?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I can't just</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>quit right now</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I just started</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>and I don't</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>want to let down</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>the professor or</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>the other TAs</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I can't just quit right now I just started and I don't want to let down the professor or the other TAs</Trigger>   
+        </Triggers>
+        <Text>I think they would understand if you told them what's going on.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>No, I can't</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>No, I can't</Trigger>   
+        </Triggers>
+        <Text>You have to realize that this isn't a good thing for you. You're falling behind, not sleeping, having bad anxiety. You need to do something.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>But what if</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I can just</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>ride out this</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>storm, and</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>get better</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>But what if I can just ride out this storm, and get better</Trigger>   
+        </Triggers>
+        <Text>If it was going to get better on its own. Why hasn't it improved in the last month?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I don't think</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>this studio</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>will take me on</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>as an intern</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>if they</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>find out</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>that I quit</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>900</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I don't think this studio will take me on as an intern if they find out that I quit</Trigger>   
+        </Triggers>
+        <Text>Maybe not, but your health is more important than me than an internship, and it should be to you, too.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>You're right</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I'll quit</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt IsEnd="True">
+        <Triggers>
+            <Trigger>You're right I'll quit</Trigger>   
+        </Triggers>
+        <Text>Good. Let me know how it goes.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>You're right</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I'll quit</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+    
+</Game>

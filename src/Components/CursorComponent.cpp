@@ -81,23 +81,23 @@ void CursorComponent::Update(float dTime)
 
 void CursorComponent::Render(Opal::BatchRenderer2D *ctx) 
 {
-    ImGui_ImplVulkan_NewFrame();
-    ImGui_ImplGlfw_NewFrame();
+    // ImGui_ImplVulkan_NewFrame();
+    // ImGui_ImplGlfw_NewFrame();
 
-    ImGui::NewFrame();
+    // ImGui::NewFrame();
 
-    ImGui::Begin("Player Info");
+    // ImGui::Begin("Player Info");
 
-    ImGui::DragFloat("Current Speed", &mCurrentSpeed);
-    int na = mAttractors.size();
-    ImGui::InputInt("Num Attractors", &na);
+    // ImGui::DragFloat("Current Speed", &mCurrentSpeed);
+    // int na = mAttractors.size();
+    // ImGui::InputInt("Num Attractors", &na);
 
-    ImGui::DragFloat("Max Speed", &mMaxSpeed);
-    ImGui::DragFloat("Acceleration", &mAcceleration);
+    // ImGui::DragFloat("Max Speed", &mMaxSpeed);
+    // ImGui::DragFloat("Acceleration", &mAcceleration);
 
-    ImGui::End();
-    ImGui::Render();
-    ImGui::EndFrame();
+    // ImGui::End();
+    // ImGui::Render();
+    // ImGui::EndFrame();
 }
 
 bool CursorComponent::GetAlive()
