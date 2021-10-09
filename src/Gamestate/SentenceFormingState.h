@@ -61,6 +61,8 @@ class SentenceFormingState : public Opal::Gamestate
 
     int mCOUNTER = 0;
 
+    void CreateBounds();
+
     void CreateEndWall(float x);
     Opal::Entity *mEndWall;
 

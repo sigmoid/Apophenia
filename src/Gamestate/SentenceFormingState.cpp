@@ -126,7 +126,34 @@ void SentenceFormingState::Begin()
     CreateSparks();
     PreBakeLines();
 
+    CreateBounds();
     CreatePlayingField();
+}
+
+void SentenceFormingState::CreateBounds()
+{
+    Opal::Entity *mTopBounds = new Opal::Entity();
+
+    Opal::TransformComponent *transform = new Opal::TransformComponent( glm::vec3(0, -100, 0), glm::vec3(1,1,1), 0);
+    mTopBounds->AddComponent(transform);
+    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(600,100), glm::vec2(0,0), true);
+    collider->SetIsTrigger(false);
+    collider->SetIsStatic(true);
+    mTopBounds->AddComponent(collider);
+
+    mScene->AddEntity(mTopBounds);
+
+    Opal::Entity *mBottomBounds = new Opal::Entity();
+
+    Opal::TransformComponent *transform2 = new Opal::TransformComponent( glm::vec3(0, mGame->GetHeight(), 0), glm::vec3(1,1,1), 0);
+    mBottomBounds->AddComponent(transform2);
+    Opal::BoxColliderComponent2D *collider2 = new Opal::BoxColliderComponent2D(glm::vec2(600,100), glm::vec2(0,0), true);
+    collider->SetIsTrigger(false);
+    collider->SetIsStatic(true);
+    mBottomBounds->AddComponent(collider2);
+
+    mScene->AddEntity(mBottomBounds);
+ 
 }
 
 void SentenceFormingState::CreatePlayingField()
