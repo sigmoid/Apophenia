@@ -7,6 +7,7 @@
 #include "../../Opal/Graphics/LineRenderer.h"
 #include "../../Opal/Graphics/Texture.h"
 #include "../../Opal/Graphics/MeshRenderer2D.h"
+#include "../Components/SparkComponent.h"
 #include "../../Opal/Game.h"
 
 #include "../../Opal/EntityComponent/Scene.h"
@@ -42,10 +43,12 @@ class SentenceFormingState : public Opal::Gamestate
     float mLineSpeed = 500;
     float mLineCutoff = -1;
     float mLineTimeStep = 0.05f, mLineTimer = 0;
-    void UpdateCursorLine();
+    void UpdateCursorLine(float timeOverride = -1);
     void DrawCursorLine();
 
     void CreatePlayingField();
+
+    void PreBakeLines();
 
     void CreateSentenceFragment(glm::vec3 pos, std::string text, float attraction, float speed);
     void RenderSentenceFragments();
@@ -63,6 +66,12 @@ class SentenceFormingState : public Opal::Gamestate
 
     void RenderCurrentSelection();
     std::string ConcatSelection(std::vector<std::string> selection);
+
+    void CreateSparks();
+    int mNumSparks = 100;
+    std::vector<Opal::Entity*> mSparkEntities;
+    void RenderSparks();
+    void CreateRandomSpark();
 
     void StartScreenShake();
     float mScreenShakeTimer = 0;

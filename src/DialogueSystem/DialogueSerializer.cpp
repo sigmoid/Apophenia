@@ -31,6 +31,8 @@ std::vector<Prompt> DialogueSerializer::DeserializeFile(std::string filepath)
     tinyxml2::XMLDocument doc;
     doc.LoadFile(filepath.c_str());
 
+    doc.PrintError();
+    
     std::vector<Prompt> res;
     for(tinyxml2::XMLElement *pmpt = doc.RootElement()->FirstChildElement(); pmpt != nullptr; pmpt = pmpt->NextSiblingElement())
     {

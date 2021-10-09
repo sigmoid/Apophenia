@@ -10,6 +10,8 @@
 #include "../../Opal/vendor/imgui/imgui.h"
 #include "../../Opal/vendor/imgui/imgui_impl_glfw.h"
 #include "../../Opal/vendor/imgui/imgui_impl_vulkan.h"
+#include "../../Opal/EntityComponent/BoxColliderComponent2D.h"
+#include "AttractableComponent.h"
 
 CursorComponent::CursorComponent()
 {
@@ -25,6 +27,7 @@ void CursorComponent::OnStart()
 {
     mTransform = mParent->GetComponent<Opal::TransformComponent>();
     mCurrentSpeed = 0;
+    mAttractable = mParent->GetComponent<AttractableComponent>();
 
     mMesh = Opal::Game::Instance->Renderer->CreateMesh((mNumTris+1) * 3);
 }
@@ -40,43 +43,10 @@ void CursorComponent::Update(float dTime)
     mTimeSinceBirth += dTime;
     std::vector<Opal::Entity *> ents = Opal::Scene::GetActiveScene()->GetAllEntities();
 
-    bool beingDragged = false;
+
+    mAttractors = mAttractable->GetFrameAttractors();
 
     UpdateVerts();
-
-    mAttractionPoints.clear();
-    mAttractionValues.clear();
-
-    for(int i = 0; i < ents.size(); i++)
-    {
-        SentenceFragmentComponent *otherSentence = ents[i]->GetComponent<SentenceFragmentComponent>();
-
-        if(otherSentence != nullptr && otherSentence->Attraction != 0)
-        {
-            Opal::TransformComponent *otherTrans = ents[i]->GetComponent<Opal::TransformComponent>();
-            if(otherTrans == nullptr)
-            {
-                std::cout << "No transform on sentence fragment?!" << std::endl;
-            }
-            else
-            {
-                float dist = glm::distance(otherTrans->Position, mTransform->Position);
-                if(-500 < (otherTrans->Position.x - mTransform->Position.x) && (otherTrans->Position.x - mTransform->Position.x) < mAttractionScale)
-                {
-                    // dist /= 1000; 
-                    // dist = fmin(dist, 1.0f);
-                    // dist *= dist * 0.5f;
-                    // dist += 0.5f;
-
-                    mAttractionPoints.push_back(glm::vec2(otherTrans->Position.x, otherTrans->Position.y));
-                    if(dist > 200)
-                        mCurrentSpeed += 250 * (otherSentence->Attraction / dist) * dTime * (((otherTrans->Position.y - mTransform->Position.y) < 0) ? -1 : 1);
-                    mAttractionValues.push_back(250 * (otherSentence->Attraction / dist));
-                    beingDragged = true;
-                }
-            }
-        }
-    }
 
     bool takingInput = false;
 
@@ -100,37 +70,34 @@ void CursorComponent::Update(float dTime)
         mCurrentSpeed = -mMaxSpeed;
     }
 
-    if(!takingInput && !beingDragged && (mCurrentSpeed > dTime * mAcceleration || mCurrentSpeed < -dTime * mAcceleration))
-    {
-        mCurrentSpeed = Opal::OpalMath::Approach(mCurrentSpeed, 0, dTime);
-    }
-    else if(!takingInput && !beingDragged)
-    {
+    if(!takingInput)
         mCurrentSpeed = 0;
-    }
 
-    if(mTransform->Position.y > mUpperBound)
-    {
-        // Alternative option, just stops you
-        //mTransform->Position.y = Opal::OpalMath::Approach(mTransform->Position.y, (mLowerBound + mUpperBound) / 2, 0.01f);
-        //mCurrentSpeed = 0;
+    auto vel = mParent->GetComponent<Opal::VelocityComponent>();
+    vel->SetVelocity(vel->GetVelocity() + glm::vec3(0,mCurrentSpeed, 0));
 
-        mTransform->Position.y -= 10;
-        // Bounce off the boundary
-        mCurrentSpeed = -mCurrentSpeed;
-    }
-    else if(mTransform->Position.y < mLowerBound)
-    {
-        mTransform->Position += 10;
-        mCurrentSpeed = -mCurrentSpeed;
-    }
-
-    mParent->GetComponent<Opal::VelocityComponent>()->SetVelocity(glm::vec3(0,mCurrentSpeed, 0));
+    mLastSpeed = mCurrentSpeed;
 }
 
 void CursorComponent::Render(Opal::BatchRenderer2D *ctx) 
 {
+    ImGui_ImplVulkan_NewFrame();
+    ImGui_ImplGlfw_NewFrame();
 
+    ImGui::NewFrame();
+
+    ImGui::Begin("Player Info");
+
+    ImGui::DragFloat("Current Speed", &mCurrentSpeed);
+    int na = mAttractors.size();
+    ImGui::InputInt("Num Attractors", &na);
+
+    ImGui::DragFloat("Max Speed", &mMaxSpeed);
+    ImGui::DragFloat("Acceleration", &mAcceleration);
+
+    ImGui::End();
+    ImGui::Render();
+    ImGui::EndFrame();
 }
 
 bool CursorComponent::GetAlive()
@@ -222,9 +189,9 @@ void CursorComponent::UpdateVerts()
 
         float attraction = 0.0f;
 
-        for(int j = 0; j < mAttractionPoints.size(); j++)
+        for(int j = 0; j < mAttractors.size(); j++)
         {
-            glm::vec2 attractorDist = mAttractionPoints[j] - startPos;
+            glm::vec2 attractorDist = mAttractors[j].Position - startPos;
             glm::vec2 attractorVec = glm::normalize(attractorDist);
             glm::vec2 thisVec = glm::normalize(glm::vec2(cos(theta), sin(theta)));
 
@@ -232,7 +199,7 @@ void CursorComponent::UpdateVerts()
             float dotprodRaised = pow(dotprod,mAttractionFalloff);
             if(dotprod > 0)
             {
-                attraction += dotprodRaised * mAttractionModifier * (mAttractionValues[j])/mAttractionScale * ((glm::length(attractorDist)<100)? (glm::length(attractorDist)/100.0f):1.0f);
+                attraction += dotprodRaised * mAttractionModifier * (mAttractors[j].Strength)/mAttractionScale * ((glm::length(attractorDist)<100)? (glm::length(attractorDist)/100.0f):1.0f);
             }            
         }
 

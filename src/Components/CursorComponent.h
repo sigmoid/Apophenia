@@ -6,6 +6,7 @@
 #include "../../Opal/Collision/AABBCollision.h"
 #include "../../Opal/EntityComponent/TransformComponent.h"
 #include "../../Opal/Graphics/Mesh2D.h"
+#include "AttractableComponent.h"
 
 #include <vector>
 #include <string>
@@ -32,11 +33,13 @@ class CursorComponent : public Opal::Component
     private:
     float mNoiseScale = 0.05, mNoiseFreq = 1;
     float mTimeSinceBirth = 0;
-    float mMaxSpeed = 700, mCurrentSpeed, mAcceleration = 850;
+    float mMaxSpeed = 20, mCurrentSpeed = 0, mLastSpeed = 0, mAcceleration = 400;
     float mUpperBound = 1080 - 100, mLowerBound = 100;
     float mAttractionModifier = 25.0f;
     int mUpBinding = GLFW_KEY_W, mDownBinding = GLFW_KEY_S;
     Opal::TransformComponent *mTransform = nullptr;
+    AttractableComponent *mAttractable = nullptr;
+
     std::vector<std::string> mCurrentResponse;
     bool mAlive = true;
 
@@ -45,8 +48,7 @@ class CursorComponent : public Opal::Component
     int mAttractionFalloff = 5;
     glm::vec4 mMeshColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
     void UpdateVerts();
-    std::vector<glm::vec2> mAttractionPoints;
-    std::vector<float> mAttractionValues;
+    std::vector<Attractor> mAttractors;
     Opal::Mesh2D *mMesh;
     std::vector<float> mVertices;
 };

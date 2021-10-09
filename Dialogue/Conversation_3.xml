@@ -451,6 +451,147 @@ They offer free counseling.</Text>
         </Triggers>
 </Prompt>
 
+<Prompt>
+        <Text>What do you mean "glitches"?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>My VPN</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>randomly disconnected</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>yesterday</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>it never does that.</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>I have been noticing things... people staring, strange ads, "glitches"</Trigger>
+        </Triggers>
+</Prompt>
+
+<Prompt>
+        <Text>OK, I don't know what that means, but you're freaking me out.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>It freaks</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>me out too!</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I'm not sure who</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>it is yet, but...</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>My VPN randomly disconnected yesterday it never does that.</Trigger>
+        </Triggers>
+</Prompt>
+
+<Prompt>
+        <Text>No, not that. You sound crazy right now.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I'm not</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>crazy,</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>that actually happened</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>It freaks me out too! I'm not sure who it is yet, but...</Trigger>
+        </Triggers>
+</Prompt>
+
+<Prompt>
+        <Text>I know it happened, but it sounds like you're coming up with conspiracy theories.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Really?</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>No</Text><Attraction>400</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>Maybe</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I'm right</Text><Attraction>400</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>you're right</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I'm not crazy</Text><Attraction>400</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>I'm not crazy, that actually happened</Trigger>
+        </Triggers>
+</Prompt>
+
 <!-- back to the main branch -->
 
 <Prompt>
@@ -486,4 +627,39 @@ We should also schedule a doctor's appointment?</Text>
             <Trigger>Oh Really? That sounds good, I could do that</Trigger>
         </Triggers>
 </Prompt>
+
+<Prompt IsEnd="True">
+        <Text>It's going to take some time to get you in with the therapist, but I can make a doctor's appointment soon.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Yeah,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>sounds good,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>thanks</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Yeah, sounds good, thanks</Trigger>
+            <Trigger>Really? Maybe you're right</Trigger>
+        </Triggers>
+</Prompt>
+
 </Game>

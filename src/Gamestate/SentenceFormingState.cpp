@@ -8,8 +8,11 @@
 #include "../../Opal/EntityComponent/VelocityComponent.h"
 #include "../../Opal/Collision/AABBCollision.h"
 #include "../Components/CursorComponent.h"
+#include "../Components/NoiseMoveComponent.h"
 #include "../Components/SentenceFragmentComponent.h"
 #include "../Components/EndWallComponent.h"
+#include "../Components/AttractableComponent.h"
+#include "../Components/DragComponent.h"
 #include "../DialogueSystem/DialogueManager.h"
 #include "../DialogueSystem/Response.h"
 
@@ -93,6 +96,7 @@ void SentenceFormingState::Render()
 
     // dEBUG mLineRenderer->DrawLine(glm::vec2(0,0), glm::vec2(1000,1000), glm::vec4(1,0,0,1), 3);
     DrawCursorLine();
+    RenderSparks();
 
     mLineRenderer->Render();
 }
@@ -110,7 +114,7 @@ void SentenceFormingState::Begin()
 
         mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(mGame->GetWidth() - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
         mLineRenderer = new Opal::LineRenderer();
-        mLineRenderer->Init(mGame->Renderer);
+        mLineRenderer->Init(mGame->Renderer, true);
 
         std::vector<Opal::Texture*> textures;
         mCursorTexture = mGame->Renderer->CreateTexture("../textures/cursor.png");
@@ -119,10 +123,10 @@ void SentenceFormingState::Begin()
     }
     mScene = new Opal::Scene(mBatch);
     CreatePlayer();
+    CreateSparks();
+    PreBakeLines();
 
     CreatePlayingField();
-
-    mScene->Start();
 }
 
 void SentenceFormingState::CreatePlayingField()
@@ -208,6 +212,10 @@ void SentenceFormingState::CreatePlayer()
     mCursorEntity->AddComponent(collider);
     Opal::VelocityComponent *velocity = new Opal::VelocityComponent();
     mCursorEntity->AddComponent(velocity);
+    AttractableComponent *attr = new AttractableComponent(true);
+    mCursorEntity->AddComponent(attr);
+    DragComponent *drag = new DragComponent(1);
+    mCursorEntity->AddComponent(drag);
 
     mScene->AddEntity(mCursorEntity);
 }
@@ -268,12 +276,12 @@ void SentenceFormingState::DrawCursorLine()
     }
 }
 
-void SentenceFormingState::UpdateCursorLine()
+void SentenceFormingState::UpdateCursorLine(float timeOverride)
 {
     int cutoffpoint = -1;
     for(int i = 0; i < mLinePoints.size(); i++)
     {
-        mLinePoints[i].x -= mLineSpeed * mGame->GetDeltaTime();
+        mLinePoints[i].x -= mLineSpeed * ((timeOverride > 0) ? timeOverride : mGame->GetDeltaTime());
         if(mLinePoints[i].x < mLineCutoff)
             cutoffpoint = i;
     }
@@ -309,4 +317,91 @@ std::string SentenceFormingState::ConcatSelection(std::vector<std::string> selec
         res += selection[i] + ((i == selection.size()-1) ? "" : " "); 
     }
     return res;
+}
+
+void SentenceFormingState::CreateSparks()
+{
+    for(int i = 0; i < mNumSparks; i++)
+    {
+        CreateRandomSpark();
+    }
+}
+
+void SentenceFormingState::PreBakeLines()
+{
+    mScene->Start();
+    for(int i = 0; i < 50; i++)
+    {
+        mScene->Update(1 / 60.0f);
+        UpdateCursorLine(1 / 60.0f);
+    }
+}
+
+void SentenceFormingState::CreateRandomSpark()
+{
+    glm::vec2 pos = glm::vec2(rand() % mGame->GetWidth() , rand() % mGame->GetHeight());
+    glm::vec4 startColor = glm::vec4(1,1,1,0.25f);
+    glm::vec4 endColor = glm::vec4(1,1,1,0);
+    int length = rand()%15 + 3;
+    float res = 0.01f;
+    int width = 2;
+    float xVel = mLineSpeed * ((rand() % 100) / 100.0f * 0.5f + 0.9f);
+
+    Opal::Entity *mSparkEntity = new Opal::Entity();
+
+    Opal::TransformComponent *transform = new Opal::TransformComponent();
+    transform->Position = glm::vec3(pos.x, pos.y, 0);
+    mSparkEntity->AddComponent(transform);
+    Opal::VelocityComponent *velocity = new Opal::VelocityComponent();
+    velocity->SetVelocity(glm::vec3(xVel,0,0));
+    mSparkEntity->AddComponent(velocity);
+    AttractableComponent *attr = new AttractableComponent(true);
+    mSparkEntity->AddComponent(attr);
+    SparkComponent *spark = new SparkComponent(width, startColor, endColor, length, res);
+    mSparkEntity->AddComponent(spark);
+    DragComponent *drag = new DragComponent(1);
+    mSparkEntity->AddComponent(drag);
+    NoiseMoveComponent *mover = new NoiseMoveComponent(1,1, 0.05f, rand() % 10000);
+    mSparkEntity->AddComponent(mover);
+
+    mScene->AddEntity(mSparkEntity);
+    mSparkEntities.push_back(mSparkEntity);
+}
+
+void SentenceFormingState::RenderSparks()
+{
+    std::vector<int> deleteIds;
+
+    for(int i = 0; i < mSparkEntities.size(); i++)
+    {
+        SparkComponent *spark = mSparkEntities[i]->GetComponent<SparkComponent>();
+        Opal::TransformComponent *trans = mSparkEntities[i]->GetComponent<Opal::TransformComponent>();
+
+        if(trans->Position.x > mGame->GetWidth())
+        {
+            mScene->RemoveEntity(mSparkEntities[i]);
+            deleteIds.push_back(i);
+            CreateRandomSpark();
+        }
+
+        SparkTrail data = spark->TrailData;
+
+        for(int j = data.Points.size()-1; j > 1; j--)
+        {
+            glm::vec4 currentColor = data.StartColor;
+            currentColor.r = Opal::OpalMath::Lerp(currentColor.r, data.EndColor.r, (float)(data.Points.size() - j) / (float) data.Points.size());
+            currentColor.g = Opal::OpalMath::Lerp(currentColor.g, data.EndColor.g, (float)(data.Points.size() - j) / (float) data.Points.size());
+            currentColor.b = Opal::OpalMath::Lerp(currentColor.b, data.EndColor.b, (float)(data.Points.size() - j) / (float) data.Points.size());
+            currentColor.a = Opal::OpalMath::Lerp(currentColor.a, data.EndColor.a, (float)(data.Points.size() - j) / (float) data.Points.size());
+
+            mLineRenderer->DrawLine(data.Points[j-1],data.Points[j], currentColor, data.Width);
+        }
+    }
+
+    std::reverse(deleteIds.begin(), deleteIds.end());
+
+    for(int i = 0; i < deleteIds.size(); i++)
+    {
+        mSparkEntities.erase(mSparkEntities.begin() + deleteIds[i]);
+    }
 }

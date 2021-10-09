@@ -30,7 +30,7 @@ class PlayState : public Opal::Gamestate
 
     int mCurrentConversation = 0;
 
-    float mTransitionTimer = 0, mTransitionDuration = 5;
+    float mTransitionTimer = 0, mTransitionDuration = 1;
     glm::vec4 mPreviousColor = glm::vec4(101.0f/255.0f, 130.0f/255.0f, 191.0f/255.0f, 1);
 
     void UpdateColor();
