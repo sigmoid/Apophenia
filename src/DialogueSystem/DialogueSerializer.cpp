@@ -100,5 +100,6 @@ SentenceFragment DialogueSerializer::DeserializeFragment(tinyxml2::XMLElement *r
 
     res.Text = root->FirstChildElement("Text")->GetText();
     res.Attraction = root->FirstChildElement("Attraction")->FloatText();
+    res.IsIntrusive = root->BoolAttribute("IsIntrusive", false);
     return res;
 } 

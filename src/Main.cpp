@@ -3,6 +3,7 @@
 #include "../Opal/Game.h"
 
 #include "Gamestate/PlayState.h"
+#include "Gamestate/SentenceFormingState.h"
 #include "DialogueSystem/DialogueManager.h"
 
 int main(int argc, char **argv)
@@ -11,13 +12,17 @@ int main(int argc, char **argv)
     game.Init(1920, 1080, "Apophenia", Opal::RendererType::VULKAN);
 
     game.SetFramerateLock(60);
-    game.ToggleDebugInfo(true);
+    game.ToggleDebugInfo(false);
 
     game.Renderer->CreateOrthoCamera(1920, 1080, -1000, 1000);
 
     DialogueManager dialogue("../Dialogue/TestDialogue.xml");
 
     game.PushState<PlayState>();
+
+    // Hacky way to initialize the renderers for the sentence forming state before the window can be resized
+    game.PushState<SentenceFormingState>();
+    game.PopState();
 
     while(!game.ShouldEnd())
     {

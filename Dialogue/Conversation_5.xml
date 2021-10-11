@@ -540,7 +540,7 @@
         <Triggers>
             <Trigger>I don't think this studio will take me on as an intern if they find out that I quit</Trigger>   
         </Triggers>
-        <Text>Maybe not, but your health is more important than me than an internship, and it should be to you, too.</Text>
+        <Text>Maybe not, but your health is more important to me than an internship, and it should be to you, too.</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>

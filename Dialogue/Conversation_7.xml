@@ -1,0 +1,262 @@
+<!-- Colors -->
+<!-- Basic White            
+    <Color>
+        <r>0.9</r>
+        <g>0.9</g>
+        <b>0.9</b>
+        <a>1.0</a>
+    </Color>
+    -->
+
+ <!-- Doctor            
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+<Game>
+    <Prompt TransitionText="Days Later">
+        <Text>Hello?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>need</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>help</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I need help</Trigger>   
+        </Triggers>
+        <Text>Who is this?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I saw you</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>a few weeks</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>ago</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I don't</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>know what</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>to do</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1500</Speed>
+        </Response>
+        <Color>
+            <r>0.4</r>
+            <g>0.4</g>
+            <b>0.4</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I saw you a few weeks ago I don't know what to do</Trigger>   
+        </Triggers>
+        <Text>Ok, I remember you. What's going on, is it an emergency?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>yes</Text><Attraction>1000</Attraction></Fragment>
+                    <Fragment><Text>no</Text><Attraction>1000</Attraction></Fragment>
+                    <Fragment><Text>maybe?</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>it's anxiety</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>again, but</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>its so bad</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1500</Speed>
+        </Response>
+        <Color>
+            <r>0.4</r>
+            <g>0.4</g>
+            <b>0.4</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>yes it's anxiety again, but its so bad</Trigger>  
+            <Trigger>no it's anxiety again, but its so bad</Trigger>  
+            <Trigger>maybe? it's anxiety again, but its so bad</Trigger>   
+        </Triggers>
+        <Text>How do you feel right now?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I feel like</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I might</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>pass out</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>everything is</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>freaking me out</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I can't move</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>but I can't</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>stay still</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1500</Speed>
+        </Response>
+        <Color>
+            <r>0.4</r>
+            <g>0.4</g>
+            <b>0.4</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I feel like I might pass out everything is freaking me out I can't move but I can't stay still</Trigger>
+        </Triggers>
+        <Text>I think you're having a panic attack. Are you in a safe place right now? Is there anyone there with you.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I'm home</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>my roommate's</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>here, but</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I can't</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>talk to him</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1500</Speed>
+        </Response>
+        <Color>
+            <r>0.4</r>
+            <g>0.4</g>
+            <b>0.4</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I'm home my roommate's here, but I can't talk to him</Trigger>
+        </Triggers>
+        <Text>Why can't you talk to him?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>He's busy...</Text><Attraction>1000</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>I can't</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I don't</Text><Attraction>1000</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>let him</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>want to</Text><Attraction>1000</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>see me</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment IsIntrusive="True"><Text>like this</Text><Attraction>2000</Attraction></Fragment>
+                    <Fragment><Text>bug him</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1500</Speed>
+        </Response>
+        <Color>
+            <r>0.4</r>
+            <g>0.4</g>
+            <b>0.4</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+</Game>

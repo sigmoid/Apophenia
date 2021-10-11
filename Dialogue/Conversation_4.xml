@@ -378,6 +378,7 @@
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I guess I</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>Stupid idea</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>am open to</Text><Attraction>0</Attraction></Fragment>

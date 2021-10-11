@@ -5,13 +5,17 @@ SentenceFragmentComponent::SentenceFragmentComponent()
     TypeName = "SentenceFragmentComponent";
 }
 
-SentenceFragmentComponent::SentenceFragmentComponent(std::string text, float speed, glm::vec4 color, float attraction)
+SentenceFragmentComponent::SentenceFragmentComponent(std::string text, float speed, glm::vec4 color, float attraction, bool intrusive)
 {
     TypeName = "SentenceFragmentComponent";
     Text = text;
     Speed = speed;
     Color = color;
     Attraction = attraction;
+    IsIntrusive = intrusive;
+
+    if(IsIntrusive)
+        Color = IntrusiveColor;
 }
 
 void SentenceFragmentComponent::OnAdded()
@@ -32,7 +36,7 @@ void SentenceFragmentComponent::Update(float dTime)
 void SentenceFragmentComponent::Interact()
 {
     mActive = false;
-    Color = glm::vec4(1, 0, 0 , 1);
+    Color.a = 0.2f;
 }
 
 bool SentenceFragmentComponent::GetActive()

@@ -6,4 +6,5 @@ struct SentenceFragment
 {
     std::string Text;
     float Attraction;
+    bool IsIntrusive = false;
 };

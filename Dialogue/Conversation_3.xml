@@ -198,7 +198,7 @@ Just Breathe right now.</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>The central</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>"The central</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>ludic metaphor</Text><Attraction>0</Attraction></Fragment>
@@ -239,7 +239,7 @@ How long have you been working on it.</Text>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>maybe an hour?</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>at least 4 hours.</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>at least 4 hours.</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -257,7 +257,7 @@ How long have you been working on it.</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>The central ludic metaphor in Case's WBWWB is...</Trigger>
+            <Trigger>"The central ludic metaphor in Case's WBWWB is...</Trigger>
         </Triggers>
 </Prompt>
 
@@ -302,7 +302,7 @@ How long have you been working on it.</Text>
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Maybe...</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>No mom</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>No mom</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>I have been</Text><Attraction>0</Attraction></Fragment>
@@ -562,15 +562,15 @@ They offer free counseling.</Text>
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Really?</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>No</Text><Attraction>400</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>No</Text><Attraction>400</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>Maybe</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>I'm right</Text><Attraction>400</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>I'm right</Text><Attraction>400</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>you're right</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>I'm not crazy</Text><Attraction>400</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>I'm not crazy</Text><Attraction>400</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>

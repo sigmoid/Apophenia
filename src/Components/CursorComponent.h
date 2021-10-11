@@ -33,6 +33,8 @@ class CursorComponent : public Opal::Component
     private:
     float mNoiseScale = 0.05, mNoiseFreq = 1;
     float mTimeSinceBirth = 0;
+    std::vector<float> mLastRadii;
+    float mLerpFactor = 0.6f;
     float mMaxSpeed = 20, mCurrentSpeed = 0, mLastSpeed = 0, mAcceleration = 400;
     float mUpperBound = 1080 - 100, mLowerBound = 100;
     float mAttractionModifier = 25.0f;
@@ -43,7 +45,7 @@ class CursorComponent : public Opal::Component
     std::vector<std::string> mCurrentResponse;
     bool mAlive = true;
 
-    float mRadius = 34.0f, mNumTris = 128, mNoiseIntensity = 10;
+    float mRadius = 34.0f, mMaxRadius = 69.0f, mNumTris = 128, mNoiseIntensity = 10;
     float mAttractionScale = 1200.0f;
     int mAttractionFalloff = 5;
     glm::vec4 mMeshColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);

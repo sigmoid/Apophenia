@@ -22,11 +22,26 @@
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>I</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I</Text><Attraction>1000</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>am</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>feel</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>am</Text><Attraction>1000</Attraction></Fragment>
+                    <Fragment><Text>feel</Text><Attraction>1000</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>great</Text><Attraction>0</Attraction></Fragment>
@@ -39,7 +54,7 @@
                 <b>0.0000</b>
                 <a>1.0</a>
             </Color>
-            <Speed>50</Speed>
+            <Speed>800</Speed>
         </Response>
     <Color>
         <r>0.6118</r>
@@ -83,10 +98,7 @@ How did the interview go?</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>I am just fine</Trigger>
-            <Trigger>I feel just fine</Trigger> 
-            <Trigger>I am great</Trigger>
-            <Trigger>I feel great</Trigger>   
+            <Trigger>NONE</Trigger>  
         </Triggers>
     </Prompt>
 

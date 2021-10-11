@@ -27,21 +27,14 @@
     -->   
 <Game>
     <Prompt TransitionText="Next Day">
-        <Text>So how is grading the first assignment going?</Text>
+        <Text>Hey, sorry I can't talk long. I have to finish something here before noon.</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>It's going</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Okay, this shouldn't</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>well</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>terribly</Text><Attraction>700</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>I'm about</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>halfway done</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>take long</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -50,7 +43,7 @@
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>600</Speed>
+            <Speed>900</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -64,15 +57,17 @@
     </Prompt>
 
     <Prompt>
-        <Text>Wow halfway? It's only been a day. How did you manage that?</Text>
+        <Triggers>
+            <Trigger>Okay, this shouldn't take long</Trigger>   
+        </Triggers>
+        <Text>What's wrong? You seem upset.</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Well, I</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I think I</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>had a lot of time yesterday</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>stayed up late last night</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>need to quit</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -81,7 +76,7 @@
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>600</Speed>
+            <Speed>1000</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -89,59 +84,23 @@
         <b>0.3020</b>
         <a>1.0</a>
     </Color>
-        <Triggers>
-            <Trigger>It's going well I'm about halfway done</Trigger>
-        </Triggers>
-    </Prompt>
-
-        <Prompt>
-        <Text>Okay, well, just make sure you're taking care of your other classes before this job.
-You're a good student, I don't want to change that.</Text>
-        <Response>
-            <Fragments>
-                <FragmentGroup>
-                    <Fragment><Text>Thanks,</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>I will</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-            </Fragments>
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-            <Speed>600</Speed>
-        </Response>
-    <Color>
-        <r>0.2549</r>
-        <g>0.0941</g>
-        <b>0.3020</b>
-        <a>1.0</a>
-    </Color>
-        <Triggers>
-            <Trigger>Well, I had a lot of time yesterday</Trigger>
-            <Trigger>Well, I stayed up late last night</Trigger>
-        </Triggers>
     </Prompt>
 
     <Prompt>
-        <Text>Who's teaching your Database Systems class?</Text>
+        <Triggers>
+            <Trigger>I think I need to quit</Trigger>   
+        </Triggers>
+        <Text>I thought you might. I heard from someone else what's been going on.</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>I forget</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Which professor?</Text><Attraction>900</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>their name,</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Is it that</Text><Attraction>900</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>but they seem</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>cool</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>uptight</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>obvious?</Text><Attraction>900</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -150,7 +109,7 @@ You're a good student, I don't want to change that.</Text>
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>600</Speed>
+            <Speed>1000</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -158,29 +117,20 @@ You're a good student, I don't want to change that.</Text>
         <b>0.3020</b>
         <a>1.0</a>
     </Color>
-        <Triggers>
-            <Trigger>Thanks, I will</Trigger>
-        </Triggers>
     </Prompt>
 
     <Prompt>
-        <Text>Well, let me know when you find out.
-a student said you had trouble during lab yesterday.
-What happened there?</Text>
+        <Triggers>
+            <Trigger>Which professor? Is it that obvious?</Trigger>   
+        </Triggers>
+        <Text>Not one of your professors, someone else in this department mentioned that you opened up to them about being stressed out. It's okay, I understand.</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>It's been</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>So everyone</Text><Attraction>900</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>a few years</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>since I took this class</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>so I need to review</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>so I forgot everything</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>knows</Text><Attraction>900</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -189,7 +139,7 @@ What happened there?</Text>
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>600</Speed>
+            <Speed>1000</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -197,24 +147,23 @@ What happened there?</Text>
         <b>0.3020</b>
         <a>1.0</a>
     </Color>
-        <Triggers>
-            <Trigger>I forget their name, but they seem cool</Trigger>
-        </Triggers>
     </Prompt>
 
     <Prompt>
-        <Text>I figured. Most TA's struggle with that. It comes back to you.</Text>
+        <Triggers>
+            <Trigger>So everyone knows</Trigger>   
+        </Triggers>
+        <Text>No! They just told me because you work with me. Nobody is gossiping about this. We're concerned for you.</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Good to hear.</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>I'm sure it does.</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Okay.</Text><Attraction>500</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>What's</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>So what</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>coming up next?</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>happens now?</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -223,7 +172,7 @@ What happened there?</Text>
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>600</Speed>
+            <Speed>800</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -231,55 +180,23 @@ What happened there?</Text>
         <b>0.3020</b>
         <a>1.0</a>
     </Color>
-        <Triggers>
-            <Trigger>It's been a few years since I took this class so I need to review</Trigger>
-        </Triggers>
-    </Prompt>
-    <Prompt>
-        <Text>Well, we're just digging deeper into C++ next lecture. So study up on polymorphism.</Text>
-        <Response>
-            <Fragments>
-                <FragmentGroup>
-                    <Fragment><Text>Great, so</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>just inheritance</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>right?</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-            </Fragments>
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-            <Speed>600</Speed>
-        </Response>
-    <Color>
-        <r>0.2549</r>
-        <g>0.0941</g>
-        <b>0.3020</b>
-        <a>1.0</a>
-    </Color>
-        <Triggers>
-            <Trigger>Good to hear. What's coming up next?</Trigger>
-            <Trigger>I'm sure it does. What's coming up next?</Trigger>
-        </Triggers>
     </Prompt>
 
     <Prompt>
-        <Text>Yes, but also multi-inheritence, object slicing, and the memory model behind it all.</Text>
+        <Triggers>
+            <Trigger>So everyone knows</Trigger>   
+        </Triggers>
+        <Text>No! They just told me because you work with me. Nobody is gossiping about this. We're concerned for you.</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Oh right,</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>Oh fuck,</Text><Attraction>600</Attraction></Fragment>
+                    <Fragment><Text>Okay.</Text><Attraction>500</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>I remember</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>what even is object slicing?</Text><Attraction>600</Attraction></Fragment>
+                    <Fragment><Text>So what</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>happens now?</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -288,7 +205,7 @@ What happened there?</Text>
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>900</Speed>
+            <Speed>800</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -296,38 +213,24 @@ What happened there?</Text>
         <b>0.3020</b>
         <a>1.0</a>
     </Color>
-        <Triggers>
-            <Trigger>Great, so just inheritance right?</Trigger>
-        </Triggers>
     </Prompt>
 
     <Prompt>
-        <Text>What's on your plate now?
-Do you have time to do the next assignment before class next week?</Text>
+        <Triggers>
+            <Trigger>Okay. So what happens now?</Trigger>   
+        </Triggers>
+        <Text>Well, I can tell the other TAs. I'll just tell them you had a personal conflict. And I want you to make sure you are paid. So you'll need to talk to accounting.</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Of course! I</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>What? No I</Text><Attraction>600</Attraction></Fragment>
+                    <Fragment><Text>And what will</Text><Attraction>500</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>can get that done tomorrow.</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>have so much to do</Text><Attraction>600</Attraction></Fragment>
+                    <Fragment><Text>you tell</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>Like, I have to</Text><Attraction>600</Attraction></Fragment>
+                    <Fragment><Text>the students?</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>work on Databases</Text><Attraction>600</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>work on my game</Text><Attraction>600</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>prepare for interviews</Text><Attraction>600</Attraction></Fragment>
-                    <Fragment><Text>sleep</Text><Attraction>600</Attraction></Fragment>
-                </FragmentGroup>
-
             </Fragments>
             <Color>
                 <r>0.2549</r>
@@ -335,7 +238,7 @@ Do you have time to do the next assignment before class next week?</Text>
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>900</Speed>
+            <Speed>800</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -343,20 +246,32 @@ Do you have time to do the next assignment before class next week?</Text>
         <b>0.3020</b>
         <a>1.0</a>
     </Color>
-        <Triggers>
-            <Trigger>Oh right, I remember</Trigger>
-        </Triggers>
     </Prompt>
-    
-    <Prompt IsEnd="True">
-        <Text>Good. No rush. I'll see you next week. Have a nice weekend</Text>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>And what will you tell the students?</Trigger>   
+        </Triggers>
+        <Text>Nothing at all. Before you go, I want to know if there is anything I could have done better to make this job easier for you?</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>You too,</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Well, I feel</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>Professor</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>your expectations</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>are a bit high</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment IsIntrusive="True"><Text>but maybe</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment IsIntrusive="True"><Text>I'm just</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment IsIntrusive="True"><Text>not good enough</Text><Attraction>800</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -365,7 +280,7 @@ Do you have time to do the next assignment before class next week?</Text>
                 <b>0.3020</b>
                 <a>1.0</a>
             </Color>
-            <Speed>600</Speed>
+            <Speed>800</Speed>
         </Response>
     <Color>
         <r>0.2549</r>
@@ -373,8 +288,35 @@ Do you have time to do the next assignment before class next week?</Text>
         <b>0.3020</b>
         <a>1.0</a>
     </Color>
+    </Prompt>
+
+    <Prompt IsEnd = "True">
         <Triggers>
-            <Trigger>Of course! I can get that done tomorrow.</Trigger>
+            <Trigger>Well, I feel your expectations are a bit high</Trigger>   
         </Triggers>
+        <!-- Slightly annoyed and pissed off -->
+        <Text>What? 
+Okay.
+Well, good luck.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Well, I feel</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
     </Prompt>
 </Game>

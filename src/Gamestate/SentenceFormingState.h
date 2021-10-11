@@ -30,7 +30,9 @@ class SentenceFormingState : public Opal::Gamestate
 
     private:
     static Opal::FontRenderer *mTextRenderer;
+    static Opal::FontRenderer *mResponseRenderer;
     static Opal::RenderPass *mTextPass;
+    static Opal::RenderPass *mBGPass;
     static Opal::BatchRenderer2D *mBatch;
     static Opal::MeshRenderer2D *mMeshRenderer;
     static Opal::Texture *mCursorTexture;
@@ -50,12 +52,17 @@ class SentenceFormingState : public Opal::Gamestate
 
     void PreBakeLines();
 
-    void CreateSentenceFragment(glm::vec3 pos, std::string text, float attraction, float speed);
+    void CreateSentenceFragment(glm::vec3 pos, std::string text, float attraction, float speed, bool intrusive);
     void RenderSentenceFragments();
     glm::vec4 mFragmentColor = glm::vec4(0.9, 0.9, 0.9, 1.0f);
     std::vector<Opal::Entity *> mFragmentEnts;
     float mFragmentSize = 80;
     static Opal::Font *mFont;
+    static Opal::Font *mResponseFont;
+
+    float mNoiseFrequency = 12.5f;
+    float mNoiseScaleJ = 5.0f;
+    float mNoiseScale = 15.0f;
 
     void CreatePlayer();
 

@@ -165,7 +165,7 @@ You've got a lot on your plate.</Text>
                     <Fragment><Text>Everything is</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>falling apart</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>falling apart</Text><Attraction>700</Attraction></Fragment>
                     <Fragment><Text>fine</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>

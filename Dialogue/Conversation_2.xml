@@ -35,7 +35,7 @@
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>well</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>terribly</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>terribly</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>I'm about</Text><Attraction>0</Attraction></Fragment>
@@ -127,7 +127,7 @@ You're a good student, I don't want to change that.</Text>
     </Prompt>
 
     <Prompt>
-        <Text>Who's teaching your Database Systems class?</Text>
+        <Text>How is Database Systems going? Who's teaching it this semester?</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
@@ -141,7 +141,7 @@ You're a good student, I don't want to change that.</Text>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>cool</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>uptight</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>uptight</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -180,7 +180,7 @@ What happened there?</Text>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>so I need to review</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>so I forgot everything</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>so I forgot everything</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -275,11 +275,11 @@ What happened there?</Text>
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Oh right,</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>Oh fuck,</Text><Attraction>600</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>Oh fuck,</Text><Attraction>600</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>I remember</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>what even is object slicing?</Text><Attraction>600</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>what even is object slicing?</Text><Attraction>600</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -308,24 +308,24 @@ Do you have time to do the next assignment before class next week?</Text>
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Of course! I</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>What? No I</Text><Attraction>600</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>What? No I</Text><Attraction>600</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>can get that done tomorrow.</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>have so much to do</Text><Attraction>600</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>have so much to do</Text><Attraction>600</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>Like, I have to</Text><Attraction>600</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>I have to</Text><Attraction>600</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>work on Databases</Text><Attraction>600</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>work on Databases</Text><Attraction>600</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>work on my game</Text><Attraction>600</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>work on my game</Text><Attraction>600</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>prepare for interviews</Text><Attraction>600</Attraction></Fragment>
-                    <Fragment><Text>sleep</Text><Attraction>600</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>prepare for interviews</Text><Attraction>600</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>sleep</Text><Attraction>600</Attraction></Fragment>
                 </FragmentGroup>
 
             </Fragments>

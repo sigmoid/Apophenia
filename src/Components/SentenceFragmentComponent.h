@@ -13,7 +13,7 @@ class SentenceFragmentComponent : public Opal::Component
 {
     public:
     SentenceFragmentComponent();
-    SentenceFragmentComponent(std::string text, float speed, glm::vec4 color, float attraction);
+    SentenceFragmentComponent(std::string text, float speed, glm::vec4 color, float attraction, bool intrusive);
 
     virtual void OnAdded() override;
     virtual void OnStart() override;
@@ -27,9 +27,12 @@ class SentenceFragmentComponent : public Opal::Component
     void Interact();
     bool GetActive();
 
+    bool IsIntrusive = false;
+
     std::string Text;
     float Speed = 100;
     glm::vec4 Color = glm::vec4(0.9,0.9,0.9,1.0);
+    glm::vec4 IntrusiveColor = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
     float Attraction = 0;
 
     private:

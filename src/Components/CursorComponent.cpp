@@ -30,6 +30,7 @@ void CursorComponent::OnStart()
     mAttractable = mParent->GetComponent<AttractableComponent>();
 
     mMesh = Opal::Game::Instance->Renderer->CreateMesh((mNumTris+1) * 3);
+    mLastRadii.resize(mNumTris, -1);
 }
 
 void CursorComponent::Reset()
@@ -88,12 +89,7 @@ void CursorComponent::Render(Opal::BatchRenderer2D *ctx)
 
     // ImGui::Begin("Player Info");
 
-    // ImGui::DragFloat("Current Speed", &mCurrentSpeed);
-    // int na = mAttractors.size();
-    // ImGui::InputInt("Num Attractors", &na);
-
-    // ImGui::DragFloat("Max Speed", &mMaxSpeed);
-    // ImGui::DragFloat("Acceleration", &mAcceleration);
+    // ImGui::DragFloat("Max Radius", &mMaxRadius);
 
     // ImGui::End();
     // ImGui::Render();
@@ -199,7 +195,7 @@ void CursorComponent::UpdateVerts()
             float dotprodRaised = pow(dotprod,mAttractionFalloff);
             if(dotprod > 0)
             {
-                attraction += dotprodRaised * mAttractionModifier * (mAttractors[j].Strength)/mAttractionScale * ((glm::length(attractorDist)<100)? (glm::length(attractorDist)/100.0f):1.0f);
+                attraction += dotprodRaised * mAttractionModifier * ((mAttractors[j].Strength)/mAttractionScale);
             }            
         }
 
@@ -210,6 +206,16 @@ void CursorComponent::UpdateVerts()
         {
             newRadius = Opal::OpalMath::Approach(mRadius + noiseVal + attraction, firstRadius, (circleProgress - 0.8f) * 5.0f);
         }
+
+        if(newRadius > mMaxRadius)
+            newRadius = mMaxRadius;
+
+        if(mLastRadii[i] > 0)
+        {
+            newRadius = Opal::OpalMath::Approach(mLastRadii[i], newRadius, mLerpFactor);
+        }
+
+        mLastRadii[i] = newRadius;
 
         curPos.x += cos(theta) * newRadius;
         curPos.y += sin(theta) * newRadius;
