@@ -311,7 +311,7 @@ How long have you been working on it.</Text>
                     <Fragment><Text>stressed out lately</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>but I don't need help</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>but I don't need help</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>

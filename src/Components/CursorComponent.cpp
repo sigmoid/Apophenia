@@ -71,6 +71,11 @@ void CursorComponent::Update(float dTime)
         mCurrentSpeed = -mMaxSpeed;
     }
 
+    if(mKilled)
+    {
+        takingInput = true;
+        mCurrentSpeed += mAcceleration * 1.5f * dTime;
+    }
     if(!takingInput)
         mCurrentSpeed = 0;
 
@@ -78,6 +83,16 @@ void CursorComponent::Update(float dTime)
     vel->SetVelocity(vel->GetVelocity() + glm::vec3(0,mCurrentSpeed, 0));
 
     mLastSpeed = mCurrentSpeed;
+}
+
+void CursorComponent::Kill()
+{
+    mKilled = true;
+}
+
+bool CursorComponent::GetKill()
+{
+    return mKilled;
 }
 
 void CursorComponent::Render(Opal::BatchRenderer2D *ctx) 

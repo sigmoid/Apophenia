@@ -22,30 +22,7 @@
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>I</Text><Attraction>1000</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>I</Text><Attraction>1000</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>I</Text><Attraction>1000</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>I</Text><Attraction>1000</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>I</Text><Attraction>1000</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>I</Text><Attraction>1000</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>am</Text><Attraction>1000</Attraction></Fragment>
-                    <Fragment><Text>feel</Text><Attraction>1000</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>great</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>just fine</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>ABSOLUtEly WONDERful, duED</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -54,7 +31,7 @@
                 <b>0.0000</b>
                 <a>1.0</a>
             </Color>
-            <Speed>800</Speed>
+            <Speed>1000</Speed>
         </Response>
     <Color>
         <r>0.6118</r>
@@ -89,7 +66,7 @@ How did the interview go?</Text>
                 <b>0.0000</b>
                 <a>1.0</a>
             </Color>
-            <Speed>50</Speed>
+            <Speed>800</Speed>
         </Response>
     <Color>
         <r>0.6118</r>
@@ -98,7 +75,7 @@ How did the interview go?</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>NONE</Trigger>  
+            <Trigger>ABSOLUtEly WONDERful, duED</Trigger>  
         </Triggers>
     </Prompt>
 

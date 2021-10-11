@@ -48,6 +48,9 @@ class SentenceFormingState : public Opal::Gamestate
     void UpdateCursorLine(float timeOverride = -1);
     void DrawCursorLine();
 
+    float mKillEventTimer = 0;
+    float mKillWaitTime = 3.4f;
+
     void CreatePlayingField();
 
     void PreBakeLines();
@@ -63,6 +66,9 @@ class SentenceFormingState : public Opal::Gamestate
     float mNoiseFrequency = 12.5f;
     float mNoiseScaleJ = 5.0f;
     float mNoiseScale = 15.0f;
+
+    float mSparkScale = 0.1f;
+    float mSparkFreq = 0.95f;
 
     void CreatePlayer();
 

@@ -18,6 +18,8 @@
 #include "../DialogueSystem/DialogueManager.h"
 #include "../DialogueSystem/Response.h"
 
+#include "../../Opal/Logger.h"
+
 // Static members
 Opal::FontRenderer *SentenceFormingState::mTextRenderer = nullptr;
 Opal::FontRenderer *SentenceFormingState::mResponseRenderer = nullptr;
@@ -36,6 +38,27 @@ SentenceFormingState::SentenceFormingState()
 
 void SentenceFormingState::Tick()
 {
+    if(Opal::InputHandler::GetKey(GLFW_KEY_ESCAPE))
+    {
+        mGame->PopState();
+        return;
+    }
+
+    if(Opal::InputHandler::GetKey(GLFW_KEY_K))
+    {
+        mKillEventTimer = 1;
+    }
+
+    if(mKillEventTimer > 0)
+    {
+        mKillEventTimer -= mGame->GetDeltaTime();
+
+        if(mKillEventTimer <= 0)
+        {
+            mCursorEntity->GetComponent<CursorComponent>()->Kill();
+        }
+    }
+
     if (mScreenShakeTimer > 0)
     {
         Opal::Camera::ActiveCamera->MoveCamera(glm::vec2((rand() % mScreenShakeIntensity * 1000) / 1000.0f - (float)mScreenShakeIntensity / 2, (rand() % mScreenShakeIntensity * 1000) / 1000.0f - (float)mScreenShakeIntensity / 2));
@@ -52,7 +75,15 @@ void SentenceFormingState::Tick()
     {
         auto response = mCursorEntity->GetComponent<CursorComponent>()->GetResponse();
         std::string responseStr = ConcatSelection(response);
-        if (!DialogueManager::Instance->ProcessResponse(responseStr))
+
+        if(mCursorEntity->GetComponent<CursorComponent>()->GetKill())
+        {
+            DialogueManager::Instance->ProcessResponse("KILL");
+            free(mScene);
+            mGame->PopState();
+            return;
+        }
+        else if (!DialogueManager::Instance->ProcessResponse(responseStr))
         {
             for (int i = 0; i < mFragmentEnts.size(); i++)
             {
@@ -77,28 +108,27 @@ void SentenceFormingState::Tick()
 
 void SentenceFormingState::Render()
 {
-    ImGui_ImplVulkan_NewFrame();
-    ImGui_ImplGlfw_NewFrame();
+    // ImGui_ImplVulkan_NewFrame();
+    // ImGui_ImplGlfw_NewFrame();
 
     // ImGui::NewFrame();
 
     // ImGui::Begin("Noise settings");
 
-    // ImGui::DragFloat("I Scale", &mNoiseScale);
-    // ImGui::DragFloat("J Scale", &mNoiseScaleJ);
-    // ImGui::DragFloat("Frequency", &mNoiseFrequency, 0.05f);
+    // ImGui::DragFloat("I Scale", &mSparkScale, 0.05f);
+    // ImGui::DragFloat("Frequency", &mSparkFreq, 0.05f);
 
     // std::vector<float> x;
     // std::vector<float> y;
 
     // FastNoiseLite noise(69420);
     // noise.SetNoiseType(FastNoiseLite::NoiseType_Perlin);
-    // noise.SetFrequency(mNoiseFrequency);
+    // noise.SetFrequency(mSparkFreq);
 
-    // for(int i = 0; i < 10; i++)
+    // for(int i = 0; i < 100; i++)
     // {
     //     x.push_back(i);
-    //     y.push_back(noise.GetNoise((float)i/mNoiseScale,0.0f));
+    //     y.push_back(noise.GetNoise((float)i * mSparkScale,0.0f));
     // }
     // ImGui::End();
 
@@ -141,6 +171,7 @@ void SentenceFormingState::Render()
 
 void SentenceFormingState::Begin()
 {
+    Opal::Logger::LogString("GAMESTATE: Begin() SentenceFormingState");
     if (mTextRenderer == nullptr)
     {
         mTextPass = mGame->Renderer->CreateRenderPass(false);
@@ -170,6 +201,11 @@ void SentenceFormingState::Begin()
 
     CreateBounds();
     CreatePlayingField();
+
+    if(DialogueManager::Instance->GetCurrentPrompt().IsKill)
+    {
+        mKillEventTimer = mKillWaitTime;
+    }
 }
 
 void SentenceFormingState::CreateBounds()
@@ -187,7 +223,7 @@ void SentenceFormingState::CreateBounds()
 
     Opal::Entity *mBottomBounds = new Opal::Entity();
 
-    Opal::TransformComponent *transform2 = new Opal::TransformComponent(glm::vec3(0, mGame->GetHeight(), 0), glm::vec3(1, 1, 1), 0);
+    Opal::TransformComponent *transform2 = new Opal::TransformComponent(glm::vec3(0, 1080, 0), glm::vec3(1, 1, 1), 0);
     mBottomBounds->AddComponent(transform2);
     Opal::BoxColliderComponent2D *collider2 = new Opal::BoxColliderComponent2D(glm::vec2(600, 100), glm::vec2(0, 0), true);
     collider->SetIsTrigger(false);
@@ -254,6 +290,7 @@ void SentenceFormingState::CreatePlayingField()
 
 void SentenceFormingState::End()
 {
+    Opal::Logger::LogString("GAMESTATE: End() SentenceFormingState");
 }
 
 void SentenceFormingState::Resume()
@@ -402,6 +439,8 @@ std::string SentenceFormingState::ConcatSelection(std::vector<std::string> selec
 
 void SentenceFormingState::CreateSparks()
 {
+    Response resp = DialogueManager::Instance->GetCurrentResponse();
+    mLineSpeed = resp.Speed;
     for (int i = 0; i < mNumSparks; i++)
     {
         CreateRandomSpark();
@@ -420,7 +459,7 @@ void SentenceFormingState::PreBakeLines()
 
 void SentenceFormingState::CreateRandomSpark()
 {
-    glm::vec2 pos = glm::vec2(rand() % mGame->GetWidth(), rand() % mGame->GetHeight());
+    glm::vec2 pos = glm::vec2(rand() % 1920, rand() % 1080);
     glm::vec4 startColor = glm::vec4(1, 1, 1, 0.25f);
     glm::vec4 endColor = glm::vec4(1, 1, 1, 0);
     int length = rand() % 15 + 3;
@@ -442,7 +481,21 @@ void SentenceFormingState::CreateRandomSpark()
     mSparkEntity->AddComponent(spark);
     DragComponent *drag = new DragComponent(1);
     mSparkEntity->AddComponent(drag);
-    NoiseMoveComponent *mover = new NoiseMoveComponent(1, 1, 0.05f, rand() % 10000);
+    float scl = fmax(mLineSpeed - 800.0f, 0);
+    scl /= 200.0f;
+    scl *= mSparkScale;
+    scl += 0.05f;
+
+    float freq = fmax(mLineSpeed - 800.0f, 0);
+    freq /= 200.0f;
+    freq *= mSparkFreq;
+    freq += 1;
+
+    float str = fmax(mLineSpeed - 800.0f, 0);
+    str /= 200.0f;
+    str *= 4;
+    str += 1;
+    NoiseMoveComponent *mover = new NoiseMoveComponent(str, freq, scl, rand() % 10000);
     mSparkEntity->AddComponent(mover);
 
     mScene->AddEntity(mSparkEntity);

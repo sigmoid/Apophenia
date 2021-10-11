@@ -46,6 +46,7 @@ Prompt DialogueSerializer::DeserializePrompt(tinyxml2::XMLElement *root)
 {
     Prompt res;
     res.IsEnd = root->BoolAttribute("IsEnd", false);
+    res.IsKill = root->BoolAttribute("IsKill", false);
     const char * tmp = root->Attribute("TransitionText");
     if(tmp != nullptr)
         res.TransitionText = tmp; 

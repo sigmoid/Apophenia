@@ -96,7 +96,7 @@
         <Triggers>
             <Trigger>I saw you a few weeks ago I don't know what to do</Trigger>   
         </Triggers>
-        <Text>Ok, I remember you. What's going on, is it an emergency?</Text>
+        <Text>What's going on, is it an emergency?</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
@@ -111,7 +111,7 @@
                     <Fragment><Text>again, but</Text><Attraction>1000</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>its so bad</Text><Attraction>1000</Attraction></Fragment>
+                    <Fragment><Text>its worse</Text><Attraction>1000</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -132,11 +132,11 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>yes it's anxiety again, but its so bad</Trigger>  
-            <Trigger>no it's anxiety again, but its so bad</Trigger>  
-            <Trigger>maybe? it's anxiety again, but its so bad</Trigger>   
+            <Trigger>yes it's anxiety again, but its worse</Trigger>  
+            <Trigger>no it's anxiety again, but its worse</Trigger>  
+            <Trigger>maybe? it's anxiety again, but its worse</Trigger>   
         </Triggers>
-        <Text>How do you feel right now?</Text>
+        <Text>How is it worse?</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
@@ -184,7 +184,7 @@
         <Triggers>
             <Trigger>I feel like I might pass out everything is freaking me out I can't move but I can't stay still</Trigger>
         </Triggers>
-        <Text>I think you're having a panic attack. Are you in a safe place right now? Is there anyone there with you.</Text>
+        <Text>Are you in a safe place right now? Is there anyone there with you?</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
@@ -241,6 +241,161 @@
                 <FragmentGroup>
                     <Fragment IsIntrusive="True"><Text>like this</Text><Attraction>2000</Attraction></Fragment>
                     <Fragment><Text>bug him</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1500</Speed>
+        </Response>
+        <Color>
+            <r>0.4</r>
+            <g>0.4</g>
+            <b>0.4</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>He's busy... I don't want to bug him</Trigger>
+        </Triggers>
+        <Text>Do you feel like you want to hurt yourself or anyone else?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>What</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>no</Text><Attraction>1000</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>the fuck?</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1500</Speed>
+        </Response>
+        <Color>
+            <r>0.4</r>
+            <g>0.4</g>
+            <b>0.4</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>What no</Trigger>
+        </Triggers>
+        <Text>It sounds like you're having a panic attack. It will pass, but it might take some time.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>How can I</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>make it stop?</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1500</Speed>
+        </Response>
+        <Color>
+            <r>0.4</r>
+            <g>0.4</g>
+            <b>0.4</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>How can I make it stop?</Trigger>
+        </Triggers>
+        <Text>Focus on your breathing, try to slow down, and talking to someone helps.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>What if this</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>happens again?</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1500</Speed>
+        </Response>
+        <Color>
+            <r>0.4</r>
+            <g>0.4</g>
+            <b>0.4</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>What if this happens again?</Trigger>
+        </Triggers>
+        <Text>Therapy can help prevent events like this. If you want, I can prescribe you a stronger anxiety medication for acute episodes like this.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment IsIntrusive="True"><Text>I'll abuse</Text><Attraction>1000</Attraction></Fragment>
+                    <Fragment><Text>Okay, that</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment IsIntrusive="True"><Text>the hell out</Text><Attraction>1000</Attraction></Fragment>
+                    <Fragment><Text>sounds good</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment IsIntrusive="True"><Text>of them</Text><Attraction>1000</Attraction></Fragment>
+                    <Fragment><Text>thanks</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1500</Speed>
+        </Response>
+        <Color>
+            <r>0.4</r>
+            <g>0.4</g>
+            <b>0.4</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt IsEnd="True">
+        <Triggers>
+            <Trigger>Okay, that sounds good thanks</Trigger>
+        </Triggers>
+        <Text>I want you to make an appointment with me as soon as possible. If the anxiety gets worse, you should call the crisis hotline.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment IsIntrusive="True"><Text>No chance</Text><Attraction>1000</Attraction></Fragment>
+                    <Fragment><Text>I will</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>

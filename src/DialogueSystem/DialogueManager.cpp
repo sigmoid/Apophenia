@@ -1,5 +1,6 @@
 #include "DialogueManager.h"
 #include "DialogueSerializer.h"
+#include "../../Opal/Logger.h"
 
 DialogueManager *DialogueManager::Instance = nullptr;
 
@@ -20,6 +21,7 @@ bool DialogueManager::ProcessResponse(std::string response)
     {
         if(std::find(mPrompts[i].Triggers.begin(), mPrompts[i].Triggers.end(), response) != mPrompts[i].Triggers.end())
         {
+            Opal::Logger::LogString("DIALOGUE_MANAGER: response \"" + response + "\" accepted");
             mCurrentPromptIdx = i;
             mCurrentResponse = mPrompts[i].Response;
             return true;
@@ -40,6 +42,7 @@ Response DialogueManager::GetCurrentResponse()
 
 void DialogueManager::LoadConversation(std::string filepath)
 {
+    Opal::Logger::LogString("DIALOGUE_MANAGER: Loading conversation " + filepath + "...");
     mPrompts.clear();
     mPrompts = DialogueSerializer::DeserializeFile(filepath);
     mCurrentPromptIdx = 0;

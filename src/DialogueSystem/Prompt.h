@@ -13,6 +13,7 @@ struct Prompt
     std::vector<std::string> Triggers;
     Response Response;
     bool IsEnd = false;
+    bool IsKill = true;
 
     std::string TransitionText = "";
 };

@@ -5,7 +5,9 @@
 #include "../DialogueSystem/DialogueManager.h"
 #include "../DialogueSystem/Prompt.h"
 #include "../../Opal/OpalMath.h"
+#include "../../Opal/Logger.h"
 #include "../DialogueSystem/DialogueSerializer.h"
+#include "EndState.h"
 
 PlayState::PlayState()
 {
@@ -14,6 +16,11 @@ PlayState::PlayState()
 
 void PlayState::Tick() 
 {
+    if(DialogueManager::Instance->GetCurrentPrompt().Text == "BLANK")
+    {
+        IncrementConversation();
+    }
+
     if(mTransitionTimer > 0)
     {
         mTransitionTimer -= mGame->GetDeltaTime();
@@ -55,6 +62,7 @@ void PlayState::Render()
 
 void PlayState::Begin() 
 {
+    Opal::Logger::LogString("GAMESTATE: Begin() PlayState");
     mConversationSequence = DialogueSerializer::DeserializeStoryline("../Dialogue/DialogueProgression.xml");
     mTextPass = mGame->Renderer->CreateRenderPass(true);
 
@@ -72,8 +80,7 @@ void PlayState::IncrementConversation()
    
     if(mCurrentConversation >= mConversationSequence.size())
     {
-        std::cout << "GAME OVER" << std::endl;
-        //todo, figure out what to do here
+        mGame->PushState<EndState>();
         return;
     }
 
@@ -88,6 +95,7 @@ void PlayState::End()
 
 void PlayState::Resume() 
 {
+    Opal::Logger::LogString("GAMESTATE: Resume() Playstate");
     UpdateColor();
 }
 

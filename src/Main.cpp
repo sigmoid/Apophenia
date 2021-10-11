@@ -4,6 +4,7 @@
 
 #include "Gamestate/PlayState.h"
 #include "Gamestate/SentenceFormingState.h"
+#include "Gamestate/EndState.h"
 #include "DialogueSystem/DialogueManager.h"
 
 int main(int argc, char **argv)
@@ -22,6 +23,8 @@ int main(int argc, char **argv)
 
     // Hacky way to initialize the renderers for the sentence forming state before the window can be resized
     game.PushState<SentenceFormingState>();
+    game.PopState();
+    game.PushState<EndState>();
     game.PopState();
 
     while(!game.ShouldEnd())
