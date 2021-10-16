@@ -399,24 +399,162 @@
     </Color>
     </Prompt>
 
-    <Prompt IsEnd="True">
+    <Prompt>
         <Triggers>
             <Trigger>Yup, last chapter i read</Trigger>   
         </Triggers>
-        <Text>Hm. That's really strange. I don't know if I like that one. I've got to go so have a great day! Love you.</Text>
+        <Text>Hm. That's really strange. I don't know if I like that one. Oh! There's more space news. Do you want to hear about it?</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Yup,</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment IsIntrusive="True"><Text>No,</Text><Attraction>800</Attraction></Fragment>
+                    <Fragment><Text>Sure, what</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>last chapter</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment IsIntrusive="True"><Text>it's happening</Text><Attraction>800</Attraction></Fragment>
+                    <Fragment><Text>is it</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1200</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Sure, what is it</Trigger>   
+        </Triggers>
+        <Text>Well, they keep finding black holes all throughout the universe.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Really? Are they</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>i read</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment IsIntrusive="True"><Text>to me</Text><Attraction>800</Attraction></Fragment>
+                    <Fragment><Text>trying a new</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>detection method?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1200</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Really? Are they trying a new detection method?</Trigger>   
+        </Triggers>
+        <Text>They didn't say so on the news. I think there must be some kind of event that's causing them to randomly appear.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Well that</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>is absolutely</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>terrifying</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1200</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Well that is absolutely terrifying</Trigger>   
+        </Triggers>
+        <Text>I'm sorry sometimes I forget who I'm talking to. You really don't need to worry about this.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>We will see</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I can never</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>tell what is</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>going to make</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>me worry</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1200</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt IsEnd="True">
+        <Triggers>
+            <Trigger>We will see I can never tell what is going to make me worry</Trigger>   
+        </Triggers>
+        <Text>Hm. Yeah, well maybe you can talk to the therapist about that today.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>We will see</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>i can never</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>tell what is</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>going to make</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>me worry</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>

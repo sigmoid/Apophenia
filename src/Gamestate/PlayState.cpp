@@ -56,9 +56,6 @@ void PlayState::Render()
     mTextPass->Record();
     mTextRenderer->RecordCommands();
     mSpriteRenderer->StartFrame();
-    Opal::Sprite atlas(mTextRenderer->GetAtlasTexture());
-    atlas.SetPosition(100,100);
-    mSpriteRenderer->Submit(atlas);
     mSpriteRenderer->RecordCommands();
     mTextPass->EndRecord();
 
@@ -71,11 +68,11 @@ void PlayState::Begin()
     mConversationSequence = DialogueSerializer::DeserializeStoryline("../Dialogue/DialogueProgression.xml");
     mTextPass = mGame->Renderer->CreateRenderPass(true);
 
-    Opal::Font typeFace(mGame->Renderer,"../fonts/JosefinSans-Light.ttf", 120/2);
+    Opal::Font typeFace(mGame->Renderer,"../fonts/JosefinSans-Light.ttf", 120);
 
     mSpriteRenderer = mGame->Renderer->CreateSpriteRenderer(mTextPass);
 
-    mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, typeFace, glm::vec2(mGame->GetWidth() - 300, mGame->GetHeight()), Opal::Camera::ActiveCamera);
+    mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, typeFace, glm::vec2(1920 - 300, 1080), Opal::Camera::ActiveCamera);
     IncrementConversation();
     UpdateColor();
 }

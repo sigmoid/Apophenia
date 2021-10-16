@@ -326,7 +326,7 @@ void SentenceFormingState::Begin()
 
         mMeshRenderer = mGame->Renderer->CreateMeshRenderer(mTextPass);
 
-        mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(mGame->GetWidth() - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
+        mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(1920 - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
         mLineRenderer = new Opal::LineRenderer();
         mLineRenderer->Init(mGame->Renderer, mTextPass, true);
 
@@ -335,7 +335,7 @@ void SentenceFormingState::Begin()
         textures.push_back(mCursorTexture);
         mBatch = mGame->Renderer->CreateBatch(mTextPass, 1000, textures, true);
 
-        mResponseRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mResponseFont, glm::vec2(mGame->GetWidth() - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
+        mResponseRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mResponseFont, glm::vec2(1920 - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
     }
     mScene = new Opal::Scene(mBatch);
     CreatePlayer();

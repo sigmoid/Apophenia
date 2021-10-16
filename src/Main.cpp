@@ -11,20 +11,18 @@
 int main(int argc, char **argv)
 {
     Opal::Game game;
-    game.Init(1920, 1080, "Apophenia", Opal::RendererType::VULKAN);
+    game.Init(1920, 1080, "Tightrope", Opal::RendererType::VULKAN);
 
     game.SetFramerateLock(60);
     game.ToggleDebugInfo(false);
 
     game.Renderer->CreateOrthoCamera(1920, 1080, -1000, 1000);
 
-    game.Resize(1920/2, 1080/2);
-
     DialogueManager dialogue("../Dialogue/TestDialogue.xml");
 
     game.PushState<PlayState>();
 //    game.PushState<NarrativeState>();
-
+    game.Resize(1920/2, 1080/2);
     // Hacky way to initialize the renderers for the sentence forming state before the window can be resized
     game.PushState<SentenceFormingState>();
     game.PopState();

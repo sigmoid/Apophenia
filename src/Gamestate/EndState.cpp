@@ -19,7 +19,7 @@ void EndState::Render()
 {
     mTextPass->Record();
 
-    mTextRenderer->RenderString("The End of \"Apophenia(working title)\" for now...\n Anxiety man will return in \n\"Anxiety Man 2: Mania Boogaloo\" \n (thanks for playing let me know what you think :) )", 0,0,1,1,1,1,1,true);
+    mTextRenderer->RenderString("The End of \"Apophenia(working title)\" for now...\n Anxiety man will return in \n\"Anxiety Man 2: Bipolar Boogaloo\" \n (thanks for playing let me know what you think :) )", 0,0,1,1,1,1,1,true);
     mTextRenderer->RecordCommands();
 
     mTextPass->EndRecord();
@@ -35,7 +35,7 @@ void EndState::Begin()
         mTextPass = mGame->Renderer->CreateRenderPass(true);
         mTextPass->SetClearColor(0.1,0.1,0.1,1);
         Opal::Font mFont(mGame->Renderer, "../fonts/JosefinSans.ttf", 80);
-        mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, mFont, glm::vec2(mGame->GetWidth(), mGame->GetHeight()), Opal::Camera::ActiveCamera);
+        mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, mFont, glm::vec2(1920, 1080), Opal::Camera::ActiveCamera);
     }
 }
 

@@ -165,7 +165,7 @@ You're a good student, I don't want to change that.</Text>
 
     <Prompt>
         <Text>Well, let me know when you find out.
-a student said you had trouble during lab yesterday.
+A student said you had trouble during lab yesterday.
 What happened there?</Text>
         <Response>
             <Fragments>
@@ -210,12 +210,7 @@ What happened there?</Text>
                     <Fragment><Text>Good to hear.</Text><Attraction>0</Attraction></Fragment>
                     <Fragment><Text>I'm sure it does.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>What's</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>coming up next?</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
+
             </Fragments>
             <Color>
                 <r>0.2549</r>
@@ -235,6 +230,200 @@ What happened there?</Text>
             <Trigger>It's been a few years since I took this class so I need to review</Trigger>
         </Triggers>
     </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Good to hear.</Trigger>
+            <Trigger>I'm sure it does.</Trigger>
+        </Triggers>
+        <Text>While we're on the subject of helping students, I wanted to let you know what my teaching philosophy is.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Great, I'm</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>interested to</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>hear it</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Great, I'm interested to hear it</Trigger>
+        </Triggers>
+        <Text>Have you ever heard of the Pygmalion effect?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I have no idea,</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Sounds familiar, but</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>what is it</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I have no idea, what is it</Trigger> 
+            <Trigger>Sounds familiar, but what is it</Trigger> 
+        </Triggers>
+        <Text>Essentially, it's the idea that if you have higher expectations for someone, they will actually be able to perform better than if you expect less of them.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Well, that explains</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>some of the</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>assignments we</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>had</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Well, that explains some of the assignments we had</Trigger>
+        </Triggers>
+        <Text>Haha, it's true I make it tough, but you made it through didn't you? I think students learn more when they are challenged.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Yeah, I</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>But at</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>totally agree</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>what cost?</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+        <Color>
+            <r>0.2549</r>
+            <g>0.0941</g>
+            <b>0.3020</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Yeah, I totally agree</Trigger>
+        </Triggers>
+        <Text>There are limits to it though, you can't just believe in someone hard enough that they can become a surgeon.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Makes sense</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+        <Color>
+            <r>0.2549</r>
+            <g>0.0941</g>
+            <b>0.3020</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Makes sense</Trigger>
+        </Triggers>
+        <Text>So when you're helping a student, just keep that in mind. Don't lower your expectations for someone unless they give you a really good reason to. Do you have any questions about class?</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>What's coming</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>up next?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+        <Color>
+            <r>0.2549</r>
+            <g>0.0941</g>
+            <b>0.3020</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
     <Prompt>
         <Text>Well, we're just digging deeper into C++ next lecture. So study up on polymorphism.</Text>
         <Response>
@@ -264,8 +453,7 @@ What happened there?</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>Good to hear. What's coming up next?</Trigger>
-            <Trigger>I'm sure it does. What's coming up next?</Trigger>
+            <Trigger>What's coming up next?</Trigger>
         </Triggers>
     </Prompt>
 
