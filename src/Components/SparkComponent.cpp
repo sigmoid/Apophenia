@@ -23,6 +23,11 @@ void SparkComponent::OnStart()
     mLineSpeed = mVelocity->GetVelocity().x;
 }
 
+void SparkComponent::SetSpeedUp(float speedup)
+{
+    mSpeedUp = speedup;
+}
+
 void SparkComponent::Update(float dTime)
 {
     mTimer -= dTime;
@@ -39,12 +44,16 @@ void SparkComponent::Update(float dTime)
         mTimer = mDuration;
     }
 
-    mVelocity->SetVelocity(mVelocity->GetVelocity() * glm::vec3(0,1,1));
+    glm::vec3 curVel = mVelocity->GetVelocity();
+    if(mSpeedUp == 1.0f)
+        mVelocity->SetVelocity(curVel * glm::vec3(0,1,1));
+    else
+        mVelocity->SetVelocity(glm::vec3(mLineSpeed * mSpeedUp - mLineSpeed, curVel.y, curVel.z));
     mTransform->Position += mVelocity->GetVelocity() * dTime;
 
     for(int i = 0; i < TrailData.Points.size(); i++)
     {
-        TrailData.Points[i] -= glm::vec2(mLineSpeed * dTime, 0);
+        TrailData.Points[i] -= glm::vec2(mLineSpeed * mSpeedUp * dTime, 0);
     }
 }
 

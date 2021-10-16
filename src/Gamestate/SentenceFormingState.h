@@ -6,7 +6,9 @@
 #include "../../Opal/Graphics/BatchRenderer2D.h"
 #include "../../Opal/Graphics/LineRenderer.h"
 #include "../../Opal/Graphics/Texture.h"
+#include "../../Opal/Graphics/Mesh2D.h"
 #include "../../Opal/Graphics/MeshRenderer2D.h"
+#include "../../Opal/Graphics/PostProcessRenderer.h"
 #include "../Components/SparkComponent.h"
 #include "../../Opal/Game.h"
 
@@ -16,6 +18,11 @@
 #include <glm/vec4.hpp>
 
 #include <string>
+
+struct UBO
+{
+    float warpFactor;
+};
 
 class SentenceFormingState : public Opal::Gamestate
 {
@@ -37,6 +44,8 @@ class SentenceFormingState : public Opal::Gamestate
     static Opal::MeshRenderer2D *mMeshRenderer;
     static Opal::Texture *mCursorTexture;
     static Opal::LineRenderer *mLineRenderer;
+    static Opal::PostProcessRenderer *mPostProcess;
+    static Opal::Texture *mRenderTexture;
     Opal::Scene *mScene = nullptr;
     Opal::Entity *mCursorEntity = nullptr;
 
@@ -87,6 +96,32 @@ class SentenceFormingState : public Opal::Gamestate
     std::vector<Opal::Entity*> mSparkEntities;
     void RenderSparks();
     void CreateRandomSpark();
+
+    float mWarpFactor = 1.0f;
+    float mBaseWarp = 1.0f, mMaxWarp = 1.45f;
+    bool mIsWarped = false;
+
+    float mZoomTimer = 0;
+    float mZoomDuration = 10;
+    float mCurrentZoom = 1;
+    float mZoomTarget = 0.02f;
+
+    float mZoom2Timer = 0;
+    float mZoom2Duration = 6;
+    float mZoom2Target = 0.01f;
+    float mZoom2Pow = 0.5f;
+
+    void RenderBlackHole();
+    Opal::Mesh2D *mBHMesh;
+    float mBHRadius = 370000;
+    glm::vec2 mBHPos = glm::vec2(384000 + 80000, 1080/2);
+    int mNumTris = 500;
+    float mBHNoiseFreq = 0.002, mBHNoiseIntensity = 10000, mBHNoiseTurbulence = 100.0f;
+    glm::vec4 mBHColor = glm::vec4(0,0,0,1);
+    float mSparkSpeedUp = 1.0f;
+    float mMaxSparkSpeedUp = 2.0f;
+
+    float mTimeSinceBirth = 0;
 
     void StartScreenShake();
     float mScreenShakeTimer = 0;

@@ -33,11 +33,15 @@ class SparkComponent : public Opal::Component
     virtual void Deserialize() override;
     virtual Opal::Component *Clone() override;
 
+    void SetSpeedUp(float speedup);
+
     SparkTrail TrailData;
 
     private:
     Opal::TransformComponent *mTransform;
     Opal::VelocityComponent *mVelocity;
+
+    float mSpeedUp = 1.0f;
 
     float mLineSpeed = 1000;
     float mTimer = 0, mDuration = 0;

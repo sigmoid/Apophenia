@@ -1,12 +1,12 @@
 <Progression Story="Main" Filepath= "../Dialogue/">
-    <Conversation>Conversation_1.xml</Conversation>
+    <!-- <Conversation>Conversation_1.xml</Conversation>
     <Conversation>Conversation_2.xml</Conversation>
     <Conversation>Conversation_3.xml</Conversation> 
     <Conversation>Conversation_4.xml</Conversation> 
     <Conversation>Conversation_5.xml</Conversation>
     <Conversation>Conversation_6.xml</Conversation>
     <Conversation>Conversation_7.xml</Conversation> 
-    <Conversation>Conversation_8.xml</Conversation>
+    <Conversation>Conversation_8.xml</Conversation> -->
     <Conversation>Conversation_9.xml</Conversation>
     <!-- <Conversation>TestDialogue.xml</Conversation> -->
 </Progression>

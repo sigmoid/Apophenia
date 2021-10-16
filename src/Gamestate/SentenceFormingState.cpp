@@ -20,6 +20,8 @@
 
 #include "../../Opal/Logger.h"
 
+#include "EndState.h"
+
 // Static members
 Opal::FontRenderer *SentenceFormingState::mTextRenderer = nullptr;
 Opal::FontRenderer *SentenceFormingState::mResponseRenderer = nullptr;
@@ -31,6 +33,8 @@ Opal::Texture *SentenceFormingState::mCursorTexture = nullptr;
 Opal::LineRenderer *SentenceFormingState::mLineRenderer = nullptr;
 Opal::Font *SentenceFormingState::mFont = nullptr;
 Opal::Font *SentenceFormingState::mResponseFont = nullptr;
+Opal::PostProcessRenderer *SentenceFormingState::mPostProcess = nullptr;
+Opal::Texture *SentenceFormingState::mRenderTexture = nullptr;
 
 SentenceFormingState::SentenceFormingState()
 {
@@ -38,6 +42,8 @@ SentenceFormingState::SentenceFormingState()
 
 void SentenceFormingState::Tick()
 {
+    mTimeSinceBirth += mGame->GetDeltaTime();
+
     if(Opal::InputHandler::GetKey(GLFW_KEY_ESCAPE))
     {
         mGame->PopState();
@@ -46,20 +52,71 @@ void SentenceFormingState::Tick()
 
     if(Opal::InputHandler::GetKey(GLFW_KEY_K))
     {
-        mKillEventTimer = 1;
+        mKillEventTimer = mKillWaitTime;
     }
 
     if(mKillEventTimer > 0)
     {
         mKillEventTimer -= mGame->GetDeltaTime();
+        mWarpFactor = Opal::OpalMath::Lerp(mBaseWarp, mMaxWarp, 1.0f - mKillEventTimer/mKillWaitTime);
+
+        mSparkSpeedUp = Opal::OpalMath::Lerp(1.0f, mMaxSparkSpeedUp, 1.0f - mKillEventTimer/mKillWaitTime);
+        
 
         if(mKillEventTimer <= 0)
         {
-            mCursorEntity->GetComponent<CursorComponent>()->Kill();
+            mKillEventTimer = 0;
+            mIsWarped = true;
+            mZoomTimer = mZoomDuration;
+            //mCursorEntity->GetComponent<CursorComponent>()->Kill();
         }
     }
+    else if(mZoomTimer > 0)
+    {
+        mScreenShakeTimer = 0;
+        mZoomTimer -= mGame->GetDeltaTime();
+        if(mZoomTimer <= 0)
+        {
+            mZoomTimer = 0;
+            mZoom2Timer = mZoom2Duration;
+        }
 
-    if (mScreenShakeTimer > 0)
+        float progress = 1.0f - mZoomTimer/mZoomDuration;
+        mCurrentZoom = Opal::OpalMath::Lerp(1.0f, mZoomTarget, progress);
+        Opal::Camera::ActiveCamera->SetZoom(mCurrentZoom);
+        float translation = 1080.0f / mCurrentZoom;
+        translation = translation - 1080.0f;
+        translation /= 2.0f;
+
+        Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, translation));
+    }
+    else if(mZoom2Timer > 0)
+    {
+        mScreenShakeTimer = 0;
+        mZoom2Timer -= mGame->GetDeltaTime();
+        if(mZoom2Timer <= 0)
+        {
+            mZoom2Timer = 0;
+
+            Opal::Camera::ActiveCamera->SetZoom(1);
+            Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0,0));
+            mGame->PushState<EndState>();
+            return;
+        }
+
+        float progress = 1.0f - mZoom2Timer/mZoom2Duration;
+        progress = pow(progress, mZoom2Pow);
+        mCurrentZoom = Opal::OpalMath::Lerp(mZoomTarget, mZoom2Target, progress);
+        Opal::Camera::ActiveCamera->SetZoom(mCurrentZoom);
+        float translation = 1080.0f / mCurrentZoom;
+        translation = translation - 1080.0f;
+        translation /= 2.0f;
+
+        mWarpFactor = Opal::OpalMath::Lerp(mMaxWarp, mBaseWarp, progress);
+
+        Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, translation));
+    }
+    else if (mScreenShakeTimer > 0)
     {
         Opal::Camera::ActiveCamera->MoveCamera(glm::vec2((rand() % mScreenShakeIntensity * 1000) / 1000.0f - (float)mScreenShakeIntensity / 2, (rand() % mScreenShakeIntensity * 1000) / 1000.0f - (float)mScreenShakeIntensity / 2));
         mScreenShakeTimer -= mGame->GetDeltaTime();
@@ -94,7 +151,8 @@ void SentenceFormingState::Tick()
 
             mCursorEntity->GetComponent<CursorComponent>()->Reset();
 
-            CreatePlayingField();
+            if(!mIsWarped)
+                CreatePlayingField();
 
             StartScreenShake();
         }
@@ -106,6 +164,87 @@ void SentenceFormingState::Tick()
     }
 }
 
+void SentenceFormingState::RenderBlackHole()
+{
+    std::vector<float> verts;
+
+    FastNoiseLite noise;
+    noise.SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2);
+    noise.SetFrequency(mBHNoiseFreq);
+    
+    glm::vec2 startPos = mBHPos;
+    glm::vec2 lastPos = startPos;
+    glm::vec2 firstPos = lastPos;
+    float firstRadius = 0;
+    float lastRadius = 0;
+
+    float noiseSeed = mTimeSinceBirth;
+    bool first = true;
+
+    for(int i = 0; i < mNumTris; i++)
+    {
+        float noiseVal = noise.GetNoise<float>((i * mNoiseScale),noiseSeed * mBHNoiseTurbulence) * mBHNoiseIntensity;
+        glm::vec2 curPos = mBHPos;
+
+        float theta = ((float)i / (float)mNumTris) * 3.14159f + 3.14159f/2.0f;
+
+        float newRadius = mBHRadius + noiseVal;
+
+        curPos.x += cos(theta) * newRadius;
+        curPos.y += sin(theta) * newRadius;
+
+        verts.push_back(startPos.x);
+        verts.push_back(startPos.y);
+        verts.push_back(mBHColor.r);
+        verts.push_back(mBHColor.g);
+        verts.push_back(mBHColor.b);
+        verts.push_back(mBHColor.a);
+        verts.push_back(lastPos.x);
+        verts.push_back(lastPos.y);
+        verts.push_back(mBHColor.r + 0.03f);
+        verts.push_back(mBHColor.g + 0.03f);
+        verts.push_back(mBHColor.b + 0.03f);
+        verts.push_back(mBHColor.a);
+        verts.push_back(curPos.x);
+        verts.push_back(curPos.y);
+        verts.push_back(mBHColor.r+ 0.03f);
+        verts.push_back(mBHColor.g+ 0.03f);
+        verts.push_back(mBHColor.b+ 0.03f);
+        verts.push_back(mBHColor.a);
+
+        if(first)
+        {
+            firstPos = curPos;
+            first = false;
+        }
+        else if(i == mNumTris - 1) //last
+        {
+            verts.push_back(startPos.x);
+            verts.push_back(startPos.y);
+            verts.push_back(mBHColor.r);
+            verts.push_back(mBHColor.g);
+            verts.push_back(mBHColor.b);
+            verts.push_back(mBHColor.a);
+            verts.push_back(curPos.x);
+            verts.push_back(curPos.y);
+            verts.push_back(mBHColor.r);
+            verts.push_back(mBHColor.g);
+            verts.push_back(mBHColor.b);
+            verts.push_back(mBHColor.a);
+            verts.push_back(firstPos.x);
+            verts.push_back(firstPos.y);
+            verts.push_back(mBHColor.r);
+            verts.push_back(mBHColor.g);
+            verts.push_back(mBHColor.b);
+            verts.push_back(mBHColor.a);
+        }
+        lastPos = curPos;
+    }
+    mBHMesh->SetVertices(verts.data(), verts.size() * sizeof(float));
+
+    mMeshRenderer->Submit(mBHMesh);
+}
+
 void SentenceFormingState::Render()
 {
     // ImGui_ImplVulkan_NewFrame();
@@ -115,26 +254,19 @@ void SentenceFormingState::Render()
 
     // ImGui::Begin("Noise settings");
 
-    // ImGui::DragFloat("I Scale", &mSparkScale, 0.05f);
-    // ImGui::DragFloat("Frequency", &mSparkFreq, 0.05f);
+    // ImGui::DragFloat("CurrentZoom", &mCurrentZoom, 0.05f);
 
-    // std::vector<float> x;
-    // std::vector<float> y;
+    // ImGui::DragFloat("Zoom 1 Duration", &mZoomDuration);
+    // ImGui::DragFloat("Zoom 1 Target", &mZoomTarget);
 
-    // FastNoiseLite noise(69420);
-    // noise.SetNoiseType(FastNoiseLite::NoiseType_Perlin);
-    // noise.SetFrequency(mSparkFreq);
+    // ImGui::DragFloat("Zoom 2 Duration", &mZoom2Duration);
+    // ImGui::DragFloat("Zoom 2 Target", &mZoom2Target);
+    // ImGui::DragFloat("Zoom 2 Pow", &mZoom2Pow);
 
-    // for(int i = 0; i < 100; i++)
-    // {
-    //     x.push_back(i);
-    //     y.push_back(noise.GetNoise((float)i * mSparkScale,0.0f));
-    // }
+    // ImGui::DragFloat("Kill Wait", &mKillWaitTime);
+
     // ImGui::End();
 
-    // ImPlot::BeginPlot("Noise Graph");
-    // ImPlot::PlotLine("noise", x.data(),y.data(),x.size());
-    // ImPlot::EndPlot();
     // ImGui::Render();
     // ImGui::EndFrame();
 
@@ -150,23 +282,31 @@ void SentenceFormingState::Render()
     DrawCursorLine();
     RenderSparks();
 
-    mLineRenderer->Render();
 
     mMeshRenderer->StartFrame();
     mMeshRenderer->Submit(mCursorEntity->GetComponent<CursorComponent>()->GetMesh());
 
     //mTextRenderer->RenderString("This is a response!", 1920/2 - 300, 1080/2, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f);
     RenderSentenceFragments();
-    RenderCurrentSelection();
+    if(!mIsWarped)
+        RenderCurrentSelection();
+
+    RenderBlackHole();
 
     mTextPass->Record();
     mBatch->RecordCommands();
+    mLineRenderer->Render();
     mTextRenderer->RecordCommands();
     mResponseRenderer->RecordCommands();
     mMeshRenderer->RecordCommands();
     mTextPass->EndRecord();
 
     mGame->Renderer->SubmitRenderPass(mTextPass);
+
+    UBO * ubo = new UBO();
+    ubo->warpFactor = mWarpFactor;
+    mPostProcess->UpdateUserData(ubo);
+    mPostProcess->ProcessAndSubmit();
 }
 
 void SentenceFormingState::Begin()
@@ -174,7 +314,10 @@ void SentenceFormingState::Begin()
     Opal::Logger::LogString("GAMESTATE: Begin() SentenceFormingState");
     if (mTextRenderer == nullptr)
     {
-        mTextPass = mGame->Renderer->CreateRenderPass(false);
+        mRenderTexture = mGame->Renderer->CreateRenderTexture(1920, 1080,4);
+        mTextPass = mGame->Renderer->CreateRenderPass(mRenderTexture, true);
+        mTextPass->SetClearColor(0.1f,0.1f,0.1f,1.0f);
+        mPostProcess = mGame->Renderer->CreatePostProcessor(mTextPass, "../shaders/testFXvert", "../shaders/testFXfrag", false, sizeof(UBO), VK_SHADER_STAGE_FRAGMENT_BIT);
         mBGPass = mGame->Renderer->CreateRenderPass(true);
         mBGPass->SetClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
@@ -185,7 +328,7 @@ void SentenceFormingState::Begin()
 
         mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(mGame->GetWidth() - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
         mLineRenderer = new Opal::LineRenderer();
-        mLineRenderer->Init(mGame->Renderer, true);
+        mLineRenderer->Init(mGame->Renderer, mTextPass, true);
 
         std::vector<Opal::Texture *> textures;
         mCursorTexture = mGame->Renderer->CreateTexture("../textures/cursor.png");
@@ -201,6 +344,8 @@ void SentenceFormingState::Begin()
 
     CreateBounds();
     CreatePlayingField();
+
+    mBHMesh = mGame->Renderer->CreateMesh((mNumTris + 1) * 3);
 
     if(DialogueManager::Instance->GetCurrentPrompt().IsKill)
     {
@@ -391,7 +536,8 @@ void SentenceFormingState::DrawCursorLine()
         mLineRenderer->DrawLine(mLinePoints[i - 1], mLinePoints[i], mLineColor, 3);
     }
 
-    mLineRenderer->DrawLine(mLinePoints[mLinePoints.size()-1], glm::vec2(mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.x, mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.y), mLineColor, 3);
+    mLineRenderer->DrawLine(mLinePoints[mLinePoints.size()-1], glm::vec2(mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.x, mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.y), 
+    glm::vec4(mLineColor.r, mLineColor.g, mLineColor.b, mLineColor.a * mCurrentZoom), 3);
 }
 
 void SentenceFormingState::UpdateCursorLine(float timeOverride)
@@ -509,9 +655,10 @@ void SentenceFormingState::RenderSparks()
     for (int i = 0; i < mSparkEntities.size(); i++)
     {
         SparkComponent *spark = mSparkEntities[i]->GetComponent<SparkComponent>();
+        spark->SetSpeedUp((mSparkSpeedUp - 1) * ((float)i/(float)mSparkEntities.size()) + 1);
         Opal::TransformComponent *trans = mSparkEntities[i]->GetComponent<Opal::TransformComponent>();
 
-        if (trans->Position.x > mGame->GetWidth())
+        if (trans->Position.x > mGame->GetWidth() / mCurrentZoom)
         {
             mScene->RemoveEntity(mSparkEntities[i]);
             deleteIds.push_back(i);

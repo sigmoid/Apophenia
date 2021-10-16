@@ -17,6 +17,39 @@
     </Color>
     -->   
 <Game>
+    <Prompt IsKill="True">
+        <Triggers>
+            <Trigger>Okay, that sounds good</Trigger>   
+        </Triggers>
+        <Text>Good. Let me make the call.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>So, the</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>game is</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>over now right?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>1.0000</r>
+                <g>0.0000</g>
+                <b>0.0353</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>1.0000</r>
+        <g>0.0000</g>
+        <b>0.0353</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
     <Prompt>
         <Text>How are you doing?</Text>
         <Response>
