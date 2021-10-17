@@ -537,7 +537,7 @@ Do you have time to do the next assignment before class next week?</Text>
     </Prompt>
     
     <Prompt IsEnd="True">
-        <Text>Good. No rush. I'll see you next week. Have a nice weekend</Text>
+        <Text>Good. No rush. I'll see you next week. Have a nice weekend.</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>

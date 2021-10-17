@@ -231,7 +231,7 @@ Just Breathe right now.</Text>
 
 <Prompt>
         <Text>That's it?
-How long have you been working on it.</Text>
+How long have you been working on it?</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>

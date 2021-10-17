@@ -27,7 +27,7 @@
                 <FragmentGroup>
                     <Fragment><Text>really interesting</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
-            </Fragments>
+            </Fragments>y
             <Color>
                 <r>0.6118</r>
                 <g>0.2863</g>
@@ -87,7 +87,7 @@
         <Triggers>
             <Trigger>Scary, maybe Earth will get sucked in some day</Trigger>   
         </Triggers>
-        <Text>I don't think you need to add that to you list of worries.</Text>
+        <Text>I don't think you need to add that to your list of worries.</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
@@ -117,7 +117,7 @@
     </Prompt>
 <!-- TODO link -->
     <Prompt>
-        <Text>So. How are you doing?</Text>
+        <Text>So, how are you doing?</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>

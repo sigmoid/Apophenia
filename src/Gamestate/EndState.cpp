@@ -19,7 +19,7 @@ void EndState::Render()
 {
     mTextPass->Record();
 
-    mTextRenderer->RenderString("The End of \"Apophenia(working title)\" for now...\n Anxiety man will return in \n\"Anxiety Man 2: Bipolar Boogaloo\" \n (thanks for playing let me know what you think :) )", 0,0,1,1,1,1,1,true);
+    mTextRenderer->RenderString("The End of \"Tightrope\" for now...\n Anxiety man will return in \n\"Anxiety Man 2: Bipolar Boogaloo\" \n (thanks for playing let me know what you think :) )", 0,0,1,1,1,1,1,true);
     mTextRenderer->RecordCommands();
 
     mTextPass->EndRecord();
