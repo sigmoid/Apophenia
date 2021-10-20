@@ -10,7 +10,9 @@
 #include "../../Opal/Graphics/MeshRenderer2D.h"
 #include "../../Opal/Graphics/PostProcessRenderer.h"
 #include "../Components/SparkComponent.h"
+#include "../Components/ScrollingWordComponent.h"
 #include "../../Opal/Game.h"
+#include "../DialogueSystem/WordBank.h"
 
 #include "../../Opal/EntityComponent/Scene.h"
 
@@ -18,6 +20,7 @@
 #include <glm/vec4.hpp>
 
 #include <string>
+#include <map>
 
 struct UBO
 {
@@ -127,4 +130,13 @@ class SentenceFormingState : public Opal::Gamestate
     float mScreenShakeTimer = 0;
     float mScreenShakeTime = 0.4f;
     int mScreenShakeIntensity = 30;
+
+    std::vector<Opal::Entity*> mScrollingWords;
+    void CreateRandomScrollingWord();
+    void RenderScrollingWords();
+    void UpdateScrollingWords();
+    std::vector<Word> mWordBank;
+    float mScrollingWordTimer = 0;
+    float mScrollingWordFrequency = 0;
+    std::vector<std::pair<Opal::Entity *, Opal::Entity *> > mWordConnections;
 };

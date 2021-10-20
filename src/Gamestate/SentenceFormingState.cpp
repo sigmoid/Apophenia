@@ -16,6 +16,8 @@
 #include "../Components/AttractableComponent.h"
 #include "../Components/DragComponent.h"
 #include "../DialogueSystem/DialogueManager.h"
+#include "../DialogueSystem/DialogueSerializer.h"
+#include "../DialogueSystem/WordBank.h"
 #include "../DialogueSystem/Response.h"
 
 #include "../../Opal/Logger.h"
@@ -44,10 +46,23 @@ void SentenceFormingState::Tick()
 {
     mTimeSinceBirth += mGame->GetDeltaTime();
 
-    if(Opal::InputHandler::GetKey(GLFW_KEY_ESCAPE))
+    // if(Opal::InputHandler::GetKey(GLFW_KEY_ESCAPE))
+    // {
+    //     mGame->PopState();
+    //     return;
+    // }
+
+    UpdateScrollingWords();
+
+    if(mScrollingWordTimer > 0 && !mIsWarped)
     {
-        mGame->PopState();
-        return;
+        mScrollingWordTimer -= mGame->GetDeltaTime();
+
+        if(mScrollingWordTimer <= 0)
+        {
+            mScrollingWordTimer = mScrollingWordFrequency;
+            CreateRandomScrollingWord();
+        }
     }
 
     if(Opal::InputHandler::GetKey(GLFW_KEY_K))
@@ -287,6 +302,7 @@ void SentenceFormingState::Render()
     mMeshRenderer->Submit(mCursorEntity->GetComponent<CursorComponent>()->GetMesh());
 
     //mTextRenderer->RenderString("This is a response!", 1920/2 - 300, 1080/2, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f);
+    RenderScrollingWords();
     RenderSentenceFragments();
     if(!mIsWarped)
         RenderCurrentSelection();
@@ -338,6 +354,17 @@ void SentenceFormingState::Begin()
         mResponseRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mResponseFont, glm::vec2(1920 - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
     }
     mScene = new Opal::Scene(mBatch);
+
+    std::string wbPath = "../Dialogue/DefaultWordBank.xml";
+    Response response = DialogueManager::Instance->GetCurrentResponse();
+    if(response.WordFrequency != 0 && response.WordBank != "")
+    {
+        wbPath = response.WordBank;
+        mScrollingWordFrequency = 1.0f/response.WordFrequency;
+        mScrollingWordTimer = mScrollingWordFrequency;
+    }
+    mWordBank = DialogueSerializer::GetWordBank(wbPath);
+
     CreatePlayer();
     CreateSparks();
     PreBakeLines();
@@ -596,7 +623,7 @@ void SentenceFormingState::CreateSparks()
 void SentenceFormingState::PreBakeLines()
 {
     mScene->Start();
-    for (int i = 0; i < 50; i++)
+    for (int i = 0; i < 200; i++)
     {
         mScene->Update(1 / 60.0f);
         UpdateCursorLine(1 / 60.0f);
@@ -684,5 +711,89 @@ void SentenceFormingState::RenderSparks()
     for (int i = 0; i < deleteIds.size(); i++)
     {
         mSparkEntities.erase(mSparkEntities.begin() + deleteIds[i]);
+    }
+}
+
+void SentenceFormingState::RenderScrollingWords()
+{
+    for(int i = 0; i < mScrollingWords.size(); i++)
+    {
+        Opal::TransformComponent *trans = mScrollingWords[i]->GetComponent<Opal::TransformComponent>();
+        ScrollingWordComponent *word = mScrollingWords[i]->GetComponent<ScrollingWordComponent>();
+
+        if(word == nullptr || trans == nullptr)
+            continue;
+
+        mTextRenderer->RenderString(word->Text, trans->Position.x, trans->Position.y, word->Color.r, word->Color.g, word->Color.b, word->Color.a, 1.0f, false);
+    }
+
+    for(int i = 0; i < mWordConnections.size(); i++)
+    {
+        Opal::TransformComponent *startTrans =  mWordConnections[i].first->GetComponent<Opal::TransformComponent>();
+        Opal::TransformComponent *endTrans = mWordConnections[i].second->GetComponent<Opal::TransformComponent>();
+
+        glm::vec2 startPos = glm::vec2(startTrans->Position.x, startTrans->Position.y);
+        glm::vec2 endPos = glm::vec2(endTrans->Position.x, endTrans->Position.y);
+
+        mLineRenderer->DrawLine(startPos, endPos, glm::vec4(1,1,1,0.125f), 1);
+    }
+}
+
+void SentenceFormingState::CreateRandomScrollingWord()
+{
+    glm::vec2 pos = glm::vec2(2000, rand() % 1080);
+    glm::vec4 color = glm::vec4(1, 1, 1, 0.125f);
+    float speed = mLineSpeed * ((rand() % 100) + 50) / 100.0f;
+
+    Opal::Entity *mScrollEntity = new Opal::Entity();
+
+    Opal::TransformComponent *transform = new Opal::TransformComponent();
+    transform->Position = glm::vec3(pos.x, pos.y, 0);
+    mScrollEntity->AddComponent(transform);
+    ScrollingWordComponent *word = new ScrollingWordComponent(mWordBank[rand()%mWordBank.size()].Text, speed, color);
+    mScrollEntity->AddComponent(word);
+
+    for(int i = 0; i < mScrollingWords.size(); i++)
+    {
+        if(rand() % 100 < 20)
+        {
+            mWordConnections.push_back(std::make_pair(mScrollingWords[i], mScrollEntity));
+        }
+    }
+
+
+    mScene->AddEntity(mScrollEntity);
+    mScrollingWords.push_back(mScrollEntity);
+}
+
+void SentenceFormingState::UpdateScrollingWords()
+{
+    std::vector<int> remove;
+    for(int i = 0; i < mScrollingWords.size();i++)
+    {
+        if(mScrollingWords[i]->GetComponent<Opal::TransformComponent>()->Position.x < -500)
+        {
+            std::vector<int> removeJ;
+            for(int j = 0; j < mWordConnections.size(); j++)
+            {
+                if(mWordConnections[j].first == mScrollingWords[i] || mWordConnections[j].second == mScrollingWords[i])
+                {
+                    removeJ.push_back(j);
+                }
+            }
+
+            for(int j = removeJ.size()-1; j >= 0 ; j--)
+            {
+                mWordConnections.erase(mWordConnections.begin() + removeJ[j]);
+            }
+
+            mScene->RemoveEntity(mScrollingWords[i]);
+            remove.push_back(i);
+        }
+    }
+
+    for(int i = remove.size()-1; i >= 0; i--)
+    {
+        mScrollingWords.erase(mScrollingWords.begin() + remove[i]);
     }
 }

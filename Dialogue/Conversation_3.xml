@@ -19,7 +19,7 @@
 <Game>
     <Prompt TransitionText="Next Night">
         <Text>Hey what's up? It's almost midnight here.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank3.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Mom,</Text><Attraction>700</Attraction></Fragment>
@@ -52,7 +52,7 @@
 
     <Prompt>
         <Text>What? What's wrong?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank3.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I</Text><Attraction>700</Attraction></Fragment>
@@ -90,7 +90,7 @@
         <Text>That's not important right now.
 Breathe.
 Just Breathe right now.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank3.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Okay...</Text><Attraction>500</Attraction></Fragment>
@@ -123,7 +123,7 @@ Just Breathe right now.</Text>
 
     <Prompt>
         <Text>You need to worry about this in the morning, and go to bed right now.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank3.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>You're right...</Text><Attraction>0</Attraction></Fragment>
@@ -156,7 +156,7 @@ Just Breathe right now.</Text>
 
 <Prompt>
         <Text>I know, but your body needs sleep whether it's telling you that or not.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank3.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Well this</Text><Attraction>0</Attraction></Fragment>
@@ -195,7 +195,7 @@ Just Breathe right now.</Text>
 
 <Prompt>
         <Text>How far are you?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank3.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>"The central</Text><Attraction>0</Attraction></Fragment>
@@ -232,7 +232,7 @@ Just Breathe right now.</Text>
 <Prompt>
         <Text>That's it?
 How long have you been working on it?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank3.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I dunno</Text><Attraction>0</Attraction></Fragment>
@@ -263,7 +263,7 @@ How long have you been working on it?</Text>
 
 <Prompt>
         <Text>What's keeping you from writing?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank3.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I can't</Text><Attraction>0</Attraction></Fragment>
@@ -298,7 +298,7 @@ How long have you been working on it?</Text>
 
 <Prompt>
         <Text>Do you think it's anxiety related?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank3.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Maybe...</Text><Attraction>0</Attraction></Fragment>
@@ -336,11 +336,9 @@ How long have you been working on it?</Text>
         </Triggers>
     </Prompt>
 
-<!-- Todo, brach off where you deny anxiety and eventually come back to the main story line-->
-
 <Prompt>
         <Text>If I made you an appointment, would you see a therapist again?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank3.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I don't think</Text><Attraction>0</Attraction></Fragment>
@@ -377,7 +375,7 @@ How long have you been working on it?</Text>
 <Prompt>
         <Text>I actually got an email from your university.
 They offer free counseling.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank4.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Oh really?</Text><Attraction>0</Attraction></Fragment>
@@ -414,7 +412,7 @@ They offer free counseling.</Text>
 <!-- paranoia branch -->
 <Prompt>
         <Text>What? No! What are you talking about?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank4.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I have been</Text><Attraction>700</Attraction></Fragment>
@@ -453,7 +451,7 @@ They offer free counseling.</Text>
 
 <Prompt>
         <Text>What do you mean "glitches"?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank4.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>My VPN</Text><Attraction>700</Attraction></Fragment>
@@ -489,7 +487,7 @@ They offer free counseling.</Text>
 
 <Prompt>
         <Text>OK, I don't know what that means, but you're freaking me out.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank4.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>It freaks</Text><Attraction>700</Attraction></Fragment>
@@ -525,7 +523,7 @@ They offer free counseling.</Text>
 
 <Prompt>
         <Text>No, not that. You sound crazy right now.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank4.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I'm not</Text><Attraction>700</Attraction></Fragment>
@@ -558,7 +556,7 @@ They offer free counseling.</Text>
 
 <Prompt>
         <Text>I know it happened, but it sounds like you're coming up with conspiracy theories.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank4.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Really?</Text><Attraction>0</Attraction></Fragment>
@@ -597,7 +595,7 @@ They offer free counseling.</Text>
 <Prompt>
         <Text>Great! It'll do it.
 We should also schedule a doctor's appointment?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank4.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yeah,</Text><Attraction>0</Attraction></Fragment>
@@ -630,7 +628,7 @@ We should also schedule a doctor's appointment?</Text>
 
 <Prompt IsEnd="True">
         <Text>It's going to take some time to get you in with the therapist, but I can make a doctor's appointment soon.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank4.xml" WordFrequency="1">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yeah,</Text><Attraction>0</Attraction></Fragment>

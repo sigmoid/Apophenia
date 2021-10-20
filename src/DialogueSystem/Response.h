@@ -11,4 +11,6 @@ struct Response
     std::vector<std::vector<SentenceFragment> > Fragments;
     float Speed;
     glm::vec4 Color;
+    std::string WordBank;
+    float WordFrequency;
 };

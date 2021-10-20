@@ -19,7 +19,7 @@
 <Game>
     <Prompt TransitionText="Weeks Later">
         <Text>Hey how's it going?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="2">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I feel like</Text><Attraction>0</Attraction></Fragment>
@@ -55,7 +55,7 @@
             <Trigger>I feel like things just keep getting worse</Trigger>   
         </Triggers>
         <Text>What's going on?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="2">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I keep missing</Text><Attraction>0</Attraction></Fragment>
@@ -98,7 +98,7 @@
             <Trigger>I keep missing deadlines and I can't even boot up a computer without freaking out</Trigger>   
         </Triggers>
         <Text>I think we need to do something about this. It's been going on too long.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="2">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I think once</Text><Attraction>0</Attraction></Fragment>
@@ -134,7 +134,7 @@
             <Trigger>I think once I see the therapist, things will improve</Trigger>   
         </Triggers>
         <Text>Hopefully. Did you at least sleep well last night?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="2">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yes</Text><Attraction>500</Attraction></Fragment>
@@ -162,7 +162,7 @@
             <Trigger>Yes</Trigger>   
         </Triggers>
         <Text>Really?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="2">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>No</Text><Attraction>500</Attraction></Fragment>
@@ -190,7 +190,7 @@
             <Trigger>No</Trigger>   
         </Triggers>
         <Text>I think if you would just get a good nights sleep, you would feel better.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="2">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I am trying.</Text><Attraction>0</Attraction>.</Fragment>
@@ -244,7 +244,7 @@
             <Trigger>I am trying. No caffeine, no alcohol, no screens after 8. I'm meditating, taking baths, and not working, but I end up just lying there for hours</Trigger>   
         </Triggers>
         <Text>I know. We just need to get you sleeping. Is the anxiety what's keeping you up?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="2">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Well, not exactly</Text><Attraction>0</Attraction></Fragment>
@@ -277,7 +277,7 @@
             <Trigger>Well, not exactly my mind just races</Trigger>   
         </Triggers>
         <Text>What has been on your mind?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="2">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Lots of things.</Text><Attraction>0</Attraction></Fragment>
@@ -313,7 +313,7 @@
             <Trigger>Lots of things. Homework I have, grading assignments, major life events</Trigger>   
         </Triggers>
         <Text>Major life events?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="2">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yeah, like</Text><Attraction>0</Attraction></Fragment>
@@ -352,7 +352,7 @@
             <Trigger>Yeah, like how do the events of my childhood impact my personality</Trigger>   
         </Triggers>
         <Text>Don't you think, if you have too much going on in your head, maybe you should dial back your responsibilities?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="2">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I feel like</Text><Attraction>0</Attraction></Fragment>
@@ -385,7 +385,7 @@
             <Trigger>I feel like I've already cut everything I can</Trigger>   
         </Triggers>
         <Text>Well. What I mean is... Do you really need to be a TA right now?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="2">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I can't just</Text><Attraction>700</Attraction></Fragment>
@@ -430,7 +430,7 @@
             <Trigger>I can't just quit right now I just started and I don't want to let down the professor or the other TAs</Trigger>   
         </Triggers>
         <Text>I think they would understand if you told them what's going on.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="2">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>No, I can't</Text><Attraction>700</Attraction></Fragment>
@@ -457,7 +457,7 @@
             <Trigger>No, I can't</Trigger>   
         </Triggers>
         <Text>You have to realize that this isn't a good thing for you. You're falling behind, not sleeping, having bad anxiety. You need to do something.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="2">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>But what if</Text><Attraction>700</Attraction></Fragment>
@@ -496,7 +496,7 @@
             <Trigger>But what if I can just ride out this storm, and get better</Trigger>   
         </Triggers>
         <Text>If it was going to get better on its own. Why hasn't it improved in the last month?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="2">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I don't think</Text><Attraction>700</Attraction></Fragment>
@@ -541,7 +541,7 @@
             <Trigger>I don't think this studio will take me on as an intern if they find out that I quit</Trigger>   
         </Triggers>
         <Text>Maybe not, but your health is more important to me than an internship, and it should be to you, too.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="2">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>You're right</Text><Attraction>0</Attraction></Fragment>
@@ -571,7 +571,7 @@
             <Trigger>You're right I'll quit</Trigger>   
         </Triggers>
         <Text>Good. Let me know how it goes.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="2">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>You're right</Text><Attraction>0</Attraction></Fragment>

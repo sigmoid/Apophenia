@@ -340,7 +340,7 @@ What happened there?</Text>
             <Trigger>Well, that explains some of the assignments we had</Trigger>
         </Triggers>
         <Text>Haha, it's true I make it tough, but you made it through didn't you? I think students learn more when they are challenged.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank2.xml" WordFrequency="0.5">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yeah, I</Text><Attraction>0</Attraction></Fragment>
@@ -372,7 +372,7 @@ What happened there?</Text>
             <Trigger>Yeah, I totally agree</Trigger>
         </Triggers>
         <Text>There are limits to it though, you can't just believe in someone hard enough that they can become a surgeon.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank2.xml" WordFrequency="0.5">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Makes sense</Text><Attraction>0</Attraction></Fragment>
@@ -399,7 +399,7 @@ What happened there?</Text>
             <Trigger>Makes sense</Trigger>
         </Triggers>
         <Text>So when you're helping a student, just keep that in mind. Don't lower your expectations for someone unless they give you a really good reason to. Do you have any questions about class?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank2.xml" WordFrequency="0.5">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>What's coming</Text><Attraction>0</Attraction></Fragment>
@@ -426,7 +426,7 @@ What happened there?</Text>
 
     <Prompt>
         <Text>Well, we're just digging deeper into C++ next lecture. So study up on polymorphism.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank2.xml" WordFrequency="0.5">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Great, so</Text><Attraction>0</Attraction></Fragment>
@@ -459,7 +459,7 @@ What happened there?</Text>
 
     <Prompt>
         <Text>Yes, but also multi-inheritence, object slicing, and the memory model behind it all.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank2.xml" WordFrequency="0.5">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Oh right,</Text><Attraction>0</Attraction></Fragment>
@@ -492,7 +492,7 @@ What happened there?</Text>
     <Prompt>
         <Text>What's on your plate now?
 Do you have time to do the next assignment before class next week?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank2.xml" WordFrequency="0.5">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Of course! I</Text><Attraction>0</Attraction></Fragment>
@@ -538,7 +538,7 @@ Do you have time to do the next assignment before class next week?</Text>
     
     <Prompt IsEnd="True">
         <Text>Good. No rush. I'll see you next week. Have a nice weekend.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank2.xml" WordFrequency="0.5">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>You too,</Text><Attraction>0</Attraction></Fragment>

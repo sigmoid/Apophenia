@@ -19,7 +19,7 @@
 <Game>
     <Prompt TransitionText="Days Later">
         <Text>Hello?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I</Text><Attraction>1000</Attraction></Fragment>
@@ -55,7 +55,7 @@
             <Trigger>I need help</Trigger>   
         </Triggers>
         <Text>Who is this?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I saw you</Text><Attraction>1000</Attraction></Fragment>
@@ -97,7 +97,7 @@
             <Trigger>I saw you a few weeks ago I don't know what to do</Trigger>   
         </Triggers>
         <Text>What's going on, is it an emergency?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>yes</Text><Attraction>1000</Attraction></Fragment>
@@ -137,7 +137,7 @@
             <Trigger>maybe? it's anxiety again, but its worse</Trigger>   
         </Triggers>
         <Text>How is it worse?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I feel like</Text><Attraction>1000</Attraction></Fragment>
@@ -185,7 +185,7 @@
             <Trigger>I feel like I might pass out everything is freaking me out I can't move but I can't stay still</Trigger>
         </Triggers>
         <Text>Are you in a safe place right now? Is there anyone there with you?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I'm home</Text><Attraction>1000</Attraction></Fragment>
@@ -224,7 +224,7 @@
             <Trigger>I'm home my roommate's here, but I can't talk to him</Trigger>
         </Triggers>
         <Text>Why can't you talk to him?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>He's busy...</Text><Attraction>1000</Attraction></Fragment>
@@ -264,7 +264,7 @@
             <Trigger>He's busy... I don't want to bug him</Trigger>
         </Triggers>
         <Text>Do you feel like you want to hurt yourself or anyone else?</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>What</Text><Attraction>1000</Attraction></Fragment>
@@ -295,7 +295,7 @@
             <Trigger>What no</Trigger>
         </Triggers>
         <Text>It sounds like you're having a panic attack. It will pass, but it might take some time.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>How can I</Text><Attraction>1000</Attraction></Fragment>
@@ -325,7 +325,7 @@
             <Trigger>How can I make it stop?</Trigger>
         </Triggers>
         <Text>Focus on your breathing, try to slow down, and talking to someone helps.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>What if this</Text><Attraction>1000</Attraction></Fragment>
@@ -355,7 +355,7 @@
             <Trigger>What if this happens again?</Trigger>
         </Triggers>
         <Text>Therapy can help prevent events like this. If you want, I can prescribe you a stronger anxiety medication for acute episodes like this.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment IsIntrusive="True"><Text>I'll abuse</Text><Attraction>1000</Attraction></Fragment>
@@ -391,7 +391,7 @@
             <Trigger>Okay, that sounds good thanks</Trigger>
         </Triggers>
         <Text>I want you to make an appointment with me as soon as possible. If the anxiety gets worse, you should call the crisis hotline.</Text>
-        <Response>
+        <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment IsIntrusive="True"><Text>No chance</Text><Attraction>1000</Attraction></Fragment>

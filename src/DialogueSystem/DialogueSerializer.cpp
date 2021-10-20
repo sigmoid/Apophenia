@@ -75,6 +75,16 @@ Response DialogueSerializer::DeserializeResponse(tinyxml2::XMLElement *root)
     res.Color.a = colorRoot->FirstChildElement("a")->FloatText();
     res.Speed = root->FirstChildElement("Speed")->FloatText();
 
+    if(root->Attribute("WordBank") != nullptr && root->Attribute("WordFrequency") != nullptr)
+    {
+        res.WordBank = root->Attribute("WordBank");
+        res.WordFrequency = root->FloatAttribute("WordFrequency",0);
+    }
+    else
+    {
+        res.WordBank = "";
+        res.WordFrequency = 0;
+    }
     std::vector<std::vector<SentenceFragment> > wholeFragment;
     tinyxml2::XMLElement *fragRoot = root->FirstChildElement("Fragments");
     {
@@ -91,6 +101,38 @@ Response DialogueSerializer::DeserializeResponse(tinyxml2::XMLElement *root)
     }
 
     res.Fragments = wholeFragment;
+
+    return res;
+}
+
+std::vector<Word> DialogueSerializer::GetWordBank(std::string Filename)
+{
+    tinyxml2::XMLDocument doc;
+    doc.LoadFile(Filename.c_str());
+
+    std::vector<Word> res;
+
+    tinyxml2::XMLElement *docRoot = doc.RootElement();
+    
+    for(tinyxml2::XMLElement * wrd = docRoot->FirstChildElement("Word"); wrd != nullptr; wrd = wrd->NextSiblingElement("Word"))
+    {
+        Word curWord;
+
+        tinyxml2::XMLElement *colorRoot = wrd->FirstChildElement("Color");
+        if(colorRoot != nullptr)
+        {
+            curWord.Color.r = colorRoot->FirstChildElement("r")->FloatText();
+            curWord.Color.g = colorRoot->FirstChildElement("g")->FloatText();
+            curWord.Color.b = colorRoot->FirstChildElement("b")->FloatText();
+            curWord.Color.a = colorRoot->FirstChildElement("a")->FloatText();
+        }
+        curWord.Speed = wrd->FloatAttribute("Speed", 1);
+        curWord.Probability = wrd->FloatAttribute("Probability", 1);
+        curWord.Text = wrd->GetText();            
+
+        res.push_back(curWord);
+    }
+    
 
     return res;
 }
