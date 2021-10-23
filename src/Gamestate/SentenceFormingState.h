@@ -10,8 +10,8 @@
 #include "../../Opal/Graphics/MeshRenderer2D.h"
 #include "../../Opal/Graphics/PostProcessRenderer.h"
 #include "../Components/SparkComponent.h"
-#include "../Components/ScrollingWordComponent.h"
 #include "../../Opal/Game.h"
+#include "../../Opal/vendor/FastNoiseLite.h"
 #include "../DialogueSystem/WordBank.h"
 
 #include "../../Opal/EntityComponent/Scene.h"
@@ -67,7 +67,7 @@ class SentenceFormingState : public Opal::Gamestate
 
     void PreBakeLines();
 
-    void CreateSentenceFragment(glm::vec3 pos, std::string text, float attraction, float speed, bool intrusive);
+    void CreateSentenceFragment(glm::vec3 pos, std::string text, float attraction, float speed, bool intrusive, bool solid, bool core);
     void RenderSentenceFragments();
     glm::vec4 mFragmentColor = glm::vec4(0.9, 0.9, 0.9, 1.0f);
     std::vector<Opal::Entity *> mFragmentEnts;
@@ -75,7 +75,7 @@ class SentenceFormingState : public Opal::Gamestate
     static Opal::Font *mFont;
     static Opal::Font *mResponseFont;
 
-    float mNoiseFrequency = 12.5f;
+    float mNoiseFrequency = 12.5f / 2.0f;
     float mNoiseScaleJ = 5.0f;
     float mNoiseScale = 15.0f;
 
@@ -131,12 +131,11 @@ class SentenceFormingState : public Opal::Gamestate
     float mScreenShakeTime = 0.4f;
     int mScreenShakeIntensity = 30;
 
-    std::vector<Opal::Entity*> mScrollingWords;
-    void CreateRandomScrollingWord();
-    void RenderScrollingWords();
-    void UpdateScrollingWords();
     std::vector<Word> mWordBank;
-    float mScrollingWordTimer = 0;
-    float mScrollingWordFrequency = 0;
     std::vector<std::pair<Opal::Entity *, Opal::Entity *> > mWordConnections;
+    float mSpaceBetweenFragments = 1920 * 0.7f;
+    float mPadding = 50;
+    FastNoiseLite mNoise;
+    float mChannelHeight = 900;
+    float mCurrentScroll = 0;
 };

@@ -89,7 +89,16 @@ void PlayState::IncrementConversation()
     }
 
     DialogueManager::Instance->LoadConversation(mConversationSequence[mCurrentConversation++]);
-    mTransitionTimer = mTransitionDuration;
+
+    if(DialogueManager::Instance->EatTransition)
+    {
+        DialogueManager::Instance->EatTransition = false;
+        UpdateColor();
+    }
+    else
+    {
+        mTransitionTimer = mTransitionDuration;
+    }
 }
 
 void PlayState::End() 

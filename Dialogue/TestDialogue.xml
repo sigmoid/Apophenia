@@ -17,7 +17,7 @@
     </Color>
     -->   
 <Game>
-    <Prompt IsKill="True">
+    <Prompt>
         <Triggers>
             <Trigger>Okay, that sounds good</Trigger>   
         </Triggers>
@@ -25,13 +25,16 @@
         <Response>
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>So, the</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>just one</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>game is</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>two of</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>the boys</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>over now right?</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>three boys</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>makes a</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>profit</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>

@@ -13,4 +13,6 @@ struct Response
     glm::vec4 Color;
     std::string WordBank;
     float WordFrequency;
+    bool SolidWords;
+    float ChannelSize = 500;
 };

@@ -1,0 +1,145 @@
+<!-- Colors -->
+<!-- Basic White            
+    <Color>
+        <r>0.9</r>
+        <g>0.9</g>
+        <b>0.9</b>
+        <a>1.0</a>
+    </Color>
+    -->
+
+ <!-- Ambulance Guy            
+    <Color>
+        <r>0.0000</r>
+        <g>0.0000</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+<Game>
+    <Prompt TransitionText="???">
+        <Text>CLEAR!</Text>
+        <Response WordFrequency="4" ChannelSize="550" WordBank="../Dialogue/WordBank11.xml" SolidWords="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Where</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>am</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.0000</r>
+                <g>0.0000</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.0000</r>
+        <g>0.0000</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>He's waking up!</Text>
+        <Triggers>
+            <Trigger>Where am I</Trigger>   
+        </Triggers>
+        <Response WordFrequency="4" ChannelSize="550" WordBank="../Dialogue/WordBank11.xml" SolidWords="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Who</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>are</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>you</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.0000</r>
+                <g>0.0000</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.0000</r>
+        <g>0.0000</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Text>You just had a seizure, we're taking you to the hospital.</Text>
+        <Triggers>
+            <Trigger>Who are you</Trigger>   
+        </Triggers>
+        <Response WordFrequency="4" ChannelSize="550" WordBank="../Dialogue/WordBank11.xml" SolidWords="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>What's this</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>on my chest</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.0000</r>
+                <g>0.0000</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.0000</r>
+        <g>0.0000</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Text>We had to defribulate you</Text>
+        <Triggers>
+            <Trigger>What's this on my chest</Trigger>   
+        </Triggers>
+        <Response WordFrequency="4" ChannelSize="550" WordBank="../Dialogue/WordBank11.xml" SolidWords="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>What's this</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>on my chest</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.0000</r>
+                <g>0.0000</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.0000</r>
+        <g>0.0000</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+</Game>

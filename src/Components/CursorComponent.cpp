@@ -129,7 +129,7 @@ void CursorComponent::OnCollision(Opal::Entity *other, glm::vec2 resolution, Opa
     }
 
     SentenceFragmentComponent *otherComp = other->GetComponent<SentenceFragmentComponent>(); 
-    if(otherComp != nullptr && otherComp->GetActive())
+    if(otherComp != nullptr && otherComp->GetActive() && otherComp->GetSolid())
     {
         mCurrentResponse.push_back(other->GetComponent<SentenceFragmentComponent>()->Text);
         otherComp->Interact();

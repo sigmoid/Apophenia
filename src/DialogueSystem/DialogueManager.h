@@ -17,6 +17,7 @@ class DialogueManager
     Response GetCurrentResponse();
     bool IsConversationOver();
     void LoadConversation(std::string filepath);
+    bool EatTransition = false;
 
     static DialogueManager *Instance;
 

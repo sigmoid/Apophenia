@@ -1,11 +1,12 @@
 #include "SentenceFragmentComponent.h"
+#include "../../Opal/EntityComponent/Scene.h"
 
 SentenceFragmentComponent::SentenceFragmentComponent()
 {
     TypeName = "SentenceFragmentComponent";
 }
 
-SentenceFragmentComponent::SentenceFragmentComponent(std::string text, float speed, glm::vec4 color, float attraction, bool intrusive)
+SentenceFragmentComponent::SentenceFragmentComponent(std::string text, float speed, glm::vec4 color, float attraction, bool intrusive, bool solid, bool core)
 {
     TypeName = "SentenceFragmentComponent";
     Text = text;
@@ -13,9 +14,19 @@ SentenceFragmentComponent::SentenceFragmentComponent(std::string text, float spe
     Color = color;
     Attraction = attraction;
     IsIntrusive = intrusive;
+    mSolid = solid;
+    mCore = core;
 
     if(IsIntrusive)
         Color = IntrusiveColor;
+
+    if(!mSolid)
+        Color.a = 0.125f;
+}
+
+bool SentenceFragmentComponent::GetSolid()
+{
+    return mSolid;
 }
 
 void SentenceFragmentComponent::OnAdded()
@@ -31,6 +42,11 @@ void SentenceFragmentComponent::OnStart()
 void SentenceFragmentComponent::Update(float dTime)
 {
     mTransform->Position.x -= Speed * dTime;
+}
+
+bool SentenceFragmentComponent::GetCore()
+{
+    return mCore;    
 }
 
 void SentenceFragmentComponent::Interact()
@@ -51,7 +67,6 @@ void SentenceFragmentComponent::Render(Opal::BatchRenderer2D *ctx)
 
 void SentenceFragmentComponent::OnCollision(Opal::Entity *other, glm::vec2 resolution, Opal::AABB otherAABB)
 {
-
 }
 
 void SentenceFragmentComponent::Serialize()

@@ -75,6 +75,8 @@ Response DialogueSerializer::DeserializeResponse(tinyxml2::XMLElement *root)
     res.Color.a = colorRoot->FirstChildElement("a")->FloatText();
     res.Speed = root->FirstChildElement("Speed")->FloatText();
 
+    res.SolidWords = root->BoolAttribute("SolidWords", false);
+
     if(root->Attribute("WordBank") != nullptr && root->Attribute("WordFrequency") != nullptr)
     {
         res.WordBank = root->Attribute("WordBank");
@@ -85,6 +87,9 @@ Response DialogueSerializer::DeserializeResponse(tinyxml2::XMLElement *root)
         res.WordBank = "";
         res.WordFrequency = 0;
     }
+
+    res.ChannelSize = root->FloatAttribute("ChannelSize", 700.0f);
+
     std::vector<std::vector<SentenceFragment> > wholeFragment;
     tinyxml2::XMLElement *fragRoot = root->FirstChildElement("Fragments");
     {
