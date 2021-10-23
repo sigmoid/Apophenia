@@ -13,6 +13,7 @@ class DialogueManager
     DialogueManager(std::string filepath);
     // returns 'true' if the response was valid
     bool ProcessResponse(std::string response);
+    void IncrementResponse();
     Prompt GetCurrentPrompt();
     Response GetCurrentResponse();
     bool IsConversationOver();
@@ -23,7 +24,7 @@ class DialogueManager
 
     private:
     int mCurrentPromptIdx;
-    Response mCurrentResponse;
+    int mCurrentSequenceNum = -1;
 
     std::vector<Prompt> mPrompts;
 

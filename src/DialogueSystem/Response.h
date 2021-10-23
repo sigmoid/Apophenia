@@ -15,4 +15,5 @@ struct Response
     float WordFrequency;
     bool SolidWords;
     float ChannelSize = 500;
+    bool AllowNonsense = false;
 };

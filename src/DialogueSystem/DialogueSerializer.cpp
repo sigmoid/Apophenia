@@ -47,6 +47,7 @@ Prompt DialogueSerializer::DeserializePrompt(tinyxml2::XMLElement *root)
     Prompt res;
     res.IsEnd = root->BoolAttribute("IsEnd", false);
     res.IsKill = root->BoolAttribute("IsKill", false);
+    res.Sequence = root->IntAttribute("Sequence", -1);
     const char * tmp = root->Attribute("TransitionText");
     if(tmp != nullptr)
         res.TransitionText = tmp; 
@@ -76,6 +77,7 @@ Response DialogueSerializer::DeserializeResponse(tinyxml2::XMLElement *root)
     res.Speed = root->FirstChildElement("Speed")->FloatText();
 
     res.SolidWords = root->BoolAttribute("SolidWords", false);
+    res.AllowNonsense = root->BoolAttribute("AllowNonsense", false);
 
     if(root->Attribute("WordBank") != nullptr && root->Attribute("WordFrequency") != nullptr)
     {

@@ -23,9 +23,17 @@ bool DialogueManager::ProcessResponse(std::string response)
         {
             Opal::Logger::LogString("DIALOGUE_MANAGER: response \"" + response + "\" accepted");
             mCurrentPromptIdx = i;
-            mCurrentResponse = mPrompts[i].Response;
+            if(mPrompts[i].Sequence > mCurrentSequenceNum)
+                mCurrentSequenceNum = mPrompts[i].Sequence;
+
             return true;
         }
+    }
+
+    if(GetCurrentResponse().AllowNonsense)
+    {
+        IncrementResponse();
+        return true;
     }
     return false;
 }
@@ -46,5 +54,29 @@ void DialogueManager::LoadConversation(std::string filepath)
     mPrompts.clear();
     mPrompts = DialogueSerializer::DeserializeFile(filepath);
     mCurrentPromptIdx = 0;
+    
+    // Find the minimum sequence number and start our number there.
+    for(int i = 0; i < mPrompts.size(); i++)
+    {
+        if(mPrompts[i].Sequence < mCurrentSequenceNum || (mPrompts[i].Sequence != -1 && mCurrentSequenceNum == -1))
+        {
+            mCurrentSequenceNum = mPrompts[i].Sequence;
+        }
+    }
+
     return;
+}
+
+void DialogueManager::IncrementResponse()
+{
+    for(int i = 0; i < mPrompts.size(); i++)
+    {
+        if(mPrompts[i].Sequence == mCurrentSequenceNum + 1)
+        {
+            Opal::Logger::LogString("DIALOGUE_MANAGER: moving to sequence " + std::to_string(mCurrentSequenceNum +1));
+            mCurrentPromptIdx = i;
+            mCurrentSequenceNum++;
+            return;
+        }   
+    }
 }

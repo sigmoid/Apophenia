@@ -17,9 +17,9 @@
     </Color>
     -->   
 <Game>
-    <Prompt TransitionText="???">
+    <Prompt Sequence="1" TransitionText="???">
         <Text>CLEAR!</Text>
-        <Response WordFrequency="4" ChannelSize="550" WordBank="../Dialogue/WordBank11.xml" SolidWords="True">
+        <Response AllowNonsense="True" WordFrequency="4" ChannelSize="300" WordBank="../Dialogue/WordBank11.xml" SolidWords="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Where</Text><Attraction>0</Attraction></Fragment>
@@ -50,12 +50,12 @@
         </Triggers>
     </Prompt>
 
-    <Prompt>
+    <Prompt Sequence="2">
         <Text>He's waking up!</Text>
         <Triggers>
             <Trigger>Where am I</Trigger>   
         </Triggers>
-        <Response WordFrequency="4" ChannelSize="550" WordBank="../Dialogue/WordBank11.xml" SolidWords="True">
+        <Response AllowNonsense="True" WordFrequency="4" ChannelSize="300" WordBank="../Dialogue/WordBank11.xml" SolidWords="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Who</Text><Attraction>0</Attraction></Fragment>
@@ -83,12 +83,12 @@
     </Color>
     </Prompt>
 
-    <Prompt>
+    <Prompt Sequence="3">
         <Text>You just had a seizure, we're taking you to the hospital.</Text>
         <Triggers>
             <Trigger>Who are you</Trigger>   
         </Triggers>
-        <Response WordFrequency="4" ChannelSize="550" WordBank="../Dialogue/WordBank11.xml" SolidWords="True">
+        <Response AllowNonsense="True" WordFrequency="4" ChannelSize="300" WordBank="../Dialogue/WordBank11.xml" SolidWords="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>What's this</Text><Attraction>0</Attraction></Fragment>
@@ -113,15 +113,15 @@
     </Color>
     </Prompt>
 
-    <Prompt>
-        <Text>We had to defribulate you</Text>
+    <Prompt Sequence="4" IsEnd="True">
+        <Text>Hey! Stay with me buddy!</Text>
         <Triggers>
             <Trigger>What's this on my chest</Trigger>   
         </Triggers>
-        <Response WordFrequency="4" ChannelSize="550" WordBank="../Dialogue/WordBank11.xml" SolidWords="True">
+        <Response AllowNonsense="True" WordFrequency="4" ChannelSize="300" WordBank="../Dialogue/WordBank11.xml" SolidWords="True">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>What's this</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>What's this thing</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>on my chest</Text><Attraction>0</Attraction></Fragment>
@@ -142,4 +142,6 @@
         <a>1.0</a>
     </Color>
     </Prompt>
+
+    
 </Game>

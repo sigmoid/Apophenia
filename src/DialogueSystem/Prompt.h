@@ -14,6 +14,7 @@ struct Prompt
     Response Response;
     bool IsEnd = false;
     bool IsKill = true;
+    int Sequence=-1;
 
     std::string TransitionText = "";
 };
