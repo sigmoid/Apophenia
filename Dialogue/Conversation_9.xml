@@ -19,7 +19,7 @@
 <Game>
     <Prompt TransitionText="Later that day">
         <Text>I see that you've been struggling with anxiety, and your doctor told me you had a panic attack. Tell me about that.</Text>
-        <Response WordFrequency="4" WordBank="../Dialogue/WordBank10.xml">
+        <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Okay but first,</Text><Attraction>0</Attraction></Fragment>
@@ -55,7 +55,7 @@
             <Trigger>Okay but first, I have a question for you</Trigger>   
         </Triggers>
         <Text>Okay sure, what is it?</Text>
-        <Response WordFrequency="4" WordBank="../Dialogue/WordBank10.xml">
+        <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Are you legally</Text><Attraction>0</Attraction></Fragment>
@@ -91,7 +91,7 @@
             <Trigger>Are you legally obligated to keep everything I say private</Trigger>   
         </Triggers>
         <Text>Well, basically yes. The only thing that would change that is if I believed you were going to hurt yourself or someone else.</Text>
-        <Response WordFrequency="4" WordBank="../Dialogue/WordBank10.xml">
+        <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Okay good</Text><Attraction>0</Attraction></Fragment>
@@ -115,7 +115,7 @@
 
     <Prompt>
         <Text>So, back to the anxiety. What's going on with that?</Text>
-        <Response WordFrequency="4" WordBank="../Dialogue/WordBank10.xml">
+        <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Well, actually</Text><Attraction>0</Attraction></Fragment>
@@ -154,7 +154,7 @@
             <Trigger>Well, actually another question this one is important</Trigger>   
         </Triggers>
         <Text>Okay, sure, but after that let's start talking about you, alright?</Text>
-        <Response WordFrequency="4" WordBank="../Dialogue/WordBank10.xml">
+        <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Sure, sure</Text><Attraction>0</Attraction></Fragment>
@@ -190,7 +190,7 @@
             <Trigger>Sure, sure so, I know. I know about the game</Trigger>   
         </Triggers>
         <Text>The game?</Text>
-        <Response WordFrequency="4" WordBank="../Dialogue/WordBank10.xml">
+        <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>The game you</Text><Attraction>0</Attraction></Fragment>
@@ -226,7 +226,7 @@
             <Trigger>The game you and the faculty are playing to subtly help me</Trigger>   
         </Triggers>
         <Text>I'm sorry I don't know what you're talking about.</Text>
-        <Response WordFrequency="4" WordBank="../Dialogue/WordBank10.xml">
+        <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Of course,</Text><Attraction>0</Attraction></Fragment>
@@ -262,7 +262,7 @@
             <Trigger>Of course, are you just an actor or are you a real therapist?</Trigger>   
         </Triggers>
         <Text>I'm a real therapist. Now, I am really interested in this idea but I want to start with some other questions if that's alright with you.</Text>
-        <Response WordFrequency="4" WordBank="../Dialogue/WordBank10.xml">
+        <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Alright, but can</Text><Attraction>0</Attraction></Fragment>
@@ -295,7 +295,7 @@
             <Trigger>Alright, but can you just turn off the cameras first?</Trigger>   
         </Triggers>
         <Text>There are no cameras. I would like to ask a question now please. When was the last time you slept?</Text>
-        <Response WordFrequency="4" WordBank="../Dialogue/WordBank10.xml">
+        <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Um, I'm not sure</Text><Attraction>0</Attraction></Fragment>
@@ -334,7 +334,7 @@
             <Trigger>Um, I'm not sure I've been up late a lot lately but it's been a few days probably</Trigger>   
         </Triggers>
         <Text>Why aren't you sleeping?</Text>
-        <Response WordFrequency="4" WordBank="../Dialogue/WordBank10.xml">
+        <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Well, I'm just</Text><Attraction>0</Attraction></Fragment>
@@ -379,7 +379,7 @@
             <Trigger>Well, I'm just figuring out the game and don't get me wrong I love the idea I just want it to stop</Trigger>   
         </Triggers>
         <Text>Let me ask this again. Why aren't you sleeping?</Text>
-        <Response WordFrequency="4" WordBank="../Dialogue/WordBank10.xml">
+        <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I just answered</Text><Attraction>0</Attraction></Fragment>
@@ -424,7 +424,7 @@
             <Trigger>I just answered that, can't you see the impact this is having on me I want it to stop</Trigger>   
         </Triggers>
         <Text>I'm very concerned that you haven't been able to sleep, and I think sleeping would help you with the problems you're having.</Text>
-        <Response WordFrequency="4" WordBank="../Dialogue/WordBank10.xml">
+        <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Okay, you're right</Text><Attraction>0</Attraction></Fragment>
@@ -463,7 +463,7 @@
             <Trigger>Okay, you're right but I've got a lot going on and I swear I've tried everything</Trigger>   
         </Triggers>
         <Text>Well, I think you need to drop everything else right now and focus on getting some sleep. I would like to call my friend at the hospital and see if they can help you with that.</Text>
-        <Response WordFrequency="4" WordBank="../Dialogue/WordBank10.xml">
+        <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I don't want to</Text><Attraction>0</Attraction></Fragment>
@@ -493,7 +493,7 @@
             <Trigger>I don't want to miss school</Trigger>   
         </Triggers>
         <Text>I really think you should consider it. Missing a little bit of school is not a big deal. It might not even take long. I just want to get you sleeping.</Text>
-        <Response WordFrequency="4" WordBank="../Dialogue/WordBank10.xml">
+        <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Okay, that</Text><Attraction>0</Attraction></Fragment>
@@ -523,7 +523,7 @@
             <Trigger>Okay, that sounds good</Trigger>   
         </Triggers>
         <Text>Good. Let me make the call.</Text>
-        <Response WordFrequency="4" WordBank="../Dialogue/WordBank10.xml">
+        <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>So, the</Text><Attraction>0</Attraction></Fragment>
@@ -556,7 +556,7 @@
             <Trigger>KILL</Trigger>   
         </Triggers>
         <Text>BLANK</Text>
-        <Response WordFrequency="4" WordBank="../Dialogue/WordBank10.xml">
+        <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>So, the</Text><Attraction>0</Attraction></Fragment>

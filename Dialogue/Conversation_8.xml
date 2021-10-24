@@ -19,7 +19,7 @@
 <Game>
     <Prompt TransitionText="Next Day">
         <Text>Good morning! Feeling any better today?</Text>
-        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="3">
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I actually</Text><Attraction>0</Attraction></Fragment>
@@ -52,7 +52,7 @@
             <Trigger>I actually feel great</Trigger>   
         </Triggers>
         <Text>Good! Glad to hear you're feeling better. What did you end up doing last night?</Text>
-        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="3">
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I watched some</Text><Attraction>0</Attraction></Fragment>
@@ -91,7 +91,7 @@
             <Trigger>I watched some old kids movies and read some of this book</Trigger>   
         </Triggers>
         <Text>Wow. That's a lot for one night. Is it the book for your game development class?</Text>
-        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="3">
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yeah, it's</Text><Attraction>0</Attraction></Fragment>
@@ -124,7 +124,7 @@
             <Trigger>Yeah, it's really good super interesting</Trigger>   
         </Triggers>
         <Text>What's it about again? I forgot.</Text>
-        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="3">
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Basically it's about</Text><Attraction>0</Attraction></Fragment>
@@ -172,7 +172,7 @@
             <Trigger>Basically it's about how games can be designed to do interesting things like create a better way for socially anxious people to interact</Trigger>   
         </Triggers>
         <Text>Very interesting! That'd be great for you!</Text>
-        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="3">
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Ha ha,</Text><Attraction>0</Attraction></Fragment>
@@ -204,7 +204,7 @@
             <Trigger>Ha ha, good one</Trigger>   
         </Triggers>
         <Text>Just messing with you. So how could a game do that? Help people interact?</Text>
-        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="3">
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Well, imagine a game</Text><Attraction>0</Attraction></Fragment>
@@ -249,7 +249,7 @@
             <Trigger>Well, imagine a game that uses earbuds and you hear "A lover is near" then you hear "you have gained a life"</Trigger>   
         </Triggers>
         <Text>Alright...</Text>
-        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="3">
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>A stranger in</Text><Attraction>0</Attraction></Fragment>
@@ -291,7 +291,7 @@
             <Trigger>A stranger in the same place as you is playing the game too, and they gave you a life</Trigger>   
         </Triggers>
         <Text>Oh wow, that is pretty interesting.</Text>
-        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="3">
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Now imagine a game</Text><Attraction>0</Attraction></Fragment>
@@ -321,7 +321,7 @@
             <Trigger>Now imagine a game at a university...</Trigger>   
         </Triggers>
         <Text>Yeah?</Text>
-        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="3">
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Where teachers identify</Text><Attraction>0</Attraction></Fragment>
@@ -368,7 +368,7 @@
             <Trigger>Where teachers identify students in crisis and have their students try to plant ideas in their heads to get them to seek help</Trigger>   
         </Triggers>
         <Text>That's a weird one... Was that from the book too?</Text>
-        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="3">
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yup,</Text><Attraction>0</Attraction></Fragment>
@@ -404,7 +404,7 @@
             <Trigger>Yup, last chapter i read</Trigger>   
         </Triggers>
         <Text>Hm. That's really strange. I don't know if I like that one. Oh! There's more space news. Do you want to hear about it?</Text>
-        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="3">
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Sure, what</Text><Attraction>0</Attraction></Fragment>
@@ -434,7 +434,7 @@
             <Trigger>Sure, what is it</Trigger>   
         </Triggers>
         <Text>Well, they keep finding black holes all throughout the universe.</Text>
-        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="3">
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Really? Are they</Text><Attraction>0</Attraction></Fragment>
@@ -467,7 +467,7 @@
             <Trigger>Really? Are they trying a new detection method?</Trigger>   
         </Triggers>
         <Text>They didn't say so on the news. I think there must be some kind of event that's causing them to randomly appear.</Text>
-        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="3">
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Well that</Text><Attraction>0</Attraction></Fragment>
@@ -500,7 +500,7 @@
             <Trigger>Well that is absolutely terrifying</Trigger>   
         </Triggers>
         <Text>I'm sorry sometimes I forget who I'm talking to. You really don't need to worry about this.</Text>
-        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="3">
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>We will see</Text><Attraction>0</Attraction></Fragment>
@@ -539,7 +539,7 @@
             <Trigger>We will see I can never tell what is going to make me worry</Trigger>   
         </Triggers>
         <Text>Hm. Yeah, well maybe you can talk to the therapist about that today.</Text>
-        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="3">
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>We will see</Text><Attraction>0</Attraction></Fragment>

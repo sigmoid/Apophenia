@@ -18,7 +18,7 @@ Pill::Pill(glm::vec2 startPos, float startRot)
         GenerateCapsule();
     }
 
-    mSpeed = 100 + rand() % 60;
+    mSpeed = 250 + rand() % 60;
     mAngularSpeed = (float)(rand() % 100 - 50) / 100.0f;
 }
 

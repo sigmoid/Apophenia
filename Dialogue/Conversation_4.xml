@@ -19,7 +19,7 @@
 <Game>
     <Prompt TransitionText="One Week Later">
         <Text>What brings you in today?</Text>
-        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="1.25">
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Anxiety</Text><Attraction>0</Attraction></Fragment>
@@ -46,7 +46,7 @@
 
     <Prompt>
         <Text>Okay. Very common problem for students. Can you describe it?</Text>
-        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="1.25">
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Sure,</Text><Attraction>0</Attraction></Fragment>
@@ -88,7 +88,7 @@
 
     <Prompt>
         <Text>Hm. And how often does this happen?</Text>
-        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="1.25">
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Hard to say</Text><Attraction>0</Attraction></Fragment>
@@ -121,7 +121,7 @@
 
     <Prompt>
         <Text>How long have you been experiencing these symptoms?</Text>
-        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="1.25">
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Well, it</Text><Attraction>0</Attraction></Fragment>
@@ -161,7 +161,7 @@
         </Triggers>
 
         <Text>What do you mean by "It comes and goes?"</Text>
-        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="1.25">
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I had a</Text><Attraction>0</Attraction></Fragment>
@@ -195,7 +195,7 @@
         </Triggers>
 
         <Text>How did you deal with it then?</Text>
-        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="1.25">
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Well, I started</Text><Attraction>0</Attraction></Fragment>
@@ -232,7 +232,7 @@
         </Triggers>
 
         <Text>You "tried" antidepressants? Did they help?</Text>
-        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="1.25">
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I don't think</Text><Attraction>0</Attraction></Fragment>
@@ -272,7 +272,7 @@
         </Triggers>
 
         <Text>How is the anxiety affecting your life?</Text>
-        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="1.25">
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I'm having trouble</Text><Attraction>0</Attraction></Fragment>
@@ -306,7 +306,7 @@
         </Triggers>
 
         <Text>It's definitely concerning. I would recommend you seek therapy. There are great resources here for that.</Text>
-        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="1.25">
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I have an</Text><Attraction>0</Attraction></Fragment>
@@ -340,7 +340,7 @@
         </Triggers>
 
         <Text>Great. I know you had a bad experience in the past, but I would also like to prescribe you an antidepressant.</Text>
-        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="1.25">
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Are you sure?</Text><Attraction>0</Attraction></Fragment>
@@ -374,7 +374,7 @@
         </Triggers>
 
         <Text>The main difference is that now you're older, children and adults respond differently to this type of medicine. We can stop it at any time.</Text>
-        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="1.25">
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I guess I</Text><Attraction>0</Attraction></Fragment>
@@ -409,7 +409,7 @@
         </Triggers>
 
         <Text>Good. I'm going to give you my cell number. Call me if your symptoms get worse. Otherwise, I would like to see you in a month to see your progress. Sound good?</Text>
-        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="1.25">
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Sure, thanks</Text><Attraction>0</Attraction></Fragment>

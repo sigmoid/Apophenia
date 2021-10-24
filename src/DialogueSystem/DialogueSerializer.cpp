@@ -61,11 +61,16 @@ Prompt DialogueSerializer::DeserializePrompt(tinyxml2::XMLElement *root)
     res.Text = root->FirstChildElement("Text")->GetText();
     std::replace(res.Text.begin(), res.Text.end(), '\t', ' ');
     res.Response = DeserializeResponse(root->FirstChildElement("Response"));
-    tinyxml2::XMLElement *colorRoot = root->FirstChildElement("Color");
-    res.Color.r = colorRoot->FirstChildElement("r")->FloatText();
-    res.Color.g = colorRoot->FirstChildElement("g")->FloatText();
-    res.Color.b = colorRoot->FirstChildElement("b")->FloatText();
-    res.Color.a = colorRoot->FirstChildElement("a")->FloatText();
+
+    for(tinyxml2::XMLElement *colorRoot = root->FirstChildElement("Color"); colorRoot != nullptr; colorRoot = colorRoot->NextSiblingElement("Color"))
+    {
+        glm::vec4 newColor;
+        newColor.r = colorRoot->FirstChildElement("r")->FloatText();
+        newColor.g = colorRoot->FirstChildElement("g")->FloatText();
+        newColor.b = colorRoot->FirstChildElement("b")->FloatText();
+        newColor.a = colorRoot->FirstChildElement("a")->FloatText();
+        res.Colors.push_back(newColor);
+    }
 
     for(tinyxml2::XMLElement *tgr = root->FirstChildElement("Triggers")->FirstChildElement(); tgr != nullptr; tgr = tgr->NextSiblingElement())
     {
@@ -97,7 +102,7 @@ Response DialogueSerializer::DeserializeResponse(tinyxml2::XMLElement *root)
         res.WordFrequency = 0;
     }
 
-    res.ChannelSize = root->FloatAttribute("ChannelSize", 700.0f);
+    res.ChannelSize = root->FloatAttribute("ChannelSize", 500.0f);
 
     std::vector<std::vector<SentenceFragment> > wholeFragment;
     tinyxml2::XMLElement *fragRoot = root->FirstChildElement("Fragments");

@@ -25,10 +25,28 @@ void PlayState::Tick()
     if(mTransitionTimer > 0)
     {
         mTransitionTimer -= mGame->GetDeltaTime();
-        UpdateColor();
+        UpdateColor(1 - mTransitionTimer / mTransitionDuration);
+
+        if(mTransitionTimer <= 0)
+        {
+            mPreviousColor = DialogueManager::Instance->GetCurrentPrompt().Colors[0];
+        }
     }
     else if (!IsPillSequence)
     {
+        if(mColorWarpTimer > 0)
+        {
+            mColorWarpTimer -= mGame->GetDeltaTime();
+            UpdateColor(1 - mColorWarpTimer / mColorWarpPeriod);
+
+            if(mColorWarpTimer <= 0)
+            {
+                mColorWarpTimer = mColorWarpPeriod;
+                mPreviousColor = mPreviousColor = DialogueManager::Instance->GetCurrentPrompt().Colors[mCurrentColorId];
+                mCurrentColorId = rand() % DialogueManager::Instance->GetCurrentPrompt().Colors.size();
+            }
+        }
+
         if(Opal::InputHandler::GetKey(GLFW_KEY_SPACE))
         {
             if(DialogueManager::Instance->GetCurrentPrompt().IsEnd)
@@ -82,13 +100,16 @@ void PlayState::Begin()
 
     mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, typeFace, glm::vec2(1920 - 300, 1080), Opal::Camera::ActiveCamera);
     IncrementConversation();
-    UpdateColor();
+    UpdateColor(1.0f);
 }
 
 void PlayState::IncrementConversation()
 {
+    
+    mCurrentColorId = 0;
+
     if(mCurrentConversation > 0)
-        mPreviousColor = DialogueManager::Instance->GetCurrentPrompt().Color;
+        mPreviousColor = DialogueManager::Instance->GetCurrentPrompt().Colors[0];
    
     if(mCurrentConversation >= mConversationSequence.size())
     {
@@ -117,12 +138,13 @@ void PlayState::IncrementConversation()
     else
     {
         DialogueManager::Instance->LoadConversation(mConversationSequence[mCurrentConversation++]);
+        mColorWarpTimer = mColorWarpPeriod;
     }
 
     if(DialogueManager::Instance->EatTransition)
     {
         DialogueManager::Instance->EatTransition = false;
-        UpdateColor();
+        UpdateColor(1.0f);
     }
     else
     {
@@ -147,27 +169,27 @@ void PlayState::Resume()
         mPreviousColor = glm::vec4(0.2,0.2, 0.2, 1.0f);
     }
 
-    UpdateColor();
+    UpdateColor(1.0f);
 }
 
-void PlayState::UpdateColor()
+void PlayState::UpdateColor(float progress)
 {
     glm::vec4 color;
 
     if(!IsPillSequence)
     {
-        color = DialogueManager::Instance->GetCurrentPrompt().Color;
+        color = DialogueManager::Instance->GetCurrentPrompt().Colors[mCurrentColorId];
     }
     else
     {
         color = glm::vec4(0.2,0.2,0.2,1.0f);
     }
 
-    if(mTransitionTimer > 0)
+    if(progress > 0)
     {
-        color.r = Opal::OpalMath::Lerp(mPreviousColor.r, color.r, 1 - mTransitionTimer / mTransitionDuration);
-        color.g = Opal::OpalMath::Lerp(mPreviousColor.g, color.g, 1 - mTransitionTimer / mTransitionDuration);
-        color.b = Opal::OpalMath::Lerp(mPreviousColor.b, color.b, 1 - mTransitionTimer / mTransitionDuration);
+        color.r = Opal::OpalMath::Lerp(mPreviousColor.r, color.r, progress);
+        color.g = Opal::OpalMath::Lerp(mPreviousColor.g, color.g, progress);
+        color.b = Opal::OpalMath::Lerp(mPreviousColor.b, color.b, progress);
     }
 
     mTextPass->SetClearColor(color.r, color.g, color.b, color.a);

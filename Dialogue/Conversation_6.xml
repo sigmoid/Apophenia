@@ -28,7 +28,7 @@
 <Game>
     <Prompt TransitionText="Next Day">
         <Text>Hey, sorry I can't talk long. I have to finish something here before noon.</Text>
-        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="2">
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Okay, this shouldn't</Text><Attraction>0</Attraction></Fragment>
@@ -61,7 +61,7 @@
             <Trigger>Okay, this shouldn't take long</Trigger>   
         </Triggers>
         <Text>What's wrong? You seem upset.</Text>
-        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="2">
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I think I</Text><Attraction>0</Attraction></Fragment>
@@ -91,7 +91,7 @@
             <Trigger>I think I need to quit</Trigger>   
         </Triggers>
         <Text>I thought you might. I heard from someone else what's been going on.</Text>
-        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="2">
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Which professor?</Text><Attraction>900</Attraction></Fragment>
@@ -124,7 +124,7 @@
             <Trigger>Which professor? Is it that obvious?</Trigger>   
         </Triggers>
         <Text>Not one of your professors, someone else in this department mentioned that you opened up to them about being stressed out. It's okay, I understand.</Text>
-        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="2">
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>So everyone</Text><Attraction>900</Attraction></Fragment>
@@ -154,7 +154,7 @@
             <Trigger>So everyone knows</Trigger>   
         </Triggers>
         <Text>No! They just told me because you work with me. Nobody is gossiping about this. We're concerned for you.</Text>
-        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="2">
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Okay.</Text><Attraction>500</Attraction></Fragment>
@@ -187,7 +187,7 @@
             <Trigger>So everyone knows</Trigger>   
         </Triggers>
         <Text>No! They just told me because you work with me. Nobody is gossiping about this. We're concerned for you.</Text>
-        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="2">
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Okay.</Text><Attraction>500</Attraction></Fragment>
@@ -220,7 +220,7 @@
             <Trigger>Okay. So what happens now?</Trigger>   
         </Triggers>
         <Text>Well, I can tell the other TAs. I'll just tell them you had a personal conflict. And I want you to make sure you are paid. So you'll need to talk to accounting.</Text>
-        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="2">
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>And what will</Text><Attraction>500</Attraction></Fragment>
@@ -253,7 +253,7 @@
             <Trigger>And what will you tell the students?</Trigger>   
         </Triggers>
         <Text>Nothing at all. Before you go, I want to know if there is anything I could have done better to make this job easier for you?</Text>
-        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="2">
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Well, I feel</Text><Attraction>0</Attraction></Fragment>
@@ -298,7 +298,7 @@
         <Text>What? 
 Okay.
 Well, good luck.</Text>
-        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="2">
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Well, I feel</Text><Attraction>0</Attraction></Fragment>

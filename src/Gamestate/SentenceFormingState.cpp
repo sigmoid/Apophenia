@@ -45,27 +45,25 @@ SentenceFormingState::SentenceFormingState()
 void SentenceFormingState::Tick()
 {
     mTimeSinceBirth += mGame->GetDeltaTime();
-
     // if(Opal::InputHandler::GetKey(GLFW_KEY_ESCAPE))
     // {
     //     mGame->PopState();
     //     return;
     // }
 
-    if(Opal::InputHandler::GetKey(GLFW_KEY_K))
+    if (Opal::InputHandler::GetKey(GLFW_KEY_K))
     {
         mKillEventTimer = mKillWaitTime;
     }
 
-    if(mKillEventTimer > 0)
+    if (mKillEventTimer > 0)
     {
         mKillEventTimer -= mGame->GetDeltaTime();
-        mWarpFactor = Opal::OpalMath::Lerp(mBaseWarp, mMaxWarp, 1.0f - mKillEventTimer/mKillWaitTime);
+        mWarpFactor = Opal::OpalMath::Lerp(mBaseWarp, mMaxWarp, 1.0f - mKillEventTimer / mKillWaitTime);
 
-        mSparkSpeedUp = Opal::OpalMath::Lerp(1.0f, mMaxSparkSpeedUp, 1.0f - mKillEventTimer/mKillWaitTime);
-        
+        mSparkSpeedUp = Opal::OpalMath::Lerp(1.0f, mMaxSparkSpeedUp, 1.0f - mKillEventTimer / mKillWaitTime);
 
-        if(mKillEventTimer <= 0)
+        if (mKillEventTimer <= 0)
         {
             mKillEventTimer = 0;
             mIsWarped = true;
@@ -73,17 +71,17 @@ void SentenceFormingState::Tick()
             //mCursorEntity->GetComponent<CursorComponent>()->Kill();
         }
     }
-    else if(mZoomTimer > 0)
+    else if (mZoomTimer > 0)
     {
         mScreenShakeTimer = 0;
         mZoomTimer -= mGame->GetDeltaTime();
-        if(mZoomTimer <= 0)
+        if (mZoomTimer <= 0)
         {
             mZoomTimer = 0;
             mZoom2Timer = mZoom2Duration;
         }
 
-        float progress = 1.0f - mZoomTimer/mZoomDuration;
+        float progress = 1.0f - mZoomTimer / mZoomDuration;
         mCurrentZoom = Opal::OpalMath::Lerp(1.0f, mZoomTarget, progress);
         Opal::Camera::ActiveCamera->SetZoom(mCurrentZoom);
         float translation = 1080.0f / mCurrentZoom;
@@ -92,23 +90,23 @@ void SentenceFormingState::Tick()
 
         Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, translation));
     }
-    else if(mZoom2Timer > 0)
+    else if (mZoom2Timer > 0)
     {
         mScreenShakeTimer = 0;
         mZoom2Timer -= mGame->GetDeltaTime();
-        if(mZoom2Timer <= 0)
+        if (mZoom2Timer <= 0)
         {
             mZoom2Timer = 0;
 
             Opal::Camera::ActiveCamera->SetZoom(1);
-            Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0,0));
+            Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, 0));
             DialogueManager::Instance->ProcessResponse("KILL");
             DialogueManager::Instance->EatTransition = true;
             mGame->PopState();
             return;
         }
 
-        float progress = 1.0f - mZoom2Timer/mZoom2Duration;
+        float progress = 1.0f - mZoom2Timer / mZoom2Duration;
         progress = pow(progress, mZoom2Pow);
         mCurrentZoom = Opal::OpalMath::Lerp(mZoomTarget, mZoom2Target, progress);
         Opal::Camera::ActiveCamera->SetZoom(mCurrentZoom);
@@ -137,7 +135,7 @@ void SentenceFormingState::Tick()
         auto response = mCursorEntity->GetComponent<CursorComponent>()->GetResponse();
         std::string responseStr = ConcatSelection(response);
 
-        if(mCursorEntity->GetComponent<CursorComponent>()->GetKill())
+        if (mCursorEntity->GetComponent<CursorComponent>()->GetKill())
         {
             DialogueManager::Instance->ProcessResponse("KILL");
             free(mScene);
@@ -155,7 +153,7 @@ void SentenceFormingState::Tick()
 
             mCursorEntity->GetComponent<CursorComponent>()->Reset();
 
-            if(!mIsWarped)
+            if (!mIsWarped)
                 CreatePlayingField();
 
             StartScreenShake();
@@ -175,7 +173,7 @@ void SentenceFormingState::RenderBlackHole()
     FastNoiseLite noise;
     noise.SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2);
     noise.SetFrequency(mBHNoiseFreq);
-    
+
     glm::vec2 startPos = mBHPos;
     glm::vec2 lastPos = startPos;
     glm::vec2 firstPos = lastPos;
@@ -185,12 +183,12 @@ void SentenceFormingState::RenderBlackHole()
     float noiseSeed = mTimeSinceBirth;
     bool first = true;
 
-    for(int i = 0; i < mNumTris; i++)
+    for (int i = 0; i < mNumTris; i++)
     {
-        float noiseVal = noise.GetNoise<float>((i * mNoiseScale),noiseSeed * mBHNoiseTurbulence) * mBHNoiseIntensity;
+        float noiseVal = noise.GetNoise<float>((i * mNoiseScale), noiseSeed * mBHNoiseTurbulence) * mBHNoiseIntensity;
         glm::vec2 curPos = mBHPos;
 
-        float theta = ((float)i / (float)mNumTris) * 3.14159f + 3.14159f/2.0f;
+        float theta = ((float)i / (float)mNumTris) * 3.14159f + 3.14159f / 2.0f;
 
         float newRadius = mBHRadius + noiseVal;
 
@@ -211,17 +209,17 @@ void SentenceFormingState::RenderBlackHole()
         verts.push_back(mBHColor.a);
         verts.push_back(curPos.x);
         verts.push_back(curPos.y);
-        verts.push_back(mBHColor.r+ 0.03f);
-        verts.push_back(mBHColor.g+ 0.03f);
-        verts.push_back(mBHColor.b+ 0.03f);
+        verts.push_back(mBHColor.r + 0.03f);
+        verts.push_back(mBHColor.g + 0.03f);
+        verts.push_back(mBHColor.b + 0.03f);
         verts.push_back(mBHColor.a);
 
-        if(first)
+        if (first)
         {
             firstPos = curPos;
             first = false;
         }
-        else if(i == mNumTris - 1) //last
+        else if (i == mNumTris - 1) //last
         {
             verts.push_back(startPos.x);
             verts.push_back(startPos.y);
@@ -286,13 +284,12 @@ void SentenceFormingState::Render()
     DrawCursorLine();
     RenderSparks();
 
-
     mMeshRenderer->StartFrame();
     mMeshRenderer->Submit(mCursorEntity->GetComponent<CursorComponent>()->GetMesh());
 
     //mTextRenderer->RenderString("This is a response!", 1920/2 - 300, 1080/2, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f);
     RenderSentenceFragments();
-    if(!mIsWarped)
+    if (!mIsWarped)
         RenderCurrentSelection();
 
     RenderBlackHole();
@@ -307,7 +304,7 @@ void SentenceFormingState::Render()
 
     mGame->Renderer->SubmitRenderPass(mTextPass);
 
-    UBO * ubo = new UBO();
+    UBO *ubo = new UBO();
     ubo->warpFactor = mWarpFactor;
     ubo->xPadding = Opal::Camera::ActiveCamera->GetViewPort().x / mGame->GetWidth();
     ubo->yPadding = Opal::Camera::ActiveCamera->GetViewPort().y / mGame->GetHeight();
@@ -320,9 +317,9 @@ void SentenceFormingState::Begin()
     Opal::Logger::LogString("GAMESTATE: Begin() SentenceFormingState");
     if (mTextRenderer == nullptr)
     {
-        mRenderTexture = mGame->Renderer->CreateRenderTexture(1920, 1080,4);
+        mRenderTexture = mGame->Renderer->CreateRenderTexture(1920, 1080, 4);
         mTextPass = mGame->Renderer->CreateRenderPass(mRenderTexture, true);
-        mTextPass->SetClearColor(0.1f,0.1f,0.1f,1.0f);
+        mTextPass->SetClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         mPostProcess = mGame->Renderer->CreatePostProcessor(mTextPass, "../shaders/testFXvert", "../shaders/testFXfrag", false, sizeof(UBO), VK_SHADER_STAGE_FRAGMENT_BIT);
         mBGPass = mGame->Renderer->CreateRenderPass(true);
         mBGPass->SetClearColor(0.1f, 0.1f, 0.1f, 1.0f);
@@ -345,20 +342,23 @@ void SentenceFormingState::Begin()
     }
     mScene = new Opal::Scene(mBatch);
 
+    mNoiseFrequency *= mLineSpeed / 1000;
+
     mNoise.SetSeed(rand());
     mNoise.SetFrequency(mNoiseFrequency);
 
     std::string wbPath = "../Dialogue/DefaultWordBank.xml";
     Response response = DialogueManager::Instance->GetCurrentResponse();
-    if(response.WordFrequency != 0 && response.WordBank != "")
+    if (response.WordFrequency != 0 && response.WordBank != "")
     {
         wbPath = response.WordBank;
     }
     mWordBank = DialogueSerializer::GetWordBank(wbPath);
 
     mChannelHeight = response.ChannelSize;
-
+    
     CreatePlayer();
+    mScene->Start();
     CreateSparks();
     PreBakeLines();
 
@@ -367,7 +367,7 @@ void SentenceFormingState::Begin()
 
     mBHMesh = mGame->Renderer->CreateMesh((mNumTris + 1) * 3);
 
-    if(DialogueManager::Instance->GetCurrentPrompt().IsKill)
+    if (DialogueManager::Instance->GetCurrentPrompt().IsKill)
     {
         mKillEventTimer = mKillWaitTime;
     }
@@ -405,48 +405,84 @@ void SentenceFormingState::CreatePlayingField()
     float start = 1920 + 500;
     float inc = mSpaceBetweenFragments;
 
+    mWordPath.clear();
+    for (int i = 0; i < resp.Fragments.size() * mWordPathResolution; i++)
+    {
+        float xpos = start + i * inc / mWordPathResolution;
+        float ypos = mNoise.GetNoise((float)(xpos + mCurrentScroll) / mNoiseScale, 0.0f);
+        ypos += 1.0f;
+        ypos /= 2.0f;
+
+        ypos /= 1.5f;
+        ypos += 0.25f;
+        // ypos now represents the top of the channel
+        ypos = ypos * (1080 - mPadding * 2) + mPadding;
+        mWordPath.push_back(glm::vec2(xpos, ypos));
+    }
+
     mLineSpeed = resp.Speed;
     for (int i = 0; i < resp.Fragments.size(); i++)
     {
-        float ypos;
-        float xpos = start + inc * i;
-        ypos = mNoise.GetNoise((float)(xpos +mCurrentScroll)/ mNoiseScale, 0.0f);
-        ypos += 1.0f;
-        ypos /= 4.0f;
-        // ypos now represents the top of the channel
-        ypos = ypos * (1080 - mPadding * 2) + mPadding;
+        float xpos = mWordPath[i * mWordPathResolution].x;
+        float ypos = mWordPath[i * mWordPathResolution].y;
         float subFrag = resp.Fragments[i].size();
-        
+
         for (int j = 0; j < subFrag; j++)
         {
-            float finalY = ypos;
+            float finalY = ypos - mChannelHeight / 2;
             float yStep = mChannelHeight / (subFrag + 1);
-            finalY += yStep * (j+1);
+            finalY += yStep * (j + 1);
             CreateSentenceFragment(glm::vec3(xpos, finalY, 0), resp.Fragments[i][j].Text, resp.Fragments[i][j].Attraction, resp.Speed, resp.Fragments[i][j].IsIntrusive, true, true);
         }
     }
 
     // Create "background" words
-    for(int i = 0; i < resp.WordFrequency * 10; i++)
+    for (int i = 0; i < resp.WordFrequency * 20; i++)
     {
-        float xpos = rand() % (int)(start + inc * (resp.Fragments.size()) - 1500) + 1500;
-        float channelTop = mNoise.GetNoise((float)(xpos +mCurrentScroll)/ mNoiseScale, 0.0f);
-        channelTop += 1.0f;
-        channelTop /= 4.0f;
-        // channelTop now represents the top of the channel
-        channelTop = channelTop * (1080 - mPadding * 2) + mPadding;
+        glm::vec2 pos = mWordPath[rand() % mWordPath.size()];
 
-        float ypos = rand() % 1080;
+        float yDist = mChannelHeight/2;
+        yDist += rand() % 800;
 
-        while(ypos > channelTop && ypos < channelTop + mChannelHeight)
-        {
-            ypos = rand() % 1080;
-        }
-        
-        CreateSentenceFragment(glm::vec3(xpos, ypos, 0), mWordBank[rand()%mWordBank.size()].Text, 0, resp.Speed, resp.SolidWords, resp.SolidWords, false);
+        yDist *= ((rand() % 100) < 50) ? 1 : -1;
+
+        float xpos = pos.x;
+        float ypos = pos.y + yDist;
+
+        CreateSentenceFragment(glm::vec3(xpos, ypos, 0), mWordBank[rand() % mWordBank.size()].Text, 0, resp.Speed, resp.SolidWords, resp.SolidWords, false);
     }
 
-    CreateEndWall(start + inc * (resp.Fragments.size()+1));
+    //Destroy the words that fall within the lines
+    for (int i = 0; i < mWordPath.size(); i++)
+    {
+        glm::vec2 start = mWordPath[i];
+        glm::vec2 end = mWordPath[i] + glm::vec2(0, mChannelHeight/2);
+
+        std::vector<Opal::Entity *> toDestroy = Opal::AABBCollision::RaycastFind(start, end, mScene->GetAllEntities());
+
+        for (int j = 0; j < toDestroy.size(); j++)
+        {
+            SentenceFragmentComponent *frag = toDestroy[j]->GetComponent<SentenceFragmentComponent>();
+            if (frag != nullptr && !frag->GetCore())
+            {
+                mScene->RemoveEntity(toDestroy[j]);
+            }
+        }
+        end = mWordPath[i] + glm::vec2(0, -mChannelHeight/2);
+
+        toDestroy = Opal::AABBCollision::RaycastFind(start, end, mScene->GetAllEntities());
+
+        for (int j = 0; j < toDestroy.size(); j++)
+        {
+            SentenceFragmentComponent *frag = toDestroy[j]->GetComponent<SentenceFragmentComponent>();
+            if (frag != nullptr && !frag->GetCore())
+            {
+                mScene->RemoveEntity(toDestroy[j]);
+            }
+        }
+    }
+
+    CreateEndWall(start + inc * (resp.Fragments.size() + 1));
     mCurrentScroll += start + inc * (resp.Fragments.size());
 }
 
@@ -514,21 +550,21 @@ void SentenceFormingState::CreateSentenceFragment(glm::vec3 pos, std::string tex
     collider->SetIsStatic(true);
     mFragmentEntity->AddComponent(collider);
 
-    if(!frag->GetCore())
+    if (!frag->GetCore())
     {
-        for(int i = 0; i < mFragmentEnts.size(); i++)
+        for (int i = 0; i < mFragmentEnts.size(); i++)
         {
-            Opal::BoxColliderComponent2D * otherCollider = mFragmentEnts[i]->GetComponent<Opal::BoxColliderComponent2D>();   
-            SentenceFragmentComponent * otherFrag = mFragmentEnts[i]->GetComponent<SentenceFragmentComponent>();
+            Opal::BoxColliderComponent2D *otherCollider = mFragmentEnts[i]->GetComponent<Opal::BoxColliderComponent2D>();
+            SentenceFragmentComponent *otherFrag = mFragmentEnts[i]->GetComponent<SentenceFragmentComponent>();
 
-            if(!otherFrag->GetCore())
-                continue; 
+            if (!otherFrag->GetCore())
+                continue;
 
-            if(Opal::AABBCollision::GetResolution(otherCollider->GetAABB(), collider->GetAABB()) != glm::vec2(0,0))
+            if (Opal::AABBCollision::GetResolution(otherCollider->GetAABB(), collider->GetAABB()) != glm::vec2(0, 0))
             {
                 free(mFragmentEntity);
                 return;
-            } 
+            }
         }
     }
 
@@ -571,8 +607,13 @@ void SentenceFormingState::DrawCursorLine()
         mLineRenderer->DrawLine(mLinePoints[i - 1], mLinePoints[i], mLineColor, 3);
     }
 
-    mLineRenderer->DrawLine(mLinePoints[mLinePoints.size()-1], glm::vec2(mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.x, mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.y), 
-    glm::vec4(mLineColor.r, mLineColor.g, mLineColor.b, mLineColor.a * mCurrentZoom), 3);
+    mLineRenderer->DrawLine(mLinePoints[mLinePoints.size() - 1], glm::vec2(mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.x, mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.y),
+                            glm::vec4(mLineColor.r, mLineColor.g, mLineColor.b, mLineColor.a * mCurrentZoom), 3);
+
+    // for (int i = 1; i < mWordPath.size(); i++)
+    // {
+    //     mLineRenderer->DrawLine(mWordPath[i - 1] - glm::vec2(mLineSpeed * mTimeSinceBirth, 0), mWordPath[i] - glm::vec2(mLineSpeed * mTimeSinceBirth, 0), glm::vec4(1, 0, 0, 1), 5);
+    // }
 }
 
 void SentenceFormingState::UpdateCursorLine(float timeOverride)
@@ -630,7 +671,6 @@ void SentenceFormingState::CreateSparks()
 
 void SentenceFormingState::PreBakeLines()
 {
-    mScene->Start();
     for (int i = 0; i < 200; i++)
     {
         mScene->Update(1 / 60.0f);
@@ -690,7 +730,7 @@ void SentenceFormingState::RenderSparks()
     for (int i = 0; i < mSparkEntities.size(); i++)
     {
         SparkComponent *spark = mSparkEntities[i]->GetComponent<SparkComponent>();
-        spark->SetSpeedUp((mSparkSpeedUp - 1) * ((float)i/(float)mSparkEntities.size()) + 1);
+        spark->SetSpeedUp((mSparkSpeedUp - 1) * ((float)i / (float)mSparkEntities.size()) + 1);
         Opal::TransformComponent *trans = mSparkEntities[i]->GetComponent<Opal::TransformComponent>();
 
         if (trans->Position.x > 1920 / mCurrentZoom)
@@ -735,13 +775,12 @@ void SentenceFormingState::RenderSparks()
 //         color = glm::vec4(1,1,1,1);
 //     }
 
-
 //     FastNoiseLite noise(23);
 //     noise.SetNoiseType(FastNoiseLite::NoiseType_Perlin);
 //     noise.SetFrequency(mNoiseFrequency);
 
 //     pos.y = (noise.GetNoise((mCurrentScroll/mSpaceBetweenFragments) / mNoiseScale, (float)(0)) + 1.0f);
-//     pos.y /= 2.0f;    
+//     pos.y /= 2.0f;
 //     pos.y  *= (1080 - mPadding * 2) + mPadding;
 
 //     bool up = (rand()%50 > 25);
@@ -763,7 +802,6 @@ void SentenceFormingState::RenderSparks()
 //             mWordConnections.push_back(std::make_pair(mScrollingWords[i], mScrollEntity));
 //         }
 //     }
-
 
 //     mScene->AddEntity(mScrollEntity);
 //     mScrollingWords.push_back(mScrollEntity);

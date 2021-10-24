@@ -77,7 +77,7 @@ class SentenceFormingState : public Opal::Gamestate
     static Opal::Font *mFont;
     static Opal::Font *mResponseFont;
 
-    float mNoiseFrequency = 12.5f / 2.0f;
+    float mNoiseFrequency = 0.004f;
     float mNoiseScaleJ = 5.0f;
     float mNoiseScale = 15.0f;
 
@@ -140,4 +140,7 @@ class SentenceFormingState : public Opal::Gamestate
     FastNoiseLite mNoise;
     float mChannelHeight = 900;
     float mCurrentScroll = 0;
+
+    std::vector<glm::vec2> mWordPath;
+    float mWordPathResolution = 15;
 };

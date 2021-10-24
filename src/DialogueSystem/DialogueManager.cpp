@@ -54,11 +54,12 @@ void DialogueManager::LoadConversation(std::string filepath)
     mPrompts.clear();
     mPrompts = DialogueSerializer::DeserializeFile(filepath);
     mCurrentPromptIdx = 0;
+    mCurrentSequenceNum = -1;
     
     // Find the minimum sequence number and start our number there.
     for(int i = 0; i < mPrompts.size(); i++)
     {
-        if(mPrompts[i].Sequence < mCurrentSequenceNum || (mPrompts[i].Sequence != -1 && mCurrentSequenceNum == -1))
+        if((mPrompts[i].Sequence != -1 && mPrompts[i].Sequence < mCurrentSequenceNum) || (mPrompts[i].Sequence != -1 && mCurrentSequenceNum == -1))
         {
             mCurrentSequenceNum = mPrompts[i].Sequence;
         }

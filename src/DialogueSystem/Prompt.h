@@ -5,11 +5,12 @@
 #include <glm/vec4.hpp>
 
 #include "Response.h"
+#include <vector>
 
 struct Prompt
 {
     std::string Text;
-    glm::vec4 Color;
+    std::vector<glm::vec4> Colors;
     std::vector<std::string> Triggers;
     Response Response;
     bool IsEnd = false;
