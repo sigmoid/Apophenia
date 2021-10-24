@@ -309,6 +309,8 @@ void SentenceFormingState::Render()
 
     UBO * ubo = new UBO();
     ubo->warpFactor = mWarpFactor;
+    ubo->xPadding = Opal::Camera::ActiveCamera->GetViewPort().x / mGame->GetWidth();
+    ubo->yPadding = Opal::Camera::ActiveCamera->GetViewPort().y / mGame->GetHeight();
     mPostProcess->UpdateUserData(ubo);
     mPostProcess->ProcessAndSubmit();
 }
@@ -400,7 +402,7 @@ void SentenceFormingState::CreatePlayingField()
 {
     Response resp = DialogueManager::Instance->GetCurrentResponse();
 
-    float start = 1920;
+    float start = 1920 + 500;
     float inc = mSpaceBetweenFragments;
 
     mLineSpeed = resp.Speed;
@@ -444,7 +446,7 @@ void SentenceFormingState::CreatePlayingField()
         CreateSentenceFragment(glm::vec3(xpos, ypos, 0), mWordBank[rand()%mWordBank.size()].Text, 0, resp.Speed, resp.SolidWords, resp.SolidWords, false);
     }
 
-    CreateEndWall(start + inc * (resp.Fragments.size()));
+    CreateEndWall(start + inc * (resp.Fragments.size()+1));
     mCurrentScroll += start + inc * (resp.Fragments.size());
 }
 
@@ -691,7 +693,7 @@ void SentenceFormingState::RenderSparks()
         spark->SetSpeedUp((mSparkSpeedUp - 1) * ((float)i/(float)mSparkEntities.size()) + 1);
         Opal::TransformComponent *trans = mSparkEntities[i]->GetComponent<Opal::TransformComponent>();
 
-        if (trans->Position.x > mGame->GetWidth() / mCurrentZoom)
+        if (trans->Position.x > 1920 / mCurrentZoom)
         {
             mScene->RemoveEntity(mSparkEntities[i]);
             deleteIds.push_back(i);

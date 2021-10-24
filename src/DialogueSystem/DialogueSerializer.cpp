@@ -20,7 +20,14 @@ std::vector<std::string> DialogueSerializer::DeserializeStoryline(std::string fi
 
     for(tinyxml2::XMLElement *convo = doc.RootElement()->FirstChildElement(); convo != nullptr; convo = convo->NextSiblingElement())
     {
-        res.push_back(base + convo->GetText());
+        if(strcmp(convo->ToElement()->Value(), "Conversation") == 0)
+        {
+            res.push_back(base + convo->GetText());
+        }
+        else if(strcmp(convo->ToElement()->Value(), "PillSequence") == 0)
+        {
+            res.push_back("|PillSequence " + std::to_string(convo->FloatAttribute("NumPills", 9)) + " " + std::to_string(convo->FloatAttribute("Duration", 5)));
+        }
     }
 
     return res;

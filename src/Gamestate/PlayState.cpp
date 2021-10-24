@@ -8,6 +8,7 @@
 #include "../../Opal/Logger.h"
 #include "../DialogueSystem/DialogueSerializer.h"
 #include "EndState.h"
+#include "PillState.h"
 
 PlayState::PlayState()
 {
@@ -26,7 +27,7 @@ void PlayState::Tick()
         mTransitionTimer -= mGame->GetDeltaTime();
         UpdateColor();
     }
-    else
+    else if (!IsPillSequence)
     {
         if(Opal::InputHandler::GetKey(GLFW_KEY_SPACE))
         {
@@ -35,22 +36,29 @@ void PlayState::Tick()
                 IncrementConversation();
             }
             else
-            {
-                mGame->PushState<SentenceFormingState>();
+            {                
+                mGame->PushState<SentenceFormingState>();   
             }
         }
+    }
+    else if (IsPillSequence)
+    {
+        mGame->PushState<PillState>();
     }
 }
 
 void PlayState::Render() 
 {
-    if(mTransitionTimer > 0)
+    if(!IsPillSequence)
     {
-        mTextRenderer->RenderString(DialogueManager::Instance->GetCurrentPrompt().TransitionText, 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f);
-    }
-    else
-    {
-        mTextRenderer->RenderString(DialogueManager::Instance->GetCurrentPrompt().Text, 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
+        if(mTransitionTimer > 0)
+        {
+            mTextRenderer->RenderString(DialogueManager::Instance->GetCurrentPrompt().TransitionText, 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f);
+        }
+        else
+        {
+            mTextRenderer->RenderString(DialogueManager::Instance->GetCurrentPrompt().Text, 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
+        }
     }
 
     mTextPass->Record();
@@ -88,7 +96,28 @@ void PlayState::IncrementConversation()
         return;
     }
 
-    DialogueManager::Instance->LoadConversation(mConversationSequence[mCurrentConversation++]);
+    if(mConversationSequence[mCurrentConversation].find("|PillSequence") != std::string::npos)
+    {
+        IsPillSequence = true;
+
+        std::string data = mConversationSequence[mCurrentConversation];
+        std::string firstPart = data.substr(0, data.find(" "));
+        data.erase(data.begin(), data.begin() + firstPart.length()+1);
+        std::string secondPart = data.substr(0, data.find(" "));
+        data.erase(data.begin(), data.begin() + secondPart.length()+1);
+        std::string thirdPart = data;
+
+        int numPills = std::stoi(secondPart);
+        float duration = std::stof(thirdPart);
+
+        PillState::NumPills = numPills;
+        PillState::Duration = duration;
+        mCurrentConversation++;
+    }
+    else
+    {
+        DialogueManager::Instance->LoadConversation(mConversationSequence[mCurrentConversation++]);
+    }
 
     if(DialogueManager::Instance->EatTransition)
     {
@@ -109,12 +138,30 @@ void PlayState::End()
 void PlayState::Resume() 
 {
     Opal::Logger::LogString("GAMESTATE: Resume() Playstate");
+
+    if(IsPillSequence)
+    {
+        IsPillSequence = false;
+        mTransitionTimer = mTransitionDuration;
+        DialogueManager::Instance->LoadConversation(mConversationSequence[mCurrentConversation++]);
+        mPreviousColor = glm::vec4(0.2,0.2, 0.2, 1.0f);
+    }
+
     UpdateColor();
 }
 
 void PlayState::UpdateColor()
 {
-    glm::vec4 color = DialogueManager::Instance->GetCurrentPrompt().Color;
+    glm::vec4 color;
+
+    if(!IsPillSequence)
+    {
+        color = DialogueManager::Instance->GetCurrentPrompt().Color;
+    }
+    else
+    {
+        color = glm::vec4(0.2,0.2,0.2,1.0f);
+    }
 
     if(mTransitionTimer > 0)
     {

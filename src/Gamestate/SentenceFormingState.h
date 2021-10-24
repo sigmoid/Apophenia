@@ -25,6 +25,8 @@
 struct UBO
 {
     float warpFactor;
+    float xPadding;
+    float yPadding;
 };
 
 class SentenceFormingState : public Opal::Gamestate

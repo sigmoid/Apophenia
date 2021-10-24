@@ -4,6 +4,7 @@
 
 #include "Gamestate/PlayState.h"
 #include "Gamestate/SentenceFormingState.h"
+#include "Gamestate/PillState.h"
 #include "Gamestate/NarrativeState.h"
 #include "Gamestate/EndState.h"
 #include "DialogueSystem/DialogueManager.h"
@@ -27,6 +28,8 @@ int main(int argc, char **argv)
     game.PushState<SentenceFormingState>();
     game.PopState();
     game.PushState<EndState>();
+    game.PopState();
+    game.PushState<PillState>();
     game.PopState();
 
     while(!game.ShouldEnd())
