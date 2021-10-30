@@ -74,6 +74,7 @@ class SentenceFormingState : public Opal::Gamestate
     glm::vec4 mFragmentColor = glm::vec4(0.9, 0.9, 0.9, 1.0f);
     std::vector<Opal::Entity *> mFragmentEnts;
     float mFragmentSize = 80;
+    float mFragmentVertOffset = 15;
     static Opal::Font *mFont;
     static Opal::Font *mResponseFont;
 
@@ -140,6 +141,8 @@ class SentenceFormingState : public Opal::Gamestate
     FastNoiseLite mNoise;
     float mChannelHeight = 900;
     float mCurrentScroll = 0;
+
+    void RenderWordConnections();
 
     std::vector<glm::vec2> mWordPath;
     float mWordPathResolution = 15;

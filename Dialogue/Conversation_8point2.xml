@@ -1,0 +1,401 @@
+<!-- Colors -->
+<!-- Basic White            
+    <Color>
+        <r>0.9</r>
+        <g>0.9</g>
+        <b>0.9</b>
+        <a>1.0</a>
+    </Color>
+    -->
+
+ <!-- Doctor            
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+<Game>
+    <Prompt TransitionText="Later that day">
+        <Text>Nice to see you in class for a change.</Text>
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Figured I would</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>try it out.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>See how</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>it feels.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+            <!--rgb 35, 153, 94-->
+                <r>0.13725490196</r>
+                <g>0.6</g>
+                <b>0.36862745098</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>750</Speed>
+        </Response>
+        <Color>
+        <!--rgb 35, 153, 94-->
+            <r>0.13725490196</r>
+            <g>0.6</g>
+            <b>0.36862745098</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Figured I would try it out. See how it feels.</Trigger>   
+        </Triggers>
+        <Text>Did you do the reading?</Text>
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I did.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>Did you?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+            <!--rgb 35, 153, 94-->
+                <r>0.13725490196</r>
+                <g>0.6</g>
+                <b>0.36862745098</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>750</Speed>
+        </Response>
+        <Color>
+        <!--rgb 35, 153, 94-->
+            <r>0.13725490196</r>
+            <g>0.6</g>
+            <b>0.36862745098</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I did. Did you?</Trigger>   
+        </Triggers>
+        <Text>Yeah, I thought it was really interesting. It made me think of games in a totally different way.</Text>
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Totally agree.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>What's your</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>idea for</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>the assignment?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+            <!--rgb 35, 153, 94-->
+                <r>0.13725490196</r>
+                <g>0.6</g>
+                <b>0.36862745098</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>750</Speed>
+        </Response>
+        <Color>
+        <!--rgb 35, 153, 94-->
+            <r>0.13725490196</r>
+            <g>0.6</g>
+            <b>0.36862745098</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Totally agree. What's your idea for the assignment?</Trigger>   
+        </Triggers>
+        <Text>I was thinking about designing a game where you try to get a ball to a goal, but you have to play against the hands of a real clock that matches the current time. Like a brutalist kind of game. What about you?</Text>
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I was thinking</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>about a game</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>that incentivizes</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>people to</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>help others.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+            <!--rgb 35, 153, 94-->
+                <r>0.13725490196</r>
+                <g>0.6</g>
+                <b>0.36862745098</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>750</Speed>
+        </Response>
+        <Color>
+        <!--rgb 35, 153, 94-->
+            <r>0.13725490196</r>
+            <g>0.6</g>
+            <b>0.36862745098</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I was thinking about a game that incentivizes people to help others.</Trigger>   
+        </Triggers>
+        <Text>Oh cool! How would that work?</Text>
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Maybe it would</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>be an app</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>where players</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>have a target.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+            <!--rgb 35, 153, 94-->
+                <r>0.13725490196</r>
+                <g>0.6</g>
+                <b>0.36862745098</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>750</Speed>
+        </Response>
+        <Color>
+        <!--rgb 35, 153, 94-->
+            <r>0.13725490196</r>
+            <g>0.6</g>
+            <b>0.36862745098</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Maybe it would be an app where players have a target.</Trigger>   
+        </Triggers>
+        <Text>A target? Like to assasinate?</Text>
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment IsIntrusive="True"><Text>Maybe...</Text><Attraction>800</Attraction></Fragment>
+                    <Fragment><Text>No,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>the person</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>they are</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>trying to</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment IsIntrusive="True"><Text>"help."</Text><Attraction>800</Attraction></Fragment>
+                    <Fragment><Text>help.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+            <!--rgb 35, 153, 94-->
+                <r>0.13725490196</r>
+                <g>0.6</g>
+                <b>0.36862745098</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>750</Speed>
+        </Response>
+        <Color>
+        <!--rgb 35, 153, 94-->
+            <r>0.13725490196</r>
+            <g>0.6</g>
+            <b>0.36862745098</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>No, the person they are trying to help.</Trigger>   
+        </Triggers>
+        <Text>How would the app incentize them to help that person?</Text>
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Objectives like</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>talk to them,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>smile at them,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>track them,</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>and so on.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+            <!--rgb 35, 153, 94-->
+                <r>0.13725490196</r>
+                <g>0.6</g>
+                <b>0.36862745098</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>750</Speed>
+        </Response>
+        <Color>
+        <!--rgb 35, 153, 94-->
+            <r>0.13725490196</r>
+            <g>0.6</g>
+            <b>0.36862745098</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Objectives like talk to them, smile at them, track them, and so on.</Trigger>   
+        </Triggers>
+        <Text>Hm. Yeah. I feel like tracking them is a bit extreme, but it might work.</Text>
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I'm curious</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>if it has</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>been done already.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+            <!--rgb 35, 153, 94-->
+                <r>0.13725490196</r>
+                <g>0.6</g>
+                <b>0.36862745098</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>750</Speed>
+        </Response>
+        <Color>
+        <!--rgb 35, 153, 94-->
+            <r>0.13725490196</r>
+            <g>0.6</g>
+            <b>0.36862745098</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I'm curious if it has been done already.</Trigger>   
+        </Triggers>
+        <Text>Maybe, but it sounds like a pretty unique idea. I think you're good.</Text>
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>So you've</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>Quit lying.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>never heard of</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>I know</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>anything like it?</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>you're playing.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+            <!--rgb 35, 153, 94-->
+                <r>0.13725490196</r>
+                <g>0.6</g>
+                <b>0.36862745098</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>750</Speed>
+        </Response>
+        <Color>
+        <!--rgb 35, 153, 94-->
+            <r>0.13725490196</r>
+            <g>0.6</g>
+            <b>0.36862745098</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+
+    <Prompt IsEnd="True">
+        <Triggers>
+            <Trigger>So you've never heard of anything like it?</Trigger>   
+        </Triggers>
+        <Text>Uh, no. Definitely not. I actually need to turn in this report before class starts so I'll talk to you later.</Text>
+        <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>So you've</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>Quit lying.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>never heard of</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>I know</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>anything like it?</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>you're playing.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+            <!--rgb 35, 153, 94-->
+                <r>0.13725490196</r>
+                <g>0.6</g>
+                <b>0.36862745098</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>750</Speed>
+        </Response>
+        <Color>
+        <!--rgb 35, 153, 94-->
+            <r>0.13725490196</r>
+            <g>0.6</g>
+            <b>0.36862745098</b>
+            <a>1.0</a>
+        </Color>
+    </Prompt>
+</Game>

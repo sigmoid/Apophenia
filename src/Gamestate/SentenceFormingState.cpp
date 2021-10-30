@@ -282,6 +282,7 @@ void SentenceFormingState::Render()
 
     // dEBUG mLineRenderer->DrawLine(glm::vec2(0,0), glm::vec2(1000,1000), glm::vec4(1,0,0,1), 3);
     DrawCursorLine();
+    RenderWordConnections();
     RenderSparks();
 
     mMeshRenderer->StartFrame();
@@ -356,7 +357,7 @@ void SentenceFormingState::Begin()
     mWordBank = DialogueSerializer::GetWordBank(wbPath);
 
     mChannelHeight = response.ChannelSize;
-    
+
     CreatePlayer();
     mScene->Start();
     CreateSparks();
@@ -420,6 +421,10 @@ void SentenceFormingState::CreatePlayingField()
         mWordPath.push_back(glm::vec2(xpos, ypos));
     }
 
+    mFragmentEnts.clear();
+    mWordConnections.clear();
+
+    // Create core fragments
     mLineSpeed = resp.Speed;
     for (int i = 0; i < resp.Fragments.size(); i++)
     {
@@ -441,7 +446,7 @@ void SentenceFormingState::CreatePlayingField()
     {
         glm::vec2 pos = mWordPath[rand() % mWordPath.size()];
 
-        float yDist = mChannelHeight/2;
+        float yDist = mChannelHeight / 2;
         yDist += rand() % 800;
 
         yDist *= ((rand() % 100) < 50) ? 1 : -1;
@@ -456,7 +461,7 @@ void SentenceFormingState::CreatePlayingField()
     for (int i = 0; i < mWordPath.size(); i++)
     {
         glm::vec2 start = mWordPath[i];
-        glm::vec2 end = mWordPath[i] + glm::vec2(0, mChannelHeight/2);
+        glm::vec2 end = mWordPath[i] + glm::vec2(0, mChannelHeight / 2);
 
         std::vector<Opal::Entity *> toDestroy = Opal::AABBCollision::RaycastFind(start, end, mScene->GetAllEntities());
 
@@ -466,9 +471,10 @@ void SentenceFormingState::CreatePlayingField()
             if (frag != nullptr && !frag->GetCore())
             {
                 mScene->RemoveEntity(toDestroy[j]);
+                mFragmentEnts.erase(std::find(mFragmentEnts.begin(), mFragmentEnts.end(), toDestroy[j]));
             }
         }
-        end = mWordPath[i] + glm::vec2(0, -mChannelHeight/2);
+        end = mWordPath[i] + glm::vec2(0, -mChannelHeight / 2);
 
         toDestroy = Opal::AABBCollision::RaycastFind(start, end, mScene->GetAllEntities());
 
@@ -478,6 +484,34 @@ void SentenceFormingState::CreatePlayingField()
             if (frag != nullptr && !frag->GetCore())
             {
                 mScene->RemoveEntity(toDestroy[j]);
+                mFragmentEnts.erase(std::find(mFragmentEnts.begin(), mFragmentEnts.end(), toDestroy[j]));
+            }
+        }
+    }
+
+    //Create word connections
+    {
+        if (mFragmentEnts.size() > 10)
+        {
+            for (int i = 0; i < 50; i++)
+            {
+                int a = -1, b = -1;
+                while (a == b)
+                {
+                    a = rand() % mFragmentEnts.size();
+                    b = rand() % mFragmentEnts.size();
+
+                    Opal::TransformComponent *transA = mFragmentEnts[a]->GetComponent<Opal::TransformComponent>();
+                    Opal::TransformComponent *transB = mFragmentEnts[b]->GetComponent<Opal::TransformComponent>();
+
+                    if (Opal::OpalMath::SquareDistance(glm::vec2(transA->Position.x, transA->Position.y), glm::vec2(transB->Position.x, transB->Position.y)) > 100000)
+                    {
+                        a = -1;
+                        b = -1;
+                    }
+                }
+
+                mWordConnections.push_back(std::make_pair(mFragmentEnts[a], mFragmentEnts[b]));
             }
         }
     }
@@ -545,7 +579,7 @@ void SentenceFormingState::CreateSentenceFragment(glm::vec3 pos, std::string tex
     mFragmentEntity->AddComponent(transform);
     SentenceFragmentComponent *frag = new SentenceFragmentComponent(text, speed, mFragmentColor, attraction, intrusive, solid, core);
     mFragmentEntity->AddComponent(frag);
-    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(fmax(64, width), mFragmentSize), glm::vec2(0, -mFragmentSize), true);
+    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(fmax(64, width), mFragmentSize + mFragmentVertOffset), glm::vec2(0, -mFragmentSize + mFragmentVertOffset), true);
     collider->SetIsTrigger(true);
     collider->SetIsStatic(true);
     mFragmentEntity->AddComponent(collider);
@@ -762,79 +796,24 @@ void SentenceFormingState::RenderSparks()
     }
 }
 
-// void SentenceFormingState::CreateRandomScrollingWord()
-// {
-//     glm::vec2 pos = glm::vec2(2000, rand() % 1080);
-//     glm::vec4 color = glm::vec4(1, 1, 1, 0.125f);
-//     float speed = mLineSpeed;// * ((rand() % 100) + 50) / 100.0f;
+void SentenceFormingState::RenderWordConnections()
+{
+    for (int i = 0; i < mWordConnections.size(); i++)
+    {
+        Opal::TransformComponent *transformA = mWordConnections[i].first->GetComponent<Opal::TransformComponent>();
+        Opal::TransformComponent *transformB = mWordConnections[i].second->GetComponent<Opal::TransformComponent>();
+        Opal::BoxColliderComponent2D *boxA = mWordConnections[i].first->GetComponent<Opal::BoxColliderComponent2D>();
+        Opal::BoxColliderComponent2D *boxB = mWordConnections[i].second->GetComponent<Opal::BoxColliderComponent2D>();
 
-//     bool solid = DialogueManager::Instance->GetCurrentResponse().SolidWords;
+        if (transformA != transformB && transformA != nullptr && transformB != nullptr && boxA != nullptr && boxB != nullptr)
+        {
+            glm::vec2 pointA = boxA->GetAABB().GetCenter();
+            glm::vec2 pointB = boxB->GetAABB().GetCenter();
 
-//     if(solid)
-//     {
-//         color = glm::vec4(1,1,1,1);
-//     }
+            mLineRenderer->DrawLine(pointA, pointB, glm::vec4(1, 1, 1, .1f), 2);
 
-//     FastNoiseLite noise(23);
-//     noise.SetNoiseType(FastNoiseLite::NoiseType_Perlin);
-//     noise.SetFrequency(mNoiseFrequency);
-
-//     pos.y = (noise.GetNoise((mCurrentScroll/mSpaceBetweenFragments) / mNoiseScale, (float)(0)) + 1.0f);
-//     pos.y /= 2.0f;
-//     pos.y  *= (1080 - mPadding * 2) + mPadding;
-
-//     bool up = (rand()%50 > 25);
-
-//     //pos.y += (rand()%500 + 100) * (up? 1:-1);
-
-//     Opal::Entity *mScrollEntity = new Opal::Entity();
-
-//     Opal::TransformComponent *transform = new Opal::TransformComponent();
-//     transform->Position = glm::vec3(pos.x, pos.y, 0);
-//     mScrollEntity->AddComponent(transform);
-//     ScrollingWordComponent *word = new ScrollingWordComponent(mWordBank[rand()%mWordBank.size()].Text, speed, color);
-//     mScrollEntity->AddComponent(word);
-
-//     for(int i = 0; i < mScrollingWords.size(); i++)
-//     {
-//         if(rand() % 100 < 20)
-//         {
-//             mWordConnections.push_back(std::make_pair(mScrollingWords[i], mScrollEntity));
-//         }
-//     }
-
-//     mScene->AddEntity(mScrollEntity);
-//     mScrollingWords.push_back(mScrollEntity);
-// }
-
-// void SentenceFormingState::UpdateScrollingWords()
-// {
-//     std::vector<int> remove;
-//     for(int i = 0; i < mScrollingWords.size();i++)
-//     {
-//         if(mScrollingWords[i]->GetComponent<Opal::TransformComponent>()->Position.x < -500)
-//         {
-//             std::vector<int> removeJ;
-//             for(int j = 0; j < mWordConnections.size(); j++)
-//             {
-//                 if(mWordConnections[j].first == mScrollingWords[i] || mWordConnections[j].second == mScrollingWords[i])
-//                 {
-//                     removeJ.push_back(j);
-//                 }
-//             }
-
-//             for(int j = removeJ.size()-1; j >= 0 ; j--)
-//             {
-//                 mWordConnections.erase(mWordConnections.begin() + removeJ[j]);
-//             }
-
-//             mScene->RemoveEntity(mScrollingWords[i]);
-//             remove.push_back(i);
-//         }
-//     }
-
-//     for(int i = remove.size()-1; i >= 0; i--)
-//     {
-//         mScrollingWords.erase(mScrollingWords.begin() + remove[i]);
-//     }
-// }
+            // Debug draw the collider
+            //mLineRenderer->DrawRect(boxA->GetAABB().min, boxA->GetAABB().max, glm::vec4(0,1,0,1), 2);
+        }
+    }
+}

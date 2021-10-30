@@ -229,5 +229,77 @@
         </Triggers>
     </Prompt>
 
+    <Prompt Sequence="4">
+        <Text>We're not sure what's going on, but we think it might be seratonin syndrome. That can happen when a person takes too many antidepressants. Have you been taking the right amount?</Text>
+        <Response AllowNonsense="True" WordFrequency="15" ChannelSize="100" WordBank="../Dialogue/WordBankNo.xml" SolidWords="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Yes</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+            <!--Doctor-->
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <!--therapist-->
+            <Color>
+                <r>1.0000</r>
+                <g>0.0000</g>
+                <b>0.0353</b>
+                <a>1.0</a>
+            </Color>
+        <Triggers>
+            <Trigger>natural sequence 2</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt Sequence="5" IsEnd="True">
+        <Text>Okay, we'll start there.</Text>
+        <Response AllowNonsense="True" WordFrequency="15" ChannelSize="100" WordBank="../Dialogue/WordBankNo.xml" SolidWords="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Yes</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+            <!--Doctor-->
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <!--therapist-->
+            <Color>
+                <r>1.0000</r>
+                <g>0.0000</g>
+                <b>0.0353</b>
+                <a>1.0</a>
+            </Color>
+        <Triggers>
+            <Trigger>natural sequence 2</Trigger>   
+        </Triggers>
+    </Prompt>
+
 
 </Game>
