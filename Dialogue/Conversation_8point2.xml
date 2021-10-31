@@ -133,10 +133,10 @@
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>I was thinking</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I'm pulled towards</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>about a game</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>a game idea</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>that incentivizes</Text><Attraction>0</Attraction></Fragment>
@@ -168,9 +168,9 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I was thinking about a game that incentivizes people to help others.</Trigger>   
+            <Trigger>I'm pulled towards a game that incentivizes people to help others.</Trigger>   
         </Triggers>
-        <Text>Oh cool! How would that work?</Text>
+        <Text>Sounds promising, I'm hooked. How does it work?</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
@@ -251,11 +251,14 @@
         <Triggers>
             <Trigger>No, the person they are trying to help.</Trigger>   
         </Triggers>
-        <Text>How would the app incentize them to help that person?</Text>
+        <Text>What would the actual app do?</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Objectives like</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Give players</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>objectives like</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>talk to them,</Text><Attraction>0</Attraction></Fragment>
@@ -290,7 +293,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Objectives like talk to them, smile at them, track them, and so on.</Trigger>   
+            <Trigger>Give players objectives like talk to them, smile at them, track them, and so on.</Trigger>   
         </Triggers>
         <Text>Hm. Yeah. I feel like tracking them is a bit extreme, but it might work.</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">

@@ -333,13 +333,13 @@
         <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Yeah...</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Why would</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>What can</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>they do</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>we do?</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>that?</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -384,7 +384,172 @@
         </Triggers>
     </Prompt>    
 
-    <Prompt Sequence="7" TransitionText="" IsEnd="True">
+    <Prompt Sequence="7" TransitionText="">
+        <Text>"Why" doesn't matter. It's happening. You know how they took your phone and backpack when you got here?</Text>
+        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I don't</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>really remember</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>that but...</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+        <!--purple-->
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+        <!--warm-->
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.1882</b>
+                <a>1.0</a>
+            </Color>
+            <!--Doctor-->
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <!--therapist-->
+            <Color>
+                <r>1.0000</r>
+                <g>0.0000</g>
+                <b>0.0353</b>
+                <a>1.0</a>
+            </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>    
+
+    <Prompt Sequence="8" TransitionText="">
+        <Text>Where do you think your phone and laptop are now? How easy would it be for them to find your dirty secrets. Your poetry, journals, information about your mom.</Text>
+        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>We need</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>to get</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>out now.</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+        <!--purple-->
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+        <!--warm-->
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.1882</b>
+                <a>1.0</a>
+            </Color>
+            <!--Doctor-->
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <!--therapist-->
+            <Color>
+                <r>1.0000</r>
+                <g>0.0000</g>
+                <b>0.0353</b>
+                <a>1.0</a>
+            </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>    
+
+    <Prompt Sequence="9" TransitionText="">
+        <Text>So we're on the same page. Back to the strikes.</Text>
+        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>What can</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>we do?</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+        <!--purple-->
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+        <!--warm-->
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.1882</b>
+                <a>1.0</a>
+            </Color>
+            <!--Doctor-->
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <!--therapist-->
+            <Color>
+                <r>1.0000</r>
+                <g>0.0000</g>
+                <b>0.0353</b>
+                <a>1.0</a>
+            </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>    
+
+    <Prompt Sequence="10" TransitionText="" IsEnd="True">
         <Text>Well. We could pull the fire alarm. There's got to be a fire alarm somewhere. That's got to get us another strike. We can regroup after that and think of more ways.</Text>
         <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>

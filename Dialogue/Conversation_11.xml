@@ -108,7 +108,7 @@
     </Prompt>
 
     <Prompt Sequence="2" TransitionText="???">
-        <Text>Don't worry about that. You have much more important things to think about now.</Text>
+        <Text>Don't worry about that. Basically you got sucked in, but you have much more important things to think about now.</Text>
         <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
