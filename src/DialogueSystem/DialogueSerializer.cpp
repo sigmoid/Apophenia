@@ -28,6 +28,10 @@ std::vector<std::string> DialogueSerializer::DeserializeStoryline(std::string fi
         {
             res.push_back("|PillSequence " + std::to_string(convo->FloatAttribute("NumPills", 9)) + " " + std::to_string(convo->FloatAttribute("Duration", 5)));
         }
+        else if(strcmp(convo->ToElement()->Value(), "StrikesScreen") == 0)
+        {
+            res.push_back("|StrikesScreen");
+        }
     }
 
     return res;
@@ -90,6 +94,7 @@ Response DialogueSerializer::DeserializeResponse(tinyxml2::XMLElement *root)
 
     res.SolidWords = root->BoolAttribute("SolidWords", false);
     res.AllowNonsense = root->BoolAttribute("AllowNonsense", false);
+    res.Drunk = root->BoolAttribute("Drunk", false);
 
     if(root->Attribute("WordBank") != nullptr && root->Attribute("WordFrequency") != nullptr)
     {

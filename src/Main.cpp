@@ -8,6 +8,7 @@
 #include "Gamestate/NarrativeState.h"
 #include "Gamestate/EndState.h"
 #include "DialogueSystem/DialogueManager.h"
+#include "Gamestate/StrikesState.h"
 
 int main(int argc, char **argv)
 {
@@ -31,7 +32,9 @@ int main(int argc, char **argv)
     game.PopState();
     game.PushState<PillState>();
     game.PopState();
-
+    game.PushState<StrikesState>();
+    game.PopState();
+    
     while(!game.ShouldEnd())
     {
         game.Tick();

@@ -28,6 +28,8 @@ class CursorComponent : public Opal::Component
     void Kill();
     bool GetKill();
 
+    void SetDrunk(bool isdrunk);
+
     bool GetAlive();
     void Reset();
     std::vector<std::string> GetResponse();
@@ -48,6 +50,7 @@ class CursorComponent : public Opal::Component
     std::vector<std::string> mCurrentResponse;
     bool mAlive = true;
     bool mKilled = false;
+    bool mIsDrunk = false;
 
     float mRadius = 34.0f, mMaxRadius = 69.0f, mNumTris = 128, mNoiseIntensity = 10;
     float mAttractionScale = 1200.0f;

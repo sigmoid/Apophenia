@@ -51,18 +51,18 @@
     </Color>
     -->   
 <Game>
-    <Prompt Sequence="1" TransitionText="???">
-        <Text>Oh... You're awake. Welcome home.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+    <Prompt TransitionText="">
+        <Text>Hi there. What do you need?</Text>
+        <Response AllowNonsense="False" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Who are</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Can I</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>you? You</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>make a</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>look familiar.</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>phone call?</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -74,20 +74,6 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
             <!--Doctor-->
             <Color>
                 <r>0.4</r>
@@ -105,17 +91,23 @@
         <Triggers>
             <Trigger>START</Trigger>   
         </Triggers>
-    </Prompt>
+    </Prompt>    
 
-    <Prompt Sequence="2" TransitionText="???">
-        <Text>Don't worry about that. You have much more important things to think about now.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+    <Prompt TransitionText="">
+        <Triggers>
+            <Trigger>Can I make a phone call?</Trigger>   
+        </Triggers>
+        <Text>Sure, you can just use that phone right there.</Text>
+        <Response AllowNonsense="False" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>What is</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>9</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>this place?</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>1</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>1</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -127,20 +119,6 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
             <!--Doctor-->
             <Color>
                 <r>0.4</r>
@@ -155,23 +133,26 @@
                 <b>0.0353</b>
                 <a>1.0</a>
             </Color>
-        <Triggers>
-            <Trigger>natural sequence 2</Trigger>   
-        </Triggers>
-    </Prompt>
+    </Prompt>    
 
-    <Prompt Sequence="3">
-        <Text>I've been here for ages and I still don't know, but I can tell you one thing. Everyone here is out to get you.</Text>
+    <Prompt TransitionText="">
+        <Triggers>
+            <Trigger>9 1 1</Trigger>   
+        </Triggers>
+        <Text>Wait. Why is it ringing already... Did you just dial 911?</Text>
         <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>What will</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>No, I</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>they do</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>mean-</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>to me?</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I didn't</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>mean to.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -183,20 +164,6 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
             <!--Doctor-->
             <Color>
                 <r>0.4</r>
@@ -211,23 +178,26 @@
                 <b>0.0353</b>
                 <a>1.0</a>
             </Color>
-        <Triggers>
-            <Trigger>natural sequence 2</Trigger>   
-        </Triggers>
-    </Prompt>
+    </Prompt>    
 
-    <Prompt Sequence="4">
-        <Text>Hard to say. I'll let you know if I hear anything, but I think I can get us out of here if we play our cards right.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+    <Prompt Sequence="1">
+        <Triggers>
+            <Trigger>NONE</Trigger>   
+        </Triggers>
+        <Text>Wait. Why is it ringing already... Did you just dial 911?</Text>
+        <Response WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" AllowNonsense="True">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Why would</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>No, I</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>you want</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>mean-</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>to help me?</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I didn't</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>mean to.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -239,20 +209,6 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
             <!--Doctor-->
             <Color>
                 <r>0.4</r>
@@ -267,23 +223,26 @@
                 <b>0.0353</b>
                 <a>1.0</a>
             </Color>
-        <Triggers>
-            <Trigger>natural sequence 2</Trigger>   
-        </Triggers>
-    </Prompt>
+    </Prompt>    
 
-    <Prompt Sequence="5" IsEnd="True">
-        <Text>No time to chat, it looks like they're coming. Act cool.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+    <Prompt Sequence="2">
+        <Triggers>
+            <Trigger>NONE</Trigger>   
+        </Triggers>
+        <Text>You can't dial 911 from a hospital. That can get us in serious trouble.</Text>
+        <Response WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" AllowNonsense="True">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>I want</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Oh, I'm</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>to get</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>so sorry</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>out of here</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>it was</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>an accident</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -295,20 +254,6 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
             <!--Doctor-->
             <Color>
                 <r>0.4</r>
@@ -323,9 +268,52 @@
                 <b>0.0353</b>
                 <a>1.0</a>
             </Color>
+    </Prompt>    
+
+    <Prompt Sequence="3" IsEnd="True">
         <Triggers>
-            <Trigger>natural sequence 2</Trigger>   
+            <Trigger>NONE</Trigger>   
         </Triggers>
-    </Prompt>
+        <Text>That's strike one. I can't let you use the phone anymore. You need to go back to your room and get some rest.</Text>
+        <Response WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" AllowNonsense="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Oh, I'm</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>so sorry</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>it was</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>an accident</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+            <!--Doctor-->
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <!--therapist-->
+            <Color>
+                <r>1.0000</r>
+                <g>0.0000</g>
+                <b>0.0353</b>
+                <a>1.0</a>
+            </Color>
+    </Prompt>    
+
     
 </Game>

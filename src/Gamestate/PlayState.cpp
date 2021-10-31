@@ -9,6 +9,7 @@
 #include "../DialogueSystem/DialogueSerializer.h"
 #include "EndState.h"
 #include "PillState.h"
+#include "StrikesState.h"
 
 PlayState::PlayState()
 {
@@ -134,6 +135,13 @@ void PlayState::IncrementConversation()
         PillState::NumPills = numPills;
         PillState::Duration = duration;
         mCurrentConversation++;
+    }
+    else if(mConversationSequence[mCurrentConversation].find("|StrikesScreen") != std::string::npos)
+    {
+
+        mGame->PushState<StrikesState>();
+        mCurrentConversation++;
+        IncrementConversation();
     }
     else
     {

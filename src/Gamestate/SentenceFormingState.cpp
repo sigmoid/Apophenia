@@ -562,9 +562,15 @@ void SentenceFormingState::CreatePlayer()
     mCursorEntity->AddComponent(velocity);
     AttractableComponent *attr = new AttractableComponent(true);
     mCursorEntity->AddComponent(attr);
-    DragComponent *drag = new DragComponent(1);
-    mCursorEntity->AddComponent(drag);
-
+    if(!DialogueManager::Instance->GetCurrentResponse().Drunk)
+    {
+        DragComponent *drag = new DragComponent(1);
+        mCursorEntity->AddComponent(drag);
+    }
+    else
+    {
+        cursor->SetDrunk(true);
+    }
     mScene->AddEntity(mCursorEntity);
 }
 

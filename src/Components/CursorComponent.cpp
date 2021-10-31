@@ -39,6 +39,16 @@ void CursorComponent::Reset()
     mCurrentResponse.clear();
 }
 
+void CursorComponent::SetDrunk(bool val)
+{
+    mIsDrunk =  val;
+
+    if(mIsDrunk)
+    {
+        //mAcceleration = 600;
+    }
+}
+
 void CursorComponent::Update(float dTime) 
 {
     mTimeSinceBirth += dTime;
