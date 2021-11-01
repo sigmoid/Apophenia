@@ -41,7 +41,7 @@
                     <Fragment><Text>I'm about</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>halfway done</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>halfway done.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -71,8 +71,8 @@
                     <Fragment><Text>Well, I</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>had a lot of time yesterday</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>stayed up late last night</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>had a lot of time yesterday.</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>stayed up late last night.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -90,7 +90,7 @@
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>It's going well I'm about halfway done</Trigger>
+            <Trigger>It's going well I'm about halfway done.</Trigger>
         </Triggers>
     </Prompt>
 
@@ -103,7 +103,7 @@ You're a good student, I don't want to change that.</Text>
                     <Fragment><Text>Thanks,</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>I will</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I will.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -121,8 +121,8 @@ You're a good student, I don't want to change that.</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>Well, I had a lot of time yesterday</Trigger>
-            <Trigger>Well, I stayed up late last night</Trigger>
+            <Trigger>Well, I had a lot of time yesterday.</Trigger>
+            <Trigger>Well, I stayed up late last night.</Trigger>
         </Triggers>
     </Prompt>
 
@@ -140,8 +140,8 @@ You're a good student, I don't want to change that.</Text>
                     <Fragment><Text>but they seem</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>cool</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment IsIntrusive="True"><Text>uptight</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>cool.</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>uptight.</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -159,14 +159,12 @@ You're a good student, I don't want to change that.</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>Thanks, I will</Trigger>
+            <Trigger>Thanks, I will.</Trigger>
         </Triggers>
     </Prompt>
 
     <Prompt>
-        <Text>Well, let me know when you find out.
-A student said you had trouble during lab yesterday.
-What happened there?</Text>
+        <Text>Well, let me know when you find out. A student said you had trouble during lab yesterday. What happened there?</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>
@@ -179,8 +177,8 @@ What happened there?</Text>
                     <Fragment><Text>since I took this class</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>so I need to review</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment IsIntrusive="True"><Text>so I forgot everything</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>so I need to review.</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>so I forgot everything.</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -198,7 +196,7 @@ What happened there?</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>I forget their name, but they seem cool</Trigger>
+            <Trigger>I forget their name, but they seem cool.</Trigger>
         </Triggers>
     </Prompt>
 
@@ -227,7 +225,7 @@ What happened there?</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>It's been a few years since I took this class so I need to review</Trigger>
+            <Trigger>It's been a few years since I took this class so I need to review.</Trigger>
         </Triggers>
     </Prompt>
 
@@ -246,7 +244,7 @@ What happened there?</Text>
                     <Fragment><Text>interested to</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>hear it</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>hear it.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
 
             </Fragments>
@@ -268,7 +266,7 @@ What happened there?</Text>
 
     <Prompt>
         <Triggers>
-            <Trigger>Great, I'm interested to hear it</Trigger>
+            <Trigger>Great, I'm interested to hear it.</Trigger>
         </Triggers>
         <Text>Have you ever heard of the Pygmalion effect?</Text>
         <Response>
@@ -278,7 +276,7 @@ What happened there?</Text>
                     <Fragment><Text>Sounds familiar, but</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>what is it</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>what is it?</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
 
             </Fragments>
@@ -300,8 +298,8 @@ What happened there?</Text>
 
     <Prompt>
         <Triggers>
-            <Trigger>I have no idea, what is it</Trigger> 
-            <Trigger>Sounds familiar, but what is it</Trigger> 
+            <Trigger>I have no idea, what is it?</Trigger> 
+            <Trigger>Sounds familiar, but what is it?</Trigger> 
         </Triggers>
         <Text>Essentially, it's the idea that if you have higher expectations for someone, they will actually be able to perform better than if you expect less of them.</Text>
         <Response>
@@ -316,7 +314,7 @@ What happened there?</Text>
                     <Fragment><Text>assignments we</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>had</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>had.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -337,7 +335,7 @@ What happened there?</Text>
 
     <Prompt>
         <Triggers>
-            <Trigger>Well, that explains some of the assignments we had</Trigger>
+            <Trigger>Well, that explains some of the assignments we had.</Trigger>
         </Triggers>
         <Text>Haha, it's true I make it tough, but you made it through didn't you? I think students learn more when they are challenged.</Text>
         <Response WordBank="../Dialogue/WordBank2.xml" WordFrequency="1.5">
@@ -347,7 +345,7 @@ What happened there?</Text>
                     <Fragment IsIntrusive="True"><Text>But at</Text><Attraction>800</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>totally agree</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>totally agree.</Text><Attraction>0</Attraction></Fragment>
                     <Fragment IsIntrusive="True"><Text>what cost?</Text><Attraction>800</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
@@ -369,13 +367,13 @@ What happened there?</Text>
 
     <Prompt>
         <Triggers>
-            <Trigger>Yeah, I totally agree</Trigger>
+            <Trigger>Yeah, I totally agree.</Trigger>
         </Triggers>
         <Text>There are limits to it though, you can't just believe in someone hard enough that they can become a surgeon.</Text>
         <Response WordBank="../Dialogue/WordBank2.xml" WordFrequency="1.5">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Makes sense</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Makes sense.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -396,7 +394,7 @@ What happened there?</Text>
 
     <Prompt>
         <Triggers>
-            <Trigger>Makes sense</Trigger>
+            <Trigger>Makes sense.</Trigger>
         </Triggers>
         <Text>So when you're helping a student, just keep that in mind. Don't lower your expectations for someone unless they give you a really good reason to. Do you have any questions about class?</Text>
         <Response WordBank="../Dialogue/WordBank2.xml" WordFrequency="1.5">
@@ -466,7 +464,7 @@ What happened there?</Text>
                     <Fragment IsIntrusive="True"><Text>Oh fuck,</Text><Attraction>600</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>I remember</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I remember.</Text><Attraction>0</Attraction></Fragment>
                     <Fragment IsIntrusive="True"><Text>what even is object slicing?</Text><Attraction>600</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
@@ -490,8 +488,7 @@ What happened there?</Text>
     </Prompt>
 
     <Prompt>
-        <Text>What's on your plate now?
-Do you have time to do the next assignment before class next week?</Text>
+        <Text>What's on your plate now? Do you have time to do the next assignment before class next week?</Text>
         <Response WordBank="../Dialogue/WordBank2.xml" WordFrequency="1.5">
             <Fragments>
                 <FragmentGroup>
@@ -532,7 +529,7 @@ Do you have time to do the next assignment before class next week?</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>Oh right, I remember</Trigger>
+            <Trigger>Oh right, I remember.</Trigger>
         </Triggers>
     </Prompt>
     

@@ -28,7 +28,7 @@
                     <Fragment><Text>I am</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>losing it</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>losing it.</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -61,10 +61,10 @@
                     <Fragment><Text>can't write</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>this paper</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>this paper.</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>it's due tonight</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>It's due tonight.</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -82,7 +82,7 @@
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>Mom, I am losing it</Trigger>   
+            <Trigger>Mom, I am losing it.</Trigger>   
         </Triggers>
     </Prompt>
 
@@ -117,7 +117,8 @@ Just Breathe right now.</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>I can't write this paper it's due tonight</Trigger>
+            <Trigger>I can't write this paper. It's due tonight.</Trigger>
+            <Trigger>I can't write this paper.</Trigger>
         </Triggers>
     </Prompt>
 
@@ -129,7 +130,7 @@ Just Breathe right now.</Text>
                     <Fragment><Text>You're right...</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>I'm just, like,</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I'm just really</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>not tired lately.</Text><Attraction>0</Attraction></Fragment>
@@ -159,13 +160,13 @@ Just Breathe right now.</Text>
         <Response WordBank="../Dialogue/WordBank3.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Well this</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>This paper</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>paper is</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>is due</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>due in a few hours</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>in a few hours.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>I just</Text><Attraction>0</Attraction></Fragment>
@@ -189,7 +190,7 @@ Just Breathe right now.</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>You're right... I'm just, like, not tired lately.</Trigger>
+            <Trigger>You're right... I'm just really not tired lately.</Trigger>
         </Triggers>
     </Prompt>
 
@@ -225,7 +226,7 @@ Just Breathe right now.</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>Well this paper is due in a few hours I just need to finish it.</Trigger>
+            <Trigger>This paper is due in a few hours. I just need to finish it.</Trigger>
         </Triggers>
     </Prompt>
 
@@ -273,8 +274,8 @@ How long have you been working on it?</Text>
                     <Fragment><Text>get my</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>thoughts straight</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>head straight</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>thoughts straight.</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>head straight.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -308,10 +309,10 @@ How long have you been working on it?</Text>
                     <Fragment><Text>I have been</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>stressed out lately</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>stressed out lately.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment IsIntrusive="True"><Text>but I don't need help</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>I just don't need help.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -329,10 +330,10 @@ How long have you been working on it?</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>I can't keep my thoughts straight</Trigger>
-            <Trigger>I can't keep my head straight</Trigger>
-            <Trigger>I can't get my thoughts straight</Trigger>
-            <Trigger>I can't get my head straight</Trigger>
+            <Trigger>I can't keep my thoughts straight.</Trigger>
+            <Trigger>I can't keep my head straight.</Trigger>
+            <Trigger>I can't get my thoughts straight.</Trigger>
+            <Trigger>I can't get my head straight.</Trigger>
         </Triggers>
     </Prompt>
 
@@ -344,13 +345,13 @@ How long have you been working on it?</Text>
                     <Fragment><Text>I don't think</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>I need to</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I need to.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>it just sounds</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>It just sounds</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>like an expensive hassle</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>like an expensive hassle.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -368,13 +369,12 @@ How long have you been working on it?</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>Maybe... I have been stressed out lately</Trigger>
+            <Trigger>Maybe... I have been stressed out lately.</Trigger>
         </Triggers>
 </Prompt>
 
 <Prompt>
-        <Text>I actually got an email from your university.
-They offer free counseling.</Text>
+        <Text>I actually got an email from your university. They offer free counseling.</Text>
         <Response WordBank="../Dialogue/WordBank4.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
@@ -386,7 +386,7 @@ They offer free counseling.</Text>
                     <Fragment><Text>Are they really</Text><Attraction>1500</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>I could do that</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I could do that.</Text><Attraction>0</Attraction></Fragment>
                     <Fragment><Text>monitoring me?</Text><Attraction>1500</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
@@ -405,7 +405,7 @@ They offer free counseling.</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>I don't think I need to it just sounds like an expensive hassle</Trigger>
+            <Trigger>I don't think I need to. It just sounds like an expensive hassle.</Trigger>
         </Triggers>
 </Prompt>
 
@@ -427,7 +427,7 @@ They offer free counseling.</Text>
                     <Fragment><Text>strange ads,</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>"glitches"</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>"glitches."</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -481,7 +481,7 @@ They offer free counseling.</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>I have been noticing things... people staring, strange ads, "glitches"</Trigger>
+            <Trigger>I have been noticing things... people staring, strange ads, "glitches."</Trigger>
         </Triggers>
 </Prompt>
 
@@ -532,7 +532,7 @@ They offer free counseling.</Text>
                     <Fragment><Text>crazy,</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>that actually happened</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>that actually happened.</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -567,8 +567,8 @@ They offer free counseling.</Text>
                     <Fragment IsIntrusive="True"><Text>I'm right</Text><Attraction>400</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>you're right</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment IsIntrusive="True"><Text>I'm not crazy</Text><Attraction>400</Attraction></Fragment>
+                    <Fragment><Text>you're right.</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>I'm not crazy.</Text><Attraction>400</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -586,7 +586,7 @@ They offer free counseling.</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>I'm not crazy, that actually happened</Trigger>
+            <Trigger>I'm not crazy, that actually happened.</Trigger>
         </Triggers>
 </Prompt>
 
@@ -604,7 +604,7 @@ We should also schedule a doctor's appointment?</Text>
                     <Fragment><Text>sounds good,</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>thanks</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>thanks.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -622,7 +622,7 @@ We should also schedule a doctor's appointment?</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>Oh Really? That sounds good, I could do that</Trigger>
+            <Trigger>Oh Really? That sounds good, I could do that.</Trigger>
         </Triggers>
 </Prompt>
 
@@ -637,7 +637,7 @@ We should also schedule a doctor's appointment?</Text>
                     <Fragment><Text>sounds good,</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>thanks</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>thanks.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -655,8 +655,8 @@ We should also schedule a doctor's appointment?</Text>
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>Yeah, sounds good, thanks</Trigger>
-            <Trigger>Really? Maybe you're right</Trigger>
+            <Trigger>Yeah, sounds good, thanks.</Trigger>
+            <Trigger>Really? Maybe you're right.</Trigger>
         </Triggers>
 </Prompt>
 

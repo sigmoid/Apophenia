@@ -25,7 +25,7 @@
                     <Fragment><Text>I actually</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>feel great</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>feel great.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -49,7 +49,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I actually feel great</Trigger>   
+            <Trigger>I actually feel great.</Trigger>   
         </Triggers>
         <Text>Good! Glad to hear you're feeling better. What did you end up doing last night?</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
@@ -58,7 +58,7 @@
                     <Fragment><Text>I watched some</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>old kids movies</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>old kids movies,</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>and read</Text><Attraction>0</Attraction></Fragment>
@@ -67,7 +67,7 @@
                     <Fragment><Text>some of</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>this book</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>this book.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -88,7 +88,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I watched some old kids movies and read some of this book</Trigger>   
+            <Trigger>I watched some old kids movies, and read some of this book.</Trigger>   
         </Triggers>
         <Text>Wow. That's a lot for one night. Is it the book for your game development class?</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
@@ -97,10 +97,7 @@
                     <Fragment><Text>Yeah, it's</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>really good</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>super interesting</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>super interesting.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -121,7 +118,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Yeah, it's really good super interesting</Trigger>   
+            <Trigger>Yeah, it's super interesting.</Trigger>   
         </Triggers>
         <Text>What's it about again? I forgot.</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
@@ -148,7 +145,7 @@
                     <Fragment><Text>socially anxious people</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>to interact</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>to interact.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -169,7 +166,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Basically it's about how games can be designed to do interesting things like create a better way for socially anxious people to interact</Trigger>   
+            <Trigger>Basically it's about how games can be designed to do interesting things like create a better way for socially anxious people to interact.</Trigger>   
         </Triggers>
         <Text>Very interesting! That'd be great for you!</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
@@ -178,8 +175,8 @@
                     <Fragment><Text>Ha ha,</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>good one</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment><Text>very funny</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>good one!</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>very funny.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -200,8 +197,8 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Ha ha, very funny</Trigger>   
-            <Trigger>Ha ha, good one</Trigger>   
+            <Trigger>Ha ha, very funny.</Trigger>   
+            <Trigger>Ha ha, good one!</Trigger>   
         </Triggers>
         <Text>Just messing with you. So how could a game do that? Help people interact?</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
@@ -216,16 +213,16 @@
                     <Fragment><Text>and you hear "A</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>lover is near"</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>lover is near."</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>then you hear</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Then you hear</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>"you have gained</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>"You have gained</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>a life"</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>a life."</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -246,7 +243,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Well, imagine a game that uses earbuds and you hear "A lover is near" then you hear "you have gained a life"</Trigger>   
+            <Trigger>Well, imagine a game that uses earbuds and you hear "A lover is near." Then you hear "You have gained a life."</Trigger>   
         </Triggers>
         <Text>Alright...</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
@@ -267,7 +264,7 @@
                     <Fragment><Text>they gave you</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>a life</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>a life!</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -288,7 +285,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>A stranger in the same place as you is playing the game too, and they gave you a life</Trigger>   
+            <Trigger>A stranger in the same place as you is playing the game too, and they gave you a life!</Trigger>   
         </Triggers>
         <Text>Oh wow, that is pretty interesting.</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
@@ -342,7 +339,7 @@
                     <Fragment><Text>to get them to</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>seek help</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>seek help./Text><Attraction>0</Attraction></Fragment>
                     <Fragment IsIntrusive="True"><Text>kill themselves?</Text><Attraction>800</Attraction></Fragment>
                     <Fragment IsIntrusive="True"><Text>drop out?</Text><Attraction>800</Attraction></Fragment>
                 </FragmentGroup>
@@ -365,7 +362,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Where teachers identify students in crisis and have their students try to plant ideas in their heads to get them to seek help</Trigger>   
+            <Trigger>Where teachers identify students in crisis and have their students try to plant ideas in their heads to get them to seek help.</Trigger>   
         </Triggers>
         <Text>That's a weird one... Was that from the book too?</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
@@ -379,8 +376,8 @@
                     <Fragment IsIntrusive="True"><Text>it's happening</Text><Attraction>800</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>i read</Text><Attraction>0</Attraction></Fragment>
-                    <Fragment IsIntrusive="True"><Text>to me</Text><Attraction>800</Attraction></Fragment>
+                    <Fragment><Text>i read.</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>to me.</Text><Attraction>800</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -401,7 +398,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Yup, last chapter i read</Trigger>   
+            <Trigger>Yup, last chapter i read.</Trigger>   
         </Triggers>
         <Text>Hm. That's really strange. I don't know if I like that one. Oh! There's more space news. Do you want to hear about it?</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
@@ -410,7 +407,7 @@
                     <Fragment><Text>Sure, what</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>is it</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>is it?</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -431,7 +428,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Sure, what is it</Trigger>   
+            <Trigger>Sure, what is it?</Trigger>   
         </Triggers>
         <Text>Well, they keep finding black holes all throughout the universe.</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
@@ -476,7 +473,7 @@
                     <Fragment><Text>is absolutely</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>terrifying</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>terrifying.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -497,7 +494,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Well that is absolutely terrifying</Trigger>   
+            <Trigger>Well that is absolutely terrifying.</Trigger>   
         </Triggers>
         <Text>I'm sorry sometimes I forget who I'm talking to. You really don't need to worry about this.</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
@@ -515,7 +512,7 @@
                     <Fragment><Text>going to make</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>me worry</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>me worry.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -536,7 +533,7 @@
 
     <Prompt IsEnd="True">
         <Triggers>
-            <Trigger>We will see I can never tell what is going to make me worry</Trigger>   
+            <Trigger>We will see I can never tell what is going to make me worry.</Trigger>   
         </Triggers>
         <Text>Hm. Yeah, well maybe you can talk to the therapist about that today.</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">

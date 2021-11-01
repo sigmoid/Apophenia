@@ -22,7 +22,7 @@
         <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Anxiety</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Anxiety.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -82,7 +82,7 @@
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>Anxiety</Trigger>   
+            <Trigger>Anxiety.</Trigger>   
         </Triggers>
     </Prompt>
 
@@ -91,13 +91,16 @@
         <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Hard to say</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Hard to say.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>maybe a few</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Maybe a few</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>times a day</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>hundred</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>times a day?</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -133,7 +136,7 @@
                     <Fragment><Text>but this semester</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>has been especially bad</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>has been especially bad.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -151,7 +154,7 @@
         <a>1.0</a>
     </Color>
         <Triggers>
-            <Trigger>Hard to say maybe a few times a day</Trigger>   
+            <Trigger>Hard to say. maybe a few times a day?</Trigger>   
         </Triggers>
     </Prompt>
 
@@ -170,7 +173,7 @@
                     <Fragment><Text>similar period</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>in High School</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>in High School.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -191,7 +194,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I had a similar period in High School</Trigger>   
+            <Trigger>I had a similar period in High School.</Trigger>   
         </Triggers>
 
         <Text>How did you deal with it then?</Text>
@@ -207,7 +210,7 @@
                     <Fragment><Text>helped, and I</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>tried antidepressants</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>tried antidepressants.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -228,7 +231,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Well, I started therapy, which helped, and I tried antidepressants</Trigger>   
+            <Trigger>Well, I started therapy, which helped, and I tried antidepressants.</Trigger>   
         </Triggers>
 
         <Text>You "tried" antidepressants? Did they help?</Text>
@@ -247,7 +250,7 @@
                     <Fragment><Text>after starting them,</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>so we stopped</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>so we stopped.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -268,7 +271,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I don't think so, actually. Things got worse after starting them, so we stopped</Trigger>   
+            <Trigger>I don't think so, actually. Things got worse after starting them, so we stopped.</Trigger>   
         </Triggers>
 
         <Text>How is the anxiety affecting your life?</Text>
@@ -281,7 +284,7 @@
                     <Fragment><Text>keeping up with</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>school</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>school.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -302,7 +305,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I'm having trouble keeping up with school</Trigger>   
+            <Trigger>I'm having trouble keeping up with school.</Trigger>   
         </Triggers>
 
         <Text>It's definitely concerning. I would recommend you seek therapy. There are great resources here for that.</Text>
@@ -315,7 +318,7 @@
                     <Fragment><Text>appointment,</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>but it's a ways off</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>but it's a ways off.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -336,7 +339,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I have an appointment, but it's a ways off</Trigger>   
+            <Trigger>I have an appointment, but it's a ways off.</Trigger>   
         </Triggers>
 
         <Text>Great. I know you had a bad experience in the past, but I would also like to prescribe you an antidepressant.</Text>
@@ -384,7 +387,7 @@
                     <Fragment><Text>am open to</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>that</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>that.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -405,7 +408,7 @@
 
     <Prompt IsEnd="True">
         <Triggers>
-            <Trigger>I guess I am open to that</Trigger>   
+            <Trigger>I guess I am open to that.</Trigger>   
         </Triggers>
 
         <Text>Good. I'm going to give you my cell number. Call me if your symptoms get worse. Otherwise, I would like to see you in a month to see your progress. Sound good?</Text>

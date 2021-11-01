@@ -28,7 +28,7 @@
                     <Fragment><Text>things just keep</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>getting worse</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>getting worse.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -52,7 +52,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I feel like things just keep getting worse</Trigger>   
+            <Trigger>I feel like things just keep getting worse.</Trigger>   
         </Triggers>
         <Text>What's going on?</Text>
         <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="3.5">
@@ -61,7 +61,7 @@
                     <Fragment><Text>I keep missing</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>deadlines</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>deadlines,</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>and I can't</Text><Attraction>0</Attraction></Fragment>
@@ -73,7 +73,7 @@
                     <Fragment><Text>a computer</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>without freaking out</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>without freaking out.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -95,7 +95,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I keep missing deadlines and I can't even boot up a computer without freaking out</Trigger>   
+            <Trigger>I keep missing deadlines, and I can't even boot up a computer without freaking out.</Trigger>   
         </Triggers>
         <Text>I think we need to do something about this. It's been going on too long.</Text>
         <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="3.5">
@@ -110,7 +110,7 @@
                     <Fragment><Text>therapist, things</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>will improve</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>will improve.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -131,14 +131,14 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I think once I see the therapist, things will improve</Trigger>   
+            <Trigger>I think once I see the therapist, things will improve.</Trigger>   
         </Triggers>
         <Text>Hopefully. Did you at least sleep well last night?</Text>
         <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Yes</Text><Attraction>500</Attraction></Fragment>
-                    <Fragment><Text>Not really</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Yes.</Text><Attraction>500</Attraction></Fragment>
+                    <Fragment><Text>Not really.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -159,13 +159,13 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Yes</Trigger>   
+            <Trigger>Yes.</Trigger>   
         </Triggers>
         <Text>Really?</Text>
         <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>No</Text><Attraction>500</Attraction></Fragment>
+                    <Fragment><Text>No.</Text><Attraction>500</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -186,8 +186,8 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Not really</Trigger>
-            <Trigger>No</Trigger>   
+            <Trigger>Not really.</Trigger>
+            <Trigger>No.</Trigger>   
         </Triggers>
         <Text>I think if you would just get a good nights sleep, you would feel better.</Text>
         <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="3.5">
@@ -220,7 +220,7 @@
                     <Fragment><Text>just lying there</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>for hours</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>for hours.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -241,7 +241,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I am trying. No caffeine, no alcohol, no screens after 8. I'm meditating, taking baths, and not working, but I end up just lying there for hours</Trigger>   
+            <Trigger>I am trying. No caffeine, no alcohol, no screens after 8. I'm meditating, taking baths, and not working, but I end up just lying there for hours.</Trigger>   
         </Triggers>
         <Text>I know. We just need to get you sleeping. Is the anxiety what's keeping you up?</Text>
         <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="3.5">
@@ -253,7 +253,7 @@
                     <Fragment><Text>my mind</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>just races</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>just races.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -274,7 +274,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Well, not exactly my mind just races</Trigger>   
+            <Trigger>Well, not exactly my mind just races.</Trigger>   
         </Triggers>
         <Text>What has been on your mind?</Text>
         <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="3.5">
@@ -289,7 +289,7 @@
                     <Fragment><Text>grading assignments,</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>major life events</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>major life events.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -310,7 +310,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Lots of things. Homework I have, grading assignments, major life events</Trigger>   
+            <Trigger>Lots of things. Homework I have, grading assignments, major life events.</Trigger>   
         </Triggers>
         <Text>Major life events?</Text>
         <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="3.5">
@@ -328,7 +328,7 @@
                     <Fragment><Text>childhood impact</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>my personality</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>my personality.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -349,7 +349,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Yeah, like how do the events of my childhood impact my personality</Trigger>   
+            <Trigger>Yeah, like how do the events of my childhood impact my personality.</Trigger>   
         </Triggers>
         <Text>Don't you think, if you have too much going on in your head, maybe you should dial back your responsibilities?</Text>
         <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="3.5">
@@ -361,7 +361,7 @@
                     <Fragment><Text>I've already cut</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>everything I can</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>everything I can.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -382,7 +382,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I feel like I've already cut everything I can</Trigger>   
+            <Trigger>I feel like I've already cut everything I can.</Trigger>   
         </Triggers>
         <Text>Well. What I mean is... Do you really need to be a TA right now?</Text>
         <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="3.5">
@@ -391,10 +391,10 @@
                     <Fragment><Text>I can't just</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>quit right now</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>quit right now.</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>I just started</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>I just started,</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>and I don't</Text><Attraction>700</Attraction></Fragment>
@@ -406,7 +406,7 @@
                     <Fragment><Text>the professor or</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>the other TAs</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>the other TAs.</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -427,13 +427,13 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I can't just quit right now I just started and I don't want to let down the professor or the other TAs</Trigger>   
+            <Trigger>I can't just quit right now. I just started, and I don't want to let down the professor or the other TAs.</Trigger>   
         </Triggers>
         <Text>I think they would understand if you told them what's going on.</Text>
         <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>No, I can't</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>No, I can't.</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -456,7 +456,7 @@
         <Triggers>
             <Trigger>No, I can't</Trigger>   
         </Triggers>
-        <Text>You have to realize that this isn't a good thing for you. You're falling behind, not sleeping, having bad anxiety. You need to do something.</Text>
+        <Text>You have to realize that this isn't a good thing for you. You're falling behind, not sleeping, having bad anxiety. You're being pulled apart from every conceivable direction. You need to do something.</Text>
         <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
@@ -472,7 +472,7 @@
                     <Fragment><Text>storm, and</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>get better</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>get better?</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -493,7 +493,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>But what if I can just ride out this storm, and get better</Trigger>   
+            <Trigger>But what if I can just ride out this storm, and get better?</Trigger>   
         </Triggers>
         <Text>If it was going to get better on its own. Why hasn't it improved in the last month?</Text>
         <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="3.5">
@@ -517,7 +517,7 @@
                     <Fragment><Text>find out</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>that I quit</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>that I quit.</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -538,16 +538,30 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I don't think this studio will take me on as an intern if they find out that I quit</Trigger>   
+            <Trigger>I don't think this studio will take me on as an intern if they find out that I quit.</Trigger>   
         </Triggers>
-        <Text>Maybe not, but your health is more important to me than an internship, and it should be to you, too.</Text>
+        <Text>Maybe not, but your health is more important to me than an internship, and it should be to you too.</Text>
         <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>You're right</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I just -</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>I'll quit</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>No...</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                </FragmentGroup>
+                <FragmentGroup>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>You're right.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I'll quit.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -568,9 +582,9 @@
 
     <Prompt IsEnd="True">
         <Triggers>
-            <Trigger>You're right I'll quit</Trigger>   
+            <Trigger>I just - No... You're right. I'll quit.</Trigger>   
         </Triggers>
-        <Text>Good. Let me know how it goes.</Text>
+        <Text>You're making the right decision... Let me know how it goes.</Text>
         <Response WordBank="../Dialogue/WordBank6.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>

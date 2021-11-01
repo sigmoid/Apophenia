@@ -34,7 +34,7 @@
                     <Fragment><Text>Okay, this shouldn't</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>take long</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>take long.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -58,16 +58,19 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Okay, this shouldn't take long</Trigger>   
+            <Trigger>Okay, this shouldn't take long.</Trigger>   
         </Triggers>
         <Text>What's wrong? You seem upset.</Text>
         <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>I think I</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I think I...</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
+                <FragmentGroup/>
+                <FragmentGroup/>
+                <FragmentGroup/>
                 <FragmentGroup>
-                    <Fragment><Text>need to quit</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>need to quit.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -88,7 +91,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I think I need to quit</Trigger>   
+            <Trigger>I think I... need to quit.</Trigger>   
         </Triggers>
         <Text>I thought you might. I heard from someone else what's been going on.</Text>
         <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
@@ -130,7 +133,7 @@
                     <Fragment><Text>So everyone</Text><Attraction>900</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>knows</Text><Attraction>900</Attraction></Fragment>
+                    <Fragment><Text>knows?</Text><Attraction>900</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -151,40 +154,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>So everyone knows</Trigger>   
-        </Triggers>
-        <Text>No! They just told me because you work with me. Nobody is gossiping about this. We're concerned for you.</Text>
-        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
-            <Fragments>
-                <FragmentGroup>
-                    <Fragment><Text>Okay.</Text><Attraction>500</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>So what</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>happens now?</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-            </Fragments>
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-            <Speed>800</Speed>
-        </Response>
-    <Color>
-        <r>0.2549</r>
-        <g>0.0941</g>
-        <b>0.3020</b>
-        <a>1.0</a>
-    </Color>
-    </Prompt>
-
-    <Prompt>
-        <Triggers>
-            <Trigger>So everyone knows</Trigger>   
+            <Trigger>So everyone knows?</Trigger>   
         </Triggers>
         <Text>No! They just told me because you work with me. Nobody is gossiping about this. We're concerned for you.</Text>
         <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
@@ -252,7 +222,21 @@
         <Triggers>
             <Trigger>And what will you tell the students?</Trigger>   
         </Triggers>
-        <Text>Nothing at all. Before you go, I want to know if there is anything I could have done better to make this job easier for you?</Text>
+        <Text>Nothing at all. They don't need to know anything.</Text>
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
+                <FragmentGroup>
+                    <Fragment><Text>Oh yeah,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>right.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+        </Response>
+    </Prompt>
+    <Prompt>
+        <Triggers>
+            <Trigger>Oh yeah, right.</Trigger>   
+        </Triggers>
+        <Text>Before you go, I want to know if there is anything I could have done better to make this job easier for you?</Text>
         <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
@@ -262,7 +246,7 @@
                     <Fragment><Text>your expectations</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>are a bit high</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>are a bit high.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment IsIntrusive="True"><Text>but maybe</Text><Attraction>800</Attraction></Fragment>
@@ -271,7 +255,7 @@
                     <Fragment IsIntrusive="True"><Text>I'm just</Text><Attraction>800</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment IsIntrusive="True"><Text>not good enough</Text><Attraction>800</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>not good enough.</Text><Attraction>800</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -290,18 +274,61 @@
     </Color>
     </Prompt>
 
-    <Prompt IsEnd = "True">
+    <Prompt>
         <Triggers>
-            <Trigger>Well, I feel your expectations are a bit high</Trigger>   
+            <Trigger>Well, I feel your expectations are a bit high.</Trigger>   
         </Triggers>
         <!-- Slightly annoyed and pissed off -->
-        <Text>What? 
-Okay.
-Well, good luck.</Text>
+        <Text>What? Really?</Text>
         <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Well, I feel</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>No. What</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>Did I</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I meant</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>really just</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>was-</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>say that?</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt IsEnd="True">
+        <Triggers>
+            <Trigger>No. What I meant was-</Trigger>   
+        </Triggers>
+        <Text>Don't worry about it. Just- I hope you start to feel better. Good luck.</Text>
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>No. What</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>Did I</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I meant</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>really just</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>was...</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>say that?</Text><Attraction>700</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>

@@ -28,7 +28,7 @@
                     <Fragment><Text>am</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>I</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I?</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -64,7 +64,7 @@
                     <Fragment><Text>are</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>you</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>you?</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -91,10 +91,13 @@
         <Response AllowNonsense="True" WordFrequency="6" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>What's this</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>What're these</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>on my chest</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>little pads</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>on my chest?</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
             <Color>
@@ -116,7 +119,7 @@
     <Prompt Sequence="4" IsEnd="True">
         <Text>Hey! Stay with me buddy!</Text>
         <Triggers>
-            <Trigger>What's this on my chest</Trigger>   
+            <Trigger>What're these little pads on my chest?</Trigger>   
         </Triggers>
         <Response AllowNonsense="True" WordFrequency="6" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
