@@ -80,6 +80,19 @@ Prompt DialogueSerializer::DeserializePrompt(tinyxml2::XMLElement *root)
     {
         res.Triggers.push_back(tgr->GetText());
     }
+
+    if(root->FirstChildElement("ObscuredWords") != nullptr)
+    {
+        for(tinyxml2::XMLElement *obsc = root->FirstChildElement("ObscuredWords")->FirstChildElement(); obsc != nullptr; obsc = obsc->NextSiblingElement())
+        {
+            if(obsc == nullptr)
+            {
+                break;
+            }
+
+            res.ObscuredWords.push_back(obsc->GetText());
+        }
+    }
     return res;
 }
 Response DialogueSerializer::DeserializeResponse(tinyxml2::XMLElement *root)

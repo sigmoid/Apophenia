@@ -25,6 +25,8 @@ class CursorComponent : public Opal::Component
     virtual void Deserialize() override;
     virtual Opal::Component *Clone() override;
 
+    void ToggleInput(bool takeInput);
+
     void Kill();
     bool GetKill();
 
@@ -44,6 +46,7 @@ class CursorComponent : public Opal::Component
     float mUpperBound = 1080 - 100, mLowerBound = 100;
     float mAttractionModifier = 25.0f;
     int mUpBinding = GLFW_KEY_W, mDownBinding = GLFW_KEY_S;
+    bool mTakeInput = true;
     Opal::TransformComponent *mTransform = nullptr;
     AttractableComponent *mAttractable = nullptr;
 

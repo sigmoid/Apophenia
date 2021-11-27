@@ -56,13 +56,13 @@
         <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True" >
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>What? no</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>You look</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>just let</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>kinda</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>me go</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>familiar.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -95,6 +95,10 @@
 
     <Prompt Sequence="2">
         <Text>You're in a psychiatric hospital. You had a seizure yesterday and last night you were transferred here. Don't worry, this is a safe place.</Text>
+        <ObscuredWords>
+            <Obscured>psychiatric</Obscured>
+            <Obscured>hospital.</Obscured>
+        </ObscuredWords>
         <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
@@ -104,7 +108,7 @@
                     <Fragment><Text>I just</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>talking to</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>talking to?</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -176,7 +180,7 @@
                 <a>1.0</a>
             </Color>
         <Triggers>
-            <Trigger>Who was I just talking to</Trigger>   
+            <Trigger>Who was I just talking to?</Trigger>   
         </Triggers>
     </Prompt>
 

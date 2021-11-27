@@ -49,6 +49,11 @@ void CursorComponent::SetDrunk(bool val)
     }
 }
 
+void CursorComponent::ToggleInput(bool takeInput)
+{
+    mTakeInput = takeInput;    
+}
+
 void CursorComponent::Update(float dTime) 
 {
     mTimeSinceBirth += dTime;
@@ -59,26 +64,47 @@ void CursorComponent::Update(float dTime)
 
     UpdateVerts();
 
-    bool takingInput = false;
+    bool takingInput;
 
-    if(Opal::InputHandler::GetKey(mUpBinding))
+    if(mTakeInput)
     {
-        takingInput = !takingInput;
-        mCurrentSpeed -= mAcceleration * dTime;
-    }
-    if(Opal::InputHandler::GetKey(mDownBinding))
-    {
-        takingInput = !takingInput;
-        mCurrentSpeed += mAcceleration * dTime;
-    }
+        takingInput = false;
 
-    if(mCurrentSpeed > mMaxSpeed)
-    {
-        mCurrentSpeed = mMaxSpeed;
-    }
-    if(mCurrentSpeed < -mMaxSpeed)
-    {
-        mCurrentSpeed = -mMaxSpeed;
+        float yMovement = 0;
+
+        if(Opal::InputHandler::GetKey(mUpBinding))
+        {
+            takingInput = !takingInput;
+            yMovement = -1.0f;
+        }
+        else if(Opal::InputHandler::GetLeftJoystickY() > 0.1)
+        {
+            takingInput = true;
+            yMovement = Opal::InputHandler::GetLeftJoystickY();
+        }
+
+        if(Opal::InputHandler::GetKey(mDownBinding))
+        {
+            takingInput = !takingInput;
+            yMovement = 1.0f;
+        }
+        else if(Opal::InputHandler::GetLeftJoystickY() < -0.1)
+        {
+            takingInput = true;
+            yMovement = Opal::InputHandler::GetLeftJoystickY();
+        }
+
+
+        mCurrentSpeed += mAcceleration * dTime * yMovement;
+
+        if(mCurrentSpeed > mMaxSpeed)
+        {
+            mCurrentSpeed = mMaxSpeed;
+        }
+        if(mCurrentSpeed < -mMaxSpeed)
+        {
+            mCurrentSpeed = -mMaxSpeed;
+        }
     }
 
     if(mKilled)

@@ -160,7 +160,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Well, it comes and goes but this semester has been especially bad</Trigger>   
+            <Trigger>Well, it comes and goes but this semester has been especially bad.</Trigger>   
         </Triggers>
 
         <Text>What do you mean by "It comes and goes?"</Text>

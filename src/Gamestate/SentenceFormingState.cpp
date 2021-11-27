@@ -711,11 +711,16 @@ void SentenceFormingState::CreateSparks()
 
 void SentenceFormingState::PreBakeLines()
 {
+    mScene->GetEntity(0)->GetComponent<CursorComponent>()->ToggleInput(false);
+
     for (int i = 0; i < 200; i++)
     {
         mScene->Update(1 / 60.0f);
         UpdateCursorLine(1 / 60.0f);
     }
+
+    mScene->GetEntity(0)->GetComponent<CursorComponent>()->ToggleInput(true);
+
 }
 
 void SentenceFormingState::CreateRandomSpark()

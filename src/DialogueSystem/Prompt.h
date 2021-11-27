@@ -12,6 +12,7 @@ struct Prompt
     std::string Text;
     std::vector<glm::vec4> Colors;
     std::vector<std::string> Triggers;
+    std::vector<std::string> ObscuredWords;
     Response Response;
     bool IsEnd = false;
     bool IsKill = true;

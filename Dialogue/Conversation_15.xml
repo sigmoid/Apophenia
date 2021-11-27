@@ -77,34 +77,12 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
         <Triggers>
             <Trigger>START</Trigger>   
         </Triggers>
@@ -133,34 +111,12 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
         <Triggers>
             <Trigger>START</Trigger>   
         </Triggers>
@@ -186,34 +142,12 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
         <Triggers>
             <Trigger>START</Trigger>   
         </Triggers>
@@ -236,34 +170,12 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
         <Triggers>
             <Trigger>START</Trigger>   
         </Triggers>
@@ -295,34 +207,12 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
         <Triggers>
             <Trigger>START</Trigger>   
         </Triggers>
@@ -351,34 +241,12 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
         <Triggers>
             <Trigger>START</Trigger>   
         </Triggers>
@@ -407,34 +275,12 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
         <Triggers>
             <Trigger>START</Trigger>   
         </Triggers>
@@ -463,34 +309,12 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
         <Triggers>
             <Trigger>START</Trigger>   
         </Triggers>
@@ -516,34 +340,12 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
         <Triggers>
             <Trigger>START</Trigger>   
         </Triggers>
@@ -572,34 +374,12 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
         <Triggers>
             <Trigger>START</Trigger>   
         </Triggers>

@@ -59,10 +59,10 @@
                     <Fragment><Text>Who are</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>you? You</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>you? I can't</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>look familiar.</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>see you.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -74,41 +74,19 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
         <Triggers>
             <Trigger>START</Trigger>   
         </Triggers>
     </Prompt>
 
     <Prompt Sequence="2" TransitionText="???">
-        <Text>Don't worry about that. Basically you got sucked in, but you have much more important things to think about now.</Text>
+        <Text>I'm hiding in the vents. You don't remember me? we've been friends for a long time... But forget all that - You have much more important things to think about now.</Text>
         <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
@@ -127,41 +105,19 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
+                <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
         <Triggers>
             <Trigger>natural sequence 2</Trigger>   
         </Triggers>
     </Prompt>
 
     <Prompt Sequence="3">
-        <Text>I've been here for ages and I still don't know, but I can tell you one thing. Everyone here is out to get you.</Text>
+        <Text>It's complicated... Basically you got sucked in, and there are many dangers associated with that. Everyone in here is out to get you.</Text>
         <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
@@ -183,41 +139,19 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
+                <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
         <Triggers>
             <Trigger>natural sequence 2</Trigger>   
         </Triggers>
     </Prompt>
 
     <Prompt Sequence="4">
-        <Text>Hard to say. I'll let you know if I hear anything, but I think I can get us out of here if we play our cards right.</Text>
+        <Text>Hard to say. Maybe they want to steal your identity, or make you some kind of slave. Look, I can tell you want to get out of here. So I can try to help you figure out how.</Text>
         <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
@@ -239,34 +173,12 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
+                <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
         <Triggers>
             <Trigger>natural sequence 2</Trigger>   
         </Triggers>
@@ -295,34 +207,12 @@
             </Color>
             <Speed>1000</Speed>
         </Response>
-        <!--purple-->
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-        <!--warm-->
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.1882</b>
-                <a>1.0</a>
-            </Color>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
+                <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
         <Triggers>
             <Trigger>natural sequence 2</Trigger>   
         </Triggers>

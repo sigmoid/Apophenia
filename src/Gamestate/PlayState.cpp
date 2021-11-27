@@ -23,6 +23,8 @@ void PlayState::Tick()
         IncrementConversation();
     }
 
+    mNoiseOffset += mGame->GetDeltaTime()/8.0f;
+
     if(mTransitionTimer > 0)
     {
         mTransitionTimer -= mGame->GetDeltaTime();
@@ -48,7 +50,7 @@ void PlayState::Tick()
             }
         }
 
-        if(Opal::InputHandler::GetKey(GLFW_KEY_SPACE))
+        if(Opal::InputHandler::GetKey(GLFW_KEY_SPACE) || Opal::InputHandler::GetGamepadButton(0))
         {
             if(DialogueManager::Instance->GetCurrentPrompt().IsEnd)
             {
@@ -87,20 +89,43 @@ void PlayState::Render()
     mTextPass->EndRecord();
 
     mGame->Renderer->SubmitRenderPass(mTextPass);
+
+    UpdateShaderData();
+
+    mPostProcessor->ProcessAndSubmit();
+
+    //     ImGui_ImplVulkan_NewFrame();
+    // ImGui_ImplGlfw_NewFrame();
+
+    // ImGui::NewFrame();
+
+    // ImGui::Begin("Noise settings");
+
+    // ImGui::DragFloat("Frequency", &mNoiseFrequency, 0.05f);
+
+    // ImGui::End();
+
+    // ImGui::Render();
+    // ImGui::EndFrame();
 }
 
 void PlayState::Begin() 
 {
     Opal::Logger::LogString("GAMESTATE: Begin() PlayState");
     mConversationSequence = DialogueSerializer::DeserializeStoryline("../Dialogue/DialogueProgression.xml");
-    mTextPass = mGame->Renderer->CreateRenderPass(true);
+    mTextureOutput = mGame->Renderer->CreateRenderTexture(1920,1080, 4);
+    mTextPass = mGame->Renderer->CreateRenderPass(mTextureOutput,true);
 
     Opal::Font typeFace(mGame->Renderer,"../fonts/JosefinSans-Light.ttf", 120);
 
     mSpriteRenderer = mGame->Renderer->CreateSpriteRenderer(mTextPass);
 
     mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, typeFace, glm::vec2(1920 - 300, 1080), Opal::Camera::ActiveCamera);
+    
+    mPostProcessor = mGame->Renderer->CreatePostProcessor(mTextPass, "../shaders/PlayStateVert", "../shaders/PlayStateFrag", true, sizeof(PlayStateShaderData), VK_SHADER_STAGE_FRAGMENT_BIT);
+
     IncrementConversation();
+    UpdateShaderData();
     UpdateColor(1.0f);
 }
 
@@ -201,4 +226,31 @@ void PlayState::UpdateColor(float progress)
     }
 
     mTextPass->SetClearColor(color.r, color.g, color.b, color.a);
+}
+
+void PlayState::UpdateShaderData()
+{
+     
+    mShaderData = new PlayStateShaderData();
+
+    for(int i = 0; i < 8; i++)
+    {
+        int sz = DialogueManager::Instance->GetCurrentPrompt().ObscuredWords.size();
+        if(i > sz - 1)
+        {
+            mShaderData->ObscuredRects[i] = glm::vec4(0,0,0,0);
+        }
+        else
+        {
+            if(DialogueManager::Instance != nullptr)
+            {
+            Opal::AABB box = mTextRenderer->GetTextRect(DialogueManager::Instance->GetCurrentPrompt().Text,DialogueManager::Instance->GetCurrentPrompt().ObscuredWords[i] , 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
+            // std::cout << box.min.x << " " << box.min.y << " " << box.max.x << " " << box.max.y << std::endl;
+            mShaderData->ObscuredRects[i] = glm::vec4(box.min.x / 1920, box.min.y / 1080, box.max.x / 1920, box.max.y / 1080);
+            }
+        }
+        
+    }
+
+    mPostProcessor->UpdateUserData((void *)mShaderData);
 }
