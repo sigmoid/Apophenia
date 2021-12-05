@@ -1,7 +1,7 @@
 #include "PillState.h"
 
-Opal::MeshRenderer2D *PillState::mMeshRenderer = nullptr;
-Opal::RenderPass *PillState::mRenderPass = nullptr;
+std::shared_ptr<Opal::MeshRenderer2D> PillState::mMeshRenderer = nullptr;
+std::shared_ptr<Opal::RenderPass> PillState::mRenderPass = nullptr;
 int PillState::NumPills = 1;
 float PillState::Duration = 1;
 
@@ -9,6 +9,12 @@ PillState::PillState()
 {
 
 }
+
+PillState::~PillState()
+{
+    
+}
+
 void PillState::Tick() 
 {
     mTimer -= mGame->GetDeltaTime();

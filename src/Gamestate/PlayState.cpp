@@ -16,6 +16,11 @@ PlayState::PlayState()
 
 }
 
+PlayState::~PlayState()
+{
+    
+}
+
 void PlayState::Tick() 
 {
     if(DialogueManager::Instance->GetCurrentPrompt().Text == "BLANK")

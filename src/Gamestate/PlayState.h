@@ -20,6 +20,7 @@ class PlayState : public Opal::Gamestate
 
     public:
     PlayState();
+    ~PlayState();
     virtual void Tick() override;
     virtual void Render() override;
     virtual void Begin() override;
@@ -30,10 +31,10 @@ class PlayState : public Opal::Gamestate
 
     void IncrementConversation();
 
-    Opal::FontRenderer *mTextRenderer;
-    Opal::RenderPass *mTextPass;
-    Opal::PostProcessRenderer *mPostProcessor;
-    Opal::Texture *mTextureOutput;
+    std::shared_ptr<Opal::FontRenderer> mTextRenderer;
+    std::shared_ptr<Opal::RenderPass> mTextPass;
+    std::shared_ptr<Opal::PostProcessRenderer> mPostProcessor;
+    std::shared_ptr<Opal::Texture> mTextureOutput;
 
     std::vector<std::string> mConversationSequence;
 
@@ -42,7 +43,7 @@ class PlayState : public Opal::Gamestate
     float mTransitionTimer = 0, mTransitionDuration = 3.5f;
     float mColorWarpTimer = 0, mColorWarpPeriod = 1.0f;
     glm::vec4 mPreviousColor = glm::vec4(101.0f/255.0f, 130.0f/255.0f, 191.0f/255.0f, 1);
-    Opal::SpriteRenderer *mSpriteRenderer;
+    std::shared_ptr<Opal::SpriteRenderer> mSpriteRenderer;
     bool IsPillSequence = false;
     int mCurrentColorId = 0;
 

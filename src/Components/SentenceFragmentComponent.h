@@ -14,15 +14,16 @@ class SentenceFragmentComponent : public Opal::Component
     public:
     SentenceFragmentComponent();
     SentenceFragmentComponent(std::string text, float speed, glm::vec4 color, float attraction, bool intrusive, bool solid, bool core);
+    ~SentenceFragmentComponent();
 
     virtual void OnAdded() override;
     virtual void OnStart() override;
     virtual void Update(float dTime) override;
-    virtual void Render(Opal::BatchRenderer2D *ctx) override;
-    virtual void OnCollision(Opal::Entity *other, glm::vec2 resolution, Opal::AABB otherAABB) override;
+    virtual void Render(std::shared_ptr<Opal::BatchRenderer2D> ctx) override;
+    virtual void OnCollision(std::shared_ptr<Opal::Entity> other, glm::vec2 resolution, Opal::AABB otherAABB) override;
     virtual void Serialize() override;
     virtual void Deserialize() override;
-    virtual Opal::Component *Clone() override;
+    virtual std::shared_ptr<Opal::Component> Clone() override;
 
     void Interact();
     bool GetActive();
@@ -38,7 +39,7 @@ class SentenceFragmentComponent : public Opal::Component
     float Attraction = 0;
 
     private:
-    Opal::TransformComponent *mTransform;
+    std::shared_ptr<Opal::TransformComponent> mTransform;
     bool mActive = true;
     bool mSolid = true;
     bool mCore = true;

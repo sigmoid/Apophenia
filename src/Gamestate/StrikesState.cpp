@@ -2,12 +2,17 @@
 #include "../../Opal/Logger.h"
 #include "../../Opal/Game.h"
 
-Opal::FontRenderer *StrikesState::mTextRenderer = nullptr;
-Opal::RenderPass *StrikesState::mTextPass = nullptr;
+std::shared_ptr<Opal::FontRenderer> StrikesState::mTextRenderer = nullptr;
+std::shared_ptr<Opal::RenderPass> StrikesState::mTextPass = nullptr;
 
 StrikesState::StrikesState()
 {
 
+}
+
+StrikesState::~StrikesState()
+{
+    
 }
 
 void StrikesState::Tick()

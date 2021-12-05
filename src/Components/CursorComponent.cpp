@@ -18,6 +18,11 @@ CursorComponent::CursorComponent()
     TypeName = "CursorComponent";
 }
 
+CursorComponent::~CursorComponent()
+{
+    
+}
+
 void CursorComponent::OnAdded() 
 {
 
@@ -57,7 +62,7 @@ void CursorComponent::ToggleInput(bool takeInput)
 void CursorComponent::Update(float dTime) 
 {
     mTimeSinceBirth += dTime;
-    std::vector<Opal::Entity *> ents = Opal::Scene::GetActiveScene()->GetAllEntities();
+    std::vector<std::shared_ptr<Opal::Entity> > ents = Opal::Scene::GetActiveScene()->GetAllEntities();
 
 
     mAttractors = mAttractable->GetFrameAttractors();
@@ -131,7 +136,7 @@ bool CursorComponent::GetKill()
     return mKilled;
 }
 
-void CursorComponent::Render(Opal::BatchRenderer2D *ctx) 
+void CursorComponent::Render(std::shared_ptr<Opal::BatchRenderer2D>   ctx) 
 {
     // ImGui_ImplVulkan_NewFrame();
     // ImGui_ImplGlfw_NewFrame();
@@ -157,14 +162,14 @@ std::vector<std::string> CursorComponent::GetResponse()
     return mCurrentResponse;
 }
 
-void CursorComponent::OnCollision(Opal::Entity *other, glm::vec2 resolution, Opal::AABB otherAABB) 
+void CursorComponent::OnCollision(std::shared_ptr<Opal::Entity> other, glm::vec2 resolution, Opal::AABB otherAABB) 
 {
     if(other->GetComponent<EndWallComponent>() != nullptr)
     {
         mAlive = false;
     }
 
-    SentenceFragmentComponent *otherComp = other->GetComponent<SentenceFragmentComponent>(); 
+    std::shared_ptr<SentenceFragmentComponent> otherComp = other->GetComponent<SentenceFragmentComponent>(); 
     if(otherComp != nullptr && otherComp->GetActive() && otherComp->GetSolid())
     {
         mCurrentResponse.push_back(other->GetComponent<SentenceFragmentComponent>()->Text);
@@ -182,12 +187,12 @@ void CursorComponent::Deserialize()
 
 }
 
-Opal::Component *CursorComponent::Clone() 
+std::shared_ptr<Opal::Component> CursorComponent::Clone() 
 {
-    return new CursorComponent();
+    return std::make_shared<CursorComponent>();
 }
 
-Opal::Mesh2D *CursorComponent::GetMesh()
+std::shared_ptr<Opal::Mesh2D> CursorComponent::GetMesh()
 {
     return mMesh;
 }

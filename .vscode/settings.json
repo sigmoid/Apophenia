@@ -72,5 +72,6 @@
         "utility": "cpp",
         "vector": "cpp",
         "__bits": "cpp"
-    }
+    },
+    "cmake.configureOnOpen": false
 }

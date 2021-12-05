@@ -9,6 +9,11 @@ NoiseMoveComponent::NoiseMoveComponent(float strength, float freq, float scale, 
     mSeed = seed;
 }
 
+NoiseMoveComponent::~NoiseMoveComponent()
+{
+    
+}
+
 void NoiseMoveComponent::OnAdded()
 {
 
@@ -27,12 +32,12 @@ void NoiseMoveComponent::Update(float dTime)
     mVelocity->SetVelocity( mVelocity->GetVelocity() + glm::vec3(0,yVel,0));
 }
 
-void NoiseMoveComponent::Render(Opal::BatchRenderer2D *ctx)
+void NoiseMoveComponent::Render(std::shared_ptr<Opal::BatchRenderer2D>   ctx)
 {
 
 }
 
-void NoiseMoveComponent::OnCollision(Opal::Entity *other, glm::vec2 resolution, Opal::AABB otherAABB)
+void NoiseMoveComponent::OnCollision(std::shared_ptr<Opal::Entity> other, glm::vec2 resolution, Opal::AABB otherAABB)
 {
 
 }
@@ -47,7 +52,7 @@ void NoiseMoveComponent::Deserialize()
 
 }
 
-Opal::Component *NoiseMoveComponent::Clone()
+std::shared_ptr<Opal::Component> NoiseMoveComponent::Clone()
 {
-    return new NoiseMoveComponent(mStrength, mFrequency, mNoiseScale, mSeed);
+    return std::make_shared<NoiseMoveComponent>(mStrength, mFrequency, mNoiseScale, mSeed);
 }

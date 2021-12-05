@@ -7,6 +7,11 @@ DragComponent::DragComponent(float amt)
     mFactor = amt;
 }
 
+DragComponent::~DragComponent()
+{
+    
+}
+
 void DragComponent::OnAdded()
 {
 
@@ -26,12 +31,12 @@ void DragComponent::Update(float dTime)
     mVelocity->SetVelocity(vel);
 }
 
-void DragComponent::Render(Opal::BatchRenderer2D *ctx)
+void DragComponent::Render(std::shared_ptr<Opal::BatchRenderer2D>   ctx)
 {
 
 }
 
-void DragComponent::OnCollision(Opal::Entity *other, glm::vec2 resolution, Opal::AABB otherAABB)
+void DragComponent::OnCollision(std::shared_ptr<Opal::Entity> other, glm::vec2 resolution, Opal::AABB otherAABB)
 {
 
 }
@@ -46,7 +51,7 @@ void DragComponent::Deserialize()
 
 }
 
-Opal::Component *DragComponent::Clone()
+std::shared_ptr<Opal::Component> DragComponent::Clone()
 {
-    return new DragComponent(1);
+    return std::make_shared<DragComponent>(1);
 }

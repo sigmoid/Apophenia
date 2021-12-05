@@ -16,14 +16,15 @@ class CursorComponent : public Opal::Component
 {
     public:
     CursorComponent();
+    ~CursorComponent();
     virtual void OnAdded() override;
     virtual void OnStart() override;
     virtual void Update(float dTime) override;
-    virtual void Render(Opal::BatchRenderer2D *ctx) override;
-    virtual void OnCollision(Opal::Entity *other, glm::vec2 resolution, Opal::AABB otherAABB) override;
+    virtual void Render(std::shared_ptr<Opal::BatchRenderer2D> ctx) override;
+    virtual void OnCollision(std::shared_ptr<Opal::Entity> other, glm::vec2 resolution, Opal::AABB otherAABB) override;
     virtual void Serialize() override;
     virtual void Deserialize() override;
-    virtual Opal::Component *Clone() override;
+    virtual std::shared_ptr<Component> Clone() override;
 
     void ToggleInput(bool takeInput);
 
@@ -35,7 +36,7 @@ class CursorComponent : public Opal::Component
     bool GetAlive();
     void Reset();
     std::vector<std::string> GetResponse();
-    Opal::Mesh2D *GetMesh();
+    std::shared_ptr<Opal::Mesh2D> GetMesh();
 
     private:
     float mNoiseScale = 0.05, mNoiseFreq = 1;
@@ -47,8 +48,8 @@ class CursorComponent : public Opal::Component
     float mAttractionModifier = 25.0f;
     int mUpBinding = GLFW_KEY_W, mDownBinding = GLFW_KEY_S;
     bool mTakeInput = true;
-    Opal::TransformComponent *mTransform = nullptr;
-    AttractableComponent *mAttractable = nullptr;
+    std::shared_ptr<Opal::TransformComponent> mTransform = nullptr;
+    std::shared_ptr<AttractableComponent> mAttractable = nullptr;
 
     std::vector<std::string> mCurrentResponse;
     bool mAlive = true;
@@ -61,6 +62,6 @@ class CursorComponent : public Opal::Component
     glm::vec4 mMeshColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
     void UpdateVerts();
     std::vector<Attractor> mAttractors;
-    Opal::Mesh2D *mMesh;
+    std::shared_ptr<Opal::Mesh2D> mMesh;
     std::vector<float> mVertices;
 };

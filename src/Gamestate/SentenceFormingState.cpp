@@ -25,21 +25,26 @@
 #include "EndState.h"
 
 // Static members
-Opal::FontRenderer *SentenceFormingState::mTextRenderer = nullptr;
-Opal::FontRenderer *SentenceFormingState::mResponseRenderer = nullptr;
-Opal::RenderPass *SentenceFormingState::mTextPass = nullptr;
-Opal::RenderPass *SentenceFormingState::mBGPass = nullptr;
-Opal::BatchRenderer2D *SentenceFormingState::mBatch = nullptr;
-Opal::MeshRenderer2D *SentenceFormingState::mMeshRenderer = nullptr;
-Opal::Texture *SentenceFormingState::mCursorTexture = nullptr;
-Opal::LineRenderer *SentenceFormingState::mLineRenderer = nullptr;
-Opal::Font *SentenceFormingState::mFont = nullptr;
-Opal::Font *SentenceFormingState::mResponseFont = nullptr;
-Opal::PostProcessRenderer *SentenceFormingState::mPostProcess = nullptr;
-Opal::Texture *SentenceFormingState::mRenderTexture = nullptr;
+std::shared_ptr<Opal::FontRenderer> SentenceFormingState::mTextRenderer = nullptr;
+std::shared_ptr<Opal::FontRenderer> SentenceFormingState::mResponseRenderer = nullptr;
+std::shared_ptr<Opal::RenderPass> SentenceFormingState::mTextPass = nullptr;
+std::shared_ptr<Opal::RenderPass> SentenceFormingState::mBGPass = nullptr;
+std::shared_ptr<Opal::BatchRenderer2D> SentenceFormingState::mBatch = nullptr;
+std::shared_ptr<Opal::MeshRenderer2D> SentenceFormingState::mMeshRenderer = nullptr;
+std::shared_ptr<Opal::Texture> SentenceFormingState::mCursorTexture = nullptr;
+std::shared_ptr<Opal::LineRenderer> SentenceFormingState::mLineRenderer = nullptr;
+std::shared_ptr<Opal::Font> SentenceFormingState::mFont = nullptr;
+std::shared_ptr<Opal::Font> SentenceFormingState::mResponseFont = nullptr;
+std::shared_ptr<Opal::PostProcessRenderer> SentenceFormingState::mPostProcess = nullptr;
+std::shared_ptr<Opal::Texture> SentenceFormingState::mRenderTexture = nullptr;
 
 SentenceFormingState::SentenceFormingState()
 {
+}
+
+SentenceFormingState::~SentenceFormingState()
+{
+    
 }
 
 void SentenceFormingState::Tick()
@@ -138,7 +143,6 @@ void SentenceFormingState::Tick()
         if (mCursorEntity->GetComponent<CursorComponent>()->GetKill())
         {
             DialogueManager::Instance->ProcessResponse("KILL");
-            free(mScene);
             mGame->PopState();
             return;
         }
@@ -160,7 +164,6 @@ void SentenceFormingState::Tick()
         }
         else
         {
-            free(mScene);
             mGame->PopState();
         }
     }
@@ -309,6 +312,7 @@ void SentenceFormingState::Render()
     ubo->warpFactor = mWarpFactor;
     ubo->xPadding = Opal::Camera::ActiveCamera->GetViewPort().x / mGame->GetWidth();
     ubo->yPadding = Opal::Camera::ActiveCamera->GetViewPort().y / mGame->GetHeight();
+
     mPostProcess->UpdateUserData(ubo);
     mPostProcess->ProcessAndSubmit();
 }
@@ -325,23 +329,23 @@ void SentenceFormingState::Begin()
         mBGPass = mGame->Renderer->CreateRenderPass(true);
         mBGPass->SetClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
-        mFont = new Opal::Font(mGame->Renderer, "../fonts/JosefinSans-Light.ttf", 90);
-        mResponseFont = new Opal::Font(mGame->Renderer, "../fonts/JosefinSans-Light.ttf", 64);
+        mFont = std::make_shared<Opal::Font>(mGame->Renderer, "../fonts/JosefinSans-Light.ttf", 90);
+        mResponseFont = std::make_shared<Opal::Font>(mGame->Renderer, "../fonts/JosefinSans-Light.ttf", 64);
 
         mMeshRenderer = mGame->Renderer->CreateMeshRenderer(mTextPass);
 
         mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(1920 - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
-        mLineRenderer = new Opal::LineRenderer();
+        mLineRenderer = std::make_shared<Opal::LineRenderer>();
         mLineRenderer->Init(mGame->Renderer, mTextPass, true);
 
-        std::vector<Opal::Texture *> textures;
+        std::vector<std::shared_ptr<Opal::Texture> > textures;
         mCursorTexture = mGame->Renderer->CreateTexture("../textures/cursor.png");
         textures.push_back(mCursorTexture);
         mBatch = mGame->Renderer->CreateBatch(mTextPass, 1000, textures, true);
 
         mResponseRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mResponseFont, glm::vec2(1920 - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
     }
-    mScene = new Opal::Scene(mBatch);
+    mScene = std::make_shared<Opal::Scene>(mBatch);
 
     mNoiseFrequency *= mLineSpeed / 1000;
 
@@ -376,22 +380,22 @@ void SentenceFormingState::Begin()
 
 void SentenceFormingState::CreateBounds()
 {
-    Opal::Entity *mTopBounds = new Opal::Entity();
+    std::shared_ptr<Opal::Entity> mTopBounds = std::make_shared<Opal::Entity>();
 
-    Opal::TransformComponent *transform = new Opal::TransformComponent(glm::vec3(0, -100, 0), glm::vec3(1, 1, 1), 0);
+    std::shared_ptr<Opal::TransformComponent> transform = std::make_shared<Opal::TransformComponent>(glm::vec3(0, -100, 0), glm::vec3(1, 1, 1), 0);
     mTopBounds->AddComponent(transform);
-    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(600, 100), glm::vec2(0, 0), true);
+    std::shared_ptr<Opal::BoxColliderComponent2D> collider = std::make_shared<Opal::BoxColliderComponent2D>(glm::vec2(600, 100), glm::vec2(0, 0), true);
     collider->SetIsTrigger(false);
     collider->SetIsStatic(true);
     mTopBounds->AddComponent(collider);
 
     mScene->AddEntity(mTopBounds);
 
-    Opal::Entity *mBottomBounds = new Opal::Entity();
+    std::shared_ptr<Opal::Entity> mBottomBounds = std::make_shared<Opal::Entity>();
 
-    Opal::TransformComponent *transform2 = new Opal::TransformComponent(glm::vec3(0, 1080, 0), glm::vec3(1, 1, 1), 0);
+    std::shared_ptr<Opal::TransformComponent> transform2 = std::make_shared<Opal::TransformComponent>(glm::vec3(0, 1080, 0), glm::vec3(1, 1, 1), 0);
     mBottomBounds->AddComponent(transform2);
-    Opal::BoxColliderComponent2D *collider2 = new Opal::BoxColliderComponent2D(glm::vec2(600, 100), glm::vec2(0, 0), true);
+    std::shared_ptr<Opal::BoxColliderComponent2D> collider2 = std::make_shared<Opal::BoxColliderComponent2D>(glm::vec2(600, 100), glm::vec2(0, 0), true);
     collider->SetIsTrigger(false);
     collider->SetIsStatic(true);
     mBottomBounds->AddComponent(collider2);
@@ -463,11 +467,11 @@ void SentenceFormingState::CreatePlayingField()
         glm::vec2 start = mWordPath[i];
         glm::vec2 end = mWordPath[i] + glm::vec2(0, mChannelHeight / 2);
 
-        std::vector<Opal::Entity *> toDestroy = Opal::AABBCollision::RaycastFind(start, end, mScene->GetAllEntities());
+        std::vector<std::shared_ptr<Opal::Entity> > toDestroy = Opal::AABBCollision::RaycastFind(start, end, mScene->GetAllEntities());
 
         for (int j = 0; j < toDestroy.size(); j++)
         {
-            SentenceFragmentComponent *frag = toDestroy[j]->GetComponent<SentenceFragmentComponent>();
+            std::shared_ptr<SentenceFragmentComponent> frag = toDestroy[j]->GetComponent<SentenceFragmentComponent>();
             if (frag != nullptr && !frag->GetCore())
             {
                 mScene->RemoveEntity(toDestroy[j]);
@@ -480,7 +484,7 @@ void SentenceFormingState::CreatePlayingField()
 
         for (int j = 0; j < toDestroy.size(); j++)
         {
-            SentenceFragmentComponent *frag = toDestroy[j]->GetComponent<SentenceFragmentComponent>();
+            std::shared_ptr<SentenceFragmentComponent> frag = toDestroy[j]->GetComponent<SentenceFragmentComponent>();
             if (frag != nullptr && !frag->GetCore())
             {
                 mScene->RemoveEntity(toDestroy[j]);
@@ -501,8 +505,8 @@ void SentenceFormingState::CreatePlayingField()
                     a = rand() % mFragmentEnts.size();
                     b = rand() % mFragmentEnts.size();
 
-                    Opal::TransformComponent *transA = mFragmentEnts[a]->GetComponent<Opal::TransformComponent>();
-                    Opal::TransformComponent *transB = mFragmentEnts[b]->GetComponent<Opal::TransformComponent>();
+                    std::shared_ptr<Opal::TransformComponent> transA = mFragmentEnts[a]->GetComponent<Opal::TransformComponent>();
+                    std::shared_ptr<Opal::TransformComponent> transB = mFragmentEnts[b]->GetComponent<Opal::TransformComponent>();
 
                     if (Opal::OpalMath::SquareDistance(glm::vec2(transA->Position.x, transA->Position.y), glm::vec2(transB->Position.x, transB->Position.y)) > 100000)
                     {
@@ -531,15 +535,15 @@ void SentenceFormingState::Resume()
 
 void SentenceFormingState::CreateEndWall(float x)
 {
-    Opal::Entity *mEndWallEnt = new Opal::Entity();
+    std::shared_ptr<Opal::Entity> mEndWallEnt = std::make_shared<Opal::Entity>();
 
-    Opal::TransformComponent *transform = new Opal::TransformComponent(glm::vec3(x, 0, 0), glm::vec3(1, 1, 1), 0);
+    std::shared_ptr<Opal::TransformComponent> transform = std::make_shared<Opal::TransformComponent>(glm::vec3(x, 0, 0), glm::vec3(1, 1, 1), 0);
     mEndWallEnt->AddComponent(transform);
-    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(600, 2000), glm::vec2(0, 0), true);
+    std::shared_ptr<Opal::BoxColliderComponent2D> collider = std::make_shared<Opal::BoxColliderComponent2D>(glm::vec2(600, 2000), glm::vec2(0, 0), true);
     collider->SetIsTrigger(true);
     collider->SetIsStatic(true);
     mEndWallEnt->AddComponent(collider);
-    EndWallComponent *endComp = new EndWallComponent(mLineSpeed);
+    std::shared_ptr<EndWallComponent> endComp = std::make_shared<EndWallComponent>(mLineSpeed);
     mEndWallEnt->AddComponent(endComp);
 
     mScene->AddEntity(mEndWallEnt);
@@ -548,23 +552,23 @@ void SentenceFormingState::CreateEndWall(float x)
 
 void SentenceFormingState::CreatePlayer()
 {
-    mCursorEntity = new Opal::Entity();
+    mCursorEntity = std::make_shared<Opal::Entity>();
 
-    Opal::TransformComponent *transform = new Opal::TransformComponent(glm::vec3(1920 / 4, 1080 / 2, 0), glm::vec3(1, 1, 1), 0);
+    std::shared_ptr<Opal::TransformComponent> transform = std::make_shared<Opal::TransformComponent>(glm::vec3(1920 / 4, 1080 / 2, 0), glm::vec3(1, 1, 1), 0);
     mCursorEntity->AddComponent(transform);
-    //Opal::SpriteComponent *sprite = new Opal::SpriteComponent(mCursorTexture);
+    //Opal::SpriteComponent *sprite = std::make_shared<Opal::SpriteComponent>(mCursorTexture);
     //mCursorEntity->AddComponent(sprite);
-    CursorComponent *cursor = new CursorComponent();
+    std::shared_ptr<CursorComponent> cursor = std::make_shared<CursorComponent>();
     mCursorEntity->AddComponent(cursor);
-    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(64, 64), glm::vec2(-32, -32), false);
+    std::shared_ptr<Opal::BoxColliderComponent2D> collider = std::make_shared<Opal::BoxColliderComponent2D>(glm::vec2(64, 64), glm::vec2(-32, -32), false);
     mCursorEntity->AddComponent(collider);
-    Opal::VelocityComponent *velocity = new Opal::VelocityComponent();
+    std::shared_ptr<Opal::VelocityComponent> velocity = std::make_shared<Opal::VelocityComponent>();
     mCursorEntity->AddComponent(velocity);
-    AttractableComponent *attr = new AttractableComponent(true);
+    std::shared_ptr<AttractableComponent> attr = std::make_shared<AttractableComponent>(true);
     mCursorEntity->AddComponent(attr);
     if(!DialogueManager::Instance->GetCurrentResponse().Drunk)
     {
-        DragComponent *drag = new DragComponent(1);
+        std::shared_ptr<DragComponent> drag = std::make_shared<DragComponent>(1);
         mCursorEntity->AddComponent(drag);
     }
     else
@@ -579,13 +583,13 @@ void SentenceFormingState::CreateSentenceFragment(glm::vec3 pos, std::string tex
     //Kludge, haven't actually implemented text measuring yet
     float width = mTextRenderer->MeasureText(text);
 
-    Opal::Entity *mFragmentEntity = new Opal::Entity();
+    std::shared_ptr<Opal::Entity> mFragmentEntity = std::make_shared<Opal::Entity>();
 
-    Opal::TransformComponent *transform = new Opal::TransformComponent(pos, glm::vec3(1, 1, 1), 0);
+    std::shared_ptr<Opal::TransformComponent> transform = std::make_shared<Opal::TransformComponent>(pos, glm::vec3(1, 1, 1), 0);
     mFragmentEntity->AddComponent(transform);
-    SentenceFragmentComponent *frag = new SentenceFragmentComponent(text, speed, mFragmentColor, attraction, intrusive, solid, core);
+    std::shared_ptr<SentenceFragmentComponent> frag = std::make_shared<SentenceFragmentComponent>(text, speed, mFragmentColor, attraction, intrusive, solid, core);
     mFragmentEntity->AddComponent(frag);
-    Opal::BoxColliderComponent2D *collider = new Opal::BoxColliderComponent2D(glm::vec2(fmax(64, width), mFragmentSize + mFragmentVertOffset), glm::vec2(0, -mFragmentSize + mFragmentVertOffset), true);
+    std::shared_ptr<Opal::BoxColliderComponent2D> collider = std::make_shared<Opal::BoxColliderComponent2D>(glm::vec2(fmax(64, width), mFragmentSize + mFragmentVertOffset), glm::vec2(0, -mFragmentSize + mFragmentVertOffset), true);
     collider->SetIsTrigger(true);
     collider->SetIsStatic(true);
     mFragmentEntity->AddComponent(collider);
@@ -594,15 +598,14 @@ void SentenceFormingState::CreateSentenceFragment(glm::vec3 pos, std::string tex
     {
         for (int i = 0; i < mFragmentEnts.size(); i++)
         {
-            Opal::BoxColliderComponent2D *otherCollider = mFragmentEnts[i]->GetComponent<Opal::BoxColliderComponent2D>();
-            SentenceFragmentComponent *otherFrag = mFragmentEnts[i]->GetComponent<SentenceFragmentComponent>();
+            std::shared_ptr<Opal::BoxColliderComponent2D> otherCollider = mFragmentEnts[i]->GetComponent<Opal::BoxColliderComponent2D>();
+            std::shared_ptr<SentenceFragmentComponent> otherFrag = mFragmentEnts[i]->GetComponent<SentenceFragmentComponent>();
 
             if (!otherFrag->GetCore())
                 continue;
 
             if (Opal::AABBCollision::GetResolution(otherCollider->GetAABB(), collider->GetAABB()) != glm::vec2(0, 0))
             {
-                free(mFragmentEntity);
                 return;
             }
         }
@@ -614,11 +617,11 @@ void SentenceFormingState::CreateSentenceFragment(glm::vec3 pos, std::string tex
 
 void SentenceFormingState::RenderSentenceFragments()
 {
-    std::vector<Opal::Entity *> entities = mScene->GetAllEntities();
+    std::vector<std::shared_ptr<Opal::Entity> > entities = mScene->GetAllEntities();
 
     for (int i = 0; i < entities.size(); i++)
     {
-        SentenceFragmentComponent *frag = entities[i]->GetComponent<SentenceFragmentComponent>();
+        std::shared_ptr<SentenceFragmentComponent> frag = entities[i]->GetComponent<SentenceFragmentComponent>();
         if (frag != nullptr)
         {
             glm::vec3 pos = entities[i]->GetComponent<Opal::TransformComponent>()->Position;
@@ -733,19 +736,19 @@ void SentenceFormingState::CreateRandomSpark()
     int width = 2;
     float xVel = mLineSpeed * ((rand() % 100) / 100.0f * 0.5f + 0.9f);
 
-    Opal::Entity *mSparkEntity = new Opal::Entity();
+    std::shared_ptr<Opal::Entity> mSparkEntity = std::make_shared<Opal::Entity>();
 
-    Opal::TransformComponent *transform = new Opal::TransformComponent();
+    std::shared_ptr<Opal::TransformComponent> transform = std::make_shared<Opal::TransformComponent>();
     transform->Position = glm::vec3(pos.x, pos.y, 0);
     mSparkEntity->AddComponent(transform);
-    Opal::VelocityComponent *velocity = new Opal::VelocityComponent();
+    std::shared_ptr<Opal::VelocityComponent> velocity = std::make_shared<Opal::VelocityComponent>();
     velocity->SetVelocity(glm::vec3(xVel, 0, 0));
     mSparkEntity->AddComponent(velocity);
-    AttractableComponent *attr = new AttractableComponent(true);
+    std::shared_ptr<AttractableComponent> attr = std::make_shared<AttractableComponent>(true);
     mSparkEntity->AddComponent(attr);
-    SparkComponent *spark = new SparkComponent(width, startColor, endColor, length, res);
+    std::shared_ptr<SparkComponent> spark = std::make_shared<SparkComponent>(width, startColor, endColor, length, res);
     mSparkEntity->AddComponent(spark);
-    DragComponent *drag = new DragComponent(1);
+    std::shared_ptr<DragComponent> drag = std::make_shared<DragComponent>(1);
     mSparkEntity->AddComponent(drag);
     float scl = fmax(mLineSpeed - 800.0f, 0);
     scl /= 200.0f;
@@ -761,7 +764,7 @@ void SentenceFormingState::CreateRandomSpark()
     str /= 200.0f;
     str *= 4;
     str += 1;
-    NoiseMoveComponent *mover = new NoiseMoveComponent(str, freq, scl, rand() % 10000);
+    std::shared_ptr<NoiseMoveComponent> mover = std::make_shared<NoiseMoveComponent>(str, freq, scl, rand() % 10000);
     mSparkEntity->AddComponent(mover);
 
     mScene->AddEntity(mSparkEntity);
@@ -774,9 +777,9 @@ void SentenceFormingState::RenderSparks()
 
     for (int i = 0; i < mSparkEntities.size(); i++)
     {
-        SparkComponent *spark = mSparkEntities[i]->GetComponent<SparkComponent>();
+        std::shared_ptr<SparkComponent> spark = mSparkEntities[i]->GetComponent<SparkComponent>();
         spark->SetSpeedUp((mSparkSpeedUp - 1) * ((float)i / (float)mSparkEntities.size()) + 1);
-        Opal::TransformComponent *trans = mSparkEntities[i]->GetComponent<Opal::TransformComponent>();
+        std::shared_ptr<Opal::TransformComponent> trans = mSparkEntities[i]->GetComponent<Opal::TransformComponent>();
 
         if (trans->Position.x > 1920 / mCurrentZoom)
         {
@@ -811,10 +814,10 @@ void SentenceFormingState::RenderWordConnections()
 {
     for (int i = 0; i < mWordConnections.size(); i++)
     {
-        Opal::TransformComponent *transformA = mWordConnections[i].first->GetComponent<Opal::TransformComponent>();
-        Opal::TransformComponent *transformB = mWordConnections[i].second->GetComponent<Opal::TransformComponent>();
-        Opal::BoxColliderComponent2D *boxA = mWordConnections[i].first->GetComponent<Opal::BoxColliderComponent2D>();
-        Opal::BoxColliderComponent2D *boxB = mWordConnections[i].second->GetComponent<Opal::BoxColliderComponent2D>();
+        std::shared_ptr<Opal::TransformComponent> transformA = mWordConnections[i].first->GetComponent<Opal::TransformComponent>();
+        std::shared_ptr<Opal::TransformComponent> transformB = mWordConnections[i].second->GetComponent<Opal::TransformComponent>();
+        std::shared_ptr<Opal::BoxColliderComponent2D> boxA = mWordConnections[i].first->GetComponent<Opal::BoxColliderComponent2D>();
+        std::shared_ptr<Opal::BoxColliderComponent2D> boxB = mWordConnections[i].second->GetComponent<Opal::BoxColliderComponent2D>();
 
         if (transformA != transformB && transformA != nullptr && transformB != nullptr && boxA != nullptr && boxB != nullptr)
         {

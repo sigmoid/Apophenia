@@ -24,22 +24,23 @@ class SparkComponent : public Opal::Component
 {
     public:
     SparkComponent(int width, glm::vec4 startColor, glm::vec4 endColor, int length, float updateTime);
+    ~SparkComponent();
     virtual void OnAdded() override;
     virtual void OnStart() override;
     virtual void Update(float dTime) override;
-    virtual void Render(Opal::BatchRenderer2D *ctx) override;
-    virtual void OnCollision(Opal::Entity *other, glm::vec2 resolution, Opal::AABB otherAABB) override;
+    virtual void Render(std::shared_ptr<Opal::BatchRenderer2D> ctx) override;
+    virtual void OnCollision(std::shared_ptr<Opal::Entity> other, glm::vec2 resolution, Opal::AABB otherAABB) override;
     virtual void Serialize() override;
     virtual void Deserialize() override;
-    virtual Opal::Component *Clone() override;
+    virtual std::shared_ptr<Opal::Component>Clone() override;
 
     void SetSpeedUp(float speedup);
 
     SparkTrail TrailData;
 
     private:
-    Opal::TransformComponent *mTransform;
-    Opal::VelocityComponent *mVelocity;
+    std::shared_ptr<Opal::TransformComponent> mTransform;
+    std::shared_ptr<Opal::VelocityComponent> mVelocity;
 
     float mSpeedUp = 1.0f;
 

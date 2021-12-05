@@ -22,20 +22,22 @@ class AttractableComponent : public Opal::Component
 {
     public:
     AttractableComponent(bool lock_x);
+    ~AttractableComponent();
+
     virtual void OnAdded() override;
     virtual void OnStart() override;
     virtual void Update(float dTime) override;
-    virtual void Render(Opal::BatchRenderer2D *ctx) override;
-    virtual void OnCollision(Opal::Entity *other, glm::vec2 resolution, Opal::AABB otherAABB) override;
+    virtual void Render(std::shared_ptr<Opal::BatchRenderer2D> ctx) override;
+    virtual void OnCollision(std::shared_ptr<Opal::Entity> other, glm::vec2 resolution, Opal::AABB otherAABB) override;
     virtual void Serialize() override;
     virtual void Deserialize() override;
-    virtual Opal::Component *Clone() override;
+    virtual std::shared_ptr<Component> Clone() override;
 
     std::vector<Attractor> GetFrameAttractors();
 
     private:
-    Opal::TransformComponent *mTransform = nullptr;
-    Opal::VelocityComponent *mVelocity = nullptr;
+    std::shared_ptr<Opal::TransformComponent> mTransform = nullptr;
+    std::shared_ptr<Opal::VelocityComponent> mVelocity = nullptr; 
 
     float mAttractionScale = 1200.0f;
     std::vector<Attractor> mFrameAttractors;

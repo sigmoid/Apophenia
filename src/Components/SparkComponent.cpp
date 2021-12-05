@@ -11,6 +11,11 @@ SparkComponent::SparkComponent(int width, glm::vec4 startColor, glm::vec4 endCol
     mDuration = updateTime;
 }
 
+SparkComponent::~SparkComponent()
+{
+    
+}
+
 void SparkComponent::OnAdded()
 {
 
@@ -57,12 +62,12 @@ void SparkComponent::Update(float dTime)
     }
 }
 
-void SparkComponent::Render(Opal::BatchRenderer2D *ctx)
+void SparkComponent::Render(std::shared_ptr<Opal::BatchRenderer2D>   ctx)
 {
 
 }
 
-void SparkComponent::OnCollision(Opal::Entity *other, glm::vec2 resolution, Opal::AABB otherAABB)
+void SparkComponent::OnCollision(std::shared_ptr<Opal::Entity> other, glm::vec2 resolution, Opal::AABB otherAABB)
 {
 
 }
@@ -77,7 +82,7 @@ void SparkComponent::Deserialize()
 
 }
 
-Opal::Component *SparkComponent::Clone()
+std::shared_ptr<Opal::Component> SparkComponent::Clone()
 {
-    return new SparkComponent(1,glm::vec4(1),glm::vec4(1), 5, 0.01f);
+    return std::make_shared<SparkComponent>(1,glm::vec4(1),glm::vec4(1), 5, 0.01f);
 }

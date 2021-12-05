@@ -11,6 +11,7 @@ class EndState : public Opal::Gamestate
 
     public:
     EndState();
+    ~EndState();
     virtual void Tick() override;
     virtual void Render() override;
     virtual void Begin() override;
@@ -19,6 +20,6 @@ class EndState : public Opal::Gamestate
 
     private:
 
-    static Opal::FontRenderer *mTextRenderer;
-    static Opal::RenderPass *mTextPass;
+    static std::shared_ptr<Opal::FontRenderer> mTextRenderer;
+    static std::shared_ptr<Opal::RenderPass> mTextPass;
 };

@@ -15,6 +15,7 @@ class PillState : public Opal::Gamestate
 
     public:
     PillState();
+    ~PillState();
     virtual void Tick() override;
     virtual void Render() override;
     virtual void Begin() override;
@@ -29,6 +30,6 @@ class PillState : public Opal::Gamestate
 
     float mTimer;
 
-    static Opal::MeshRenderer2D *mMeshRenderer;
-    static Opal::RenderPass *mRenderPass;
+    static std::shared_ptr<Opal::MeshRenderer2D> mMeshRenderer;
+    static std::shared_ptr<Opal::RenderPass> mRenderPass;
 };

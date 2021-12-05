@@ -16,13 +16,13 @@ class Pill
 
     void Update(float dTime);
 
-    Opal::Mesh2D *GetMesh();
+    std::shared_ptr<Opal::Mesh2D> GetMesh();
 
     private:
     void GenerateEllipse();
     void GenerateCapsule();
 
-    Opal::Mesh2D *mMesh;
+    std::shared_ptr<Opal::Mesh2D> mMesh;
     std::vector<float> mVerts;
 
     glm::vec4 GetRandomCapsuleColor();

@@ -11,6 +11,11 @@ EndWallComponent::EndWallComponent(float speed)
     mSpeed = speed;
 }
 
+EndWallComponent::~EndWallComponent()
+{
+    
+}
+
 void EndWallComponent::OnAdded()
 {
 
@@ -26,12 +31,12 @@ void EndWallComponent::Update(float dTime)
     mTransform->Position.x -= mSpeed * dTime;
 }
 
-void EndWallComponent::Render(Opal::BatchRenderer2D *ctx)
+void EndWallComponent::Render(std::shared_ptr<Opal::BatchRenderer2D>   ctx)
 {
 
 }
 
-void EndWallComponent::OnCollision(Opal::Entity *other, glm::vec2 resolution, Opal::AABB otherAABB)
+void EndWallComponent::OnCollision(std::shared_ptr<Opal::Entity> other, glm::vec2 resolution, Opal::AABB otherAABB)
 {
 
 }
@@ -46,7 +51,7 @@ void EndWallComponent::Deserialize()
 
 }
 
-Opal::Component *EndWallComponent::Clone()
+std::shared_ptr<Opal::Component> EndWallComponent::Clone()
 {
-    return new EndWallComponent();
+    return std::make_shared<EndWallComponent>();
 }

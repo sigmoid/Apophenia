@@ -10,6 +10,11 @@ AttractableComponent::AttractableComponent(bool lock_x)
     mLocked = lock_x;
 }
 
+AttractableComponent::~AttractableComponent()
+{
+    
+}
+
 void AttractableComponent::OnAdded() 
 {
 
@@ -25,14 +30,14 @@ void AttractableComponent::Update(float dTime)
 {
     mFrameAttractors.clear();
 
-    std::vector<Opal::Entity *> ents = Opal::Scene::GetActiveScene()->GetAllEntities();
+    std::vector<std::shared_ptr<Opal::Entity> > ents = Opal::Scene::GetActiveScene()->GetAllEntities();
     for(int i = 0; i < ents.size(); i++)
     {
-        SentenceFragmentComponent *otherSentence = ents[i]->GetComponent<SentenceFragmentComponent>();
+        std::shared_ptr<SentenceFragmentComponent> otherSentence = ents[i]->GetComponent<SentenceFragmentComponent>();
 
         if(otherSentence != nullptr && otherSentence->Attraction != 0)
         {
-            Opal::BoxColliderComponent2D *otherBox = ents[i]->GetComponent<Opal::BoxColliderComponent2D>();
+            std::shared_ptr<Opal::BoxColliderComponent2D> otherBox = ents[i]->GetComponent<Opal::BoxColliderComponent2D>();
             if(otherBox == nullptr)
             {
                 std::cout << "No BoxCollider on sentence fragment?!" << std::endl;
@@ -68,12 +73,12 @@ void AttractableComponent::Update(float dTime)
     }
 }
 
-void AttractableComponent::Render(Opal::BatchRenderer2D *ctx) 
+void AttractableComponent::Render(std::shared_ptr<Opal::BatchRenderer2D> ctx) 
 {
 
 }
 
-void AttractableComponent::OnCollision(Opal::Entity *other, glm::vec2 resolution, Opal::AABB otherAABB) 
+void AttractableComponent::OnCollision(std::shared_ptr<Opal::Entity> other, glm::vec2 resolution, Opal::AABB otherAABB) 
 {
 
 }
@@ -88,9 +93,9 @@ void AttractableComponent::Deserialize()
 
 }
 
-Opal::Component *AttractableComponent::Clone() 
+std::shared_ptr<Opal::Component> AttractableComponent::Clone() 
 {
-    return new AttractableComponent(true);
+    return std::make_shared<AttractableComponent>(true);
 }
 
 std::vector<Attractor> AttractableComponent::GetFrameAttractors()

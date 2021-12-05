@@ -28,7 +28,7 @@ void Pill::Update(float dTime)
     mRotation += mAngularSpeed * dTime;
 }
 
-Opal::Mesh2D *Pill::GetMesh()
+std::shared_ptr<Opal::Mesh2D> Pill::GetMesh()
 {
     if(mMesh == nullptr)
         return nullptr;

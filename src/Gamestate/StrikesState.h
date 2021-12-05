@@ -12,6 +12,7 @@ class StrikesState : public Opal::Gamestate
 
     public:
     StrikesState();
+    ~StrikesState();
     virtual void Tick() override;
     virtual void Render() override;
     virtual void Begin() override;
@@ -20,8 +21,8 @@ class StrikesState : public Opal::Gamestate
 
     private:
 
-    static Opal::FontRenderer *mTextRenderer;
-    static Opal::RenderPass *mTextPass;
+    static std::shared_ptr<Opal::FontRenderer> mTextRenderer;
+    static std::shared_ptr<Opal::RenderPass> mTextPass;
 
     int mCurrentStrikes = 1;
     int mMaxStrikes = 6;

@@ -18,35 +18,35 @@
 int main(int argc, char **argv)
 {
 
-    Opal::Game game;
-    game.Init(1920, 1080, "Tightrope", Opal::RendererType::VULKAN);
+    std::shared_ptr<Opal::Game> game = std::make_shared<Opal::Game>();
+    game->Init(1920, 1080, "Tightrope", Opal::RendererType::VULKAN);
 
-    game.SetFramerateLock(60);
-    game.ToggleDebugInfo(true);
+    game->SetFramerateLock(60);
+    game->ToggleDebugInfo(true);
 
-    game.Renderer->CreateOrthoCamera(1920, 1080, -1000, 1000);
+    game->Renderer->CreateOrthoCamera(1920, 1080, -1000, 1000);
 
     DialogueManager dialogue("../Dialogue/TestDialogue.xml");
     Opal::AudioClip mClip("../Audio/test.wav");
 
-    game.PushState<PlayState>();
-//    game.PushState<NarrativeState>();
-    game.Resize(1920/2, 1080/2);
+    game->PushState<PlayState>();
+//    game->PushState<NarrativeState>();
+    game->Resize(1920/2, 1080/2);
     // Hacky way to initialize the renderers for the sentence forming state before the window can be resized
-    game.PushState<SentenceFormingState>();
-    game.PopState();
-    game.PushState<EndState>();
-    game.PopState();
-    game.PushState<PillState>();
-    game.PopState();
-    game.PushState<StrikesState>();
-    game.PopState();
+    game->PushState<SentenceFormingState>();
+    game->PopState();
+    game->PushState<EndState>();
+    game->PopState();
+    game->PushState<PillState>();
+    game->PopState();
+    game->PushState<StrikesState>();
+    game->PopState();
 
     std::vector<Opal::AudioClipInstance *> mInstances;
     
     bool lastG = false;
 
-    while(!game.ShouldEnd())
+    while(!game->ShouldEnd())
     {
         if(Opal::InputHandler::GetKey(GLFW_KEY_G) && !lastG)
         {
@@ -59,7 +59,7 @@ int main(int argc, char **argv)
             {
                 pan = 1;
             }
-            mInstances.push_back(game.mAudioEngine.PlaySound(&mClip, 0.5f, 1.0f, pan, false, true));
+            mInstances.push_back(game->mAudioEngine.PlaySound(&mClip, 0.5f, 1.0f, pan, false, true));
         }
 
         for(int i = 0; i < mInstances.size(); i++)
@@ -75,6 +75,6 @@ int main(int argc, char **argv)
         }
 
         lastG = Opal::InputHandler::GetKey(GLFW_KEY_G);
-        game.Tick();
+        game->Tick();
     }
 }

@@ -24,6 +24,11 @@ SentenceFragmentComponent::SentenceFragmentComponent(std::string text, float spe
         Color.a = 0.125f;
 }
 
+SentenceFragmentComponent::~SentenceFragmentComponent()
+{
+    
+}
+
 bool SentenceFragmentComponent::GetSolid()
 {
     return mSolid;
@@ -60,12 +65,12 @@ bool SentenceFragmentComponent::GetActive()
     return mActive;
 }
 
-void SentenceFragmentComponent::Render(Opal::BatchRenderer2D *ctx)
+void SentenceFragmentComponent::Render(std::shared_ptr<Opal::BatchRenderer2D>   ctx)
 {
 
 }
 
-void SentenceFragmentComponent::OnCollision(Opal::Entity *other, glm::vec2 resolution, Opal::AABB otherAABB)
+void SentenceFragmentComponent::OnCollision(std::shared_ptr<Opal::Entity> other, glm::vec2 resolution, Opal::AABB otherAABB)
 {
 }
 
@@ -79,7 +84,7 @@ void SentenceFragmentComponent::Deserialize()
 
 }
 
-Opal::Component *SentenceFragmentComponent::Clone()
+std::shared_ptr<Opal::Component> SentenceFragmentComponent::Clone()
 {
-    return new SentenceFragmentComponent();
+    return std::make_shared<SentenceFragmentComponent>();
 }

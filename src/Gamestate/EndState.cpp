@@ -2,12 +2,17 @@
 #include "../../Opal/Logger.h"
 #include "../../Opal/Game.h"
 
-Opal::FontRenderer *EndState::mTextRenderer = nullptr;
-Opal::RenderPass *EndState::mTextPass = nullptr;
+std::shared_ptr<Opal::FontRenderer> EndState::mTextRenderer = nullptr;
+std::shared_ptr<Opal::RenderPass> EndState::mTextPass = nullptr;
 
 EndState::EndState()
 {
 
+}
+
+EndState::~EndState()
+{
+    
 }
 
 void EndState::Tick()

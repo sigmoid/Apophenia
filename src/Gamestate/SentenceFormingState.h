@@ -34,6 +34,7 @@ class SentenceFormingState : public Opal::Gamestate
     public:
 
     SentenceFormingState();
+    ~SentenceFormingState();
     virtual void Tick() override;
     virtual void Render() override;
     virtual void Begin() override;
@@ -41,18 +42,18 @@ class SentenceFormingState : public Opal::Gamestate
     virtual void Resume() override;
 
     private:
-    static Opal::FontRenderer *mTextRenderer;
-    static Opal::FontRenderer *mResponseRenderer;
-    static Opal::RenderPass *mTextPass;
-    static Opal::RenderPass *mBGPass;
-    static Opal::BatchRenderer2D *mBatch;
-    static Opal::MeshRenderer2D *mMeshRenderer;
-    static Opal::Texture *mCursorTexture;
-    static Opal::LineRenderer *mLineRenderer;
-    static Opal::PostProcessRenderer *mPostProcess;
-    static Opal::Texture *mRenderTexture;
-    Opal::Scene *mScene = nullptr;
-    Opal::Entity *mCursorEntity = nullptr;
+    static std::shared_ptr<Opal::FontRenderer> mTextRenderer;
+    static std::shared_ptr<Opal::FontRenderer> mResponseRenderer;
+    static std::shared_ptr<Opal::RenderPass> mTextPass;
+    static std::shared_ptr<Opal::RenderPass> mBGPass;
+    static std::shared_ptr<Opal::BatchRenderer2D> mBatch;
+    static std::shared_ptr<Opal::MeshRenderer2D> mMeshRenderer;
+    static std::shared_ptr<Opal::Texture> mCursorTexture;
+    static std::shared_ptr<Opal::LineRenderer> mLineRenderer;
+    static std::shared_ptr<Opal::PostProcessRenderer> mPostProcess;
+    static std::shared_ptr<Opal::Texture> mRenderTexture;
+    std::shared_ptr<Opal::Scene> mScene = nullptr;
+    std::shared_ptr<Opal::Entity> mCursorEntity = nullptr;
 
     std::vector<glm::vec2> mLinePoints;
     glm::vec4 mLineColor = glm::vec4(0.9f, 0.9f, 0.9f, 0.8f);
@@ -72,11 +73,11 @@ class SentenceFormingState : public Opal::Gamestate
     void CreateSentenceFragment(glm::vec3 pos, std::string text, float attraction, float speed, bool intrusive, bool solid, bool core);
     void RenderSentenceFragments();
     glm::vec4 mFragmentColor = glm::vec4(0.9, 0.9, 0.9, 1.0f);
-    std::vector<Opal::Entity *> mFragmentEnts;
+    std::vector<std::shared_ptr<Opal::Entity> > mFragmentEnts;
     float mFragmentSize = 80;
     float mFragmentVertOffset = 15;
-    static Opal::Font *mFont;
-    static Opal::Font *mResponseFont;
+    static std::shared_ptr<Opal::Font> mFont;
+    static std::shared_ptr<Opal::Font> mResponseFont;
 
     float mNoiseFrequency = 0.004f;
     float mNoiseScaleJ = 5.0f;
@@ -92,14 +93,14 @@ class SentenceFormingState : public Opal::Gamestate
     void CreateBounds();
 
     void CreateEndWall(float x);
-    Opal::Entity *mEndWall;
+    std::shared_ptr<Opal::Entity> mEndWall;
 
     void RenderCurrentSelection();
     std::string ConcatSelection(std::vector<std::string> selection);
 
     void CreateSparks();
     int mNumSparks = 100;
-    std::vector<Opal::Entity*> mSparkEntities;
+    std::vector<std::shared_ptr<Opal::Entity> > mSparkEntities;
     void RenderSparks();
     void CreateRandomSpark();
 
@@ -118,7 +119,7 @@ class SentenceFormingState : public Opal::Gamestate
     float mZoom2Pow = 0.5f;
 
     void RenderBlackHole();
-    Opal::Mesh2D *mBHMesh;
+    std::shared_ptr<Opal::Mesh2D> mBHMesh;
     float mBHRadius = 370000;
     glm::vec2 mBHPos = glm::vec2(384000 + 80000, 1080/2);
     int mNumTris = 500;
@@ -135,7 +136,7 @@ class SentenceFormingState : public Opal::Gamestate
     int mScreenShakeIntensity = 30;
 
     std::vector<Word> mWordBank;
-    std::vector<std::pair<Opal::Entity *, Opal::Entity *> > mWordConnections;
+    std::vector<std::pair<std::shared_ptr<Opal::Entity> , std::shared_ptr<Opal::Entity> > > mWordConnections;
     float mSpaceBetweenFragments = 1920 * 0.7f;
     float mPadding = 50;
     FastNoiseLite mNoise;

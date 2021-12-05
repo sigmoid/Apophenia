@@ -5,6 +5,11 @@ NarrativeState::NarrativeState()
 
 }
 
+NarrativeState::~NarrativeState()
+{
+    
+}
+
 void NarrativeState::Tick()
 {
     mTimeSinceBegin += mGame->GetDeltaTime();
@@ -67,10 +72,10 @@ void NarrativeState::Begin()
     mBGPass = mGame->Renderer->CreateRenderPass(true);
     mBGPass->SetClearColor(0,1,0,1);
     mOutputTex = mGame->Renderer->CreateRenderTexture(mGame->GetWidth(),mGame->GetHeight(), 4);
-    mPass = mGame->Renderer->CreateRenderPass(mOutputTex);
+    mPass = mGame->Renderer->CreateRenderPass(mOutputTex, true);
     mPass->SetClearColor(1,0,0,0);
 
-    mFont = new Opal::Font(mGame->Renderer,"../Fonts/JosefinSans.ttf", 64);
+    mFont = std::make_shared<Opal::Font>(mGame->Renderer,"../Fonts/JosefinSans.ttf", 64);
     mFontRenderer = mGame->Renderer->CreateFontRenderer(mPass, *mFont, glm::vec2(mGame->GetWidth(), mGame->GetHeight()), Opal::Camera::ActiveCamera);
 
     mPostFX = mGame->Renderer->CreatePostProcessor(mPass, "../shaders/testFXVert", "../shaders/testFXFrag", false, sizeof(NoiseData), VK_SHADER_STAGE_FRAGMENT_BIT);
