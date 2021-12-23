@@ -52,7 +52,7 @@
     -->   
 <Game>
     <Prompt TransitionText="">
-        <Text>This is getting out of hand. The other patients are scared of what you might do. We're going to isolate you.</Text>
+        <Text>That's it. Six strikes, what is wrong with you? Get him into the isolation room.</Text>
         <Response AllowNonsense="False" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>

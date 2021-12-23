@@ -32,6 +32,13 @@ std::vector<std::string> DialogueSerializer::DeserializeStoryline(std::string fi
         {
             res.push_back("|StrikesScreen");
         }
+        else if(strcmp(convo->ToElement()->Value(), "DrawingState") == 0)
+        {
+            std::string duration = std::to_string(convo->FloatAttribute("Duration", 5));
+            std::string path = convo->Attribute("FilePath");
+            res.push_back("|DrawingState " + duration + " " + path);
+        }
+
     }
 
     return res;

@@ -339,7 +339,7 @@
                     <Fragment><Text>to get them to</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>seek help./Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>seek help.</Text><Attraction>0</Attraction></Fragment>
                     <Fragment IsIntrusive="True"><Text>kill themselves?</Text><Attraction>800</Attraction></Fragment>
                     <Fragment IsIntrusive="True"><Text>drop out?</Text><Attraction>800</Attraction></Fragment>
                 </FragmentGroup>

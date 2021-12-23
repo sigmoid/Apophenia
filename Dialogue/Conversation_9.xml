@@ -448,7 +448,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Well, I'm just figuring out the game. By the way, I love the idea. I just want it to stop</Trigger>   
+            <Trigger>Well, I'm just figuring out the game. By the way, I love the idea. I just want it to stop.</Trigger>   
         </Triggers>
         <Text>Let me ask this again. Why aren't you sleeping?</Text>
         <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
@@ -469,7 +469,7 @@
                     <Fragment><Text>on me?</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>just make</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Just make</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>it stop!</Text><Attraction>0</Attraction></Fragment>
@@ -493,7 +493,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I just answered that. Can't you see the impact this is having on me? Make it stop!</Trigger>   
+            <Trigger>I just answered that. Can't you see the effect this is having on me? Just make it stop!</Trigger>   
         </Triggers>
         <Text>I'm very concerned that you haven't been able to sleep, and I think sleeping would help you with the problems you're having.</Text>
         <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">
@@ -532,7 +532,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Okay, you're right, but I've got a lot going on. I swear I've tried everything</Trigger>   
+            <Trigger>Okay, you're right, but I've got a lot going on. I swear I've tried everything.</Trigger>   
         </Triggers>
         <Text>Well, I think you need to drop everything else right now and focus on getting some sleep. I would like to call my friend at the hospital and see if they can help you with that.</Text>
         <Response WordFrequency="5" WordBank="../Dialogue/WordBank10.xml">

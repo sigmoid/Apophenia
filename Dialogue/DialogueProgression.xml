@@ -3,22 +3,25 @@
     <Conversation>Conversation_2.xml</Conversation>
     <Conversation>Conversation_3.xml</Conversation>
     <Conversation>Conversation_4.xml</Conversation>
-    <PillSequence NumPills="1"/>
-    <Conversation>Conversation_5.xml</Conversation>
-    <Conversation>Conversation_6.xml</Conversation>
-    <Conversation>Conversation_7.xml</Conversation>
-    <PillSequence NumPills="2"/>
-    <Conversation>Conversation_8.xml</Conversation>
-    <Conversation>Conversation_8point2.xml</Conversation>
-    <Conversation>Conversation_9.xml</Conversation>
+    <PillSequence NumPills="1"/> -->
+    <!-- <Conversation>Conversation_5.xml</Conversation> -->
+    <!-- <Conversation>Conversation_6.xml</Conversation> -->
+    <!-- <Conversation>Conversation_7.xml</Conversation>
+    <PillSequence NumPills="2"/> -->
+    <!-- <Conversation>Conversation_8.xml</Conversation> -->
+    <!-- <Conversation>Conversation_8point2.xml</Conversation> -->
+    
+    <!-- <Conversation>Conversation_9.xml</Conversation>
     <Conversation>Conversation_10.xml</Conversation>
-    <Conversation>Conversation_11.xml</Conversation> -->
+    <Conversation>Conversation_11.xml</Conversation>
     <Conversation>Conversation_12.xml</Conversation>
     <PillSequence NumPills="100"/> 
     <Conversation>Conversation_13.xml</Conversation> 
-    <Conversation>Conversation_14.xml</Conversation>
+    <Conversation>Conversation_14.xml</Conversation> -->
     <Conversation>Conversation_15.xml</Conversation>
-    <StrikesScreen/>
+    <DrawingState FilePath="../Drawings/Test/" Duration="5"/>
+    <!--<StrikesScreen/>-->
     <Conversation>Conversation_16.xml</Conversation>
+
     <!-- <Conversation>TestDialogue.xml</Conversation> -->
 </Progression>

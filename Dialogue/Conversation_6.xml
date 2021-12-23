@@ -224,13 +224,28 @@
         </Triggers>
         <Text>Nothing at all. They don't need to know anything.</Text>
         <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
+        <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Oh yeah,</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
                     <Fragment><Text>right.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
+                </Fragments>
+        <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
         </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
     </Prompt>
     <Prompt>
         <Triggers>

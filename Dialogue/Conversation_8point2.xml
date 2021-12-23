@@ -168,7 +168,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I'm pulled towards a game that incentivizes people to help others.</Trigger>   
+            <Trigger>I'm pulled towards a game idea that incentivizes people to help others.</Trigger>   
         </Triggers>
         <Text>Sounds promising, I'm hooked. How does it work?</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">

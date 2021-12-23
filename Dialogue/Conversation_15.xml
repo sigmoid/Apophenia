@@ -51,7 +51,7 @@
     </Color>
     -->   
 <Game>
-    <Prompt Sequence="1" TransitionText="">
+    <!-- <Prompt Sequence="1" TransitionText="">
         <Text>Did you hear what that nurse just said?</Text>
         <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
@@ -349,7 +349,7 @@
         <Triggers>
             <Trigger>START</Trigger>   
         </Triggers>
-    </Prompt>    
+    </Prompt>     -->
 
     <Prompt Sequence="10" TransitionText="" IsEnd="True">
         <Text>Well. We could pull the fire alarm. There's got to be a fire alarm somewhere. That's got to get us another strike. We can regroup after that and think of more ways.</Text>

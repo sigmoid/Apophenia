@@ -37,7 +37,7 @@
                 <b>0.4</b>
                 <a>1.0</a>
             </Color>
-            <Speed>1500</Speed>
+            <Speed>1200</Speed>
         </Response>
     <Color>
         <r>0.4</r>
@@ -82,7 +82,7 @@
                 <b>0.4</b>
                 <a>1.0</a>
             </Color>
-            <Speed>1500</Speed>
+            <Speed>1200</Speed>
         </Response>
         <Color>
             <r>0.4</r>
@@ -120,7 +120,7 @@
                 <b>0.4</b>
                 <a>1.0</a>
             </Color>
-            <Speed>1500</Speed>
+            <Speed>1200</Speed>
         </Response>
         <Color>
             <r>0.4</r>
@@ -132,9 +132,9 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>Yes. It's anxiety again, but its worse</Trigger>  
-            <Trigger>No. It's anxiety again, but its worse</Trigger>  
-            <Trigger>Maybe? It's anxiety again, but its worse</Trigger>   
+            <Trigger>Yes. It's anxiety again, but its worse.</Trigger>  
+            <Trigger>No. It's anxiety again, but its worse.</Trigger>  
+            <Trigger>Maybe? It's anxiety again, but its worse.</Trigger>   
         </Triggers>
         <Text>How is it worse?</Text>
         <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="4">
@@ -170,7 +170,7 @@
                 <b>0.4</b>
                 <a>1.0</a>
             </Color>
-            <Speed>1500</Speed>
+            <Speed>1200</Speed>
         </Response>
         <Color>
             <r>0.4</r>
@@ -209,7 +209,7 @@
                 <b>0.4</b>
                 <a>1.0</a>
             </Color>
-            <Speed>1500</Speed>
+            <Speed>1200</Speed>
         </Response>
         <Color>
             <r>0.4</r>
@@ -221,7 +221,7 @@
 
     <Prompt>
         <Triggers>
-            <Trigger>I'm home. My roommate's here, but I can't talk to him</Trigger>
+            <Trigger>I'm home. My roommate's here, but I can't talk to him.</Trigger>
         </Triggers>
         <Text>Why can't you talk to him?</Text>
         <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="4">
@@ -249,7 +249,7 @@
                 <b>0.4</b>
                 <a>1.0</a>
             </Color>
-            <Speed>1500</Speed>
+            <Speed>1200</Speed>
         </Response>
         <Color>
             <r>0.4</r>
@@ -280,7 +280,7 @@
                 <b>0.4</b>
                 <a>1.0</a>
             </Color>
-            <Speed>1500</Speed>
+            <Speed>1200</Speed>
         </Response>
         <Color>
             <r>0.4</r>
@@ -310,7 +310,7 @@
                 <b>0.4</b>
                 <a>1.0</a>
             </Color>
-            <Speed>1500</Speed>
+            <Speed>1200</Speed>
         </Response>
         <Color>
             <r>0.4</r>
@@ -340,7 +340,7 @@
                 <b>0.4</b>
                 <a>1.0</a>
             </Color>
-            <Speed>1500</Speed>
+            <Speed>1200</Speed>
         </Response>
         <Color>
             <r>0.4</r>
@@ -372,7 +372,7 @@
                 <b>0.4</b>
                 <a>1.0</a>
             </Color>
-            <Speed>1500</Speed>
+            <Speed>1200</Speed>
         </Response>
         <Color>
             <r>0.4</r>
@@ -400,7 +400,7 @@
                 <b>0.4</b>
                 <a>1.0</a>
             </Color>
-            <Speed>1500</Speed>
+            <Speed>1200</Speed>
         </Response>
         <Color>
             <r>0.4</r>

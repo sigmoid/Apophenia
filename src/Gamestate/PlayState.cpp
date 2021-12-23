@@ -10,6 +10,7 @@
 #include "EndState.h"
 #include "PillState.h"
 #include "StrikesState.h"
+#include "DrawingState.h"
 
 PlayState::PlayState()
 {
@@ -170,6 +171,27 @@ void PlayState::IncrementConversation()
     {
 
         mGame->PushState<StrikesState>();
+        mCurrentConversation++;
+        IncrementConversation();
+    }
+    else if(mConversationSequence[mCurrentConversation].find("|DrawingState") != std::string::npos)
+    {
+        IsPillSequence = true;
+
+        std::string data = mConversationSequence[mCurrentConversation];
+        std::string firstPart = data.substr(0, data.find(" "));
+        data.erase(data.begin(), data.begin() + firstPart.length()+1);
+        std::string secondPart = data.substr(0, data.find(" "));
+        data.erase(data.begin(), data.begin() + secondPart.length()+1);
+        std::string thirdPart = data;
+
+        float duration = std::stoi(secondPart);
+        std::string path = thirdPart;
+
+        DrawingState::DrawingPath = path;
+        DrawingState::Duration = duration;
+
+        mGame->PushState<DrawingState>();
         mCurrentConversation++;
         IncrementConversation();
     }
