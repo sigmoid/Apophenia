@@ -61,6 +61,23 @@ void SentenceFormingState::Tick()
         mKillEventTimer = mKillWaitTime;
     }
 
+
+    // Isolation Zoom in sequence
+    if(mZoomInTimer > 0)
+    {
+        mZoomInTimer -= mGame->GetDeltaTime();
+
+        float progress = 1.0f - mZoomInTimer / mZoomInDuration;
+        mCurrentZoom = Opal::OpalMath::Lerp(1.0f, mZoomInTarget, progress);
+        Opal::Camera::ActiveCamera->SetZoom(mCurrentZoom);
+        float translation = 1080.0f / mCurrentZoom;
+        translation = translation - 1080.0f;
+        translation /= 2.0f;
+
+        Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, translation));
+    }
+
+    // Therapy black hole sequence
     if (mKillEventTimer > 0)
     {
         mKillEventTimer -= mGame->GetDeltaTime();
@@ -133,6 +150,9 @@ void SentenceFormingState::Tick()
             Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, 0));
         }
     }
+
+
+
     mScene->Update(mGame->GetDeltaTime());
     UpdateCursorLine();
     if (!mCursorEntity->GetComponent<CursorComponent>()->GetAlive())
@@ -164,6 +184,8 @@ void SentenceFormingState::Tick()
         }
         else
         {
+            Opal::Camera::ActiveCamera->SetZoom(1);
+            Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, 0));
             mGame->PopState();
         }
     }
@@ -375,6 +397,11 @@ void SentenceFormingState::Begin()
     if (DialogueManager::Instance->GetCurrentPrompt().IsKill)
     {
         mKillEventTimer = mKillWaitTime;
+    }
+
+    if(DialogueManager::Instance->GetCurrentPrompt().IsZoomIn)
+    {
+        mZoomInTimer = mZoomInDuration;
     }
 }
 

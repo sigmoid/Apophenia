@@ -65,7 +65,18 @@ Prompt DialogueSerializer::DeserializePrompt(tinyxml2::XMLElement *root)
     Prompt res;
     res.IsEnd = root->BoolAttribute("IsEnd", false);
     res.IsKill = root->BoolAttribute("IsKill", false);
+    res.IsZoomIn = root->BoolAttribute("IsZoomIn", false);
     res.Sequence = root->IntAttribute("Sequence", -1);
+    auto sound = root->Attribute("Sound");
+    if(sound != nullptr)
+    {
+        res.Sound = sound;
+    }
+    else
+    {
+        res.Sound = "";
+    }
+    res.SoundDelay = root->FloatAttribute("SoundDelay", 0);
     const char * tmp = root->Attribute("TransitionText");
     if(tmp != nullptr)
         res.TransitionText = tmp; 

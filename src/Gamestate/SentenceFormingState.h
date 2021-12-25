@@ -118,6 +118,10 @@ class SentenceFormingState : public Opal::Gamestate
     float mZoom2Target = 0.01f;
     float mZoom2Pow = 0.5f;
 
+    float mZoomInTimer = 0;
+    float mZoomInDuration = 12;
+    float mZoomInTarget = 2;
+
     void RenderBlackHole();
     std::shared_ptr<Opal::Mesh2D> mBHMesh;
     float mBHRadius = 370000;

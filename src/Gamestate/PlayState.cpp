@@ -12,6 +12,7 @@
 #include "StrikesState.h"
 #include "DrawingState.h"
 
+
 PlayState::PlayState()
 {
 
@@ -24,9 +25,24 @@ PlayState::~PlayState()
 
 void PlayState::Tick() 
 {
+
     if(DialogueManager::Instance->GetCurrentPrompt().Text == "BLANK")
     {
         IncrementConversation();
+    }
+    
+    auto prompt = DialogueManager::Instance->GetCurrentPrompt();
+
+    if(prompt.Sound != "" && !mHasSound && !mSoundThisPrompt)
+    {
+        mCurrentAudioClip = Opal::AudioEngine::LoadClip(prompt.Sound);
+        mSoundTimer = prompt.SoundDelay;
+        mHasSound = true;
+        mSoundThisPrompt = true;
+    }
+    else if(prompt.Sound == "")
+    {
+        mSoundThisPrompt = false;
     }
 
     mNoiseOffset += mGame->GetDeltaTime()/8.0f;
@@ -41,7 +57,7 @@ void PlayState::Tick()
             mPreviousColor = DialogueManager::Instance->GetCurrentPrompt().Colors[0];
         }
     }
-    else if (!IsPillSequence)
+    else if (!IsPillSequence && !IsDrawingScene)
     {
         if(mColorWarpTimer > 0)
         {
@@ -72,11 +88,27 @@ void PlayState::Tick()
     {
         mGame->PushState<PillState>();
     }
+    else if(IsDrawingScene)
+    {
+        mGame->PushState<DrawingState>();
+    }
+    
+    if(mSoundTimer > 0)
+    {
+        mSoundTimer -= mGame->GetDeltaTime();
+    }
+    
+    if(mSoundTimer <= 0 && mHasSound && mSoundThisPrompt)
+    {
+        mHasSound = false;
+        mGame->mAudioEngine.PlaySound(mCurrentAudioClip, 0.2f, 1.0f, 0.0f, false, false);
+    }
+    
 }
 
 void PlayState::Render() 
 {
-    if(!IsPillSequence)
+    if(!IsPillSequence && !IsDrawingScene)
     {
         if(mTransitionTimer > 0)
         {
@@ -176,8 +208,6 @@ void PlayState::IncrementConversation()
     }
     else if(mConversationSequence[mCurrentConversation].find("|DrawingState") != std::string::npos)
     {
-        IsPillSequence = true;
-
         std::string data = mConversationSequence[mCurrentConversation];
         std::string firstPart = data.substr(0, data.find(" "));
         data.erase(data.begin(), data.begin() + firstPart.length()+1);
@@ -191,13 +221,15 @@ void PlayState::IncrementConversation()
         DrawingState::DrawingPath = path;
         DrawingState::Duration = duration;
 
-        mGame->PushState<DrawingState>();
+        IsDrawingScene = true;
         mCurrentConversation++;
-        IncrementConversation();
     }
     else
     {
+
         DialogueManager::Instance->LoadConversation(mConversationSequence[mCurrentConversation++]);
+
+
         mColorWarpTimer = mColorWarpPeriod;
     }
 
@@ -221,9 +253,10 @@ void PlayState::Resume()
 {
     Opal::Logger::LogString("GAMESTATE: Resume() Playstate");
 
-    if(IsPillSequence)
+    if(IsPillSequence || IsDrawingScene)
     {
         IsPillSequence = false;
+        IsDrawingScene = false;
         mTransitionTimer = mTransitionDuration;
         DialogueManager::Instance->LoadConversation(mConversationSequence[mCurrentConversation++]);
         mPreviousColor = glm::vec4(0.2,0.2, 0.2, 1.0f);
@@ -236,7 +269,7 @@ void PlayState::UpdateColor(float progress)
 {
     glm::vec4 color;
 
-    if(!IsPillSequence)
+    if(!IsPillSequence && !IsDrawingScene)
     {
         color = DialogueManager::Instance->GetCurrentPrompt().Colors[mCurrentColorId];
     }

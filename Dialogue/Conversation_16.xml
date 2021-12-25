@@ -51,18 +51,21 @@
     </Color>
     -->   
 <Game>
-    <Prompt TransitionText="">
-        <Text>That's it. Six strikes, what is wrong with you? Get him into the isolation room.</Text>
-        <Response AllowNonsense="False" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+    <Prompt TransitionText="" Sequence="1" IsZoomIn="True">
+        <Text>That's it. That's like, six strikes, what the hell is wrong with you? Get him into the isolation room.</Text>
+        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Can I</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Stop</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>make a</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>let me go</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>phone call?</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>please</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I just want out</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -93,66 +96,21 @@
         </Triggers>
     </Prompt>    
 
-    <Prompt TransitionText="">
-        <Triggers>
-            <Trigger>Can I make a phone call?</Trigger>   
-        </Triggers>
-        <Text>Sure, you can just use that phone right there.</Text>
-        <Response AllowNonsense="False" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
-            <Fragments>
-                <FragmentGroup>
-                    <Fragment><Text>9</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>1</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>1</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-            </Fragments>
-
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-            <Speed>1000</Speed>
-        </Response>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
-    </Prompt>    
-
-    <Prompt TransitionText="">
-        <Triggers>
-            <Trigger>9 1 1</Trigger>   
-        </Triggers>
-        <Text>Wait. Why is it ringing already... Did you just dial 911?</Text>
+        <Prompt Sequence="2" TransitionText="" IsEnd="True">
+        <Text>Get in there!</Text>
         <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>No, I</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Stop</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>mean-</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>let me go</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>I didn't</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>please</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>mean to.</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I just want out</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -178,142 +136,12 @@
                 <b>0.0353</b>
                 <a>1.0</a>
             </Color>
-    </Prompt>    
-
-    <Prompt Sequence="1">
         <Triggers>
-            <Trigger>NONE</Trigger>   
+            <Trigger>START</Trigger>   
         </Triggers>
-        <Text>Wait. Why is it ringing already... Did you just dial 911?</Text>
-        <Response WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" AllowNonsense="True">
-            <Fragments>
-                <FragmentGroup>
-                    <Fragment><Text>No, I</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>mean-</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>I didn't</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>mean to.</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-            </Fragments>
-
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-            <Speed>1000</Speed>
-        </Response>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
     </Prompt>    
 
-    <Prompt Sequence="2">
-        <Triggers>
-            <Trigger>NONE</Trigger>   
-        </Triggers>
-        <Text>You can't dial 911 from a hospital. That can get us in serious trouble.</Text>
-        <Response WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" AllowNonsense="True">
-            <Fragments>
-                <FragmentGroup>
-                    <Fragment><Text>Oh, I'm</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>so sorry</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>it was</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>an accident</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-            </Fragments>
 
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-            <Speed>1000</Speed>
-        </Response>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
-    </Prompt>    
-
-    <Prompt Sequence="3" IsEnd="True">
-        <Triggers>
-            <Trigger>NONE</Trigger>   
-        </Triggers>
-        <Text>That's strike one. I can't let you use the phone anymore. You need to go back to your room and get some rest.</Text>
-        <Response WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" AllowNonsense="True">
-            <Fragments>
-                <FragmentGroup>
-                    <Fragment><Text>Oh, I'm</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>so sorry</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>it was</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>an accident</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-            </Fragments>
-
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-            <Speed>1000</Speed>
-        </Response>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
-    </Prompt>    
 
     
 </Game>

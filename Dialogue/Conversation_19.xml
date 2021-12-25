@@ -1,0 +1,295 @@
+<!-- Colors -->
+<!-- Basic White            
+    <Color>
+        <r>0.9</r>
+        <g>0.9</g>
+        <b>0.9</b>
+        <a>1.0</a>
+    </Color>
+    -->
+
+ <!-- Ambulance Guy            
+    <Color>
+        <r>0.0000</r>
+        <g>0.0000</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+
+     <!-- Warm            
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.1882</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+ <!-- Doctor            
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+     <!-- Therapist            
+    <Color>
+        <r>1.0000</r>
+        <g>0.0000</g>
+        <b>0.0353</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+
+     <!-- Purple            
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+<Game>
+    <Prompt Sequence="1" TransitionText="">
+        <Text>Are you awake in there?</Text>
+        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Where am</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>  
+
+    <Prompt Sequence="2" TransitionText="">
+        <Text>Oh shit that's not good. I figured out a way to get you out okay.</Text>
+        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Oh yeah</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>you're the</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>guy-</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>  
+     
+    <Prompt Sequence="3" TransitionText="">
+        <Text>Get away from the window okay? I'll count down.</Text>
+        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>What are</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>you doing?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>    
+     
+<!--https://freesound.org/people/ShawnyBoy/sounds/166191/-->
+
+    <Prompt Sequence="4" TransitionText="" Sound="../Audio/GunshotSound.wav" SoundDelay="1">
+        <Text>3... 2... 1</Text>
+        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Holy shit</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>did you</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>just shoot</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>at me?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>    
+     
+    <Prompt Sequence="5" TransitionText="">
+        <Text>Oh man, I can't believe that window is bullet-proof!</Text>
+        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>You just</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>SHOT</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>a gun</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>at me!</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>    
+     
+    <Prompt Sequence="6" TransitionText="">
+        <Text>I really thought the window was going to break. Okay, I'll brainstorm more ways to get you out. Just hold tight.</Text>
+        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Please don't</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>use a gun</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>next time.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>    
+     
+    <Prompt Sequence="7" TransitionText="" IsEnd="True">
+        <Text>Damnit I'm such an idiot I'm so sorry man, I'll figure something out.</Text>
+        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>It would have</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>to be one</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>of them.</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>    
+    
+    
+</Game>

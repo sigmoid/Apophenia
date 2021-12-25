@@ -8,6 +8,8 @@
 #include "../../Opal/Graphics/PostProcessRenderer.h"
 #include "../../Opal/vendor/FastNoiseLite.h"
 
+#include "../Opal/Audio/AudioClip.h"
+
 #include <array>
 
 struct PlayStateShaderData
@@ -46,10 +48,17 @@ class PlayState : public Opal::Gamestate
     std::shared_ptr<Opal::SpriteRenderer> mSpriteRenderer;
     bool IsPillSequence = false;
     int mCurrentColorId = 0;
+    bool IsDrawingScene = false;
+
+    float mSoundTimer = 0;
 
     PlayStateShaderData * mShaderData;
 
     void UpdateColor(float progress);
+
+    std::shared_ptr<Opal::AudioClip> mCurrentAudioClip;
+    bool mHasSound = false;
+    bool mSoundThisPrompt = false;
 
     FastNoiseLite mNoise;
     float mNoiseFrequency = 1;

@@ -1,0 +1,251 @@
+<!-- Colors -->
+<!-- Basic White            
+    <Color>
+        <r>0.9</r>
+        <g>0.9</g>
+        <b>0.9</b>
+        <a>1.0</a>
+    </Color>
+    -->
+
+ <!-- Ambulance Guy            
+    <Color>
+        <r>0.0000</r>
+        <g>0.0000</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+
+     <!-- Warm            
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.1882</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+ <!-- Doctor            
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+     <!-- Therapist            
+    <Color>
+        <r>1.0000</r>
+        <g>0.0000</g>
+        <b>0.0353</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+
+     <!-- Purple            
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+<Game>
+    <Prompt TransitionText="" Sequence="1">
+        <Text>Kid, you need to stop banging on the door. You're going to hurt yourself.</Text>
+        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>LET</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>ME</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>OUT.</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+            <!--Doctor-->
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <!--therapist-->
+            <Color>
+                <r>1.0000</r>
+                <g>0.0000</g>
+                <b>0.0353</b>
+                <a>1.0</a>
+            </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>    
+
+    <Prompt Sequence="2" TransitionText="">
+        <Text>We can't let you out, it's for the safety of the other patients.</Text>
+        <ObscuredWords>
+            <Obscured>patients.</Obscured>
+        </ObscuredWords>
+        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>LOOK ASSHOLE</Text><Attraction>450</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I KNOW WHAT</Text><Attraction>450</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>IS GOING ON</Text><Attraction>450</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>YOU CAN'T GET</Text><Attraction>450</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>AWAY WITH THIS.</Text><Attraction>450</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+            <!--Doctor-->
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <!--therapist-->
+            <Color>
+                <r>1.0000</r>
+                <g>0.0000</g>
+                <b>0.0353</b>
+                <a>1.0</a>
+            </Color>
+        <Triggers>
+            <Trigger>LET ME OUT.</Trigger>   
+        </Triggers>
+    </Prompt>    
+
+    <Prompt Sequence="3" TransitionText="">
+        <Text>I don't think you do know what's going on. You had a psychotic break. We're treating you for bipolar disorder.</Text>
+        <ObscuredWords>
+            <Obscured>psychotic</Obscured>
+            <Obscured>break.</Obscured>
+            <Obscured>bipolar</Obscured>
+            <Obscured>disorder.</Obscured>
+        </ObscuredWords>
+        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>FUCK OFF</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>ALRIGHT</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>GET ME</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>OUT</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+            <!--Doctor-->
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <!--therapist-->
+            <Color>
+                <r>1.0000</r>
+                <g>0.0000</g>
+                <b>0.0353</b>
+                <a>1.0</a>
+            </Color>
+        <Triggers>
+            <Trigger>LOOK ASSHOLE I KNOW WHAT IS GOING ON YOU CAN'T GET AWAY WITH THIS.</Trigger>   
+        </Triggers>
+    </Prompt>    
+
+        <Prompt Sequence="4" TransitionText="" IsEnd="True">
+        <Text>Okay. He's going to get hurt. Sedate him.</Text>
+        <ObscuredWords>
+        </ObscuredWords>
+        <Response AllowNonsense="False" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>FUCK OFF</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>ALRIGHT</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>GET ME</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>OUT</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>AWAY WITH THIS.</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+            <!--Doctor-->
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <!--therapist-->
+            <Color>
+                <r>1.0000</r>
+                <g>0.0000</g>
+                <b>0.0353</b>
+                <a>1.0</a>
+            </Color>
+        <Triggers>
+            <Trigger>LOOK ASSHOLE I KNOW WHAT IS GOING ON YOU CAN'T GET AWAY WITH THIS.</Trigger>   
+        </Triggers>
+    </Prompt>    
+
+
+
+    
+</Game>

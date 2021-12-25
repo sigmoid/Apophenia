@@ -22,7 +22,7 @@ void DrawingState::Tick()
 {
     mTimer -= mGame->GetDeltaTime();
 
-    if(mTimer <= 0)
+    if(mTimer <= 0 || Opal::InputHandler::GetKey(GLFW_KEY_SPACE))
     {
         mGame->PopState();
         return;
@@ -43,7 +43,6 @@ void DrawingState::Render()
         if(draw)
         {
             mLineRenderer->DrawLine(lastPoint->Position, line->Position, mLineColor, mLineColor, mLineWidth);
-            std::cout <<"DRAW" << std::endl;
         }
 
         lastPoint = line;
