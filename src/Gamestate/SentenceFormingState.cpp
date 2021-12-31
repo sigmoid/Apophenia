@@ -593,6 +593,12 @@ void SentenceFormingState::CreatePlayer()
     mCursorEntity->AddComponent(velocity);
     std::shared_ptr<AttractableComponent> attr = std::make_shared<AttractableComponent>(true);
     mCursorEntity->AddComponent(attr);
+
+    if(DialogueManager::Instance->GetCurrentResponse().Tremor)
+    {
+        std::shared_ptr<NoiseMoveComponent> tremor = std::make_shared<NoiseMoveComponent>(13,363, 7, 23);
+        mCursorEntity->AddComponent(tremor);
+    }
     if(!DialogueManager::Instance->GetCurrentResponse().Drunk)
     {
         std::shared_ptr<DragComponent> drag = std::make_shared<DragComponent>(1);

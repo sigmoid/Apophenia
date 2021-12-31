@@ -13,6 +13,7 @@
 #include "../../Opal/Game.h"
 #include "../../Opal/vendor/FastNoiseLite.h"
 #include "../DialogueSystem/WordBank.h"
+#include "../Components/NoiseMoveComponent.h"
 
 #include "../../Opal/EntityComponent/Scene.h"
 

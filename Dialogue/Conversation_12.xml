@@ -53,7 +53,7 @@
 <Game>
     <Prompt Sequence="1" TransitionText="">
         <Text>Hi, we're going to be taking care of you. Do you remember where you are?</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True" >
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True" >
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>You look</Text><Attraction>0</Attraction></Fragment>
@@ -99,7 +99,7 @@
             <Obscured>psychiatric</Obscured>
             <Obscured>hospital.</Obscured>
         </ObscuredWords>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Who was</Text><Attraction>0</Attraction></Fragment>
@@ -141,7 +141,7 @@
 
     <Prompt>
         <Text>I'm not sure. What did they look like?</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I dunno</Text><Attraction>0</Attraction></Fragment>
@@ -187,7 +187,7 @@
 
     <Prompt Sequence="3">
         <Text>I'm not sure what you're talking about, but we want to help you get better. What's going on inside your head right now?</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I feel</Text><Attraction>0</Attraction></Fragment>
@@ -235,7 +235,7 @@
 
     <Prompt Sequence="4">
         <Text>We're not sure what's going on, but we think it might be seratonin syndrome. That can happen when a person takes too many antidepressants. Have you been taking the right amount?</Text>
-        <Response AllowNonsense="True" WordFrequency="15" ChannelSize="100" WordBank="../Dialogue/WordBankNo.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="15" ChannelSize="100" WordBank="../Dialogue/WordBankNo.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yes</Text><Attraction>0</Attraction></Fragment>
@@ -271,7 +271,7 @@
 
     <Prompt Sequence="5" IsEnd="True">
         <Text>Okay, we'll start there.</Text>
-        <Response AllowNonsense="True" WordFrequency="15" ChannelSize="100" WordBank="../Dialogue/WordBankNo.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="15" ChannelSize="100" WordBank="../Dialogue/WordBankNo.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yes</Text><Attraction>0</Attraction></Fragment>

@@ -17,7 +17,7 @@
     </Color>
     -->   
 <Game>
-    <Prompt TransitionText="Tightrope">
+    <Prompt TransitionText="Junior year, start of spring semester">
         <Text>I heard on the news that scientists are discovering black holes inside our galaxy.</Text>
         <Response>
             <Fragments>

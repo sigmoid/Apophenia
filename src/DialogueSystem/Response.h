@@ -17,4 +17,5 @@ struct Response
     float ChannelSize = 500;
     bool AllowNonsense = false;
     bool Drunk = false;
+    bool Tremor = false;
 };

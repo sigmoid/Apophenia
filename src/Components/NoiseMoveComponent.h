@@ -28,8 +28,8 @@ class NoiseMoveComponent : public Opal::Component
     virtual void Deserialize() override;
     virtual std::shared_ptr<Opal::Component>Clone() override;
 
-    private:
     float mStrength = 1, mNoiseScale = 1, mFrequency = 1, mSeed;
+    private:
     float mTimeSinceBirth = 0;
 
     std::shared_ptr<Opal::VelocityComponent> mVelocity = nullptr;

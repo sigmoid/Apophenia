@@ -53,7 +53,7 @@
 <Game>
     <Prompt Sequence="1" TransitionText="">
         <Text>Did you hear what that nurse just said?</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yeah, they</Text><Attraction>0</Attraction></Fragment>
@@ -90,7 +90,7 @@
     
     <Prompt Sequence="2" TransitionText="">
         <Text>Don't worry, you've got me. You don't need it.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>But I need</Text><Attraction>0</Attraction></Fragment>
@@ -124,7 +124,7 @@
     
     <Prompt Sequence="3" TransitionText="">
         <Text>You can talk to her when you get out. And I think I found a way.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>What</Text><Attraction>0</Attraction></Fragment>
@@ -155,7 +155,7 @@
     
     <Prompt Sequence="4" TransitionText="">
         <Text>The nurse just said you got a strike right? Isn't the rule three strikes and you're out?</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Oh yeah!</Text><Attraction>0</Attraction></Fragment>
@@ -183,7 +183,7 @@
 
     <Prompt Sequence="5" TransitionText="">
         <Text>We just need to figure out how to get two more strikes.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Well I</Text><Attraction>0</Attraction></Fragment>
@@ -220,7 +220,7 @@
 
     <Prompt Sequence="6" TransitionText="">
         <Text>It's the only way out that I can see. Besides, they're out to get you. They might be plotting to kill your family right now.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Why would</Text><Attraction>0</Attraction></Fragment>
@@ -254,7 +254,7 @@
 
     <Prompt Sequence="7" TransitionText="">
         <Text>"Why" doesn't matter. It's happening. You know how they took your phone and backpack when you got here?</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I don't</Text><Attraction>0</Attraction></Fragment>
@@ -288,7 +288,7 @@
 
     <Prompt Sequence="8" TransitionText="">
         <Text>Where do you think your phone and laptop are now? How easy would it be for them to find your dirty secrets. Your poetry, journals, information about your mom.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>They would</Text><Attraction>0</Attraction></Fragment>
@@ -322,7 +322,7 @@
 
         <Prompt Sequence="9" TransitionText="">
         <Text>Don't you remember what that one person said during group therapy? The thing about feeling like a beached whale?</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yeah, I</Text><Attraction>0</Attraction></Fragment>
@@ -353,7 +353,7 @@
 
     <Prompt Sequence="10" TransitionText="">
         <Text>Didn't you write a poem about being a beached whale? Isn't it on your computer somewhere.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Oh god</Text><Attraction>800</Attraction></Fragment>
@@ -387,7 +387,7 @@
 
     <Prompt Sequence="11" TransitionText="">
         <Text>Look, this is bad. They have everything. They have your contacts. They know where your family lives.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>We need</Text><Attraction>800</Attraction></Fragment>
@@ -421,7 +421,7 @@
 
     <Prompt Sequence="12" TransitionText="">
         <Text>So we're on the same page. Back to the strikes.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>What can</Text><Attraction>800</Attraction></Fragment>
@@ -452,7 +452,7 @@
 
     <Prompt Sequence="13" TransitionText="" IsEnd="True">
         <Text>Well. We could pull the fire alarm. There's got to be a fire alarm somewhere. That would get us another strike. We can regroup after that and think of more ways.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yeah...</Text><Attraction>0</Attraction></Fragment>

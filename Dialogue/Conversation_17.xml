@@ -53,7 +53,7 @@
 <Game>
     <Prompt Sequence="1" TransitionText="">
         <Text>Hey! Can you hear me?</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>What? Where</Text><Attraction>0</Attraction></Fragment>
@@ -84,7 +84,7 @@
 
     <Prompt Sequence="2" TransitionText="">
         <Text>I'm out here outside the window! I got out!</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I can't</Text><Attraction>0</Attraction></Fragment>
@@ -124,7 +124,7 @@
      
     <Prompt Sequence="3" TransitionText="">
         <Text>Don't worry. I'll get you out.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Is it cold</Text><Attraction>0</Attraction></Fragment>
@@ -161,7 +161,7 @@
      
     <Prompt Sequence="4" TransitionText="">
         <Text>Did they put you in the box?</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Uh, yeah...</Text><Attraction>0</Attraction></Fragment>
@@ -192,7 +192,7 @@
      
     <Prompt Sequence="5" TransitionText="">
         <Text>It's going to be harder to get out then. Do you see the writing on the wall?</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Huh? No -</Text><Attraction>0</Attraction></Fragment>
@@ -226,7 +226,7 @@
      
     <Prompt Sequence="6" TransitionText="">
         <Text>What does it say?</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>It's my name</Text><Attraction>0</Attraction></Fragment>
@@ -263,7 +263,7 @@
      
     <Prompt Sequence="7" TransitionText="">
         <Text>You know who wrote that?</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>It would have</Text><Attraction>800</Attraction></Fragment>
@@ -297,7 +297,7 @@
      
     <Prompt Sequence="8" TransitionText="" IsEnd="True">
         <Text>Figure out how to get out. I'll try to think of another way.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>It would have</Text><Attraction>800</Attraction></Fragment>

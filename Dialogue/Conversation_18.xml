@@ -53,7 +53,7 @@
 <Game>
     <Prompt TransitionText="" Sequence="1">
         <Text>Kid, you need to stop banging on the door. You're going to hurt yourself.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>LET</Text><Attraction>800</Attraction></Fragment>
@@ -98,7 +98,7 @@
         <ObscuredWords>
             <Obscured>patients.</Obscured>
         </ObscuredWords>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>LOOK ASSHOLE</Text><Attraction>450</Attraction></Fragment>
@@ -152,7 +152,7 @@
             <Obscured>bipolar</Obscured>
             <Obscured>disorder.</Obscured>
         </ObscuredWords>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>FUCK OFF</Text><Attraction>800</Attraction></Fragment>
@@ -199,7 +199,7 @@
         <Text>Okay. He's going to get hurt. Sedate him.</Text>
         <ObscuredWords>
         </ObscuredWords>
-        <Response AllowNonsense="False" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="False" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>FUCK OFF</Text><Attraction>800</Attraction></Fragment>

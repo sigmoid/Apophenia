@@ -53,7 +53,7 @@
 <Game>
     <Prompt Sequence="1" TransitionText="">
         <Text>Are you awake in there?</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Where am</Text><Attraction>0</Attraction></Fragment>
@@ -84,7 +84,7 @@
 
     <Prompt Sequence="2" TransitionText="">
         <Text>Oh shit that's not good. I figured out a way to get you out okay.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Oh yeah</Text><Attraction>0</Attraction></Fragment>
@@ -118,7 +118,7 @@
      
     <Prompt Sequence="3" TransitionText="">
         <Text>Get away from the window okay? I'll count down.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>What are</Text><Attraction>0</Attraction></Fragment>
@@ -151,7 +151,7 @@
 
     <Prompt Sequence="4" TransitionText="" Sound="../Audio/GunshotSound.wav" SoundDelay="1">
         <Text>3... 2... 1</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Holy shit</Text><Attraction>0</Attraction></Fragment>
@@ -188,7 +188,7 @@
      
     <Prompt Sequence="5" TransitionText="">
         <Text>Oh man, I can't believe that window is bullet-proof!</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>You just</Text><Attraction>0</Attraction></Fragment>
@@ -225,7 +225,7 @@
      
     <Prompt Sequence="6" TransitionText="">
         <Text>I really thought the window was going to break. Okay, I'll brainstorm more ways to get you out. Just hold tight.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Please don't</Text><Attraction>0</Attraction></Fragment>
@@ -259,7 +259,7 @@
      
     <Prompt Sequence="7" TransitionText="" IsEnd="True">
         <Text>Damnit I'm such an idiot I'm so sorry man, I'll figure something out.</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>It would have</Text><Attraction>800</Attraction></Fragment>

@@ -53,7 +53,7 @@
 <Game>
     <Prompt TransitionText="">
         <Text>Hi there. What do you need?</Text>
-        <Response AllowNonsense="False" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="False" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Can I</Text><Attraction>0</Attraction></Fragment>
@@ -98,7 +98,7 @@
             <Trigger>Can I make a phone call?</Trigger>   
         </Triggers>
         <Text>Sure, you can just use that phone right there.</Text>
-        <Response AllowNonsense="False" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="False" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>9</Text><Attraction>0</Attraction></Fragment>
@@ -140,7 +140,7 @@
             <Trigger>9 1 1</Trigger>   
         </Triggers>
         <Text>Wait. Why is it ringing already... Did you just dial 911?</Text>
-        <Response AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>No, I</Text><Attraction>0</Attraction></Fragment>
@@ -185,7 +185,7 @@
             <Trigger>NONE</Trigger>   
         </Triggers>
         <Text>Wait. Why is it ringing already... Did you just dial 911?</Text>
-        <Response WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" AllowNonsense="True">
+        <Response Tremor="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" AllowNonsense="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>No, I</Text><Attraction>0</Attraction></Fragment>
@@ -230,7 +230,7 @@
             <Trigger>NONE</Trigger>   
         </Triggers>
         <Text>You can't dial 911 from a hospital. That can get us in serious trouble.</Text>
-        <Response WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" AllowNonsense="True">
+        <Response Tremor="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" AllowNonsense="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Oh, I'm</Text><Attraction>0</Attraction></Fragment>
@@ -275,7 +275,7 @@
             <Trigger>NONE</Trigger>   
         </Triggers>
         <Text>That's strike one. I can't let you use the phone anymore. You need to go back to your room and get some rest.</Text>
-        <Response WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" AllowNonsense="True">
+        <Response Tremor="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" AllowNonsense="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Oh, I'm</Text><Attraction>0</Attraction></Fragment>

@@ -38,6 +38,15 @@ std::vector<std::string> DialogueSerializer::DeserializeStoryline(std::string fi
             std::string path = convo->Attribute("FilePath");
             res.push_back("|DrawingState " + duration + " " + path);
         }
+        else if(strcmp(convo->ToElement()->Value(), "TitleScreen") == 0)
+        {
+            std::string duration = std::to_string(convo->FloatAttribute("Duration", 3));
+            std::string R = std::to_string(convo->FloatAttribute("R", 0.2f));
+            std::string G = std::to_string(convo->FloatAttribute("G", 0.2f));
+            std::string B = std::to_string(convo->FloatAttribute("B", 0.2f));
+            res.push_back("|TitleScreen " + duration + " " + R + " " + G + " " + B + " "+ convo->GetText());
+        }
+
 
     }
 
@@ -126,6 +135,7 @@ Response DialogueSerializer::DeserializeResponse(tinyxml2::XMLElement *root)
     res.SolidWords = root->BoolAttribute("SolidWords", false);
     res.AllowNonsense = root->BoolAttribute("AllowNonsense", false);
     res.Drunk = root->BoolAttribute("Drunk", false);
+    res.Tremor = root->BoolAttribute("Tremor", false);
 
     if(root->Attribute("WordBank") != nullptr && root->Attribute("WordFrequency") != nullptr)
     {

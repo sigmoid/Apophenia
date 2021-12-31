@@ -53,7 +53,7 @@
 <Game>
     <Prompt TransitionText="" Sequence="1">
         <Text>Hey kid, I need you to come with me.</Text>
-        <Response AllowNonsense="False" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>You're</Text><Attraction>0</Attraction></Fragment>
@@ -95,7 +95,7 @@
 
     <Prompt TransitionText="" Sequence="2">
         <Text>This way, come on.</Text>
-        <Response AllowNonsense="False" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Look, I'm</Text><Attraction>0</Attraction></Fragment>
@@ -141,9 +141,9 @@
         </Triggers>
     </Prompt>    
 
-    <Prompt TransitionText="" IsEnd="True">
+    <Prompt TransitionText="" IsEnd="True" Sequence="3">
         <Text>You have a visitor.</Text>
-        <Response AllowNonsense="False" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
+        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Look, I'm</Text><Attraction>0</Attraction></Fragment>

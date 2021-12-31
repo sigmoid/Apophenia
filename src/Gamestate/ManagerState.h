@@ -12,31 +12,34 @@
 
 #include <array>
 
-struct PlayStateShaderData
+enum class GameStateType
 {
-    glm::vec4 ObscuredRects[8];
+    PROMPT_STATE,
+    SENTENCE_FORMING_STATE,
+    PILL_STATE,
+    END_STATE,
+    STRIKES_STATE, 
+    DRAWING_STATE,
+    TITLE_STATE
 };
 
-class PlayState : public Opal::Gamestate
+class ManagerState : public Opal::Gamestate
 {
 
     public:
-    PlayState();
-    ~PlayState();
+    ManagerState();
+    ~ManagerState();
     virtual void Tick() override;
     virtual void Render() override;
     virtual void Begin() override;
     virtual void End() override;
     virtual void Resume() override;
 
+    void StartGame();
+
     private:
 
     void IncrementConversation();
-
-    std::shared_ptr<Opal::FontRenderer> mTextRenderer;
-    std::shared_ptr<Opal::RenderPass> mTextPass;
-    std::shared_ptr<Opal::PostProcessRenderer> mPostProcessor;
-    std::shared_ptr<Opal::Texture> mTextureOutput;
 
     std::vector<std::string> mConversationSequence;
 
@@ -45,23 +48,19 @@ class PlayState : public Opal::Gamestate
     float mTransitionTimer = 0, mTransitionDuration = 3.5f;
     float mColorWarpTimer = 0, mColorWarpPeriod = 1.0f;
     glm::vec4 mPreviousColor = glm::vec4(101.0f/255.0f, 130.0f/255.0f, 191.0f/255.0f, 1);
+    std::shared_ptr<Opal::FontRenderer> mTextRenderer;
+    std::shared_ptr<Opal::RenderPass> mTextPass;
     std::shared_ptr<Opal::SpriteRenderer> mSpriteRenderer;
-    bool IsPillSequence = false;
     int mCurrentColorId = 0;
-    bool IsDrawingScene = false;
 
-    float mSoundTimer = 0;
+    float mCurrentStateDuration = -1;
+    bool mGameStarted = false;
 
-    PlayStateShaderData * mShaderData;
+    GameStateType mPreviousState, mCurrentState;
 
-    void UpdateColor(float progress);
+    std::string mTitleText;
 
-    std::shared_ptr<Opal::AudioClip> mCurrentAudioClip;
-    bool mHasSound = false;
-    bool mSoundThisPrompt = false;
+    glm::vec4 UpdateColor(float progress);
 
-    FastNoiseLite mNoise;
-    float mNoiseFrequency = 1;
-    float mNoiseOffset = 0;
-    void UpdateShaderData();
+    std::string ReplaceAll(std::string str, const std::string& from, const std::string& to);
 };
