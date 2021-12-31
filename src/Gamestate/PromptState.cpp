@@ -132,7 +132,7 @@ void PromptState::Begin()
         mTextureOutput = mGame->Renderer->CreateRenderTexture(1920,1080, 4);
         mTextPass = mGame->Renderer->CreateRenderPass(mTextureOutput,true);
 
-        mFont = std::make_shared<Opal::Font>(mGame->Renderer,"../fonts/JosefinSans-Light.ttf", 120);
+        mFont = std::make_shared<Opal::Font>(mGame->Renderer,"../fonts/JosefinSans-Light.ttf", 80);
 
         mSpriteRenderer = mGame->Renderer->CreateSpriteRenderer(mTextPass);
 

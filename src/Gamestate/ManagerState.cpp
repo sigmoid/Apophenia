@@ -112,12 +112,11 @@ void ManagerState::Begin()
 
     mConversationSequence = DialogueSerializer::DeserializeStoryline("../Dialogue/DialogueProgression.xml");
     mTextPass = mGame->Renderer->CreateRenderPass();
-
-    Opal::Font typeFace(mGame->Renderer,"../fonts/RockSalt-Regular.ttf", 80);
+    Opal::Font typeFace(mGame->Renderer,"../fonts/JosefinSlab-SemiBold.ttf", 100);
 
     mSpriteRenderer = mGame->Renderer->CreateSpriteRenderer(mTextPass);
 
-    mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, typeFace, glm::vec2(1920 - 300, 1080), Opal::Camera::ActiveCamera, 30);
+    mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, typeFace, glm::vec2(1920 - 300, 1080), Opal::Camera::ActiveCamera);
 
     IncrementConversation();
 
