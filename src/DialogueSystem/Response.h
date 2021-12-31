@@ -16,6 +16,7 @@ struct Response
     bool SolidWords;
     float ChannelSize = 500;
     bool AllowNonsense = false;
+    bool RequireCoreOnly = false;
     bool Drunk = false;
     bool Tremor = false;
 };

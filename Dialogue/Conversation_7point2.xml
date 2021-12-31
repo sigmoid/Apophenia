@@ -1,0 +1,187 @@
+<!-- Colors -->
+<!-- Basic White            
+    <Color>
+        <r>0.9</r>
+        <g>0.9</g>
+        <b>0.9</b>
+        <a>1.0</a>
+    </Color>
+    -->
+
+ <!-- Doctor            
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+<Game>
+    <Prompt TransitionText="Hours Later">
+        <Text>You need a ride to the pharmacy? At 1 am?</Text>
+        <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="4">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Yeah, it's</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>kinda</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>urgent.</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+            <!--rgb 35, 153, 94-->
+                <r>0.13725490196</r>
+                <g>0.6</g>
+                <b>0.36862745098</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1200</Speed>
+        </Response>
+        <Color>
+        <!--rgb 35, 153, 94-->
+            <r>0.13725490196</r>
+            <g>0.6</g>
+            <b>0.36862745098</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>Okay... Yeah I can do that, no problem.</Text>
+        <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="4">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Thanks, I</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>really</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>appreciate it.</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+            <!--rgb 35, 153, 94-->
+                <r>0.13725490196</r>
+                <g>0.6</g>
+                <b>0.36862745098</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1200</Speed>
+        </Response>
+        <Color>
+        <!--rgb 35, 153, 94-->
+            <r>0.13725490196</r>
+            <g>0.6</g>
+            <b>0.36862745098</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>Yeah, it's kinda urgent.</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>Does this have to do with the anxiety you've been dealing with?</Text>
+        <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="4">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Kinda,</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>yeah.</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+            <!--rgb 35, 153, 94-->
+                <r>0.13725490196</r>
+                <g>0.6</g>
+                <b>0.36862745098</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1200</Speed>
+        </Response>
+        <Color>
+        <!--rgb 35, 153, 94-->
+            <r>0.13725490196</r>
+            <g>0.6</g>
+            <b>0.36862745098</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>Thanks, I really appreciate it.</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>Do you want to talk about it?</Text>
+        <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="4">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Uh, not</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>really?</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+            <!--rgb 35, 153, 94-->
+                <r>0.13725490196</r>
+                <g>0.6</g>
+                <b>0.36862745098</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1200</Speed>
+        </Response>
+        <Color>
+        <!--rgb 35, 153, 94-->
+            <r>0.13725490196</r>
+            <g>0.6</g>
+            <b>0.36862745098</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>Kinda, yeah.</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt IsEnd="True">
+        <Text>Okay. You know you can talk to me about anything, right?</Text>
+        <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="4">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Uh, not</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>really?</Text><Attraction>1000</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+            <!--rgb 35, 153, 94-->
+                <r>0.13725490196</r>
+                <g>0.6</g>
+                <b>0.36862745098</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1200</Speed>
+        </Response>
+        <Color>
+        <!--rgb 35, 153, 94-->
+            <r>0.13725490196</r>
+            <g>0.6</g>
+            <b>0.36862745098</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>Uh, not really?</Trigger>   
+        </Triggers>
+    </Prompt>
+
+
+</Game>

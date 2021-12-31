@@ -321,14 +321,14 @@
     </Prompt>    
 
         <Prompt Sequence="9" TransitionText="">
-        <Text>Don't you remember what that one person said during group therapy? The thing about feeling like a beached whale?</Text>
+        <Text>You see that girl drawing a beached whale over there?</Text>
         <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Yeah, I</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>Yeah, so</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>remember that</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>what?</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 

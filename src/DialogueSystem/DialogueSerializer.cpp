@@ -134,6 +134,7 @@ Response DialogueSerializer::DeserializeResponse(tinyxml2::XMLElement *root)
 
     res.SolidWords = root->BoolAttribute("SolidWords", false);
     res.AllowNonsense = root->BoolAttribute("AllowNonsense", false);
+    res.RequireCoreOnly = root->BoolAttribute("RequireCoreOnly", false);
     res.Drunk = root->BoolAttribute("Drunk", false);
     res.Tremor = root->BoolAttribute("Tremor", false);
 

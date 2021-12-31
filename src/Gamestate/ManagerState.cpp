@@ -78,6 +78,10 @@ void ManagerState::Tick()
                 IncrementConversation();
                 break;
 
+            case GameStateType::END_STATE:
+                mGame->PushState<EndState>();
+                break;
+
             default:
                 Opal::Logger::LogString("Unrecognized transition");
         }
@@ -90,7 +94,7 @@ void ManagerState::Render()
     {
         mTextRenderer->RenderString(mTitleText, 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
     }
-    else
+    else if(mCurrentState == GameStateType::PROMPT_STATE)
     {
         mTextRenderer->RenderString(DialogueManager::Instance->GetCurrentPrompt().TransitionText, 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f);
     }
@@ -169,6 +173,8 @@ void ManagerState::IncrementConversation()
         mPreviousState = mCurrentState;
         mCurrentState = GameStateType::PILL_STATE;
         mCurrentConversation++;
+
+        mTitleText = "";
     }
     else if(mConversationSequence[mCurrentConversation].find("|StrikesScreen") != std::string::npos)
     {

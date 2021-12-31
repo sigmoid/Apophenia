@@ -53,7 +53,7 @@
 <Game>
     <Prompt TransitionText="" Sequence="1">
         <Text>Hey kid, I need you to come with me.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
+        <Response Tremor="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>You're</Text><Attraction>0</Attraction></Fragment>
@@ -95,7 +95,7 @@
 
     <Prompt TransitionText="" Sequence="2">
         <Text>This way, come on.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
+        <Response Tremor="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Look, I'm</Text><Attraction>0</Attraction></Fragment>
@@ -110,7 +110,7 @@
                     <Fragment><Text>please let</Text><Attraction>800</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>me go</Text><Attraction>800</Attraction></Fragment>
+                    <Fragment><Text>me go.</Text><Attraction>800</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -137,13 +137,13 @@
                 <a>1.0</a>
             </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>You're letting me out?</Trigger>   
         </Triggers>
     </Prompt>    
 
     <Prompt TransitionText="" IsEnd="True" Sequence="3">
         <Text>You have a visitor.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
+        <Response Tremor="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Look, I'm</Text><Attraction>0</Attraction></Fragment>
@@ -158,7 +158,7 @@
                     <Fragment><Text>please let</Text><Attraction>800</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>me go</Text><Attraction>800</Attraction></Fragment>
+                    <Fragment><Text>me go.</Text><Attraction>800</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -185,7 +185,7 @@
                 <a>1.0</a>
             </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>Look, I'm sorry for yelling just please let me go.</Trigger>   
         </Triggers>
     </Prompt>    
 

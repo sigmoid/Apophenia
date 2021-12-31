@@ -87,13 +87,13 @@
         <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>Oh yeah</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>How long</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>you're the</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>was I</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>guy-</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>out for?</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -149,7 +149,7 @@
      
 <!--https://freesound.org/people/ShawnyBoy/sounds/166191/-->
 
-    <Prompt Sequence="4" TransitionText="" Sound="../Audio/GunshotSound.wav" SoundDelay="1">
+    <Prompt Sequence="4" TransitionText="" Sound="../Audio/WindowPounding.wav" SoundDelay="0.1">
         <Text>3... 2... 1</Text>
         <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
@@ -157,13 +157,10 @@
                     <Fragment><Text>Holy shit</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>did you</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>what are</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>just shoot</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>at me?</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>you doing?</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -187,20 +184,17 @@
     </Prompt>    
      
     <Prompt Sequence="5" TransitionText="">
-        <Text>Oh man, I can't believe that window is bullet-proof!</Text>
+        <Text>Oh man, this window is like bullet-proof!</Text>
         <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>You just</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>You're scaring</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>SHOT</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>me. Go</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>a gun</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>at me!</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>away</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -221,43 +215,9 @@
         <Triggers>
             <Trigger>START</Trigger>   
         </Triggers>
-    </Prompt>    
+    </Prompt>   
      
-    <Prompt Sequence="6" TransitionText="">
-        <Text>I really thought the window was going to break. Okay, I'll brainstorm more ways to get you out. Just hold tight.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
-            <Fragments>
-                <FragmentGroup>
-                    <Fragment><Text>Please don't</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>use a gun</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>next time.</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-            </Fragments>
-
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-            <Speed>1000</Speed>
-        </Response>
-        <Color>
-            <r>0.1</r>
-            <g>0.1</g>
-            <b>0.1</b>
-            <a>1.0</a>
-        </Color>
-        <Triggers>
-            <Trigger>START</Trigger>   
-        </Triggers>
-    </Prompt>    
-     
-    <Prompt Sequence="7" TransitionText="" IsEnd="True">
+    <Prompt Sequence="6" TransitionText="" IsEnd="True">
         <Text>Damnit I'm such an idiot I'm so sorry man, I'll figure something out.</Text>
         <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>

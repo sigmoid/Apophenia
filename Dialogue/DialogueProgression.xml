@@ -1,6 +1,12 @@
 <Progression Story="Main" Filepath= "../Dialogue/">
+    <TitleScreen Duration="15" R=".1" G="0.1" B="0.1">Controls: 
+Dialogue: Spacebar to advance to the next scene ('A' on controller)
+Response: W/S to move (Left joystick on controller)
+
+Warning: Mental illness and Psychological crisis are discussed in this game. 
+    </TitleScreen>
     <TitleScreen Duration="5" R=".2" G="0.2" B="0.2">Tightrope</TitleScreen>
-    <TitleScreen Duration="5" R=".3046875" G="0.50390625" B="0.828125">Act I\nMy life as a tightrope walker, suspended above sense, wondering what was wrong with all the people on the ground.</TitleScreen>
+    <TitleScreen Duration="10" R=".3046875" G="0.50390625" B="0.828125">Act I\nMy life as a tightrope walker, suspended above sense, wondering what was wrong with all the people on the ground.</TitleScreen>
     <Conversation>Conversation_1.xml</Conversation>
     <Conversation>Conversation_2.xml</Conversation>
     <Conversation>Conversation_3.xml</Conversation>
@@ -8,14 +14,14 @@
     <PillSequence NumPills="1"/> 
     <Conversation>Conversation_5.xml</Conversation>
     <Conversation>Conversation_6.xml</Conversation>
-    <Conversation>Conversation_7.xml</Conversation>
-    <!-- <Conversation>Conversation_7point2.xml</Conversation> Friend drives me to the pharmacy to get meds. We have a chat -->
+    <Conversation>Conversation_7.xml</Conversation> 
+    <Conversation>Conversation_7point2.xml</Conversation>
     <PillSequence NumPills="2"/>
     <Conversation>Conversation_8.xml</Conversation>
     <Conversation>Conversation_8point2.xml</Conversation>
     <Conversation>Conversation_9.xml</Conversation>
     <Conversation>Conversation_10.xml</Conversation> 
-    <TitleScreen Duration="5" R=".3" G="0.3" B="0.3">Act II\n"And then a Plank in Reason, broke\nAnd I dropped down, and down -\nAnd hit a World, at every plunge,\nAnd Finished knowing - then -"</TitleScreen>
+    <TitleScreen Duration="10" R=".3" G="0.3" B="0.3">Act II\n"And then a Plank in Reason, broke\nAnd I dropped down, and down -\nAnd hit a World, at every plunge,\nAnd Finished knowing - then -"</TitleScreen>
     <Conversation>Conversation_11.xml</Conversation>
     <Conversation>Conversation_12.xml</Conversation>
     <PillSequence NumPills="100"/> 
@@ -24,13 +30,14 @@
     <Conversation>Conversation_15.xml</Conversation>
     <StrikesScreen/>
     <Conversation>Conversation_16.xml</Conversation>
-    <DrawingState FilePath="../Drawings/Test/" Duration="5"/>
+    <DrawingState FilePath="../Drawings/Isolation/" Duration="5"/>
     <Conversation>Conversation_17.xml</Conversation>
     <Conversation>Conversation_18.xml</Conversation> 
     <Conversation>Conversation_19.xml</Conversation>
     <Conversation>Conversation_20.xml</Conversation>
     <TitleScreen Duration="5" R=".375" G="0.69921875" B="0.96484375">Act III\nDr. Apodochi - or - How I learned to control the worrying and love my mom.</TitleScreen>
     <Conversation>Conversation_21.xml</Conversation> <!-- Conversation with mom -->
+    <DrawingState FilePath="../Drawings/Comfort/" Duration="5"/>
     <!-- <Conversation>Conversation_22.xml</Conversation> --> <!-- Therapist explaining what happened and letting me go -->
     <!--<Conversation>Conversation_23.xml</Conversation> Friend doesn't recognize me at school ( different friend? )
     <Conversation>Conversation_24.xml</Conversation> Graduating 
@@ -43,7 +50,7 @@
     <Conversation>Conversation_31.xml</Conversation> 1 year performance review
     -->
 
-    <TitleScreen Duration="5" R=".3" G="0.3" B="0.3">Epilogue\n"... find me dancing in between the raindrops"</TitleScreen>
-    <Conversation>Conversation_Epilogue_1.xml</Conversation>
+    <!-- <TitleScreen Duration="5" R=".3" G="0.3" B="0.3">Epilogue\n"... find me dancing in between the raindrops"</TitleScreen>
+    <Conversation>Conversation_Epilogue_1.xml</Conversation> -->
     <!-- <Conversation>TestDialogue.xml</Conversation> -->
 </Progression>

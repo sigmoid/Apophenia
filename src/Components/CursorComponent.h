@@ -35,7 +35,7 @@ class CursorComponent : public Opal::Component
 
     bool GetAlive();
     void Reset();
-    std::vector<std::string> GetResponse();
+    std::vector<std::string> GetResponse(bool onlyCore = false);
     std::shared_ptr<Opal::Mesh2D> GetMesh();
 
     private:
@@ -64,4 +64,6 @@ class CursorComponent : public Opal::Component
     std::vector<Attractor> mAttractors;
     std::shared_ptr<Opal::Mesh2D> mMesh;
     std::vector<float> mVertices;
+
+    std::vector<std::string> mRealResponse;
 };

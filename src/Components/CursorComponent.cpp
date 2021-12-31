@@ -42,6 +42,7 @@ void CursorComponent::Reset()
 {
     mAlive = true;
     mCurrentResponse.clear();
+    mRealResponse.clear();
 }
 
 void CursorComponent::SetDrunk(bool val)
@@ -157,9 +158,9 @@ bool CursorComponent::GetAlive()
     return mAlive;
 }
 
-std::vector<std::string> CursorComponent::GetResponse()
+std::vector<std::string> CursorComponent::GetResponse(bool onlyCore)
 {
-    return mCurrentResponse;
+    return (onlyCore) ? mRealResponse : mCurrentResponse;
 }
 
 void CursorComponent::OnCollision(std::shared_ptr<Opal::Entity> other, glm::vec2 resolution, Opal::AABB otherAABB) 
@@ -172,7 +173,12 @@ void CursorComponent::OnCollision(std::shared_ptr<Opal::Entity> other, glm::vec2
     std::shared_ptr<SentenceFragmentComponent> otherComp = other->GetComponent<SentenceFragmentComponent>(); 
     if(otherComp != nullptr && otherComp->GetActive() && otherComp->GetSolid())
     {
-        mCurrentResponse.push_back(other->GetComponent<SentenceFragmentComponent>()->Text);
+        mCurrentResponse.push_back(otherComp->Text);
+        
+        if(!otherComp->IsIntrusive)
+        {
+            mRealResponse.push_back(otherComp->Text);
+        }
         otherComp->Interact();
     }
 }

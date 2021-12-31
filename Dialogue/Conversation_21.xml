@@ -19,7 +19,7 @@
 <Game>
     <Prompt TransitionText="And all of a sudden, the pieces begin to assemble">
         <Text>Hey...</Text>
-        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="300" WordFrequency="4" SolidWords="True">
+        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="500" WordFrequency="4" SolidWords="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Mom?</Text><Attraction>0</Attraction></Fragment>
@@ -49,7 +49,7 @@
             <Trigger>Mom?</Trigger>   
         </Triggers>
         <Text>Son, you're having a psychotic break. I flew in last night and talked to the doctors.</Text>
-        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="300" WordFrequency="4" SolidWords="True">
+        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="500" WordFrequency="4" SolidWords="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Are you</Text><Attraction>0</Attraction></Fragment>
@@ -85,7 +85,7 @@
             <Trigger>Are you okay? Is everyone okay?</Trigger>   
         </Triggers>
         <Text>We're all fine. You will be, too.</Text>
-        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="300" WordFrequency="4" SolidWords="True">
+        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="500" WordFrequency="4" SolidWords="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Can you</Text><Attraction>0</Attraction></Fragment>
@@ -121,7 +121,7 @@
             <Trigger>Can you get me out of here?</Trigger>   
         </Triggers>
         <Text>The doctors say you haven't been making much progress. We need to fix your brain before you can leave.</Text>
-        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="300" WordFrequency="4" SolidWords="True">
+        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="500" WordFrequency="4" SolidWords="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>How do</Text><Attraction>0</Attraction></Fragment>
@@ -151,7 +151,7 @@
             <Trigger>How do we fix it?</Trigger>   
         </Triggers>
         <Text>Well, one choice is shock therapy. They'll put you under and shock your brain. It's supposed to be like a reset.</Text>
-        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="300" WordFrequency="4" SolidWords="True">
+        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="500" WordFrequency="4" SolidWords="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I really</Text><Attraction>0</Attraction></Fragment>
@@ -187,7 +187,7 @@
             <Trigger>I really REALLY don't want to do that.</Trigger>   
         </Triggers>
         <Text>I don't want you to have to do that either, but it might be necessary. The other option is to stay the course with medicine and therapy.</Text>
-        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="300" WordFrequency="4" SolidWords="True">
+        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="500" WordFrequency="4" SolidWords="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I feel</Text><Attraction>0</Attraction></Fragment>
@@ -223,7 +223,7 @@
             <Trigger>I feel better right now mom, honestly.</Trigger>   
         </Triggers>
         <Text>I believe you. We can stick it out here. Come here. I really need a hug.</Text>
-        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="300" WordFrequency="4" SolidWords="True">
+        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="500" WordFrequency="4" SolidWords="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I feel</Text><Attraction>0</Attraction></Fragment>

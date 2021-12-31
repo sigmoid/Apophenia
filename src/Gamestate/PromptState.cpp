@@ -87,7 +87,7 @@ void PromptState::Tick()
     if(mSoundTimer <= 0 && mHasSound && mSoundThisPrompt)
     {
         mHasSound = false;
-        mGame->mAudioEngine.PlaySound(mCurrentAudioClip, 0.2f, 1.0f, 0.0f, false, false);
+        mGame->mAudioEngine.PlaySound(mCurrentAudioClip, 0.8f, 1.0f, 0.0f, false, false);
     }
     
 }

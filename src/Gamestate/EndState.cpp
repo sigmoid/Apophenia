@@ -24,7 +24,11 @@ void EndState::Render()
 {
     mTextPass->Record();
 
-    mTextRenderer->RenderString("The End of \"Tightrope\" for now...\n One thing I want to note that bugs me. I exaggerated the hallucinations to make the story more understandable. \n All of the conversations with the hallucination guy were trains of thought that went on in my own head. I did hallucinate that there was a person trying to get me out, but that was a minor part of the experience. Thanks for playing. Let me know what you think. ",
+    mTextRenderer->RenderString("The End of \"Tightrope\" for now...\n"
+    "The final act hasn't been written yet, but will cover getting to stability.\n"
+    "follow @absurd_walls on twitter to send me feedback, and find out when it's finished\n"
+    "Thanks for playing."
+    ,
      0,0,1,1,1,1,1,true);
     mTextRenderer->RecordCommands();
 
@@ -40,7 +44,7 @@ void EndState::Begin()
     {
         mTextPass = mGame->Renderer->CreateRenderPass(true);
         mTextPass->SetClearColor(0.1,0.1,0.1,1);
-        Opal::Font mFont(mGame->Renderer, "../fonts/JosefinSans.ttf", 48);
+        Opal::Font mFont(mGame->Renderer, "../fonts/JosefinSlab-SemiBold.ttf", 48);
         mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, mFont, glm::vec2(1920, 1080), Opal::Camera::ActiveCamera);
     }
 }

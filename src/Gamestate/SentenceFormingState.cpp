@@ -157,7 +157,7 @@ void SentenceFormingState::Tick()
     UpdateCursorLine();
     if (!mCursorEntity->GetComponent<CursorComponent>()->GetAlive())
     {
-        auto response = mCursorEntity->GetComponent<CursorComponent>()->GetResponse();
+        auto response = mCursorEntity->GetComponent<CursorComponent>()->GetResponse(DialogueManager::Instance->GetCurrentResponse().RequireCoreOnly);
         std::string responseStr = ConcatSelection(response);
 
         if (mCursorEntity->GetComponent<CursorComponent>()->GetKill())
