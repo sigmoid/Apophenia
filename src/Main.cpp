@@ -45,6 +45,9 @@ int main(int argc, char **argv)
     game->PushState<StrikesState>();
     game->PopState();
     
+    auto bgMusic = Opal::AudioEngine::LoadClip("../Audio/ambiment-by-kevin-macleod-from-filmmusic-io.mp3");
+    Opal::AudioEngine::PlaySound(bgMusic, 0.8f, 1.0f, 0.0f, true, false);
+
     managerState->StartGame(); 
 
     while(!game->ShouldEnd())

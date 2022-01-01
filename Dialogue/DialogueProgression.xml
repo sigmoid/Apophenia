@@ -1,9 +1,24 @@
 <Progression Story="Main" Filepath= "../Dialogue/">
-    <TitleScreen Duration="15" R=".1" G="0.1" B="0.1">Controls: 
-Dialogue: Spacebar to advance to the next scene ('A' on controller)
-Response: W/S to move (Left joystick on controller)
+    <TitleScreen Duration="10" R=".1" G="0.1" B="0.1">THIS GAME IS NOT FINISHED!
 
-Warning: Mental illness and Psychological crisis are discussed in this game. 
+-The story will end about 2/3 of the way through.
+-There are some rough edges that I still need to fix.
+-The game might crash randomly.
+Thanks for understanding. :)</TitleScreen>
+<TitleScreen Duration="10" R=".1" G="0.1" B="0.1">(Temporary) Music
+Ambiment by Kevin MacLeod
+Link: https://incompetech.filmmusic.io/song/3359-ambiment
+License: https://filmmusic.io/standard-license
+</TitleScreen>
+    <TitleScreen Duration="15" R=".1" G="0.1" B="0.1">CONTROLS:
+
+[DIALOGUE] 'Spacebar' to advance to the next scene ('A' on controller)
+
+[RESPONSE] 'W'/'S' to move ('Left joystick' on controller)
+</TitleScreen>
+<TitleScreen Duration="15" R=".1" G="0.1" B="0.1">WARNING
+
+Mental illness and Psychological crisis are focuses of this game. 
     </TitleScreen>
     <TitleScreen Duration="5" R=".2" G="0.2" B="0.2">Tightrope</TitleScreen>
     <TitleScreen Duration="10" R=".3046875" G="0.50390625" B="0.828125">Act I\nMy life as a tightrope walker, suspended above sense, wondering what was wrong with all the people on the ground.</TitleScreen>

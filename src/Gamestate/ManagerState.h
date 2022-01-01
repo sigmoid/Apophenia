@@ -10,6 +10,7 @@
 
 #include "../Opal/Audio/AudioClip.h"
 
+#include <filesystem>
 #include <array>
 
 enum class GameStateType
@@ -61,6 +62,11 @@ class ManagerState : public Opal::Gamestate
     std::string mTitleText;
 
     glm::vec4 UpdateColor(float progress);
+
+    std::string mSavePath = "../SaveGame/SaveGame.txt";
+    bool mProgressLoaded = false;
+    void LoadProgress();
+    void SaveProgress();
 
     std::string ReplaceAll(std::string str, const std::string& from, const std::string& to);
 };

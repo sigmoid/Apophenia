@@ -150,43 +150,7 @@
         <Triggers>
             <Trigger>How do we fix it?</Trigger>   
         </Triggers>
-        <Text>Well, one choice is shock therapy. They'll put you under and shock your brain. It's supposed to be like a reset.</Text>
-        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="500" WordFrequency="4" SolidWords="True">
-            <Fragments>
-                <FragmentGroup>
-                    <Fragment><Text>I really</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>REALLY</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>don't want</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>to do that.</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-            </Fragments>
-            <Color>
-                <r>0.6118</r>
-                <g>0.2863</g>
-                <b>0.0000</b>
-                <a>1.0</a>
-            </Color>
-            <Speed>750</Speed>
-        </Response>
-    <Color>
-        <r>0.6118</r>
-        <g>0.2863</g>
-        <b>0.0000</b>
-        <a>1.0</a>
-    </Color>
-    </Prompt>
-
-    <Prompt>
-        <Triggers>
-            <Trigger>I really REALLY don't want to do that.</Trigger>   
-        </Triggers>
-        <Text>I don't want you to have to do that either, but it might be necessary. The other option is to stay the course with medicine and therapy.</Text>
+        <Text>I don't know. We need to figure out what's wrong first. The doctors don't know yet...</Text>
         <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="500" WordFrequency="4" SolidWords="True">
             <Fragments>
                 <FragmentGroup>
@@ -253,7 +217,5 @@
         <a>1.0</a>
     </Color>
     </Prompt>
-
-    
 
 </Game>

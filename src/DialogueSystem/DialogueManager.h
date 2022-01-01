@@ -6,6 +6,8 @@
 #include "SentenceFragment.h"
 #include "Response.h"
 #include "Prompt.h"
+#include <iostream>
+#include <fstream>
 
 class DialogueManager
 {

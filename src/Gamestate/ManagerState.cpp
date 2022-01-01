@@ -115,6 +115,8 @@ void ManagerState::Begin()
     mPreviousColor = glm::vec4(0.1f,0.1f,0.1f, 1.0f);
 
     mConversationSequence = DialogueSerializer::DeserializeStoryline("../Dialogue/DialogueProgression.xml");
+    LoadProgress();
+
     mTextPass = mGame->Renderer->CreateRenderPass();
     Opal::Font typeFace(mGame->Renderer,"../fonts/JosefinSlab-SemiBold.ttf", 100);
 
@@ -203,6 +205,8 @@ void ManagerState::IncrementConversation()
         mPreviousState = mCurrentState;
         mCurrentState = GameStateType::DRAWING_STATE;
         mCurrentConversation++;
+
+        mTitleText = "";
     }
     else if(mConversationSequence[mCurrentConversation].find("|TitleScreen") != std::string::npos)
     {
@@ -236,6 +240,11 @@ void ManagerState::IncrementConversation()
         mCurrentStateDuration = mTransitionDuration;
         mPreviousState = mCurrentState;
         mCurrentState = GameStateType::PROMPT_STATE;
+
+        if(mProgressLoaded)
+            SaveProgress();
+        else
+            mProgressLoaded = true;
     }
 
     if(DialogueManager::Instance->EatTransition)
@@ -333,4 +342,34 @@ std::string ManagerState::ReplaceAll(std::string str, const std::string& from, c
         start_pos += to.length(); // Handles case where 'to' is a substring of 'from'
     }
     return str;
+}
+
+void ManagerState::LoadProgress()
+{
+    std::ifstream saveFile;
+    saveFile.open(mSavePath, std::ifstream::in);
+    if(!saveFile)
+    {
+        Opal::Logger::LogString("Failed to open save file!");
+    }
+    else
+    {
+        saveFile >> mCurrentConversation;
+        saveFile.close();
+    }
+}
+
+void ManagerState::SaveProgress()
+{
+    std::ofstream saveFile;
+    saveFile.open(mSavePath, std::ofstream::out | std::ofstream::trunc);
+    if(!saveFile)
+    {
+        Opal::Logger::LogString("Failed to open save file!");
+    }
+    else
+    {
+        saveFile << mCurrentConversation - 1;
+        saveFile.close();
+    }
 }

@@ -72,6 +72,7 @@ void PromptState::Tick()
         if(DialogueManager::Instance->GetCurrentPrompt().IsEnd)
         {
             mGame->PopState();
+            return;
         }
         else
         {
