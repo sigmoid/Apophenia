@@ -9,7 +9,7 @@
 
 struct Prompt
 {
-    std::string Text;
+    std::vector<std::string> Text;
     std::vector<glm::vec4> Colors;
     std::vector<std::string> Triggers;
     std::vector<std::string> ObscuredWords;

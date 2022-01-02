@@ -47,6 +47,8 @@ class PromptState : public Opal::Gamestate
     int mCurrentColorId = 0;
     bool IsDrawingScene = false;
 
+    int mCurrentCardIdx = 0;
+
     float mSoundTimer = 0;
 
     PromptStateShaderData * mShaderData;
@@ -61,4 +63,6 @@ class PromptState : public Opal::Gamestate
     float mNoiseFrequency = 1;
     float mNoiseOffset = 0;
     void UpdateShaderData();
+
+    bool mLastAdvancePressed = false;
 };

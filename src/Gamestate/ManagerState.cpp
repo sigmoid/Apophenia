@@ -26,13 +26,12 @@ ManagerState::~ManagerState()
 
 void ManagerState::Tick() 
 {
-
-    if(DialogueManager::Instance->GetCurrentPrompt().Text == "BLANK")
+    auto prompt = DialogueManager::Instance->GetCurrentPrompt();
+    if(prompt.Text.size() > 0 && prompt.Text[0] == "BLANK")
     {
         IncrementConversation();
     }
     
-    auto prompt = DialogueManager::Instance->GetCurrentPrompt();
 
     if(mTransitionTimer > 0)
     {

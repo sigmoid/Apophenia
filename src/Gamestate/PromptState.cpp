@@ -35,7 +35,7 @@ void PromptState::Tick()
     
     auto prompt = DialogueManager::Instance->GetCurrentPrompt();
 
-    if(prompt.Text == "BLANK")
+    if(prompt.Text[0] == "BLANK")
     {
         mGame->PopState();
     }
@@ -67,18 +67,26 @@ void PromptState::Tick()
         }
     }
 
-    if(Opal::InputHandler::GetKey(GLFW_KEY_SPACE) || Opal::InputHandler::GetGamepadButton(0))
+    if((Opal::InputHandler::GetKey(GLFW_KEY_SPACE) || Opal::InputHandler::GetGamepadButton(0)) && !mLastAdvancePressed)
     {
-        if(DialogueManager::Instance->GetCurrentPrompt().IsEnd)
+        if(mCurrentCardIdx < DialogueManager::Instance->GetCurrentPrompt().Text.size() - 1)
         {
-            mGame->PopState();
-            return;
+            mCurrentCardIdx++;
         }
         else
         {
-            mGame->PushState<SentenceFormingState>();
+            if(DialogueManager::Instance->GetCurrentPrompt().IsEnd)
+            {
+                mGame->PopState();
+                return;
+            }
+            else
+            {
+                mGame->PushState<SentenceFormingState>();
+            }
         }
     }
+    mLastAdvancePressed = Opal::InputHandler::GetKey(GLFW_KEY_SPACE) || Opal::InputHandler::GetGamepadButton(0);
 
     if(mSoundTimer > 0)
     {
@@ -95,7 +103,7 @@ void PromptState::Tick()
 
 void PromptState::Render() 
 {
-    mTextRenderer->RenderString(DialogueManager::Instance->GetCurrentPrompt().Text, 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
+    mTextRenderer->RenderString(DialogueManager::Instance->GetCurrentPrompt().Text[mCurrentCardIdx], 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
 
     mTextPass->Record();
     mTextRenderer->RecordCommands();
@@ -142,6 +150,7 @@ void PromptState::Begin()
         mPostProcessor = mGame->Renderer->CreatePostProcessor(mTextPass, "../shaders/PlayStateVert", "../shaders/PlayStateFrag", true, sizeof(PromptStateShaderData), VK_SHADER_STAGE_FRAGMENT_BIT);
     }
 
+    mCurrentCardIdx = 0;
     UpdateShaderData();
     UpdateColor(1.0f);
 }
@@ -197,7 +206,7 @@ void PromptState::UpdateShaderData()
         {
             if(DialogueManager::Instance != nullptr)
             {
-            Opal::AABB box = mTextRenderer->GetTextRect(DialogueManager::Instance->GetCurrentPrompt().Text,DialogueManager::Instance->GetCurrentPrompt().ObscuredWords[i] , 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
+            Opal::AABB box = mTextRenderer->GetTextRect(DialogueManager::Instance->GetCurrentPrompt().Text[mCurrentCardIdx],DialogueManager::Instance->GetCurrentPrompt().ObscuredWords[i] , 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
             // std::cout << box.min.x << " " << box.min.y << " " << box.max.x << " " << box.max.y << std::endl;
             mShaderData->ObscuredRects[i] = glm::vec4(box.min.x / 1920, box.min.y / 1080, box.max.x / 1920, box.max.y / 1080);
             }

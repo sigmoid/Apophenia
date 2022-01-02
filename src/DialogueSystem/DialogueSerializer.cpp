@@ -89,8 +89,11 @@ Prompt DialogueSerializer::DeserializePrompt(tinyxml2::XMLElement *root)
     const char * tmp = root->Attribute("TransitionText");
     if(tmp != nullptr)
         res.TransitionText = tmp; 
-    res.Text = root->FirstChildElement("Text")->GetText();
-    std::replace(res.Text.begin(), res.Text.end(), '\t', ' ');
+    for(tinyxml2::XMLElement *txt = root->FirstChildElement("Text"); txt != nullptr; txt = txt->NextSiblingElement("Text"))
+    {
+        res.Text.push_back(txt->GetText());
+        std::replace(res.Text[res.Text.size()-1].begin(), res.Text[res.Text.size()-1].end(), '\t', ' ');
+    }
     res.Response = DeserializeResponse(root->FirstChildElement("Response"));
 
     for(tinyxml2::XMLElement *colorRoot = root->FirstChildElement("Color"); colorRoot != nullptr; colorRoot = colorRoot->NextSiblingElement("Color"))
