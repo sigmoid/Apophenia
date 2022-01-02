@@ -1,0 +1,124 @@
+<!-- Colors -->
+<!-- Basic White            
+    <Color>
+        <r>0.9</r>
+        <g>0.9</g>
+        <b>0.9</b>
+        <a>1.0</a>
+    </Color>
+    -->
+
+ <!-- Warm            
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.1882</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+<Game>
+    <Prompt>
+        <Text>Hi there. Welcome to my game. I have a few houskeeping notes before we begin. First, once you finish reading dialogue. Press 'A' on a gamepad or 'SPACEBAR' on a keyboard.</Text>
+        <Text>To move up and down, the controls will be 'W' and 'S' on the keyboard, or the left joystick of a controller.</Text>
+        <Text>Let's give that a go.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Press 'W'</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>and 'S'</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>to catch thoughts.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.5</r>
+                <g>0.46484375</g>
+                <b>0.17578125</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+    <Color>
+        <r>0.5</r>
+        <g>0.46484375</g>
+        <b>0.17578125</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>Nice. That's pretty much all you need to know to get through.</Text>
+        <Text>But - there is something else I want you to know before you play this.</Text>
+        <Text>This is a game about a mental health crisis. It features some things that may be uncomfortable.</Text>
+        <Text>I want to share this story with you, but I also need you to understand that it may not be easy to play if you're in a vulnerable state.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Got it.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>Understood.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.5</r>
+                <g>0.46484375</g>
+                <b>0.17578125</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+    <Color>
+        <r>0.5</r>
+        <g>0.46484375</g>
+        <b>0.17578125</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Press 'W' and 'S' to catch thoughts.</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt IsEnd="True">
+        <Text>Last thing, then I'm out of your hair for a while.</Text>
+        <Text>While this game is based in truth. I took many liberties with the way the story is presented.</Text>
+        <Text>The characters are not meant to represent real people. They are different forces in my life personified.</Text>
+        <Text>There are periods of this story that I don't remember well, and I have to rely on my what I've been told and the small things that I do remember.</Text>
+        <Text>Events are selectively stretched out and condensed for the sake of pace.</Text>
+        <Text>I don't blame anyone for anything that happened to me. This was a tough situation for everyone involved.</Text>
+        <Text>Enjoy the game.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Got it.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>Understood.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.5</r>
+                <g>0.46484375</g>
+                <b>0.17578125</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+    <Color>
+        <r>0.5</r>
+        <g>0.46484375</g>
+        <b>0.17578125</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Got it. Understood.</Trigger>   
+        </Triggers>
+    </Prompt>
+
+</Game>

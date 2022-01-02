@@ -19,7 +19,6 @@
 <Game>
     <Prompt TransitionText="Junior year, start of spring semester">
         <Text>I heard on the news that scientists are discovering black holes inside our galaxy.</Text>
-        <Text>And by the way, you suck</Text>
         <Response>
             <Fragments>
                 <FragmentGroup>

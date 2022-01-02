@@ -163,6 +163,8 @@ void PromptState::End()
 void PromptState::Resume() 
 {
     Opal::Logger::LogString("GAMESTATE: Resume() PromptState");
+    
+    mCurrentCardIdx = 0;
 
     UpdateColor(1.0f);
 }

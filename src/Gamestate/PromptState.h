@@ -64,5 +64,5 @@ class PromptState : public Opal::Gamestate
     float mNoiseOffset = 0;
     void UpdateShaderData();
 
-    bool mLastAdvancePressed = false;
+    bool mLastAdvancePressed = true;
 };
