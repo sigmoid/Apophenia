@@ -19,7 +19,7 @@
 <Game>
     <Prompt Sequence="1" TransitionText="???">
         <Text>CLEAR!</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="6" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" AllowNonsense="True" WordFrequency="6" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Where</Text><Attraction>0</Attraction></Fragment>
@@ -55,7 +55,7 @@
         <Triggers>
             <Trigger>Where am I</Trigger>   
         </Triggers>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="6" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" AllowNonsense="True" WordFrequency="6" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Who</Text><Attraction>0</Attraction></Fragment>
@@ -88,7 +88,7 @@
         <Triggers>
             <Trigger>Who are you</Trigger>   
         </Triggers>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="6" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" AllowNonsense="True" WordFrequency="6" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>What're these</Text><Attraction>0</Attraction></Fragment>
@@ -121,7 +121,7 @@
         <Triggers>
             <Trigger>What're these little pads on my chest?</Trigger>   
         </Triggers>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="6" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" AllowNonsense="True" WordFrequency="6" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>What's this thing</Text><Attraction>0</Attraction></Fragment>

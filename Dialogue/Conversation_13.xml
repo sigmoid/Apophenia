@@ -51,9 +51,9 @@
     </Color>
     -->   
 <Game>
-    <Prompt Sequence="1" TransitionText="">
+    <Prompt Sequence="1" TransitionText="" InsideHead="True">
         <Text>How'd that go? Did you take the pills?</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yeah, I</Text><Attraction>0</Attraction></Fragment>
@@ -84,7 +84,7 @@
 
     <Prompt Sequence="2" TransitionText="">
         <Text>Doesn't matter much. Keep taking them so they don't catch on.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Okay. Can I</Text><Attraction>0</Attraction></Fragment>
@@ -112,13 +112,13 @@
                 <a>1.0</a>
             </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>Yeah, I did. Why?</Trigger>   
         </Triggers>
     </Prompt>    
 
     <Prompt Sequence="3" TransitionText="">
         <Text>Yeah probably, I think the nurse can give you a phone.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yeah, I'll</Text><Attraction>0</Attraction></Fragment>
@@ -146,13 +146,13 @@
                 <a>1.0</a>
             </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>Okay. Can I call my mom now?</Trigger>   
         </Triggers>
     </Prompt>    
 
     <Prompt Sequence="4" TransitionText="">
         <Text>Do you know how to dial out on a phone like that?</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Some phones</Text><Attraction>0</Attraction></Fragment>
@@ -183,13 +183,13 @@
                 <a>1.0</a>
             </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>Yeah, I'll go do that.</Trigger>   
         </Triggers>
     </Prompt>    
 
     <Prompt Sequence="5" TransitionText="">
         <Text>Right, but sometimes you have to dial 9, then 1, then the phone number.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Good point.</Text><Attraction>0</Attraction></Fragment>
@@ -220,13 +220,13 @@
                 <a>1.0</a>
             </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>Some phones make you dial 9 first right?</Trigger>   
         </Triggers>
     </Prompt>    
 
     <Prompt Sequence="6" IsEnd="True">
         <Text>Definitely. Make sure you actually use the country code too just in case.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Good point.</Text><Attraction>0</Attraction></Fragment>
@@ -257,7 +257,7 @@
                 <a>1.0</a>
             </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>Good point. Should I start with the area code?</Trigger>   
         </Triggers>
     </Prompt>    
 </Game>

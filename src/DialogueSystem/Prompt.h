@@ -20,6 +20,7 @@ struct Prompt
     bool IsKill = true;
     bool IsZoomIn = false;
     int Sequence=-1;
+    bool InsideHead = false;
 
     std::string TransitionText = "";
 };

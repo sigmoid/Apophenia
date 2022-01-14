@@ -11,6 +11,8 @@
 #include "../../Opal/Graphics/PostProcessRenderer.h"
 #include "../Components/SparkComponent.h"
 #include "../../Opal/Game.h"
+#include "../../Opal/Audio/AudioClip.h"
+#include "../../Opal/Audio/AudioClipInstance.h"
 #include "../../Opal/vendor/FastNoiseLite.h"
 #include "../DialogueSystem/WordBank.h"
 #include "../Components/NoiseMoveComponent.h"
@@ -28,6 +30,9 @@ struct UBO
     float warpFactor;
     float xPadding;
     float yPadding;
+    float playerX;
+    float playerY;
+    float displayBlur;
 };
 
 class SentenceFormingState : public Opal::Gamestate
@@ -53,6 +58,8 @@ class SentenceFormingState : public Opal::Gamestate
     static std::shared_ptr<Opal::LineRenderer> mLineRenderer;
     static std::shared_ptr<Opal::PostProcessRenderer> mPostProcess;
     static std::shared_ptr<Opal::Texture> mRenderTexture;
+    static std::shared_ptr<Opal::RenderPass> mUIPass;
+    static std::shared_ptr<Opal::FontRenderer> mUITextRenderer;
     std::shared_ptr<Opal::Scene> mScene = nullptr;
     std::shared_ptr<Opal::Entity> mCursorEntity = nullptr;
 
@@ -66,6 +73,11 @@ class SentenceFormingState : public Opal::Gamestate
 
     float mKillEventTimer = 0;
     float mKillWaitTime = 3.4f;
+
+    bool mInsideHead = false;
+    float mDisplayPromptTimer = 0;
+    float mDisplayPromptDuration = 3;
+    void RenderCurrentPrompt();
 
     void CreatePlayingField();
 
@@ -148,8 +160,17 @@ class SentenceFormingState : public Opal::Gamestate
     float mChannelHeight = 900;
     float mCurrentScroll = 0;
 
+    void CreatePostProcess();
+    std::shared_ptr<Opal::Texture> CreateNoiseTexture();
+    std::shared_ptr<Opal::Texture> mNoiseTexture;
+    float mNoiseTextureFreq = 0.125f;
+    float mNoiseTextureNoiseScale = 10;
+
     void RenderWordConnections();
 
     std::vector<glm::vec2> mWordPath;
     float mWordPathResolution = 15;
+
+    std::shared_ptr<Opal::AudioClipInstance> mSoundInstance = nullptr;
+    std::shared_ptr<Opal::AudioClip> mSoundClip = nullptr;
 };

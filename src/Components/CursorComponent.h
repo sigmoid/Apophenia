@@ -34,6 +34,7 @@ class CursorComponent : public Opal::Component
     void SetDrunk(bool isdrunk);
 
     bool GetAlive();
+    void SetAlive(bool val);
     void Reset();
     std::vector<std::string> GetResponse(bool onlyCore = false);
     std::shared_ptr<Opal::Mesh2D> GetMesh();

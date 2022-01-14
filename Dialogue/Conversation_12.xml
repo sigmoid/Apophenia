@@ -53,7 +53,7 @@
 <Game>
     <Prompt Sequence="1" TransitionText="">
         <Text>Hi, we're going to be taking care of you. Do you remember where you are?</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True" >
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True" >
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>You look</Text><Attraction>0</Attraction></Fragment>
@@ -99,7 +99,7 @@
             <Obscured>psychiatric</Obscured>
             <Obscured>hospital.</Obscured>
         </ObscuredWords>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Who was</Text><Attraction>0</Attraction></Fragment>
@@ -135,25 +135,29 @@
                 <a>1.0</a>
             </Color>
         <Triggers>
-            <Trigger>natural sequence 2</Trigger>   
+            <Trigger>You look kinda familiar.</Trigger>   
         </Triggers>
     </Prompt>
 
-    <Prompt>
-        <Text>I'm not sure. What did they look like?</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True">
+    <Prompt Sequence="3">
+        <Text>I'm not sure what you're talking about, you've been alone in here all night.</Text>
+        <Text>What's going on inside your head right now?</Text>
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
-                    <Fragment><Text>I dunno</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I feel</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>I think</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>like I'm</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>I've seen</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>thinking</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>them before</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>millions of thoughts</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>at once.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -184,58 +188,9 @@
         </Triggers>
     </Prompt>
 
-
-    <Prompt Sequence="3">
-        <Text>I'm not sure what you're talking about, but we want to help you get better. What's going on inside your head right now?</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank12.xml" SolidWords="True" Drunk="True">
-            <Fragments>
-                <FragmentGroup>
-                    <Fragment><Text>I feel</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>like I'm</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>thinking</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>millions of thoughts</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-                <FragmentGroup>
-                    <Fragment><Text>at once</Text><Attraction>0</Attraction></Fragment>
-                </FragmentGroup>
-            </Fragments>
-
-            <Color>
-                <r>0.2549</r>
-                <g>0.0941</g>
-                <b>0.3020</b>
-                <a>1.0</a>
-            </Color>
-            <Speed>1000</Speed>
-        </Response>
-            <!--Doctor-->
-            <Color>
-                <r>0.4</r>
-                <g>0.4</g>
-                <b>0.4</b>
-                <a>1.0</a>
-            </Color>
-            <!--therapist-->
-            <Color>
-                <r>1.0000</r>
-                <g>0.0000</g>
-                <b>0.0353</b>
-                <a>1.0</a>
-            </Color>
-        <Triggers>
-            <Trigger>natural sequence 2</Trigger>   
-        </Triggers>
-    </Prompt>
-
     <Prompt Sequence="4">
         <Text>We're not sure what's going on, but we think it might be seratonin syndrome. That can happen when a person takes too many antidepressants. Have you been taking the right amount?</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="15" ChannelSize="100" WordBank="../Dialogue/WordBankNo.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" AllowNonsense="True" WordFrequency="15" ChannelSize="100" WordBank="../Dialogue/WordBankNo.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yes</Text><Attraction>0</Attraction></Fragment>
@@ -265,13 +220,26 @@
                 <a>1.0</a>
             </Color>
         <Triggers>
-            <Trigger>natural sequence 2</Trigger>   
+            <Trigger>I feel like I'm thinking millions of thoughts at once.</Trigger>   
         </Triggers>
     </Prompt>
 
     <Prompt Sequence="5" IsEnd="True">
         <Text>Okay, we'll start there.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="15" ChannelSize="100" WordBank="../Dialogue/WordBankNo.xml" SolidWords="True" Drunk="True">
+        <Text>We're starting you on 50mg of anticonvulsant.</Text>
+        <Text>A strong dose of antipsychotics.</Text>
+        <Text>and another thing</Text>
+        <Text>also this too</Text>
+        <ObscuredWords>
+            <Obscured>antipsychotics</Obscured>
+            <Obscured>anticonvulsant</Obscured>
+            <Obscured>50</Obscured>
+            <Obscured>another</Obscured>
+            <Obscured>thing</Obscured>
+            <Obscured>this</Obscured>
+            <Obscured>too</Obscured>
+        </ObscuredWords>
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="15" ChannelSize="100" WordBank="../Dialogue/WordBankNo.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yes</Text><Attraction>0</Attraction></Fragment>

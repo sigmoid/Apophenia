@@ -53,7 +53,7 @@
 <Game>
     <Prompt Sequence="1" TransitionText="???">
         <Text>Oh... You're awake. Welcome home.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Who are</Text><Attraction>0</Attraction></Fragment>
@@ -87,7 +87,7 @@
 
     <Prompt Sequence="2" TransitionText="???">
         <Text>I'm hiding in the vents. You don't remember me? we've been friends for a long time... But forget all that - You have much more important things to think about now.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>What is</Text><Attraction>0</Attraction></Fragment>
@@ -112,13 +112,13 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>natural sequence 2</Trigger>   
+            <Trigger>Who are you? I can't see you.</Trigger>   
         </Triggers>
     </Prompt>
 
     <Prompt Sequence="3">
         <Text>It's complicated... Basically you got sucked in, and there are many dangers associated with that. Everyone in here is out to get you.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>What will</Text><Attraction>0</Attraction></Fragment>
@@ -146,13 +146,13 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>natural sequence 2</Trigger>   
+            <Trigger>What is this place?</Trigger>   
         </Triggers>
     </Prompt>
 
     <Prompt Sequence="4">
         <Text>Hard to say. Maybe they want to steal your identity, or make you some kind of slave. Look, I can tell you want to get out of here. So I can try to help you figure out how.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Why would</Text><Attraction>0</Attraction></Fragment>
@@ -180,13 +180,13 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>natural sequence 2</Trigger>   
+            <Trigger>What will they do to me?</Trigger>   
         </Triggers>
     </Prompt>
 
     <Prompt Sequence="5" IsEnd="True">
         <Text>No time to chat, it looks like they're coming. Act cool.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I want</Text><Attraction>0</Attraction></Fragment>
@@ -214,7 +214,7 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>natural sequence 2</Trigger>   
+            <Trigger>Why would you want to help me?</Trigger>   
         </Triggers>
     </Prompt>
     

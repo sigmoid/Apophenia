@@ -19,4 +19,5 @@ struct Response
     bool RequireCoreOnly = false;
     bool Drunk = false;
     bool Tremor = false;
+    bool ShowBlur = false;
 };

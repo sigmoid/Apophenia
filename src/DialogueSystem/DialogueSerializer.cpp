@@ -76,6 +76,7 @@ Prompt DialogueSerializer::DeserializePrompt(tinyxml2::XMLElement *root)
     res.IsKill = root->BoolAttribute("IsKill", false);
     res.IsZoomIn = root->BoolAttribute("IsZoomIn", false);
     res.Sequence = root->IntAttribute("Sequence", -1);
+    res.InsideHead = root->BoolAttribute("InsideHead", false);
     auto sound = root->Attribute("Sound");
     if(sound != nullptr)
     {
@@ -138,6 +139,7 @@ Response DialogueSerializer::DeserializeResponse(tinyxml2::XMLElement *root)
     res.SolidWords = root->BoolAttribute("SolidWords", false);
     res.AllowNonsense = root->BoolAttribute("AllowNonsense", false);
     res.RequireCoreOnly = root->BoolAttribute("RequireCoreOnly", false);
+    res.ShowBlur = root->BoolAttribute("ShowBlur", false);
     res.Drunk = root->BoolAttribute("Drunk", false);
     res.Tremor = root->BoolAttribute("Tremor", false);
 

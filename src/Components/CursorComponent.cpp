@@ -183,6 +183,11 @@ void CursorComponent::OnCollision(std::shared_ptr<Opal::Entity> other, glm::vec2
     }
 }
 
+void CursorComponent::SetAlive(bool val)
+{
+    mAlive = val;
+}
+
 void CursorComponent::Serialize() 
 {
 

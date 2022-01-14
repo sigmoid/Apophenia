@@ -37,6 +37,8 @@ std::shared_ptr<Opal::Font> SentenceFormingState::mFont = nullptr;
 std::shared_ptr<Opal::Font> SentenceFormingState::mResponseFont = nullptr;
 std::shared_ptr<Opal::PostProcessRenderer> SentenceFormingState::mPostProcess = nullptr;
 std::shared_ptr<Opal::Texture> SentenceFormingState::mRenderTexture = nullptr;
+std::shared_ptr<Opal::RenderPass> SentenceFormingState::mUIPass = nullptr;
+std::shared_ptr<Opal::FontRenderer> SentenceFormingState::mUITextRenderer = nullptr;
 
 SentenceFormingState::SentenceFormingState()
 {
@@ -151,11 +153,36 @@ void SentenceFormingState::Tick()
         }
     }
 
+    if(mDisplayPromptTimer > 0)
+    {
+        mDisplayPromptTimer -= mGame->GetDeltaTime();
 
+        if(mDisplayPromptTimer <= 0)
+        {
+            //DialogueManager::Instance->IncrementResponse();
+
+            if(DialogueManager::Instance->GetCurrentPrompt().IsEnd)
+            {
+                mGame->PopState();
+                return;
+            }
+
+            mCursorEntity->GetComponent<CursorComponent>()->SetAlive(true);
+            CreatePlayingField();
+        }
+    }
+
+    if(mSoundInstance != nullptr && mScreenShakeTimer <= 0)
+    {
+        if(mSoundInstance->IsPlaying())
+            StartScreenShake();
+        else
+            mSoundInstance = nullptr;
+    }
 
     mScene->Update(mGame->GetDeltaTime());
     UpdateCursorLine();
-    if (!mCursorEntity->GetComponent<CursorComponent>()->GetAlive())
+    if (!mCursorEntity->GetComponent<CursorComponent>()->GetAlive() && mDisplayPromptTimer <= 0)
     {
         auto response = mCursorEntity->GetComponent<CursorComponent>()->GetResponse(DialogueManager::Instance->GetCurrentResponse().RequireCoreOnly);
         std::string responseStr = ConcatSelection(response);
@@ -181,12 +208,31 @@ void SentenceFormingState::Tick()
                 CreatePlayingField();
 
             StartScreenShake();
+
         }
         else
         {
             Opal::Camera::ActiveCamera->SetZoom(1);
             Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, 0));
-            mGame->PopState();
+
+            if(mInsideHead)
+            {
+                if(DialogueManager::Instance->GetCurrentPrompt().Sound.length() > 2)
+                {
+                    Opal::Logger::LogString("Playing sound");
+                    Opal::Logger::LogString(DialogueManager::Instance->GetCurrentPrompt().Sound);
+                    mSoundClip = mGame->mAudioEngine.LoadClip(DialogueManager::Instance->GetCurrentPrompt().Sound);
+                    mSoundInstance = mGame->mAudioEngine.PlaySound(mSoundClip, 0.8f, 1.0f, 0.0f, false, true);
+                    StartScreenShake();
+                }
+                mDisplayPromptTimer = mDisplayPromptDuration;
+                mCursorEntity->GetComponent<CursorComponent>()->SetAlive(true);
+                mCursorEntity->GetComponent<CursorComponent>()->Reset();
+            }
+            else
+            {
+                mGame->PopState();
+            }
         }
     }
 }
@@ -318,13 +364,15 @@ void SentenceFormingState::Render()
     if (!mIsWarped)
         RenderCurrentSelection();
 
+    if(mDisplayPromptTimer > 0)
+        RenderCurrentPrompt();
+
     RenderBlackHole();
 
     mTextPass->Record();
     mBatch->RecordCommands();
     mLineRenderer->Render();
     mTextRenderer->RecordCommands();
-    mResponseRenderer->RecordCommands();
     mMeshRenderer->RecordCommands();
     mTextPass->EndRecord();
 
@@ -334,9 +382,25 @@ void SentenceFormingState::Render()
     ubo->warpFactor = mWarpFactor;
     ubo->xPadding = Opal::Camera::ActiveCamera->GetViewPort().x / mGame->GetWidth();
     ubo->yPadding = Opal::Camera::ActiveCamera->GetViewPort().y / mGame->GetHeight();
-
+    ubo->playerX = mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.x / 1920; 
+    ubo->playerY = mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.y / 1080; 
+    
+    if(DialogueManager::Instance->GetCurrentResponse().ShowBlur)
+    {
+        ubo->displayBlur = 100;
+    }
+    else
+    {
+        ubo->displayBlur = -100;
+    }
+    
     mPostProcess->UpdateUserData(ubo);
     mPostProcess->ProcessAndSubmit();
+
+    mUIPass->Record();
+    mResponseRenderer->RecordCommands();
+    mUIPass->EndRecord();
+    mGame->Renderer->SubmitRenderPass(mUIPass);
 }
 
 void SentenceFormingState::Begin()
@@ -347,7 +411,9 @@ void SentenceFormingState::Begin()
         mRenderTexture = mGame->Renderer->CreateRenderTexture(1920, 1080, 4);
         mTextPass = mGame->Renderer->CreateRenderPass(mRenderTexture, true);
         mTextPass->SetClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-        mPostProcess = mGame->Renderer->CreatePostProcessor(mTextPass, "../shaders/testFXvert", "../shaders/testFXfrag", false, sizeof(UBO), VK_SHADER_STAGE_FRAGMENT_BIT);
+
+        CreatePostProcess();
+
         mBGPass = mGame->Renderer->CreateRenderPass(true);
         mBGPass->SetClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
@@ -365,7 +431,12 @@ void SentenceFormingState::Begin()
         textures.push_back(mCursorTexture);
         mBatch = mGame->Renderer->CreateBatch(mTextPass, 1000, textures, true);
 
-        mResponseRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mResponseFont, glm::vec2(1920 - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
+        mUIPass = mGame->Renderer->CreateRenderPass(false);
+        
+        mUITextRenderer = mGame->Renderer->CreateFontRenderer(mUIPass, *mFont, glm::vec2(1920 - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
+        
+
+        mResponseRenderer = mGame->Renderer->CreateFontRenderer(mUIPass, *mResponseFont, glm::vec2(1920 - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
     }
     mScene = std::make_shared<Opal::Scene>(mBatch);
 
@@ -384,6 +455,8 @@ void SentenceFormingState::Begin()
 
     mChannelHeight = response.ChannelSize;
 
+    mInsideHead = DialogueManager::Instance->GetCurrentPrompt().InsideHead;
+    
     CreatePlayer();
     mScene->Start();
     CreateSparks();
@@ -403,6 +476,13 @@ void SentenceFormingState::Begin()
     {
         mZoomInTimer = mZoomInDuration;
     }
+
+}
+
+void SentenceFormingState::RenderCurrentPrompt()
+{
+    std::string prompt = DialogueManager::Instance->GetCurrentPrompt().Text[0];
+    mResponseRenderer->RenderString(prompt, 200, 1080 - 300, mFragmentColor.r, mFragmentColor.g, mFragmentColor.b, mFragmentColor.a, 1.0f);
 }
 
 void SentenceFormingState::CreateBounds()
@@ -452,6 +532,10 @@ void SentenceFormingState::CreatePlayingField()
         mWordPath.push_back(glm::vec2(xpos, ypos));
     }
 
+    for(auto frag : mFragmentEnts)
+    {
+        mScene->RemoveEntity(frag);
+    }
     mFragmentEnts.clear();
     mWordConnections.clear();
 
@@ -863,4 +947,49 @@ void SentenceFormingState::RenderWordConnections()
             //mLineRenderer->DrawRect(boxA->GetAABB().min, boxA->GetAABB().max, glm::vec4(0,1,0,1), 2);
         }
     }
+}
+
+void SentenceFormingState::CreatePostProcess()
+{
+    mNoiseTexture = CreateNoiseTexture();
+
+    std::vector<Opal::UniformBufferInfo> extraBuffers;
+    Opal::UniformBufferInfo noiseBuffer;
+    noiseBuffer.Binding = 2;
+    noiseBuffer.DescriptorCount = 1;
+    noiseBuffer.DescriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+    noiseBuffer.ShaderStage = VK_SHADER_STAGE_FRAGMENT_BIT;
+    noiseBuffer.Size = mNoiseTexture->GetHeight() * mNoiseTexture->GetWidth() * 4; // Could be wrong or not generated until the first frame
+    noiseBuffer.Texture = mNoiseTexture;
+    extraBuffers.push_back(noiseBuffer);
+
+    mPostProcess = mGame->Renderer->CreatePostProcessor(mTextPass, "../shaders/testFXvert", "../shaders/testFXfrag", false, sizeof(UBO), VK_SHADER_STAGE_FRAGMENT_BIT, extraBuffers);
+    
+}
+
+std::shared_ptr<Opal::Texture> SentenceFormingState::CreateNoiseTexture()
+{
+    FastNoiseLite noise;
+    noise.SetNoiseType(FastNoiseLite::NoiseType_Perlin);
+    noise.SetFrequency(mNoiseTextureFreq);
+
+    int width = 1920;
+    int height = 1080;
+    unsigned char *data = (unsigned char*)malloc(width * height * sizeof(unsigned char));
+
+    for(int y = 0; y < height; y++)
+    {
+        for(int x = 0; x < width; x++)
+        {
+            unsigned char *start = data + y * width * 4 + x * 4;
+            start[0] = (unsigned char)(noise.GetNoise<float>((x / mNoiseScale), (y / mNoiseScale)) * 255); // Red
+            start[1] = 0; // Green?
+            start[2] = 0; // Blue?
+            start[3] = 255; // Alpha
+        }
+    }
+
+    auto res = mGame->Renderer->CreateTexture((unsigned char*)data, 1920, 1080, 4);
+    free(data);
+    return res;
 }

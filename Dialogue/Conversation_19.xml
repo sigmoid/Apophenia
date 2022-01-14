@@ -51,9 +51,9 @@
     </Color>
     -->   
 <Game>
-    <Prompt Sequence="1" TransitionText="">
+    <Prompt Sequence="1" TransitionText="" InsideHead="True">
         <Text>Are you awake in there?</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Where am</Text><Attraction>0</Attraction></Fragment>
@@ -84,7 +84,7 @@
 
     <Prompt Sequence="2" TransitionText="">
         <Text>Oh shit that's not good. I figured out a way to get you out okay.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>How long</Text><Attraction>0</Attraction></Fragment>
@@ -112,13 +112,13 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>Where am I?</Trigger>   
         </Triggers>
     </Prompt>  
      
     <Prompt Sequence="3" TransitionText="">
         <Text>Get away from the window okay? I'll count down.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>What are</Text><Attraction>0</Attraction></Fragment>
@@ -143,7 +143,7 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>How long was I out for?</Trigger>   
         </Triggers>
     </Prompt>    
      
@@ -151,7 +151,7 @@
 
     <Prompt Sequence="4" TransitionText="" Sound="../Audio/WindowPounding.wav" SoundDelay="0.1">
         <Text>3... 2... 1</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Holy shit</Text><Attraction>0</Attraction></Fragment>
@@ -179,13 +179,13 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>What are you doing?</Trigger>   
         </Triggers>
     </Prompt>    
      
     <Prompt Sequence="5" TransitionText="">
         <Text>Oh man, this window is like bullet-proof!</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>You're scaring</Text><Attraction>0</Attraction></Fragment>
@@ -194,7 +194,7 @@
                     <Fragment><Text>me. Go</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>away</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>away.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -213,13 +213,13 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>Holy shit what are you doing?</Trigger>   
         </Triggers>
     </Prompt>   
      
     <Prompt Sequence="6" TransitionText="" IsEnd="True">
         <Text>Damnit I'm such an idiot I'm so sorry man, I'll figure something out.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>It would have</Text><Attraction>800</Attraction></Fragment>
@@ -247,7 +247,7 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>You're scaring me. Go away.</Trigger>   
         </Triggers>
     </Prompt>    
     

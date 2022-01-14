@@ -51,9 +51,9 @@
     </Color>
     -->   
 <Game>
-    <Prompt Sequence="1" TransitionText="">
+    <Prompt Sequence="1" TransitionText="" InsideHead="True">
         <Text>Did you hear what that nurse just said?</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yeah, they</Text><Attraction>0</Attraction></Fragment>
@@ -90,7 +90,7 @@
     
     <Prompt Sequence="2" TransitionText="">
         <Text>Don't worry, you've got me. You don't need it.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>But I need</Text><Attraction>0</Attraction></Fragment>
@@ -118,13 +118,13 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>Yeah, they banned me from using the phone.</Trigger>   
         </Triggers>
     </Prompt>    
     
     <Prompt Sequence="3" TransitionText="">
         <Text>You can talk to her when you get out. And I think I found a way.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>What</Text><Attraction>0</Attraction></Fragment>
@@ -149,16 +149,19 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>But I need to talk to my mom.</Trigger>   
         </Triggers>
     </Prompt>    
     
     <Prompt Sequence="4" TransitionText="">
         <Text>The nurse just said you got a strike right? Isn't the rule three strikes and you're out?</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Oh yeah!</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>Of course!</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -177,13 +180,13 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>What is it?</Trigger>   
         </Triggers>
     </Prompt>    
 
     <Prompt Sequence="5" TransitionText="">
         <Text>We just need to figure out how to get two more strikes.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Well I</Text><Attraction>0</Attraction></Fragment>
@@ -214,13 +217,13 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>Oh yeah! Of course!</Trigger>   
         </Triggers>
     </Prompt>    
 
     <Prompt Sequence="6" TransitionText="">
         <Text>It's the only way out that I can see. Besides, they're out to get you. They might be plotting to kill your family right now.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Why would</Text><Attraction>0</Attraction></Fragment>
@@ -248,13 +251,13 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>Well I don't want to bother anyone.</Trigger>   
         </Triggers>
     </Prompt>    
 
     <Prompt Sequence="7" TransitionText="">
         <Text>"Why" doesn't matter. It's happening. You know how they took your phone and backpack when you got here?</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>I don't</Text><Attraction>0</Attraction></Fragment>
@@ -263,7 +266,7 @@
                     <Fragment><Text>really remember</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>that but...</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>that, but...</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -282,13 +285,13 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>Why would they do that?</Trigger>   
         </Triggers>
     </Prompt>    
 
     <Prompt Sequence="8" TransitionText="">
-        <Text>Where do you think your phone and laptop are now? How easy would it be for them to find your dirty secrets. Your poetry, journals, information about your mom.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Text>Where do you think your phone and laptop are now? How easy would it be to find out your secrets?</Text>
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>They would</Text><Attraction>0</Attraction></Fragment>
@@ -297,7 +300,7 @@
                     <Fragment><Text>need the</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
                 <FragmentGroup>
-                    <Fragment><Text>password though</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>password though.</Text><Attraction>0</Attraction></Fragment>
                 </FragmentGroup>
             </Fragments>
 
@@ -316,13 +319,13 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>I don't really remember that, but...</Trigger>   
         </Triggers>
     </Prompt>    
 
         <Prompt Sequence="9" TransitionText="">
         <Text>You see that girl drawing a beached whale over there?</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yeah, so</Text><Attraction>0</Attraction></Fragment>
@@ -347,13 +350,13 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>They would need the password though.</Trigger>   
         </Triggers>
     </Prompt>    
 
     <Prompt Sequence="10" TransitionText="">
         <Text>Didn't you write a poem about being a beached whale? Isn't it on your computer somewhere.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Oh god</Text><Attraction>800</Attraction></Fragment>
@@ -381,13 +384,13 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>Yeah, so what?</Trigger>   
         </Triggers>
     </Prompt>    
 
     <Prompt Sequence="11" TransitionText="">
         <Text>Look, this is bad. They have everything. They have your contacts. They know where your family lives.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>We need</Text><Attraction>800</Attraction></Fragment>
@@ -415,13 +418,13 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>Oh god how did they get in?</Trigger>   
         </Triggers>
     </Prompt>    
 
     <Prompt Sequence="12" TransitionText="">
         <Text>So we're on the same page. Back to the strikes.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>What can</Text><Attraction>800</Attraction></Fragment>
@@ -446,13 +449,13 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>We need to get out. Now.</Trigger>   
         </Triggers>
     </Prompt>     
 
     <Prompt Sequence="13" TransitionText="" IsEnd="True">
         <Text>Well. We could pull the fire alarm. There's got to be a fire alarm somewhere. That would get us another strike. We can regroup after that and think of more ways.</Text>
-        <Response Tremor="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
             <Fragments>
                 <FragmentGroup>
                     <Fragment><Text>Yeah...</Text><Attraction>0</Attraction></Fragment>
@@ -480,7 +483,7 @@
             <a>1.0</a>
         </Color>
         <Triggers>
-            <Trigger>START</Trigger>   
+            <Trigger>What can we do?</Trigger>   
         </Triggers>
     </Prompt>    
 </Game>
