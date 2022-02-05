@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 
     auto cam = game->Renderer->CreateOrthoCamera(1920, 1080, -1000, 1000);
     game->Resize(1920/2, 1080/2);
-
+    
     DialogueManager dialogue("../Dialogue/TestDialogue.xml");
 
 
