@@ -181,7 +181,7 @@ void ManagerState::IncrementConversation()
     {
         mGame->PushState<StrikesState>();
         mPreviousState = mCurrentState;
-        mCurrentStateDuration  = mTransitionDuration;
+        mCurrentStateDuration = mTransitionDuration;
         mCurrentState = GameStateType::STRIKES_STATE;
         mCurrentConversation++;
     }

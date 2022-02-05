@@ -23,7 +23,7 @@ int main(int argc, char **argv)
     game->Init(1920, 1080, "Tightrope", Opal::RendererType::VULKAN);
 
     game->SetFramerateLock(60);
-    game->ToggleDebugInfo(true);
+    game->ToggleDebugInfo(false);
 
     auto cam = game->Renderer->CreateOrthoCamera(1920, 1080, -1000, 1000);
     game->Resize(1920/2, 1080/2);

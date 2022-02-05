@@ -70,7 +70,7 @@ void CursorComponent::Update(float dTime)
 
     UpdateVerts();
 
-    bool takingInput;
+    bool takingInput = false;
 
     if(mTakeInput)
     {
