@@ -1,3 +1,5 @@
+<Game>
+
 <Progression Story="Main" Filepath= "../Dialogue/">
     <TitleScreen Duration="6" R=".1" G="0.1" B="0.1">THIS GAME IS NOT FINISHED!
 
@@ -7745,3 +7747,5 @@ We should also schedule a doctor's appointment?</Text>
     </Prompt>
 
 </Conversation>
+
+</Game>

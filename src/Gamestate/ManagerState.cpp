@@ -113,7 +113,7 @@ void ManagerState::Begin()
 
     mPreviousColor = glm::vec4(0.1f,0.1f,0.1f, 1.0f);
 
-    mConversationSequence = DialogueSerializer::DeserializeStoryline("../Dialogue/DialogueProgression.xml");
+    mConversationSequence = DialogueSerializer::DeserializeStoryline("../Dialogue/MainStory.xml");
     LoadProgress();
 
     mTextPass = mGame->Renderer->CreateRenderPass();
@@ -181,7 +181,7 @@ void ManagerState::IncrementConversation()
     {
         mGame->PushState<StrikesState>();
         mPreviousState = mCurrentState;
-        mCurrentStateDuration = mTransitionDuration;
+        mCurrentStateDuration  = mTransitionDuration;
         mCurrentState = GameStateType::STRIKES_STATE;
         mCurrentConversation++;
     }

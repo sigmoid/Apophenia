@@ -13,16 +13,18 @@ std::vector<std::string> DialogueSerializer::DeserializeStoryline(std::string fi
     tinyxml2::XMLDocument doc;
     doc.LoadFile(filepath.c_str());
 
-    std::string base = doc.RootElement()->Attribute("Filepath");
+    tinyxml2::XMLElement *progressionRoot = doc.RootElement()->FirstChildElement("Progression");
+
+    //std::string base = progressionRoot->Attribute("Filepath");
 
     //Todo: Not yet used for anything
-    std::string storyName = doc.RootElement()->Attribute("Story");
+    std::string storyName = progressionRoot->Attribute("Story");
 
-    for(tinyxml2::XMLElement *convo = doc.RootElement()->FirstChildElement(); convo != nullptr; convo = convo->NextSiblingElement())
+    for(tinyxml2::XMLElement *convo = progressionRoot->FirstChildElement(); convo != nullptr; convo = convo->NextSiblingElement())
     {
         if(strcmp(convo->ToElement()->Value(), "Conversation") == 0)
         {
-            res.push_back(base + convo->GetText());
+            res.push_back(convo->GetText());
         }
         else if(strcmp(convo->ToElement()->Value(), "PillSequence") == 0)
         {
@@ -53,7 +55,7 @@ std::vector<std::string> DialogueSerializer::DeserializeStoryline(std::string fi
     return res;
 }
 
-std::vector<Prompt> DialogueSerializer::DeserializeFile(std::string filepath)
+std::vector<Prompt> DialogueSerializer::DeserializeFile(std::string filepath, std::string conversationName)
 {
     tinyxml2::XMLDocument doc;
     doc.LoadFile(filepath.c_str());
@@ -61,7 +63,20 @@ std::vector<Prompt> DialogueSerializer::DeserializeFile(std::string filepath)
     doc.PrintError();
     
     std::vector<Prompt> res;
-    for(tinyxml2::XMLElement *pmpt = doc.RootElement()->FirstChildElement(); pmpt != nullptr; pmpt = pmpt->NextSiblingElement())
+
+    tinyxml2::XMLElement *conversationRoot = doc.RootElement()->FirstChildElement("Conversation");
+
+    for(tinyxml2::XMLElement *pmpt = conversationRoot; pmpt != nullptr; pmpt = pmpt->NextSiblingElement())
+    {
+        std::string name = pmpt->Attribute("Name");
+        if(name == conversationName)
+        {
+            conversationRoot = pmpt;
+            break;
+        }
+    }
+
+    for(tinyxml2::XMLElement *pmpt = conversationRoot->FirstChildElement(); pmpt != nullptr; pmpt = pmpt->NextSiblingElement())
     {
         res.push_back(DeserializePrompt(pmpt));
     }

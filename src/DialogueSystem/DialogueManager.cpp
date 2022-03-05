@@ -52,7 +52,7 @@ void DialogueManager::LoadConversation(std::string filepath)
 {
     Opal::Logger::LogString("DIALOGUE_MANAGER: Loading conversation " + filepath + "...");
     mPrompts.clear();
-    mPrompts = DialogueSerializer::DeserializeFile(filepath);
+    mPrompts = DialogueSerializer::DeserializeFile("../Dialogue/MainStory.xml", filepath);
     mCurrentPromptIdx = 0;
     mCurrentSequenceNum = -1;
     
