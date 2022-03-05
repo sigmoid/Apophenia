@@ -8,6 +8,7 @@
 #include "Prompt.h"
 #include <iostream>
 #include <fstream>
+#include <map>
 
 class DialogueManager
 {
@@ -29,5 +30,7 @@ class DialogueManager
     int mCurrentSequenceNum = -1;
 
     std::vector<Prompt> mPrompts;
+
+    std::map<std::string, std::vector<Prompt> > mConversations;
 
 };

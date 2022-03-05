@@ -16,7 +16,7 @@
         <a>1.0</a>
     </Color>
     -->   
-<Game>
+<Conversation Name="Conversation_Prologue">
     <Prompt>
         <Text>Hi there. Welcome to my game. I have a few houskeeping notes before we begin. First, once you finish reading dialogue. Press 'A' on a gamepad or 'SPACEBAR' on a keyboard.</Text>
         <Text>To move up and down, the controls will be 'W' and 'S' on the keyboard, or the left joystick of a controller.</Text>
@@ -121,4 +121,4 @@
         </Triggers>
     </Prompt>
 
-</Game>
+</Conversation>

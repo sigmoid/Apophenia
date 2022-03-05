@@ -18,7 +18,6 @@ struct LinePointCompare
         std::shared_ptr<Opal::LinePointComponent> lpa = a->GetComponent<Opal::LinePointComponent>();
         std::shared_ptr<Opal::LinePointComponent> lpb = b->GetComponent<Opal::LinePointComponent>();
 
-        std::cout << lpa->Id << " <? " << lpb->Id << std::endl;
         return lpa->Id < lpb->Id;
     }
 };

@@ -16,7 +16,7 @@
         <a>1.0</a>
     </Color>
     -->   
-<Game>
+<Conversation Name="Conversation_8">
     <Prompt TransitionText="Next Day">
         <Text>Good morning! Feeling any better today?</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
@@ -569,4 +569,4 @@
     </Color>
     </Prompt>
 
-</Game>
+</Conversation>

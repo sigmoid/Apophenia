@@ -50,7 +50,7 @@
         <a>1.0</a>
     </Color>
     -->   
-<Game>
+<Conversation Name="Conversation_17">
     <Prompt Sequence="1" TransitionText="" InsideHead="True">
         <Text>Hey! Can you hear me?</Text>
         <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
@@ -330,4 +330,4 @@
     </Prompt>    
     
     
-</Game>
+</Conversation>

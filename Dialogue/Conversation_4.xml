@@ -16,7 +16,7 @@
         <a>1.0</a>
     </Color>
     -->   
-<Game>
+<Conversation Name="Conversation_4">
     <Prompt TransitionText="One Week Later">
         <Text>What brings you in today?</Text>
         <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
@@ -434,4 +434,4 @@
     </Color>
     </Prompt>
 
-</Game>
+</Conversation>

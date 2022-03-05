@@ -50,7 +50,7 @@
         <a>1.0</a>
     </Color>
     -->   
-<Game>
+<Conversation Name="Conversation_13">
     <Prompt Sequence="1" TransitionText="" InsideHead="True">
         <Text>How'd that go? Did you take the pills?</Text>
         <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
@@ -260,4 +260,4 @@
             <Trigger>Good point. Should I start with the area code?</Trigger>   
         </Triggers>
     </Prompt>    
-</Game>
+</Conversation>

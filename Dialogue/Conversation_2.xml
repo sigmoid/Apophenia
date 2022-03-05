@@ -25,7 +25,7 @@
         <a>1.0</a>
     </Color>
     -->   
-<Game>
+<Conversation Name="Conversation_2">
     <Prompt TransitionText="Next Day">
         <Text>So how is grading the first assignment going?</Text>
         <Response>
@@ -562,4 +562,4 @@ You're a good student, I don't want to change that.</Text>
             <Trigger>Of course! I can get that done tomorrow.</Trigger>
         </Triggers>
     </Prompt>
-</Game>
+</Conversation>

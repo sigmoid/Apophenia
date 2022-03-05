@@ -16,7 +16,7 @@
         <a>1.0</a>
     </Color>
     -->   
-<Game>
+<Conversation>
     <Prompt TransitionText="Junior year, start of spring semester">
         <Text>I heard on the news that scientists are discovering black holes inside our galaxy.</Text>
         <Response>
@@ -332,4 +332,4 @@ You need to sleep.</Text>
             <Trigger>Everything is fine. I have class soon, talk to you later.</Trigger>
         </Triggers>
     </Prompt>
-</Game>
+</Conversation>

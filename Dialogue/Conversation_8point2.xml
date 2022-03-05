@@ -16,7 +16,7 @@
         <a>1.0</a>
     </Color>
     -->   
-<Game>
+<Conversation Name="Conversation_8point2">
     <Prompt TransitionText="Later that day">
         <Text>Nice to see you in class for a change.</Text>
         <Response WordBank="../Dialogue/WordBank9.xml" WordFrequency="4">
@@ -401,4 +401,4 @@
             <a>1.0</a>
         </Color>
     </Prompt>
-</Game>
+</Conversation>

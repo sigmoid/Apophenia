@@ -16,7 +16,7 @@
         <a>1.0</a>
     </Color>
     -->   
-<Game>
+<Conversation Name="Conversation_7point2">
     <Prompt TransitionText="Hours Later">
         <Text>You need a ride to the pharmacy? At 1 am?</Text>
         <Response WordBank="../Dialogue/WordBank8.xml" WordFrequency="4">
@@ -184,4 +184,4 @@
     </Prompt>
 
 
-</Game>
+</Conversation>

@@ -16,7 +16,7 @@
         <a>1.0</a>
     </Color>
     -->   
-<Game>
+<Conversation Name="Conversation_21">
     <Prompt TransitionText="And all of a sudden, the pieces begin to assemble">
         <Text>Hey...</Text>
         <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="500" WordFrequency="4" SolidWords="True">
@@ -218,4 +218,4 @@
     </Color>
     </Prompt>
 
-</Game>
+</Conversation>

@@ -50,7 +50,7 @@
         <a>1.0</a>
     </Color>
     -->   
-<Game>
+<Conversation Name="Conversation_16">
     <Prompt TransitionText="" Sequence="1" IsZoomIn="True">
         <Text>That's it. That's like, six strikes, what the hell is wrong with you? Get him into the isolation room.</Text>
         <Response Tremor="True" ShowBlur="True" AllowNonsense="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True" >
@@ -144,4 +144,4 @@
 
 
     
-</Game>
+</Conversation>

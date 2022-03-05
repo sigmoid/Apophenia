@@ -50,7 +50,7 @@
         <a>1.0</a>
     </Color>
     -->   
-<Game>
+<Conversation Name="Conversation_19">
     <Prompt Sequence="1" TransitionText="" InsideHead="True">
         <Text>Are you awake in there?</Text>
         <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
@@ -147,7 +147,7 @@
         </Triggers>
     </Prompt>    
      
-<!--https://freesound.org/people/ShawnyBoy/sounds/166191/-->
+    <!--https://freesound.org/people/ShawnyBoy/sounds/166191/-->
 
     <Prompt Sequence="4" TransitionText="" Sound="../Audio/WindowPounding.wav" SoundDelay="0.1">
         <Text>3... 2... 1</Text>
@@ -252,4 +252,4 @@
     </Prompt>    
     
     
-</Game>
+</Conversation>

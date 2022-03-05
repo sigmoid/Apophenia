@@ -16,7 +16,7 @@
         <a>1.0</a>
     </Color>
     -->   
-<Game>
+<Conversation Name="Conversation_10">
     <Prompt Sequence="1" TransitionText="???">
         <Text>CLEAR!</Text>
         <Response Tremor="True" ShowBlur="True" AllowNonsense="True" WordFrequency="6" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
@@ -147,4 +147,4 @@
     </Prompt>
 
     
-</Game>
+</Conversation>

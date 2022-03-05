@@ -16,7 +16,7 @@
         <a>1.0</a>
     </Color>
     -->   
-<Game>
+<Conversation Name="Conversation_3">
     <Prompt TransitionText="Next Night">
         <Text>Hey what's up? It's almost midnight here.</Text>
         <Response WordBank="../Dialogue/WordBank3.xml" WordFrequency="3">
@@ -660,4 +660,4 @@ We should also schedule a doctor's appointment?</Text>
         </Triggers>
 </Prompt>
 
-</Game>
+</Conversation>
