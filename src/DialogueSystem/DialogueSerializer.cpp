@@ -227,7 +227,12 @@ SentenceFragment DialogueSerializer::DeserializeFragment(tinyxml2::XMLElement *r
 {
     SentenceFragment res;
 
-    res.Text = root->FirstChildElement("Text")->GetText();
+    const char *text = root->FirstChildElement("Text")->GetText();
+    if (text == nullptr)
+        res.Text = "";
+    else
+        res.Text = text;
+    
     res.Attraction = root->FirstChildElement("Attraction")->FloatText();
     res.IsIntrusive = root->BoolAttribute("IsIntrusive", false);
     return res;

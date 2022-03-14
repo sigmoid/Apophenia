@@ -182,11 +182,11 @@ void PromptState::UpdateColor(float progress)
         color = glm::vec4(0.2,0.2,0.2,1.0f);
     }
 
-    if(progress > 0)
+    if(progress > 0 )
     {
-        color.r = Opal::OpalMath::Lerp(mPreviousColor.r, color.r, progress);
-        color.g = Opal::OpalMath::Lerp(mPreviousColor.g, color.g, progress);
-        color.b = Opal::OpalMath::Lerp(mPreviousColor.b, color.b, progress);
+        color.r = Opal::OpalMath::Lerp(mPreviousColor.r, color.r, (progress > 1.0f) ? 1.0f : progress);
+        color.g = Opal::OpalMath::Lerp(mPreviousColor.g, color.g, (progress > 1.0f) ? 1.0f : progress);
+        color.b = Opal::OpalMath::Lerp(mPreviousColor.b, color.b, (progress > 1.0f) ? 1.0f : progress);
     }
 
     mTextPass->SetClearColor(color.r, color.g, color.b, color.a);

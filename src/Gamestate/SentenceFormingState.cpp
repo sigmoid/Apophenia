@@ -410,12 +410,12 @@ void SentenceFormingState::Begin()
     {
         mRenderTexture = mGame->Renderer->CreateRenderTexture(1920, 1080, 4);
         mTextPass = mGame->Renderer->CreateRenderPass(mRenderTexture, true);
-        mTextPass->SetClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+        mTextPass->SetClearColor(0.3f, 0.3f, 0.3f, 1.0f);
 
         CreatePostProcess();
 
         mBGPass = mGame->Renderer->CreateRenderPass(true);
-        mBGPass->SetClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+        mBGPass->SetClearColor(0.3f, 0.3f, 0.3f, 1.0f);
 
         mFont = std::make_shared<Opal::Font>(mGame->Renderer, "../fonts/JosefinSans-Light.ttf", 90);
         mResponseFont = std::make_shared<Opal::Font>(mGame->Renderer, "../fonts/JosefinSans-Light.ttf", 64);
@@ -697,6 +697,8 @@ void SentenceFormingState::CreatePlayer()
 
 void SentenceFormingState::CreateSentenceFragment(glm::vec3 pos, std::string text, float attraction, float speed, bool intrusive, bool solid, bool core)
 {
+    if (text == "")
+        return;
     //Kludge, haven't actually implemented text measuring yet
     float width = mTextRenderer->MeasureText(text);
 

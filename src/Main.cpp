@@ -48,10 +48,16 @@ int main(int argc, char **argv)
     auto bgMusic = Opal::AudioEngine::LoadClip("../Audio/ambiment-by-kevin-macleod-from-filmmusic-io.mp3");
     Opal::AudioEngine::PlaySound(bgMusic, 0.8f, 1.0f, 0.0f, true, false);
 
+    bool lastF11 = false;
+
     managerState->StartGame(); 
 
     while(!game->ShouldEnd())
     {
+        if (Opal::InputHandler::GetKey(GLFW_KEY_F11) && !lastF11)
+        {
+            game->ToggleFullscreen();
+        }
         game->Tick();
     }
 }
