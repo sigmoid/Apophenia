@@ -457,5 +457,5 @@ void Pill::GenerateEllipse()
 
 glm::vec4 Pill::GetRandomCapsuleColor()
 {
-    return Opal::OpalMath::HSVtoRGB(rand()%255, 80, 70);
+    return Opal::OpalMath::HSVtoRGB(rand() % 255, 50, 80);
 }

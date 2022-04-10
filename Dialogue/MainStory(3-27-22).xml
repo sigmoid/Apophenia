@@ -59,7 +59,6 @@ Dr. Apodochi - or - How I learned to control the worrying and love my mom.</Titl
 <Conversation>Conversation_22</Conversation>
 <Conversation>Conversation_23</Conversation>
 <Conversation>Conversation_24</Conversation>
-<Conversation>Conversation_25</Conversation>
 </Progression>
 <!--Begin Conversations-->
 <Conversation Name="Conversation_Prologue">
@@ -1303,23 +1302,22 @@ We should also schedule a doctor's appointment?</Text>
 <Prompt TransitionText="" Sequence="2" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>Okay sure, what is it?</Text>
 <Triggers><Trigger>Okay but first, I have a question for you.</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.77734375</r><g>0.078125</g><b>0.1015625</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="5" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>1000</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Are you legally</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
+</Triggers><ObscuredWords /><Color><r>0.77734375</r><g>0.078125</g><b>0.1015625</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="5" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>1000</Speed><Fragments /><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>1000</Speed></Response>
+</Prompt>
+
+<Prompt TransitionText="" Sequence="3" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Text>Well, basically yes. The only thing that would change that is if I believed you were going to hurt yourself or someone else.</Text>
+<Triggers><Trigger>Are you legally obligated to keep everything I say private?</Trigger>
+</Triggers><ObscuredWords /><Color><r>0.77734375</r><g>0.078125</g><b>0.1015625</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="5" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>1000</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Are you legally</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="False"><Text>Okay good</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>obligated to keep</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>everything I say</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>private?</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>1000</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="3" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>Well, basically yes. The only thing that would change that is if I believed you were going to hurt yourself or someone else.</Text>
-<Triggers><Trigger>Are you legally obligated to keep everything I say private?</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.77734375</r><g>0.078125</g><b>0.1015625</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="5" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>1000</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Okay good.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>1000</Speed></Response>
-</Prompt>
-
 <Prompt TransitionText="" Sequence="4" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>So, back to the anxiety. What's going on with that?</Text>
-<Triggers><Trigger>Okay good.</Trigger>
+<Triggers><Trigger>Okay good</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.77734375</r><g>0.078125</g><b>0.1015625</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="5" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>1000</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Well, actually</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>another question.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>This one is</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -1505,7 +1503,7 @@ We should also schedule a doctor's appointment?</Text>
 </Prompt>
 
 </Conversation><Conversation Name="Conversation_11">
-<Prompt TransitionText="???" Sequence="1" InsideHead="True" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="???" Sequence="1" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>Oh... You're awake. Welcome home.</Text>
 <Triggers><Trigger>START</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.09375</r><g>0.09375</g><b>0.09375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank11.xml" Drunk="False" Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" SolidWords="True" AllowNonsense="False"><Speed>1000</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Who are</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -1514,7 +1512,7 @@ We should also schedule a doctor's appointment?</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>1000</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="???" Sequence="2" InsideHead="True" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="???" Sequence="2" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>I'm hiding in the vents. You don't remember me? we've been friends for a long time... But forget all that - You have much more important things to think about now.</Text>
 <Triggers><Trigger>Who are you? I can't see you.</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.09375</r><g>0.09375</g><b>0.09375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank11.xml" Drunk="False" Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" SolidWords="True" AllowNonsense="False"><Speed>1000</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>What is</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -1522,7 +1520,7 @@ We should also schedule a doctor's appointment?</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>1000</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="3" InsideHead="True" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="3" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>It's complicated... Basically you got sucked in, and there are many dangers associated with that. Everyone in here is out to get you.</Text>
 <Triggers><Trigger>What is this place?</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.09375</r><g>0.09375</g><b>0.09375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank11.xml" Drunk="False" Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" SolidWords="True" AllowNonsense="False"><Speed>1000</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>What will</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -1531,7 +1529,7 @@ We should also schedule a doctor's appointment?</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>1000</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="4" InsideHead="True" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="4" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>Hard to say. Maybe they want to steal your identity, or make you some kind of slave. Look, I can tell you want to get out of here. So I can try to help you figure out how.</Text>
 <Triggers><Trigger>What will they do to me?</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.09375</r><g>0.09375</g><b>0.09375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank11.xml" Drunk="False" Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" SolidWords="True" AllowNonsense="False"><Speed>1000</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Why would</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -1540,7 +1538,7 @@ We should also schedule a doctor's appointment?</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>1000</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="5" InsideHead="True" IsZoomIn="False" IsEnd="True" IsKill="False">
+<Prompt TransitionText="" Sequence="5" InsideHead="False" IsZoomIn="False" IsEnd="True" IsKill="False">
 <Text>No time to chat, it looks like they're coming. Act cool.</Text>
 <Triggers><Trigger>Why would you want to help me?</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.09375</r><g>0.09375</g><b>0.09375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank11.xml" Drunk="False" Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" SolidWords="True" AllowNonsense="False"><Speed>1000</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>I want</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -1685,6 +1683,16 @@ We should also schedule a doctor's appointment?</Text>
 </Prompt>
 
 <Prompt TransitionText="" Sequence="4" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Text>Wait. Why is it ringing already... Did you just dial 911?</Text>
+<Triggers><Trigger>NONE</Trigger>
+</Triggers><ObscuredWords /><Color><r>0.39453125</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Color><r>0.9921875</r><g>0</g><b>0.03125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank11.xml" Drunk="False" Tremor="True" ShowBlur="True" RequireCoreOnly="False" WordFrequency="10" ChannelSize="150" SolidWords="True" AllowNonsense="True"><Speed>1000</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>No, I</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
+<FragmentGroup><Fragment IsIntrusive="False"><Text>mean-</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
+<FragmentGroup><Fragment IsIntrusive="False"><Text>I didn't</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
+<FragmentGroup><Fragment IsIntrusive="False"><Text>mean to.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
+</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>1000</Speed></Response>
+</Prompt>
+
+<Prompt TransitionText="" Sequence="5" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>You can't dial 911 from a hospital. That can get us in serious trouble.</Text>
 <Triggers><Trigger>NONE</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.39453125</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Color><r>0.9921875</r><g>0</g><b>0.03125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank11.xml" Drunk="False" Tremor="True" ShowBlur="True" RequireCoreOnly="False" WordFrequency="10" ChannelSize="150" SolidWords="True" AllowNonsense="True"><Speed>1000</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Oh, I'm</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -1694,7 +1702,7 @@ We should also schedule a doctor's appointment?</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>1000</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="5" InsideHead="False" IsZoomIn="False" IsEnd="True" IsKill="False">
+<Prompt TransitionText="" Sequence="6" InsideHead="False" IsZoomIn="False" IsEnd="True" IsKill="False">
 <Text>That's strike one. I can't let you use the phone anymore. You need to go back to your room and get some rest.</Text>
 <Triggers><Trigger>NONE</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.39453125</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Color><r>0.9921875</r><g>0</g><b>0.03125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank11.xml" Drunk="False" Tremor="True" ShowBlur="True" RequireCoreOnly="False" WordFrequency="10" ChannelSize="150" SolidWords="True" AllowNonsense="True"><Speed>1000</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Oh, I'm</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -2182,7 +2190,7 @@ We should also schedule a doctor's appointment?</Text>
 </Conversation><Conversation Name="Conversation_23">
 <Prompt TransitionText="" Sequence="1" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>How are you feeling today?</Text>
-<Triggers /><ObscuredWords /><Color><r>0.39453125</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Frustrated, I</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
+<Triggers /><ObscuredWords /><Color><r>0.99609375</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Frustrated, I</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>just want</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>to leave.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
@@ -2191,7 +2199,7 @@ We should also schedule a doctor's appointment?</Text>
 <Prompt TransitionText="" Sequence="2" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>You'll get out of here, I promise. We just have some work to do first.</Text>
 <Triggers><Trigger>Frustrated, I just want to leave.</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.39453125</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>I think if</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
+</Triggers><ObscuredWords /><Color><r>0.99609375</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>I think if</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>you let me</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>out you'll</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>see that</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -2202,14 +2210,14 @@ We should also schedule a doctor's appointment?</Text>
 <Prompt TransitionText="" Sequence="3" InsideHead="False" IsZoomIn="False" IsEnd="True" IsKill="False">
 <Text>We can't really take that risk, but your mom has asked to take you out for an afternoon. We can grant you that.</Text>
 <Triggers><Trigger>I think if you let me out you'll see that I'm ready.</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.39453125</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Great!</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
+</Triggers><ObscuredWords /><Color><r>0.99609375</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Great!</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
 </Prompt>
 
 </Conversation><Conversation Name="Conversation_24">
 <Prompt TransitionText="One Week Later" Sequence="1" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>How does it feel to get out of the hospital for a bit?</Text>
-<Triggers /><ObscuredWords /><Color><r>0.8046875</r><g>0.4140625</g><b>0.09375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>It's good.</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="True"><Text>I feel</Text><Attraction>500</Attraction></Fragment></FragmentGroup>
+<Triggers /><ObscuredWords /><Color><r>0.99609375</r><g>0.8046875</g><b>0.4140625</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>It's good.</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="True"><Text>I feel</Text><Attraction>500</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>I really feel</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="True"><Text>like everyone</Text><Attraction>500</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>more free.</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="True"><Text>is watching me.</Text><Attraction>500</Attraction></Fragment></FragmentGroup>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
@@ -2218,7 +2226,7 @@ We should also schedule a doctor's appointment?</Text>
 <Prompt TransitionText="" Sequence="2" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>Good. Do you feel ready to go home? Should be any time now.</Text>
 <Triggers><Trigger>It's good. I really feel more free.</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.8046875</r><g>0.4140625</g><b>0.09375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Yeah, I'm</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="True"><Text>I can't</Text><Attraction>500</Attraction></Fragment></FragmentGroup>
+</Triggers><ObscuredWords /><Color><r>0.99609375</r><g>0.8046875</g><b>0.4140625</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Yeah, I'm</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="True"><Text>I can't</Text><Attraction>500</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>really tired</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="True"><Text>shake this</Text><Attraction>500</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>of this place.</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="True"><Text>paranoia.</Text><Attraction>500</Attraction></Fragment></FragmentGroup>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
@@ -2227,7 +2235,7 @@ We should also schedule a doctor's appointment?</Text>
 <Prompt TransitionText="" Sequence="3" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>I can imagine. How are you feeling right now? </Text>
 <Triggers><Trigger>Yeah, I'm really tired of this place.</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.8046875</r><g>0.4140625</g><b>0.09375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Well,</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
+</Triggers><ObscuredWords /><Color><r>0.99609375</r><g>0.8046875</g><b>0.4140625</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Well,</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>honestly...</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
 </Prompt>
@@ -2235,105 +2243,12 @@ We should also schedule a doctor's appointment?</Text>
 <Prompt TransitionText="" Sequence="4" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>Look it's okay, I just want you to get better. Just tell me how you're feeling.</Text>
 <Triggers><Trigger>Well, honestly...</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.8046875</r><g>0.4140625</g><b>0.09375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>It's like,</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
+</Triggers><ObscuredWords /><Color><r>0.99609375</r><g>0.8046875</g><b>0.4140625</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>It's like,</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>I know I'm</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>having paranoid</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>thoughts, I just</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>have to </Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>ignore them.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="5" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>Can't you just stop thinking about them?</Text>
-<Triggers><Trigger>It's like, I know I'm having paranoid thoughts, I just have to ignore them.</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.8046875</r><g>0.4140625</g><b>0.09375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>No, they</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>just come</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>from nowhere.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="6" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>Hm. That sounds really frustrating. You've been acting much better lately, so I can tell you're learning to deal with it.</Text>
-<Triggers><Trigger>No, they just come from nowhere.</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.8046875</r><g>0.4140625</g><b>0.09375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>You think</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>they'll let</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>me out</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>soon?</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="7" InsideHead="False" IsZoomIn="False" IsEnd="True" IsKill="False">
-<Text>I think we're close.</Text>
-<Triggers><Trigger>You think they'll let me out soon?</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.8046875</r><g>0.4140625</g><b>0.09375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>cool</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-</Conversation><Conversation Name="Conversation_25">
-<Prompt TransitionText="One Week Later" Sequence="1" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>We've seen a lot of improvement over the last couple of weeks, and we think we're ready to discharge you. We also have a diagnosis.</Text>
-<Triggers><Trigger>START</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.39453125</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Response Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="0" ChannelSize="0" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Great, so</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>what do</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>I have?</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="2" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>Your diagnosis is actually Bipolar I versus Schizoaffective disorder. We think you definitely have one of the two, but it's hard to tell which it is.</Text>
-<Triggers><Trigger>Great, so what do I have?</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.39453125</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Okay.. So</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>what does</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>that mean?</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="3" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>Treatment is very similar for both diagnoses, but it means you will need to be taking medication for the rest of your life.</Text>
-<Triggers><Trigger>Okay.. So what does that mean?</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.39453125</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Wow, that</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>doesn't sound</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>too bad!</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="4" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>Well, there are some things you should be aware of in the years ahead.</Text>
-<Triggers><Trigger>Wow, that doesn't sound too bad!</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.39453125</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Really? What</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>are they?</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="5" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>Well, first of all you will need to slowly wean off some of the medications we've been given you over the course of the next few months as they impair your motor skills and if you go off them all at once you will suffer from withdrawal.</Text>
-<Text>Once you do that, it may take a long time to find the right medication for you. It can take years.</Text>
-<Text>No matter what medication you're on, there will be likely be fairly serious side effects such as weight gain, drowsiness, nausea, constipation or diarrhea, dry mouth, tremors.</Text>
-<Triggers><Trigger>Really? What are they?</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.39453125</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Well that</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>sounds horrible.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="6" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>Well, the good news is. As long as you take care of your self and stick with the treatment you will be able to live a normal life.</Text>
-<Triggers><Trigger>Well that sounds horrible.</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.39453125</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Okay...</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>Still scary.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="8" InsideHead="False" IsZoomIn="False" IsEnd="True" IsKill="False">
-<Text>Well, with all that out of the way. You're ready to be discharged. Come back in a month for a follow up appointment.</Text>
-<Triggers><Trigger>Okay...</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.39453125</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments /><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="7" InsideHead="False" IsZoomIn="False" IsEnd="True" IsKill="False">
-<Text>Just stick to the treatment and you should be fine. I'll see you next month for your follow up.</Text>
-<Triggers><Trigger>Okay... Still scary.</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.39453125</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>asdf</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
 </Prompt>
 

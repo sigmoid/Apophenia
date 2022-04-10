@@ -141,7 +141,7 @@ class SentenceFormingState : public Opal::Gamestate
     glm::vec2 mBHPos = glm::vec2(384000 + 80000, 1080/2);
     int mNumTris = 500;
     float mBHNoiseFreq = 0.002, mBHNoiseIntensity = 10000, mBHNoiseTurbulence = 100.0f;
-    glm::vec4 mBHColor = glm::vec4(0,0,0,1);
+    glm::vec4 mBHColor = glm::vec4(0.05f,0.05f,0.05f,1);
     float mSparkSpeedUp = 1.0f;
     float mMaxSparkSpeedUp = 2.0f;
 

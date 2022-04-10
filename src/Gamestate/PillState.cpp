@@ -53,7 +53,7 @@ void PillState::Begin()
     if(mMeshRenderer == nullptr)
     {
         mRenderPass = mGame->Renderer->CreateRenderPass(true);
-        mRenderPass->SetClearColor(0.2f, 0.2f, 0.2f, 1.0f);
+        mRenderPass->SetClearColor(0.5f, 0.5f, 0.5f, 1.0f);
         mMeshRenderer = mGame->Renderer->CreateMeshRenderer(mRenderPass);
     }
 
