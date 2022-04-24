@@ -13,7 +13,7 @@ Link: https://incompetech.filmmusic.io/song/
 3359-ambiment
 License: https://filmmusic.io/standard-license
 </TitleScreen>
-<Conversation>Conversation_Prologue</Conversation>
+<!--<Conversation>Conversation_Prologue</Conversation>
 <TitleScreen Duration="5" R="0.33984375" G="0.33984375" B="0.9921875">Tightrope</TitleScreen>
 <TitleScreen Duration="10" R="0.296875" G="0.49609375" B="0.8203125">Act I
 My life as a tightrope walker,
@@ -28,9 +28,9 @@ all the people on the ground.</TitleScreen>
 <Conversation>Conversation_5</Conversation>
 <Conversation>Conversation_6</Conversation>
 <Conversation>Conversation_7</Conversation>
-<Conversation>Conversation_7point2</Conversation>
+<Conversation>Conversation_7point2</Conversation>-->
 <PillSequence NumPills="2" />
-<Conversation>Conversation_8</Conversation>
+<!--<Conversation>Conversation_8</Conversation>
 <Conversation>Conversation_8point2</Conversation>
 <Conversation>Conversation_9</Conversation>
 <Conversation>Conversation_10</Conversation>
@@ -40,7 +40,7 @@ And I dropped down, and down -
 And hit a World, at every plunge,
 And Finished knowing - then -"</TitleScreen>
 <Conversation>Conversation_11</Conversation>
-<Conversation>Conversation_12</Conversation>
+<Conversation>Conversation_12</Conversation>-->
 <PillSequence NumPills="100" />
 <Conversation>Conversation_13</Conversation>
 <Conversation>Conversation_14</Conversation>
@@ -60,8 +60,6 @@ Dr. Apodochi - or - How I learned to control the worrying and love my mom.</Titl
 <Conversation>Conversation_23</Conversation>
 <Conversation>Conversation_24</Conversation>
 <Conversation>Conversation_25</Conversation>
-<Conversation>Conversation_26</Conversation>
-<Conversation>Conversation_27</Conversation>
 </Progression>
 <!--Begin Conversations-->
 <Conversation Name="Conversation_Prologue">
@@ -2241,7 +2239,7 @@ We should also schedule a doctor's appointment?</Text>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>I know I'm</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>having paranoid</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>thoughts, I just</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>have to</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
+<FragmentGroup><Fragment IsIntrusive="False"><Text>have to </Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>ignore them.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
 </Prompt>
@@ -2309,7 +2307,7 @@ We should also schedule a doctor's appointment?</Text>
 </Prompt>
 
 <Prompt TransitionText="" Sequence="5" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>Well, first of all you will need to slowly wean off some of the medications we've been giving you over the course of the next few months as they impair your motor skills and if you go off them all at once you will suffer from withdrawal.</Text>
+<Text>Well, first of all you will need to slowly wean off some of the medications we've been given you over the course of the next few months as they impair your motor skills and if you go off them all at once you will suffer from withdrawal.</Text>
 <Text>Once you do that, it may take a long time to find the right medication for you. It can take years.</Text>
 <Text>No matter what medication you're on, there will be likely be fairly serious side effects such as weight gain, drowsiness, nausea, constipation or diarrhea, dry mouth, tremors.</Text>
 <Triggers><Trigger>Really? What are they?</Trigger>
@@ -2336,104 +2334,6 @@ We should also schedule a doctor's appointment?</Text>
 <Text>Just stick to the treatment and you should be fine. I'll see you next month for your follow up.</Text>
 <Triggers><Trigger>Okay... Still scary.</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.39453125</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank10.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="4" ChannelSize="500" SolidWords="True" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>asdf</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-</Conversation><Conversation Name="Conversation_26">
-<Prompt TransitionText="2 Years Later" Sequence="1" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>Congratulations on graduating little bro!</Text>
-<Triggers /><ObscuredWords /><Color><r>0.828125</r><g>0.55859375</g><b>0.55859375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank3.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="600" SolidWords="False" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Oh, thanks!</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="2" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>We should do something to celebrate while the whole family is here.</Text>
-<Triggers><Trigger>Oh, thanks!</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.828125</r><g>0.55859375</g><b>0.55859375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank3.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="600" SolidWords="False" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Nah, let's</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>just enjoy</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>the vacation.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="3" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>No way, you've overcome so much to get here. You deserve to celebrate.</Text>
-<Text>Think about it.</Text>
-<Text>A couple of years ago you were in a psychiatric hospital, and now you're graduating from college and starting a career.</Text>
-<Triggers><Trigger>Nah, let's just enjoy the vacation.</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.828125</r><g>0.55859375</g><b>0.55859375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank3.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="600" SolidWords="False" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Yeah, I guess</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>you're right.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>It just doesn't</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>seem that important.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="4" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>What are you talking about? Of course it's important! </Text>
-<Triggers><Trigger>Yeah, I guess you're right. It just doesn't seem that important.</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.828125</r><g>0.55859375</g><b>0.55859375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank3.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="600" SolidWords="False" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>I guess you're</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>right...</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>It just felt</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>so slow.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="5" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>What do you mean?</Text>
-<Triggers><Trigger>I guess you're right... It just felt so slow.</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.828125</r><g>0.55859375</g><b>0.55859375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank3.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="600" SolidWords="False" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>I mean the</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>last two years</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>literally went by</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>so slowly.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="6" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>They did?</Text>
-<Triggers><Trigger>I mean the last two years literally went by so slowly.</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.828125</r><g>0.55859375</g><b>0.55859375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank3.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="600" SolidWords="False" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Yeah, and I</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>didn't realize</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>how much</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>progress I made</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>until now.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="7" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>Well, I'm glad you see it now. So what do you say. Should we throw a party?</Text>
-<Triggers><Trigger>Yeah, and I didn't realize how much progress I made until now.</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.828125</r><g>0.55859375</g><b>0.55859375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank3.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="600" SolidWords="False" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Yeah, let's</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-<FragmentGroup><Fragment IsIntrusive="False"><Text>do it.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
-</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-<Prompt TransitionText="" Sequence="8" InsideHead="False" IsZoomIn="False" IsEnd="True" IsKill="False">
-<Text>Awesome!</Text>
-<Triggers><Trigger>Yeah, let's do it.</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.828125</r><g>0.55859375</g><b>0.55859375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank3.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="600" SolidWords="False" AllowNonsense="False"><Speed>700</Speed><Fragments /><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
-</Prompt>
-
-</Conversation><Conversation Name="Conversation_27">
-<Prompt TransitionText="" Sequence="1" InsideHead="False" IsZoomIn="False" IsEnd="True" IsKill="False">
-<Text>Hey, narrator here again.</Text>
-<Text>I wanted to take a minute to just talk to you here at the end.</Text>
-<Text>Making this game really saved me.</Text>
-<Text>For a long time after the hospital, I experienced really painful flashbacks.</Text>
-<Text>I would go from living my life to feeling like I was right back in it.</Text>
-<Text>But one thing that helped was reading other peoples stories and realizing that I wasn't alone.</Text>
-<Text>So I started making this, and in doing so, started to unpack everything that happened.</Text>
-<Text>I felt a lot of shame for some of the things that happened in the hospital, not all of which made it into the game.</Text>
-<Text>But as I wrote it, I noticed those feelings melting away.</Text>
-<Text>I realized that I shouldn't feel bad for things a completely different version of myself did, and I forgave myself.</Text>
-<Text>Also - I don't know how to fix the treatment of people with mental illness, but I will say that I  don't feel I was treated with compassion most of the time.</Text>
-<Text>I feel like I was expected to advocate for myself while having trouble navigating my own mind.</Text>
-<Text>Having said all that, I am glad to report that I am doing great now - and have been for a while.</Text>
-<Text>I found the right medications and support, have a good job, and successfully made a game from scratch.</Text>
-<Text>I'm happy - and I know that I am.</Text>
-<Text>Thanks for playing my game. I hope you got something out of it.</Text>
-<Text>If you want to support my work, follow me on twitter @absurd_walls to get updates on my next projects.</Text>
-<Text>Thank you.</Text>
-<Triggers><Trigger>START</Trigger>
-</Triggers><ObscuredWords /><Color><r>0.4921875</r><g>0.45703125</g><b>0.16796875</b><a>1.0</a></Color><Response Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="0" ChannelSize="0" SolidWords="False" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>test</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
 </Prompt>
 
