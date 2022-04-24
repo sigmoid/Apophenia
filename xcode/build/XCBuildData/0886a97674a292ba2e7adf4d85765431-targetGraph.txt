@@ -1,0 +1,11 @@
+Target dependency graph (4 targets)
+ZERO_CHECK in Tightrope, no dependencies
+Opal in Tightrope, depends on:
+ZERO_CHECK in Tightrope (explicit)
+Tightrope in Tightrope, depends on:
+ZERO_CHECK in Tightrope (explicit)
+Opal in Tightrope (explicit)
+ALL_BUILD in Tightrope, depends on:
+ZERO_CHECK in Tightrope (explicit)
+Tightrope in Tightrope (explicit)
+Opal in Tightrope (explicit)

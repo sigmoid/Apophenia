@@ -7,6 +7,7 @@
 #include "Gamestate/SentenceFormingState.h"
 #include "Gamestate/PillState.h"
 #include "Gamestate/NarrativeState.h"
+#include "Gamestate/MainMenuState.h"
 #include "Gamestate/EndState.h"
 #include "DialogueSystem/DialogueManager.h"
 #include "Gamestate/StrikesState.h"
@@ -44,11 +45,13 @@ int main(int argc, char **argv)
     game->PopState();
     game->PushState<StrikesState>();
     game->PopState();
+    game->PushState<MainMenuState>();
     
     auto bgMusic = Opal::AudioEngine::LoadClip("../Audio/ambiment-by-kevin-macleod-from-filmmusic-io.mp3");
     Opal::AudioEngine::PlaySound(bgMusic, 0.8f, 1.0f, 0.0f, true, false);
 
     bool lastF11 = false;
+    bool lastEsc = false;
 
     managerState->StartGame(); 
 
@@ -57,6 +60,10 @@ int main(int argc, char **argv)
         if (Opal::InputHandler::GetKey(GLFW_KEY_F11) && !lastF11)
         {
             game->ToggleFullscreen();
+        }
+        if (Opal::InputHandler::GetKey(GLFW_KEY_ESCAPE) && std::dynamic_pointer_cast<MainMenuState>(game->PeekState()) == nullptr)
+        {
+            game->PushState<MainMenuState>();
         }
         game->Tick();
     }

@@ -166,6 +166,8 @@ void PromptState::Resume()
     
     mCurrentCardIdx = 0;
 
+    
+
     UpdateColor(1.0f);
 }
 

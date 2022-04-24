@@ -1,0 +1,4 @@
+/Users/adam/Dev/Apophenia/xcode/CMakeFiles/Tightrope.dir
+/Users/adam/Dev/Apophenia/xcode/CMakeFiles/ALL_BUILD.dir
+/Users/adam/Dev/Apophenia/xcode/CMakeFiles/ZERO_CHECK.dir
+/Users/adam/Dev/Apophenia/xcode/Opal/CMakeFiles/Opal.dir

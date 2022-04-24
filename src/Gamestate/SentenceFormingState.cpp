@@ -642,6 +642,7 @@ void SentenceFormingState::End()
 
 void SentenceFormingState::Resume()
 {
+    Opal::Scene::SetActiveScene(mScene);
 }
 
 void SentenceFormingState::CreateEndWall(float x)

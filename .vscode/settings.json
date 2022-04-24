@@ -73,7 +73,10 @@
         "vector": "cpp",
         "__bits": "cpp",
         "numeric": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "variant": "cpp"
     },
     "cmake.configureOnOpen": false
 }
