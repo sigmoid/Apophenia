@@ -26,6 +26,7 @@
 #include "../../Opal/vendor/imgui/imgui.h"
 #include "../../Opal/vendor/imgui/imgui_impl_vulkan.h"
 #include "../../Opal/vendor/imgui/imgui_impl_glfw.h"
+#include "../../Opal/Graphics/Vulkan/VulkanRenderer.h"
 
 //std::shared_ptr<Opal::RenderPass> MainMenuState::mRenderPass = nullptr;
 
@@ -80,16 +81,17 @@ void MainMenuState::Render()
     ImGui::NewFrame();
     const ImGuiViewport* main_viewport = ImGui::GetMainViewport();
     ImGui::SetNextWindowPos(ImVec2(mGame->GetWidth()/10, mGame->GetHeight() / 10));
-    ImGui::SetNextWindowSize(ImVec2(mGame->GetWidth()/2, mGame->GetHeight()));
+    ImGui::SetNextWindowSize(ImVec2(mGame->GetWidth(), mGame->GetHeight()));
     ImGui::Begin("Main Menu", nullptr , ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground);
     
-
+    ImGui::PushFont(Opal::VulkanRenderer::TitleFont);
     ImGui::Text("Tightrope");
 
     if(mCurrentState == MenuState::Default)
     {
         if(ImGui::Button("Play"))
         {
+            ImGui::PopFont();
             ImGui::End();
             ImGui::EndFrame();
             mGame->PopState();
@@ -98,7 +100,7 @@ void MainMenuState::Render()
 
         if(ImGui::Button("Credits"))
         {
-            // Push credit state
+            mCurrentState = MenuState::Credits;
         }
 
         if(ImGui::Button("Options"))
@@ -122,7 +124,23 @@ void MainMenuState::Render()
             mCurrentState = MenuState::Default;
         }
     }
+    else if (mCurrentState == MenuState::Credits)
+    {
+        ImGui::PushFont(Opal::VulkanRenderer::NormalFont);
+        ImGui::Text("Game Made By: Adam Waggoner (@absurd_walls)");
+        ImGui::Text("Tools Used: MoltenVK, SoLoud Audio, GLFW, ImGui, GLM, TinyXML2");
+        ImGui::Text("Special Thanks: Mom, Dad, Emily, Michael, Light, Patrick, Skyler,");
+        ImGui::Text("Jaden, Austin, and Logan for their feedback and support");
+        ImGui::Text("throughout the development of this game.");
+        
+        ImGui::PopFont();
 
+        if (ImGui::Button("Back"))
+        {
+            mCurrentState = MenuState::Default;
+        }
+    }
+    ImGui::PopFont();
     ImGui::End();
 
     ImGui::Render();

@@ -25,7 +25,7 @@
 #include <string>
 #include <map>
 
-enum MenuState {Default, Options};
+enum MenuState {Default, Options, Credits};
 
 class MainMenuState : public Opal::Gamestate
 {
