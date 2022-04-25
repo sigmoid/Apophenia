@@ -59,4 +59,6 @@ class MainMenuState : public Opal::Gamestate
     float mSparkFreq = 0.95f;
     
     std::shared_ptr<Opal::RenderPass> mRenderPass;
+
+    bool firstUI = false;
 };

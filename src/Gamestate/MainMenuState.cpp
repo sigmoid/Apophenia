@@ -60,18 +60,17 @@ void MainMenuState::Render()
     ImGui_ImplVulkan_NewFrame();
     ImGui_ImplGlfw_NewFrame();
 
-
     ImGuiStyle * style = &ImGui::GetStyle();
 
-    style->WindowPadding = ImVec2(15, 15);
+    style->WindowPadding = ImVec2(15 * mGame->GetScale().x, 15 * mGame->GetScale().x) ;
 	style->WindowRounding = 5.0f;
 	style->FramePadding = ImVec2(5, 5);
 	style->FrameRounding = 4.0f;
-	style->ItemSpacing = ImVec2(12, mGame->GetHeight()/32);
-	style->ItemInnerSpacing = ImVec2(8, 6);
-	style->IndentSpacing = 25.0f;
-	style->ScrollbarSize = 15.0f;
-	style->ScrollbarRounding = 9.0f;
+	style->ItemSpacing = ImVec2(12 * mGame->GetScale().x, mGame->GetHeight()/32 * mGame->GetScale().x);
+	style->ItemInnerSpacing = ImVec2(8 * mGame->GetScale().x, 6 * mGame->GetScale().x);
+	style->IndentSpacing = 25.0f * mGame->GetScale().x;
+	style->ScrollbarSize = 15.0f * mGame->GetScale().x;
+	style->ScrollbarRounding = 9.0f * mGame->GetScale().x;
 	style->GrabMinSize = 5.0f;
 	style->GrabRounding = 3.0f;
     style->Colors[ImGuiCol_Button]                = ImVec4(0.4375f, 0.4258f, 0.3828f, 0.29f);
@@ -80,7 +79,7 @@ void MainMenuState::Render()
 
     ImGui::NewFrame();
     const ImGuiViewport* main_viewport = ImGui::GetMainViewport();
-    ImGui::SetNextWindowPos(ImVec2(0, 0), ImGuiCond_FirstUseEver);
+    ImGui::SetNextWindowPos(ImVec2(mGame->GetWidth()/10, mGame->GetHeight() / 10));
     ImGui::SetNextWindowSize(ImVec2(mGame->GetWidth()/2, mGame->GetHeight()));
     ImGui::Begin("Main Menu", nullptr , ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground);
     
