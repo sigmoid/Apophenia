@@ -271,7 +271,7 @@ void ManagerState::Resume()
 {
     Opal::Logger::LogString("GAMESTATE: Resume() ManagerState");
 
-    if(mGameStarted)
+    if(mGameStarted && mCurrentState != GameStateType::TITLE_STATE)
         IncrementConversation();
 }
 
