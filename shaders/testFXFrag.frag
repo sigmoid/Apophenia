@@ -48,7 +48,7 @@ void main() {
             }
 
             newCoords.x += (noiseValue - 0.5) / 20;
-            // debugR = playerDist / 0.4; 
+            // debugR = noiseValue; //playerDist / 0.4; 
         }
 
         outColor = texture(texSampler, newCoords);

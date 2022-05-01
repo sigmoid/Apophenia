@@ -38,8 +38,9 @@ void main() {
     
     if(inBox)
     {
-        // outColor.r += 0.1f;
+         //outColor.r += 0.5f;
 
     }
+
 
 }

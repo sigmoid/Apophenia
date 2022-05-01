@@ -986,8 +986,8 @@ std::shared_ptr<Opal::Texture> SentenceFormingState::CreateNoiseTexture()
         {
             uint8_t *start = data + y * width * 4 + x * 4;
             start[0] = (uint8_t)(noise.GetNoise<float>((x / mNoiseScale), (y / mNoiseScale)) * 255); // Red
-            start[1] = 0; // Green?
-            start[2] = 0; // Blue?
+            start[1] = (uint8_t)(noise.GetNoise<float>((x / mNoiseScale), (y / mNoiseScale)) * 255); // Green?
+            start[2] = (uint8_t)(noise.GetNoise<float>((x / mNoiseScale), (y / mNoiseScale)) * 255); // Blue?
             start[3] = 255; // Alpha
         }
     }
