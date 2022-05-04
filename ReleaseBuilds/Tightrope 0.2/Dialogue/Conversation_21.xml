@@ -1,0 +1,221 @@
+<!-- Colors -->
+<!-- Basic White            
+    <Color>
+        <r>0.9</r>
+        <g>0.9</g>
+        <b>0.9</b>
+        <a>1.0</a>
+    </Color>
+    -->
+
+ <!-- Doctor            
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+<Conversation Name="Conversation_21">
+    <Prompt TransitionText="And all of a sudden, the pieces begin to assemble">
+        <Text>Hey...</Text>
+        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="500" WordFrequency="4" SolidWords="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Mom?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>750</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Mom?</Trigger>   
+        </Triggers>
+        <Text>Son, you're having a psychotic break. I flew in last night and talked to the doctors.</Text>
+        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="500" WordFrequency="4" SolidWords="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Are you</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>okay?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>Is everyone</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>okay?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>750</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Are you okay? Is everyone okay?</Trigger>   
+        </Triggers>
+        <Text>We're all fine. You will be, too.</Text>
+        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="500" WordFrequency="4" SolidWords="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Can you</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>get me</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>out of</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>here?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>750</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Can you get me out of here?</Trigger>   
+        </Triggers>
+        <Text>The doctors say you haven't been making much progress. We need to fix your brain before you can leave.</Text>
+        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="500" WordFrequency="4" SolidWords="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>How do</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>we fix it?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>750</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>How do we fix it?</Trigger>   
+        </Triggers>
+        <Text>I don't know. We need to figure out what's wrong first. The doctors don't know yet...</Text>
+        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="500" WordFrequency="4" SolidWords="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I feel</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>better</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>right now</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>mom, honestly.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>750</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt IsEnd="True">
+        <Triggers>
+            <Trigger>I feel better right now mom, honestly.</Trigger>   
+        </Triggers>
+        <Text>I believe you. We can stick it out here. Come here. I really need a hug.</Text>
+        <Response Tremor="True" WordBank="../Dialogue/WordBank10.xml" ChannelSize="500" WordFrequency="4" SolidWords="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I feel</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>better</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>right now</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>mom, honestly.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>750</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+</Conversation>

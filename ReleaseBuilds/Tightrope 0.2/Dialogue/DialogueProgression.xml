@@ -1,0 +1,71 @@
+<Progression Story="Main" Filepath= "../Dialogue/">
+    <TitleScreen Duration="6" R=".1" G="0.1" B="0.1">THIS GAME IS NOT FINISHED!
+
+-The story will end about 2/3 of the way through.
+-There are some rough edges that I still need to fix.
+-The game might crash randomly.
+Thanks for understanding. :)</TitleScreen>
+<TitleScreen Duration="5" R=".1" G="0.1" B="0.1">(Temporary) Music
+Ambiment by Kevin MacLeod
+Link: https://incompetech.filmmusic.io/song/3359-ambiment
+License: https://filmmusic.io/standard-license
+</TitleScreen>
+    <Conversation>Conversation_Prologue.xml</Conversation>
+    <TitleScreen Duration="5" R=".2" G="0.2" B="0.2">Tightrope</TitleScreen>
+    <TitleScreen Duration="10" R=".3046875" G="0.50390625" B="0.828125">Act I
+My life as a tightrope walker,
+suspended above sense,
+wondering what was wrong with
+all the people on the ground.</TitleScreen>
+    <Conversation>Conversation_1.xml</Conversation>
+    <Conversation>Conversation_2.xml</Conversation>
+    <Conversation>Conversation_3.xml</Conversation>
+    <Conversation>Conversation_4.xml</Conversation>
+    <PillSequence NumPills="1"/> 
+    <Conversation>Conversation_5.xml</Conversation>
+    <Conversation>Conversation_6.xml</Conversation>
+    <Conversation>Conversation_7.xml</Conversation> 
+    <Conversation>Conversation_7point2.xml</Conversation>
+    <PillSequence NumPills="2"/>
+    <Conversation>Conversation_8.xml</Conversation>
+    <Conversation>Conversation_8point2.xml</Conversation>
+    <Conversation>Conversation_9.xml</Conversation>
+    <Conversation>Conversation_10.xml</Conversation> 
+    <TitleScreen Duration="10" R=".3" G="0.3" B="0.3">Act II
+"And then a Plank in Reason, broke
+And I dropped down, and down -
+And hit a World, at every plunge,
+And Finished knowing - then -"</TitleScreen>
+    <Conversation>Conversation_11.xml</Conversation>
+    <Conversation>Conversation_12.xml</Conversation>
+    <PillSequence NumPills="100"/> 
+    <Conversation>Conversation_13.xml</Conversation> 
+    <Conversation>Conversation_14.xml</Conversation>
+    <Conversation>Conversation_15.xml</Conversation>
+    <StrikesScreen/>
+    <Conversation>Conversation_16.xml</Conversation>
+    <DrawingState FilePath="../Drawings/Isolation/" Duration="5"/>
+    <Conversation>Conversation_17.xml</Conversation>
+    <Conversation>Conversation_18.xml</Conversation> 
+    <Conversation>Conversation_19.xml</Conversation>
+    <Conversation>Conversation_20.xml</Conversation>
+    <TitleScreen Duration="5" R=".375" G="0.69921875" B="0.96484375">Act III
+Dr. Apodochi - or - How I learned to control the worrying and love my mom.</TitleScreen>
+    <Conversation>Conversation_21.xml</Conversation> <!-- Conversation with mom -->
+    <DrawingState FilePath="../Drawings/Comfort/" Duration="5"/>
+    <!-- <Conversation>Conversation_22.xml</Conversation> --> <!-- Therapist explaining what happened and letting me go -->
+    <!--<Conversation>Conversation_23.xml</Conversation> Friend doesn't recognize me at school ( different friend? )
+    <Conversation>Conversation_24.xml</Conversation> Graduating 
+    <Conversation>Conversation_25.xml</Conversation> Job interview  
+    <Conversation>Conversation_26.xml</Conversation> Conversation with mom about job interviews 
+    <Conversation>Conversation_27.xml</Conversation> First Day at farm bureau 
+    <Conversation>Conversation_28.xml</Conversation> Conversation with mom about how farm bureau is going 
+    <Conversation>Conversation_29.xml</Conversation> Latuda doctors visit
+    <Conversation>Conversation_30.xml</Conversation> demonstrate how latuda helped
+    <Conversation>Conversation_31.xml</Conversation> 1 year performance review
+    -->
+
+    <!-- <TitleScreen Duration="5" R=".3" G="0.3" B="0.3">Epilogue\n"... find me dancing in between the raindrops"</TitleScreen>
+    <Conversation>Conversation_Epilogue_1.xml</Conversation> -->
+    <!-- <Conversation>TestDialogue.xml</Conversation> -->
+</Progression>

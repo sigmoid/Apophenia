@@ -1,0 +1,335 @@
+<!-- Colors -->
+<!-- Basic White            
+    <Color>
+        <r>0.9</r>
+        <g>0.9</g>
+        <b>0.9</b>
+        <a>1.0</a>
+    </Color>
+    -->
+
+ <!-- Warm            
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.1882</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+<Conversation>
+    <Prompt TransitionText="Junior year, start of spring semester">
+        <Text>I heard on the news that scientists are discovering black holes inside our galaxy.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Wow, that's</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>really</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>interesting.</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>freaky.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>Some of them are actually really close to Earth. They have no idea why they are just now finding them.</Text>
+        <Response>
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Scary, maybe</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>Earth will get</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>sucked in</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>some day</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Wow, that's really interesting.</Trigger>   
+            <Trigger>Wow, that's really freaky.</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Scary, maybe Earth will get sucked in some day</Trigger>   
+        </Triggers>
+        <Text>I don't think you need to add that to your list of worries.</Text>
+        <Response WordBank="../Dialogue/WordBank1.xml" WordFrequency="1.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Yeah, it's</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>probably nothing</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>anyway.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+    <Prompt>
+        <Text>So, how are you doing?</Text>
+        <Response WordBank="../Dialogue/WordBank1.xml" WordFrequency="1.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>am</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>feel</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>great!</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>just fine.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Yeah, it's probably nothing anyway.</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>That's great. I'm glad to hear that. 
+How did the interview go?</Text>
+        <Response WordBank="../Dialogue/WordBank1.xml" WordFrequency="1.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I think</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>it went ok</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>it went well</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>but we'll see.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>I am just fine.</Trigger>
+            <Trigger>I feel just fine.</Trigger> 
+            <Trigger>I am great!</Trigger>
+            <Trigger>I feel great!</Trigger>   
+        </Triggers>
+    </Prompt>
+
+        <Prompt>
+        <Text>Yeah, you never know. How about the TA job? How's that going?</Text>
+        <Response WordBank="../Dialogue/WordBank1.xml" WordFrequency="1.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>It's fine,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I worked on it all night last night.</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>it's pretty easy stuff.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>I think it went ok but we'll see.</Trigger>
+            <Trigger>I think it went well but we'll see.</Trigger>
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>That's not good.
+You need to sleep.</Text>
+        <Response WordBank="../Dialogue/WordBank1.xml" WordFrequency="1.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>You're right...</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I just had a lot of energy.</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment><Text>I'll do better tonight.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>It's fine, I worked on it all night last night.</Trigger>
+        </Triggers>
+    </Prompt>
+
+<Prompt>
+        <Text>I just hope you're not stressing yourself out too much. You've got a lot on your plate.</Text>
+        <Response WordBank="../Dialogue/WordBank1.xml" WordFrequency="1.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Everything is</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment IsIntrusive="True"><Text>falling apart.</Text><Attraction>700</Attraction></Fragment>
+                    <Fragment><Text>fine.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I have class soon,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>talk to you later.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>You're right... I'll do better tonight.</Trigger>
+            <Trigger>You're right... I just had a lot of energy.</Trigger>
+            <Trigger>It's fine, it's pretty easy stuff.</Trigger>
+        </Triggers>
+    </Prompt>
+
+    <Prompt IsEnd="True">
+        <Text>Alright, have a good day. Love you.</Text>
+        <Response WordBank="../Dialogue/WordBank1.xml" WordFrequency="1.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Everything is</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>falling apart</Text><Attraction>800</Attraction></Fragment>
+                    <Fragment><Text>fine</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I have class soon</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>talk to you later</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.6118</r>
+                <g>0.2863</g>
+                <b>0.0000</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>600</Speed>
+        </Response>
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Everything is fine. I have class soon, talk to you later.</Trigger>
+        </Triggers>
+    </Prompt>
+</Conversation>

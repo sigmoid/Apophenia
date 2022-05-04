@@ -1,0 +1,437 @@
+<!-- Colors -->
+<!-- Basic White            
+    <Color>
+        <r>0.9</r>
+        <g>0.9</g>
+        <b>0.9</b>
+        <a>1.0</a>
+    </Color>
+    -->
+
+ <!-- Doctor            
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+<Conversation Name="Conversation_4">
+    <Prompt TransitionText="One Week Later">
+        <Text>What brings you in today?</Text>
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Anxiety.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>Okay. Very common problem for students. Can you describe it?</Text>
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Sure,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>my thoughts</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>race,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>and I feel</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>like something terrible</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>is about to happen.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Anxiety.</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>Hm. And how often does this happen?</Text>
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Hard to say.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>Maybe a few</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment IsIntrusive="True"><Text>hundred</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>times a day?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Sure, my thoughts race, and I feel like something terrible is about to happen.</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Text>How long have you been experiencing these symptoms?</Text>
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Well, it</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>comes and goes</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>but this semester</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>has been especially bad.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>Hard to say. Maybe a few times a day?</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Well, it comes and goes but this semester has been especially bad.</Trigger>   
+        </Triggers>
+
+        <Text>What do you mean by "It comes and goes?"</Text>
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I had a</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>similar period</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>in High School.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I had a similar period in High School.</Trigger>   
+        </Triggers>
+
+        <Text>How did you deal with it then?</Text>
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Well, I started</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>therapy, which</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>helped, and I</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>tried antidepressants.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Well, I started therapy, which helped, and I tried antidepressants.</Trigger>   
+        </Triggers>
+
+        <Text>You "tried" antidepressants? Did they help?</Text>
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I don't think</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>so, actually.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>Things got worse</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>after starting them,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>so we stopped.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I don't think so, actually. Things got worse after starting them, so we stopped.</Trigger>   
+        </Triggers>
+
+        <Text>How is the anxiety affecting your life?</Text>
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I'm having trouble</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>keeping up with</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>school.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I'm having trouble keeping up with school.</Trigger>   
+        </Triggers>
+
+        <Text>It's definitely concerning. I would recommend you seek therapy. There are great resources here for that.</Text>
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I have an</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>appointment,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>but it's a ways off.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I have an appointment, but it's a ways off.</Trigger>   
+        </Triggers>
+
+        <Text>Great. I know you had a bad experience in the past, but I would also like to prescribe you an antidepressant.</Text>
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Are you sure?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>Why would</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>it work now?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Are you sure? Why would it work now?</Trigger>   
+        </Triggers>
+
+        <Text>The main difference is that now you're older, children and adults respond differently to this type of medicine. We can stop it at any time.</Text>
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I guess I</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>Stupid idea</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>am open to</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>that.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt IsEnd="True">
+        <Triggers>
+            <Trigger>I guess I am open to that.</Trigger>   
+        </Triggers>
+
+        <Text>Good. I'm going to give you my cell number. Call me if your symptoms get worse. Otherwise, I would like to see you in a month to see your progress. Sound good?</Text>
+        <Response WordBank="../Dialogue/WordBank5.xml" WordFrequency="3">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Sure, thanks</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.4</r>
+                <g>0.4</g>
+                <b>0.4</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+</Conversation>

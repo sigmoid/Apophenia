@@ -1,0 +1,364 @@
+<!-- Colors -->
+<!-- Basic White            
+    <Color>
+        <r>0.9</r>
+        <g>0.9</g>
+        <b>0.9</b>
+        <a>1.0</a>
+    </Color>
+    -->
+
+ <!-- Warm            
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.1882</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+
+ <!-- Purple            
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+<Conversation Name="Conversation_6">
+    <Prompt TransitionText="Next Day">
+        <Text>Hey, sorry I can't talk long. I have to finish something here before noon.</Text>
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Okay, this shouldn't</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>take long.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>900</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Okay, this shouldn't take long.</Trigger>   
+        </Triggers>
+        <Text>What's wrong? You seem upset.</Text>
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I think I...</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup/>
+                <FragmentGroup/>
+                <FragmentGroup/>
+                <FragmentGroup>
+                    <Fragment><Text>need to quit.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>I think I... need to quit.</Trigger>   
+        </Triggers>
+        <Text>I thought you might. I heard from someone else what's been going on.</Text>
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Which professor?</Text><Attraction>900</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>Is it that</Text><Attraction>900</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>obvious?</Text><Attraction>900</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Which professor? Is it that obvious?</Trigger>   
+        </Triggers>
+        <Text>Not one of your professors, someone else in this department mentioned that you opened up to them about being stressed out. It's okay, I understand.</Text>
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>So everyone</Text><Attraction>900</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>knows?</Text><Attraction>900</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>So everyone knows?</Trigger>   
+        </Triggers>
+        <Text>No! They just told me because you work with me. Nobody is gossiping about this. We're concerned for you.</Text>
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Okay.</Text><Attraction>500</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>So what</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>happens now?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Okay. So what happens now?</Trigger>   
+        </Triggers>
+        <Text>Well, I can tell the other TAs. I'll just tell them you had a personal conflict. And I want you to make sure you are paid. So you'll need to talk to accounting.</Text>
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>And what will</Text><Attraction>500</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>you tell</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>the students?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>And what will you tell the students?</Trigger>   
+        </Triggers>
+        <Text>Nothing at all. They don't need to know anything.</Text>
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
+        <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Oh yeah,</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>right.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                </Fragments>
+        <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+    <Prompt>
+        <Triggers>
+            <Trigger>Oh yeah, right.</Trigger>   
+        </Triggers>
+        <Text>Before you go, I want to know if there is anything I could have done better to make this job easier for you?</Text>
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Well, I feel</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>your expectations</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>are a bit high.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment IsIntrusive="True"><Text>but maybe</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment IsIntrusive="True"><Text>I'm just</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment IsIntrusive="True"><Text>not good enough.</Text><Attraction>800</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt>
+        <Triggers>
+            <Trigger>Well, I feel your expectations are a bit high.</Trigger>   
+        </Triggers>
+        <!-- Slightly annoyed and pissed off -->
+        <Text>What? Really?</Text>
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>No. What</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>Did I</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I meant</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>really just</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>was-</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>say that?</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+
+    <Prompt IsEnd="True">
+        <Triggers>
+            <Trigger>No. What I meant was-</Trigger>   
+        </Triggers>
+        <Text>Don't worry about it. Just- I hope you start to feel better. Good luck.</Text>
+        <Response WordBank="../Dialogue/WordBank7.xml" WordFrequency="3.5">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>No. What</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>Did I</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>I meant</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>really just</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>was...</Text><Attraction>0</Attraction></Fragment>
+                    <Fragment IsIntrusive="True"><Text>say that?</Text><Attraction>700</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>800</Speed>
+        </Response>
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    </Prompt>
+</Conversation>
