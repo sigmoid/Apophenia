@@ -37,6 +37,7 @@ class ManagerState : public Opal::Gamestate
     virtual void Resume() override;
 
     void StartGame();
+    void Pause();
 
     private:
 
@@ -65,6 +66,7 @@ class ManagerState : public Opal::Gamestate
 
     std::string mSavePath = "../SaveGame/SaveGame.txt";
     bool mProgressLoaded = false;
+    bool mGamePaused = false;
     void LoadProgress();
     void SaveProgress();
 

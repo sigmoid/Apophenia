@@ -38,6 +38,7 @@ void PromptState::Tick()
     if(prompt.Text[0] == "BLANK")
     {
         mGame->PopState();
+        return;
     }
 
     if(prompt.Sound != "" && !mHasSound && !mSoundThisPrompt)

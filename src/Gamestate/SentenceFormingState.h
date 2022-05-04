@@ -76,7 +76,7 @@ class SentenceFormingState : public Opal::Gamestate
 
     bool mInsideHead = false;
     float mDisplayPromptTimer = 0;
-    float mDisplayPromptDuration = 3;
+    float mDisplayPromptDuration = 6;
     void RenderCurrentPrompt();
 
     void CreatePlayingField();

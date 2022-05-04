@@ -1,0 +1,221 @@
+<!-- Colors -->
+<!-- Basic White            
+    <Color>
+        <r>0.9</r>
+        <g>0.9</g>
+        <b>0.9</b>
+        <a>1.0</a>
+    </Color>
+    -->
+
+ <!-- Ambulance Guy            
+    <Color>
+        <r>0.0000</r>
+        <g>0.0000</g>
+        <b>0.0000</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+
+     <!-- Warm            
+    <Color>
+        <r>0.6118</r>
+        <g>0.2863</g>
+        <b>0.1882</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+ <!-- Doctor            
+    <Color>
+        <r>0.4</r>
+        <g>0.4</g>
+        <b>0.4</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+     <!-- Therapist            
+    <Color>
+        <r>1.0000</r>
+        <g>0.0000</g>
+        <b>0.0353</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+
+     <!-- Purple            
+    <Color>
+        <r>0.2549</r>
+        <g>0.0941</g>
+        <b>0.3020</b>
+        <a>1.0</a>
+    </Color>
+    -->   
+<Conversation Name="Conversation_11">
+    <Prompt Sequence="1" TransitionText="???">
+        <Text>Oh... You're awake. Welcome home.</Text>
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Who are</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>you? I can't</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>see you.</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+        <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>START</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt Sequence="2" TransitionText="???">
+        <Text>I'm hiding in the vents. You don't remember me? we've been friends for a long time... But forget all that - You have much more important things to think about now.</Text>
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>What is</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>this place?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+                <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>Who are you? I can't see you.</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt Sequence="3">
+        <Text>It's complicated... Basically you got sucked in, and there are many dangers associated with that. Everyone in here is out to get you.</Text>
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>What will</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>they do</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>to me?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+                <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>What is this place?</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt Sequence="4">
+        <Text>Hard to say. Maybe they want to steal your identity, or make you some kind of slave. Look, I can tell you want to get out of here. So I can try to help you figure out how.</Text>
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>Why would</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>you want</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>to help me?</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+                <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>What will they do to me?</Trigger>   
+        </Triggers>
+    </Prompt>
+
+    <Prompt Sequence="5" IsEnd="True">
+        <Text>No time to chat, it looks like they're coming. Act cool.</Text>
+        <Response Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" WordBank="../Dialogue/WordBank11.xml" SolidWords="True" Drunk="True">
+            <Fragments>
+                <FragmentGroup>
+                    <Fragment><Text>I want</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>to get</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+                <FragmentGroup>
+                    <Fragment><Text>out of here</Text><Attraction>0</Attraction></Fragment>
+                </FragmentGroup>
+            </Fragments>
+
+            <Color>
+                <r>0.2549</r>
+                <g>0.0941</g>
+                <b>0.3020</b>
+                <a>1.0</a>
+            </Color>
+            <Speed>1000</Speed>
+        </Response>
+                <Color>
+            <r>0.1</r>
+            <g>0.1</g>
+            <b>0.1</b>
+            <a>1.0</a>
+        </Color>
+        <Triggers>
+            <Trigger>Why would you want to help me?</Trigger>   
+        </Triggers>
+    </Prompt>
+    
+</Conversation>

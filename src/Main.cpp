@@ -57,12 +57,14 @@ int main(int argc, char **argv)
 
     while(!game->ShouldEnd())
     {
-        if (Opal::InputHandler::GetKey(GLFW_KEY_F11) && !lastF11)
-        {
-            game->ToggleFullscreen();
-        }
+        //if (Opal::InputHandler::GetKey(GLFW_KEY_F11) && !lastF11)
+        //{
+        //    game->ToggleFullscreen();
+        //}
         if (Opal::InputHandler::GetKey(GLFW_KEY_ESCAPE) && std::dynamic_pointer_cast<MainMenuState>(game->PeekState()) == nullptr)
         {
+            if(game->PeekState() == managerState)
+                managerState->Pause();
             game->PushState<MainMenuState>();
         }
         game->Tick();

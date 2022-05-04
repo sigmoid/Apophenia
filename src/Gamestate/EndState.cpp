@@ -25,7 +25,6 @@ void EndState::Render()
     mTextPass->Record();
 
     mTextRenderer->RenderString("The End of \"Tightrope\" for now...\n"
-    "The final act hasn't been written yet, but will cover getting to stability.\n"
     "follow @absurd_walls on twitter to send me feedback, and find out when it's finished\n"
     "Thanks for playing."
     ,

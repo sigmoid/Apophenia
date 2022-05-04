@@ -234,7 +234,7 @@ void ManagerState::IncrementConversation()
     }
     else // Regular conversation
     {
-        DialogueManager::Instance->LoadConversation(mConversationSequence[mCurrentConversation++]);
+        DialogueManager::Instance->LoadConversation(mConversationSequence[mCurrentConversation]);
         mTitleText = DialogueManager::Instance->GetCurrentPrompt().TransitionText;
         mCurrentStateDuration = mTransitionDuration;
         mPreviousState = mCurrentState;
@@ -244,6 +244,8 @@ void ManagerState::IncrementConversation()
             SaveProgress();
         else
             mProgressLoaded = true;
+        
+        mCurrentConversation++;
     }
 
     if(DialogueManager::Instance->EatTransition)
@@ -271,13 +273,21 @@ void ManagerState::Resume()
 {
     Opal::Logger::LogString("GAMESTATE: Resume() ManagerState");
 
-    if(mGameStarted && mCurrentState != GameStateType::TITLE_STATE)
+    if(mGameStarted && !mGamePaused && mCurrentState != GameStateType::TITLE_STATE)
         IncrementConversation();
+
+    if (mGamePaused)
+        mGamePaused = false;
 }
 
 void ManagerState::StartGame()
 {
     mGameStarted = true;
+}
+
+void ManagerState::Pause()
+{
+    mGamePaused = true;
 }
 
 glm::vec4 ManagerState::UpdateColor(float progress)
