@@ -38,7 +38,9 @@ all the people on the ground.</TitleScreen>
 "And then a Plank in Reason, broke
 And I dropped down, and down -
 And hit a World, at every plunge,
-And Finished knowing - then -"</TitleScreen>
+And Finished knowing - then -"
+-Emily Dickinson
+</TitleScreen>
 <Conversation>Conversation_11</Conversation>
 <Conversation>Conversation_12</Conversation>
 <PillSequence NumPills="100" />
@@ -77,28 +79,36 @@ Dr. Apodochi - or - How I learned to control the worrying and love my mom.</Titl
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="2" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="3" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>Nice. That's pretty much all you need to know to get through.</Text>
 <Text>But - there is something else I want you to know before you play this.</Text>
 <Text>This is a game about a mental health crisis. It features some things that may be uncomfortable.</Text>
 <Text>I want to share this story with you, but I also need you to understand that it may not be easy to play if you're in a vulnerable state.</Text>
-<Triggers><Trigger>Press 'W' and 'S' to catch thoughts.</Trigger>
+<Triggers><Trigger>Avoid all red text.</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.4921875</r><g>0.45703125</g><b>0.16796875</b><a>1.0</a></Color><Response Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="0" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>600</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Got it.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>Understood.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="3" InsideHead="False" IsZoomIn="False" IsEnd="True" IsKill="False">
+<Prompt TransitionText="" Sequence="4" InsideHead="False" IsZoomIn="False" IsEnd="True" IsKill="False">
 <Text>Last thing, then I'm out of your hair for a while.</Text>
 <Text>While this game is based in truth. I took many liberties with the way the story is presented.</Text>
 <Text>The characters do not directly represent real people.</Text>
-<Text>There are periods of this story that I don't remember well, and I have to rely on my what I've been told and the small things that I do remember.</Text>
+<Text>There are periods of this story that I don't remember well, and I have to rely on what I've been told and the small things that I do remember.</Text>
 <Text>Events are selectively stretched out and condensed for the sake of pace.</Text>
 <Text>With all that said...</Text>
 <Text>Enjoy the game!</Text>
 <Triggers><Trigger>Got it. Understood.</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.4921875</r><g>0.45703125</g><b>0.16796875</b><a>1.0</a></Color><Response Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="0" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>600</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Got it.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>Understood.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
+</Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
+</Prompt>
+
+<Prompt TransitionText="" Sequence="2" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Text>Also, try to avoid any red text when collecting thoughts.</Text>
+<Triggers><Trigger>Press 'W' and 'S' to catch thoughts.</Trigger>
+</Triggers><ObscuredWords /><Color><r>0.4921875</r><g>0.45703125</g><b>0.16796875</b><a>1.0</a></Color><Response Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="0" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>600</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Avoid all</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="True"><Text>Danger</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
+<FragmentGroup><Fragment IsIntrusive="False"><Text>red text.</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="True"><Text>don't touch!</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
 </Prompt>
 
@@ -403,7 +413,7 @@ Just Breathe right now.</Text>
 
 <Prompt TransitionText="" Sequence="7" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>That's it?
-    How long have you been working on it?</Text>
+How long have you been working on it?</Text>
 <Triggers><Trigger>"The central ludic metaphor in Case's WBWWB is...</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.8046875</r><g>0.4140625</g><b>0.09375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank3.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="3" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>600</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>I dunno</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>maybe an hour?</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="True"><Text>at least 4 hours.</Text><Attraction>700</Attraction></Fragment></FragmentGroup>
@@ -501,8 +511,8 @@ Just Breathe right now.</Text>
 </Prompt>
 
 <Prompt TransitionText="" Sequence="17" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>Great! It'll do it.
-We should also schedule a doctor's appointment?</Text>
+<Text>Great! I'll do it.
+Should we also schedule a doctor's appointment?</Text>
 <Triggers><Trigger>Oh Really? That sounds good, I could do that.</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.8046875</r><g>0.4140625</g><b>0.09375</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank4.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="3" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>1000</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Yeah,</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>sounds good,</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -1941,7 +1951,7 @@ We should also schedule a doctor's appointment?</Text>
 </Prompt>
 
 <Prompt TransitionText="" Sequence="3" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
-<Text>I don't think you do know what's going on. You had a psychotic break. We're treating you for bipolar disorder.</Text>
+<Text>I don't think you do know what's going on.</Text>
 <Triggers><Trigger>LOOK ASSHOLE I KNOW WHAT IS GOING ON YOU CAN'T GET AWAY WITH THIS.</Trigger>
 </Triggers><ObscuredWords><Obscured>psychotic</Obscured><Obscured>break.</Obscured><Obscured>bipolar</Obscured><Obscured>disorder.</Obscured></ObscuredWords><Color><r>0.39453125</r><g>0.39453125</g><b>0.39453125</b><a>1.0</a></Color><Color><r>0.9921875</r><g>0</g><b>0.03125</b><a>1.0</a></Color><Response WordBank="../Dialogue/WordBank11.xml" Drunk="False" Tremor="True" ShowBlur="True" RequireCoreOnly="True" WordFrequency="10" ChannelSize="150" SolidWords="True" AllowNonsense="False"><Speed>1000</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>FUCK OFF</Text><Attraction>800</Attraction></Fragment></FragmentGroup>
 <FragmentGroup><Fragment IsIntrusive="False"><Text>ALRIGHT</Text><Attraction>800</Attraction></Fragment></FragmentGroup>

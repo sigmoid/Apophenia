@@ -63,7 +63,7 @@ void DrawingState::Begin()
     if(mLineRenderer == nullptr)
     {
         mRenderPass = mGame->Renderer->CreateRenderPass(true);
-        mRenderPass->SetClearColor(0.2f, 0.2f, 0.2f, 1.0f);
+        mRenderPass->SetClearColor(0.5f, 0.5f, 0.5f, 1.0f);
         mLineRenderer = std::make_shared<Opal::LineRenderer>();
         mLineRenderer->Init(mGame->Renderer,mRenderPass,true);
 

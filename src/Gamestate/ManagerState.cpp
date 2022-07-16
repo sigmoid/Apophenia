@@ -113,16 +113,25 @@ void ManagerState::Begin()
 
     mPreviousColor = glm::vec4(0.1f,0.1f,0.1f, 1.0f);
 
+    Opal::Logger::LogString("Loading Conversation...");
+
     mConversationSequence = DialogueSerializer::DeserializeStoryline("../Dialogue/MainStory.xml");
+
+    Opal::Logger::LogString("Loading Progress...");
     LoadProgress();
 
+    Opal::Logger::LogString("Creating Font...");
     mTextPass = mGame->Renderer->CreateRenderPass();
     Opal::Font typeFace(mGame->Renderer,"../fonts/JosefinSlab-SemiBold.ttf", 100);
 
+    Opal::Logger::LogString("Creating Sprite Renderer");
     mSpriteRenderer = mGame->Renderer->CreateSpriteRenderer(mTextPass);
 
+
+    Opal::Logger::LogString("Creating Font Renderer...");
     mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, typeFace, glm::vec2(1920 - 300, 1080), Opal::Camera::ActiveCamera);
 
+    Opal::Logger::LogString("Incrementing Conversation...");
     IncrementConversation();
 
     if(mCurrentState != GameStateType::PROMPT_STATE)
@@ -137,8 +146,11 @@ void ManagerState::Begin()
             firstConvo++;
         }
 
+        Opal::Logger::LogString("Loading Conversation...");
         DialogueManager::Instance->LoadConversation(mConversationSequence[firstConvo]);
     }
+
+    Opal::Logger::LogString("Begin Complete.");
 }
 
 void ManagerState::IncrementConversation()
@@ -329,7 +341,7 @@ glm::vec4 ManagerState::UpdateColor(float progress)
     }
     else
     {
-        color = glm::vec4(0.2,0.2,0.2,1.0f);
+        color = glm::vec4(0.5,0.5,0.5,1.0f);
     }
 
     if(progress > 0)

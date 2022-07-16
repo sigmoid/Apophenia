@@ -58,11 +58,10 @@ void SentenceFormingState::Tick()
     //     return;
     // }
 
-    if (Opal::InputHandler::GetKey(GLFW_KEY_K))
-    {
-        mKillEventTimer = mKillWaitTime;
-    }
-
+    //if (Opal::InputHandler::GetKey(GLFW_KEY_K))
+    //{
+    //    mKillEventTimer = mKillWaitTime;
+    //}
 
     // Isolation Zoom in sequence
     if(mZoomInTimer > 0)
@@ -152,6 +151,8 @@ void SentenceFormingState::Tick()
             Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, 0));
         }
     }
+
+    mFlipPreviewText = mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.y > 1080 - 300;
 
     if(mDisplayPromptTimer > 0)
     {
@@ -809,7 +810,7 @@ void SentenceFormingState::StartScreenShake()
 void SentenceFormingState::RenderCurrentSelection()
 {
     std::string resp = ConcatSelection(mCursorEntity->GetComponent<CursorComponent>()->GetResponse());
-    mResponseRenderer->RenderString(resp, 200, 1080 - 150, mFragmentColor.r, mFragmentColor.g, mFragmentColor.b, mFragmentColor.a, 1.0f);
+    mResponseRenderer->RenderString(resp, 200, (mFlipPreviewText) ? 300 : 1080 - 150, mFragmentColor.r, mFragmentColor.g, mFragmentColor.b, mFragmentColor.a, 1.0f);
 }
 
 std::string SentenceFormingState::ConcatSelection(std::vector<std::string> selection)

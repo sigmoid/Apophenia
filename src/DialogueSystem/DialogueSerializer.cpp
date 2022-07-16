@@ -5,12 +5,14 @@
 #include <string>
 #include <algorithm>
 #include <iostream>
+#include <Logger.cpp>
 
 std::vector<std::string> DialogueSerializer::DeserializeStoryline(std::string filepath)
 {
     std::vector<std::string> res;
 
     tinyxml2::XMLDocument doc;
+
     doc.LoadFile(filepath.c_str());
 
     tinyxml2::XMLElement *progressionRoot = doc.RootElement()->FirstChildElement("Progression");
@@ -48,7 +50,6 @@ std::vector<std::string> DialogueSerializer::DeserializeStoryline(std::string fi
             std::string B = std::to_string(convo->FloatAttribute("B", 0.2f));
             res.push_back("|TitleScreen " + duration + " " + R + " " + G + " " + B + " "+ convo->GetText());
         }
-
 
     }
 
