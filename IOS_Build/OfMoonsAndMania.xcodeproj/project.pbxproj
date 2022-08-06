@@ -1,0 +1,2128 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		24868F1580EE4105B8B15194 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AB28F369005D4790850CC8D7 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				FE3F0BCE9E642DC24F7B537A /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		6C60F8FA49674FDE82A7BD71 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2D052D810BCC4413AD40BC66 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				2B6F3FF2179EC9072672E5AF /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				1F43BD47A28B4EEBA41C0663 /* PBXTargetDependency */,
+				A369B7CF66BF44ADB3C6E098 /* PBXTargetDependency */,
+				993EDF93FE8F4454A5464989 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		038CB8F890DE43298A9181A0 /* BoxColliderComponent2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 426A3DA5257349A2AF8E3220 /* BoxColliderComponent2D.cpp */; };
+		07AB5B4F13124EDAA5B51329 /* PostProcessRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840620B43E0F4F2F94ABCD0E /* PostProcessRenderer.cpp */; };
+		0975230B0A6948E9A65DCB09 /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 713FE444BD224A689E56F730 /* Logger.cpp */; };
+		0F3471AE0DBA4395A692B87F /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87347F39A1B04CEC82DA4B82 /* Main.cpp */; };
+		116B15CCC67E415D92637E92 /* AnimatedSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E457EE4D113445D9AD7D790 /* AnimatedSprite.cpp */; };
+		131B77A55C4B4413BDFEF9C6 /* soloud_core_voiceops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00B1A1BE5F274AB8AC522CCC /* soloud_core_voiceops.cpp */; };
+		13B80A7C00884636B72EA896 /* soloud_wav.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 259E3F0702DD45EE95378BB6 /* soloud_wav.cpp */; };
+		13BEFD9DED924EE69D3722BE /* imgui_impl_vulkan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42BC6C66246148D9AC443213 /* imgui_impl_vulkan.cpp */; };
+		13C93CD10C5749BD816CA3AE /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF770B4F32498F8621CC46 /* Component.cpp */; };
+		18E52598DF3D46A5A5F1723B /* imgui_impl_sdl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87FC44D6392C4F94A2335729 /* imgui_impl_sdl.cpp */; };
+		1D3A34FBE2E249929ED6219C /* imgui_stdlib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 88ACF3188FB543309538B835 /* imgui_stdlib.cpp */; };
+		2076452D247B4FD68EC6B9D7 /* BatchRenderer2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53F173AF8AB043DDBB260058 /* BatchRenderer2D.cpp */; };
+		25F9121ECC3C420E90481660 /* AABBCollision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 43BE5E4E74EC41F8888BF108 /* AABBCollision.cpp */; };
+		27BCEBE570464C78B00D15EA /* implot_items.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CB1E075AB794F899241A221 /* implot_items.cpp */; };
+		297BA514125840F6A6584599 /* soloud_core_basicops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9DD5076EE62420CAF4C69CC /* soloud_core_basicops.cpp */; };
+		2E7F2D8DDF704F8BB62F531B /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61AF6268D35A4EE084173653 /* Game.cpp */; };
+		2EDFB87261A645458A506CCB /* PromptState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D62109A1757472E8420E2C6 /* PromptState.cpp */; };
+		2FA5A2F92E0A436089034D90 /* VulkanRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8751E5BE2E0045C49ABF981B /* VulkanRenderer.cpp */; };
+		30FD263C58F347D3A2E0BD69 /* CollisionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69814328CFB346E5B8C6283F /* CollisionManager.cpp */; };
+		3195AEB45FC84A4092012F54 /* EditorGamestate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D04D8EE80F0479582FF3B28 /* EditorGamestate.cpp */; };
+		326E03187F134396873CEAD6 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9784C6F5E1B84A3EBAFB4F59 /* Entity.cpp */; };
+		32EC82C88AC04817B5B3E6B5 /* soloud.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A315C638D4A20862031DB /* soloud.cpp */; };
+		381914E0472C4266BF0CEFBB /* Font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8846C89104744CD4B8822013 /* Font.cpp */; };
+		4870D935D5504BC3B1F5D66D /* AudioClipInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BF6F63E0B554D46AED3637F /* AudioClipInstance.cpp */; };
+		4A9D0A26D7C44FF4BC2B5DC0 /* soloud_core_3d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5DB3964B83F4946A4472574 /* soloud_core_3d.cpp */; };
+		4C7B61035D314C708B8752B4 /* StrikesState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAFA558FCB10438DA273978E /* StrikesState.cpp */; };
+		4DFA183311114C1880B5DE02 /* soloud_fft_lut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49AFC7FDD9C546A5AFC642E4 /* soloud_fft_lut.cpp */; };
+		50D7BF8E81AD49A7807A015E /* VulkanDescriptorSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24BBB3E3B81844908FCF2A3D /* VulkanDescriptorSet.cpp */; };
+		50E8EB353C854C8AB60525AD /* Mesh2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB1E45FD464F42248E963A5B /* Mesh2D.cpp */; };
+		547700A53DE14E1A8FB616E2 /* DialogueManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC60F934CC664A4DB506037F /* DialogueManager.cpp */; };
+		5526B0786F1E473BB62D69B6 /* imgui_demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0D64A0A63154B1EBEF25399 /* imgui_demo.cpp */; };
+		5A3BDF2E9A68455AA6EC49DD /* VulkanPipeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49BBFD4AF4694A59A7ADF12B /* VulkanPipeline.cpp */; };
+		5B011C4E02614C5881B9A326 /* dr_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE93B573170B4E3D95AE022E /* dr_impl.cpp */; };
+		605487DCD9444A76B858B338 /* InputHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10D2672D9694143851CDA13 /* InputHandler.cpp */; };
+		60C86AF208B34C548FE26C52 /* DialogueSerializer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D49CCF26CEE044F9B76A5377 /* DialogueSerializer.cpp */; };
+		61CE945A6D6345609EE0D935 /* SpriteRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52DF2D71AB48417DA47B9C26 /* SpriteRenderer.cpp */; };
+		61EC8F24B8AC40219AC2789B /* EndState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 064EBF525AD74EBC98BE6FC3 /* EndState.cpp */; };
+		62256BA9C67945BA85687DF5 /* VulkanRenderPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC58396BF754ED0AE7A59B9 /* VulkanRenderPass.cpp */; };
+		664B9465288C76A8001BE983 /* libFreetype2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 664B9464288C76A8001BE983 /* libFreetype2.a */; };
+		664B9468288C7A20001BE983 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 664B9466288C76F2001BE983 /* libSDL2.a */; };
+		664B9469288C8897001BE983 /* libMoltenVK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 664B9460288C7468001BE983 /* libMoltenVK.a */; };
+		66B47910288D94C4008654E4 /* textures in CopyFiles */ = {isa = PBXBuildFile; fileRef = 664B9478288CC88A001BE983 /* textures */; };
+		66B47911288D94C7008654E4 /* shaders in CopyFiles */ = {isa = PBXBuildFile; fileRef = 664B9477288CC880001BE983 /* shaders */; };
+		66B47912288D94C9008654E4 /* SaveGame in CopyFiles */ = {isa = PBXBuildFile; fileRef = 664B9476288CC877001BE983 /* SaveGame */; };
+		66B47913288D94CC008654E4 /* fonts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 664B9475288CC868001BE983 /* fonts */; };
+		66B47914288D94D0008654E4 /* Dialogue in CopyFiles */ = {isa = PBXBuildFile; fileRef = 664B9473288CC84C001BE983 /* Dialogue */; };
+		66B47915288D94D4008654E4 /* Drawings in CopyFiles */ = {isa = PBXBuildFile; fileRef = 664B9474288CC858001BE983 /* Drawings */; };
+		66B47916288D94D7008654E4 /* Audio in CopyFiles */ = {isa = PBXBuildFile; fileRef = 664B9472288CC843001BE983 /* Audio */; };
+		66B4791B2896C664008654E4 /* Launch Screen.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 66B479192896C60F008654E4 /* Launch Screen.storyboard */; };
+		66B4791C2896EE3B008654E4 /* VulkanRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8751E5BE2E0045C49ABF981B /* VulkanRenderer.cpp */; };
+		66E56D49288C699A003DA096 /* IOS_Main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66E56D48288C699A003DA096 /* IOS_Main.mm */; };
+		6802BF15A48A4501AA9E781E /* TextureAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8BAD65FD74903BF5EA291 /* TextureAtlas.cpp */; };
+		697EE14D218B42AFB2F0F2D3 /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A3DEF46204280AA804637 /* Renderer.cpp */; };
+		6A1C3FD8771D4B93BE9B7733 /* LineRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00F3FB79C8E47B1BAD2D3F2 /* LineRenderer.cpp */; };
+		6A534D991F4747DEBD4AB08F /* soloud_filter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D3F0840C47C4F85AB659229 /* soloud_filter.cpp */; };
+		6B5BB03FC43D4BC29F2923B5 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 430290D561A9479BA0AA05D8 /* Camera.cpp */; };
+		75C5DD2807E94E1B95D9A8D1 /* CursorComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBBFC2E73C0A432882403B24 /* CursorComponent.cpp */; };
+		7AF2E6A2753E4A04B09D5537 /* EntityComponentSerialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B42AE21A72B4207B31701C5 /* EntityComponentSerialization.cpp */; };
+		7D71B72FEF194AEC834AF9D1 /* tinyxml2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1D79B51BC5A4EC8B35E3324 /* tinyxml2.cpp */; };
+		7F74743DC54742EE8A1D716A /* CircleRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC86AD9CA44559AC9D4A33 /* CircleRenderer.cpp */; };
+		7FA2CFC69B9D4C2DAE446A59 /* soloud_core_faderops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 532B3CD4F6DE4D04A4AA75B0 /* soloud_core_faderops.cpp */; };
+		80BD029D85174AF98A157B51 /* soloud_fader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6FB8B009DA34A5695828112 /* soloud_fader.cpp */; };
+		84849141400A41D5BE6DF378 /* SpriteComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35F65A27CEBD444397ED796C /* SpriteComponent.cpp */; };
+		85EA11A78D59467C9857752F /* soloud_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6E619381237454FB31F7E41 /* soloud_queue.cpp */; };
+		87673F9CA4F54EC1BC78B936 /* AudioEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 423077AE2C6345A5AE8E77A2 /* AudioEngine.cpp */; };
+		8D460E07EBB248AB87C44B7A /* LinePointComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4CF27A6365440D5AED508B0 /* LinePointComponent.cpp */; };
+		8DAE18A3C65C422E87E70402 /* imgui_widgets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37A8F33D81A14065BFE1290D /* imgui_widgets.cpp */; };
+		8F5B1C1DEAE44B6FA99A47DB /* soloud_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 819DCA73CACD4616BC7EB653 /* soloud_file.cpp */; };
+		8FCD3DBAFF7F4A128E5C3A29 /* imgui_tables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 408F8E6EEB66482780AD55E6 /* imgui_tables.cpp */; };
+		90AF5887417E41628C9F3092 /* Gamestate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13528F32692648DBADB39E63 /* Gamestate.cpp */; };
+		90CC08A1868E47018279D323 /* soloud_thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 848E1CFC71D542019FEAA713 /* soloud_thread.cpp */; };
+		9444CEBA926041979B1D1568 /* imgui_draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E52A602CD55641FBB588F829 /* imgui_draw.cpp */; };
+		95D3477DF09E4857AECCF8D3 /* AttractableComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D85576265EC0440D9C7FED5D /* AttractableComponent.cpp */; };
+		95F2C426D0EA42239EA55655 /* VulkanBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DACA3A8F91F48CC9035C592 /* VulkanBuffer.cpp */; };
+		97A1664770004A6C8DDDD185 /* EndWallComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7CD5FBD0EAFB4479B2CD6796 /* EndWallComponent.cpp */; };
+		994758E6D64541518883C474 /* DrawingState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFB0340B8FF84FC395536A13 /* DrawingState.cpp */; };
+		9C608726D81A4B49969EC1E2 /* soloud_core_setters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BCF547AAAE9D437B94561E74 /* soloud_core_setters.cpp */; };
+		9D91B97A86094564B6E75CC8 /* MeshRenderer2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FE88FBA301547C4A8566559 /* MeshRenderer2D.cpp */; };
+		A041671D92DB41068B4EFF1C /* soloud_misc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B03040744164CFABF07ED47 /* soloud_misc.cpp */; };
+		A2AB2C0824AA4ABFA17D5212 /* TransformComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E123CCABC35E44698457023E /* TransformComponent.cpp */; };
+		A50BA90C0D5D4302838EDE0A /* UIContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBEED90E00455A95DA1F01 /* UIContext.cpp */; };
+		A56C6C66AEE249E5B20F5C1A /* VelocityComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5362E9448C3946619ACD165E /* VelocityComponent.cpp */; };
+		A792B713AF5D43D5B8A6D3A0 /* TileChunkManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8448BE52AFE4B65AD4767B6 /* TileChunkManager.cpp */; };
+		AA9FFDFD01BD48BF84806419 /* AnimatedSpriteComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8A5CE926DFC4EE4961F83CD /* AnimatedSpriteComponent.cpp */; };
+		AE919355D4074AA59435D275 /* SentenceFragmentComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 172497211621469CAC1815EA /* SentenceFragmentComponent.cpp */; };
+		AF9D1FD10D5046AF8CCB31A1 /* DragComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 300C7C4C4FE34536B1EA6464 /* DragComponent.cpp */; };
+		B45926F7819F4D2EAE0ED500 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F8247CC935C4A3FB20C15AD /* Texture.cpp */; };
+		B5B0B314454A446FA1CD6D9B /* VulkanTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5475F1D41A74364B28E807B /* VulkanTexture.cpp */; };
+		BA116D6C12D84A51AE1F84A3 /* soloud_core_getters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D287F3772244DEF9EE3C012 /* soloud_core_getters.cpp */; };
+		BE130E00AFCE40C291816D50 /* TileChunk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 035F91A52C4B4B64B78DB197 /* TileChunk.cpp */; };
+		C1A28EF11BB7409CAA8A2FDD /* soloud_fft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4858ECAF8C024F07B2BCD2BC /* soloud_fft.cpp */; };
+		C4E63882B158457AB81A1C41 /* NarrativeState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE385275515A4DC88FD810B8 /* NarrativeState.cpp */; };
+		C51EE08316A3429C9962E43E /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F96CA15CCFC492FACA41DC3 /* Window.cpp */; };
+		C58CCB2F541E4E639A8FF601 /* SentenceFormingState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74480C774E044E4DAB2C382D /* SentenceFormingState.cpp */; };
+		CA40017EA08F4804B5C32430 /* SparkComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3A5574C53F94C4891807CD9 /* SparkComponent.cpp */; };
+		CA65F5C178D04D0B9A979DCF /* OpalMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02EBF3ED859643778DCF4C8D /* OpalMath.cpp */; };
+		CC20A1D28EF443B0B5F6FCA0 /* Pill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71FE71E8641F4E03A6B7BC5F /* Pill.cpp */; };
+		CE3FEF331A1746A29AF27851 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3960E135566B44889AD2205E /* Sprite.cpp */; };
+		CFE1345C2DA747BE83740E9A /* stb_vorbis.c in Sources */ = {isa = PBXBuildFile; fileRef = 02440193C68B429A865A7C92 /* stb_vorbis.c */; };
+		D5BEE05E937D49EBBD4914C4 /* soloud_audiosource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03B6D3A0EDA24ECD82136840 /* soloud_audiosource.cpp */; };
+		D606E5D57BFB431AA70814A7 /* soloud_miniaudio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4776A9F56D8847908DF7D4F9 /* soloud_miniaudio.cpp */; };
+		D62CEC31C34240F09C4B67AF /* EntityUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7959909755DF43CBBC697500 /* EntityUI.cpp */; };
+		D7B8A436E9F94B128B16BE1D /* AudioClip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA2D75B9171246808333F881 /* AudioClip.cpp */; };
+		DBC47B3C0C48484AAEB6DAAD /* NoiseMoveComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9E144011E154DE69CB0AE51 /* NoiseMoveComponent.cpp */; };
+		DDEB96FADA39400C9F247B7D /* soloud_bus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A46B1EC8886B4783807DFD0B /* soloud_bus.cpp */; };
+		DE7298F026F24AAEB7B27AA0 /* ManagerState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B81E4F7B81464931BC655A65 /* ManagerState.cpp */; };
+		E003E4C26BD34BB69F77B053 /* soloud_core_filterops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 674C8A5F243E44D0ABFA1DE7 /* soloud_core_filterops.cpp */; };
+		E19ED69695D54257B592D0D1 /* soloud_wavstream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15926AA14CC845C2ACB3211A /* soloud_wavstream.cpp */; };
+		E3B212919BBD46D99F078527 /* MainMenuState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4593CF1FB28747BA9B1165FD /* MainMenuState.cpp */; };
+		E8308FADC91945C582885212 /* soloud_core_voicegroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 86E5599C74FB4BD3B7DBBAEA /* soloud_core_voicegroup.cpp */; };
+		E8FBA4F24994474B8B9FD0DE /* FontRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2D46F6D5E0347EF97C83C7C /* FontRenderer.cpp */; };
+		EDDADCA2A8E7439FAE2D15A7 /* implot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0A0806F514C8CA28143FD /* implot.cpp */; };
+		EF7148E8A3A24F2193FC369A /* imgui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8722C991A4704AD2AE91D364 /* imgui.cpp */; };
+		F1D983DBD7D84452BCB06459 /* LightComponent2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9991C00531B4AB88693E875 /* LightComponent2D.cpp */; };
+		F5B1D24E98B945FCB78567CC /* PillState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40676351ACE04A158BC1A733 /* PillState.cpp */; };
+		FE5458B5CF40438ABCBB1354 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6C65A2E14CD47D4BFC1ED9C /* Scene.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1DB2917F7C8245A59A6D1CBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A254332254B845FA8BC0128E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7D2B37181D64781A1B87B9C;
+			remoteInfo = Opal;
+		};
+		28CC420260A2492F9BEA8DF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A254332254B845FA8BC0128E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24868F1580EE4105B8B15194;
+			remoteInfo = ZERO_CHECK;
+		};
+		2BE35829D6A749EA8BD451C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A254332254B845FA8BC0128E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24868F1580EE4105B8B15194;
+			remoteInfo = ZERO_CHECK;
+		};
+		2D5E0242DBA04061B5A09F64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A254332254B845FA8BC0128E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7D2B37181D64781A1B87B9C;
+			remoteInfo = Opal;
+		};
+		4DD8C305E062439F8808F8FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A254332254B845FA8BC0128E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24868F1580EE4105B8B15194;
+			remoteInfo = ZERO_CHECK;
+		};
+		9989F88550F941D7AC4659E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A254332254B845FA8BC0128E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43F2B578382440B08EC4B265;
+			remoteInfo = OfMoonsAndMania;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		66B4790F288D94B8008654E4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				66B47910288D94C4008654E4 /* textures in CopyFiles */,
+				66B47911288D94C7008654E4 /* shaders in CopyFiles */,
+				66B47912288D94C9008654E4 /* SaveGame in CopyFiles */,
+				66B47913288D94CC008654E4 /* fonts in CopyFiles */,
+				66B47914288D94D0008654E4 /* Dialogue in CopyFiles */,
+				66B47915288D94D4008654E4 /* Drawings in CopyFiles */,
+				66B47916288D94D7008654E4 /* Audio in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0092CD81DE4C42F9A8FAB7CE /* Sprite.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Sprite.h; path = Opal/Graphics/Sprite.h; sourceTree = SOURCE_ROOT; };
+		00B1A1BE5F274AB8AC522CCC /* soloud_core_voiceops.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_core_voiceops.cpp; path = Opal/vendor/soloud/src/core/soloud_core_voiceops.cpp; sourceTree = SOURCE_ROOT; };
+		013F51E819254DB389077CC0 /* VulkanRenderer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = VulkanRenderer.h; path = Opal/Graphics/Vulkan/VulkanRenderer.h; sourceTree = SOURCE_ROOT; };
+		02440193C68B429A865A7C92 /* stb_vorbis.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = stb_vorbis.c; path = Opal/vendor/soloud/src/audiosource/wav/stb_vorbis.c; sourceTree = SOURCE_ROOT; };
+		026FC17EAB604FF58460B30D /* VulkanTexture.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = VulkanTexture.h; path = Opal/Graphics/Vulkan/VulkanTexture.h; sourceTree = SOURCE_ROOT; };
+		02703A194FA242A29D48F3B8 /* random.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = random.hpp; path = Opal/glm/gtc/random.hpp; sourceTree = SOURCE_ROOT; };
+		02EBF3ED859643778DCF4C8D /* OpalMath.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = OpalMath.cpp; path = Opal/OpalMath.cpp; sourceTree = SOURCE_ROOT; };
+		035F91A52C4B4B64B78DB197 /* TileChunk.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = TileChunk.cpp; path = Opal/Tilemap/TileChunk.cpp; sourceTree = SOURCE_ROOT; };
+		03B6D3A0EDA24ECD82136840 /* soloud_audiosource.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_audiosource.cpp; path = Opal/vendor/soloud/src/core/soloud_audiosource.cpp; sourceTree = SOURCE_ROOT; };
+		063BD43CBB8A42C582EA2176 /* EndState.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = EndState.h; path = src/Gamestate/EndState.h; sourceTree = SOURCE_ROOT; };
+		064EBF525AD74EBC98BE6FC3 /* EndState.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = EndState.cpp; path = src/Gamestate/EndState.cpp; sourceTree = SOURCE_ROOT; };
+		07322C263A434A8D9FF4F07D /* LightComponent2D.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LightComponent2D.h; path = Opal/EntityComponent/LightComponent2D.h; sourceTree = SOURCE_ROOT; };
+		07BF4810B0CF48EF91F2636E /* soloud_c.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_c.h; path = Opal/vendor/soloud/include/soloud_c.h; sourceTree = SOURCE_ROOT; };
+		07EA824AB176446D9055C04F /* ext.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ext.hpp; path = Opal/glm/ext.hpp; sourceTree = SOURCE_ROOT; };
+		0818A3A949A54FAB99DFFAA2 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = sourcecode.text.plist; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = build/CMakeFiles/OfMoonsAndMania.dir/Info.plist; sourceTree = SOURCE_ROOT; };
+		0C505C7358BF474382F49329 /* MainMenuState.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = MainMenuState.h; path = src/Gamestate/MainMenuState.h; sourceTree = SOURCE_ROOT; };
+		0CA8BAD65FD74903BF5EA291 /* TextureAtlas.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = TextureAtlas.cpp; path = Opal/Graphics/TextureAtlas.cpp; sourceTree = SOURCE_ROOT; };
+		0D61D1ABF7B948DD9CB13B8E /* imgui_impl_sdl.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imgui_impl_sdl.h; path = Opal/vendor/imgui/imgui_impl_sdl.h; sourceTree = SOURCE_ROOT; };
+		0D62109A1757472E8420E2C6 /* PromptState.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = PromptState.cpp; path = src/Gamestate/PromptState.cpp; sourceTree = SOURCE_ROOT; };
+		0DA1D4A1C7CB4734AFA76CE2 /* FontRenderer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = FontRenderer.h; path = Opal/Graphics/FontRenderer.h; sourceTree = SOURCE_ROOT; };
+		0E2A315C638D4A20862031DB /* soloud.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud.cpp; path = Opal/vendor/soloud/src/core/soloud.cpp; sourceTree = SOURCE_ROOT; };
+		0E2B9C6E43C74EFCA4892819 /* vec2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = vec2.hpp; path = Opal/glm/vec2.hpp; sourceTree = SOURCE_ROOT; };
+		0E5F0F9177254835A895C8D9 /* UISliderElement.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = UISliderElement.h; path = Opal/UI/Elements/UISliderElement.h; sourceTree = SOURCE_ROOT; };
+		1212AA06DCB04AEB96F3124E /* trigonometric.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = trigonometric.hpp; path = Opal/glm/trigonometric.hpp; sourceTree = SOURCE_ROOT; };
+		13528F32692648DBADB39E63 /* Gamestate.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Gamestate.cpp; path = Opal/Gamestate/Gamestate.cpp; sourceTree = SOURCE_ROOT; };
+		145A9080AD3F4C2591158146 /* EndWallComponent.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = EndWallComponent.h; path = src/Components/EndWallComponent.h; sourceTree = SOURCE_ROOT; };
+		15614ED5C6654D4A8EB73D89 /* dr_flac.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dr_flac.h; path = Opal/vendor/soloud/src/audiosource/wav/dr_flac.h; sourceTree = SOURCE_ROOT; };
+		15926AA14CC845C2ACB3211A /* soloud_wavstream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_wavstream.cpp; path = Opal/vendor/soloud/src/audiosource/wav/soloud_wavstream.cpp; sourceTree = SOURCE_ROOT; };
+		172497211621469CAC1815EA /* SentenceFragmentComponent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SentenceFragmentComponent.cpp; path = src/Components/SentenceFragmentComponent.cpp; sourceTree = SOURCE_ROOT; };
+		17793BD1616041C4A7DDF5F3 /* soloud_thread.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_thread.h; path = Opal/vendor/soloud/include/soloud_thread.h; sourceTree = SOURCE_ROOT; };
+		19A15911DB034EB6905DB101 /* vec3.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = vec3.hpp; path = Opal/glm/vec3.hpp; sourceTree = SOURCE_ROOT; };
+		1ABC6D5FE8D648B28A7C63D1 /* vec4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = vec4.hpp; path = Opal/glm/vec4.hpp; sourceTree = SOURCE_ROOT; };
+		1AC024B29D9B48358A30AC65 /* DialogueManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = DialogueManager.h; path = src/DialogueSystem/DialogueManager.h; sourceTree = SOURCE_ROOT; };
+		1B06D92EE40B48E8AFB7D838 /* packing.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = packing.hpp; path = Opal/glm/gtc/packing.hpp; sourceTree = SOURCE_ROOT; };
+		1B1786CF6F9F4905A19001E8 /* soloud_waveshaperfilter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_waveshaperfilter.h; path = Opal/vendor/soloud/include/soloud_waveshaperfilter.h; sourceTree = SOURCE_ROOT; };
+		1BF6F63E0B554D46AED3637F /* AudioClipInstance.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = AudioClipInstance.cpp; path = Opal/Audio/AudioClipInstance.cpp; sourceTree = SOURCE_ROOT; };
+		1C7A3DEF46204280AA804637 /* Renderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Renderer.cpp; path = Opal/Graphics/Renderer.cpp; sourceTree = SOURCE_ROOT; };
+		1DEBEACD3EFF44A09FE5F482 /* uuid.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = uuid.h; path = Opal/uuid.h; sourceTree = SOURCE_ROOT; };
+		1E7A78C40A0A429A94B80BCB /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		1EE2B986851D415ABBA5124F /* imstb_textedit.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imstb_textedit.h; path = Opal/vendor/imgui/imstb_textedit.h; sourceTree = SOURCE_ROOT; };
+		218FE0D536B34C92A26ECA5F /* matrix_access.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = matrix_access.hpp; path = Opal/glm/gtc/matrix_access.hpp; sourceTree = SOURCE_ROOT; };
+		22BE88CC621146FA8A0C4EE0 /* color_space.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = color_space.hpp; path = Opal/glm/gtc/color_space.hpp; sourceTree = SOURCE_ROOT; };
+		2455F168F1EF454D9DBCDD82 /* matrix_integer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = matrix_integer.hpp; path = Opal/glm/gtc/matrix_integer.hpp; sourceTree = SOURCE_ROOT; };
+		24BBB3E3B81844908FCF2A3D /* VulkanDescriptorSet.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = VulkanDescriptorSet.cpp; path = Opal/Graphics/Vulkan/VulkanDescriptorSet.cpp; sourceTree = SOURCE_ROOT; };
+		24CF05DED79448E5B37A3F4D /* soloud_openmpt.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_openmpt.h; path = Opal/vendor/soloud/include/soloud_openmpt.h; sourceTree = SOURCE_ROOT; };
+		259E3F0702DD45EE95378BB6 /* soloud_wav.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_wav.cpp; path = Opal/vendor/soloud/src/audiosource/wav/soloud_wav.cpp; sourceTree = SOURCE_ROOT; };
+		263EF5FBFA784B458F3546CF /* implot_internal.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = implot_internal.h; path = Opal/vendor/imgui/implot_internal.h; sourceTree = SOURCE_ROOT; };
+		275C2C03701F4763889B48CF /* soloud_audiosource.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_audiosource.h; path = Opal/vendor/soloud/include/soloud_audiosource.h; sourceTree = SOURCE_ROOT; };
+		275CF2EDDDE547F183666F1F /* SentenceFragmentComponent.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SentenceFragmentComponent.h; path = src/Components/SentenceFragmentComponent.h; sourceTree = SOURCE_ROOT; };
+		282F05A3E44E4201A7B54110 /* matrix_inverse.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = matrix_inverse.hpp; path = Opal/glm/gtc/matrix_inverse.hpp; sourceTree = SOURCE_ROOT; };
+		2B5CAE6F9C834CCC82AE8DF2 /* imgui_internal.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imgui_internal.h; path = Opal/vendor/imgui/imgui_internal.h; sourceTree = SOURCE_ROOT; };
+		2C2A586621D546AF89FDD446 /* Font.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Font.h; path = Opal/Graphics/Font.h; sourceTree = SOURCE_ROOT; };
+		2C2BC61D0A974B5AA5510C21 /* imgui_impl_vulkan.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imgui_impl_vulkan.h; path = Opal/vendor/imgui/imgui_impl_vulkan.h; sourceTree = SOURCE_ROOT; };
+		2C909BB5295C44E3A8B988DF /* soloud_misc.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_misc.h; path = Opal/vendor/soloud/include/soloud_misc.h; sourceTree = SOURCE_ROOT; };
+		300C7C4C4FE34536B1EA6464 /* DragComponent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DragComponent.cpp; path = src/Components/DragComponent.cpp; sourceTree = SOURCE_ROOT; };
+		30AEFED9DE0B4698AE2C9B1D /* exponential.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = exponential.hpp; path = Opal/glm/exponential.hpp; sourceTree = SOURCE_ROOT; };
+		30E234F463A24345BEB271FB /* soloud_biquadresonantfilter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_biquadresonantfilter.h; path = Opal/vendor/soloud/include/soloud_biquadresonantfilter.h; sourceTree = SOURCE_ROOT; };
+		3198FA2B5929475EB8795E1C /* soloud_flangerfilter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_flangerfilter.h; path = Opal/vendor/soloud/include/soloud_flangerfilter.h; sourceTree = SOURCE_ROOT; };
+		319F70EE7C4448E294908365 /* miniaudio.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = miniaudio.h; path = Opal/vendor/soloud/src/backend/miniaudio/miniaudio.h; sourceTree = SOURCE_ROOT; };
+		3334A2ABF697481EACCAD439 /* vec1.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = vec1.hpp; path = Opal/glm/gtc/vec1.hpp; sourceTree = SOURCE_ROOT; };
+		34767314BBFF46FEA36BF140 /* soloud_freeverbfilter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_freeverbfilter.h; path = Opal/vendor/soloud/include/soloud_freeverbfilter.h; sourceTree = SOURCE_ROOT; };
+		34A831702FC2406690FE81E3 /* stb_image_write.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = stb_image_write.h; path = Opal/vendor/stb_image_write.h; sourceTree = SOURCE_ROOT; };
+		350E8508B74F40F4B22D3C38 /* soloud_internal.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_internal.h; path = Opal/vendor/soloud/include/soloud_internal.h; sourceTree = SOURCE_ROOT; };
+		35B957040C9D46A39A26E429 /* soloud_monotone.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_monotone.h; path = Opal/vendor/soloud/include/soloud_monotone.h; sourceTree = SOURCE_ROOT; };
+		35E3B0F3380348A3949387EE /* RenderCommand.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = RenderCommand.h; path = Opal/Graphics/RenderCommand.h; sourceTree = SOURCE_ROOT; };
+		35F65A27CEBD444397ED796C /* SpriteComponent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SpriteComponent.cpp; path = Opal/EntityComponent/SpriteComponent.cpp; sourceTree = SOURCE_ROOT; };
+		35F80907D9F443E1ABF2688E /* SparkComponent.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SparkComponent.h; path = src/Components/SparkComponent.h; sourceTree = SOURCE_ROOT; };
+		363222E365BB42C8A7E7F323 /* NarrativeState.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = NarrativeState.h; path = src/Gamestate/NarrativeState.h; sourceTree = SOURCE_ROOT; };
+		368459CFB24D447D9BF5B0C6 /* soloud_file_hack_on.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_file_hack_on.h; path = Opal/vendor/soloud/include/soloud_file_hack_on.h; sourceTree = SOURCE_ROOT; };
+		37A8F33D81A14065BFE1290D /* imgui_widgets.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_widgets.cpp; path = Opal/vendor/imgui/imgui_widgets.cpp; sourceTree = SOURCE_ROOT; };
+		38A5813F3DC14985B2F6A251 /* imconfig.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imconfig.h; path = Opal/vendor/imgui/imconfig.h; sourceTree = SOURCE_ROOT; };
+		392EDD306E35431382D4282F /* soloud_bus.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_bus.h; path = Opal/vendor/soloud/include/soloud_bus.h; sourceTree = SOURCE_ROOT; };
+		3960E135566B44889AD2205E /* Sprite.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Sprite.cpp; path = Opal/Graphics/Sprite.cpp; sourceTree = SOURCE_ROOT; };
+		3AD0A0806F514C8CA28143FD /* implot.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = implot.cpp; path = Opal/vendor/imgui/implot.cpp; sourceTree = SOURCE_ROOT; };
+		3D52E131DF954997BBED24F1 /* Gamestate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Gamestate.h; path = Opal/Gamestate/Gamestate.h; sourceTree = SOURCE_ROOT; };
+		3EDBE0054C5A4F7EAFB8F7EB /* soloud_error.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_error.h; path = Opal/vendor/soloud/include/soloud_error.h; sourceTree = SOURCE_ROOT; };
+		3EFDE5DE20D44F7DBC9287AB /* UIButtonElement.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = UIButtonElement.h; path = Opal/UI/Elements/UIButtonElement.h; sourceTree = SOURCE_ROOT; };
+		40676351ACE04A158BC1A733 /* PillState.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = PillState.cpp; path = src/Gamestate/PillState.cpp; sourceTree = SOURCE_ROOT; };
+		408F8E6EEB66482780AD55E6 /* imgui_tables.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_tables.cpp; path = Opal/vendor/imgui/imgui_tables.cpp; sourceTree = SOURCE_ROOT; };
+		41690A8533324AC296575AF3 /* soloud_sfxr.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_sfxr.h; path = Opal/vendor/soloud/include/soloud_sfxr.h; sourceTree = SOURCE_ROOT; };
+		423077AE2C6345A5AE8E77A2 /* AudioEngine.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = AudioEngine.cpp; path = Opal/Audio/AudioEngine.cpp; sourceTree = SOURCE_ROOT; };
+		426A3DA5257349A2AF8E3220 /* BoxColliderComponent2D.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = BoxColliderComponent2D.cpp; path = Opal/EntityComponent/BoxColliderComponent2D.cpp; sourceTree = SOURCE_ROOT; };
+		42818853C4814E8B854D1401 /* UIContext.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = UIContext.h; path = Opal/UI/UIContext.h; sourceTree = SOURCE_ROOT; };
+		42BC6C66246148D9AC443213 /* imgui_impl_vulkan.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_impl_vulkan.cpp; path = Opal/vendor/imgui/imgui_impl_vulkan.cpp; sourceTree = SOURCE_ROOT; };
+		430290D561A9479BA0AA05D8 /* Camera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Camera.cpp; path = Opal/Graphics/Camera.cpp; sourceTree = SOURCE_ROOT; };
+		43BE5E4E74EC41F8888BF108 /* AABBCollision.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = AABBCollision.cpp; path = Opal/Collision/AABBCollision.cpp; sourceTree = SOURCE_ROOT; };
+		4593CF1FB28747BA9B1165FD /* MainMenuState.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = MainMenuState.cpp; path = src/Gamestate/MainMenuState.cpp; sourceTree = SOURCE_ROOT; };
+		46D9EBC7F7394CA284A31126 /* libOpald.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libOpald.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		470BA3956BC3408BB972AC95 /* WordBank.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = WordBank.h; path = src/DialogueSystem/WordBank.h; sourceTree = SOURCE_ROOT; };
+		4776A9F56D8847908DF7D4F9 /* soloud_miniaudio.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_miniaudio.cpp; path = Opal/vendor/soloud/src/backend/miniaudio/soloud_miniaudio.cpp; sourceTree = SOURCE_ROOT; };
+		4858ECAF8C024F07B2BCD2BC /* soloud_fft.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_fft.cpp; path = Opal/vendor/soloud/src/core/soloud_fft.cpp; sourceTree = SOURCE_ROOT; };
+		49AFC7FDD9C546A5AFC642E4 /* soloud_fft_lut.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_fft_lut.cpp; path = Opal/vendor/soloud/src/core/soloud_fft_lut.cpp; sourceTree = SOURCE_ROOT; };
+		49BBFD4AF4694A59A7ADF12B /* VulkanPipeline.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = VulkanPipeline.cpp; path = Opal/Graphics/Vulkan/VulkanPipeline.cpp; sourceTree = SOURCE_ROOT; };
+		4A6D46D2598445E19EC600E9 /* DrawingState.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = DrawingState.h; path = src/Gamestate/DrawingState.h; sourceTree = SOURCE_ROOT; };
+		4B14032602594BEE814FE78E /* AudioClip.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = AudioClip.h; path = Opal/Audio/AudioClip.h; sourceTree = SOURCE_ROOT; };
+		4B42AE21A72B4207B31701C5 /* EntityComponentSerialization.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = EntityComponentSerialization.cpp; path = Opal/EntityComponent/EntityComponentSerialization.cpp; sourceTree = SOURCE_ROOT; };
+		4C3275B866704C7385DAC2E1 /* RenderPass.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = RenderPass.h; path = Opal/Graphics/RenderPass.h; sourceTree = SOURCE_ROOT; };
+		4CB5D8BD7D2A47439E385DB3 /* AnimatedSpriteComponent.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = AnimatedSpriteComponent.h; path = Opal/EntityComponent/AnimatedSpriteComponent.h; sourceTree = SOURCE_ROOT; };
+		4CFC86AD9CA44559AC9D4A33 /* CircleRenderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CircleRenderer.cpp; path = Opal/Graphics/CircleRenderer.cpp; sourceTree = SOURCE_ROOT; };
+		4DACA3A8F91F48CC9035C592 /* VulkanBuffer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = VulkanBuffer.cpp; path = Opal/Graphics/Vulkan/VulkanBuffer.cpp; sourceTree = SOURCE_ROOT; };
+		4F1FEE8C37CF4D42B6A2F3AC /* soloud_vic.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_vic.h; path = Opal/vendor/soloud/include/soloud_vic.h; sourceTree = SOURCE_ROOT; };
+		4FE88FBA301547C4A8566559 /* MeshRenderer2D.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = MeshRenderer2D.cpp; path = Opal/Graphics/MeshRenderer2D.cpp; sourceTree = SOURCE_ROOT; };
+		52DF2D71AB48417DA47B9C26 /* SpriteRenderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SpriteRenderer.cpp; path = Opal/Graphics/SpriteRenderer.cpp; sourceTree = SOURCE_ROOT; };
+		532B3CD4F6DE4D04A4AA75B0 /* soloud_core_faderops.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_core_faderops.cpp; path = Opal/vendor/soloud/src/core/soloud_core_faderops.cpp; sourceTree = SOURCE_ROOT; };
+		5362E9448C3946619ACD165E /* VelocityComponent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = VelocityComponent.cpp; path = Opal/EntityComponent/VelocityComponent.cpp; sourceTree = SOURCE_ROOT; };
+		53D3D5E9A2204B2C86B6EC5D /* CollisionManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = CollisionManager.h; path = Opal/Collision/CollisionManager.h; sourceTree = SOURCE_ROOT; };
+		53F173AF8AB043DDBB260058 /* BatchRenderer2D.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = BatchRenderer2D.cpp; path = Opal/Graphics/BatchRenderer2D.cpp; sourceTree = SOURCE_ROOT; };
+		551201CD06F44D259090D27B /* Renderer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Renderer.h; path = Opal/Graphics/Renderer.h; sourceTree = SOURCE_ROOT; };
+		5646F3F72A0A464DA9AF4F99 /* soloud_fftfilter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_fftfilter.h; path = Opal/vendor/soloud/include/soloud_fftfilter.h; sourceTree = SOURCE_ROOT; };
+		59234A6D2CF34CB1A2806221 /* InputHandler.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = InputHandler.h; path = Opal/Input/InputHandler.h; sourceTree = SOURCE_ROOT; };
+		5962002845404DB09F04AA7D /* TileChunkManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = TileChunkManager.h; path = Opal/Tilemap/TileChunkManager.h; sourceTree = SOURCE_ROOT; };
+		59ED0B3FF1AF45C980AA0BC1 /* soloud_noise.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_noise.h; path = Opal/vendor/soloud/include/soloud_noise.h; sourceTree = SOURCE_ROOT; };
+		5A22DF57CAEC405F8AE37B8A /* VulkanBuffer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = VulkanBuffer.h; path = Opal/Graphics/Vulkan/VulkanBuffer.h; sourceTree = SOURCE_ROOT; };
+		5A3D87CC3DDB402EB08515FD /* FastNoiseLite.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = FastNoiseLite.h; path = Opal/vendor/FastNoiseLite.h; sourceTree = SOURCE_ROOT; };
+		5B03040744164CFABF07ED47 /* soloud_misc.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_misc.cpp; path = Opal/vendor/soloud/src/core/soloud_misc.cpp; sourceTree = SOURCE_ROOT; };
+		5B8CD4EB844C4EB1A1C08C1D /* Game.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Game.h; path = Opal/Game.h; sourceTree = SOURCE_ROOT; };
+		5BA5D62BB9C84E22835B144B /* implot.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = implot.h; path = Opal/vendor/imgui/implot.h; sourceTree = SOURCE_ROOT; };
+		5C64DEAA24524B638BA6293A /* CursorComponent.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = CursorComponent.h; path = src/Components/CursorComponent.h; sourceTree = SOURCE_ROOT; };
+		5C7D7241989342228AC6805D /* VelocityComponent.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = VelocityComponent.h; path = Opal/EntityComponent/VelocityComponent.h; sourceTree = SOURCE_ROOT; };
+		5D04D8EE80F0479582FF3B28 /* EditorGamestate.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = EditorGamestate.cpp; path = Opal/Gamestate/EditorGamestate.cpp; sourceTree = SOURCE_ROOT; };
+		5E457EE4D113445D9AD7D790 /* AnimatedSprite.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = AnimatedSprite.cpp; path = Opal/Graphics/AnimatedSprite.cpp; sourceTree = SOURCE_ROOT; };
+		60B7E32096134071BA0F612A /* common.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = common.hpp; path = Opal/glm/common.hpp; sourceTree = SOURCE_ROOT; };
+		61AF6268D35A4EE084173653 /* Game.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Game.cpp; path = Opal/Game.cpp; sourceTree = SOURCE_ROOT; };
+		651E07BE960C4F30BE53C117 /* BatchRenderer2D.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = BatchRenderer2D.h; path = Opal/Graphics/BatchRenderer2D.h; sourceTree = SOURCE_ROOT; };
+		65436DDAE414418FBAC57FCA /* PromptState.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PromptState.h; path = src/Gamestate/PromptState.h; sourceTree = SOURCE_ROOT; };
+		65E65712BA144344A9307A64 /* util.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = util.h; path = Opal/util.h; sourceTree = SOURCE_ROOT; };
+		664B945E288C7442001BE983 /* MoltenVK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MoltenVK; path = ../MoltenVK; sourceTree = "<group>"; };
+		664B9460288C7468001BE983 /* libMoltenVK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMoltenVK.a; path = "../MoltenVK/Package/Release/MoltenVK/MoltenVK.xcframework/ios-arm64/libMoltenVK.a"; sourceTree = "<group>"; };
+		664B9462288C749C001BE983 /* libMoltenVK.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMoltenVK.dylib; path = ../MoltenVK/Package/Release/MoltenVK/dylib/iOS/libMoltenVK.dylib; sourceTree = "<group>"; };
+		664B9464288C76A8001BE983 /* libFreetype2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFreetype2.a; path = "../freetype2-ios/lib/libFreetype2.a"; sourceTree = "<group>"; };
+		664B9466288C76F2001BE983 /* libSDL2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2.a; path = ../SDL_iOS/iOS/libSDL2.a; sourceTree = "<group>"; };
+		664B946C288CA424001BE983 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = src/AppDelegate.h; sourceTree = "<group>"; };
+		664B946D288CA509001BE983 /* GamePassThruController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GamePassThruController.h; path = src/GamePassThruController.h; sourceTree = "<group>"; };
+		664B9472288CC843001BE983 /* Audio */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Audio; sourceTree = SOURCE_ROOT; };
+		664B9473288CC84C001BE983 /* Dialogue */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dialogue; sourceTree = SOURCE_ROOT; };
+		664B9474288CC858001BE983 /* Drawings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Drawings; sourceTree = SOURCE_ROOT; };
+		664B9475288CC868001BE983 /* fonts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fonts; sourceTree = SOURCE_ROOT; };
+		664B9476288CC877001BE983 /* SaveGame */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SaveGame; sourceTree = SOURCE_ROOT; };
+		664B9477288CC880001BE983 /* shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = shaders; sourceTree = SOURCE_ROOT; };
+		664B9478288CC88A001BE983 /* textures */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = textures; sourceTree = SOURCE_ROOT; };
+		66B479192896C60F008654E4 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "Resources/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		66E56D47288C695F003DA096 /* Main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Main.h; path = src/Main.h; sourceTree = "<group>"; };
+		66E56D48288C699A003DA096 /* IOS_Main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = IOS_Main.mm; path = src/IOS_Main.mm; sourceTree = "<group>"; };
+		674C8A5F243E44D0ABFA1DE7 /* soloud_core_filterops.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_core_filterops.cpp; path = Opal/vendor/soloud/src/core/soloud_core_filterops.cpp; sourceTree = SOURCE_ROOT; };
+		69814328CFB346E5B8C6283F /* CollisionManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CollisionManager.cpp; path = Opal/Collision/CollisionManager.cpp; sourceTree = SOURCE_ROOT; };
+		6AA9D22D4F5A497FBB36184C /* AudioEngine.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = AudioEngine.h; path = Opal/Audio/AudioEngine.h; sourceTree = SOURCE_ROOT; };
+		6F8247CC935C4A3FB20C15AD /* Texture.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Texture.cpp; path = Opal/Graphics/Texture.cpp; sourceTree = SOURCE_ROOT; };
+		6FC58396BF754ED0AE7A59B9 /* VulkanRenderPass.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = VulkanRenderPass.cpp; path = Opal/Graphics/Vulkan/VulkanRenderPass.cpp; sourceTree = SOURCE_ROOT; };
+		6FF3151A9A7641EEA3E74E9F /* constants.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = constants.hpp; path = Opal/glm/gtc/constants.hpp; sourceTree = SOURCE_ROOT; };
+		7035597435494159BD85385E /* UniformBufferInfo.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = UniformBufferInfo.h; path = Opal/Graphics/UniformBufferInfo.h; sourceTree = SOURCE_ROOT; };
+		713FE444BD224A689E56F730 /* Logger.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Logger.cpp; path = Opal/Logger.cpp; sourceTree = SOURCE_ROOT; };
+		71FE71E8641F4E03A6B7BC5F /* Pill.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Pill.cpp; path = src/PillGeneration/Pill.cpp; sourceTree = SOURCE_ROOT; };
+		722F79AFFF30483BABDF9CE5 /* SentenceFormingState.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SentenceFormingState.h; path = src/Gamestate/SentenceFormingState.h; sourceTree = SOURCE_ROOT; };
+		74480C774E044E4DAB2C382D /* SentenceFormingState.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SentenceFormingState.cpp; path = src/Gamestate/SentenceFormingState.cpp; sourceTree = SOURCE_ROOT; };
+		755CB902A3EB418692A0C1AA /* EntityUI.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = EntityUI.h; path = Opal/Editor/EntityUI.h; sourceTree = SOURCE_ROOT; };
+		76B69D33D0024615844938EF /* glm.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = glm.hpp; path = Opal/glm/glm.hpp; sourceTree = SOURCE_ROOT; };
+		772CEFD134B147E487FB0F2C /* mat2x2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = mat2x2.hpp; path = Opal/glm/mat2x2.hpp; sourceTree = SOURCE_ROOT; };
+		7790D94E437A433192417B87 /* imstb_truetype.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imstb_truetype.h; path = Opal/vendor/imgui/imstb_truetype.h; sourceTree = SOURCE_ROOT; };
+		77BA7F84E023435A8363CF2E /* soloud_wav.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_wav.h; path = Opal/vendor/soloud/include/soloud_wav.h; sourceTree = SOURCE_ROOT; };
+		7959909755DF43CBBC697500 /* EntityUI.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = EntityUI.cpp; path = Opal/Editor/EntityUI.cpp; sourceTree = SOURCE_ROOT; };
+		7ABD59B7A14041A0BBE319A7 /* soloud_fader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_fader.h; path = Opal/vendor/soloud/include/soloud_fader.h; sourceTree = SOURCE_ROOT; };
+		7BFF770B4F32498F8621CC46 /* Component.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Component.cpp; path = Opal/EntityComponent/Component.cpp; sourceTree = SOURCE_ROOT; };
+		7C72C0E1228F4C5591F952E9 /* Prompt.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Prompt.h; path = src/DialogueSystem/Prompt.h; sourceTree = SOURCE_ROOT; };
+		7CD5FBD0EAFB4479B2CD6796 /* EndWallComponent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = EndWallComponent.cpp; path = src/Components/EndWallComponent.cpp; sourceTree = SOURCE_ROOT; };
+		7D68811E9A49482286B445C6 /* Shader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Shader.h; path = Opal/Graphics/Shader.h; sourceTree = SOURCE_ROOT; };
+		7D72C7983DAA43DA9E33DD81 /* VulkanRenderPass.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = VulkanRenderPass.h; path = Opal/Graphics/Vulkan/VulkanRenderPass.h; sourceTree = SOURCE_ROOT; };
+		7DA714A0047B4D6687BBB6DD /* SpriteRenderer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SpriteRenderer.h; path = Opal/Graphics/SpriteRenderer.h; sourceTree = SOURCE_ROOT; };
+		7E7925D0ECCB4F4E8B17A998 /* soloud_file_hack_off.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_file_hack_off.h; path = Opal/vendor/soloud/include/soloud_file_hack_off.h; sourceTree = SOURCE_ROOT; };
+		7F3BC0600AE2463FAC4DD62D /* Textmesh.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Textmesh.h; path = Opal/Graphics/Textmesh.h; sourceTree = SOURCE_ROOT; };
+		819DCA73CACD4616BC7EB653 /* soloud_file.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_file.cpp; path = Opal/vendor/soloud/src/core/soloud_file.cpp; sourceTree = SOURCE_ROOT; };
+		82E259E8566141E59001547C /* RenderBuffer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = RenderBuffer.h; path = Opal/Graphics/RenderBuffer.h; sourceTree = SOURCE_ROOT; };
+		840620B43E0F4F2F94ABCD0E /* PostProcessRenderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = PostProcessRenderer.cpp; path = Opal/Graphics/PostProcessRenderer.cpp; sourceTree = SOURCE_ROOT; };
+		848E1CFC71D542019FEAA713 /* soloud_thread.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_thread.cpp; path = Opal/vendor/soloud/src/core/soloud_thread.cpp; sourceTree = SOURCE_ROOT; };
+		856FC03C777E433396E77FE2 /* PillState.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PillState.h; path = src/Gamestate/PillState.h; sourceTree = SOURCE_ROOT; };
+		8599952F24524EE592E95337 /* imstb_rectpack.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imstb_rectpack.h; path = Opal/vendor/imgui/imstb_rectpack.h; sourceTree = SOURCE_ROOT; };
+		859CFF12C3494D4096C4571A /* matrix.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = matrix.hpp; path = Opal/glm/matrix.hpp; sourceTree = SOURCE_ROOT; };
+		86A9CDD49E1E4FBCBB53D22B /* TileSet.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = TileSet.h; path = Opal/Tilemap/TileSet.h; sourceTree = SOURCE_ROOT; };
+		86E5599C74FB4BD3B7DBBAEA /* soloud_core_voicegroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_core_voicegroup.cpp; path = Opal/vendor/soloud/src/core/soloud_core_voicegroup.cpp; sourceTree = SOURCE_ROOT; };
+		8722C991A4704AD2AE91D364 /* imgui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui.cpp; path = Opal/vendor/imgui/imgui.cpp; sourceTree = SOURCE_ROOT; };
+		87347F39A1B04CEC82DA4B82 /* Main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Main.cpp; path = src/Main.cpp; sourceTree = SOURCE_ROOT; };
+		8751E5BE2E0045C49ABF981B /* VulkanRenderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = VulkanRenderer.cpp; path = Opal/Graphics/Vulkan/VulkanRenderer.cpp; sourceTree = SOURCE_ROOT; };
+		87955427F6F24C3CAD966EDD /* round.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = round.hpp; path = Opal/glm/gtc/round.hpp; sourceTree = SOURCE_ROOT; };
+		87FC44D6392C4F94A2335729 /* imgui_impl_sdl.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_impl_sdl.cpp; path = Opal/vendor/imgui/imgui_impl_sdl.cpp; sourceTree = SOURCE_ROOT; };
+		8846C89104744CD4B8822013 /* Font.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Font.cpp; path = Opal/Graphics/Font.cpp; sourceTree = SOURCE_ROOT; };
+		886AA7823710442A8502E3DD /* PostProcessRenderer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PostProcessRenderer.h; path = Opal/Graphics/PostProcessRenderer.h; sourceTree = SOURCE_ROOT; };
+		88ACF3188FB543309538B835 /* imgui_stdlib.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_stdlib.cpp; path = Opal/vendor/imgui/imgui_stdlib.cpp; sourceTree = SOURCE_ROOT; };
+		88C95232AAA244BF8DEB5D71 /* SentenceFragment.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SentenceFragment.h; path = src/DialogueSystem/SentenceFragment.h; sourceTree = SOURCE_ROOT; };
+		898405E3B0444C5C80CBB1A0 /* type_aligned.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = type_aligned.hpp; path = Opal/glm/gtc/type_aligned.hpp; sourceTree = SOURCE_ROOT; };
+		8CB1E075AB794F899241A221 /* implot_items.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = implot_items.cpp; path = Opal/vendor/imgui/implot_items.cpp; sourceTree = SOURCE_ROOT; };
+		8CE8A1ED5CA5468ABEFD84C1 /* vector_relational.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = vector_relational.hpp; path = Opal/glm/vector_relational.hpp; sourceTree = SOURCE_ROOT; };
+		8D7F0DEAAA704CCA88E1D899 /* OpalMath.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OpalMath.h; path = Opal/OpalMath.h; sourceTree = SOURCE_ROOT; };
+		8DB438ACE7EF41368A0F45B7 /* UIElement.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = UIElement.h; path = Opal/UI/UIElement.h; sourceTree = SOURCE_ROOT; };
+		903F45EB2E5F494AA358BBD1 /* soloud_vizsn.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_vizsn.h; path = Opal/vendor/soloud/include/soloud_vizsn.h; sourceTree = SOURCE_ROOT; };
+		921DC7B259FA4F41AB929B98 /* soloud_echofilter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_echofilter.h; path = Opal/vendor/soloud/include/soloud_echofilter.h; sourceTree = SOURCE_ROOT; };
+		92C8601F722944948EC801E6 /* mat2x4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = mat2x4.hpp; path = Opal/glm/mat2x4.hpp; sourceTree = SOURCE_ROOT; };
+		930D09D12B17444E9A984925 /* DescriptorSet.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = DescriptorSet.h; path = Opal/Graphics/DescriptorSet.h; sourceTree = SOURCE_ROOT; };
+		94327B87FCFC4F2D87F6696D /* Entity.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Entity.h; path = Opal/EntityComponent/Entity.h; sourceTree = SOURCE_ROOT; };
+		94FBBE5B6FDC4D7492043AA0 /* PillSequence.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PillSequence.h; path = src/DialogueSystem/PillSequence.h; sourceTree = SOURCE_ROOT; };
+		96D4F3A52E9C4E86BF0159C0 /* OfMoonsAndMania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = OfMoonsAndMania.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9784C6F5E1B84A3EBAFB4F59 /* Entity.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Entity.cpp; path = Opal/EntityComponent/Entity.cpp; sourceTree = SOURCE_ROOT; };
+		985A8B36250B4341B202766E /* dr_wav.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dr_wav.h; path = Opal/vendor/soloud/src/audiosource/wav/dr_wav.h; sourceTree = SOURCE_ROOT; };
+		99D1BF848934433290BDAA05 /* EditorGamestate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = EditorGamestate.h; path = Opal/Gamestate/EditorGamestate.h; sourceTree = SOURCE_ROOT; };
+		9B3DA74B83BD4889AA7D131B /* UIRenderer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = UIRenderer.h; path = Opal/UI/UIRenderer.h; sourceTree = SOURCE_ROOT; };
+		9BB5DBC7000F4D328E5FCDC0 /* UIRect.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = UIRect.h; path = Opal/UI/UIRect.h; sourceTree = SOURCE_ROOT; };
+		9C527BF81517490A896A0246 /* mat4x2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = mat4x2.hpp; path = Opal/glm/mat4x2.hpp; sourceTree = SOURCE_ROOT; };
+		9C671EA855EA43BC86F53541 /* VulkanDescriptorSet.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = VulkanDescriptorSet.h; path = Opal/Graphics/Vulkan/VulkanDescriptorSet.h; sourceTree = SOURCE_ROOT; };
+		9CAB4B7147D54D52AD0B92E3 /* soloud_tedsid.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_tedsid.h; path = Opal/vendor/soloud/include/soloud_tedsid.h; sourceTree = SOURCE_ROOT; };
+		9D2369D57A2C4E42BFF206C6 /* mat3x4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = mat3x4.hpp; path = Opal/glm/mat3x4.hpp; sourceTree = SOURCE_ROOT; };
+		9D287F3772244DEF9EE3C012 /* soloud_core_getters.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_core_getters.cpp; path = Opal/vendor/soloud/src/core/soloud_core_getters.cpp; sourceTree = SOURCE_ROOT; };
+		9D3F0840C47C4F85AB659229 /* soloud_filter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_filter.cpp; path = Opal/vendor/soloud/src/core/soloud_filter.cpp; sourceTree = SOURCE_ROOT; };
+		9DDBEED90E00455A95DA1F01 /* UIContext.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = UIContext.cpp; path = Opal/UI/UIContext.cpp; sourceTree = SOURCE_ROOT; };
+		9E2794E4A4904EE5803D43B3 /* EntityComponentSerialization.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = EntityComponentSerialization.h; path = Opal/EntityComponent/EntityComponentSerialization.h; sourceTree = SOURCE_ROOT; };
+		9F3DB7315A094F3393981DE4 /* Scene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Scene.h; path = Opal/EntityComponent/Scene.h; sourceTree = SOURCE_ROOT; };
+		9F96CA15CCFC492FACA41DC3 /* Window.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Window.cpp; path = Opal/Window.cpp; sourceTree = SOURCE_ROOT; };
+		A055F03BA992401BA10D0125 /* imgui_stdlib.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imgui_stdlib.h; path = Opal/vendor/imgui/imgui_stdlib.h; sourceTree = SOURCE_ROOT; };
+		A0862B510E7C429BAE73934F /* ManagerState.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ManagerState.h; path = src/Gamestate/ManagerState.h; sourceTree = SOURCE_ROOT; };
+		A10D2672D9694143851CDA13 /* InputHandler.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = InputHandler.cpp; path = Opal/Input/InputHandler.cpp; sourceTree = SOURCE_ROOT; };
+		A3A5574C53F94C4891807CD9 /* SparkComponent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SparkComponent.cpp; path = src/Components/SparkComponent.cpp; sourceTree = SOURCE_ROOT; };
+		A447102405134798BD57B18C /* CircleRenderer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = CircleRenderer.h; path = Opal/Graphics/CircleRenderer.h; sourceTree = SOURCE_ROOT; };
+		A46B1EC8886B4783807DFD0B /* soloud_bus.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_bus.cpp; path = Opal/vendor/soloud/src/core/soloud_bus.cpp; sourceTree = SOURCE_ROOT; };
+		A480A88949094EF6B26DDAC1 /* mat4x4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = mat4x4.hpp; path = Opal/glm/mat4x4.hpp; sourceTree = SOURCE_ROOT; };
+		A506BE55D08F4410B49CBF44 /* fwd.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = fwd.hpp; path = Opal/glm/fwd.hpp; sourceTree = SOURCE_ROOT; };
+		A6467411C38548B09DF85ED2 /* soloud_queue.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_queue.h; path = Opal/vendor/soloud/include/soloud_queue.h; sourceTree = SOURCE_ROOT; };
+		A646B6B90EBF4B68A5FD27F5 /* AnimatedSprite.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = AnimatedSprite.h; path = Opal/Graphics/AnimatedSprite.h; sourceTree = SOURCE_ROOT; };
+		A83620EA70DC49A6926B8C56 /* DialogueSerializer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = DialogueSerializer.h; path = src/DialogueSystem/DialogueSerializer.h; sourceTree = SOURCE_ROOT; };
+		AAA4BB2E86D6428582DBE43A /* TextureAtlas.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = TextureAtlas.h; path = Opal/Graphics/TextureAtlas.h; sourceTree = SOURCE_ROOT; };
+		B00F3FB79C8E47B1BAD2D3F2 /* LineRenderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = LineRenderer.cpp; path = Opal/Graphics/LineRenderer.cpp; sourceTree = SOURCE_ROOT; };
+		B081A9A5624049BB9DC33999 /* soloud_speech.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_speech.h; path = Opal/vendor/soloud/include/soloud_speech.h; sourceTree = SOURCE_ROOT; };
+		B2C10C6C307248F38A5E1859 /* mat3x2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = mat3x2.hpp; path = Opal/glm/mat3x2.hpp; sourceTree = SOURCE_ROOT; };
+		B2C5A008AB99457F89C31561 /* epsilon.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = epsilon.hpp; path = Opal/glm/gtc/epsilon.hpp; sourceTree = SOURCE_ROOT; };
+		B4446DCA90E64515BA99D32F /* TransformComponent.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = TransformComponent.h; path = Opal/EntityComponent/TransformComponent.h; sourceTree = SOURCE_ROOT; };
+		B44ACDE5948E4C2E8948A122 /* UIStackElement.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = UIStackElement.h; path = Opal/UI/Elements/UIStackElement.h; sourceTree = SOURCE_ROOT; };
+		B4A055FFBB914A6D92626696 /* integer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = integer.hpp; path = Opal/glm/gtc/integer.hpp; sourceTree = SOURCE_ROOT; };
+		B52EF4B2D5924E0C954CB057 /* MeshRenderer2D.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = MeshRenderer2D.h; path = Opal/Graphics/MeshRenderer2D.h; sourceTree = SOURCE_ROOT; };
+		B81E4F7B81464931BC655A65 /* ManagerState.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ManagerState.cpp; path = src/Gamestate/ManagerState.cpp; sourceTree = SOURCE_ROOT; };
+		B93BB4253F4F4137B8E5F96B /* TileChunk.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = TileChunk.h; path = Opal/Tilemap/TileChunk.h; sourceTree = SOURCE_ROOT; };
+		B974AC6437FE4DCE95E505E2 /* Component.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Component.h; path = Opal/EntityComponent/Component.h; sourceTree = SOURCE_ROOT; };
+		BC015D65C1C74D34BE112E36 /* Pipeline.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Pipeline.h; path = Opal/Graphics/Pipeline.h; sourceTree = SOURCE_ROOT; };
+		BCF547AAAE9D437B94561E74 /* soloud_core_setters.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_core_setters.cpp; path = Opal/vendor/soloud/src/core/soloud_core_setters.cpp; sourceTree = SOURCE_ROOT; };
+		BE93B573170B4E3D95AE022E /* dr_impl.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dr_impl.cpp; path = Opal/vendor/soloud/src/audiosource/wav/dr_impl.cpp; sourceTree = SOURCE_ROOT; };
+		C0D64A0A63154B1EBEF25399 /* imgui_demo.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_demo.cpp; path = Opal/vendor/imgui/imgui_demo.cpp; sourceTree = SOURCE_ROOT; };
+		C19E01906067454E99FAC356 /* mat3x3.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = mat3x3.hpp; path = Opal/glm/mat3x3.hpp; sourceTree = SOURCE_ROOT; };
+		C1FDE9FFA7AF4BAAB89D0747 /* UITitleElement.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = UITitleElement.h; path = Opal/UI/Elements/UITitleElement.h; sourceTree = SOURCE_ROOT; };
+		C29BE8CB240043ACBDAFEC28 /* reciprocal.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = reciprocal.hpp; path = Opal/glm/gtc/reciprocal.hpp; sourceTree = SOURCE_ROOT; };
+		C3BB772E21C248108D04C0C6 /* matrix_transform.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = matrix_transform.hpp; path = Opal/glm/gtc/matrix_transform.hpp; sourceTree = SOURCE_ROOT; };
+		C512F07B7D66449D90770C28 /* BoxColliderComponent2D.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = BoxColliderComponent2D.h; path = Opal/EntityComponent/BoxColliderComponent2D.h; sourceTree = SOURCE_ROOT; };
+		C512F439E9DD43118D4B0EA7 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = Opal/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		C6E619381237454FB31F7E41 /* soloud_queue.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_queue.cpp; path = Opal/vendor/soloud/src/core/soloud_queue.cpp; sourceTree = SOURCE_ROOT; };
+		C6E919FC0F544208A7F20B6D /* LinePointComponent.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LinePointComponent.h; path = Opal/EntityComponent/LinePointComponent.h; sourceTree = SOURCE_ROOT; };
+		C8B6E74930234BDF8F421F2D /* dr_mp3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dr_mp3.h; path = Opal/vendor/soloud/src/audiosource/wav/dr_mp3.h; sourceTree = SOURCE_ROOT; };
+		C95380903E52466690C0704D /* integer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = integer.hpp; path = Opal/glm/integer.hpp; sourceTree = SOURCE_ROOT; };
+		C9DD5076EE62420CAF4C69CC /* soloud_core_basicops.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_core_basicops.cpp; path = Opal/vendor/soloud/src/core/soloud_core_basicops.cpp; sourceTree = SOURCE_ROOT; };
+		CA35ADAEEB664261B832050F /* stb_image.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = stb_image.h; path = Opal/vendor/stb_image.h; sourceTree = SOURCE_ROOT; };
+		CD33FF66BAB841D38A0FDAD9 /* Window.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Window.h; path = Opal/Window.h; sourceTree = SOURCE_ROOT; };
+		CE385275515A4DC88FD810B8 /* NarrativeState.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = NarrativeState.cpp; path = src/Gamestate/NarrativeState.cpp; sourceTree = SOURCE_ROOT; };
+		CF4963969F0A4684843E3971 /* Response.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Response.h; path = src/DialogueSystem/Response.h; sourceTree = SOURCE_ROOT; };
+		D100A39DBCED4EEF9C225626 /* NoiseMoveComponent.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = NoiseMoveComponent.h; path = src/Components/NoiseMoveComponent.h; sourceTree = SOURCE_ROOT; };
+		D1806D64A6DB41C7A3565D7A /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		D1D79B51BC5A4EC8B35E3324 /* tinyxml2.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxml2.cpp; path = Opal/vendor/tinyxml2/tinyxml2.cpp; sourceTree = SOURCE_ROOT; };
+		D2D46F6D5E0347EF97C83C7C /* FontRenderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FontRenderer.cpp; path = Opal/Graphics/FontRenderer.cpp; sourceTree = SOURCE_ROOT; };
+		D49CCF26CEE044F9B76A5377 /* DialogueSerializer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DialogueSerializer.cpp; path = src/DialogueSystem/DialogueSerializer.cpp; sourceTree = SOURCE_ROOT; };
+		D4EBF88C50FE4638A84A3B28 /* BufferLayout.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = BufferLayout.h; path = Opal/Graphics/BufferLayout.h; sourceTree = SOURCE_ROOT; };
+		D5396EF9393948D480DC5EFF /* bitfield.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = bitfield.hpp; path = Opal/glm/gtc/bitfield.hpp; sourceTree = SOURCE_ROOT; };
+		D6D62338A2C74590AD4C9F5D /* type_ptr.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = type_ptr.hpp; path = Opal/glm/gtc/type_ptr.hpp; sourceTree = SOURCE_ROOT; };
+		D8448BE52AFE4B65AD4767B6 /* TileChunkManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = TileChunkManager.cpp; path = Opal/Tilemap/TileChunkManager.cpp; sourceTree = SOURCE_ROOT; };
+		D85576265EC0440D9C7FED5D /* AttractableComponent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = AttractableComponent.cpp; path = src/Components/AttractableComponent.cpp; sourceTree = SOURCE_ROOT; };
+		D98F95E3CF5F49B0910740DF /* quaternion.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = quaternion.hpp; path = Opal/glm/gtc/quaternion.hpp; sourceTree = SOURCE_ROOT; };
+		DCE9FB0D2B7E4A1EB9156E55 /* Texture.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Texture.h; path = Opal/Graphics/Texture.h; sourceTree = SOURCE_ROOT; };
+		DCED85995E474622AC87008B /* Info.plist */ = {isa = PBXFileReference; explicitFileType = sourcecode.text.plist; fileEncoding = 4; lastKnownFileType = text.plist; name = Info.plist; path = build/Opal/CMakeFiles/Opal.dir/Info.plist; sourceTree = SOURCE_ROOT; };
+		DD5D223A498340409B6CC5E7 /* stb_image.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = stb_image.h; path = Opal/Graphics/stb_image.h; sourceTree = SOURCE_ROOT; };
+		DDAB0BD0496143E5BBA6B9E2 /* mat4x3.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = mat4x3.hpp; path = Opal/glm/mat4x3.hpp; sourceTree = SOURCE_ROOT; };
+		DEEA087F4DE14B72A9318342 /* Pill.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Pill.h; path = src/PillGeneration/Pill.h; sourceTree = SOURCE_ROOT; };
+		DF4B60730CCE4C1D93E987AD /* SpriteComponent.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SpriteComponent.h; path = Opal/EntityComponent/SpriteComponent.h; sourceTree = SOURCE_ROOT; };
+		DF8491FB7A3248B3B41E5AB7 /* Logger.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Logger.h; path = Opal/Logger.h; sourceTree = SOURCE_ROOT; };
+		E0545974901E4D339F4D99AE /* soloud_dcremovalfilter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_dcremovalfilter.h; path = Opal/vendor/soloud/include/soloud_dcremovalfilter.h; sourceTree = SOURCE_ROOT; };
+		E063BDCA2B4640AE8CFD4CF9 /* type_precision.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = type_precision.hpp; path = Opal/glm/gtc/type_precision.hpp; sourceTree = SOURCE_ROOT; };
+		E0E424E9A997440F882C9125 /* ulp.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ulp.hpp; path = Opal/glm/gtc/ulp.hpp; sourceTree = SOURCE_ROOT; };
+		E1151374EAB447C9A2C4ED66 /* AudioClipInstance.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = AudioClipInstance.h; path = Opal/Audio/AudioClipInstance.h; sourceTree = SOURCE_ROOT; };
+		E123CCABC35E44698457023E /* TransformComponent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = TransformComponent.cpp; path = Opal/EntityComponent/TransformComponent.cpp; sourceTree = SOURCE_ROOT; };
+		E220F799831546E783135BE6 /* VulkanPipeline.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = VulkanPipeline.h; path = Opal/Graphics/Vulkan/VulkanPipeline.h; sourceTree = SOURCE_ROOT; };
+		E38D03FA4DD849D8AE8CB5D9 /* soloud_bassboostfilter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_bassboostfilter.h; path = Opal/vendor/soloud/include/soloud_bassboostfilter.h; sourceTree = SOURCE_ROOT; };
+		E52A602CD55641FBB588F829 /* imgui_draw.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_draw.cpp; path = Opal/vendor/imgui/imgui_draw.cpp; sourceTree = SOURCE_ROOT; };
+		E64366EDA2BE43A0AA685487 /* DragComponent.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = DragComponent.h; path = src/Components/DragComponent.h; sourceTree = SOURCE_ROOT; };
+		E6991B3CC16A4D5B8A44181B /* stb_vorbis.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = stb_vorbis.h; path = Opal/vendor/soloud/src/audiosource/wav/stb_vorbis.h; sourceTree = SOURCE_ROOT; };
+		E6C65A2E14CD47D4BFC1ED9C /* Scene.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Scene.cpp; path = Opal/EntityComponent/Scene.cpp; sourceTree = SOURCE_ROOT; };
+		E6E0691ED3FE40EE8F7CCCF6 /* soloud_fft.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_fft.h; path = Opal/vendor/soloud/include/soloud_fft.h; sourceTree = SOURCE_ROOT; };
+		E76EC0633BB345CBA7B0F92B /* packing.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = packing.hpp; path = Opal/glm/packing.hpp; sourceTree = SOURCE_ROOT; };
+		E9991C00531B4AB88693E875 /* LightComponent2D.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = LightComponent2D.cpp; path = Opal/EntityComponent/LightComponent2D.cpp; sourceTree = SOURCE_ROOT; };
+		EA86B90295344945BAE8E9D9 /* noise.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = noise.hpp; path = Opal/glm/gtc/noise.hpp; sourceTree = SOURCE_ROOT; };
+		EB1E45FD464F42248E963A5B /* Mesh2D.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Mesh2D.cpp; path = Opal/Graphics/Mesh2D.cpp; sourceTree = SOURCE_ROOT; };
+		EBBFC2E73C0A432882403B24 /* CursorComponent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CursorComponent.cpp; path = src/Components/CursorComponent.cpp; sourceTree = SOURCE_ROOT; };
+		EC60F934CC664A4DB506037F /* DialogueManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DialogueManager.cpp; path = src/DialogueSystem/DialogueManager.cpp; sourceTree = SOURCE_ROOT; };
+		ECC56B80A3B346468B6FBCF7 /* soloud_lofifilter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_lofifilter.h; path = Opal/vendor/soloud/include/soloud_lofifilter.h; sourceTree = SOURCE_ROOT; };
+		ED80DA282EA94519BE9292B4 /* mat2x3.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = mat2x3.hpp; path = Opal/glm/mat2x3.hpp; sourceTree = SOURCE_ROOT; };
+		EF1AEB3B3F3C46E283FFD485 /* soloud_file.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_file.h; path = Opal/vendor/soloud/include/soloud_file.h; sourceTree = SOURCE_ROOT; };
+		EF8A13DC20DA4D2BBF8BDB1B /* Mesh2D.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Mesh2D.h; path = Opal/Graphics/Mesh2D.h; sourceTree = SOURCE_ROOT; };
+		F0DCB86AE2AE46AE9A842E5F /* LineRenderer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LineRenderer.h; path = Opal/Graphics/LineRenderer.h; sourceTree = SOURCE_ROOT; };
+		F4CF27A6365440D5AED508B0 /* LinePointComponent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = LinePointComponent.cpp; path = Opal/EntityComponent/LinePointComponent.cpp; sourceTree = SOURCE_ROOT; };
+		F4E999AB39674C25938B01DC /* StrikesState.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = StrikesState.h; path = src/Gamestate/StrikesState.h; sourceTree = SOURCE_ROOT; };
+		F504987570444B03A5153952 /* AttractableComponent.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = AttractableComponent.h; path = src/Components/AttractableComponent.h; sourceTree = SOURCE_ROOT; };
+		F5475F1D41A74364B28E807B /* VulkanTexture.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = VulkanTexture.cpp; path = Opal/Graphics/Vulkan/VulkanTexture.cpp; sourceTree = SOURCE_ROOT; };
+		F54F7CB6732041C7B3BD7B67 /* soloud_robotizefilter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_robotizefilter.h; path = Opal/vendor/soloud/include/soloud_robotizefilter.h; sourceTree = SOURCE_ROOT; };
+		F5DB3964B83F4946A4472574 /* soloud_core_3d.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_core_3d.cpp; path = Opal/vendor/soloud/src/core/soloud_core_3d.cpp; sourceTree = SOURCE_ROOT; };
+		F6FB8B009DA34A5695828112 /* soloud_fader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_fader.cpp; path = Opal/vendor/soloud/src/core/soloud_fader.cpp; sourceTree = SOURCE_ROOT; };
+		F74CF81F16B74939B6561745 /* tinyxml2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tinyxml2.h; path = Opal/vendor/tinyxml2/tinyxml2.h; sourceTree = SOURCE_ROOT; };
+		F76C2EE936704BA29D70F3F4 /* AABBCollision.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = AABBCollision.h; path = Opal/Collision/AABBCollision.h; sourceTree = SOURCE_ROOT; };
+		F8542B43B03E4EE68248D247 /* soloud_wavstream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_wavstream.h; path = Opal/vendor/soloud/include/soloud_wavstream.h; sourceTree = SOURCE_ROOT; };
+		F8A5CE926DFC4EE4961F83CD /* AnimatedSpriteComponent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = AnimatedSpriteComponent.cpp; path = Opal/EntityComponent/AnimatedSpriteComponent.cpp; sourceTree = SOURCE_ROOT; };
+		F9E144011E154DE69CB0AE51 /* NoiseMoveComponent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = NoiseMoveComponent.cpp; path = src/Components/NoiseMoveComponent.cpp; sourceTree = SOURCE_ROOT; };
+		FA2D75B9171246808333F881 /* AudioClip.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = AudioClip.cpp; path = Opal/Audio/AudioClip.cpp; sourceTree = SOURCE_ROOT; };
+		FAC3581695F84CDC8DB05E8F /* geometric.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = geometric.hpp; path = Opal/glm/geometric.hpp; sourceTree = SOURCE_ROOT; };
+		FAFA558FCB10438DA273978E /* StrikesState.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = StrikesState.cpp; path = src/Gamestate/StrikesState.cpp; sourceTree = SOURCE_ROOT; };
+		FB63E32B9FC647B19F5E56DC /* imgui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = imgui.h; path = Opal/vendor/imgui/imgui.h; sourceTree = SOURCE_ROOT; };
+		FCAA40109E21415D919A9D28 /* soloud_filter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud_filter.h; path = Opal/vendor/soloud/include/soloud_filter.h; sourceTree = SOURCE_ROOT; };
+		FEEA3E7D7FD64710A31DF2C1 /* soloud.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = soloud.h; path = Opal/vendor/soloud/include/soloud.h; sourceTree = SOURCE_ROOT; };
+		FF66689281B442EEB90291AE /* Camera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Camera.h; path = Opal/Graphics/Camera.h; sourceTree = SOURCE_ROOT; };
+		FFB0340B8FF84FC395536A13 /* DrawingState.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DrawingState.cpp; path = src/Gamestate/DrawingState.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		62F386FFFC764A6384F7E66F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				664B9469288C8897001BE983 /* libMoltenVK.a in Frameworks */,
+				664B9465288C76A8001BE983 /* libFreetype2.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4B3AA7A687F42EC89CCC3FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				664B9468288C7A20001BE983 /* libSDL2.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15B14FE2F16A4E9A85821046 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96D4F3A52E9C4E86BF0159C0 /* OfMoonsAndMania.app */,
+				46D9EBC7F7394CA284A31126 /* libOpald.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		16D4D248DC7242DE8DB3DEEE /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		4C513CBA1BDE4E3F8D3446D9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DCED85995E474622AC87008B /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		664B9471288CC82E001BE983 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				664B9478288CC88A001BE983 /* textures */,
+				664B9477288CC880001BE983 /* shaders */,
+				664B9476288CC877001BE983 /* SaveGame */,
+				664B9475288CC868001BE983 /* fonts */,
+				664B9473288CC84C001BE983 /* Dialogue */,
+				664B9474288CC858001BE983 /* Drawings */,
+				664B9472288CC843001BE983 /* Audio */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6D5016C531374D28841E533C /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B14032602594BEE814FE78E /* AudioClip.h */,
+				E1151374EAB447C9A2C4ED66 /* AudioClipInstance.h */,
+				6AA9D22D4F5A497FBB36184C /* AudioEngine.h */,
+				F76C2EE936704BA29D70F3F4 /* AABBCollision.h */,
+				53D3D5E9A2204B2C86B6EC5D /* CollisionManager.h */,
+				755CB902A3EB418692A0C1AA /* EntityUI.h */,
+				4CB5D8BD7D2A47439E385DB3 /* AnimatedSpriteComponent.h */,
+				C512F07B7D66449D90770C28 /* BoxColliderComponent2D.h */,
+				B974AC6437FE4DCE95E505E2 /* Component.h */,
+				94327B87FCFC4F2D87F6696D /* Entity.h */,
+				9E2794E4A4904EE5803D43B3 /* EntityComponentSerialization.h */,
+				07322C263A434A8D9FF4F07D /* LightComponent2D.h */,
+				C6E919FC0F544208A7F20B6D /* LinePointComponent.h */,
+				9F3DB7315A094F3393981DE4 /* Scene.h */,
+				DF4B60730CCE4C1D93E987AD /* SpriteComponent.h */,
+				B4446DCA90E64515BA99D32F /* TransformComponent.h */,
+				5C7D7241989342228AC6805D /* VelocityComponent.h */,
+				5B8CD4EB844C4EB1A1C08C1D /* Game.h */,
+				99D1BF848934433290BDAA05 /* EditorGamestate.h */,
+				3D52E131DF954997BBED24F1 /* Gamestate.h */,
+				A646B6B90EBF4B68A5FD27F5 /* AnimatedSprite.h */,
+				651E07BE960C4F30BE53C117 /* BatchRenderer2D.h */,
+				D4EBF88C50FE4638A84A3B28 /* BufferLayout.h */,
+				FF66689281B442EEB90291AE /* Camera.h */,
+				A447102405134798BD57B18C /* CircleRenderer.h */,
+				930D09D12B17444E9A984925 /* DescriptorSet.h */,
+				2C2A586621D546AF89FDD446 /* Font.h */,
+				0DA1D4A1C7CB4734AFA76CE2 /* FontRenderer.h */,
+				F0DCB86AE2AE46AE9A842E5F /* LineRenderer.h */,
+				EF8A13DC20DA4D2BBF8BDB1B /* Mesh2D.h */,
+				B52EF4B2D5924E0C954CB057 /* MeshRenderer2D.h */,
+				BC015D65C1C74D34BE112E36 /* Pipeline.h */,
+				886AA7823710442A8502E3DD /* PostProcessRenderer.h */,
+				82E259E8566141E59001547C /* RenderBuffer.h */,
+				35E3B0F3380348A3949387EE /* RenderCommand.h */,
+				4C3275B866704C7385DAC2E1 /* RenderPass.h */,
+				551201CD06F44D259090D27B /* Renderer.h */,
+				7D68811E9A49482286B445C6 /* Shader.h */,
+				0092CD81DE4C42F9A8FAB7CE /* Sprite.h */,
+				7DA714A0047B4D6687BBB6DD /* SpriteRenderer.h */,
+				7F3BC0600AE2463FAC4DD62D /* Textmesh.h */,
+				DCE9FB0D2B7E4A1EB9156E55 /* Texture.h */,
+				AAA4BB2E86D6428582DBE43A /* TextureAtlas.h */,
+				7035597435494159BD85385E /* UniformBufferInfo.h */,
+				5A22DF57CAEC405F8AE37B8A /* VulkanBuffer.h */,
+				9C671EA855EA43BC86F53541 /* VulkanDescriptorSet.h */,
+				E220F799831546E783135BE6 /* VulkanPipeline.h */,
+				7D72C7983DAA43DA9E33DD81 /* VulkanRenderPass.h */,
+				013F51E819254DB389077CC0 /* VulkanRenderer.h */,
+				026FC17EAB604FF58460B30D /* VulkanTexture.h */,
+				DD5D223A498340409B6CC5E7 /* stb_image.h */,
+				59234A6D2CF34CB1A2806221 /* InputHandler.h */,
+				DF8491FB7A3248B3B41E5AB7 /* Logger.h */,
+				8D7F0DEAAA704CCA88E1D899 /* OpalMath.h */,
+				B93BB4253F4F4137B8E5F96B /* TileChunk.h */,
+				5962002845404DB09F04AA7D /* TileChunkManager.h */,
+				86A9CDD49E1E4FBCBB53D22B /* TileSet.h */,
+				3EFDE5DE20D44F7DBC9287AB /* UIButtonElement.h */,
+				0E5F0F9177254835A895C8D9 /* UISliderElement.h */,
+				B44ACDE5948E4C2E8948A122 /* UIStackElement.h */,
+				C1FDE9FFA7AF4BAAB89D0747 /* UITitleElement.h */,
+				42818853C4814E8B854D1401 /* UIContext.h */,
+				8DB438ACE7EF41368A0F45B7 /* UIElement.h */,
+				9BB5DBC7000F4D328E5FCDC0 /* UIRect.h */,
+				9B3DA74B83BD4889AA7D131B /* UIRenderer.h */,
+				CD33FF66BAB841D38A0FDAD9 /* Window.h */,
+				60B7E32096134071BA0F612A /* common.hpp */,
+				30AEFED9DE0B4698AE2C9B1D /* exponential.hpp */,
+				07EA824AB176446D9055C04F /* ext.hpp */,
+				A506BE55D08F4410B49CBF44 /* fwd.hpp */,
+				FAC3581695F84CDC8DB05E8F /* geometric.hpp */,
+				76B69D33D0024615844938EF /* glm.hpp */,
+				D5396EF9393948D480DC5EFF /* bitfield.hpp */,
+				22BE88CC621146FA8A0C4EE0 /* color_space.hpp */,
+				6FF3151A9A7641EEA3E74E9F /* constants.hpp */,
+				B2C5A008AB99457F89C31561 /* epsilon.hpp */,
+				B4A055FFBB914A6D92626696 /* integer.hpp */,
+				218FE0D536B34C92A26ECA5F /* matrix_access.hpp */,
+				2455F168F1EF454D9DBCDD82 /* matrix_integer.hpp */,
+				282F05A3E44E4201A7B54110 /* matrix_inverse.hpp */,
+				C3BB772E21C248108D04C0C6 /* matrix_transform.hpp */,
+				EA86B90295344945BAE8E9D9 /* noise.hpp */,
+				1B06D92EE40B48E8AFB7D838 /* packing.hpp */,
+				D98F95E3CF5F49B0910740DF /* quaternion.hpp */,
+				02703A194FA242A29D48F3B8 /* random.hpp */,
+				C29BE8CB240043ACBDAFEC28 /* reciprocal.hpp */,
+				87955427F6F24C3CAD966EDD /* round.hpp */,
+				898405E3B0444C5C80CBB1A0 /* type_aligned.hpp */,
+				E063BDCA2B4640AE8CFD4CF9 /* type_precision.hpp */,
+				D6D62338A2C74590AD4C9F5D /* type_ptr.hpp */,
+				E0E424E9A997440F882C9125 /* ulp.hpp */,
+				3334A2ABF697481EACCAD439 /* vec1.hpp */,
+				C95380903E52466690C0704D /* integer.hpp */,
+				772CEFD134B147E487FB0F2C /* mat2x2.hpp */,
+				ED80DA282EA94519BE9292B4 /* mat2x3.hpp */,
+				92C8601F722944948EC801E6 /* mat2x4.hpp */,
+				B2C10C6C307248F38A5E1859 /* mat3x2.hpp */,
+				C19E01906067454E99FAC356 /* mat3x3.hpp */,
+				9D2369D57A2C4E42BFF206C6 /* mat3x4.hpp */,
+				9C527BF81517490A896A0246 /* mat4x2.hpp */,
+				DDAB0BD0496143E5BBA6B9E2 /* mat4x3.hpp */,
+				A480A88949094EF6B26DDAC1 /* mat4x4.hpp */,
+				859CFF12C3494D4096C4571A /* matrix.hpp */,
+				E76EC0633BB345CBA7B0F92B /* packing.hpp */,
+				1212AA06DCB04AEB96F3124E /* trigonometric.hpp */,
+				0E2B9C6E43C74EFCA4892819 /* vec2.hpp */,
+				19A15911DB034EB6905DB101 /* vec3.hpp */,
+				1ABC6D5FE8D648B28A7C63D1 /* vec4.hpp */,
+				8CE8A1ED5CA5468ABEFD84C1 /* vector_relational.hpp */,
+				65E65712BA144344A9307A64 /* util.h */,
+				1DEBEACD3EFF44A09FE5F482 /* uuid.h */,
+				5A3D87CC3DDB402EB08515FD /* FastNoiseLite.h */,
+				38A5813F3DC14985B2F6A251 /* imconfig.h */,
+				FB63E32B9FC647B19F5E56DC /* imgui.h */,
+				0D61D1ABF7B948DD9CB13B8E /* imgui_impl_sdl.h */,
+				2C2BC61D0A974B5AA5510C21 /* imgui_impl_vulkan.h */,
+				2B5CAE6F9C834CCC82AE8DF2 /* imgui_internal.h */,
+				A055F03BA992401BA10D0125 /* imgui_stdlib.h */,
+				5BA5D62BB9C84E22835B144B /* implot.h */,
+				263EF5FBFA784B458F3546CF /* implot_internal.h */,
+				8599952F24524EE592E95337 /* imstb_rectpack.h */,
+				1EE2B986851D415ABBA5124F /* imstb_textedit.h */,
+				7790D94E437A433192417B87 /* imstb_truetype.h */,
+				FEEA3E7D7FD64710A31DF2C1 /* soloud.h */,
+				275C2C03701F4763889B48CF /* soloud_audiosource.h */,
+				E38D03FA4DD849D8AE8CB5D9 /* soloud_bassboostfilter.h */,
+				30E234F463A24345BEB271FB /* soloud_biquadresonantfilter.h */,
+				392EDD306E35431382D4282F /* soloud_bus.h */,
+				07BF4810B0CF48EF91F2636E /* soloud_c.h */,
+				E0545974901E4D339F4D99AE /* soloud_dcremovalfilter.h */,
+				921DC7B259FA4F41AB929B98 /* soloud_echofilter.h */,
+				3EDBE0054C5A4F7EAFB8F7EB /* soloud_error.h */,
+				7ABD59B7A14041A0BBE319A7 /* soloud_fader.h */,
+				E6E0691ED3FE40EE8F7CCCF6 /* soloud_fft.h */,
+				5646F3F72A0A464DA9AF4F99 /* soloud_fftfilter.h */,
+				EF1AEB3B3F3C46E283FFD485 /* soloud_file.h */,
+				7E7925D0ECCB4F4E8B17A998 /* soloud_file_hack_off.h */,
+				368459CFB24D447D9BF5B0C6 /* soloud_file_hack_on.h */,
+				FCAA40109E21415D919A9D28 /* soloud_filter.h */,
+				3198FA2B5929475EB8795E1C /* soloud_flangerfilter.h */,
+				34767314BBFF46FEA36BF140 /* soloud_freeverbfilter.h */,
+				350E8508B74F40F4B22D3C38 /* soloud_internal.h */,
+				ECC56B80A3B346468B6FBCF7 /* soloud_lofifilter.h */,
+				2C909BB5295C44E3A8B988DF /* soloud_misc.h */,
+				35B957040C9D46A39A26E429 /* soloud_monotone.h */,
+				59ED0B3FF1AF45C980AA0BC1 /* soloud_noise.h */,
+				24CF05DED79448E5B37A3F4D /* soloud_openmpt.h */,
+				A6467411C38548B09DF85ED2 /* soloud_queue.h */,
+				F54F7CB6732041C7B3BD7B67 /* soloud_robotizefilter.h */,
+				41690A8533324AC296575AF3 /* soloud_sfxr.h */,
+				B081A9A5624049BB9DC33999 /* soloud_speech.h */,
+				9CAB4B7147D54D52AD0B92E3 /* soloud_tedsid.h */,
+				17793BD1616041C4A7DDF5F3 /* soloud_thread.h */,
+				4F1FEE8C37CF4D42B6A2F3AC /* soloud_vic.h */,
+				903F45EB2E5F494AA358BBD1 /* soloud_vizsn.h */,
+				77BA7F84E023435A8363CF2E /* soloud_wav.h */,
+				1B1786CF6F9F4905A19001E8 /* soloud_waveshaperfilter.h */,
+				F8542B43B03E4EE68248D247 /* soloud_wavstream.h */,
+				15614ED5C6654D4A8EB73D89 /* dr_flac.h */,
+				C8B6E74930234BDF8F421F2D /* dr_mp3.h */,
+				985A8B36250B4341B202766E /* dr_wav.h */,
+				E6991B3CC16A4D5B8A44181B /* stb_vorbis.h */,
+				319F70EE7C4448E294908365 /* miniaudio.h */,
+				CA35ADAEEB664261B832050F /* stb_image.h */,
+				34A831702FC2406690FE81E3 /* stb_image_write.h */,
+				F74CF81F16B74939B6561745 /* tinyxml2.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		843F8BADBE214528B2FE1388 = {
+			isa = PBXGroup;
+			children = (
+				664B9471288CC82E001BE983 /* Resources */,
+				8678A60ADCC5486AA220AA72 /* OfMoonsAndMania */,
+				C258C97A7EF147BE81213FFE /* ALL_BUILD */,
+				CE683686D3F84EFE952935EC /* Opal */,
+				15B14FE2F16A4E9A85821046 /* Products */,
+				92DAC8A5C93040DC957E4201 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8678A60ADCC5486AA220AA72 /* OfMoonsAndMania */ = {
+			isa = PBXGroup;
+			children = (
+				992BFFCBE15F4903ACA34B1C /* Source Files */,
+				E10F471A0BFB4755909E766F /* Header Files */,
+				CA3431ADDFB74B2D9E7212FB /* Resources */,
+				D1806D64A6DB41C7A3565D7A /* CMakeLists.txt */,
+			);
+			name = OfMoonsAndMania;
+			sourceTree = "<group>";
+		};
+		92DAC8A5C93040DC957E4201 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				664B9466288C76F2001BE983 /* libSDL2.a */,
+				664B9464288C76A8001BE983 /* libFreetype2.a */,
+				664B9462288C749C001BE983 /* libMoltenVK.dylib */,
+				664B9460288C7468001BE983 /* libMoltenVK.a */,
+				664B945E288C7442001BE983 /* MoltenVK */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		992BFFCBE15F4903ACA34B1C /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				D85576265EC0440D9C7FED5D /* AttractableComponent.cpp */,
+				EBBFC2E73C0A432882403B24 /* CursorComponent.cpp */,
+				300C7C4C4FE34536B1EA6464 /* DragComponent.cpp */,
+				7CD5FBD0EAFB4479B2CD6796 /* EndWallComponent.cpp */,
+				F9E144011E154DE69CB0AE51 /* NoiseMoveComponent.cpp */,
+				172497211621469CAC1815EA /* SentenceFragmentComponent.cpp */,
+				A3A5574C53F94C4891807CD9 /* SparkComponent.cpp */,
+				EC60F934CC664A4DB506037F /* DialogueManager.cpp */,
+				D49CCF26CEE044F9B76A5377 /* DialogueSerializer.cpp */,
+				FFB0340B8FF84FC395536A13 /* DrawingState.cpp */,
+				064EBF525AD74EBC98BE6FC3 /* EndState.cpp */,
+				4593CF1FB28747BA9B1165FD /* MainMenuState.cpp */,
+				B81E4F7B81464931BC655A65 /* ManagerState.cpp */,
+				CE385275515A4DC88FD810B8 /* NarrativeState.cpp */,
+				40676351ACE04A158BC1A733 /* PillState.cpp */,
+				0D62109A1757472E8420E2C6 /* PromptState.cpp */,
+				74480C774E044E4DAB2C382D /* SentenceFormingState.cpp */,
+				FAFA558FCB10438DA273978E /* StrikesState.cpp */,
+				87347F39A1B04CEC82DA4B82 /* Main.cpp */,
+				71FE71E8641F4E03A6B7BC5F /* Pill.cpp */,
+				66E56D48288C699A003DA096 /* IOS_Main.mm */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		C258C97A7EF147BE81213FFE /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				16D4D248DC7242DE8DB3DEEE /* CMake Rules */,
+				1E7A78C40A0A429A94B80BCB /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		CA3431ADDFB74B2D9E7212FB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0818A3A949A54FAB99DFFAA2 /* Info.plist */,
+				66B479192896C60F008654E4 /* Launch Screen.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CE683686D3F84EFE952935EC /* Opal */ = {
+			isa = PBXGroup;
+			children = (
+				FD27ECE06B594FD081C440ED /* Source Files */,
+				6D5016C531374D28841E533C /* Header Files */,
+				4C513CBA1BDE4E3F8D3446D9 /* Resources */,
+				C512F439E9DD43118D4B0EA7 /* CMakeLists.txt */,
+			);
+			name = Opal;
+			sourceTree = "<group>";
+		};
+		E10F471A0BFB4755909E766F /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				664B946D288CA509001BE983 /* GamePassThruController.h */,
+				66E56D47288C695F003DA096 /* Main.h */,
+				F504987570444B03A5153952 /* AttractableComponent.h */,
+				5C64DEAA24524B638BA6293A /* CursorComponent.h */,
+				E64366EDA2BE43A0AA685487 /* DragComponent.h */,
+				145A9080AD3F4C2591158146 /* EndWallComponent.h */,
+				D100A39DBCED4EEF9C225626 /* NoiseMoveComponent.h */,
+				275CF2EDDDE547F183666F1F /* SentenceFragmentComponent.h */,
+				35F80907D9F443E1ABF2688E /* SparkComponent.h */,
+				1AC024B29D9B48358A30AC65 /* DialogueManager.h */,
+				A83620EA70DC49A6926B8C56 /* DialogueSerializer.h */,
+				94FBBE5B6FDC4D7492043AA0 /* PillSequence.h */,
+				7C72C0E1228F4C5591F952E9 /* Prompt.h */,
+				CF4963969F0A4684843E3971 /* Response.h */,
+				88C95232AAA244BF8DEB5D71 /* SentenceFragment.h */,
+				470BA3956BC3408BB972AC95 /* WordBank.h */,
+				4A6D46D2598445E19EC600E9 /* DrawingState.h */,
+				063BD43CBB8A42C582EA2176 /* EndState.h */,
+				0C505C7358BF474382F49329 /* MainMenuState.h */,
+				A0862B510E7C429BAE73934F /* ManagerState.h */,
+				363222E365BB42C8A7E7F323 /* NarrativeState.h */,
+				856FC03C777E433396E77FE2 /* PillState.h */,
+				65436DDAE414418FBAC57FCA /* PromptState.h */,
+				722F79AFFF30483BABDF9CE5 /* SentenceFormingState.h */,
+				F4E999AB39674C25938B01DC /* StrikesState.h */,
+				DEEA087F4DE14B72A9318342 /* Pill.h */,
+				664B946C288CA424001BE983 /* AppDelegate.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		FD27ECE06B594FD081C440ED /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA2D75B9171246808333F881 /* AudioClip.cpp */,
+				1BF6F63E0B554D46AED3637F /* AudioClipInstance.cpp */,
+				423077AE2C6345A5AE8E77A2 /* AudioEngine.cpp */,
+				43BE5E4E74EC41F8888BF108 /* AABBCollision.cpp */,
+				69814328CFB346E5B8C6283F /* CollisionManager.cpp */,
+				7959909755DF43CBBC697500 /* EntityUI.cpp */,
+				F8A5CE926DFC4EE4961F83CD /* AnimatedSpriteComponent.cpp */,
+				426A3DA5257349A2AF8E3220 /* BoxColliderComponent2D.cpp */,
+				7BFF770B4F32498F8621CC46 /* Component.cpp */,
+				9784C6F5E1B84A3EBAFB4F59 /* Entity.cpp */,
+				4B42AE21A72B4207B31701C5 /* EntityComponentSerialization.cpp */,
+				E9991C00531B4AB88693E875 /* LightComponent2D.cpp */,
+				F4CF27A6365440D5AED508B0 /* LinePointComponent.cpp */,
+				E6C65A2E14CD47D4BFC1ED9C /* Scene.cpp */,
+				35F65A27CEBD444397ED796C /* SpriteComponent.cpp */,
+				E123CCABC35E44698457023E /* TransformComponent.cpp */,
+				5362E9448C3946619ACD165E /* VelocityComponent.cpp */,
+				61AF6268D35A4EE084173653 /* Game.cpp */,
+				5D04D8EE80F0479582FF3B28 /* EditorGamestate.cpp */,
+				13528F32692648DBADB39E63 /* Gamestate.cpp */,
+				5E457EE4D113445D9AD7D790 /* AnimatedSprite.cpp */,
+				53F173AF8AB043DDBB260058 /* BatchRenderer2D.cpp */,
+				430290D561A9479BA0AA05D8 /* Camera.cpp */,
+				4CFC86AD9CA44559AC9D4A33 /* CircleRenderer.cpp */,
+				8846C89104744CD4B8822013 /* Font.cpp */,
+				D2D46F6D5E0347EF97C83C7C /* FontRenderer.cpp */,
+				B00F3FB79C8E47B1BAD2D3F2 /* LineRenderer.cpp */,
+				EB1E45FD464F42248E963A5B /* Mesh2D.cpp */,
+				4FE88FBA301547C4A8566559 /* MeshRenderer2D.cpp */,
+				840620B43E0F4F2F94ABCD0E /* PostProcessRenderer.cpp */,
+				1C7A3DEF46204280AA804637 /* Renderer.cpp */,
+				3960E135566B44889AD2205E /* Sprite.cpp */,
+				52DF2D71AB48417DA47B9C26 /* SpriteRenderer.cpp */,
+				6F8247CC935C4A3FB20C15AD /* Texture.cpp */,
+				0CA8BAD65FD74903BF5EA291 /* TextureAtlas.cpp */,
+				4DACA3A8F91F48CC9035C592 /* VulkanBuffer.cpp */,
+				24BBB3E3B81844908FCF2A3D /* VulkanDescriptorSet.cpp */,
+				49BBFD4AF4694A59A7ADF12B /* VulkanPipeline.cpp */,
+				6FC58396BF754ED0AE7A59B9 /* VulkanRenderPass.cpp */,
+				8751E5BE2E0045C49ABF981B /* VulkanRenderer.cpp */,
+				F5475F1D41A74364B28E807B /* VulkanTexture.cpp */,
+				A10D2672D9694143851CDA13 /* InputHandler.cpp */,
+				713FE444BD224A689E56F730 /* Logger.cpp */,
+				02EBF3ED859643778DCF4C8D /* OpalMath.cpp */,
+				035F91A52C4B4B64B78DB197 /* TileChunk.cpp */,
+				D8448BE52AFE4B65AD4767B6 /* TileChunkManager.cpp */,
+				9DDBEED90E00455A95DA1F01 /* UIContext.cpp */,
+				9F96CA15CCFC492FACA41DC3 /* Window.cpp */,
+				8722C991A4704AD2AE91D364 /* imgui.cpp */,
+				C0D64A0A63154B1EBEF25399 /* imgui_demo.cpp */,
+				E52A602CD55641FBB588F829 /* imgui_draw.cpp */,
+				87FC44D6392C4F94A2335729 /* imgui_impl_sdl.cpp */,
+				42BC6C66246148D9AC443213 /* imgui_impl_vulkan.cpp */,
+				88ACF3188FB543309538B835 /* imgui_stdlib.cpp */,
+				408F8E6EEB66482780AD55E6 /* imgui_tables.cpp */,
+				37A8F33D81A14065BFE1290D /* imgui_widgets.cpp */,
+				3AD0A0806F514C8CA28143FD /* implot.cpp */,
+				8CB1E075AB794F899241A221 /* implot_items.cpp */,
+				BE93B573170B4E3D95AE022E /* dr_impl.cpp */,
+				259E3F0702DD45EE95378BB6 /* soloud_wav.cpp */,
+				15926AA14CC845C2ACB3211A /* soloud_wavstream.cpp */,
+				02440193C68B429A865A7C92 /* stb_vorbis.c */,
+				4776A9F56D8847908DF7D4F9 /* soloud_miniaudio.cpp */,
+				0E2A315C638D4A20862031DB /* soloud.cpp */,
+				03B6D3A0EDA24ECD82136840 /* soloud_audiosource.cpp */,
+				A46B1EC8886B4783807DFD0B /* soloud_bus.cpp */,
+				F5DB3964B83F4946A4472574 /* soloud_core_3d.cpp */,
+				C9DD5076EE62420CAF4C69CC /* soloud_core_basicops.cpp */,
+				532B3CD4F6DE4D04A4AA75B0 /* soloud_core_faderops.cpp */,
+				674C8A5F243E44D0ABFA1DE7 /* soloud_core_filterops.cpp */,
+				9D287F3772244DEF9EE3C012 /* soloud_core_getters.cpp */,
+				BCF547AAAE9D437B94561E74 /* soloud_core_setters.cpp */,
+				86E5599C74FB4BD3B7DBBAEA /* soloud_core_voicegroup.cpp */,
+				00B1A1BE5F274AB8AC522CCC /* soloud_core_voiceops.cpp */,
+				F6FB8B009DA34A5695828112 /* soloud_fader.cpp */,
+				4858ECAF8C024F07B2BCD2BC /* soloud_fft.cpp */,
+				49AFC7FDD9C546A5AFC642E4 /* soloud_fft_lut.cpp */,
+				819DCA73CACD4616BC7EB653 /* soloud_file.cpp */,
+				9D3F0840C47C4F85AB659229 /* soloud_filter.cpp */,
+				5B03040744164CFABF07ED47 /* soloud_misc.cpp */,
+				C6E619381237454FB31F7E41 /* soloud_queue.cpp */,
+				848E1CFC71D542019FEAA713 /* soloud_thread.cpp */,
+				D1D79B51BC5A4EC8B35E3324 /* tinyxml2.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43F2B578382440B08EC4B265 /* OfMoonsAndMania */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8E53A5608E74C14ABE9FBA2 /* Build configuration list for PBXNativeTarget "OfMoonsAndMania" */;
+			buildPhases = (
+				46BAA9A977FF4814A36F069A /* Sources */,
+				62F386FFFC764A6384F7E66F /* Frameworks */,
+				66B4790F288D94B8008654E4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30BF2DB24F844BEABEB48928 /* PBXTargetDependency */,
+				4EEBAF043F164FEA964CAABB /* PBXTargetDependency */,
+			);
+			name = OfMoonsAndMania;
+			productName = OfMoonsAndMania;
+			productReference = 96D4F3A52E9C4E86BF0159C0 /* OfMoonsAndMania.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F7D2B37181D64781A1B87B9C /* Opal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63C831B31ED44C26AAE5F7D5 /* Build configuration list for PBXNativeTarget "Opal" */;
+			buildPhases = (
+				143BDE63D26E40C2A6153302 /* Sources */,
+				A4B3AA7A687F42EC89CCC3FE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBF903E94C754DABB2E9ED7B /* PBXTargetDependency */,
+			);
+			name = Opal;
+			productName = Opal;
+			productReference = 46D9EBC7F7394CA284A31126 /* libOpald.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A254332254B845FA8BC0128E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1340;
+			};
+			buildConfigurationList = D0F81AA14442417FB72D259B /* Build configuration list for PBXProject "OfMoonsAndMania" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 843F8BADBE214528B2FE1388;
+			projectDirPath = ../;
+			projectRoot = "";
+			targets = (
+				6C60F8FA49674FDE82A7BD71 /* ALL_BUILD */,
+				43F2B578382440B08EC4B265 /* OfMoonsAndMania */,
+				F7D2B37181D64781A1B87B9C /* Opal */,
+				24868F1580EE4105B8B15194 /* ZERO_CHECK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B6F3FF2179EC9072672E5AF /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+				/Users/adam/Dev/Apophenia/IOS_Build/CMakeFiles/ALL_BUILD,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nif test \"$CONFIGURATION\" = \"Debug\"; then :\n  cd /Users/adam/Dev/Apophenia/IOS_Build\n  echo Build\\ all\\ projects\nfi\nif test \"$CONFIGURATION\" = \"Release\"; then :\n  cd /Users/adam/Dev/Apophenia/IOS_Build\n  echo Build\\ all\\ projects\nfi\nif test \"$CONFIGURATION\" = \"MinSizeRel\"; then :\n  cd /Users/adam/Dev/Apophenia/IOS_Build\n  echo Build\\ all\\ projects\nfi\nif test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :\n  cd /Users/adam/Dev/Apophenia/IOS_Build\n  echo Build\\ all\\ projects\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FE3F0BCE9E642DC24F7B537A /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+				/Users/adam/Dev/Apophenia/IOS_Build/CMakeFiles/ZERO_CHECK,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nif test \"$CONFIGURATION\" = \"Debug\"; then :\n  cd /Users/adam/Dev/Apophenia/IOS_Build\n  make -f /Users/adam/Dev/Apophenia/IOS_Build/CMakeScripts/ReRunCMake.make\nfi\nif test \"$CONFIGURATION\" = \"Release\"; then :\n  cd /Users/adam/Dev/Apophenia/IOS_Build\n  make -f /Users/adam/Dev/Apophenia/IOS_Build/CMakeScripts/ReRunCMake.make\nfi\nif test \"$CONFIGURATION\" = \"MinSizeRel\"; then :\n  cd /Users/adam/Dev/Apophenia/IOS_Build\n  make -f /Users/adam/Dev/Apophenia/IOS_Build/CMakeScripts/ReRunCMake.make\nfi\nif test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :\n  cd /Users/adam/Dev/Apophenia/IOS_Build\n  make -f /Users/adam/Dev/Apophenia/IOS_Build/CMakeScripts/ReRunCMake.make\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		143BDE63D26E40C2A6153302 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7B8A436E9F94B128B16BE1D /* AudioClip.cpp in Sources */,
+				4870D935D5504BC3B1F5D66D /* AudioClipInstance.cpp in Sources */,
+				87673F9CA4F54EC1BC78B936 /* AudioEngine.cpp in Sources */,
+				25F9121ECC3C420E90481660 /* AABBCollision.cpp in Sources */,
+				30FD263C58F347D3A2E0BD69 /* CollisionManager.cpp in Sources */,
+				D62CEC31C34240F09C4B67AF /* EntityUI.cpp in Sources */,
+				AA9FFDFD01BD48BF84806419 /* AnimatedSpriteComponent.cpp in Sources */,
+				038CB8F890DE43298A9181A0 /* BoxColliderComponent2D.cpp in Sources */,
+				13C93CD10C5749BD816CA3AE /* Component.cpp in Sources */,
+				326E03187F134396873CEAD6 /* Entity.cpp in Sources */,
+				7AF2E6A2753E4A04B09D5537 /* EntityComponentSerialization.cpp in Sources */,
+				F1D983DBD7D84452BCB06459 /* LightComponent2D.cpp in Sources */,
+				8D460E07EBB248AB87C44B7A /* LinePointComponent.cpp in Sources */,
+				FE5458B5CF40438ABCBB1354 /* Scene.cpp in Sources */,
+				84849141400A41D5BE6DF378 /* SpriteComponent.cpp in Sources */,
+				A2AB2C0824AA4ABFA17D5212 /* TransformComponent.cpp in Sources */,
+				A56C6C66AEE249E5B20F5C1A /* VelocityComponent.cpp in Sources */,
+				2E7F2D8DDF704F8BB62F531B /* Game.cpp in Sources */,
+				3195AEB45FC84A4092012F54 /* EditorGamestate.cpp in Sources */,
+				90AF5887417E41628C9F3092 /* Gamestate.cpp in Sources */,
+				116B15CCC67E415D92637E92 /* AnimatedSprite.cpp in Sources */,
+				2076452D247B4FD68EC6B9D7 /* BatchRenderer2D.cpp in Sources */,
+				6B5BB03FC43D4BC29F2923B5 /* Camera.cpp in Sources */,
+				7F74743DC54742EE8A1D716A /* CircleRenderer.cpp in Sources */,
+				381914E0472C4266BF0CEFBB /* Font.cpp in Sources */,
+				E8FBA4F24994474B8B9FD0DE /* FontRenderer.cpp in Sources */,
+				6A1C3FD8771D4B93BE9B7733 /* LineRenderer.cpp in Sources */,
+				50E8EB353C854C8AB60525AD /* Mesh2D.cpp in Sources */,
+				9D91B97A86094564B6E75CC8 /* MeshRenderer2D.cpp in Sources */,
+				07AB5B4F13124EDAA5B51329 /* PostProcessRenderer.cpp in Sources */,
+				697EE14D218B42AFB2F0F2D3 /* Renderer.cpp in Sources */,
+				CE3FEF331A1746A29AF27851 /* Sprite.cpp in Sources */,
+				61CE945A6D6345609EE0D935 /* SpriteRenderer.cpp in Sources */,
+				B45926F7819F4D2EAE0ED500 /* Texture.cpp in Sources */,
+				6802BF15A48A4501AA9E781E /* TextureAtlas.cpp in Sources */,
+				95F2C426D0EA42239EA55655 /* VulkanBuffer.cpp in Sources */,
+				50D7BF8E81AD49A7807A015E /* VulkanDescriptorSet.cpp in Sources */,
+				5A3BDF2E9A68455AA6EC49DD /* VulkanPipeline.cpp in Sources */,
+				62256BA9C67945BA85687DF5 /* VulkanRenderPass.cpp in Sources */,
+				2FA5A2F92E0A436089034D90 /* VulkanRenderer.cpp in Sources */,
+				B5B0B314454A446FA1CD6D9B /* VulkanTexture.cpp in Sources */,
+				605487DCD9444A76B858B338 /* InputHandler.cpp in Sources */,
+				0975230B0A6948E9A65DCB09 /* Logger.cpp in Sources */,
+				CA65F5C178D04D0B9A979DCF /* OpalMath.cpp in Sources */,
+				BE130E00AFCE40C291816D50 /* TileChunk.cpp in Sources */,
+				A792B713AF5D43D5B8A6D3A0 /* TileChunkManager.cpp in Sources */,
+				A50BA90C0D5D4302838EDE0A /* UIContext.cpp in Sources */,
+				C51EE08316A3429C9962E43E /* Window.cpp in Sources */,
+				EF7148E8A3A24F2193FC369A /* imgui.cpp in Sources */,
+				5526B0786F1E473BB62D69B6 /* imgui_demo.cpp in Sources */,
+				9444CEBA926041979B1D1568 /* imgui_draw.cpp in Sources */,
+				18E52598DF3D46A5A5F1723B /* imgui_impl_sdl.cpp in Sources */,
+				13BEFD9DED924EE69D3722BE /* imgui_impl_vulkan.cpp in Sources */,
+				1D3A34FBE2E249929ED6219C /* imgui_stdlib.cpp in Sources */,
+				8FCD3DBAFF7F4A128E5C3A29 /* imgui_tables.cpp in Sources */,
+				8DAE18A3C65C422E87E70402 /* imgui_widgets.cpp in Sources */,
+				EDDADCA2A8E7439FAE2D15A7 /* implot.cpp in Sources */,
+				27BCEBE570464C78B00D15EA /* implot_items.cpp in Sources */,
+				5B011C4E02614C5881B9A326 /* dr_impl.cpp in Sources */,
+				13B80A7C00884636B72EA896 /* soloud_wav.cpp in Sources */,
+				E19ED69695D54257B592D0D1 /* soloud_wavstream.cpp in Sources */,
+				CFE1345C2DA747BE83740E9A /* stb_vorbis.c in Sources */,
+				D606E5D57BFB431AA70814A7 /* soloud_miniaudio.cpp in Sources */,
+				32EC82C88AC04817B5B3E6B5 /* soloud.cpp in Sources */,
+				D5BEE05E937D49EBBD4914C4 /* soloud_audiosource.cpp in Sources */,
+				DDEB96FADA39400C9F247B7D /* soloud_bus.cpp in Sources */,
+				4A9D0A26D7C44FF4BC2B5DC0 /* soloud_core_3d.cpp in Sources */,
+				297BA514125840F6A6584599 /* soloud_core_basicops.cpp in Sources */,
+				7FA2CFC69B9D4C2DAE446A59 /* soloud_core_faderops.cpp in Sources */,
+				E003E4C26BD34BB69F77B053 /* soloud_core_filterops.cpp in Sources */,
+				BA116D6C12D84A51AE1F84A3 /* soloud_core_getters.cpp in Sources */,
+				9C608726D81A4B49969EC1E2 /* soloud_core_setters.cpp in Sources */,
+				E8308FADC91945C582885212 /* soloud_core_voicegroup.cpp in Sources */,
+				131B77A55C4B4413BDFEF9C6 /* soloud_core_voiceops.cpp in Sources */,
+				80BD029D85174AF98A157B51 /* soloud_fader.cpp in Sources */,
+				C1A28EF11BB7409CAA8A2FDD /* soloud_fft.cpp in Sources */,
+				4DFA183311114C1880B5DE02 /* soloud_fft_lut.cpp in Sources */,
+				8F5B1C1DEAE44B6FA99A47DB /* soloud_file.cpp in Sources */,
+				6A534D991F4747DEBD4AB08F /* soloud_filter.cpp in Sources */,
+				A041671D92DB41068B4EFF1C /* soloud_misc.cpp in Sources */,
+				85EA11A78D59467C9857752F /* soloud_queue.cpp in Sources */,
+				90CC08A1868E47018279D323 /* soloud_thread.cpp in Sources */,
+				7D71B72FEF194AEC834AF9D1 /* tinyxml2.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46BAA9A977FF4814A36F069A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95D3477DF09E4857AECCF8D3 /* AttractableComponent.cpp in Sources */,
+				75C5DD2807E94E1B95D9A8D1 /* CursorComponent.cpp in Sources */,
+				AF9D1FD10D5046AF8CCB31A1 /* DragComponent.cpp in Sources */,
+				97A1664770004A6C8DDDD185 /* EndWallComponent.cpp in Sources */,
+				DBC47B3C0C48484AAEB6DAAD /* NoiseMoveComponent.cpp in Sources */,
+				AE919355D4074AA59435D275 /* SentenceFragmentComponent.cpp in Sources */,
+				66B4791B2896C664008654E4 /* Launch Screen.storyboard in Sources */,
+				CA40017EA08F4804B5C32430 /* SparkComponent.cpp in Sources */,
+				66E56D49288C699A003DA096 /* IOS_Main.mm in Sources */,
+				547700A53DE14E1A8FB616E2 /* DialogueManager.cpp in Sources */,
+				60C86AF208B34C548FE26C52 /* DialogueSerializer.cpp in Sources */,
+				994758E6D64541518883C474 /* DrawingState.cpp in Sources */,
+				61EC8F24B8AC40219AC2789B /* EndState.cpp in Sources */,
+				E3B212919BBD46D99F078527 /* MainMenuState.cpp in Sources */,
+				DE7298F026F24AAEB7B27AA0 /* ManagerState.cpp in Sources */,
+				C4E63882B158457AB81A1C41 /* NarrativeState.cpp in Sources */,
+				F5B1D24E98B945FCB78567CC /* PillState.cpp in Sources */,
+				2EDFB87261A645458A506CCB /* PromptState.cpp in Sources */,
+				C58CCB2F541E4E639A8FF601 /* SentenceFormingState.cpp in Sources */,
+				4C7B61035D314C708B8752B4 /* StrikesState.cpp in Sources */,
+				0F3471AE0DBA4395A692B87F /* Main.cpp in Sources */,
+				66B4791C2896EE3B008654E4 /* VulkanRenderer.cpp in Sources */,
+				CC20A1D28EF443B0B5F6FCA0 /* Pill.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F43BD47A28B4EEBA41C0663 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43F2B578382440B08EC4B265 /* OfMoonsAndMania */;
+			targetProxy = 9989F88550F941D7AC4659E8 /* PBXContainerItemProxy */;
+		};
+		30BF2DB24F844BEABEB48928 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7D2B37181D64781A1B87B9C /* Opal */;
+			targetProxy = 1DB2917F7C8245A59A6D1CBE /* PBXContainerItemProxy */;
+		};
+		4EEBAF043F164FEA964CAABB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24868F1580EE4105B8B15194 /* ZERO_CHECK */;
+			targetProxy = 4DD8C305E062439F8808F8FA /* PBXContainerItemProxy */;
+		};
+		993EDF93FE8F4454A5464989 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24868F1580EE4105B8B15194 /* ZERO_CHECK */;
+			targetProxy = 28CC420260A2492F9BEA8DF0 /* PBXContainerItemProxy */;
+		};
+		A369B7CF66BF44ADB3C6E098 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7D2B37181D64781A1B87B9C /* Opal */;
+			targetProxy = 2D5E0242DBA04061B5A09F64 /* PBXContainerItemProxy */;
+		};
+		BBF903E94C754DABB2E9ED7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24868F1580EE4105B8B15194 /* ZERO_CHECK */;
+			targetProxy = 2BE35829D6A749EA8BD451C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0C0206F8DDCA454AA8B08766 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/adam/Dev/SDL_iOS/include/**",
+					"/Users/adam/Dev/freetype2-ios/include/**",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		14135B630A4E4A86AA0BAA0B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
+				"ARCHS[sdk=iphonesimulator*]" = " x86_64";
+				CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = A8529PSQJ8;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/adam/Dev/SDL_iOS/iOS/,
+					"/Users/adam/Dev/freetype2-ios/lib",
+					"/Users/adam/Dev/Vulkan/MoltenVK/MoltenVK.xcframework/ios-arm64",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-xobjective-c++",
+				);
+				OTHER_LDFLAGS = (
+					"-lfreetype",
+					"-lSDL2main",
+					"-lSDL2",
+				);
+				SDKROOT = iphoneos;
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build/build;
+				"VALID_ARCHS[sdk=iphoneos*]" = " arm64";
+				"VALID_ARCHS[sdk=iphonesimulator*]" = " x86_64";
+			};
+			name = MinSizeRel;
+		};
+		1A5A98DE598A43B9B8FCF287 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					__IPHONEOS__,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/adam/Dev/Apophenia/Opal/vendor/glm,
+					/Users/adam/Dev/Apophenia/build,
+					/Users/adam/Dev/Apophenia/Opal,
+					/MoltenVK/include,
+					/Users/adam/Dev/SDL_iOS/include,
+					"/Users/adam/Dev/freetype2-ios/include",
+					/Users/adam/Dev/Vulkan/macOS/../MoltenVK/include,
+				);
+				INFOPLIST_FILE = /Users/adam/Dev/Apophenia/IOS_Build/CMakeFiles/OfMoonsAndMania.dir/Info.plist;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "";
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++17",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-headerpad_max_install_names",
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					AVFoundation,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					CoreMotion,
+					"-framework",
+					Foundation,
+					"-framework",
+					GameController,
+					"-framework",
+					OpenGLES,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					UIKit,
+					"-framework",
+					Metal,
+					"/Users/adam/Dev/Apophenia/IOS_Build/Opal/MinSizeRel${EFFECTIVE_PLATFORM_NAME}/libOpal.a",
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					AVFoundation,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					CoreMotion,
+					"-framework",
+					Foundation,
+					"-framework",
+					GameController,
+					"-framework",
+					OpenGLES,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					UIKit,
+					"-framework",
+					Metal,
+					"-framework",
+					CoreHaptics,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = OfMoonsAndMania;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build;
+				TARGETED_DEVICE_FAMILY = 1;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		1E08900CF64A4C74AA07F48D /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
+				"ARCHS[sdk=iphonesimulator*]" = " x86_64";
+				CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = A8529PSQJ8;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/adam/Dev/SDL_iOS/iOS/,
+					"/Users/adam/Dev/freetype2-ios/lib",
+					"/Users/adam/Dev/Vulkan/MoltenVK/MoltenVK.xcframework/ios-arm64",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-xobjective-c++",
+				);
+				OTHER_LDFLAGS = (
+					"-lfreetype",
+					"-lSDL2main",
+					"-lSDL2",
+				);
+				SDKROOT = iphoneos;
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build/build;
+				"VALID_ARCHS[sdk=iphoneos*]" = " arm64";
+				"VALID_ARCHS[sdk=iphonesimulator*]" = " x86_64";
+			};
+			name = RelWithDebInfo;
+		};
+		40AC4C2AC6AB4E2982337280 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
+				"ARCHS[sdk=iphonesimulator*]" = " x86_64";
+				CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = A8529PSQJ8;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/adam/Dev/SDL_iOS/iOS/,
+					"/Users/adam/Dev/freetype2-ios/lib",
+					"/Users/adam/Dev/Vulkan/MoltenVK/MoltenVK.xcframework/ios-arm64",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-xobjective-c++",
+				);
+				OTHER_LDFLAGS = (
+					"-lfreetype",
+					"-lSDL2main",
+					"-lSDL2",
+				);
+				SDKROOT = iphoneos;
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build/build;
+				"VALID_ARCHS[sdk=iphoneos*]" = " arm64";
+				"VALID_ARCHS[sdk=iphonesimulator*]" = " x86_64";
+			};
+			name = Release;
+		};
+		7A94C344467B452881790FC3 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					__IPHONEOS__,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/adam/Dev/Apophenia/Opal/vendor/glm,
+					/Users/adam/Dev/Apophenia/build,
+					/Users/adam/Dev/Apophenia/Opal,
+					/MoltenVK/include,
+					/Users/adam/Dev/SDL_iOS/include,
+					"/Users/adam/Dev/freetype2-ios/include",
+					/Users/adam/Dev/Vulkan/macOS/../MoltenVK/include,
+				);
+				INFOPLIST_FILE = /Users/adam/Dev/Apophenia/IOS_Build/CMakeFiles/OfMoonsAndMania.dir/Info.plist;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "";
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++17",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-headerpad_max_install_names",
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					AVFoundation,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					CoreMotion,
+					"-framework",
+					Foundation,
+					"-framework",
+					GameController,
+					"-framework",
+					OpenGLES,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					UIKit,
+					"-framework",
+					Metal,
+					"/Users/adam/Dev/Apophenia/IOS_Build/Opal/RelWithDebInfo${EFFECTIVE_PLATFORM_NAME}/libOpal.a",
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					AVFoundation,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					CoreMotion,
+					"-framework",
+					Foundation,
+					"-framework",
+					GameController,
+					"-framework",
+					OpenGLES,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					UIKit,
+					"-framework",
+					Metal,
+					"-framework",
+					CoreHaptics,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = OfMoonsAndMania;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build;
+				TARGETED_DEVICE_FAMILY = 1;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		7CEF60A5F9484179A7437D49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
+				"ARCHS[sdk=iphonesimulator*]" = " x86_64";
+				CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = A8529PSQJ8;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/adam/Dev/SDL_iOS/iOS/,
+					"/Users/adam/Dev/freetype2-ios/lib",
+					"/Users/adam/Dev/Vulkan/MoltenVK/MoltenVK.xcframework/ios-arm64",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-xobjective-c++",
+				);
+				OTHER_LDFLAGS = (
+					"-lfreetype",
+					"-lSDL2main",
+					"-lSDL2",
+				);
+				SDKROOT = iphoneos;
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build/build;
+				"VALID_ARCHS[sdk=iphoneos*]" = " arm64";
+				"VALID_ARCHS[sdk=iphonesimulator*]" = " x86_64";
+			};
+			name = Debug;
+		};
+		8D89736995A24D19960C4BB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXCLUDED_ARCHS = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/adam/Dev/Apophenia/Opal/vendor/soloud/include,
+					/Users/adam/Dev/Apophenia/Opal/vendor/glm,
+					/Users/adam/Dev/Vulkan/macOS/../MoltenVK/include,
+					"/Users/adam/Dev/freetype2-ios/include",
+					/Users/adam/Dev/SDL_iOS/include,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++17",
+					"-DNDEBUG",
+					"-xobjective-c++",
+				);
+				OTHER_LIBTOOLFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Opal;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build/Opal;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		8D9B2CC57A2E4A7E82AA6702 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		A12F0708823C4C9796FD1C9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		B9F69FFE4EEB4078812C7E4B /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXCLUDED_ARCHS = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/adam/Dev/Apophenia/Opal/vendor/soloud/include,
+					/Users/adam/Dev/Apophenia/Opal/vendor/glm,
+					/Users/adam/Dev/Vulkan/macOS/../MoltenVK/include,
+					"/Users/adam/Dev/freetype2-ios/include",
+					/Users/adam/Dev/SDL_iOS/include,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++17",
+					"-DNDEBUG",
+					"-xobjective-c++",
+				);
+				OTHER_LIBTOOLFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Opal;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build/Opal;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		C3970875B45E433781947B91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/adam/Dev/SDL_iOS/include/**",
+					"/Users/adam/Dev/freetype2-ios/include/**",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		C4F108424F844809A412DCF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/adam/Dev/SDL_iOS/include/**",
+					"/Users/adam/Dev/freetype2-ios/include/**",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		CE359D52A14A4C0796E0466D /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXCLUDED_ARCHS = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/adam/Dev/Apophenia/Opal/vendor/soloud/include,
+					/Users/adam/Dev/Apophenia/Opal/vendor/glm,
+					/Users/adam/Dev/Vulkan/macOS/../MoltenVK/include,
+					"/Users/adam/Dev/freetype2-ios/include",
+					/Users/adam/Dev/SDL_iOS/include,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++17",
+					"-DNDEBUG",
+					"-xobjective-c++",
+				);
+				OTHER_LIBTOOLFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Opal;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build/Opal;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		DD46B368BEAE413AB81A7B39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					__IPHONEOS__,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/adam/Dev/Apophenia/Opal/vendor/glm,
+					/Users/adam/Dev/Apophenia/build,
+					/Users/adam/Dev/Apophenia/Opal,
+					/MoltenVK/include,
+					/Users/adam/Dev/SDL_iOS/include,
+					"/Users/adam/Dev/freetype2-ios/include",
+					/Users/adam/Dev/Vulkan/macOS/../MoltenVK/include,
+				);
+				INFOPLIST_FILE = /Users/adam/Dev/Apophenia/IOS_Build/CMakeFiles/OfMoonsAndMania.dir/Info.plist;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "";
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++17",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-headerpad_max_install_names",
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					AVFoundation,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					CoreMotion,
+					"-framework",
+					Foundation,
+					"-framework",
+					GameController,
+					"-framework",
+					OpenGLES,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					UIKit,
+					"-framework",
+					Metal,
+					"/Users/adam/Dev/Apophenia/IOS_Build/Opal/Release${EFFECTIVE_PLATFORM_NAME}/libOpal.a",
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					AVFoundation,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					CoreMotion,
+					"-framework",
+					Foundation,
+					"-framework",
+					GameController,
+					"-framework",
+					OpenGLES,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					UIKit,
+					"-framework",
+					Metal,
+					"-framework",
+					CoreHaptics,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = OfMoonsAndMania;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build;
+				TARGETED_DEVICE_FAMILY = 1;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		E0F03C48F72E46B2A5560C64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXCLUDED_ARCHS = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/adam/Dev/Apophenia/Opal/vendor/soloud/include,
+					/Users/adam/Dev/Apophenia/Opal/vendor/glm,
+					/Users/adam/Dev/Vulkan/macOS/../MoltenVK/include,
+					"/Users/adam/Dev/freetype2-ios/include",
+					/Users/adam/Dev/SDL_iOS/include,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "   ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++17",
+					"-xobjective-c++",
+				);
+				OTHER_LIBTOOLFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Opald;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build/Opal;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		E7086A3E21184DF1B3B9513E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					__IPHONEOS__,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/adam/Dev/Apophenia/Opal/vendor/glm,
+					/Users/adam/Dev/Apophenia/build,
+					/Users/adam/Dev/Apophenia/Opal,
+					/MoltenVK/include,
+					/Users/adam/Dev/SDL_iOS/include,
+					"/Users/adam/Dev/freetype2-ios/include",
+					/Users/adam/Dev/Vulkan/macOS/../MoltenVK/include,
+				);
+				INFOPLIST_FILE = /Users/adam/Dev/Apophenia/IOS_Build/CMakeFiles/OfMoonsAndMania.dir/Info.plist;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "";
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_CPLUSPLUSFLAGS = "-std=c++17";
+				OTHER_LDFLAGS = (
+					"-Wl,-headerpad_max_install_names",
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					AVFoundation,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					CoreMotion,
+					"-framework",
+					Foundation,
+					"-framework",
+					GameController,
+					"-framework",
+					OpenGLES,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					UIKit,
+					"-framework",
+					Metal,
+					"/Users/adam/Dev/Apophenia/IOS_Build/Opal/Debug${EFFECTIVE_PLATFORM_NAME}/libOpald.a",
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					AVFoundation,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					CoreMotion,
+					"-framework",
+					Foundation,
+					"-framework",
+					GameController,
+					"-framework",
+					OpenGLES,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					UIKit,
+					"-framework",
+					Metal,
+					"-lSDL2",
+					"-framework",
+					CoreHaptics,
+					"-lSDLmain",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = OfMoonsAndMania;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build;
+				TARGETED_DEVICE_FAMILY = 1;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		ED9FA44F740B4DE4B9478C48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		F5C5222FDD6F478A84B202F8 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		F6F64E812D624F40AA5F027A /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/adam/Dev/SDL_iOS/include/**",
+					"/Users/adam/Dev/freetype2-ios/include/**",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/adam/Dev/Apophenia/IOS_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D052D810BCC4413AD40BC66 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3970875B45E433781947B91 /* Debug */,
+				C4F108424F844809A412DCF3 /* Release */,
+				F6F64E812D624F40AA5F027A /* MinSizeRel */,
+				0C0206F8DDCA454AA8B08766 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		63C831B31ED44C26AAE5F7D5 /* Build configuration list for PBXNativeTarget "Opal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0F03C48F72E46B2A5560C64 /* Debug */,
+				8D89736995A24D19960C4BB4 /* Release */,
+				CE359D52A14A4C0796E0466D /* MinSizeRel */,
+				B9F69FFE4EEB4078812C7E4B /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AB28F369005D4790850CC8D7 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED9FA44F740B4DE4B9478C48 /* Debug */,
+				A12F0708823C4C9796FD1C9B /* Release */,
+				8D9B2CC57A2E4A7E82AA6702 /* MinSizeRel */,
+				F5C5222FDD6F478A84B202F8 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D0F81AA14442417FB72D259B /* Build configuration list for PBXProject "OfMoonsAndMania" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CEF60A5F9484179A7437D49 /* Debug */,
+				40AC4C2AC6AB4E2982337280 /* Release */,
+				14135B630A4E4A86AA0BAA0B /* MinSizeRel */,
+				1E08900CF64A4C74AA07F48D /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E8E53A5608E74C14ABE9FBA2 /* Build configuration list for PBXNativeTarget "OfMoonsAndMania" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7086A3E21184DF1B3B9513E /* Debug */,
+				DD46B368BEAE413AB81A7B39 /* Release */,
+				1A5A98DE598A43B9B8FCF287 /* MinSizeRel */,
+				7A94C344467B452881790FC3 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A254332254B845FA8BC0128E /* Project object */;
+}

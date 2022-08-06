@@ -1,0 +1,4 @@
+/Users/adam/Dev/Apophenia/build/CMakeFiles/OfMoonsAndMania.dir
+/Users/adam/Dev/Apophenia/build/CMakeFiles/ALL_BUILD.dir
+/Users/adam/Dev/Apophenia/build/CMakeFiles/ZERO_CHECK.dir
+/Users/adam/Dev/Apophenia/build/Opal/CMakeFiles/Opal.dir

@@ -18,7 +18,7 @@ void NarrativeState::Tick()
 void NarrativeState::Render()
 {
     ImGui_ImplVulkan_NewFrame();
-    ImGui_ImplGlfw_NewFrame();
+    ImGui_ImplSDL2_NewFrame();
 
     ImGui::NewFrame();
 
@@ -75,10 +75,10 @@ void NarrativeState::Begin()
     mPass = mGame->Renderer->CreateRenderPass(mOutputTex, true);
     mPass->SetClearColor(1,0,0,0);
 
-    mFont = std::make_shared<Opal::Font>(mGame->Renderer,"../Fonts/JosefinSans.ttf", 64);
+    mFont = std::make_shared<Opal::Font>(mGame->Renderer,Opal::GetBaseContentPath().append("Fonts/JosefinSans.ttf").c_str(), 64);
     mFontRenderer = mGame->Renderer->CreateFontRenderer(mPass, *mFont, glm::vec2(mGame->GetWidth(), mGame->GetHeight()), Opal::Camera::ActiveCamera);
 
-    mPostFX = mGame->Renderer->CreatePostProcessor(mPass, "../shaders/testFXVert", "../shaders/testFXFrag", false, sizeof(NoiseData), VK_SHADER_STAGE_FRAGMENT_BIT);
+    mPostFX = mGame->Renderer->CreatePostProcessor(mPass, Opal::GetBaseContentPath().append("shaders/testFXVert"), Opal::GetBaseContentPath().append("shaders/testFXFrag"), false, sizeof(NoiseData), VK_SHADER_STAGE_FRAGMENT_BIT);
     GenerateNoise();
 }
 

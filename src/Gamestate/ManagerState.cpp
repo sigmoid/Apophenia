@@ -89,9 +89,16 @@ void ManagerState::Tick()
 
 void ManagerState::Render() 
 {
+#ifdef __IPHONEOS__
+    int textXPos = Opal::Game::Instance->GetWidth() * 0.15;
+    int textYPos = Opal::Game::Instance->GetHeight()/2 - Opal::Game::Instance->GetHeight() * 0.03125;
+#else
+    int textXPos = 150;
+    int textYPos = 1080/2 - 60;
+#endif
     if(mTitleText != "")
     {
-        mTextRenderer->RenderString(mTitleText, 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
+        mTextRenderer->RenderString(mTitleText, textXPos, textYPos, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
     }
     else if(mCurrentState == GameStateType::PROMPT_STATE)
     {
@@ -115,22 +122,25 @@ void ManagerState::Begin()
 
     Opal::Logger::LogString("Loading Conversation...");
 
-    mConversationSequence = DialogueSerializer::DeserializeStoryline("../Dialogue/MainStory.xml");
+    mConversationSequence = DialogueSerializer::DeserializeStoryline(Opal::GetBaseContentPath().append("Dialogue/MainStory.xml"));
 
     Opal::Logger::LogString("Loading Progress...");
     LoadProgress();
 
     Opal::Logger::LogString("Creating Font...");
     mTextPass = mGame->Renderer->CreateRenderPass();
-    Opal::Font typeFace(mGame->Renderer,"../fonts/JosefinSlab-SemiBold.ttf", 100);
+    Opal::Font typeFace(mGame->Renderer,Opal::GetBaseContentPath().append("fonts/JosefinSlab-SemiBold.ttf").c_str(), 100);
 
     Opal::Logger::LogString("Creating Sprite Renderer");
     mSpriteRenderer = mGame->Renderer->CreateSpriteRenderer(mTextPass);
 
 
     Opal::Logger::LogString("Creating Font Renderer...");
+#ifdef __IPHONEOS__
+    mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, typeFace, glm::vec2(Opal::Game::Instance->GetWidth() *(.7), Opal::Game::Instance->GetHeight()), Opal::Camera::ActiveCamera);
+#else
     mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, typeFace, glm::vec2(1920 - 300, 1080), Opal::Camera::ActiveCamera);
-
+#endif
     Opal::Logger::LogString("Incrementing Conversation...");
     IncrementConversation();
 

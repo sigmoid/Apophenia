@@ -8,7 +8,7 @@
 #include "EndWallComponent.h"
 #include "../../Opal/vendor/FastNoiseLite.h"
 #include "../../Opal/vendor/imgui/imgui.h"
-#include "../../Opal/vendor/imgui/imgui_impl_glfw.h"
+#include "../../Opal/vendor/imgui/imgui_impl_sdl.h"
 #include "../../Opal/vendor/imgui/imgui_impl_vulkan.h"
 #include "../../Opal/EntityComponent/BoxColliderComponent2D.h"
 #include "AttractableComponent.h"
@@ -77,6 +77,18 @@ void CursorComponent::Update(float dTime)
         takingInput = false;
 
         float yMovement = 0;
+        float yPosNorm = mTransform->Position.y / (float)Opal::Game::Instance->GetHeight();
+
+        glm::vec2 CurrentTouch = Opal::InputHandler::GetTouchPos();
+        if(CurrentTouch.x >= 0)
+        {
+            if(mTouchOrigin.x < 0)
+                mTouchOrigin = CurrentTouch;
+        }
+        else
+        {
+            mTouchOrigin = glm::vec2(-10,-10);
+        }
 
         if(Opal::InputHandler::GetKey(mUpBinding))
         {
@@ -88,6 +100,11 @@ void CursorComponent::Update(float dTime)
             takingInput = true;
             yMovement = Opal::InputHandler::GetLeftJoystickY();
         }
+        else if(mTouchOrigin.x >= 0 && (CurrentTouch.y - yPosNorm) > 0.05f)
+        {
+            takingInput = true;
+            yMovement = 1.0f;
+        }
 
         if(Opal::InputHandler::GetKey(mDownBinding))
         {
@@ -98,6 +115,11 @@ void CursorComponent::Update(float dTime)
         {
             takingInput = true;
             yMovement = Opal::InputHandler::GetLeftJoystickY();
+        }
+        else if(mTouchOrigin.x >= 0 && (CurrentTouch.y - yPosNorm) < -0.05f)
+        {
+            takingInput = true;
+            yMovement = -1.0f;
         }
 
 

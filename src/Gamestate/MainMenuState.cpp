@@ -19,13 +19,15 @@
 #include "../DialogueSystem/WordBank.h"
 #include "../DialogueSystem/Response.h"
 
+#include "../../Opal/Input/InputHandler.h"
+
 #include "../../Opal/Logger.h"
 
 #include "EndState.h"
 #include "../../Opal/vendor/imgui/implot.h"
 #include "../../Opal/vendor/imgui/imgui.h"
 #include "../../Opal/vendor/imgui/imgui_impl_vulkan.h"
-#include "../../Opal/vendor/imgui/imgui_impl_glfw.h"
+#include "../../Opal/vendor/imgui/imgui_impl_sdl.h"
 #include "../../Opal/Graphics/Vulkan/VulkanRenderer.h"
 
 //std::shared_ptr<Opal::RenderPass> MainMenuState::mRenderPass = nullptr;
@@ -42,6 +44,15 @@ MainMenuState::~MainMenuState()
 void MainMenuState::Tick() 
 {
     mScene->Update(mGame->GetDeltaTime());
+    if(Opal::InputHandler::GetTouch())
+    {
+        ImGui_ImplVulkan_NewFrame();
+        ImGui_ImplSDL2_NewFrame();
+        ImGui::NewFrame();
+        ImGui::EndFrame();
+        mGame->PopState();
+        return;
+    }
 }
 
 void MainMenuState::Render() 
@@ -59,7 +70,7 @@ void MainMenuState::Render()
     mGame->Renderer->SubmitRenderPass(mRenderPass);
 
     ImGui_ImplVulkan_NewFrame();
-    ImGui_ImplGlfw_NewFrame();
+    ImGui_ImplSDL2_NewFrame();
 
     ImGuiStyle * style = &ImGui::GetStyle();
 

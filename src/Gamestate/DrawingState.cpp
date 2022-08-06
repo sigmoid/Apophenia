@@ -22,7 +22,7 @@ void DrawingState::Tick()
 {
     mTimer -= mGame->GetDeltaTime();
 
-    if(mTimer <= 0 || Opal::InputHandler::GetKey(GLFW_KEY_SPACE))
+    if(mTimer <= 0 || Opal::InputHandler::GetKey(SDL_SCANCODE_SPACE))
     {
         mGame->PopState();
         return;

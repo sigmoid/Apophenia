@@ -9,6 +9,7 @@
 #include "../../Opal/Game.h"
 #include "../../Opal/Graphics/Texture.h"
 #include "../../Opal/vendor/FastNoiseLite.h"
+#include "../../Opal/util.h"
 
 #include <array>
 struct NoiseData

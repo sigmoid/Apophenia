@@ -52,7 +52,7 @@ void StrikesState::Begin()
     {
         mTextPass = mGame->Renderer->CreateRenderPass(true);
         mTextPass->SetClearColor(mBGColor.r, mBGColor.g, mBGColor.b, mBGColor.a);
-        Opal::Font mFont(mGame->Renderer, "../fonts/JosefinSans.ttf", 180);
+        Opal::Font mFont(mGame->Renderer, Opal::GetBaseContentPath().append("fonts/JosefinSans.ttf").c_str(), 180);
         mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, mFont, glm::vec2(1920, 1080), Opal::Camera::ActiveCamera);
     }
 

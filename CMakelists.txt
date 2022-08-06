@@ -1,9 +1,20 @@
-project(Tightrope)
+# helpful for ios build http://www.skipifzero.com/posts/2018-10-07-compiling-cmake-ios.html
+# command is cmake .. -G Xcode -DCMAKE_TOOLCHAIN_FILE=$POLLY_ROOT/ios.cmake
+
+project(OfMoonsAndMania)
 cmake_minimum_required(VERSION 3.10)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -std=c++17")
 
 add_subdirectory(Opal)
+
+if(IOS)
+set(FREETYPE_INCLUDE_DIRS ${FT2_IOS_INC})
+set(Vulkan_INCLUDE_DIRS ${MoltenVK_Path}/MoltenVK/include)
+set(SDL2_INCLUDE_DIRS ${SDL2_IOS_INC})
+endif()
+
+include_directories(Opal/vendor/glm/)
 
 file(GLOB SOURCES
     src/*.h
@@ -16,27 +27,53 @@ file(GLOB SOURCES
     src/DialogueSystem/*.cpp
     src/PillGeneration/*.h
     src/PillGeneration/*.cpp
+    Opal/vendor/glm/*.hpp
+    Opal/vendor/glm/gtc/*.hpp
+    Opal/vendor/glm/ext/*.hpp
+    Opal/vendor/glm/detail/*.hpp
+    Opal/vendor/glm/gtx/*.hpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
-
-IF(WIN32)
-ELSE()
-find_package(glfw3 3.3 REQUIRED)
-find_package(Freetype REQUIRED)
-ENDIF()
 
 target_include_directories(${PROJECT_NAME} PUBLIC
 "${PROJECT_BINARY_DIR}"
 "${PROJECT_SOURCE_DIR}/Opal")
 
+if(IOS)
+find_library(Freetype NAMES libFreetype2 HINTS ${FT2_IOS_DIR})
+else()
+find_package(Freetype REQUIRED)
+endif()
+
+if(IOS)
+set(MoltenVK_Path $ENV{VULKAN_SDK}/..)
+find_library(MoltenVK_LIB
+    NAMES
+    MoltenVK
+    HINTS
+    ${MoltenVK_Path}/MoltenVK/iOS)
+else()
 find_package(Vulkan REQUIRED)
+endif()
 
+if (IOS)
+find_library(SDL2 NAMES libSDL2 HINTS ${SDL2_IOS_DIR})
+target_link_libraries(OfMoonsAndMania "-framework AudioToolbox")
+target_link_libraries(OfMoonsAndMania "-framework AVFoundation")
+target_link_libraries(OfMoonsAndMania "-framework CoreGraphics")
+target_link_libraries(OfMoonsAndMania "-framework CoreMotion")
+target_link_libraries(OfMoonsAndMania "-framework Foundation")
+target_link_libraries(OfMoonsAndMania "-framework GameController")
+target_link_libraries(OfMoonsAndMania "-framework OpenGLES")
+target_link_libraries(OfMoonsAndMania "-framework QuartzCore")
+target_link_libraries(OfMoonsAndMania "-framework UIKit")
+target_link_libraries(OfMoonsAndMania "-framework Metal")
+else()
+find_package(SDL2 REQUIRED)
+endif()
 
-
-if (VULKAN_FOUND)
     message(STATUS "Found Vulkan, Including and Linking now")
-    include_directories(${Vulkan_INCLUDE_DIRS})
-    target_link_libraries (${PROJECT_NAME} ${Vulkan_LIBRARIES} glfw Opal ${FREETYPE_LIBRARIES})
+    include_directories(${Vulkan_INCLUDE_DIRS} ${GLM_INCLUDE_DIRS} ${SDL2_INCLUDE_DIRS})
+    target_link_libraries (${PROJECT_NAME} ${Vulkan_LIBRARIES} ${SDL2_LIBRARIES} Opal ${FREETYPE_LIBRARIES})
     target_include_directories(${PROJECT_NAME} PRIVATE ${FREETYPE_INCLUDE_DIRS})
-endif (VULKAN_FOUND)

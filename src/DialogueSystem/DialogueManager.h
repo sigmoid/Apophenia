@@ -4,6 +4,7 @@
 #include <string>
 
 #include "SentenceFragment.h"
+#include "../Opal/Game.h"
 #include "Response.h"
 #include "Prompt.h"
 #include <iostream>

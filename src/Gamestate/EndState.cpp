@@ -1,6 +1,6 @@
 #include "EndState.h"
 #include "../../Opal/Logger.h"
-#include "../../Opal/Game.h"
+#include "../../Opal/util.h"
 
 std::shared_ptr<Opal::FontRenderer> EndState::mTextRenderer = nullptr;
 std::shared_ptr<Opal::RenderPass> EndState::mTextPass = nullptr;
@@ -43,7 +43,7 @@ void EndState::Begin()
     {
         mTextPass = mGame->Renderer->CreateRenderPass(true);
         mTextPass->SetClearColor(0.1,0.1,0.1,1);
-        Opal::Font mFont(mGame->Renderer, "../fonts/JosefinSlab-SemiBold.ttf", 48);
+        Opal::Font mFont(mGame->Renderer, Opal::GetBaseContentPath().append("fonts/JosefinSlab-SemiBold.ttf").c_str(), 48);
         mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, mFont, glm::vec2(1920, 1080), Opal::Camera::ActiveCamera);
     }
 }
