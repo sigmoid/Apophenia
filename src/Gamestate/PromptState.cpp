@@ -68,7 +68,7 @@ void PromptState::Tick()
         }
     }
 
-    if((Opal::InputHandler::GetKey(GLFW_KEY_SPACE) || Opal::InputHandler::GetGamepadButton(0)) && !mLastAdvancePressed)
+    if((Opal::InputHandler::GetKey(SDL_SCANCODE_SPACE) || Opal::InputHandler::GetTouch() || Opal::InputHandler::GetGamepadButton(0)) && !mLastAdvancePressed)
     {
         if(mCurrentCardIdx < DialogueManager::Instance->GetCurrentPrompt().Text.size() - 1)
         {
@@ -87,7 +87,7 @@ void PromptState::Tick()
             }
         }
     }
-    mLastAdvancePressed = Opal::InputHandler::GetKey(GLFW_KEY_SPACE) || Opal::InputHandler::GetGamepadButton(0);
+    mLastAdvancePressed = Opal::InputHandler::GetKey(SDL_SCANCODE_SPACE) || Opal::InputHandler::GetGamepadButton(0);
 
     if(mSoundTimer > 0)
     {
@@ -104,8 +104,11 @@ void PromptState::Tick()
 
 void PromptState::Render() 
 {
+    #ifdef __IPHONEOS__
+    mTextRenderer->RenderString(DialogueManager::Instance->GetCurrentPrompt().Text[mCurrentCardIdx], Opal::Game::Instance->GetWidth() * 0.15, Opal::Game::Instance->GetHeight()/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
+    #else
     mTextRenderer->RenderString(DialogueManager::Instance->GetCurrentPrompt().Text[mCurrentCardIdx], 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
-
+    #endif
     mTextPass->Record();
     mTextRenderer->RecordCommands();
     mSpriteRenderer->StartFrame();
@@ -139,16 +142,23 @@ void PromptState::Begin()
 
     if(mTextRenderer == nullptr)
     {
+        #ifdef __IPHONEOS__
+        mTextureOutput = mGame->Renderer->CreateRenderTexture(Opal::Game::Instance->GetWidth(),Opal::Game::Instance->GetHeight(), 4);
+        #else
         mTextureOutput = mGame->Renderer->CreateRenderTexture(1920,1080, 4);
+        #endif
         mTextPass = mGame->Renderer->CreateRenderPass(mTextureOutput,true);
 
-        mFont = std::make_shared<Opal::Font>(mGame->Renderer,"../fonts/JosefinSans-Light.ttf", 80);
+        mFont = std::make_shared<Opal::Font>(mGame->Renderer,Opal::GetBaseContentPath().append("fonts/JosefinSans-Light.ttf").c_str(), 80);
 
         mSpriteRenderer = mGame->Renderer->CreateSpriteRenderer(mTextPass);
 
+        #ifdef __IPHONEOS__
+        mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(Opal::Game::Instance->GetWidth() * (0.8), Opal::Game::Instance->GetHeight()), Opal::Camera::ActiveCamera);
+        #else
         mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(1920 - 300, 1080), Opal::Camera::ActiveCamera);
-        
-        mPostProcessor = mGame->Renderer->CreatePostProcessor(mTextPass, "../shaders/PlayStateVert", "../shaders/PlayStateFrag", true, sizeof(PromptStateShaderData), VK_SHADER_STAGE_FRAGMENT_BIT);
+        #endif
+        mPostProcessor = mGame->Renderer->CreatePostProcessor(mTextPass, Opal::GetBaseContentPath().append("shaders/PlayStateVert"), Opal::GetBaseContentPath().append("shaders/PlayStateFrag"), true, sizeof(PromptStateShaderData), VK_SHADER_STAGE_FRAGMENT_BIT);
     }
 
     mCurrentCardIdx = 0;
@@ -211,9 +221,11 @@ void PromptState::UpdateShaderData()
         {
             if(DialogueManager::Instance != nullptr)
             {
-            Opal::AABB box = mTextRenderer->GetTextRect(DialogueManager::Instance->GetCurrentPrompt().Text[mCurrentCardIdx],DialogueManager::Instance->GetCurrentPrompt().ObscuredWords[i] , 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
-            // std::cout << box.min.x << " " << box.min.y << " " << box.max.x << " " << box.max.y << std::endl;
-            mShaderData->ObscuredRects[i] = glm::vec4(box.min.x / 1920, box.min.y / 1080, box.max.x / 1920, box.max.y / 1080);
+                Opal::AABB box = mTextRenderer->GetTextRect(DialogueManager::Instance->GetCurrentPrompt().Text[mCurrentCardIdx],DialogueManager::Instance->GetCurrentPrompt().ObscuredWords[i] , 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
+                    
+                    
+                // std::cout << box.min.x << " " << box.min.y << " " << box.max.x << " " << box.max.y << std::endl;
+                mShaderData->ObscuredRects[i] = glm::vec4(box.min.x / 1920, box.min.y / 1080, box.max.x / 1920, box.max.y / 1080);
             }
         }
         

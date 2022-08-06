@@ -1,6 +1,7 @@
 #include "DialogueManager.h"
 #include "DialogueSerializer.h"
 #include "../../Opal/Logger.h"
+#include <SDL.h>
 
 DialogueManager *DialogueManager::Instance = nullptr;
 
@@ -52,7 +53,7 @@ void DialogueManager::LoadConversation(std::string filepath)
 {
     Opal::Logger::LogString("DIALOGUE_MANAGER: Loading conversation " + filepath + "...");
     mPrompts.clear();
-    mPrompts = DialogueSerializer::DeserializeFile("../Dialogue/MainStory.xml", filepath);
+    mPrompts = DialogueSerializer::DeserializeFile(Opal::GetBaseContentPath().append("Dialogue/MainStory.xml"), filepath);
     mCurrentPromptIdx = 0;
     mCurrentSequenceNum = -1;
     

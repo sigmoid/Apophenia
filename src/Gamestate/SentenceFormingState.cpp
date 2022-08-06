@@ -418,8 +418,8 @@ void SentenceFormingState::Begin()
         mBGPass = mGame->Renderer->CreateRenderPass(true);
         mBGPass->SetClearColor(0.3f, 0.3f, 0.3f, 1.0f);
 
-        mFont = std::make_shared<Opal::Font>(mGame->Renderer, "../fonts/JosefinSans-Light.ttf", 90);
-        mResponseFont = std::make_shared<Opal::Font>(mGame->Renderer, "../fonts/JosefinSans-Light.ttf", 64);
+        mFont = std::make_shared<Opal::Font>(mGame->Renderer, Opal::GetBaseContentPath().append("fonts/JosefinSans-Light.ttf").c_str(), 90);
+        mResponseFont = std::make_shared<Opal::Font>(mGame->Renderer, Opal::GetBaseContentPath().append("fonts/JosefinSans-Light.ttf").c_str(), 64);
 
         mMeshRenderer = mGame->Renderer->CreateMeshRenderer(mTextPass);
 
@@ -428,7 +428,7 @@ void SentenceFormingState::Begin()
         mLineRenderer->Init(mGame->Renderer, mTextPass, true);
 
         std::vector<std::shared_ptr<Opal::Texture> > textures;
-        mCursorTexture = mGame->Renderer->CreateTexture("../textures/cursor.png");
+        mCursorTexture = mGame->Renderer->CreateTexture(Opal::GetBaseContentPath().append("textures/cursor.png"));
         textures.push_back(mCursorTexture);
         mBatch = mGame->Renderer->CreateBatch(mTextPass, 1000, textures, true);
 
@@ -446,13 +446,13 @@ void SentenceFormingState::Begin()
     mNoise.SetSeed(rand());
     mNoise.SetFrequency(mNoiseFrequency);
 
-    std::string wbPath = "../Dialogue/DefaultWordBank.xml";
+    std::string wbPath = Opal::GetBaseContentPath().append("Dialogue/DefaultWordBank.xml");
     Response response = DialogueManager::Instance->GetCurrentResponse();
     if (response.WordFrequency != 0 && response.WordBank != "")
     {
         wbPath = response.WordBank;
+        mWordBank = DialogueSerializer::GetWordBank(Opal::GetBaseContentPath().append(wbPath.c_str()));
     }
-    mWordBank = DialogueSerializer::GetWordBank(wbPath);
 
     mChannelHeight = response.ChannelSize;
 
@@ -967,7 +967,7 @@ void SentenceFormingState::CreatePostProcess()
     noiseBuffer.Texture = mNoiseTexture;
     extraBuffers.push_back(noiseBuffer);
 
-    mPostProcess = mGame->Renderer->CreatePostProcessor(mTextPass, "../shaders/testFXvert", "../shaders/testFXfrag", false, sizeof(UBO), VK_SHADER_STAGE_FRAGMENT_BIT, extraBuffers);
+    mPostProcess = mGame->Renderer->CreatePostProcessor(mTextPass, Opal::GetBaseContentPath().append("shaders/testFXvert"), Opal::GetBaseContentPath().append("shaders/testFXfrag"), false, sizeof(UBO), VK_SHADER_STAGE_FRAGMENT_BIT, extraBuffers);
     
 }
 

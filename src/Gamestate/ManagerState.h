@@ -7,6 +7,7 @@
 #include "../../Opal/Graphics/Camera.h"
 #include "../../Opal/Graphics/PostProcessRenderer.h"
 #include "../../Opal/vendor/FastNoiseLite.h"
+#include "../DialogueSystem/DialogueManager.h"
 
 #include "../Opal/Audio/AudioClip.h"
 
@@ -64,7 +65,7 @@ class ManagerState : public Opal::Gamestate
 
     glm::vec4 UpdateColor(float progress);
 
-    std::string mSavePath = "../SaveGame/SaveGame.txt";
+    std::string mSavePath = std::string(SDL_GetBasePath()).append("SaveGame/SaveGame.txt");
     bool mProgressLoaded = false;
     bool mGamePaused = false;
     void LoadProgress();

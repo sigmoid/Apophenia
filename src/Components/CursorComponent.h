@@ -47,7 +47,7 @@ class CursorComponent : public Opal::Component
     float mMaxSpeed = 20, mCurrentSpeed = 0, mLastSpeed = 0, mAcceleration = 400;
     float mUpperBound = 1080 - 100, mLowerBound = 100;
     float mAttractionModifier = 25.0f;
-    int mUpBinding = GLFW_KEY_W, mDownBinding = GLFW_KEY_S;
+    int mUpBinding = SDL_SCANCODE_W, mDownBinding = SDL_SCANCODE_S;
     bool mTakeInput = true;
     std::shared_ptr<Opal::TransformComponent> mTransform = nullptr;
     std::shared_ptr<AttractableComponent> mAttractable = nullptr;
@@ -65,6 +65,8 @@ class CursorComponent : public Opal::Component
     std::vector<Attractor> mAttractors;
     std::shared_ptr<Opal::Mesh2D> mMesh;
     std::vector<float> mVertices;
+
+    glm::vec2 mTouchOrigin = glm::vec2(-10,-10);
 
     std::vector<std::string> mRealResponse;
 };

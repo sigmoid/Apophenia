@@ -5,6 +5,7 @@
 #include "../../Opal/Graphics/FontRenderer.h"
 #include "../../Opal/Graphics/RenderPass.h"
 #include "../../Opal/Graphics/Camera.h"
+#include "../../Opal/Game.h"
 
 class EndState : public Opal::Gamestate
 {
