@@ -69,93 +69,93 @@ void MainMenuState::Render()
     mRenderPass->EndRecord();
     mGame->Renderer->SubmitRenderPass(mRenderPass);
 
-    ImGui_ImplVulkan_NewFrame();
-    ImGui_ImplSDL2_NewFrame();
+    // ImGui_ImplVulkan_NewFrame();
+    // ImGui_ImplSDL2_NewFrame();
 
-    ImGuiStyle * style = &ImGui::GetStyle();
+    // ImGuiStyle * style = &ImGui::GetStyle();
 
-    style->WindowPadding = ImVec2(15 * mGame->GetScale().x, 15 * mGame->GetScale().x) ;
-	style->WindowRounding = 5.0f;
-	style->FramePadding = ImVec2(5, 5);
-	style->FrameRounding = 4.0f;
-	style->ItemSpacing = ImVec2(12 * mGame->GetScale().x, mGame->GetHeight()/32 * mGame->GetScale().x);
-	style->ItemInnerSpacing = ImVec2(8 * mGame->GetScale().x, 6 * mGame->GetScale().x);
-	style->IndentSpacing = 25.0f * mGame->GetScale().x;
-	style->ScrollbarSize = 15.0f * mGame->GetScale().x;
-	style->ScrollbarRounding = 9.0f * mGame->GetScale().x;
-	style->GrabMinSize = 5.0f;
-	style->GrabRounding = 3.0f;
-    style->Colors[ImGuiCol_Button]                = ImVec4(0.4375f, 0.4258f, 0.3828f, 0.29f);
-    style->Colors[ImGuiCol_ButtonHovered]         = ImVec4(0.4375f, 0.4258f, 0.3828f, 0.49f);
-    style->Colors[ImGuiCol_ButtonActive]          = ImVec4(0.4375f, 0.4258f, 0.3828f, 0.69f);
+    // style->WindowPadding = ImVec2(15 * mGame->GetScale().x, 15 * mGame->GetScale().x) ;
+	// style->WindowRounding = 5.0f;
+	// style->FramePadding = ImVec2(5, 5);
+	// style->FrameRounding = 4.0f;
+	// style->ItemSpacing = ImVec2(12 * mGame->GetScale().x, mGame->GetHeight()/32 * mGame->GetScale().x);
+	// style->ItemInnerSpacing = ImVec2(8 * mGame->GetScale().x, 6 * mGame->GetScale().x);
+	// style->IndentSpacing = 25.0f * mGame->GetScale().x;
+	// style->ScrollbarSize = 15.0f * mGame->GetScale().x;
+	// style->ScrollbarRounding = 9.0f * mGame->GetScale().x;
+	// style->GrabMinSize = 5.0f;
+	// style->GrabRounding = 3.0f;
+    // style->Colors[ImGuiCol_Button]                = ImVec4(0.4375f, 0.4258f, 0.3828f, 0.29f);
+    // style->Colors[ImGuiCol_ButtonHovered]         = ImVec4(0.4375f, 0.4258f, 0.3828f, 0.49f);
+    // style->Colors[ImGuiCol_ButtonActive]          = ImVec4(0.4375f, 0.4258f, 0.3828f, 0.69f);
 
-    ImGui::NewFrame();
-    const ImGuiViewport* main_viewport = ImGui::GetMainViewport();
-    ImGui::SetNextWindowPos(ImVec2(mGame->GetWidth()/10, mGame->GetHeight() / 10));
-    ImGui::SetNextWindowSize(ImVec2(mGame->GetWidth(), mGame->GetHeight()));
-    ImGui::Begin("Main Menu", nullptr , ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground);
+    // ImGui::NewFrame();
+    // const ImGuiViewport* main_viewport = ImGui::GetMainViewport();
+    // ImGui::SetNextWindowPos(ImVec2(mGame->GetWidth()/10, mGame->GetHeight() / 10));
+    // ImGui::SetNextWindowSize(ImVec2(mGame->GetWidth(), mGame->GetHeight()));
+    // ImGui::Begin("Main Menu", nullptr , ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground);
     
-    ImGui::PushFont(Opal::VulkanRenderer::TitleFont);
-    ImGui::Text("Tightrope");
+    // ImGui::PushFont(Opal::VulkanRenderer::TitleFont);
+    // ImGui::Text("Tightrope");
 
-    if(mCurrentState == MenuState::Default)
-    {
-        if(ImGui::Button("Play"))
-        {
-            ImGui::PopFont();
-            ImGui::End();
-            ImGui::EndFrame();
-            mGame->PopState();
-            return;
-        }
+    // if(mCurrentState == MenuState::Default)
+    // {
+    //     if(ImGui::Button("Play"))
+    //     {
+    //         ImGui::PopFont();
+    //         ImGui::End();
+    //         ImGui::EndFrame();
+    //         mGame->PopState();
+    //         return;
+    //     }
 
-        if(ImGui::Button("Credits"))
-        {
-            mCurrentState = MenuState::Credits;
-        }
+    //     if(ImGui::Button("Credits"))
+    //     {
+    //         mCurrentState = MenuState::Credits;
+    //     }
 
-        if(ImGui::Button("Options"))
-        {
-            mCurrentState = MenuState::Options;
-        }
+    //     if(ImGui::Button("Options"))
+    //     {
+    //         mCurrentState = MenuState::Options;
+    //     }
 
-        if(ImGui::Button("Exit"))
-        {
-            mGame->End();
-        }
-    }
-    else if(mCurrentState == MenuState::Options)
-    {
-        float volume = mGame->GetGlobalVolume();
-        ImGui::DragFloat("Volume", &volume,0.01,0,1);
-        mGame->SetGlobalVolume(volume);
+    //     if(ImGui::Button("Exit"))
+    //     {
+    //         mGame->End();
+    //     }
+    // }
+    // else if(mCurrentState == MenuState::Options)
+    // {
+    //     float volume = mGame->GetGlobalVolume();
+    //     ImGui::DragFloat("Volume", &volume,0.01,0,1);
+    //     mGame->SetGlobalVolume(volume);
 
-        if(ImGui::Button("Back"))
-        {
-            mCurrentState = MenuState::Default;
-        }
-    }
-    else if (mCurrentState == MenuState::Credits)
-    {
-        ImGui::PushFont(Opal::VulkanRenderer::NormalFont);
-        ImGui::Text("Game Made By: Adam Waggoner (@absurd_walls)");
-        ImGui::Text("Tools Used: MoltenVK, SoLoud Audio, GLFW, ImGui, GLM, TinyXML2");
-        ImGui::Text("Special Thanks: Mom, Dad, Emily, Michael, Light, Patrick, Skyler,");
-        ImGui::Text("Jaden, Austin, and Logan for their feedback and support");
-        ImGui::Text("throughout the development of this game.");
+    //     if(ImGui::Button("Back"))
+    //     {
+    //         mCurrentState = MenuState::Default;
+    //     }
+    // }
+    // else if (mCurrentState == MenuState::Credits)
+    // {
+    //     ImGui::PushFont(Opal::VulkanRenderer::NormalFont);
+    //     ImGui::Text("Game Made By: Adam Waggoner (@absurd_walls)");
+    //     ImGui::Text("Tools Used: MoltenVK, SoLoud Audio, GLFW, ImGui, GLM, TinyXML2");
+    //     ImGui::Text("Special Thanks: Mom, Dad, Emily, Michael, Light, Patrick, Skyler,");
+    //     ImGui::Text("Jaden, Austin, and Logan for their feedback and support");
+    //     ImGui::Text("throughout the development of this game.");
         
-        ImGui::PopFont();
+    //     ImGui::PopFont();
 
-        if (ImGui::Button("Back"))
-        {
-            mCurrentState = MenuState::Default;
-        }
-    }
-    ImGui::PopFont();
-    ImGui::End();
+    //     if (ImGui::Button("Back"))
+    //     {
+    //         mCurrentState = MenuState::Default;
+    //     }
+    // }
+    // ImGui::PopFont();
+    // ImGui::End();
 
-    ImGui::Render();
-    ImGui::EndFrame();
+    // ImGui::Render();
+    // ImGui::EndFrame();
 }
 
 void MainMenuState::Begin() 

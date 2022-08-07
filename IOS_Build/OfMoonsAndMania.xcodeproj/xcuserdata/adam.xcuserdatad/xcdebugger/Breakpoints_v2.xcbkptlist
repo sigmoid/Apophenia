@@ -116,8 +116,8 @@
             filePath = "Opal/Window.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "Window::Window(width, height, title)"
             landmarkType = "7">
          </BreakpointContent>

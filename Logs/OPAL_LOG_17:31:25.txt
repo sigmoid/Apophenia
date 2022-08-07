@@ -1,0 +1,2 @@
+(17:31:25:0): OPAL_LOG: Successfully created window!
+(17:31:25:0): OPAL_LOG: CreatInstance() start

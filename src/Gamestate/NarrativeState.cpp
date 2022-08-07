@@ -17,19 +17,19 @@ void NarrativeState::Tick()
 
 void NarrativeState::Render()
 {
-    ImGui_ImplVulkan_NewFrame();
-    ImGui_ImplSDL2_NewFrame();
+    // ImGui_ImplVulkan_NewFrame();
+    // ImGui_ImplSDL2_NewFrame();
 
-    ImGui::NewFrame();
+    // ImGui::NewFrame();
 
-    ImGui::Begin("Noise settings");
+    // ImGui::Begin("Noise settings");
 
-    ImGui::DragFloat("Frequency", &mFrequency);
-    ImGui::DragFloat("Noise Scale", &mNoiseScale);
-    ImGui::End();
+    // ImGui::DragFloat("Frequency", &mFrequency);
+    // ImGui::DragFloat("Noise Scale", &mNoiseScale);
+    // ImGui::End();
 
-    ImGui::Render();
-    ImGui::EndFrame();
+    // ImGui::Render();
+    // ImGui::EndFrame();
 
     GenerateNoise();
     mFontRenderer->RenderString("Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! \nHello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world!\nHello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world!\nHello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world!\nHello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world!", 0, 0, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, true);
