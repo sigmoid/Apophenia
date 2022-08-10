@@ -38,13 +38,14 @@ int main(int argc, char * argv[])
     game->Init(width, height, "Of Moons and Mania", Opal::RendererType::VULKAN);
 
     game->SetFramerateLock(60);
-    game->ToggleDebugInfo(false);
-
+    //game->ToggleDebugInfo(false);
+    
     auto cam = game->Renderer->CreateOrthoCamera(game->GetWidth(), game->GetHeight(), -1000, 1000);
     
 #ifndef __IPHONEOS__
-    game->Resize(game->GetWidth()/2, game->GetHeight()/2);
+    //game->Resize(game->GetWidth()/2, game->GetHeight()/2);
 #endif
+    
     DialogueManager dialogue("../Dialogue/TestDialogue.xml");
 
 
