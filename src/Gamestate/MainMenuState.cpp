@@ -24,6 +24,7 @@
 #include "../../Opal/Logger.h"
 
 #include "EndState.h"
+#include "CreditsState.h"
 #include "../../Opal/Graphics/Vulkan/VulkanRenderer.h"
 
 //std::shared_ptr<Opal::RenderPass> MainMenuState::mRenderPass = nullptr;
@@ -36,11 +37,11 @@ MainMenuState::MainMenuState():
  mOptionsButton("Options", glm::vec4(Opal::Game::Instance->GetWidth()/2.0f - 150,
   Opal::Game::Instance->GetHeight()/2.0f - 50 + 125 * 1, 
   Opal::Game::Instance->GetWidth()/2.0f + 150, 
-  Opal::Game::Instance->GetHeight()/2.0f + 50 + 125 * 1) ,  Opal::Game::Instance->Renderer, []() {}),
+  Opal::Game::Instance->GetHeight()/2.0f + 50 + 125 * 1) ,  Opal::Game::Instance->Renderer, [=]() {}),
  mCreditsButton("Credits", glm::vec4(Opal::Game::Instance->GetWidth()/2.0f - 150,
   Opal::Game::Instance->GetHeight()/2.0f - 50 + 125 * 2, 
   Opal::Game::Instance->GetWidth()/2.0f + 150, 
-  Opal::Game::Instance->GetHeight()/2.0f + 50 + 125 * 2) ,  Opal::Game::Instance->Renderer, []() {}),
+  Opal::Game::Instance->GetHeight()/2.0f + 50 + 125 * 2) ,  Opal::Game::Instance->Renderer, [=]() {Opal::Game::Instance->PushState<CreditsState>();}),
   mExitButton("Exit", glm::vec4(Opal::Game::Instance->GetWidth()/2.0f - 150,
   Opal::Game::Instance->GetHeight()/2.0f - 50 + 125 * 3, 
   Opal::Game::Instance->GetWidth()/2.0f + 150, 
