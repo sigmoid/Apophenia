@@ -11,6 +11,8 @@
 #include "../../Opal/Graphics/FontRenderer.h"
 #include "../../Opal/Graphics/Font.h"
 #include "../../Opal/Graphics/PostProcessRenderer.h"
+#include "../../Opal/Graphics/SpriteRenderer.h"
+#include "../../Opal/Graphics/Sprite.h"
 #include "../Components/SparkComponent.h"
 #include "../../Opal/Game.h"
 #include "../../Opal/Audio/AudioClip.h"
@@ -51,6 +53,8 @@ class MainMenuState : public Opal::Gamestate
     std::shared_ptr<Opal::MeshRenderer2D> mMeshRenderer = nullptr;
     std::shared_ptr<Opal::FontRenderer> mFontRenderer = nullptr;
     std::shared_ptr<Opal::Font> mFont = nullptr;
+    std::shared_ptr<Opal::SpriteRenderer> mSpriteRenderer = nullptr;
+    std::shared_ptr<Opal::Texture> mTitleTexture = nullptr;
 
     int mNumSparks = 100;
     void CreateSparks();
@@ -73,6 +77,8 @@ class MainMenuState : public Opal::Gamestate
     Button mCreditsButton;
     Button mOptionsButton;
     Button mExitButton;
+
+    Opal::Sprite mTitleSprite;
 
     bool mShouldPopState = false;
 };

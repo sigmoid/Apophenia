@@ -78,11 +78,12 @@ void MainMenuState::Render()
 
     mBatch->StartBatch();
     mScene->Render(mBatch);
+    mBatch->BatchSprite(mTitleSprite);
     mBatch->RenderBatch();
 
     mRenderPass->Record();
-    mBatch->RecordCommands();
     mLineRenderer->Render();
+    mBatch->RecordCommands();
     mMeshRenderer->RecordCommands();
     mFontRenderer->RecordCommands();
     mRenderPass->EndRecord();
@@ -98,7 +99,14 @@ void MainMenuState::Begin()
     mFontRenderer = mGame->Renderer->CreateFontRenderer(mRenderPass, *mFont, glm::vec2(mGame->GetWidth(), mGame->GetHeight()), Opal::Camera::ActiveCamera);
     mMeshRenderer = mGame->Renderer->CreateMeshRenderer(mRenderPass);
 
+    mTitleTexture = mGame->Renderer->CreateTexture(Opal::GetBaseContentPath().append("textures/Title.png"));
+    mTitleSprite.SetTexture(mTitleTexture);
+    float titleSpriteX = mGame->GetWidth() / 2.0f - mTitleTexture->GetWidth() /2.0f;
+    float titleSpriteY = 50;
+    mTitleSprite.SetPosition(titleSpriteX,titleSpriteY);
+
     std::vector<std::shared_ptr<Opal::Texture> > textures;
+    textures.push_back(mTitleTexture);
     mBatch = mGame->Renderer->CreateBatch(mRenderPass, 1000, textures, true);
 
     mLineRenderer = std::make_shared<Opal::LineRenderer>();

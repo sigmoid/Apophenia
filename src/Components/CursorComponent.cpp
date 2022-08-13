@@ -79,6 +79,7 @@ void CursorComponent::Update(float dTime)
         float yMovement = 0;
         float yPosNorm = mTransform->Position.y / (float)Opal::Game::Instance->GetHeight();
 
+        #ifdef __IPHONEOS__
         glm::vec2 CurrentTouch = Opal::InputHandler::GetTouchPos();
         if(CurrentTouch.x >= 0)
         {
@@ -89,6 +90,7 @@ void CursorComponent::Update(float dTime)
         {
             mTouchOrigin = glm::vec2(-10,-10);
         }
+        #endif
 
         if(Opal::InputHandler::GetKey(mUpBinding))
         {
@@ -100,11 +102,13 @@ void CursorComponent::Update(float dTime)
             takingInput = true;
             yMovement = Opal::InputHandler::GetLeftJoystickY();
         }
+        #ifdef __IPHONEOS__
         else if(mTouchOrigin.x >= 0 && (CurrentTouch.y - yPosNorm) > 0.05f)
         {
             takingInput = true;
             yMovement = 1.0f;
         }
+        #endif
 
         if(Opal::InputHandler::GetKey(mDownBinding))
         {
@@ -116,12 +120,13 @@ void CursorComponent::Update(float dTime)
             takingInput = true;
             yMovement = Opal::InputHandler::GetLeftJoystickY();
         }
+        #ifdef __IPHONEOS__
         else if(mTouchOrigin.x >= 0 && (CurrentTouch.y - yPosNorm) < -0.05f)
         {
             takingInput = true;
             yMovement = -1.0f;
         }
-
+        #endif
 
         mCurrentSpeed += mAcceleration * dTime * yMovement;
 

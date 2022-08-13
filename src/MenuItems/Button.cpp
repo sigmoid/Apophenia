@@ -1,15 +1,18 @@
 #include "Button.h"
- 
+#include "../../Opal/vendor/FastNoiseLite.h"
+
 Button::Button(std::string text, glm::vec4 bounds, std::shared_ptr<Opal::Renderer> renderer, std::function<void()> on_click)
 {
     mText = text;
-    mMesh = renderer->CreateMesh(250);
+    mMesh = renderer->CreateMesh(20000);
     mBounds = bounds;
     mOnClick = on_click;
+    mTimer = (rand() % 10000)/ 100000.0f;
 }
 
 void Button::Tick(float dt)
 {
+    mTimer += dt;
     GenerateMesh();
 
     glm::vec2 mousePos = Opal::InputHandler::GetMousePos();
@@ -47,55 +50,179 @@ void Button::Render(std::shared_ptr<Opal::MeshRenderer2D> mesh_renderer, std::sh
 
 void Button::GenerateMesh()
 {
+    float noiseSeed = mTimer;
+
+    FastNoiseLite noise;
+    noise.SetNoiseType(FastNoiseLite::NoiseType_Perlin);
+    noise.SetFrequency(mNoiseFreq);
     mVertices.clear();
 
     glm::vec4 color = (mIsHovering) ? mMeshHoverColor : mMeshColor;
+    glm::vec2 center = glm::vec2((mBounds.x + mBounds.z) / 2.0f,
+        (mBounds.y + mBounds.w)/ 2.0f);
 
-    // Triangle 1
-    // top left
-    mVertices.push_back(mBounds.x);
-    mVertices.push_back(mBounds.y);
-    mVertices.push_back(color.r);
-    mVertices.push_back(color.g);
-    mVertices.push_back(color.b);
-    mVertices.push_back(color.a);
-    // top right
-    mVertices.push_back(mBounds.z);
-    mVertices.push_back(mBounds.y);
-    mVertices.push_back(color.r);
-    mVertices.push_back(color.g);
-    mVertices.push_back(color.b);
-    mVertices.push_back(color.a);
-    // bottom right
-    mVertices.push_back(mBounds.z);
-    mVertices.push_back(mBounds.w);
-    mVertices.push_back(color.r);
-    mVertices.push_back(color.g);
-    mVertices.push_back(color.b);
-    mVertices.push_back(color.a);
+    glm::vec2 lastPos = glm::vec2(mBounds.x, mBounds.y);
 
-    // Triangle 2
-    // bottom right
-    mVertices.push_back(mBounds.z);
-    mVertices.push_back(mBounds.w);
-    mVertices.push_back(color.r);
-    mVertices.push_back(color.g);
-    mVertices.push_back(color.b);
-    mVertices.push_back(color.a);
-    // bottom left
-    mVertices.push_back(mBounds.x);
-    mVertices.push_back(mBounds.w);
-    mVertices.push_back(color.r);
-    mVertices.push_back(color.g);
-    mVertices.push_back(color.b);
-    mVertices.push_back(color.a);
-    // top left
-    mVertices.push_back(mBounds.x);
-    mVertices.push_back(mBounds.y);
-    mVertices.push_back(color.r);
-    mVertices.push_back(color.g);
-    mVertices.push_back(color.b);
-    mVertices.push_back(color.a);
+    int numPoints = (int)((mBounds.z - mBounds.x) / mResolution);
+    float dist = (mBounds.z - mBounds.x) / (float)numPoints;
+
+    int noiseNum;
+
+    for(int i = 0; i < numPoints; i ++)
+    {
+        noiseNum++;
+        float noiseVal = noise.GetNoise<float>((noiseNum * mNoiseScale),noiseSeed) * mNoiseIntensity;
+        glm::vec2 newPos = glm::vec2(lastPos.x + dist, lastPos.y);
+        
+        float amp = 1.0f - abs((float)(numPoints / 2.0f) - i) /  (numPoints / 2.0f);
+        if(i == 0 || i == numPoints - 1)
+            amp = 0;
+        newPos.y  = mBounds.y + noiseVal * amp;
+
+        // top left
+        mVertices.push_back(lastPos.x);
+        mVertices.push_back(lastPos.y);
+        mVertices.push_back(color.r);
+        mVertices.push_back(color.g);
+        mVertices.push_back(color.b);
+        mVertices.push_back(color.a);
+        // top right
+        mVertices.push_back(newPos.x);
+        mVertices.push_back(newPos.y);
+        mVertices.push_back(color.r);
+        mVertices.push_back(color.g);
+        mVertices.push_back(color.b);
+        mVertices.push_back(color.a);
+        // center
+        mVertices.push_back(center.x);
+        mVertices.push_back(center.y);
+        mVertices.push_back(color.r);
+        mVertices.push_back(color.g);
+        mVertices.push_back(color.b);
+        mVertices.push_back(color.a);
+
+        lastPos = newPos;
+    }
+
+    lastPos = glm::vec2(mBounds.z, mBounds.y);
+    numPoints = (int)((mBounds.w - mBounds.y) / mResolution);
+    dist = (mBounds.w - mBounds.y) / (float)numPoints;
+
+    for(int i = 0; i < numPoints; i ++)
+    {
+        noiseNum++;
+        float noiseVal = noise.GetNoise<float>((noiseNum * mNoiseScale),noiseSeed) * mNoiseIntensity;
+        glm::vec2 newPos = glm::vec2(lastPos.x, lastPos.y + dist);
+        
+        float amp = 1.0f - abs((float)(numPoints / 2.0f) - i) /  (numPoints / 2.0f);
+        if(i == 0 || i == numPoints - 1)
+            amp = 0;
+        newPos.x  = mBounds.z + noiseVal * amp;
+
+        // top left
+        mVertices.push_back(lastPos.x);
+        mVertices.push_back(lastPos.y);
+        mVertices.push_back(color.r);
+        mVertices.push_back(color.g);
+        mVertices.push_back(color.b);
+        mVertices.push_back(color.a);
+        // top right
+        mVertices.push_back(newPos.x);
+        mVertices.push_back(newPos.y);
+        mVertices.push_back(color.r);
+        mVertices.push_back(color.g);
+        mVertices.push_back(color.b);
+        mVertices.push_back(color.a);
+        // center
+        mVertices.push_back(center.x);
+        mVertices.push_back(center.y);
+        mVertices.push_back(color.r);
+        mVertices.push_back(color.g);
+        mVertices.push_back(color.b);
+        mVertices.push_back(color.a);
+
+        lastPos = newPos;
+    }
+
+    lastPos = glm::vec2(mBounds.z, mBounds.w);
+    numPoints = (int)((mBounds.z - mBounds.x) / mResolution);
+    dist = (mBounds.z - mBounds.x) / (float)numPoints;
+
+    for(int i = 0; i < numPoints; i ++)
+    {
+        noiseNum++;
+        float noiseVal = noise.GetNoise<float>((noiseNum * mNoiseScale),noiseSeed) * mNoiseIntensity;
+        glm::vec2 newPos = glm::vec2(lastPos.x - dist, lastPos.y);
+        
+        float amp = 1.0f - abs((float)(numPoints / 2.0f) - i) /  (numPoints / 2.0f);;
+        if(i == 0 || i == numPoints - 1)
+            amp = 0;
+        newPos.y  = mBounds.w + noiseVal * amp;
+
+        // top left
+        mVertices.push_back(lastPos.x);
+        mVertices.push_back(lastPos.y);
+        mVertices.push_back(color.r);
+        mVertices.push_back(color.g);
+        mVertices.push_back(color.b);
+        mVertices.push_back(color.a);
+        // top right
+        mVertices.push_back(newPos.x);
+        mVertices.push_back(newPos.y);
+        mVertices.push_back(color.r);
+        mVertices.push_back(color.g);
+        mVertices.push_back(color.b);
+        mVertices.push_back(color.a);
+        // center
+        mVertices.push_back(center.x);
+        mVertices.push_back(center.y);
+        mVertices.push_back(color.r);
+        mVertices.push_back(color.g);
+        mVertices.push_back(color.b);
+        mVertices.push_back(color.a);
+
+        lastPos = newPos;
+    }
+
+    lastPos = glm::vec2(mBounds.x, mBounds.w);
+    numPoints = (int)((mBounds.w - mBounds.y) / mResolution);
+    dist = (mBounds.w - mBounds.y) / (float)numPoints;
+
+    for(int i = 0; i < numPoints; i ++)
+    {
+        noiseNum++;
+        float noiseVal = noise.GetNoise<float>((noiseNum * mNoiseScale),noiseSeed) * mNoiseIntensity;
+        glm::vec2 newPos = glm::vec2(lastPos.x, lastPos.y - dist);
+        
+        float amp = 1.0f - abs((float)(numPoints / 2.0f) - i) /  (numPoints / 2.0f);
+        if(i == 0 || i == numPoints - 1)
+            amp = 0;
+        newPos.x  = mBounds.x + noiseVal * amp;
+
+        // top left
+        mVertices.push_back(lastPos.x);
+        mVertices.push_back(lastPos.y);
+        mVertices.push_back(color.r);
+        mVertices.push_back(color.g);
+        mVertices.push_back(color.b);
+        mVertices.push_back(color.a);
+        // top right
+        mVertices.push_back(newPos.x);
+        mVertices.push_back(newPos.y);
+        mVertices.push_back(color.r);
+        mVertices.push_back(color.g);
+        mVertices.push_back(color.b);
+        mVertices.push_back(color.a);
+        // center
+        mVertices.push_back(center.x);
+        mVertices.push_back(center.y);
+        mVertices.push_back(color.r);
+        mVertices.push_back(color.g);
+        mVertices.push_back(color.b);
+        mVertices.push_back(color.a);
+
+        lastPos = newPos;
+    }
 
     mMesh->SetVertices(mVertices.data(), mVertices.size() * sizeof(float));
 }

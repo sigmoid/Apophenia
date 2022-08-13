@@ -31,4 +31,11 @@ class Button
     std::vector<float> mVertices;
     glm::vec4 mMeshColor = glm::vec4(0.9f,0.9f,0.9f, 0.6f);
     glm::vec4 mMeshHoverColor = glm::vec4(0.9f,0.9f,0.9f, 1.0f);
+
+    float mResolution = 5.0f;
+
+    float mNoiseScale = 0.05, mNoiseFreq = 2;
+    float mNoiseIntensity = 10;
+
+    float mTimer = 0;
 };
