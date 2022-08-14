@@ -1,2 +1,0 @@
-(17:36:48:0): OPAL_LOG: Failed to create window!
-(17:36:48:0): OPAL_LOG: CreatInstance() start
