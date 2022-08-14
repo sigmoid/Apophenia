@@ -53,6 +53,7 @@ class CreditsState : public Opal::Gamestate
     float mSpaceBetweenCards = 400;
     float mScrollSpeed = 75;
 
-    bool mLastLeftMouse = true;
+    float mScrollProgress = 0;
+
     bool mLastSpace = true;
 };

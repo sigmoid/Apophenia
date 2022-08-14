@@ -148,7 +148,7 @@ void MainMenuState::CreateSparks()
 
 void MainMenuState::CreateRandomSpark()
 {
-    glm::vec2 pos = glm::vec2(rand() % 1920, rand() % 1080);
+    glm::vec2 pos = glm::vec2(rand() % mGame->GetWidth(), rand() % mGame->GetHeight());
     glm::vec4 startColor = glm::vec4(1, 1, 1, 0.25f);
     glm::vec4 endColor = glm::vec4(1, 1, 1, 0);
     int length = rand() % 15 + 3;
@@ -201,7 +201,7 @@ void MainMenuState::RenderSparks()
         //spark->SetSpeedUp((mSparkSpeedUp - 1) * ((float)i / (float)mSparkEntities.size()) + 1);
         std::shared_ptr<Opal::TransformComponent> trans = mSparkEntities[i]->GetComponent<Opal::TransformComponent>();
 
-        if (trans->Position.x > 1920)
+        if (trans->Position.x > mGame->GetWidth())
         {
             mScene->RemoveEntity(mSparkEntities[i]);
             deleteIds.push_back(i);

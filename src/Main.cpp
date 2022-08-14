@@ -11,6 +11,7 @@
 #include "Gamestate/EndState.h"
 #include "DialogueSystem/DialogueManager.h"
 #include "Gamestate/StrikesState.h"
+#include "Gamestate/CreditsState.h"
 
 #include "../Opal/Audio/AudioClip.h"
 #include "../Opal/Audio/AudioClipInstance.h"
@@ -42,9 +43,6 @@ int main(int argc, char * argv[])
     
     auto cam = game->Renderer->CreateOrthoCamera(game->GetWidth(), game->GetHeight(), -1000, 1000);
     
-#ifndef __IPHONEOS__
-    //game->Resize(game->GetWidth()/2, game->GetHeight()/2);
-#endif
     
     DialogueManager dialogue("../Dialogue/TestDialogue.xml");
 
@@ -62,7 +60,10 @@ int main(int argc, char * argv[])
     game->PopState();
     game->PushState<StrikesState>();
     game->PopState();
+    game->PushState<CreditsState>();
+    game->PopState();
     game->PushState<MainMenuState>();
+    
     
     auto bgMusic = Opal::AudioEngine::LoadClip(Opal::GetBaseContentPath().append("Audio/ambiment-by-kevin-macleod-from-filmmusic-io.mp3"));
     Opal::AudioEngine::PlaySound(bgMusic, 0.8f, 1.0f, 0.0f, true, false);

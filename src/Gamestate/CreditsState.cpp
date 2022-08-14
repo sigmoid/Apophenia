@@ -39,31 +39,26 @@ void CreditsState::Tick()
 
 void CreditsState::Render() 
 {
-    bool textOnScreen = false;
+    bool textOnScreen = mScrollProgress > -mGame->GetHeight()  - mSpaceBetweenCards * mCredits.size();
     for(int i = 0; i < mCredits.size(); i++)
     {
         mCredits[i].Position = mCredits[i].Position + glm::vec2(0, -1) * mScrollSpeed * mGame->GetDeltaTime();
-        
-        if(mCredits[i].Position.y > -mSpaceBetweenCards && mCredits[i].Position.y < 1080)
-        {
-            textOnScreen = true;
-            mTitleTextRenderer->RenderString(mCredits[i].Title, mCredits[i].Position.x, mCredits[i].Position.y, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, false);
-            mTextRenderer->RenderString(mCredits[i].Name, mCredits[i].Position.x, mCredits[i].Position.y + 100, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, false);
-        }
+        mTitleTextRenderer->RenderString(mCredits[i].Title, mCredits[i].Position.x, mCredits[i].Position.y, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, false);
+        mTextRenderer->RenderString(mCredits[i].Name, mCredits[i].Position.x, mCredits[i].Position.y + 100, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, false);
     }
 
     if(!textOnScreen 
-    || (Opal::InputHandler::GetLeftMouseButtonDown() && !mLastLeftMouse)
     || (Opal::InputHandler::GetKey(SDL_SCANCODE_SPACE) && !mLastSpace))
-    {
+    {   
+        Opal::Logger::LogString ("Exit CreditsState");
         mGame->PopState();
         return;
     }
-    mLastLeftMouse = Opal::InputHandler::GetLeftMouseButtonDown();
     mLastSpace = Opal::InputHandler::GetKey(SDL_SCANCODE_SPACE);
 
     mTitleSprite.SetPosition(mTitleSprite.GetPosition().x, mTitleSprite.GetPosition().y - mScrollSpeed * mGame->GetDeltaTime());
     // mTextRenderer->RenderString(DialogueManager::Instance->GetCurrentPrompt().Text[mCurrentCardIdx], Opal::Game::Instance->GetWidth() * 0.15, Opal::Game::Instance->GetHeight()/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
+    mScrollProgress -= mScrollSpeed * mGame->GetDeltaTime();
 
     mBatch->StartBatch();
     mBatch->BatchSprite(mTitleSprite);
@@ -89,8 +84,8 @@ void CreditsState::Begin()
 
         mFont = std::make_shared<Opal::Font>(mGame->Renderer,Opal::GetBaseContentPath().append("fonts/JosefinSans-Light.ttf").c_str(), 80);
         mTitleFont = std::make_shared<Opal::Font>(mGame->Renderer,Opal::GetBaseContentPath().append("fonts/JosefinSlab-SemiBold.ttf").c_str(), 86);
-        mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(1920 - 300, 1080), Opal::Camera::ActiveCamera);    
-        mTitleTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mTitleFont, glm::vec2(1920 - 300, 1080), Opal::Camera::ActiveCamera); 
+        mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(mGame->GetWidth() * (1 - 0.15625f), mGame->GetHeight()), Opal::Camera::ActiveCamera);    
+        mTitleTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mTitleFont, glm::vec2(mGame->GetWidth() * (1 - 0.15625f), mGame->GetHeight()), Opal::Camera::ActiveCamera); 
         mTitleTexture = mGame->Renderer->CreateTexture(Opal::GetBaseContentPath().append("textures/Title.png"));
         mTitleSprite.SetTexture(mTitleTexture);
         float titleSpriteX = mGame->GetWidth() / 2.0f - mTitleTexture->GetWidth() /2.0f;
@@ -104,13 +99,13 @@ void CreditsState::Begin()
 
     for(int i = 0; i < mCredits.size(); i++)
     {
-        mCredits[i].Position = glm::vec2(100, 1080 + i * mSpaceBetweenCards);
+        mCredits[i].Position = glm::vec2(200, 1080 + i * mSpaceBetweenCards);
     }
 }
 
 void CreditsState::End() 
 {
-
+    Opal::Logger::LogString("GAMESTATE: End() CreditsState");
 }
 
 void CreditsState::Resume() 
