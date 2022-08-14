@@ -1,6 +1,7 @@
 #include "StrikesState.h"
 #include "../../Opal/Logger.h"
 #include "../../Opal/Game.h"
+#include "../../Opal/util.h"
 
 std::shared_ptr<Opal::FontRenderer> StrikesState::mTextRenderer = nullptr;
 std::shared_ptr<Opal::RenderPass> StrikesState::mTextPass = nullptr;

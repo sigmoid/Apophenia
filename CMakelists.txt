@@ -32,6 +32,7 @@ file(GLOB SOURCES
     Opal/vendor/glm/ext/*.hpp
     Opal/vendor/glm/detail/*.hpp
     Opal/vendor/glm/gtx/*.hpp
+    src/MenuItems/*.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

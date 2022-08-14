@@ -1,0 +1,7 @@
+(17:46:23:0): OPAL_LOG: Failed to create window!
+(17:46:23:0): OPAL_LOG: CreatInstance() start
+(17:46:29:5751): OPAL_LOG: Successfully created Vulkan instance!
+(17:46:29:5751): OPAL_LOG: SetupDebugMessenger() start
+(17:46:29:5751): OPAL_LOG: CreateSurface() start
+(17:46:29:5752): OPAL_LOG: Created the surface
+(17:46:29:5752): OPAL_LOG: PickPhysicalDevice() start

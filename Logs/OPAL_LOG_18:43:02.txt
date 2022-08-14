@@ -1,0 +1,6 @@
+(18:43:02:0): OPAL_LOG: Successfully created window!
+(18:43:02:0): OPAL_LOG: CreatInstance() start
+(18:43:02:2): OPAL_LOG: Successfully created Vulkan instance!
+(18:43:02:2): OPAL_LOG: SetupDebugMessenger() start
+(18:43:02:2): OPAL_LOG: Set up debug messenger.
+(18:43:02:2): OPAL_LOG: CreateSurface() start

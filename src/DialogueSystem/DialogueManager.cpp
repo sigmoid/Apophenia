@@ -1,6 +1,7 @@
 #include "DialogueManager.h"
 #include "DialogueSerializer.h"
 #include "../../Opal/Logger.h"
+#include "../../Opal/util.h"
 #include <SDL.h>
 
 DialogueManager *DialogueManager::Instance = nullptr;

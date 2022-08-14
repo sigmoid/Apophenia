@@ -16,6 +16,7 @@
 #include "../../Opal/vendor/FastNoiseLite.h"
 #include "../DialogueSystem/WordBank.h"
 #include "../Components/NoiseMoveComponent.h"
+#include "../../Opal/util.h"
 
 #include "../../Opal/EntityComponent/Scene.h"
 

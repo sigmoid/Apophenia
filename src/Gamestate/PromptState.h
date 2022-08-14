@@ -7,6 +7,7 @@
 #include "../../Opal/Graphics/Camera.h"
 #include "../../Opal/Graphics/PostProcessRenderer.h"
 #include "../../Opal/vendor/FastNoiseLite.h"
+#include "../../util.h"
 
 #include "../Opal/Audio/AudioClip.h"
 

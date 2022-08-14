@@ -24,15 +24,28 @@
 #include "../../Opal/Logger.h"
 
 #include "EndState.h"
-#include "../../Opal/vendor/imgui/implot.h"
-#include "../../Opal/vendor/imgui/imgui.h"
-#include "../../Opal/vendor/imgui/imgui_impl_vulkan.h"
-#include "../../Opal/vendor/imgui/imgui_impl_sdl.h"
+#include "CreditsState.h"
 #include "../../Opal/Graphics/Vulkan/VulkanRenderer.h"
 
 //std::shared_ptr<Opal::RenderPass> MainMenuState::mRenderPass = nullptr;
 
-MainMenuState::MainMenuState()
+MainMenuState::MainMenuState():
+ mPlayButton("Play", glm::vec4(Opal::Game::Instance->GetWidth()/2.0f - 150,
+  Opal::Game::Instance->GetHeight()/2.0f - 50, 
+  Opal::Game::Instance->GetWidth()/2.0f + 150, 
+  Opal::Game::Instance->GetHeight()/2.0f + 50) ,  Opal::Game::Instance->Renderer, [=]() {mShouldPopState = true;}),
+ mOptionsButton("Options", glm::vec4(Opal::Game::Instance->GetWidth()/2.0f - 150,
+  Opal::Game::Instance->GetHeight()/2.0f - 50 + 125 * 1, 
+  Opal::Game::Instance->GetWidth()/2.0f + 150, 
+  Opal::Game::Instance->GetHeight()/2.0f + 50 + 125 * 1) ,  Opal::Game::Instance->Renderer, [=]() {}),
+ mCreditsButton("Credits", glm::vec4(Opal::Game::Instance->GetWidth()/2.0f - 150,
+  Opal::Game::Instance->GetHeight()/2.0f - 50 + 125 * 2, 
+  Opal::Game::Instance->GetWidth()/2.0f + 150, 
+  Opal::Game::Instance->GetHeight()/2.0f + 50 + 125 * 2) ,  Opal::Game::Instance->Renderer, [=]() {Opal::Game::Instance->PushState<CreditsState>();}),
+  mExitButton("Exit", glm::vec4(Opal::Game::Instance->GetWidth()/2.0f - 150,
+  Opal::Game::Instance->GetHeight()/2.0f - 50 + 125 * 3, 
+  Opal::Game::Instance->GetWidth()/2.0f + 150, 
+  Opal::Game::Instance->GetHeight()/2.0f + 50 + 125 * 3) ,  Opal::Game::Instance->Renderer, []() {Opal::Game::Instance->End();})
 {
     
 }
@@ -44,118 +57,38 @@ MainMenuState::~MainMenuState()
 void MainMenuState::Tick() 
 {
     mScene->Update(mGame->GetDeltaTime());
-    if(Opal::InputHandler::GetTouch())
-    {
-        ImGui_ImplVulkan_NewFrame();
-        ImGui_ImplSDL2_NewFrame();
-        ImGui::NewFrame();
-        ImGui::EndFrame();
-        mGame->PopState();
-        return;
-    }
+
+    mPlayButton.Tick(mGame->GetDeltaTime());
+    mOptionsButton.Tick(mGame->GetDeltaTime());
+    mCreditsButton.Tick(mGame->GetDeltaTime());
+    mExitButton.Tick(mGame->GetDeltaTime());
+
+    if(mShouldPopState)
+        Opal::Game::Instance->PopState();
 }
 
 void MainMenuState::Render() 
 {
     RenderSparks();
 
+    mMeshRenderer->StartFrame();
+    mPlayButton.Render(mMeshRenderer, mFontRenderer);
+    mOptionsButton.Render(mMeshRenderer, mFontRenderer);
+    mCreditsButton.Render(mMeshRenderer, mFontRenderer);
+    mExitButton.Render(mMeshRenderer, mFontRenderer);
+
     mBatch->StartBatch();
     mScene->Render(mBatch);
+    mBatch->BatchSprite(mTitleSprite);
     mBatch->RenderBatch();
 
     mRenderPass->Record();
-    mBatch->RecordCommands();
     mLineRenderer->Render();
+    mBatch->RecordCommands();
+    mMeshRenderer->RecordCommands();
+    mFontRenderer->RecordCommands();
     mRenderPass->EndRecord();
     mGame->Renderer->SubmitRenderPass(mRenderPass);
-
-    ImGui_ImplVulkan_NewFrame();
-    ImGui_ImplSDL2_NewFrame();
-
-    ImGuiStyle * style = &ImGui::GetStyle();
-
-    style->WindowPadding = ImVec2(15 * mGame->GetScale().x, 15 * mGame->GetScale().x) ;
-	style->WindowRounding = 5.0f;
-	style->FramePadding = ImVec2(5, 5);
-	style->FrameRounding = 4.0f;
-	style->ItemSpacing = ImVec2(12 * mGame->GetScale().x, mGame->GetHeight()/32 * mGame->GetScale().x);
-	style->ItemInnerSpacing = ImVec2(8 * mGame->GetScale().x, 6 * mGame->GetScale().x);
-	style->IndentSpacing = 25.0f * mGame->GetScale().x;
-	style->ScrollbarSize = 15.0f * mGame->GetScale().x;
-	style->ScrollbarRounding = 9.0f * mGame->GetScale().x;
-	style->GrabMinSize = 5.0f;
-	style->GrabRounding = 3.0f;
-    style->Colors[ImGuiCol_Button]                = ImVec4(0.4375f, 0.4258f, 0.3828f, 0.29f);
-    style->Colors[ImGuiCol_ButtonHovered]         = ImVec4(0.4375f, 0.4258f, 0.3828f, 0.49f);
-    style->Colors[ImGuiCol_ButtonActive]          = ImVec4(0.4375f, 0.4258f, 0.3828f, 0.69f);
-
-    ImGui::NewFrame();
-    const ImGuiViewport* main_viewport = ImGui::GetMainViewport();
-    ImGui::SetNextWindowPos(ImVec2(mGame->GetWidth()/10, mGame->GetHeight() / 10));
-    ImGui::SetNextWindowSize(ImVec2(mGame->GetWidth(), mGame->GetHeight()));
-    ImGui::Begin("Main Menu", nullptr , ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground);
-    
-    ImGui::PushFont(Opal::VulkanRenderer::TitleFont);
-    ImGui::Text("Tightrope");
-
-    if(mCurrentState == MenuState::Default)
-    {
-        if(ImGui::Button("Play"))
-        {
-            ImGui::PopFont();
-            ImGui::End();
-            ImGui::EndFrame();
-            mGame->PopState();
-            return;
-        }
-
-        if(ImGui::Button("Credits"))
-        {
-            mCurrentState = MenuState::Credits;
-        }
-
-        if(ImGui::Button("Options"))
-        {
-            mCurrentState = MenuState::Options;
-        }
-
-        if(ImGui::Button("Exit"))
-        {
-            mGame->End();
-        }
-    }
-    else if(mCurrentState == MenuState::Options)
-    {
-        float volume = mGame->GetGlobalVolume();
-        ImGui::DragFloat("Volume", &volume,0.01,0,1);
-        mGame->SetGlobalVolume(volume);
-
-        if(ImGui::Button("Back"))
-        {
-            mCurrentState = MenuState::Default;
-        }
-    }
-    else if (mCurrentState == MenuState::Credits)
-    {
-        ImGui::PushFont(Opal::VulkanRenderer::NormalFont);
-        ImGui::Text("Game Made By: Adam Waggoner (@absurd_walls)");
-        ImGui::Text("Tools Used: MoltenVK, SoLoud Audio, GLFW, ImGui, GLM, TinyXML2");
-        ImGui::Text("Special Thanks: Mom, Dad, Emily, Michael, Light, Patrick, Skyler,");
-        ImGui::Text("Jaden, Austin, and Logan for their feedback and support");
-        ImGui::Text("throughout the development of this game.");
-        
-        ImGui::PopFont();
-
-        if (ImGui::Button("Back"))
-        {
-            mCurrentState = MenuState::Default;
-        }
-    }
-    ImGui::PopFont();
-    ImGui::End();
-
-    ImGui::Render();
-    ImGui::EndFrame();
 }
 
 void MainMenuState::Begin() 
@@ -163,7 +96,18 @@ void MainMenuState::Begin()
     mRenderPass = mGame->Renderer->CreateRenderPass(true);
     mRenderPass->SetClearColor(0.2f,0.2f,0.2f,1.0f);
 
+    mFont = std::make_shared<Opal::Font>(mGame->Renderer,Opal::GetBaseContentPath().append("Fonts/JosefinSans.ttf").c_str(), 64);
+    mFontRenderer = mGame->Renderer->CreateFontRenderer(mRenderPass, *mFont, glm::vec2(mGame->GetWidth(), mGame->GetHeight()), Opal::Camera::ActiveCamera);
+    mMeshRenderer = mGame->Renderer->CreateMeshRenderer(mRenderPass);
+
+    mTitleTexture = mGame->Renderer->CreateTexture(Opal::GetBaseContentPath().append("textures/Title.png"));
+    mTitleSprite.SetTexture(mTitleTexture);
+    float titleSpriteX = mGame->GetWidth() / 2.0f - mTitleTexture->GetWidth() /2.0f;
+    float titleSpriteY = 50;
+    mTitleSprite.SetPosition(titleSpriteX,titleSpriteY);
+
     std::vector<std::shared_ptr<Opal::Texture> > textures;
+    textures.push_back(mTitleTexture);
     mBatch = mGame->Renderer->CreateBatch(mRenderPass, 1000, textures, true);
 
     mLineRenderer = std::make_shared<Opal::LineRenderer>();
@@ -204,7 +148,7 @@ void MainMenuState::CreateSparks()
 
 void MainMenuState::CreateRandomSpark()
 {
-    glm::vec2 pos = glm::vec2(rand() % 1920, rand() % 1080);
+    glm::vec2 pos = glm::vec2(rand() % mGame->GetWidth(), rand() % mGame->GetHeight());
     glm::vec4 startColor = glm::vec4(1, 1, 1, 0.25f);
     glm::vec4 endColor = glm::vec4(1, 1, 1, 0);
     int length = rand() % 15 + 3;
@@ -257,7 +201,7 @@ void MainMenuState::RenderSparks()
         //spark->SetSpeedUp((mSparkSpeedUp - 1) * ((float)i / (float)mSparkEntities.size()) + 1);
         std::shared_ptr<Opal::TransformComponent> trans = mSparkEntities[i]->GetComponent<Opal::TransformComponent>();
 
-        if (trans->Position.x > 1920)
+        if (trans->Position.x > mGame->GetWidth())
         {
             mScene->RemoveEntity(mSparkEntities[i]);
             deleteIds.push_back(i);

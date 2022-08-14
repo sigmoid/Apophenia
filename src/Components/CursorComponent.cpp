@@ -79,49 +79,28 @@ void CursorComponent::Update(float dTime)
         float yMovement = 0;
         float yPosNorm = mTransform->Position.y / (float)Opal::Game::Instance->GetHeight();
 
-        glm::vec2 CurrentTouch = Opal::InputHandler::GetTouchPos();
-        if(CurrentTouch.x >= 0)
-        {
-            if(mTouchOrigin.x < 0)
-                mTouchOrigin = CurrentTouch;
-        }
-        else
-        {
-            mTouchOrigin = glm::vec2(-10,-10);
-        }
-
         if(Opal::InputHandler::GetKey(mUpBinding))
         {
             takingInput = !takingInput;
             yMovement = -1.0f;
         }
-        else if(Opal::InputHandler::GetLeftJoystickY() > 0.1)
-        {
-            takingInput = true;
-            yMovement = Opal::InputHandler::GetLeftJoystickY();
-        }
-        else if(mTouchOrigin.x >= 0 && (CurrentTouch.y - yPosNorm) > 0.05f)
-        {
-            takingInput = true;
-            yMovement = 1.0f;
-        }
+        // else if(Opal::InputHandler::GetLeftJoystickY() > 0.1)
+        // {
+        //     takingInput = true;
+        //     yMovement = Opal::InputHandler::GetLeftJoystickY();
+        // }
 
         if(Opal::InputHandler::GetKey(mDownBinding))
         {
+            std::cout << "What the actual fuck" << std::endl;
             takingInput = !takingInput;
             yMovement = 1.0f;
         }
-        else if(Opal::InputHandler::GetLeftJoystickY() < -0.1)
-        {
-            takingInput = true;
-            yMovement = Opal::InputHandler::GetLeftJoystickY();
-        }
-        else if(mTouchOrigin.x >= 0 && (CurrentTouch.y - yPosNorm) < -0.05f)
-        {
-            takingInput = true;
-            yMovement = -1.0f;
-        }
-
+        // else if(Opal::InputHandler::GetLeftJoystickY() < -0.1)
+        // {
+        //     takingInput = true;
+        //     yMovement = Opal::InputHandler::GetLeftJoystickY();
+        // }
 
         mCurrentSpeed += mAcceleration * dTime * yMovement;
 
