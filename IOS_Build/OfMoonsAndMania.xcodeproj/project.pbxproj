@@ -86,6 +86,8 @@
 		66B4791B2896C664008654E4 /* Launch Screen.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 66B479192896C60F008654E4 /* Launch Screen.storyboard */; };
 		66B4791C2896EE3B008654E4 /* VulkanRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8751E5BE2E0045C49ABF981B /* VulkanRenderer.cpp */; };
 		66E56D49288C699A003DA096 /* IOS_Main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66E56D48288C699A003DA096 /* IOS_Main.mm */; };
+		66FA664328B7C3E700CC2DD8 /* CreditsState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66FA664228B7C3E700CC2DD8 /* CreditsState.cpp */; };
+		66FA664528B7C3FD00CC2DD8 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66FA664428B7C3FD00CC2DD8 /* Button.cpp */; };
 		6802BF15A48A4501AA9E781E /* TextureAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8BAD65FD74903BF5EA291 /* TextureAtlas.cpp */; };
 		697EE14D218B42AFB2F0F2D3 /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A3DEF46204280AA804637 /* Renderer.cpp */; };
 		6A1C3FD8771D4B93BE9B7733 /* LineRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00F3FB79C8E47B1BAD2D3F2 /* LineRenderer.cpp */; };
@@ -361,6 +363,10 @@
 		66B479192896C60F008654E4 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "Resources/Launch Screen.storyboard"; sourceTree = "<group>"; };
 		66E56D47288C695F003DA096 /* Main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Main.h; path = src/Main.h; sourceTree = "<group>"; };
 		66E56D48288C699A003DA096 /* IOS_Main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = IOS_Main.mm; path = src/IOS_Main.mm; sourceTree = "<group>"; };
+		66FA664228B7C3E700CC2DD8 /* CreditsState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CreditsState.cpp; path = src/Gamestate/CreditsState.cpp; sourceTree = "<group>"; };
+		66FA664428B7C3FD00CC2DD8 /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Button.cpp; path = src/MenuItems/Button.cpp; sourceTree = "<group>"; };
+		66FA664628B7C41300CC2DD8 /* CreditsState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditsState.h; path = src/Gamestate/CreditsState.h; sourceTree = "<group>"; };
+		66FA664728B7C42200CC2DD8 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Button.h; path = src/MenuItems/Button.h; sourceTree = "<group>"; };
 		674C8A5F243E44D0ABFA1DE7 /* soloud_core_filterops.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_core_filterops.cpp; path = Opal/vendor/soloud/src/core/soloud_core_filterops.cpp; sourceTree = SOURCE_ROOT; };
 		69814328CFB346E5B8C6283F /* CollisionManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CollisionManager.cpp; path = Opal/Collision/CollisionManager.cpp; sourceTree = SOURCE_ROOT; };
 		6AA9D22D4F5A497FBB36184C /* AudioEngine.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = AudioEngine.h; path = Opal/Audio/AudioEngine.h; sourceTree = SOURCE_ROOT; };
@@ -807,6 +813,8 @@
 		992BFFCBE15F4903ACA34B1C /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
+				66FA664428B7C3FD00CC2DD8 /* Button.cpp */,
+				66FA664228B7C3E700CC2DD8 /* CreditsState.cpp */,
 				D85576265EC0440D9C7FED5D /* AttractableComponent.cpp */,
 				EBBFC2E73C0A432882403B24 /* CursorComponent.cpp */,
 				300C7C4C4FE34536B1EA6464 /* DragComponent.cpp */,
@@ -864,6 +872,8 @@
 		E10F471A0BFB4755909E766F /* Header Files */ = {
 			isa = PBXGroup;
 			children = (
+				66FA664728B7C42200CC2DD8 /* Button.h */,
+				66FA664628B7C41300CC2DD8 /* CreditsState.h */,
 				664B946D288CA509001BE983 /* GamePassThruController.h */,
 				66E56D47288C695F003DA096 /* Main.h */,
 				F504987570444B03A5153952 /* AttractableComponent.h */,
@@ -1184,6 +1194,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66FA664528B7C3FD00CC2DD8 /* Button.cpp in Sources */,
+				66FA664328B7C3E700CC2DD8 /* CreditsState.cpp in Sources */,
 				95D3477DF09E4857AECCF8D3 /* AttractableComponent.cpp in Sources */,
 				75C5DD2807E94E1B95D9A8D1 /* CursorComponent.cpp in Sources */,
 				AF9D1FD10D5046AF8CCB31A1 /* DragComponent.cpp in Sources */,
@@ -1602,7 +1614,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					/Users/adam/Dev/Apophenia/Opal/vendor/soloud/include,
-					/Users/adam/Dev/Apophenia/Opal/vendor/glm,
+					/Users/adam/Dev/Apophenia/Opal/vendor,
 					/Users/adam/Dev/Vulkan/macOS/../MoltenVK/include,
 					"/Users/adam/Dev/freetype2-ios/include",
 					/Users/adam/Dev/SDL_iOS/include,
@@ -1679,7 +1691,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					/Users/adam/Dev/Apophenia/Opal/vendor/soloud/include,
-					/Users/adam/Dev/Apophenia/Opal/vendor/glm,
+					/Users/adam/Dev/Apophenia/Opal/vendor,
 					/Users/adam/Dev/Vulkan/macOS/../MoltenVK/include,
 					"/Users/adam/Dev/freetype2-ios/include",
 					/Users/adam/Dev/SDL_iOS/include,
@@ -1764,7 +1776,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					/Users/adam/Dev/Apophenia/Opal/vendor/soloud/include,
-					/Users/adam/Dev/Apophenia/Opal/vendor/glm,
+					/Users/adam/Dev/Apophenia/Opal/vendor,
 					/Users/adam/Dev/Vulkan/macOS/../MoltenVK/include,
 					"/Users/adam/Dev/freetype2-ios/include",
 					/Users/adam/Dev/SDL_iOS/include,
@@ -1890,7 +1902,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					/Users/adam/Dev/Apophenia/Opal/vendor/soloud/include,
-					/Users/adam/Dev/Apophenia/Opal/vendor/glm,
+					/Users/adam/Dev/Apophenia/Opal/vendor,
 					/Users/adam/Dev/Vulkan/macOS/../MoltenVK/include,
 					"/Users/adam/Dev/freetype2-ios/include",
 					/Users/adam/Dev/SDL_iOS/include,

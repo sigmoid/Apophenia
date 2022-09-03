@@ -96,7 +96,7 @@ void MainMenuState::Begin()
     mRenderPass = mGame->Renderer->CreateRenderPass(true);
     mRenderPass->SetClearColor(0.2f,0.2f,0.2f,1.0f);
 
-    mFont = std::make_shared<Opal::Font>(mGame->Renderer,Opal::GetBaseContentPath().append("Fonts/JosefinSans.ttf").c_str(), 64);
+    mFont = std::make_shared<Opal::Font>(mGame->Renderer,Opal::GetBaseContentPath().append("fonts/JosefinSans.ttf").c_str(), 64);
     mFontRenderer = mGame->Renderer->CreateFontRenderer(mRenderPass, *mFont, glm::vec2(mGame->GetWidth(), mGame->GetHeight()), Opal::Camera::ActiveCamera);
     mMeshRenderer = mGame->Renderer->CreateMeshRenderer(mRenderPass);
 
