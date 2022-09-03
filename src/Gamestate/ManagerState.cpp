@@ -178,8 +178,9 @@ void ManagerState::IncrementConversation()
    
     if(mCurrentConversation >= mConversationSequence.size())
     {
+        mCurrentConversation = 1;
+        SaveProgress();
         mPreviousState = mCurrentState;
-        // TODO Go to credits here
         mCurrentState = GameStateType::CREDITS_STATE;
         return;
     }
