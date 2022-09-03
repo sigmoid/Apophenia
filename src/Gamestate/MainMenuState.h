@@ -47,14 +47,14 @@ class MainMenuState : public Opal::Gamestate
 
     private:
     MenuState mCurrentState = MenuState::Default;
-    std::shared_ptr<Opal::Scene> mScene = nullptr;
-    std::shared_ptr<Opal::BatchRenderer2D> mBatch = nullptr;
-    std::shared_ptr<Opal::LineRenderer> mLineRenderer = nullptr;
-    std::shared_ptr<Opal::MeshRenderer2D> mMeshRenderer = nullptr;
-    std::shared_ptr<Opal::FontRenderer> mFontRenderer = nullptr;
-    std::shared_ptr<Opal::Font> mFont = nullptr;
-    std::shared_ptr<Opal::SpriteRenderer> mSpriteRenderer = nullptr;
-    std::shared_ptr<Opal::Texture> mTitleTexture = nullptr;
+    static std::shared_ptr<Opal::Scene> mScene;
+    static std::shared_ptr<Opal::BatchRenderer2D> mBatch;
+    static std::shared_ptr<Opal::LineRenderer> mLineRenderer;
+    static std::shared_ptr<Opal::MeshRenderer2D> mMeshRenderer;
+    static std::shared_ptr<Opal::FontRenderer> mFontRenderer;
+    static std::shared_ptr<Opal::Font> mFont;
+    static std::shared_ptr<Opal::SpriteRenderer> mSpriteRenderer;
+    static std::shared_ptr<Opal::Texture> mTitleTexture;
 
     int mNumSparks = 100;
     void CreateSparks();

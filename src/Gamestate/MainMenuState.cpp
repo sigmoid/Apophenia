@@ -29,23 +29,32 @@
 
 //std::shared_ptr<Opal::RenderPass> MainMenuState::mRenderPass = nullptr;
 
+std::shared_ptr<Opal::Scene> MainMenuState::mScene = nullptr;
+std::shared_ptr<Opal::BatchRenderer2D> MainMenuState::mBatch = nullptr;
+std::shared_ptr<Opal::LineRenderer> MainMenuState::mLineRenderer = nullptr;
+std::shared_ptr<Opal::MeshRenderer2D> MainMenuState::mMeshRenderer = nullptr;
+std::shared_ptr<Opal::FontRenderer> MainMenuState::mFontRenderer = nullptr;
+std::shared_ptr<Opal::Font> MainMenuState::mFont = nullptr;
+std::shared_ptr<Opal::SpriteRenderer> MainMenuState::mSpriteRenderer = nullptr;
+std::shared_ptr<Opal::Texture> MainMenuState::mTitleTexture = nullptr;
+
 MainMenuState::MainMenuState():
- mPlayButton("Play", glm::vec4(Opal::Game::Instance->GetWidth()/2.0f - 150,
-  Opal::Game::Instance->GetHeight()/2.0f - 50, 
-  Opal::Game::Instance->GetWidth()/2.0f + 150, 
-  Opal::Game::Instance->GetHeight()/2.0f + 50) ,  Opal::Game::Instance->Renderer, [=]() {mShouldPopState = true;}),
- mOptionsButton("Options", glm::vec4(Opal::Game::Instance->GetWidth()/2.0f - 150,
-  Opal::Game::Instance->GetHeight()/2.0f - 50 + 125 * 1, 
-  Opal::Game::Instance->GetWidth()/2.0f + 150, 
-  Opal::Game::Instance->GetHeight()/2.0f + 50 + 125 * 1) ,  Opal::Game::Instance->Renderer, [=]() {}),
- mCreditsButton("Credits", glm::vec4(Opal::Game::Instance->GetWidth()/2.0f - 150,
-  Opal::Game::Instance->GetHeight()/2.0f - 50 + 125 * 2, 
-  Opal::Game::Instance->GetWidth()/2.0f + 150, 
-  Opal::Game::Instance->GetHeight()/2.0f + 50 + 125 * 2) ,  Opal::Game::Instance->Renderer, [=]() {Opal::Game::Instance->PushState<CreditsState>();}),
-  mExitButton("Exit", glm::vec4(Opal::Game::Instance->GetWidth()/2.0f - 150,
-  Opal::Game::Instance->GetHeight()/2.0f - 50 + 125 * 3, 
-  Opal::Game::Instance->GetWidth()/2.0f + 150, 
-  Opal::Game::Instance->GetHeight()/2.0f + 50 + 125 * 3) ,  Opal::Game::Instance->Renderer, []() {Opal::Game::Instance->End();})
+ mPlayButton("Play", glm::vec4(1920/2.0f - 150,
+  1080/2.0f - 50, 
+  1920/2.0f + 150, 
+  1080/2.0f + 50) ,  Opal::Game::Instance->Renderer, [=]() {mShouldPopState = true;}),
+ mOptionsButton("Options", glm::vec4(1920/2.0f - 150,
+  1080/2.0f - 50 + 125 * 1, 
+  1920/2.0f + 150, 
+  1080/2.0f + 50 + 125 * 1) ,  Opal::Game::Instance->Renderer, [=]() {}),
+ mCreditsButton("Credits", glm::vec4(1920/2.0f - 150,
+  1080/2.0f - 50 + 125 * 2, 
+  1920/2.0f + 150, 
+  1080/2.0f + 50 + 125 * 2) ,  Opal::Game::Instance->Renderer, [=]() {Opal::Game::Instance->PushState<CreditsState>();}),
+  mExitButton("Exit", glm::vec4(1920/2.0f - 150,
+  1080/2.0f - 50 + 125 * 3, 
+  1920/2.0f + 150, 
+  1080/2.0f + 50 + 125 * 3) ,  Opal::Game::Instance->Renderer, []() {Opal::Game::Instance->End();})
 {
     
 }
@@ -93,38 +102,41 @@ void MainMenuState::Render()
 
 void MainMenuState::Begin() 
 {
-    mRenderPass = mGame->Renderer->CreateRenderPass(true);
-    mRenderPass->SetClearColor(0.2f,0.2f,0.2f,1.0f);
+    if(mRenderPass == nullptr)
+    {
+        mRenderPass = mGame->Renderer->CreateRenderPass(true);
+        mRenderPass->SetClearColor(0.2f,0.2f,0.2f,1.0f);
 
-    mFont = std::make_shared<Opal::Font>(mGame->Renderer,Opal::GetBaseContentPath().append("fonts/JosefinSans.ttf").c_str(), 64);
-    mFontRenderer = mGame->Renderer->CreateFontRenderer(mRenderPass, *mFont, glm::vec2(mGame->GetWidth(), mGame->GetHeight()), Opal::Camera::ActiveCamera);
-    mMeshRenderer = mGame->Renderer->CreateMeshRenderer(mRenderPass);
+        mFont = std::make_shared<Opal::Font>(mGame->Renderer,Opal::GetBaseContentPath().append("fonts/JosefinSans.ttf").c_str(), 64);
+        mFontRenderer = mGame->Renderer->CreateFontRenderer(mRenderPass, *mFont, glm::vec2(1920, 1080), Opal::Camera::ActiveCamera);
+        mMeshRenderer = mGame->Renderer->CreateMeshRenderer(mRenderPass);
 
-    mTitleTexture = mGame->Renderer->CreateTexture(Opal::GetBaseContentPath().append("textures/Title.png"));
-    mTitleSprite.SetTexture(mTitleTexture);
-    float titleSpriteX = mGame->GetWidth() / 2.0f - mTitleTexture->GetWidth() /2.0f;
-    float titleSpriteY = 50;
-    mTitleSprite.SetPosition(titleSpriteX,titleSpriteY);
+        mTitleTexture = mGame->Renderer->CreateTexture(Opal::GetBaseContentPath().append("textures/Title.png"));
+        mTitleSprite.SetTexture(mTitleTexture);
+        float titleSpriteX = 1920 / 2.0f - mTitleTexture->GetWidth() /2.0f;
+        float titleSpriteY = 50;
+        mTitleSprite.SetPosition(titleSpriteX,titleSpriteY);
 
-    std::vector<std::shared_ptr<Opal::Texture> > textures;
-    textures.push_back(mTitleTexture);
-    mBatch = mGame->Renderer->CreateBatch(mRenderPass, 1000, textures, true);
+        std::vector<std::shared_ptr<Opal::Texture> > textures;
+        textures.push_back(mTitleTexture);
+        mBatch = mGame->Renderer->CreateBatch(mRenderPass, 1000, textures, true);
 
-    mLineRenderer = std::make_shared<Opal::LineRenderer>();
-    mLineRenderer->Init(mGame->Renderer, mRenderPass, true);
+        mLineRenderer = std::make_shared<Opal::LineRenderer>();
+        mLineRenderer->Init(mGame->Renderer, mRenderPass, true);
 
-    mScene = std::make_shared<Opal::Scene>(mBatch);
+        mScene = std::make_shared<Opal::Scene>(mBatch);
 
-    std::shared_ptr<Opal::Entity> dummyEntity = std::make_shared<Opal::Entity>();
-    std::shared_ptr<Opal::TransformComponent> transform = std::make_shared<Opal::TransformComponent>();
-    transform->Position = glm::vec3(0, 0, 0);
-    dummyEntity->AddComponent(transform);
-    std::shared_ptr<Opal::VelocityComponent> velocity = std::make_shared<Opal::VelocityComponent>();
-    dummyEntity->AddComponent(velocity);
-    
-    mScene->AddEntity(dummyEntity);
+        std::shared_ptr<Opal::Entity> dummyEntity = std::make_shared<Opal::Entity>();
+        std::shared_ptr<Opal::TransformComponent> transform = std::make_shared<Opal::TransformComponent>();
+        transform->Position = glm::vec3(0, 0, 0);
+        dummyEntity->AddComponent(transform);
+        std::shared_ptr<Opal::VelocityComponent> velocity = std::make_shared<Opal::VelocityComponent>();
+        dummyEntity->AddComponent(velocity);
+        
+        mScene->AddEntity(dummyEntity);
 
-    mScene->Start();
+        mScene->Start();
+    }
     CreateSparks();
 }
 
@@ -148,7 +160,7 @@ void MainMenuState::CreateSparks()
 
 void MainMenuState::CreateRandomSpark()
 {
-    glm::vec2 pos = glm::vec2(rand() % mGame->GetWidth(), rand() % mGame->GetHeight());
+    glm::vec2 pos = glm::vec2(rand() % 1920, rand() % 1080);
     glm::vec4 startColor = glm::vec4(1, 1, 1, 0.25f);
     glm::vec4 endColor = glm::vec4(1, 1, 1, 0);
     int length = rand() % 15 + 3;
@@ -201,7 +213,7 @@ void MainMenuState::RenderSparks()
         //spark->SetSpeedUp((mSparkSpeedUp - 1) * ((float)i / (float)mSparkEntities.size()) + 1);
         std::shared_ptr<Opal::TransformComponent> trans = mSparkEntities[i]->GetComponent<Opal::TransformComponent>();
 
-        if (trans->Position.x > mGame->GetWidth())
+        if (trans->Position.x > 1920)
         {
             mScene->RemoveEntity(mSparkEntities[i]);
             deleteIds.push_back(i);
