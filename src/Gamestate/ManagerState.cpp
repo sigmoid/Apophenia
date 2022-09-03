@@ -12,6 +12,8 @@
 #include "PillState.h"
 #include "StrikesState.h"
 #include "DrawingState.h"
+#include "CreditsState.h"
+#include "MainMenuState.h"
 #include "../Opal/Logger.h"
 
 ManagerState::ManagerState()
@@ -79,6 +81,10 @@ void ManagerState::Tick()
 
             case GameStateType::END_STATE:
                 mGame->PushState<EndState>();
+                break;
+            case GameStateType::CREDITS_STATE:
+                mGame->PushState<MainMenuState>();
+                mGame->PushState<CreditsState>();
                 break;
 
             default:
@@ -173,7 +179,8 @@ void ManagerState::IncrementConversation()
     if(mCurrentConversation >= mConversationSequence.size())
     {
         mPreviousState = mCurrentState;
-        mCurrentState = GameStateType::END_STATE;
+        // TODO Go to credits here
+        mCurrentState = GameStateType::CREDITS_STATE;
         return;
     }
 

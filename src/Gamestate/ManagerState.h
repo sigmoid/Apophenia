@@ -23,7 +23,8 @@ enum class GameStateType
     END_STATE,
     STRIKES_STATE, 
     DRAWING_STATE,
-    TITLE_STATE
+    TITLE_STATE,
+    CREDITS_STATE
 };
 
 class ManagerState : public Opal::Gamestate
