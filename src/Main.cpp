@@ -42,6 +42,7 @@ int main(int argc, char * argv[])
     //game->ToggleDebugInfo(false);
     
     auto cam = game->Renderer->CreateOrthoCamera(game->GetWidth(), game->GetHeight(), -1000, 1000);
+    cam->Resize(game->GetWidth(), game->GetHeight());
     
     
     DialogueManager dialogue("../Dialogue/TestDialogue.xml");
