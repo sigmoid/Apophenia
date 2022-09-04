@@ -66,7 +66,7 @@ void Button::GenerateMesh()
     int numPoints = (int)((mBounds.z - mBounds.x) / mResolution);
     float dist = (mBounds.z - mBounds.x) / (float)numPoints;
 
-    int noiseNum;
+    int noiseNum = 0;
 
     for(int i = 0; i < numPoints; i ++)
     {

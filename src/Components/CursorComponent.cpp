@@ -84,23 +84,22 @@ void CursorComponent::Update(float dTime)
             takingInput = !takingInput;
             yMovement = -1.0f;
         }
-        // else if(Opal::InputHandler::GetLeftJoystickY() > 0.1)
-        // {
-        //     takingInput = true;
-        //     yMovement = Opal::InputHandler::GetLeftJoystickY();
-        // }
+        else if(Opal::InputHandler::GetLeftJoystickY() > 0.1)
+        {
+            takingInput = true;
+            yMovement = Opal::InputHandler::GetLeftJoystickY();
+        }
 
         if(Opal::InputHandler::GetKey(mDownBinding))
         {
-            std::cout << "What the actual fuck" << std::endl;
             takingInput = !takingInput;
             yMovement = 1.0f;
         }
-        // else if(Opal::InputHandler::GetLeftJoystickY() < -0.1)
-        // {
-        //     takingInput = true;
-        //     yMovement = Opal::InputHandler::GetLeftJoystickY();
-        // }
+        else if(Opal::InputHandler::GetLeftJoystickY() < -0.1)
+        {
+            takingInput = true;
+            yMovement = Opal::InputHandler::GetLeftJoystickY();
+        }
 
         mCurrentSpeed += mAcceleration * dTime * yMovement;
 

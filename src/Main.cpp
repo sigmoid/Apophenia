@@ -79,7 +79,7 @@ int main(int argc, char * argv[])
         //{
         //    game->ToggleFullscreen();
         //}
-        if (Opal::InputHandler::GetKey(SDL_SCANCODE_ESCAPE) && std::dynamic_pointer_cast<MainMenuState>(game->PeekState()) == nullptr)
+        if ((Opal::InputHandler::GetKey(SDL_SCANCODE_ESCAPE) || Opal::InputHandler::GetGamepadButton(SDL_CONTROLLER_BUTTON_START)) && std::dynamic_pointer_cast<MainMenuState>(game->PeekState()) == nullptr)
         {
             if(game->PeekState() == managerState)
                 managerState->Pause();
@@ -87,6 +87,8 @@ int main(int argc, char * argv[])
         }
         game->Tick();
     }
+
+    return 0;
 }
 
 //test
