@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Game>
 <Progression Story="MainStory">
-<TitleScreen Duration="3" R="0.19921875" G="0.29296875" B="0.99609375">To Mom
-
-Who always manages to put me back together when I fall apart.</TitleScreen>
 <TitleScreen Duration="6" R="0.09375" G="0.09375" B="0.09375">THIS GAME IS NOT FINISHED!
 
 This is a preview build, there may be bugs. Please report any bugs you find to me @absurd_walls on twitter.
@@ -16,9 +13,12 @@ Link: https://incompetech.filmmusic.io/song/
 License: https://filmmusic.io/standard-license
 </TitleScreen>
 <Conversation>Conversation_Prologue</Conversation>
-<TitleScreen Duration="5" R="0.2578125" G="0.578125" B="0.99609375">Of Moons and Mania</TitleScreen>
+<TitleScreen Duration="5" R="0.37109375" G="0.6796875" B="0.99609375">Tightrope</TitleScreen>
 <TitleScreen Duration="10" R="0.421875" G="0.625" B="0.99609375">Act I
-Me, a small moon, and the unknown force stretching apart my once stable orbit.</TitleScreen>
+My life as a tightrope walker,
+suspended above sense,
+wondering what was wrong with
+all the people on the ground.</TitleScreen>
 <Conversation>Conversation_1</Conversation>
 <Conversation>Conversation_2</Conversation>
 <DrawingState FilePath="../Drawings/Tightrope/" Duration="5" />
@@ -35,7 +35,11 @@ Me, a small moon, and the unknown force stretching apart my once stable orbit.</
 <Conversation>Conversation_9</Conversation>
 <Conversation>Conversation_10</Conversation>
 <TitleScreen Duration="10" R="0.29296875" G="0.29296875" B="0.29296875">Act II
-When I exploded into a tangled mess of threads spread across so much space.
+"And then a Plank in Reason, broke
+And I dropped down, and down -
+And hit a World, at every plunge,
+And Finished knowing - then -"
+-Emily Dickinson
 </TitleScreen>
 <Conversation>Conversation_11</Conversation>
 <Conversation>Conversation_12</Conversation>
@@ -47,12 +51,11 @@ When I exploded into a tangled mess of threads spread across so much space.
 <Conversation>Conversation_16</Conversation>
 <DrawingState FilePath="../Drawings/Isolation/" Duration="5" />
 <Conversation>Conversation_17</Conversation>
-<DrawingState FilePath="../Drawings/Breaking/" Duration="" />
 <Conversation>Conversation_18</Conversation>
 <Conversation>Conversation_19</Conversation>
 <Conversation>Conversation_20</Conversation>
 <TitleScreen Duration="5" R="0.3671875" G="0.69140625" B="0.95703125">Act III
-The slow, amazing process of piecing me back together.</TitleScreen>
+Dr. Apodochi - or - How I learned to control the worrying and love my mom.</TitleScreen>
 <Conversation>Conversation_21</Conversation>
 <DrawingState FilePath="../Drawings/Comfort/" Duration="5" />
 <Conversation>Conversation_22</Conversation>
@@ -202,7 +205,7 @@ You need to sleep.</Text>
 </Prompt>
 
 </Conversation><Conversation Name="Conversation_2">
-<Prompt TransitionText="Next Day" Sequence="1" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="Next Day" Sequence="0" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>So how is grading the first assignment going?</Text>
 <Triggers><Trigger>START</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.41015625</r><g>0.1328125</g><b>0.49609375</b><a>1.0</a></Color><Response Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="0" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>600</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>It's going</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -212,7 +215,7 @@ You need to sleep.</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="2" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="0" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>Wow halfway? It's only been a day. How did you manage that?</Text>
 <Triggers><Trigger>It's going well I'm about halfway done.</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.41015625</r><g>0.1328125</g><b>0.49609375</b><a>1.0</a></Color><Response Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="0" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>600</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Well, I</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -220,7 +223,7 @@ You need to sleep.</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="3" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="0" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>Okay, well, just make sure you're taking care of your other classes before this job.
 You're a good student, I don't want to change that.</Text>
 <Triggers><Trigger>Well, I had a lot of time yesterday.</Trigger>
@@ -230,7 +233,7 @@ You're a good student, I don't want to change that.</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="4" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="0" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>How is Database Systems going? Who's teaching it this semester?</Text>
 <Triggers><Trigger>Thanks, I will.</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.41015625</r><g>0.1328125</g><b>0.49609375</b><a>1.0</a></Color><Response Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="0" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>600</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>I forget</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -240,7 +243,7 @@ You're a good student, I don't want to change that.</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="5" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="0" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>Well, let me know when you find out. A student said you had trouble during lab yesterday. What happened there?</Text>
 <Triggers><Trigger>I forget their name, but they seem cool.</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.41015625</r><g>0.1328125</g><b>0.49609375</b><a>1.0</a></Color><Response Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="0" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>600</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>It's been</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -250,14 +253,14 @@ You're a good student, I don't want to change that.</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="6" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="0" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>I figured. Most TA's struggle with that. It comes back to you.</Text>
 <Triggers><Trigger>It's been a few years since I took this class so I need to review.</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.41015625</r><g>0.1328125</g><b>0.49609375</b><a>1.0</a></Color><Response Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="0" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>600</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Good to hear.</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="False"><Text>I'm sure it does.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="7" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="0" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>While we're on the subject of helping students, I wanted to let you know what my teaching philosophy is.</Text>
 <Triggers><Trigger>Good to hear.</Trigger>
 <Trigger>I'm sure it does.</Trigger>
@@ -267,7 +270,7 @@ You're a good student, I don't want to change that.</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="8" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="0" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>Have you ever heard of the Pygmalion effect?</Text>
 <Triggers><Trigger>Great, I'm interested to hear it.</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.41015625</r><g>0.1328125</g><b>0.49609375</b><a>1.0</a></Color><Response Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="0" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>600</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>I have no idea,</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="False"><Text>Sounds familiar, but</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -275,7 +278,7 @@ You're a good student, I don't want to change that.</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="9" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="0" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>Essentially, it's the idea that if you have higher expectations for someone, they will actually be able to perform better than if you expect less of them.</Text>
 <Triggers><Trigger>I have no idea, what is it?</Trigger>
 <Trigger>Sounds familiar, but what is it?</Trigger>
@@ -286,7 +289,7 @@ You're a good student, I don't want to change that.</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="10" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="0" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>Haha, it's true I make it tough, but you made it through didn't you? I think students learn more when they are challenged.</Text>
 <Triggers><Trigger>Well, that explains some of the assignments we had.</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.41015625</r><g>0.1328125</g><b>0.49609375</b><a>1.0</a></Color><Response WordBank="Dialogue/WordBank2.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>600</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Yeah, I</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="True"><Text>But at</Text><Attraction>800</Attraction></Fragment></FragmentGroup>
@@ -294,14 +297,14 @@ You're a good student, I don't want to change that.</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="11" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="0" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>There are limits to it though, you can't just believe in someone hard enough that they can become a surgeon.</Text>
 <Triggers><Trigger>Yeah, I totally agree.</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.41015625</r><g>0.1328125</g><b>0.49609375</b><a>1.0</a></Color><Response WordBank="Dialogue/WordBank2.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>600</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Makes sense.</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="12" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="0" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>So when you're helping a student, just keep that in mind. Don't lower your expectations for someone unless they give you a really good reason to. Do you have any questions about class?</Text>
 <Triggers><Trigger>Makes sense.</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.41015625</r><g>0.1328125</g><b>0.49609375</b><a>1.0</a></Color><Response WordBank="Dialogue/WordBank2.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>600</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>What's coming</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -309,7 +312,7 @@ You're a good student, I don't want to change that.</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="13" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="0" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>Well, we're just digging deeper into C++ next lecture. So study up on polymorphism.</Text>
 <Triggers><Trigger>What's coming up next?</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.41015625</r><g>0.1328125</g><b>0.49609375</b><a>1.0</a></Color><Response WordBank="Dialogue/WordBank2.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>600</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Great, so</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -318,7 +321,7 @@ You're a good student, I don't want to change that.</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>600</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="14" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="0" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>Yes, but also multi-inheritence, object slicing, and the memory model behind it all.</Text>
 <Triggers><Trigger>Great, so just inheritance right?</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.41015625</r><g>0.1328125</g><b>0.49609375</b><a>1.0</a></Color><Response WordBank="Dialogue/WordBank2.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>900</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Oh right,</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="True"><Text>Oh fuck,</Text><Attraction>600</Attraction></Fragment></FragmentGroup>
@@ -326,7 +329,7 @@ You're a good student, I don't want to change that.</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>900</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="15" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="0" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
 <Text>What's on your plate now? Do you have time to do the next assignment before class next week?</Text>
 <Triggers><Trigger>Oh right, I remember.</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.41015625</r><g>0.1328125</g><b>0.49609375</b><a>1.0</a></Color><Response WordBank="Dialogue/WordBank2.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>900</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Of course! I</Text><Attraction>0</Attraction></Fragment><Fragment IsIntrusive="True"><Text>What? No I</Text><Attraction>600</Attraction></Fragment></FragmentGroup>
@@ -338,7 +341,7 @@ You're a good student, I don't want to change that.</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>900</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="16" InsideHead="False" IsZoomIn="False" IsEnd="True" IsKill="False">
+<Prompt TransitionText="" Sequence="0" InsideHead="False" IsZoomIn="False" IsEnd="True" IsKill="False">
 <Text>Good. No rush. I'll see you next week. Have a nice weekend.</Text>
 <Triggers><Trigger>Of course! I can get that done tomorrow.</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.41015625</r><g>0.1328125</g><b>0.49609375</b><a>1.0</a></Color><Response WordBank="Dialogue/WordBank2.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="500" SolidWords="False" AllowNonsense="False"><Speed>600</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>You too,</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -2462,11 +2465,17 @@ Should we also schedule a doctor's appointment?</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
 </Prompt>
 
+<Prompt TransitionText="" Sequence="8" InsideHead="False" IsZoomIn="False" IsEnd="True" IsKill="False">
+<Text>Awesome!</Text>
+<Triggers><Trigger>Yeah, let's do it.</Trigger>
+</Triggers><ObscuredWords /><Color><r>0.828125</r><g>0.55859375</g><b>0.55859375</b><a>1.0</a></Color><Response WordBank="Dialogue/WordBank3.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="600" SolidWords="False" AllowNonsense="False"><Speed>700</Speed><Fragments /><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
+</Prompt>
+
 </Conversation><Conversation Name="Conversation_27">
 <Prompt TransitionText="" Sequence="1" InsideHead="False" IsZoomIn="False" IsEnd="True" IsKill="False">
 <Text>Hey, narrator here again.</Text>
 <Text>I wanted to take a minute to just talk to you here at the end.</Text>
-<Text>Making this game really helped me.</Text>
+<Text>Making this game really saved me.</Text>
 <Text>For a long time after the hospital, I experienced really painful flashbacks.</Text>
 <Text>I would go from living my life to feeling like I was right back in it.</Text>
 <Text>But one thing that helped was reading other peoples stories and realizing that I wasn't alone.</Text>
