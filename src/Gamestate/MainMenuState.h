@@ -29,6 +29,7 @@
 #include <glm/vec4.hpp>
 
 #include <string>
+#include <vector>
 #include <map>
 
 enum MenuState {Default, Options, Credits};
@@ -77,6 +78,12 @@ class MainMenuState : public Opal::Gamestate
     Button mCreditsButton;
     Button mOptionsButton;
     Button mExitButton;
+
+    std::vector<Button> mButtons;
+    int mSelectedButton;
+    bool mUsingGamepad;
+    glm::vec2 mLastMousePosition;
+    bool mJoystickReturned = true;
 
     Opal::Sprite mTitleSprite;
 

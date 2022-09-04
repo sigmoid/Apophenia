@@ -48,13 +48,14 @@ void CreditsState::Render()
     }
 
     if(!textOnScreen 
-    || (Opal::InputHandler::GetKey(SDL_SCANCODE_SPACE) && !mLastSpace))
+    || (Opal::InputHandler::GetKey(SDL_SCANCODE_SPACE) && !mLastSpace) || (Opal::InputHandler::GetGamepadButton(SDL_CONTROLLER_BUTTON_A) && !mLastA))
     {   
         Opal::Logger::LogString ("Exit CreditsState");
         mGame->PopState();
         return;
     }
     mLastSpace = Opal::InputHandler::GetKey(SDL_SCANCODE_SPACE);
+    mLastA = Opal::InputHandler::GetGamepadButton(SDL_CONTROLLER_BUTTON_A);
 
     mTitleSprite.SetPosition(mTitleSprite.GetPosition().x, mTitleSprite.GetPosition().y - mScrollSpeed * mGame->GetDeltaTime());
     // mTextRenderer->RenderString(DialogueManager::Instance->GetCurrentPrompt().Text[mCurrentCardIdx], Opal::Game::Instance->GetWidth() * 0.15, Opal::Game::Instance->GetHeight()/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);

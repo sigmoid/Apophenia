@@ -16,6 +16,7 @@ class Button
     Button(std::string text, glm::vec4 bounds, std::shared_ptr<Opal::Renderer> renderer, std::function<void()> on_click);
     void Tick(float dt);
     void Render(std::shared_ptr<Opal::MeshRenderer2D> mesh_renderer, std::shared_ptr<Opal::FontRenderer> font_renderer);
+    void Select(bool is_selected);
 
     private:
     std::function<void()> mOnClick;
@@ -38,4 +39,5 @@ class Button
     float mNoiseIntensity = 10;
 
     float mTimer = 0;
+    bool mControllerInput = false;
 };

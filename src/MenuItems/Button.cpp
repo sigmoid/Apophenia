@@ -17,17 +17,21 @@ void Button::Tick(float dt)
 
     glm::vec2 mousePos = Opal::InputHandler::GetMousePos();
 
-    mIsHovering = false;
-    if(mousePos.x < mBounds.z && mousePos.x > mBounds.x && 
-        mousePos.y < mBounds.w && mousePos.y > mBounds.y)
+    if (!mControllerInput)
     {
-        mIsHovering = true;  
+        mIsHovering = false;
+        if (mousePos.x < mBounds.z && mousePos.x > mBounds.x &&
+            mousePos.y < mBounds.w && mousePos.y > mBounds.y)
+        {
+            mIsHovering = true;
+        }
     }
 
-    if(mIsHovering && Opal::InputHandler::GetLeftMouseButtonDown())
+    if(mIsHovering && (Opal::InputHandler::GetLeftMouseButtonDown() || Opal::InputHandler::GetGamepadButton(SDL_CONTROLLER_BUTTON_A)))
     {
         mOnClick();
     }
+    mControllerInput = false;
 }
 
 void Button::Render(std::shared_ptr<Opal::MeshRenderer2D> mesh_renderer, std::shared_ptr<Opal::FontRenderer> font_renderer)
@@ -46,6 +50,12 @@ void Button::Render(std::shared_ptr<Opal::MeshRenderer2D> mesh_renderer, std::sh
         mTextColor.a, 
         1.0f);
 
+}
+
+void Button::Select(bool is_selected)
+{
+    mIsHovering = is_selected;
+    mControllerInput = true;
 }
 
 void Button::GenerateMesh()

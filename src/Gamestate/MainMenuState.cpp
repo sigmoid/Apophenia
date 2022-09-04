@@ -54,9 +54,10 @@ MainMenuState::MainMenuState():
   mExitButton("Exit", glm::vec4(1920/2.0f - 150,
   1080/2.0f - 50 + 125 * 3, 
   1920/2.0f + 150, 
-  1080/2.0f + 50 + 125 * 3) ,  Opal::Game::Instance->Renderer, []() {Opal::Game::Instance->End();})
+  1080/2.0f + 50 + 125 * 3) ,  Opal::Game::Instance->Renderer, []() {Opal::Game::Instance->End();})  
 {
-    
+    mButtons = { mPlayButton, mOptionsButton, mCreditsButton, mExitButton };
+    mSelectedButton = -1;
 }
 MainMenuState::~MainMenuState()
 {
@@ -67,10 +68,58 @@ void MainMenuState::Tick()
 {
     mScene->Update(mGame->GetDeltaTime());
 
-    mPlayButton.Tick(mGame->GetDeltaTime());
-    mOptionsButton.Tick(mGame->GetDeltaTime());
-    mCreditsButton.Tick(mGame->GetDeltaTime());
-    mExitButton.Tick(mGame->GetDeltaTime());
+    if (abs(Opal::InputHandler::GetLeftJoystickY()) < 0.3f)
+    {
+        mJoystickReturned = true;
+    }
+    else if (mJoystickReturned && Opal::InputHandler::GetLeftJoystickY() > 0.5f)
+    {
+        mSelectedButton++;
+
+        if (mSelectedButton < 0)
+            mSelectedButton = mButtons.size() - 1;
+
+        mSelectedButton %= mButtons.size();
+
+        mJoystickReturned = false;
+        mUsingGamepad = true;
+    }
+    else if (mJoystickReturned && Opal::InputHandler::GetLeftJoystickY() < -0.5f)
+    {
+        mSelectedButton--;
+
+        if (mSelectedButton < 0)
+            mSelectedButton = mButtons.size() - 1;
+
+        mSelectedButton %= mButtons.size();
+
+        mJoystickReturned = false;
+        mUsingGamepad = true;
+    }
+
+    if (!mUsingGamepad)
+    {
+        mLastMousePosition = Opal::InputHandler::GetMousePos();
+        mPlayButton.Tick(mGame->GetDeltaTime());
+        mOptionsButton.Tick(mGame->GetDeltaTime());
+        mCreditsButton.Tick(mGame->GetDeltaTime());
+        mExitButton.Tick(mGame->GetDeltaTime());
+    }
+    else
+    {
+        if (glm::distance(mLastMousePosition, Opal::InputHandler::GetMousePos()) > 10.f || Opal::InputHandler::GetLeftMouseButtonDown())
+        {
+            mUsingGamepad = false;
+        }
+        else
+        {
+            for (int i = 0; i < mButtons.size(); i++)
+            {
+                mButtons[i].Select(i == mSelectedButton);
+                mButtons[i].Tick(mGame->GetDeltaTime());
+            }
+        }
+    }
 
     if(mShouldPopState)
         Opal::Game::Instance->PopState();
@@ -147,7 +196,8 @@ void MainMenuState::End()
 
 void MainMenuState::Resume() 
 {
-
+    mUsingGamepad = false;
+    mSelectedButton = -1;
 }
 
 void MainMenuState::CreateSparks()
