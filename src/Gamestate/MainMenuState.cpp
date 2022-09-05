@@ -46,7 +46,7 @@ MainMenuState::MainMenuState():
  mOptionsButton("Options", glm::vec4(1920/2.0f - 150,
   1080/2.0f - 50 + 125 * 1, 
   1920/2.0f + 150, 
-  1080/2.0f + 50 + 125 * 1) ,  Opal::Game::Instance->Renderer, [=]() {}),
+     1080 / 2.0f + 50 + 125 * 1), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Options; mSwitchThisFrame = true; mSelectedButton = 0; }),
  mCreditsButton("Credits", glm::vec4(1920/2.0f - 150,
   1080/2.0f - 50 + 125 * 2, 
   1920/2.0f + 150, 
@@ -54,9 +54,22 @@ MainMenuState::MainMenuState():
   mExitButton("Exit", glm::vec4(1920/2.0f - 150,
   1080/2.0f - 50 + 125 * 3, 
   1920/2.0f + 150, 
-  1080/2.0f + 50 + 125 * 3) ,  Opal::Game::Instance->Renderer, []() {Opal::Game::Instance->End();})  
+  1080/2.0f + 50 + 125 * 3) ,  Opal::Game::Instance->Renderer, []() {Opal::Game::Instance->End();}),  
+mVolumeUpButton("Volume up 10%", glm::vec4(1920 / 2.0f - 250,
+    1080 / 2.0f - 50,
+    1920 / 2.0f + 250,
+    1080 / 2.0f + 50), Opal::Game::Instance->Renderer, [=]() {IncreaseVolume(); }),
+mVolumeDownButton("Volume down 10%", glm::vec4(1920 / 2.0f - 250,
+    1080 / 2.0f - 50 + 125 * 1,
+    1920 / 2.0f + 250,
+    1080 / 2.0f + 50 + 125 * 1), Opal::Game::Instance->Renderer, [=]() {DecreaseVolume(); }),
+mExitOptionsButton("Back", glm::vec4(1920 / 2.0f - 250,
+    1080 / 2.0f - 50 + 125 * 2,
+    1920 / 2.0f + 250,
+    1080 / 2.0f + 50 + 125 * 2), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Default; mSwitchThisFrame = true; mSelectedButton = 0; })
 {
     mButtons = { mPlayButton, mOptionsButton, mCreditsButton, mExitButton };
+    mOptionsButtons = { mVolumeUpButton, mVolumeDownButton, mExitOptionsButton };
     mSelectedButton = -1;
 }
 MainMenuState::~MainMenuState()
@@ -74,51 +87,85 @@ void MainMenuState::Tick()
     }
     else if (mJoystickReturned && Opal::InputHandler::GetLeftJoystickY() > 0.5f)
     {
+        auto buttonList = (mCurrentState == MenuState::Default) ? mButtons : mOptionsButtons;
         mSelectedButton++;
 
         if (mSelectedButton < 0)
-            mSelectedButton = mButtons.size() - 1;
+            mSelectedButton = buttonList.size() - 1;
 
-        mSelectedButton %= mButtons.size();
+        mSelectedButton %= buttonList.size();
 
         mJoystickReturned = false;
         mUsingGamepad = true;
     }
     else if (mJoystickReturned && Opal::InputHandler::GetLeftJoystickY() < -0.5f)
     {
+        auto buttonList = (mCurrentState == MenuState::Default) ? mButtons : mOptionsButtons;
         mSelectedButton--;
 
         if (mSelectedButton < 0)
-            mSelectedButton = mButtons.size() - 1;
+            mSelectedButton = buttonList.size() - 1;
 
-        mSelectedButton %= mButtons.size();
+        mSelectedButton %= buttonList.size();
 
         mJoystickReturned = false;
         mUsingGamepad = true;
     }
 
-    if (!mUsingGamepad)
+    if (!mSwitchThisFrame)
     {
-        mLastMousePosition = Opal::InputHandler::GetMousePos();
-        mPlayButton.Tick(mGame->GetDeltaTime());
-        mOptionsButton.Tick(mGame->GetDeltaTime());
-        mCreditsButton.Tick(mGame->GetDeltaTime());
-        mExitButton.Tick(mGame->GetDeltaTime());
-    }
-    else
-    {
-        if (glm::distance(mLastMousePosition, Opal::InputHandler::GetMousePos()) > 10.f || Opal::InputHandler::GetLeftMouseButtonDown())
+
+        if (!mUsingGamepad)
         {
-            mUsingGamepad = false;
+            mLastMousePosition = Opal::InputHandler::GetMousePos();
+
+            switch (mCurrentState)
+            {
+            case MenuState::Default:
+                mPlayButton.Tick(mGame->GetDeltaTime());
+                mOptionsButton.Tick(mGame->GetDeltaTime());
+                mCreditsButton.Tick(mGame->GetDeltaTime());
+                mExitButton.Tick(mGame->GetDeltaTime());
+                break;
+            case MenuState::Options:
+                mVolumeUpButton.Tick(mGame->GetDeltaTime());
+                mVolumeDownButton.Tick(mGame->GetDeltaTime());
+                mExitOptionsButton.Tick(mGame->GetDeltaTime());
+                break;
+            }
         }
         else
         {
-            for (int i = 0; i < mButtons.size(); i++)
+            if (glm::distance(mLastMousePosition, Opal::InputHandler::GetMousePos()) > 10.f || Opal::InputHandler::GetLeftMouseButtonDown())
             {
-                mButtons[i].Select(i == mSelectedButton);
-                mButtons[i].Tick(mGame->GetDeltaTime());
+                mUsingGamepad = false;
+            }
+            else
+            {
+                switch (mCurrentState)
+                {
+                case MenuState::Default:
+                    for (int i = 0; i < mButtons.size(); i++)
+                    {
+                        mButtons[i].Select(i == mSelectedButton);
+                        mButtons[i].Tick(mGame->GetDeltaTime());
+                    }
+                    break;
+                case MenuState::Options:
+                    for (int i = 0; i < mOptionsButtons.size(); i++)
+                    {
+                        mOptionsButtons[i].Select(i == mSelectedButton);
+                        mOptionsButtons[i].Tick(mGame->GetDeltaTime());
+                    }
+                    break;
+                }
+
             }
         }
+    }
+    else
+    {
+        mSwitchThisFrame = false;
     }
 
     if(mShouldPopState)
@@ -130,10 +177,21 @@ void MainMenuState::Render()
     RenderSparks();
 
     mMeshRenderer->StartFrame();
-    mPlayButton.Render(mMeshRenderer, mFontRenderer);
-    mOptionsButton.Render(mMeshRenderer, mFontRenderer);
-    mCreditsButton.Render(mMeshRenderer, mFontRenderer);
-    mExitButton.Render(mMeshRenderer, mFontRenderer);
+    switch (mCurrentState)
+    {
+    case MenuState::Default:
+        mPlayButton.Render(mMeshRenderer, mFontRenderer);
+        mOptionsButton.Render(mMeshRenderer, mFontRenderer);
+        mCreditsButton.Render(mMeshRenderer, mFontRenderer);
+        mExitButton.Render(mMeshRenderer, mFontRenderer);
+        break;
+    case MenuState::Options:
+        mVolumeUpButton.Render(mMeshRenderer, mFontRenderer);
+        mVolumeDownButton.Render(mMeshRenderer, mFontRenderer);
+        mExitOptionsButton.Render(mMeshRenderer, mFontRenderer);
+        break;
+    }
+
 
     mBatch->StartBatch();
     mScene->Render(mBatch);
@@ -291,3 +349,21 @@ void MainMenuState::RenderSparks()
         mSparkEntities.erase(mSparkEntities.begin() + deleteIds[i]);
     }
 }
+
+void MainMenuState::IncreaseVolume()
+{
+    auto volume = Opal::Game::Instance->mAudioEngine.GetGlobalVolume();
+    if (volume >= 1.0f)
+        return;
+    Opal::Game::Instance->mAudioEngine.SetGlobalVolume(volume + 0.1f);
+}
+
+void MainMenuState::DecreaseVolume()
+{
+    auto volume = Opal::Game::Instance->mAudioEngine.GetGlobalVolume();
+    if (volume <= 0.0f)
+        return;
+    Opal::Game::Instance->mAudioEngine.SetGlobalVolume(volume - 0.1f);
+}
+
+

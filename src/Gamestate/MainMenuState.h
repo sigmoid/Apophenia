@@ -32,7 +32,7 @@
 #include <vector>
 #include <map>
 
-enum MenuState {Default, Options, Credits};
+enum MenuState {Default, Options};
 
 class MainMenuState : public Opal::Gamestate
 {
@@ -47,6 +47,8 @@ class MainMenuState : public Opal::Gamestate
     virtual void Resume() override;
 
     private:
+    void IncreaseVolume();
+    void DecreaseVolume();
     MenuState mCurrentState = MenuState::Default;
     static std::shared_ptr<Opal::Scene> mScene;
     static std::shared_ptr<Opal::BatchRenderer2D> mBatch;
@@ -80,6 +82,13 @@ class MainMenuState : public Opal::Gamestate
     Button mExitButton;
 
     std::vector<Button> mButtons;
+
+    Button mVolumeUpButton;
+    Button mVolumeDownButton;
+    Button mExitOptionsButton;
+
+    std::vector<Button> mOptionsButtons;
+
     int mSelectedButton;
     bool mUsingGamepad;
     glm::vec2 mLastMousePosition;
@@ -88,4 +97,5 @@ class MainMenuState : public Opal::Gamestate
     Opal::Sprite mTitleSprite;
 
     bool mShouldPopState = false;
+    bool mSwitchThisFrame = false;
 };

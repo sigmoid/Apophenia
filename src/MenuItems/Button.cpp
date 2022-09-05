@@ -27,10 +27,12 @@ void Button::Tick(float dt)
         }
     }
 
-    if(mIsHovering && (Opal::InputHandler::GetLeftMouseButtonDown() || Opal::InputHandler::GetGamepadButton(SDL_CONTROLLER_BUTTON_A)))
+    if(mIsHovering && ((Opal::InputHandler::GetLeftMouseButtonDown() && !mLastMouseButton) || Opal::InputHandler::GetGamepadButton(SDL_CONTROLLER_BUTTON_A) && !mLastControllerButton))
     {
         mOnClick();
     }
+    mLastMouseButton = Opal::InputHandler::GetLeftMouseButtonDown();
+    mLastControllerButton = Opal::InputHandler::GetGamepadButton(SDL_CONTROLLER_BUTTON_A);
     mControllerInput = false;
 }
 
