@@ -1,20 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Game>
 <Progression Story="MainStory">
-<TitleScreen Duration="3" R="0.19921875" G="0.29296875" B="0.99609375">To Mom
+<TitleScreen Duration="3" R="0.3058823" G="0.215686" B="0.372549">To Mom  
 
 Who always manages to put me back together when I fall apart.</TitleScreen>
-<TitleScreen Duration="6" R="0.09375" G="0.09375" B="0.09375">THIS GAME IS NOT FINISHED!
-
-This is a preview build, there may be bugs. Please report any bugs you find to me @absurd_walls on twitter.
-
-Thanks for understanding :)</TitleScreen>
-<TitleScreen Duration="5" R="0.09375" G="0.09375" B="0.09375">(Temporary) Music
-Ambiment by Kevin MacLeod
-Link: https://incompetech.filmmusic.io/song/
-3359-ambiment
-License: https://filmmusic.io/standard-license
-</TitleScreen>
 <Conversation>Conversation_Prologue</Conversation>
 <TitleScreen Duration="5" R="0.2578125" G="0.578125" B="0.99609375">Of Moons and Mania</TitleScreen>
 <TitleScreen Duration="10" R="0.421875" G="0.625" B="0.99609375">Act I
@@ -2454,7 +2443,7 @@ Should we also schedule a doctor's appointment?</Text>
 </Fragments><Color><r>0.3</r><g>0.3</g><b>0.3</b><a>1.0</a></Color><Speed>700</Speed></Response>
 </Prompt>
 
-<Prompt TransitionText="" Sequence="7" InsideHead="False" IsZoomIn="False" IsEnd="False" IsKill="False">
+<Prompt TransitionText="" Sequence="7" InsideHead="False" IsZoomIn="False" IsEnd="True" IsKill="False">
 <Text>Well, I'm glad you see it now. So what do you say. Should we throw a party?</Text>
 <Triggers><Trigger>Yeah, and I didn't realize how much progress I made until now.</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.828125</r><g>0.55859375</g><b>0.55859375</b><a>1.0</a></Color><Response WordBank="Dialogue/WordBank3.xml" Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="1.5" ChannelSize="600" SolidWords="False" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>Yeah, let's</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
@@ -2478,9 +2467,9 @@ Should we also schedule a doctor's appointment?</Text>
 <Text>I feel like I was expected to advocate for myself while having trouble navigating my own mind.</Text>
 <Text>Having said all that, I am glad to report that I am doing great now - and have been for a while.</Text>
 <Text>I found the right medications and support, have a good job, and successfully made a game from scratch.</Text>
-<Text>I'm happy - and I know that I am.</Text>
+<Text>I am happy - and I know that I am.</Text>
 <Text>Thanks for playing my game. I hope you got something out of it.</Text>
-<Text>If you want to support my work, follow me on twitter @absurd_walls to get updates on my next projects.</Text>
+<Text>If you want to support my work, follow me on socials @absurd_walls to get updates on my next projects.</Text>
 <Text>Thank you.</Text>
 <Triggers><Trigger>START</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.4921875</r><g>0.45703125</g><b>0.16796875</b><a>1.0</a></Color><Response Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="0" ChannelSize="0" SolidWords="False" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>test</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
