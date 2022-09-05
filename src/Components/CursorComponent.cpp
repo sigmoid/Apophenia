@@ -12,6 +12,7 @@
 #include "../../Opal/vendor/imgui/imgui_impl_vulkan.h"
 #include "../../Opal/EntityComponent/BoxColliderComponent2D.h"
 #include "AttractableComponent.h"
+#include "../AudioBank.h"
 
 CursorComponent::CursorComponent()
 {
@@ -36,6 +37,11 @@ void CursorComponent::OnStart()
 
     mMesh = Opal::Game::Instance->Renderer->CreateMesh((mNumTris+1) * 3);
     mLastRadii.resize(mNumTris, -1);
+
+    // Only loads the first time.
+    AudioBank::Instance->LoadClip("snap1.wav");
+    AudioBank::Instance->LoadClip("snap2.wav");
+    AudioBank::Instance->LoadClip("snap3.wav");
 }
 
 void CursorComponent::Reset()
@@ -180,6 +186,15 @@ void CursorComponent::OnCollision(std::shared_ptr<Opal::Entity> other, glm::vec2
             mRealResponse.push_back(otherComp->Text);
         }
         otherComp->Interact();
+
+        int snap = (rand() % 3) + 1;
+        std::string filename = "snap";
+        filename.append(std::to_string(snap)).append(".wav");
+        auto clip = AudioBank::Instance->GetClip(filename);
+        if (clip != nullptr)
+            Opal::Game::Instance->mAudioEngine.PlaySound(clip, 0.5f, 1.0f, 0.0f, false);
+        else
+            std::cout << filename << std::endl;
     }
 }
 
