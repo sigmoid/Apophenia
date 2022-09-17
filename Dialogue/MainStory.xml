@@ -2469,7 +2469,7 @@ Should we also schedule a doctor's appointment?</Text>
 <Text>I found the right medications and support, have a good job, and successfully made a game from scratch.</Text>
 <Text>I am happy - and I know that I am.</Text>
 <Text>Thanks for playing my game. I hope you got something out of it.</Text>
-<Text>If you want to support my work, follow me on socials @absurd_walls to get updates on my next projects.</Text>
+<Text>If you want to support my work, follow me on socials @wallsofabsurd to get updates on my next projects.</Text>
 <Text>Thank you.</Text>
 <Triggers><Trigger>START</Trigger>
 </Triggers><ObscuredWords /><Color><r>0.4921875</r><g>0.45703125</g><b>0.16796875</b><a>1.0</a></Color><Response Drunk="False" Tremor="False" ShowBlur="False" RequireCoreOnly="False" WordFrequency="0" ChannelSize="0" SolidWords="False" AllowNonsense="False"><Speed>700</Speed><Fragments><FragmentGroup><Fragment IsIntrusive="False"><Text>test</Text><Attraction>0</Attraction></Fragment></FragmentGroup>
