@@ -35,7 +35,7 @@ class SentenceFragmentComponent : public Opal::Component
     std::string Text;
     float Speed = 100;
     glm::vec4 Color = glm::vec4(0.9,0.9,0.9,1.0);
-    glm::vec4 IntrusiveColor = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+    glm::vec4 IntrusiveColor = glm::vec4(0.9294118f, 0.2431372f, 0.309803921f, 1.0f);
     float Attraction = 0;
 
     private:
