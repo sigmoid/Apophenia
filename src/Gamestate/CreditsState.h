@@ -35,6 +35,7 @@ class CreditsState : public Opal::Gamestate
         std::vector<CreditsItem> mCredits{
         {"Design/Code/Writing", "Adam Waggoner"},
         {"Music", "Ambiment by Kevin MacLeod (incomptech.com)\n Licensed under Creative Commons: By Attribution 3.0"},
+        {"Logo Design", "thedesignaffair"},
         {"Libraries Used", "tinyxml2, SDL2, MoltenVK, Vulkan, glm, imgui, soloud, FastNoiseLite, stb_image"},
         {"Sounds Used", "freesound.com: door frantic pounding, basement 10 - TRP, Percussion Snap - purpleducttapehat" },
         {"Sounds Used (cont'd)", "freesound.com: Finger Snap_1Reverb_Selected - DRFX, snap church 1 - Sorinious_Genious" },

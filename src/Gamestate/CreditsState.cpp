@@ -83,7 +83,7 @@ void CreditsState::Begin()
         mTextPass = mGame->Renderer->CreateRenderPass(true);
         mTextPass->SetClearColor(0.2f,0.2f, 0.2f, 1.0f);
 
-        mFont = std::make_shared<Opal::Font>(mGame->Renderer,Opal::GetBaseContentPath().append("fonts/JosefinSans-Light.ttf").c_str(), 80);
+        mFont = std::make_shared<Opal::Font>(mGame->Renderer,Opal::GetBaseContentPath().append("fonts/JosefinSans-Light.ttf").c_str(), 64);
         mTitleFont = std::make_shared<Opal::Font>(mGame->Renderer,Opal::GetBaseContentPath().append("fonts/JosefinSlab-SemiBold.ttf").c_str(), 86);
         mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(mGame->GetWidth() * (1 - 0.15625f), mGame->GetHeight()), Opal::Camera::ActiveCamera);    
         mTitleTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mTitleFont, glm::vec2(mGame->GetWidth() * (1 - 0.15625f), mGame->GetHeight()), Opal::Camera::ActiveCamera); 
