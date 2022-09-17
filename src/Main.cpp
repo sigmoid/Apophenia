@@ -16,6 +16,7 @@
 #include "../Opal/Audio/AudioClip.h"
 #include "../Opal/Audio/AudioClipInstance.h"
 #include "../Opal/Audio/AudioEngine.h"
+#include "GameSettings.h"
 
 #include <cstdio>
 
@@ -46,6 +47,8 @@ int main(int argc, char * argv[])
     
     
     DialogueManager dialogue("../Dialogue/TestDialogue.xml");
+
+    GameSettings::Load();
 
 
     auto managerState = game->PushState<ManagerState>();

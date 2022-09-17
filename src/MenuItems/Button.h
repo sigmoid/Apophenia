@@ -41,6 +41,6 @@ class Button
     float mTimer = 0;
     bool mControllerInput = false;
 
-    bool mLastMouseButton = false;
+    bool mLastMouseButton = true;
     bool mLastControllerButton = false;
 };

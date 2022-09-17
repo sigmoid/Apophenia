@@ -22,6 +22,7 @@
 #include "../../Opal/Input/InputHandler.h"
 
 #include "../../Opal/Logger.h"
+#include "../GameSettings.h"
 
 #include "EndState.h"
 #include "CreditsState.h"
@@ -38,35 +39,43 @@ std::shared_ptr<Opal::Font> MainMenuState::mFont = nullptr;
 std::shared_ptr<Opal::SpriteRenderer> MainMenuState::mSpriteRenderer = nullptr;
 std::shared_ptr<Opal::Texture> MainMenuState::mTitleTexture = nullptr;
 
-MainMenuState::MainMenuState():
- mPlayButton("Play", glm::vec4(1920/2.0f - 150,
-  1080/2.0f - 50, 
-  1920/2.0f + 150, 
-  1080/2.0f + 50) ,  Opal::Game::Instance->Renderer, [=]() {mShouldPopState = true;}),
- mOptionsButton("Options", glm::vec4(1920/2.0f - 150,
-  1080/2.0f - 50 + 125 * 1, 
-  1920/2.0f + 150, 
-     1080 / 2.0f + 50 + 125 * 1), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Options; mSwitchThisFrame = true; mSelectedButton = 0; }),
- mCreditsButton("Credits", glm::vec4(1920/2.0f - 150,
-  1080/2.0f - 50 + 125 * 2, 
-  1920/2.0f + 150, 
-  1080/2.0f + 50 + 125 * 2) ,  Opal::Game::Instance->Renderer, [=]() {Opal::Game::Instance->PushState<CreditsState>();}),
-  mExitButton("Exit", glm::vec4(1920/2.0f - 150,
-  1080/2.0f - 50 + 125 * 3, 
-  1920/2.0f + 150, 
-  1080/2.0f + 50 + 125 * 3) ,  Opal::Game::Instance->Renderer, []() {Opal::Game::Instance->End();}),  
-mVolumeUpButton("Volume up 10%", glm::vec4(1920 / 2.0f - 250,
-    1080 / 2.0f - 50,
-    1920 / 2.0f + 250,
-    1080 / 2.0f + 50), Opal::Game::Instance->Renderer, [=]() {IncreaseVolume(); }),
-mVolumeDownButton("Volume down 10%", glm::vec4(1920 / 2.0f - 250,
-    1080 / 2.0f - 50 + 125 * 1,
-    1920 / 2.0f + 250,
-    1080 / 2.0f + 50 + 125 * 1), Opal::Game::Instance->Renderer, [=]() {DecreaseVolume(); }),
-mExitOptionsButton("Back", glm::vec4(1920 / 2.0f - 250,
-    1080 / 2.0f - 50 + 125 * 2,
-    1920 / 2.0f + 250,
-    1080 / 2.0f + 50 + 125 * 2), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Default; mSwitchThisFrame = true; mSelectedButton = 0; })
+MainMenuState::MainMenuState() :
+    mPlayButton("Play", glm::vec4(1920 / 2.0f - 150,
+        1080 / 2.0f - 50,
+        1920 / 2.0f + 150,
+        1080 / 2.0f + 50), Opal::Game::Instance->Renderer, [=]() {mShouldPopState = true; }),
+    mOptionsButton("Options", glm::vec4(1920 / 2.0f - 150,
+        1080 / 2.0f - 50 + 125 * 1,
+        1920 / 2.0f + 150,
+        1080 / 2.0f + 50 + 125 * 1), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Options; mSwitchThisFrame = true; mSelectedButton = 0; }),
+    mCreditsButton("Credits", glm::vec4(1920 / 2.0f - 150,
+        1080 / 2.0f - 50 + 125 * 2,
+        1920 / 2.0f + 150,
+        1080 / 2.0f + 50 + 125 * 2), Opal::Game::Instance->Renderer, [=]() {Opal::Game::Instance->PushState<CreditsState>(); }),
+    mExitButton("Exit", glm::vec4(1920 / 2.0f - 150,
+        1080 / 2.0f - 50 + 125 * 3,
+        1920 / 2.0f + 150,
+        1080 / 2.0f + 50 + 125 * 3), Opal::Game::Instance->Renderer, []() {Opal::Game::Instance->End(); }),
+    mVolumeUpButton("Volume up 10%", glm::vec4(1920 / 2.0f - 400,
+        1080 / 2.0f - 50,
+        1920 / 2.0f + 400,
+        1080 / 2.0f + 50), Opal::Game::Instance->Renderer, [=]() {IncreaseVolume(); }),
+    mVolumeDownButton("Volume down 10%", glm::vec4(1920 / 2.0f - 400,
+        1080 / 2.0f - 50 + 125 * 1,
+        1920 / 2.0f + 400,
+        1080 / 2.0f + 50 + 125 * 1), Opal::Game::Instance->Renderer, [=]() {DecreaseVolume(); }),
+    mToggleAntialiasingOnButton("Toggle Anti-Aliasing (On)", glm::vec4(1920 / 2.0f - 400,
+        1080 / 2.0f - 50 + 125 * 2,
+        1920 / 2.0f + 400,
+        1080 / 2.0f + 50 + 125 * 2), Opal::Game::Instance->Renderer, [=]() {GameSettings::SetAntiAliasingEnabled(!GameSettings::GetAntiAliasingEnabled()); }),
+    mToggleAntialiasingOffButton("Toggle Anti-Aliasing (Off)", glm::vec4(1920 / 2.0f - 400,
+        1080 / 2.0f - 50 + 125 * 2,
+        1920 / 2.0f + 400,
+        1080 / 2.0f + 50 + 125 * 2), Opal::Game::Instance->Renderer, [=]() {GameSettings::SetAntiAliasingEnabled(!GameSettings::GetAntiAliasingEnabled()); }),
+    mExitOptionsButton("Back", glm::vec4(1920 / 2.0f - 400,
+        1080 / 2.0f - 50 + 125 * 3,
+        1920 / 2.0f + 400,
+        1080 / 2.0f + 50 + 125 * 3), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Default; mSwitchThisFrame = true; mSelectedButton = 0; })
 {
     mButtons = { mPlayButton, mOptionsButton, mCreditsButton, mExitButton };
     mOptionsButtons = { mVolumeUpButton, mVolumeDownButton, mExitOptionsButton };
@@ -130,6 +139,10 @@ void MainMenuState::Tick()
             case MenuState::Options:
                 mVolumeUpButton.Tick(mGame->GetDeltaTime());
                 mVolumeDownButton.Tick(mGame->GetDeltaTime());
+                if (GameSettings::GetAntiAliasingEnabled())
+                    mToggleAntialiasingOnButton.Tick(mGame->GetDeltaTime());
+                else
+                    mToggleAntialiasingOffButton.Tick(mGame->GetDeltaTime());
                 mExitOptionsButton.Tick(mGame->GetDeltaTime());
                 break;
             }
@@ -188,6 +201,10 @@ void MainMenuState::Render()
     case MenuState::Options:
         mVolumeUpButton.Render(mMeshRenderer, mFontRenderer);
         mVolumeDownButton.Render(mMeshRenderer, mFontRenderer);
+        if (GameSettings::GetAntiAliasingEnabled())
+            mToggleAntialiasingOnButton.Render(mMeshRenderer, mFontRenderer);
+        else
+            mToggleAntialiasingOffButton.Render(mMeshRenderer, mFontRenderer);
         mExitOptionsButton.Render(mMeshRenderer, mFontRenderer);
         break;
     }
@@ -355,7 +372,7 @@ void MainMenuState::IncreaseVolume()
     auto volume = Opal::Game::Instance->mAudioEngine.GetGlobalVolume();
     if (volume >= 1.0f)
         return;
-    Opal::Game::Instance->mAudioEngine.SetGlobalVolume(volume + 0.1f);
+    GameSettings::SetMasterVolume(volume + 0.1f);
 }
 
 void MainMenuState::DecreaseVolume()
@@ -363,7 +380,7 @@ void MainMenuState::DecreaseVolume()
     auto volume = Opal::Game::Instance->mAudioEngine.GetGlobalVolume();
     if (volume <= 0.0f)
         return;
-    Opal::Game::Instance->mAudioEngine.SetGlobalVolume(volume - 0.1f);
+    GameSettings::SetMasterVolume(volume - 0.1f);
 }
 
 

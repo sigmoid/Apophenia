@@ -19,6 +19,7 @@
 #include "../DialogueSystem/DialogueSerializer.h"
 #include "../DialogueSystem/WordBank.h"
 #include "../DialogueSystem/Response.h"
+#include "../GameSettings.h"
 
 #include "../../Opal/Logger.h"
 
@@ -385,6 +386,10 @@ void SentenceFormingState::Render()
     ubo->yPadding = Opal::Camera::ActiveCamera->GetViewPort().y / mGame->GetHeight();
     ubo->playerX = mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.x / 1920; 
     ubo->playerY = mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.y / 1080; 
+    ubo->screenWidth = mGame->GetWidth();
+    ubo->screenHeight = mGame->GetHeight();
+    if (!GameSettings::GetAntiAliasingEnabled())
+        ubo->screenHeight = -1;
     
     if(DialogueManager::Instance->GetCurrentResponse().ShowBlur)
     {

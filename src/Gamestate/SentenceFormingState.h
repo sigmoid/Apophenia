@@ -34,6 +34,8 @@ struct UBO
     float playerX;
     float playerY;
     float displayBlur;
+    float screenWidth;
+    float screenHeight;
 };
 
 class SentenceFormingState : public Opal::Gamestate

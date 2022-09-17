@@ -85,6 +85,7 @@ class MainMenuState : public Opal::Gamestate
 
     Button mVolumeUpButton;
     Button mVolumeDownButton;
+    Button mToggleAntialiasingOnButton, mToggleAntialiasingOffButton;
     Button mExitOptionsButton;
 
     std::vector<Button> mOptionsButtons;
