@@ -6,7 +6,7 @@ SentenceFragmentComponent::SentenceFragmentComponent()
     TypeName = "SentenceFragmentComponent";
 }
 
-SentenceFragmentComponent::SentenceFragmentComponent(std::string text, float speed, glm::vec4 color, float attraction, bool intrusive, bool solid, bool core)
+SentenceFragmentComponent::SentenceFragmentComponent(std::string text, float speed, glm::vec4 color, float attraction, bool intrusive, bool solid, bool core, bool ignore_player)
 {
     TypeName = "SentenceFragmentComponent";
     Text = text;
@@ -16,6 +16,7 @@ SentenceFragmentComponent::SentenceFragmentComponent(std::string text, float spe
     IsIntrusive = intrusive;
     mSolid = solid;
     mCore = core;
+    mIgnorePlayer = ignore_player;
 
     if(IsIntrusive)
         Color = IntrusiveColor;
@@ -27,6 +28,11 @@ SentenceFragmentComponent::SentenceFragmentComponent(std::string text, float spe
 SentenceFragmentComponent::~SentenceFragmentComponent()
 {
     
+}
+
+bool SentenceFragmentComponent::GetIgnorePlayer()
+{
+    return mIgnorePlayer;
 }
 
 bool SentenceFragmentComponent::GetSolid()

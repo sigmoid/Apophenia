@@ -182,6 +182,29 @@ void SentenceFormingState::Tick()
             mSoundInstance = nullptr;
     }
 
+    if (mCursorEntity->GetComponent<CursorComponent>()->ShouldPop(false))
+    {
+        std::shared_ptr<Opal::Entity> popEntity = std::make_shared<Opal::Entity>();
+
+        auto pos = mCursorEntity->GetComponent<Opal::TransformComponent>()->Position;
+
+        std::shared_ptr<Opal::TransformComponent> transform = std::make_shared<Opal::TransformComponent>();
+        transform->Position = glm::vec3(pos.x, pos.y, 0);
+        popEntity->AddComponent(transform);
+        std::shared_ptr<Opal::VelocityComponent> velocity = std::make_shared<Opal::VelocityComponent>();
+        velocity->SetVelocity(glm::vec3(mLineSpeed, 0, 0));
+        popEntity->AddComponent(velocity);
+        std::shared_ptr<Opal::BoxColliderComponent2D> collider = std::make_shared<Opal::BoxColliderComponent2D>(glm::vec2(0, 0), glm::vec2(0,0), true);
+        collider->SetIsTrigger(true);
+        collider->SetIsStatic(true);
+        popEntity->AddComponent(collider);
+        std::shared_ptr<SentenceFragmentComponent> fragment = std::make_shared<SentenceFragmentComponent>("", mLineSpeed, glm::vec4(0, 0, 0, 0), 500, false, false, false, true);
+        fragment->Attraction = 900;
+        popEntity->AddComponent(fragment);
+
+        mScene->AddEntity(popEntity);
+    }
+
     mScene->Update(mGame->GetDeltaTime());
     UpdateCursorLine();
     if (!mCursorEntity->GetComponent<CursorComponent>()->GetAlive() && mDisplayPromptTimer <= 0)
@@ -683,6 +706,7 @@ void SentenceFormingState::CreatePlayer()
     std::shared_ptr<Opal::VelocityComponent> velocity = std::make_shared<Opal::VelocityComponent>();
     mCursorEntity->AddComponent(velocity);
     std::shared_ptr<AttractableComponent> attr = std::make_shared<AttractableComponent>(true);
+    attr->SetPlayer(true);
     mCursorEntity->AddComponent(attr);
 
     if(DialogueManager::Instance->GetCurrentResponse().Tremor)
@@ -713,7 +737,7 @@ void SentenceFormingState::CreateSentenceFragment(glm::vec3 pos, std::string tex
 
     std::shared_ptr<Opal::TransformComponent> transform = std::make_shared<Opal::TransformComponent>(pos, glm::vec3(1, 1, 1), 0);
     mFragmentEntity->AddComponent(transform);
-    std::shared_ptr<SentenceFragmentComponent> frag = std::make_shared<SentenceFragmentComponent>(text, speed, mFragmentColor, attraction, intrusive, solid, core);
+    std::shared_ptr<SentenceFragmentComponent> frag = std::make_shared<SentenceFragmentComponent>(text, speed, mFragmentColor, attraction, intrusive, solid, core, false);
     mFragmentEntity->AddComponent(frag);
     std::shared_ptr<Opal::BoxColliderComponent2D> collider = std::make_shared<Opal::BoxColliderComponent2D>(glm::vec2(fmax(64, width), mFragmentSize + mFragmentVertOffset), glm::vec2(0, -mFragmentSize + mFragmentVertOffset), true);
     collider->SetIsTrigger(true);

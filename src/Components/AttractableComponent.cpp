@@ -26,16 +26,21 @@ void AttractableComponent::OnStart()
     mVelocity = mParent->GetComponent<Opal::VelocityComponent>();
 }
 
+void AttractableComponent::SetPlayer(bool isPlayer)
+{
+    mIsPlayer = isPlayer;
+}
+
 void AttractableComponent::Update(float dTime) 
 {
     mFrameAttractors.clear();
 
     std::vector<std::shared_ptr<Opal::Entity> > ents = Opal::Scene::GetActiveScene()->GetAllEntities();
-    for(int i = 0; i < ents.size(); i++)
+    for (int i = 0; i < ents.size(); i++)
     {
         std::shared_ptr<SentenceFragmentComponent> otherSentence = ents[i]->GetComponent<SentenceFragmentComponent>();
 
-        if(otherSentence != nullptr && otherSentence->Attraction != 0)
+        if (otherSentence != nullptr && otherSentence->Attraction != 0 && (!mIsPlayer || mIsPlayer && !otherSentence->GetIgnorePlayer()))
         {
             std::shared_ptr<Opal::BoxColliderComponent2D> otherBox = ents[i]->GetComponent<Opal::BoxColliderComponent2D>();
             if(otherBox == nullptr)

@@ -33,6 +33,8 @@ class CursorComponent : public Opal::Component
 
     void SetDrunk(bool isdrunk);
 
+    bool ShouldPop(bool reset);
+
     bool GetAlive();
     void SetAlive(bool val);
     void Reset();
@@ -69,4 +71,6 @@ class CursorComponent : public Opal::Component
     glm::vec2 mTouchOrigin = glm::vec2(-10,-10);
 
     std::vector<std::string> mRealResponse;
+
+    bool mShouldPop = false;
 };

@@ -44,6 +44,13 @@ void CursorComponent::OnStart()
     AudioBank::Instance->LoadClip("snap3.wav");
 }
 
+bool CursorComponent::ShouldPop(bool reset)
+{
+    bool res = mShouldPop;
+    mShouldPop = reset;
+    return res;
+}
+
 void CursorComponent::Reset()
 {
     mAlive = true;
@@ -186,6 +193,8 @@ void CursorComponent::OnCollision(std::shared_ptr<Opal::Entity> other, glm::vec2
             mRealResponse.push_back(otherComp->Text);
         }
         otherComp->Interact();
+
+        mShouldPop = true;
 
         int snap = (rand() % 3) + 1;
         std::string filename = "snap";

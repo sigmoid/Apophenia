@@ -13,7 +13,7 @@ class SentenceFragmentComponent : public Opal::Component
 {
     public:
     SentenceFragmentComponent();
-    SentenceFragmentComponent(std::string text, float speed, glm::vec4 color, float attraction, bool intrusive, bool solid, bool core);
+    SentenceFragmentComponent(std::string text, float speed, glm::vec4 color, float attraction, bool intrusive, bool solid, bool core, bool ignore_player);
     ~SentenceFragmentComponent();
 
     virtual void OnAdded() override;
@@ -29,6 +29,7 @@ class SentenceFragmentComponent : public Opal::Component
     bool GetActive();
     bool GetSolid();
     bool GetCore();
+    bool GetIgnorePlayer();
 
     bool IsIntrusive = false;
 
@@ -43,4 +44,5 @@ class SentenceFragmentComponent : public Opal::Component
     bool mActive = true;
     bool mSolid = true;
     bool mCore = true;
+    bool mIgnorePlayer = false;
 };

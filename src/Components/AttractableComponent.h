@@ -33,6 +33,8 @@ class AttractableComponent : public Opal::Component
     virtual void Deserialize() override;
     virtual std::shared_ptr<Component> Clone() override;
 
+    void SetPlayer(bool isPlayer);
+
     std::vector<Attractor> GetFrameAttractors();
 
     private:
@@ -42,4 +44,5 @@ class AttractableComponent : public Opal::Component
     float mAttractionScale = 1200.0f;
     std::vector<Attractor> mFrameAttractors;
     bool mLocked = true;
+    bool mIsPlayer = false;
 };
