@@ -12,6 +12,7 @@
 #include "DialogueSystem/DialogueManager.h"
 #include "Gamestate/StrikesState.h"
 #include "Gamestate/CreditsState.h"
+#include "Gamestate/LogoState.h"
 
 #include "../Opal/Audio/AudioClip.h"
 #include "../Opal/Audio/AudioClipInstance.h"
@@ -67,6 +68,7 @@ int main(int argc, char * argv[])
     game->PushState<CreditsState>();
     game->PopState();
     game->PushState<MainMenuState>();
+    game->PushState<LogoState>();
     
     
     auto bgMusic = Opal::AudioEngine::LoadClip(Opal::GetBaseContentPath().append("Audio/ambiment-by-kevin-macleod-from-filmmusic-io.mp3"));

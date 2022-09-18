@@ -19,8 +19,8 @@ std::shared_ptr<Opal::Texture> CreditsState::mTextureOutput = nullptr;
 std::shared_ptr<Opal::Font> CreditsState::mFont = nullptr;
 std::shared_ptr<Opal::Font> CreditsState::mTitleFont = nullptr;
 std::shared_ptr<Opal::BatchRenderer2D> CreditsState::mBatch = nullptr;
-std::shared_ptr<Opal::Texture> CreditsState::mTitleTexture = nullptr;
-Opal::Sprite CreditsState::mTitleSprite;
+std::shared_ptr<Opal::Texture> CreditsState::mLogoTexture = nullptr;
+Opal::Sprite CreditsState::mLogoSprite;
 
 CreditsState::CreditsState()
 {
@@ -57,12 +57,12 @@ void CreditsState::Render()
     mLastSpace = Opal::InputHandler::GetKey(SDL_SCANCODE_SPACE);
     mLastA = Opal::InputHandler::GetGamepadButton(SDL_CONTROLLER_BUTTON_A);
 
-    mTitleSprite.SetPosition(mTitleSprite.GetPosition().x, mTitleSprite.GetPosition().y - mScrollSpeed * mGame->GetDeltaTime());
+    mLogoSprite.SetPosition(mLogoSprite.GetPosition().x, mLogoSprite.GetPosition().y - mScrollSpeed * mGame->GetDeltaTime());
     // mTextRenderer->RenderString(DialogueManager::Instance->GetCurrentPrompt().Text[mCurrentCardIdx], Opal::Game::Instance->GetWidth() * 0.15, Opal::Game::Instance->GetHeight()/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
     mScrollProgress -= mScrollSpeed * mGame->GetDeltaTime();
 
     mBatch->StartBatch();
-    mBatch->BatchSprite(mTitleSprite);
+    mBatch->BatchSprite(mLogoSprite);
     mBatch->RenderBatch();
 
     mTextPass->Record();
@@ -87,14 +87,14 @@ void CreditsState::Begin()
         mTitleFont = std::make_shared<Opal::Font>(mGame->Renderer,Opal::GetBaseContentPath().append("fonts/JosefinSlab-SemiBold.ttf").c_str(), 86);
         mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(mGame->GetWidth() * (1 - 0.15625f), mGame->GetHeight()), Opal::Camera::ActiveCamera);    
         mTitleTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mTitleFont, glm::vec2(mGame->GetWidth() * (1 - 0.15625f), mGame->GetHeight()), Opal::Camera::ActiveCamera); 
-        mTitleTexture = mGame->Renderer->CreateTexture(Opal::GetBaseContentPath().append("textures/Title.png"));
-        mTitleSprite.SetTexture(mTitleTexture);
-        float titleSpriteX = mGame->GetWidth() / 2.0f - mTitleTexture->GetWidth() /2.0f;
+        mLogoTexture = mGame->Renderer->CreateTexture(Opal::GetBaseContentPath().append("textures/Title.png"));
+        mLogoSprite.SetTexture(mLogoTexture);
+        float titleSpriteX = mGame->GetWidth() / 2.0f - mLogoTexture->GetWidth() /2.0f;
         float titleSpriteY = 50;
-        mTitleSprite.SetPosition(titleSpriteX,titleSpriteY);
+        mLogoSprite.SetPosition(titleSpriteX,titleSpriteY);
 
         std::vector<std::shared_ptr<Opal::Texture> > textures;
-        textures.push_back(mTitleTexture);
+        textures.push_back(mLogoTexture);
         mBatch = mGame->Renderer->CreateBatch(mTextPass, 1000, textures, true);
     }  
 

@@ -1,2 +1,2 @@
-MasterVolume,0.300000
+MasterVolume,1.000000
 AntiAliasingEnabled,true

@@ -49,9 +49,9 @@ class CreditsState : public Opal::Gamestate
     static std::shared_ptr<Opal::Font> mFont;
     static std::shared_ptr<Opal::Font> mTitleFont;
     static std::shared_ptr<Opal::BatchRenderer2D> mBatch;
-    static std::shared_ptr<Opal::Texture> mTitleTexture;
+    static std::shared_ptr<Opal::Texture> mLogoTexture;
 
-    static Opal::Sprite mTitleSprite;
+    static Opal::Sprite mLogoSprite;
 
     float mSpaceBetweenCards = 450;
     float mScrollSpeed = 75;
