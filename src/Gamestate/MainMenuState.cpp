@@ -57,28 +57,28 @@ MainMenuState::MainMenuState() :
         1920 / 2.0f + 150,
         1080 / 2.0f + 50 + 125 * 3), Opal::Game::Instance->Renderer, []() {Opal::Game::Instance->End(); }),
     mVolumeUpButton("Volume up 10%", glm::vec4(1920 / 2.0f - 400,
-        1080 / 2.0f - 50,
+        1080 / 2.0f - 40,
         1920 / 2.0f + 400,
-        1080 / 2.0f + 50), Opal::Game::Instance->Renderer, [=]() {IncreaseVolume(); }),
+        1080 / 2.0f + 40), Opal::Game::Instance->Renderer, [=]() {IncreaseVolume(); }),
     mVolumeDownButton("Volume down 10%", glm::vec4(1920 / 2.0f - 400,
-        1080 / 2.0f - 50 + 125 * 1,
+        1080 / 2.0f - 40 + 110 * 1,
         1920 / 2.0f + 400,
-        1080 / 2.0f + 50 + 125 * 1), Opal::Game::Instance->Renderer, [=]() {DecreaseVolume(); }),
-    mToggleAntialiasingOnButton("Toggle Anti-Aliasing (On)", glm::vec4(1920 / 2.0f - 400,
-        1080 / 2.0f - 50 + 125 * 2,
+        1080 / 2.0f + 40 + 110 * 1), Opal::Game::Instance->Renderer, [=]() {DecreaseVolume(); }),
+    mToggleAntialiasingOnButton("Turn Anti-Aliasing On", glm::vec4(1920 / 2.0f - 400,
+        1080 / 2.0f - 40 + 110 * 2,
         1920 / 2.0f + 400,
-        1080 / 2.0f + 50 + 125 * 2), Opal::Game::Instance->Renderer, [=]() {GameSettings::SetAntiAliasingEnabled(!GameSettings::GetAntiAliasingEnabled()); }),
-    mToggleAntialiasingOffButton("Toggle Anti-Aliasing (Off)", glm::vec4(1920 / 2.0f - 400,
-        1080 / 2.0f - 50 + 125 * 2,
+        1080 / 2.0f + 40 + 110 * 2), Opal::Game::Instance->Renderer, [=]() {GameSettings::SetAntiAliasingEnabled(true); }),
+    mToggleAntialiasingOffButton("Turn Anti-Aliasing Off", glm::vec4(1920 / 2.0f - 400,
+        1080 / 2.0f - 40 + 110 * 3,
         1920 / 2.0f + 400,
-        1080 / 2.0f + 50 + 125 * 2), Opal::Game::Instance->Renderer, [=]() {GameSettings::SetAntiAliasingEnabled(!GameSettings::GetAntiAliasingEnabled()); }),
+        1080 / 2.0f + 40 + 110 * 3), Opal::Game::Instance->Renderer, [=]() {GameSettings::SetAntiAliasingEnabled(false); }),
     mExitOptionsButton("Back", glm::vec4(1920 / 2.0f - 400,
-        1080 / 2.0f - 50 + 125 * 3,
+        1080 / 2.0f - 40 + 110 * 4,
         1920 / 2.0f + 400,
-        1080 / 2.0f + 50 + 125 * 3), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Default; mSwitchThisFrame = true; mSelectedButton = 0; })
+        1080 / 2.0f + 40 + 110 * 4), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Default; mSwitchThisFrame = true; mSelectedButton = 0; })
 {
     mButtons = { mPlayButton, mOptionsButton, mCreditsButton, mExitButton };
-    mOptionsButtons = { mVolumeUpButton, mVolumeDownButton, mExitOptionsButton };
+    mOptionsButtons = { mVolumeUpButton, mVolumeDownButton, mToggleAntialiasingOnButton, mToggleAntialiasingOffButton, mExitOptionsButton };
     mSelectedButton = -1;
 }
 MainMenuState::~MainMenuState()
@@ -139,10 +139,8 @@ void MainMenuState::Tick()
             case MenuState::Options:
                 mVolumeUpButton.Tick(mGame->GetDeltaTime());
                 mVolumeDownButton.Tick(mGame->GetDeltaTime());
-                if (GameSettings::GetAntiAliasingEnabled())
-                    mToggleAntialiasingOnButton.Tick(mGame->GetDeltaTime());
-                else
-                    mToggleAntialiasingOffButton.Tick(mGame->GetDeltaTime());
+                mToggleAntialiasingOnButton.Tick(mGame->GetDeltaTime());
+                mToggleAntialiasingOffButton.Tick(mGame->GetDeltaTime());
                 mExitOptionsButton.Tick(mGame->GetDeltaTime());
                 break;
             }
@@ -201,10 +199,8 @@ void MainMenuState::Render()
     case MenuState::Options:
         mVolumeUpButton.Render(mMeshRenderer, mFontRenderer);
         mVolumeDownButton.Render(mMeshRenderer, mFontRenderer);
-        if (GameSettings::GetAntiAliasingEnabled())
-            mToggleAntialiasingOnButton.Render(mMeshRenderer, mFontRenderer);
-        else
-            mToggleAntialiasingOffButton.Render(mMeshRenderer, mFontRenderer);
+        mToggleAntialiasingOnButton.Render(mMeshRenderer, mFontRenderer);
+        mToggleAntialiasingOffButton.Render(mMeshRenderer, mFontRenderer);
         mExitOptionsButton.Render(mMeshRenderer, mFontRenderer);
         break;
     }
