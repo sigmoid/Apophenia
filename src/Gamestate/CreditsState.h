@@ -39,7 +39,7 @@ class CreditsState : public Opal::Gamestate
         {"Libraries Used", "tinyxml2, SDL2, MoltenVK, Vulkan, glm, imgui, soloud, FastNoiseLite, stb_image"},
         {"Sounds Used", "freesound.com: door frantic pounding, basement 10 - TRP, Percussion Snap - purpleducttapehat" },
         {"Sounds Used (cont'd)", "freesound.com: Finger Snap_1Reverb_Selected - DRFX, snap church 1 - Sorinious_Genious" },
-        {"Special Thanks", "Mom, Dad, Michael, Emily, Trevor, Logan, Light, Patrick, Skyler, Jaden, Sascha Willems"}
+        {"Special Thanks", "Mom, Dad, Michael, Emily, Logan, Light, Patrick, Skyler, Jaden, Sascha Willems"}
     };
 
     static std::shared_ptr<Opal::FontRenderer> mTextRenderer;

@@ -87,7 +87,7 @@ int main(int argc, char * argv[])
         //}
         if ((Opal::InputHandler::GetKey(SDL_SCANCODE_ESCAPE) || Opal::InputHandler::GetGamepadButton(SDL_CONTROLLER_BUTTON_START)) && std::dynamic_pointer_cast<MainMenuState>(game->PeekState()) == nullptr)
         {
-            if (std::dynamic_pointer_cast<CreditsState>(game->PeekState()) != nullptr)
+            if (std::dynamic_pointer_cast<CreditsState>(game->PeekState()) != nullptr || std::dynamic_pointer_cast<LogoState>(game->PeekState()) != nullptr)
                 game->PopState();
             else
             {
