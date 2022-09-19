@@ -439,7 +439,7 @@ void SentenceFormingState::Begin()
     {
         mRenderTexture = mGame->Renderer->CreateRenderTexture(1920, 1080, 4);
         mTextPass = mGame->Renderer->CreateRenderPass(mRenderTexture, true);
-        mTextPass->SetClearColor(0.3f, 0.3f, 0.3f, 1.0f);
+        mTextPass->SetClearColor(0.3f, 0.3f, 0.3f, 0.0f);
 
         CreatePostProcess();
 

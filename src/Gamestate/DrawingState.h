@@ -22,6 +22,13 @@ struct LinePointCompare
     }
 };
 
+struct FXAAUBO
+{
+    float screenWidth;
+    float screenHeight;
+};
+
+
 class DrawingState : public Opal::Gamestate
 {
 
@@ -48,5 +55,7 @@ class DrawingState : public Opal::Gamestate
     std::shared_ptr<Opal::BatchRenderer2D> mBatch;
 
     static std::shared_ptr<Opal::LineRenderer> mLineRenderer;
-    static std::shared_ptr<Opal::RenderPass> mRenderPass;
+    static std::shared_ptr<Opal::RenderPass> mRenderPass, mRenderPassToTexture;
+    static std::shared_ptr<Opal::Texture> mRenderTexture;
+    static std::shared_ptr<Opal::PostProcessRenderer> mPostProcess;
 };

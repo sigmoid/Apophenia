@@ -71,7 +71,7 @@ int main(int argc, char * argv[])
     game->PushState<LogoState>();
     
     
-    auto bgMusic = Opal::AudioEngine::LoadClip(Opal::GetBaseContentPath().append("Audio/ambiment-by-kevin-macleod-from-filmmusic-io.mp3"));
+    auto bgMusic = Opal::AudioEngine::LoadClip(Opal::GetBaseContentPath().append("Audio/Canone_W.mp3"));
     Opal::AudioEngine::PlaySound(bgMusic, 0.8f, 1.0f, 0.0f, true, false);
 
     bool lastF11 = false;
