@@ -1,5 +1,7 @@
 #include "Button.h"
 #include "../../Opal/vendor/FastNoiseLite.h"
+#include "../AudioBank.h"
+#include "../Opal/Game.h"
 
 Button::Button(std::string text, glm::vec4 bounds, std::shared_ptr<Opal::Renderer> renderer, std::function<void()> on_click)
 {
@@ -8,6 +10,12 @@ Button::Button(std::string text, glm::vec4 bounds, std::shared_ptr<Opal::Rendere
     mBounds = bounds;
     mOnClick = on_click;
     mTimer = (rand() % 10000)/ 100000.0f;
+
+    AudioBank::Instance->LoadClip("pluck1.wav");
+    AudioBank::Instance->LoadClip("pluck2.wav");
+    AudioBank::Instance->LoadClip("pluck3.wav");
+    AudioBank::Instance->LoadClip("pluck4.wav");
+    AudioBank::Instance->LoadClip("pluck5.wav");
 }
 
 void Button::Tick(float dt)
@@ -23,17 +31,27 @@ void Button::Tick(float dt)
         if (mousePos.x < mBounds.z && mousePos.x > mBounds.x &&
             mousePos.y < mBounds.w && mousePos.y > mBounds.y)
         {
+            PlayToggleSound();
             mIsHovering = true;
         }
     }
 
-    if(mIsHovering && ((Opal::InputHandler::GetLeftMouseButtonDown() && !mLastMouseButton) || Opal::InputHandler::GetGamepadButton(SDL_CONTROLLER_BUTTON_A) && !mLastControllerButton))
+    if(mIsHovering && ((Opal::InputHandler::GetLeftMouseButtonDown() && !mLastMouseButton) || 
+        (Opal::InputHandler::GetGamepadButton(SDL_CONTROLLER_BUTTON_A) && !mLastControllerButton) ||
+        (Opal::InputHandler::GetKey(SDL_SCANCODE_RETURN) && !mLastEnterPressed) ||
+        (Opal::InputHandler::GetKey(SDL_SCANCODE_SPACE) && !mLastSpacePressed))
+        )
     {
         mOnClick();
     }
     mLastMouseButton = Opal::InputHandler::GetLeftMouseButtonDown();
     mLastControllerButton = Opal::InputHandler::GetGamepadButton(SDL_CONTROLLER_BUTTON_A);
+    mLastSpacePressed = Opal::InputHandler::GetKey(SDL_SCANCODE_SPACE);
+    mLastEnterPressed = Opal::InputHandler::GetKey(SDL_SCANCODE_RETURN);
     mControllerInput = false;
+
+    if (!mIsHovering && !mCanPlaySound)
+        mCanPlaySound = true;
 }
 
 void Button::Render(std::shared_ptr<Opal::MeshRenderer2D> mesh_renderer, std::shared_ptr<Opal::FontRenderer> font_renderer)
@@ -58,6 +76,11 @@ void Button::Select(bool is_selected)
 {
     mIsHovering = is_selected;
     mControllerInput = true;
+
+    if (mIsHovering)
+    {
+        PlayToggleSound();
+    }
 }
 
 void Button::GenerateMesh()
@@ -237,4 +260,18 @@ void Button::GenerateMesh()
     }
 
     mMesh->SetVertices(mVertices.data(), mVertices.size() * sizeof(float));
+}
+
+void Button::PlayToggleSound()
+{
+    if (!mCanPlaySound)
+        return;
+
+    int pluck = (rand() % 5) + 1;
+    std::string filename = "pluck";
+    filename.append(std::to_string(pluck)).append(".wav");
+    auto clip = AudioBank::Instance->GetClip(filename);
+    Opal::Game::Instance->mAudioEngine.PlaySound(clip, 0.3f, 1.0f, 0.0f, false);
+
+    mCanPlaySound = false;
 }

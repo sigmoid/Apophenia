@@ -506,6 +506,8 @@ void SentenceFormingState::Begin()
         mZoomInTimer = mZoomInDuration;
     }
 
+    mCursorEntity->GetComponent<CursorComponent>()->StartAmbience();
+
 }
 
 void SentenceFormingState::RenderCurrentPrompt()
@@ -666,12 +668,14 @@ void SentenceFormingState::CreatePlayingField()
 
 void SentenceFormingState::End()
 {
+    mCursorEntity->GetComponent<CursorComponent>()->KillAmbience();
     Opal::Logger::LogString("GAMESTATE: End() SentenceFormingState");
 }
 
 void SentenceFormingState::Resume()
 {
     Opal::Scene::SetActiveScene(mScene);
+    mCursorEntity->GetComponent<CursorComponent>()->StartAmbience();
 }
 
 void SentenceFormingState::CreateEndWall(float x)

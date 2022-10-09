@@ -37,9 +37,11 @@ class CreditsState : public Opal::Gamestate
         {"Music", "Enzo Derosa"},
         {"Logo Design", "thedesignaffair"},
         {"Libraries Used", "tinyxml2, SDL2, MoltenVK, Vulkan, glm, imgui, soloud, FastNoiseLite, stb_image"},
+        {"Special Thanks", "Mom, Dad, Michael, Emily, Logan, Austin, Light, Patrick, Skyler, Jaden, Sascha Willems, Ethan Clark"},
         {"Sounds Used", "freesound.com: door frantic pounding, basement 10 - TRP, Percussion Snap - purpleducttapehat" },
         {"Sounds Used (cont'd)", "freesound.com: Finger Snap_1Reverb_Selected - DRFX, snap church 1 - Sorinious_Genious" },
-        {"Special Thanks", "Mom, Dad, Michael, Emily, Logan, Light, Patrick, Skyler, Jaden, Sascha Willems"}
+        {"Sounds Used (cont'd)", "freesound.com: Medium Crowd Murmering - jentlemen\nHeavy Breathing - Deathscyp" },
+        {"Sounds Used (cont'd)", "freesound.com: String Pluck.R - phantomg007" }
     };
 
     static std::shared_ptr<Opal::FontRenderer> mTextRenderer;

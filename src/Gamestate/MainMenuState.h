@@ -21,6 +21,8 @@
 #include "../DialogueSystem/WordBank.h"
 #include "../Components/NoiseMoveComponent.h"
 #include "../MenuItems/Button.h"
+#include "../MenuItems/CheckBox.h"
+#include "../MenuItems/Slider.h"
 
 #include "../../Opal/EntityComponent/Scene.h"
 #include "../../Opal/util.h"
@@ -76,19 +78,18 @@ class MainMenuState : public Opal::Gamestate
 
     bool firstUI = false;
 
-    Button mPlayButton;
-    Button mCreditsButton;
-    Button mOptionsButton;
-    Button mExitButton;
+    std::shared_ptr<Button> mPlayButton;
+    std::shared_ptr<Button> mCreditsButton;
+    std::shared_ptr<Button> mOptionsButton;
+    std::shared_ptr<Button> mExitButton;
 
-    std::vector<Button> mButtons;
+    std::vector<std::shared_ptr<UIElement> > mButtons;
 
-    Button mVolumeUpButton;
-    Button mVolumeDownButton;
-    Button mToggleAntialiasingOnButton, mToggleAntialiasingOffButton;
-    Button mExitOptionsButton;
+    std::shared_ptr<Slider> mVolumeSlider;
+    std::shared_ptr<CheckBox> mToggleAntialiasingCheckBox;
+    std::shared_ptr<Button> mExitOptionsButton;
 
-    std::vector<Button> mOptionsButtons;
+    std::vector<std::shared_ptr<UIElement> > mOptionsButtons;
 
     int mSelectedButton;
     bool mUsingGamepad;
@@ -99,4 +100,7 @@ class MainMenuState : public Opal::Gamestate
 
     bool mShouldPopState = false;
     bool mSwitchThisFrame = false;
+
+    bool mLastUpPressed = true, mLastDownPressed = true;
+    bool mLastWPressed = true, mLastSPressed = true;
 };

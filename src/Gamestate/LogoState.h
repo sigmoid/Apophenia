@@ -73,5 +73,5 @@ private:
     bool mShouldPopState = false;
     bool mSwitchThisFrame = false;
 
-    float mTimer = 15;
+    float mTimer = 8;
 };

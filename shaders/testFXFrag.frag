@@ -143,12 +143,12 @@ void main() {
 
          if(warp.screenHeight > 0)
          {
-             vec3 col = FxaaPixelShader(texCoords, texSampler, vec2(warp.screenWidth,warp.screenHeight));
+             vec3 col = FxaaPixelShader(newCoords, texSampler, vec2(warp.screenWidth,warp.screenHeight));
              outColor = vec4(col, 1.);
          }
          else
          {
-            outColor = texture(texSampler, texCoords);
+            outColor = texture(texSampler, newCoords);
          }
     }
 

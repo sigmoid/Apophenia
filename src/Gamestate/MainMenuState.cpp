@@ -39,46 +39,41 @@ std::shared_ptr<Opal::Font> MainMenuState::mFont = nullptr;
 std::shared_ptr<Opal::SpriteRenderer> MainMenuState::mSpriteRenderer = nullptr;
 std::shared_ptr<Opal::Texture> MainMenuState::mTitleTexture = nullptr;
 
-MainMenuState::MainMenuState() :
-    mPlayButton("Play", glm::vec4(1920 / 2.0f - 150,
+MainMenuState::MainMenuState()
+{
+    mPlayButton = std::make_shared<Button>("Play", glm::vec4(1920 / 2.0f - 150,
         1080 / 2.0f - 50,
         1920 / 2.0f + 150,
-        1080 / 2.0f + 50), Opal::Game::Instance->Renderer, [=]() {mShouldPopState = true; }),
-    mOptionsButton("Options", glm::vec4(1920 / 2.0f - 150,
+        1080 / 2.0f + 50), Opal::Game::Instance->Renderer, [=]() {mShouldPopState = true; });
+    mOptionsButton = std::make_shared<Button>("Options", glm::vec4(1920 / 2.0f - 150,
         1080 / 2.0f - 50 + 125 * 1,
         1920 / 2.0f + 150,
-        1080 / 2.0f + 50 + 125 * 1), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Options; mSwitchThisFrame = true; mSelectedButton = 0; }),
-    mCreditsButton("Credits", glm::vec4(1920 / 2.0f - 150,
+        1080 / 2.0f + 50 + 125 * 1), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Options; mSwitchThisFrame = true; mSelectedButton = 0; });
+    mCreditsButton = std::make_shared<Button>("Credits", glm::vec4(1920 / 2.0f - 150,
         1080 / 2.0f - 50 + 125 * 2,
         1920 / 2.0f + 150,
-        1080 / 2.0f + 50 + 125 * 2), Opal::Game::Instance->Renderer, [=]() {Opal::Game::Instance->PushState<CreditsState>(); }),
-    mExitButton("Exit", glm::vec4(1920 / 2.0f - 150,
+        1080 / 2.0f + 50 + 125 * 2), Opal::Game::Instance->Renderer, [=]() {Opal::Game::Instance->PushState<CreditsState>(); });
+    mExitButton = std::make_shared<Button>("Exit", glm::vec4(1920 / 2.0f - 150,
         1080 / 2.0f - 50 + 125 * 3,
         1920 / 2.0f + 150,
-        1080 / 2.0f + 50 + 125 * 3), Opal::Game::Instance->Renderer, []() {Opal::Game::Instance->End(); }),
-    mVolumeUpButton("Volume up 10%", glm::vec4(1920 / 2.0f - 400,
+        1080 / 2.0f + 50 + 125 * 3), Opal::Game::Instance->Renderer, []() {Opal::Game::Instance->End(); });
+
+    mButtons = { mPlayButton, mOptionsButton, mCreditsButton, mExitButton };
+
+    mVolumeSlider = std::make_shared<Slider>("Volume:", glm::vec4(1920 / 2.0f - 400,
         1080 / 2.0f - 40,
         1920 / 2.0f + 400,
-        1080 / 2.0f + 40), Opal::Game::Instance->Renderer, [=]() {IncreaseVolume(); }),
-    mVolumeDownButton("Volume down 10%", glm::vec4(1920 / 2.0f - 400,
+        1080 / 2.0f + 40), Opal::Game::Instance->Renderer, GameSettings::GetMasterVolume(), [](float x) {GameSettings::SetMasterVolume(x); });
+    mToggleAntialiasingCheckBox = std::make_shared<CheckBox>("Anti-Aliasing", glm::vec4(1920 / 2.0f - 400,
         1080 / 2.0f - 40 + 110 * 1,
         1920 / 2.0f + 400,
-        1080 / 2.0f + 40 + 110 * 1), Opal::Game::Instance->Renderer, [=]() {DecreaseVolume(); }),
-    mToggleAntialiasingOnButton("Turn Anti-Aliasing On", glm::vec4(1920 / 2.0f - 400,
+        1080 / 2.0f + 40 + 110 * 1), Opal::Game::Instance->Renderer,GameSettings::GetAntiAliasingEnabled(), [=](bool isChecked) {GameSettings::SetAntiAliasingEnabled(isChecked); });
+    mExitOptionsButton = std::make_shared<Button>("Back", glm::vec4(1920 / 2.0f - 400,
         1080 / 2.0f - 40 + 110 * 2,
         1920 / 2.0f + 400,
-        1080 / 2.0f + 40 + 110 * 2), Opal::Game::Instance->Renderer, [=]() {GameSettings::SetAntiAliasingEnabled(true); }),
-    mToggleAntialiasingOffButton("Turn Anti-Aliasing Off", glm::vec4(1920 / 2.0f - 400,
-        1080 / 2.0f - 40 + 110 * 3,
-        1920 / 2.0f + 400,
-        1080 / 2.0f + 40 + 110 * 3), Opal::Game::Instance->Renderer, [=]() {GameSettings::SetAntiAliasingEnabled(false); }),
-    mExitOptionsButton("Back", glm::vec4(1920 / 2.0f - 400,
-        1080 / 2.0f - 40 + 110 * 4,
-        1920 / 2.0f + 400,
-        1080 / 2.0f + 40 + 110 * 4), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Default; mSwitchThisFrame = true; mSelectedButton = 0; })
-{
-    mButtons = { mPlayButton, mOptionsButton, mCreditsButton, mExitButton };
-    mOptionsButtons = { mVolumeUpButton, mVolumeDownButton, mToggleAntialiasingOnButton, mToggleAntialiasingOffButton, mExitOptionsButton };
+        1080 / 2.0f + 40 + 110 * 2), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Default; mSwitchThisFrame = true; mSelectedButton = 0; });
+
+    mOptionsButtons = { mVolumeSlider, mToggleAntialiasingCheckBox, mExitOptionsButton };
     mSelectedButton = -1;
 }
 MainMenuState::~MainMenuState()
@@ -86,7 +81,7 @@ MainMenuState::~MainMenuState()
     
 }
 
-void MainMenuState::Tick() 
+void MainMenuState::Tick()
 {
     mScene->Update(mGame->GetDeltaTime());
 
@@ -94,20 +89,24 @@ void MainMenuState::Tick()
     {
         mJoystickReturned = true;
     }
-    else if (mJoystickReturned && Opal::InputHandler::GetLeftJoystickY() > 0.5f)
+    if ((mJoystickReturned && Opal::InputHandler::GetLeftJoystickY() > 0.5f) ||
+        (Opal::InputHandler::GetKey(SDL_SCANCODE_S) && !mLastSPressed) ||
+        (Opal::InputHandler::GetKey(SDL_SCANCODE_DOWN) && !mLastDownPressed))
     {
         auto buttonList = (mCurrentState == MenuState::Default) ? mButtons : mOptionsButtons;
-        mSelectedButton++;
+            mSelectedButton++;
 
-        if (mSelectedButton < 0)
-            mSelectedButton = buttonList.size() - 1;
+            if (mSelectedButton < 0)
+                mSelectedButton = buttonList.size() - 1;
 
-        mSelectedButton %= buttonList.size();
+            mSelectedButton %= buttonList.size();
 
-        mJoystickReturned = false;
+            mJoystickReturned = false;
         mUsingGamepad = true;
     }
-    else if (mJoystickReturned && Opal::InputHandler::GetLeftJoystickY() < -0.5f)
+    else if ((mJoystickReturned && Opal::InputHandler::GetLeftJoystickY() < -0.5f) ||
+        (Opal::InputHandler::GetKey(SDL_SCANCODE_W) && !mLastWPressed)||
+        (Opal::InputHandler::GetKey(SDL_SCANCODE_UP) && !mLastUpPressed))
     {
         auto buttonList = (mCurrentState == MenuState::Default) ? mButtons : mOptionsButtons;
         mSelectedButton--;
@@ -121,6 +120,11 @@ void MainMenuState::Tick()
         mUsingGamepad = true;
     }
 
+    mLastDownPressed = Opal::InputHandler::GetKey(SDL_SCANCODE_DOWN);
+    mLastUpPressed = Opal::InputHandler::GetKey(SDL_SCANCODE_UP);
+    mLastWPressed = Opal::InputHandler::GetKey(SDL_SCANCODE_W);
+    mLastSPressed = Opal::InputHandler::GetKey(SDL_SCANCODE_S);
+
     if (!mSwitchThisFrame)
     {
 
@@ -131,17 +135,15 @@ void MainMenuState::Tick()
             switch (mCurrentState)
             {
             case MenuState::Default:
-                mPlayButton.Tick(mGame->GetDeltaTime());
-                mOptionsButton.Tick(mGame->GetDeltaTime());
-                mCreditsButton.Tick(mGame->GetDeltaTime());
-                mExitButton.Tick(mGame->GetDeltaTime());
+                mPlayButton->Tick(mGame->GetDeltaTime());
+                mOptionsButton->Tick(mGame->GetDeltaTime());
+                mCreditsButton->Tick(mGame->GetDeltaTime());
+                mExitButton->Tick(mGame->GetDeltaTime());
                 break;
             case MenuState::Options:
-                mVolumeUpButton.Tick(mGame->GetDeltaTime());
-                mVolumeDownButton.Tick(mGame->GetDeltaTime());
-                mToggleAntialiasingOnButton.Tick(mGame->GetDeltaTime());
-                mToggleAntialiasingOffButton.Tick(mGame->GetDeltaTime());
-                mExitOptionsButton.Tick(mGame->GetDeltaTime());
+                mVolumeSlider->Tick(mGame->GetDeltaTime());
+                mToggleAntialiasingCheckBox->Tick(mGame->GetDeltaTime());
+                mExitOptionsButton->Tick(mGame->GetDeltaTime());
                 break;
             }
         }
@@ -158,15 +160,15 @@ void MainMenuState::Tick()
                 case MenuState::Default:
                     for (int i = 0; i < mButtons.size(); i++)
                     {
-                        mButtons[i].Select(i == mSelectedButton);
-                        mButtons[i].Tick(mGame->GetDeltaTime());
+                        mButtons[i]->Select(i == mSelectedButton);
+                        mButtons[i]->Tick(mGame->GetDeltaTime());
                     }
                     break;
                 case MenuState::Options:
                     for (int i = 0; i < mOptionsButtons.size(); i++)
                     {
-                        mOptionsButtons[i].Select(i == mSelectedButton);
-                        mOptionsButtons[i].Tick(mGame->GetDeltaTime());
+                        mOptionsButtons[i]->Select(i == mSelectedButton);
+                        mOptionsButtons[i]->Tick(mGame->GetDeltaTime());
                     }
                     break;
                 }
@@ -191,17 +193,15 @@ void MainMenuState::Render()
     switch (mCurrentState)
     {
     case MenuState::Default:
-        mPlayButton.Render(mMeshRenderer, mFontRenderer);
-        mOptionsButton.Render(mMeshRenderer, mFontRenderer);
-        mCreditsButton.Render(mMeshRenderer, mFontRenderer);
-        mExitButton.Render(mMeshRenderer, mFontRenderer);
+        mPlayButton->Render(mMeshRenderer, mFontRenderer);
+        mOptionsButton->Render(mMeshRenderer, mFontRenderer);
+        mCreditsButton->Render(mMeshRenderer, mFontRenderer);
+        mExitButton->Render(mMeshRenderer, mFontRenderer);
         break;
     case MenuState::Options:
-        mVolumeUpButton.Render(mMeshRenderer, mFontRenderer);
-        mVolumeDownButton.Render(mMeshRenderer, mFontRenderer);
-        mToggleAntialiasingOnButton.Render(mMeshRenderer, mFontRenderer);
-        mToggleAntialiasingOffButton.Render(mMeshRenderer, mFontRenderer);
-        mExitOptionsButton.Render(mMeshRenderer, mFontRenderer);
+        mVolumeSlider->Render(mMeshRenderer, mFontRenderer);
+        mToggleAntialiasingCheckBox->Render(mMeshRenderer, mFontRenderer);
+        mExitOptionsButton->Render(mMeshRenderer, mFontRenderer);
         break;
     }
 

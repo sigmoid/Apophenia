@@ -21,7 +21,6 @@ CursorComponent::CursorComponent()
 
 CursorComponent::~CursorComponent()
 {
-    
 }
 
 void CursorComponent::OnAdded() 
@@ -29,6 +28,20 @@ void CursorComponent::OnAdded()
 
 }
 
+void CursorComponent::KillAmbience()
+{
+    if (mAmbienceInstance != nullptr)
+    {
+        mAmbienceInstance->Stop();
+    }
+
+}
+
+void CursorComponent::StartAmbience()
+{
+    auto ambienceClip = AudioBank::Instance->GetClip("ambience.wav");
+    mAmbienceInstance = Opal::Game::Instance->mAudioEngine.PlaySound(ambienceClip, 0.125f, 1.0f, 0.0f, true, true);
+}
 void CursorComponent::OnStart() 
 {
     mTransform = mParent->GetComponent<Opal::TransformComponent>();
@@ -42,6 +55,13 @@ void CursorComponent::OnStart()
     AudioBank::Instance->LoadClip("snap1.wav");
     AudioBank::Instance->LoadClip("snap2.wav");
     AudioBank::Instance->LoadClip("snap3.wav");
+
+    AudioBank::Instance->LoadClip("blow1.wav");
+    AudioBank::Instance->LoadClip("blow2.wav");
+    AudioBank::Instance->LoadClip("blow3.wav");
+    AudioBank::Instance->LoadClip("blow4.wav");
+
+    AudioBank::Instance->LoadClip("ambience.wav");    
 }
 
 bool CursorComponent::ShouldPop(bool reset)
@@ -92,29 +112,39 @@ void CursorComponent::Update(float dTime)
         float yMovement = 0;
         float yPosNorm = mTransform->Position.y / (float)Opal::Game::Instance->GetHeight();
 
-        if(Opal::InputHandler::GetKey(mUpBinding))
+        if(Opal::InputHandler::GetKey(mUpBinding) || Opal::InputHandler::GetKey(mUpBindingAlt))
         {
             takingInput = !takingInput;
             yMovement = -1.0f;
         }
-        else if(Opal::InputHandler::GetLeftJoystickY() > 0.1)
+        else if(Opal::InputHandler::GetLeftJoystickY() > 0.3)
         {
             takingInput = true;
             yMovement = Opal::InputHandler::GetLeftJoystickY();
         }
 
-        if(Opal::InputHandler::GetKey(mDownBinding))
+        if(Opal::InputHandler::GetKey(mDownBinding) || Opal::InputHandler::GetKey(mDownBindingAlt))
         {
             takingInput = !takingInput;
             yMovement = 1.0f;
         }
-        else if(Opal::InputHandler::GetLeftJoystickY() < -0.1)
+        else if(Opal::InputHandler::GetLeftJoystickY() < -0.3)
         {
             takingInput = true;
             yMovement = Opal::InputHandler::GetLeftJoystickY();
         }
-
+        
+        float prevSpeed = mCurrentSpeed;
         mCurrentSpeed += mAcceleration * dTime * yMovement;
+
+        if ((prevSpeed >= 0 && mCurrentSpeed < 0) || (prevSpeed <= 0 && mCurrentSpeed >0))
+        {
+            int blow = (rand() % 5) + 1;
+            std::string filename = "blow";
+            filename.append(std::to_string(blow)).append(".wav");
+            auto clip = AudioBank::Instance->GetClip(filename);
+            Opal::Game::Instance->mAudioEngine.PlaySound(clip, 0.3f, 1.0f, 0.0f, false);
+        }
 
         if(mCurrentSpeed > mMaxSpeed)
         {

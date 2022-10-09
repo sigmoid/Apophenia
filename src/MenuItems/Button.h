@@ -8,15 +8,15 @@
 #include "../../Opal/Graphics/Mesh2D.h"
 #include "../../Opal/Graphics/FontRenderer.h"
 #include "../../Opal/Input/InputHandler.h"
+#include "UIElement.h"
 
-
-class Button
+class Button : public UIElement
 {
     public:
     Button(std::string text, glm::vec4 bounds, std::shared_ptr<Opal::Renderer> renderer, std::function<void()> on_click);
-    void Tick(float dt);
-    void Render(std::shared_ptr<Opal::MeshRenderer2D> mesh_renderer, std::shared_ptr<Opal::FontRenderer> font_renderer);
-    void Select(bool is_selected);
+    virtual void Tick(float dt) override;
+    virtual void Render(std::shared_ptr<Opal::MeshRenderer2D> mesh_renderer, std::shared_ptr<Opal::FontRenderer> font_renderer) override;
+    virtual void Select(bool is_selected) override;
 
     private:
     std::function<void()> mOnClick;
@@ -43,4 +43,8 @@ class Button
 
     bool mLastMouseButton = true;
     bool mLastControllerButton = false;
+    bool mLastEnterPressed = true, mLastSpacePressed = true;
+
+    bool mCanPlaySound = true;
+    void PlayToggleSound();
 };

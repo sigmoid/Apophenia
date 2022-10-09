@@ -6,6 +6,7 @@
 #include "../../Opal/Collision/AABBCollision.h"
 #include "../../Opal/EntityComponent/TransformComponent.h"
 #include "../../Opal/Graphics/Mesh2D.h"
+#include "../../Opal/Audio/AudioClipInstance.h"
 #include "AttractableComponent.h"
 
 #include <vector>
@@ -35,6 +36,9 @@ class CursorComponent : public Opal::Component
 
     bool ShouldPop(bool reset);
 
+    void KillAmbience();
+    void StartAmbience();
+
     bool GetAlive();
     void SetAlive(bool val);
     void Reset();
@@ -50,6 +54,7 @@ class CursorComponent : public Opal::Component
     float mUpperBound = 1080 - 100, mLowerBound = 100;
     float mAttractionModifier = 25.0f;
     int mUpBinding = SDL_SCANCODE_W, mDownBinding = SDL_SCANCODE_S;
+    int mUpBindingAlt = SDL_SCANCODE_UP, mDownBindingAlt = SDL_SCANCODE_DOWN;
     bool mTakeInput = true;
     std::shared_ptr<Opal::TransformComponent> mTransform = nullptr;
     std::shared_ptr<AttractableComponent> mAttractable = nullptr;
@@ -73,4 +78,8 @@ class CursorComponent : public Opal::Component
     std::vector<std::string> mRealResponse;
 
     bool mShouldPop = false;
+
+    std::shared_ptr<Opal::AudioClipInstance> mAmbienceInstance;
+
+
 };
