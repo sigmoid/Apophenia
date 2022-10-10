@@ -6,6 +6,7 @@
 #include "../DialogueSystem/Prompt.h"
 #include "../../Opal/OpalMath.h"
 #include "../../Opal/Logger.h"
+#include "../../Opal/PlayerPrefs.h"
 #include "../DialogueSystem/DialogueSerializer.h"
 #include "EndState.h"
 #include "PillState.h"
@@ -18,6 +19,7 @@ std::shared_ptr<Opal::PostProcessRenderer> PromptState::mPostProcessor = nullptr
 std::shared_ptr<Opal::Texture> PromptState::mTextureOutput = nullptr;
 std::shared_ptr<Opal::Font> PromptState::mFont = nullptr;
 std::shared_ptr<Opal::SpriteRenderer> PromptState::mSpriteRenderer = nullptr;
+std::shared_ptr<Opal::BatchRenderer2D> mBatchRenderer;
 
 PromptState::PromptState()
 {
@@ -68,8 +70,17 @@ void PromptState::Tick()
         }
     }
 
+    if (mTutorialTimer > 0)
+        mTutorialTimer -= mGame->GetDeltaTime();
+
     if((Opal::InputHandler::GetKey(SDL_SCANCODE_SPACE) || Opal::InputHandler::GetTouch() || Opal::InputHandler::GetGamepadButton(0)) && !mLastAdvancePressed)
     {
+        if (!mHasPlayedTutorial)
+        {
+            Opal::PlayerPrefs::SaveBool("HasPlayedDialogueTutorial", true);
+            mTutorialTexture = nullptr;
+        }
+
         if(mCurrentCardIdx < DialogueManager::Instance->GetCurrentPrompt().Text.size() - 1)
         {
             mCurrentCardIdx++;
@@ -112,6 +123,13 @@ void PromptState::Render()
     mTextPass->Record();
     mTextRenderer->RecordCommands();
     mSpriteRenderer->StartFrame();
+    if (mTutorialTimer <= 0 && mTutorialTexture != nullptr)
+    {
+        Opal::Sprite tutorialSprite(mTutorialTexture);
+        tutorialSprite.SetScale(0.25f, 0.25f);
+        tutorialSprite.SetPosition(1920 - tutorialSprite.GetSize().x, 1080 - tutorialSprite.GetSize().y);
+        mSpriteRenderer->Submit(tutorialSprite);
+    }
     mSpriteRenderer->RecordCommands();
     mTextPass->EndRecord();
 
@@ -161,7 +179,15 @@ void PromptState::Begin()
         mPostProcessor = mGame->Renderer->CreatePostProcessor(mTextPass, Opal::GetBaseContentPath().append("shaders/PlayStateVert"), Opal::GetBaseContentPath().append("shaders/PlayStateFrag"), true, sizeof(PromptStateShaderData), VK_SHADER_STAGE_FRAGMENT_BIT);
     }
 
+    mHasPlayedTutorial = Opal::PlayerPrefs::GetBool("HasPlayedDialogueTutorial");
+
+    if (!mHasPlayedTutorial)
+    {
+        mTutorialTexture = mGame->Renderer->CreateTexture(Opal::GetBaseContentPath().append("textures/DialogueTutorial.png"));
+    }
+
     mCurrentCardIdx = 0;
+    mTutorialTimer = mTutorialWaitTime;
     UpdateShaderData();
     UpdateColor(1.0f);
 }

@@ -178,4 +178,6 @@ class SentenceFormingState : public Opal::Gamestate
     std::shared_ptr<Opal::AudioClip> mSoundClip = nullptr;
 
     bool mFlipPreviewText = false;
+
+    static std::shared_ptr<Opal::Texture> mTutorialTexture;
 };

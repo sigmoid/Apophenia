@@ -66,4 +66,10 @@ class PromptState : public Opal::Gamestate
     void UpdateShaderData();
 
     bool mLastAdvancePressed = true;
+
+    bool mHasPlayedTutorial = false;
+    std::shared_ptr<Opal::Texture> mTutorialTexture;
+    float mTutorialTimer;
+    float mTutorialWaitTime = 2.5f;
+
 };

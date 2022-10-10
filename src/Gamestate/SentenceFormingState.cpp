@@ -33,6 +33,7 @@ std::shared_ptr<Opal::RenderPass> SentenceFormingState::mBGPass = nullptr;
 std::shared_ptr<Opal::BatchRenderer2D> SentenceFormingState::mBatch = nullptr;
 std::shared_ptr<Opal::MeshRenderer2D> SentenceFormingState::mMeshRenderer = nullptr;
 std::shared_ptr<Opal::Texture> SentenceFormingState::mCursorTexture = nullptr;
+std::shared_ptr<Opal::Texture> SentenceFormingState::mTutorialTexture = nullptr;
 std::shared_ptr<Opal::LineRenderer> SentenceFormingState::mLineRenderer = nullptr;
 std::shared_ptr<Opal::Font> SentenceFormingState::mFont = nullptr;
 std::shared_ptr<Opal::Font> SentenceFormingState::mResponseFont = nullptr;
@@ -80,76 +81,78 @@ void SentenceFormingState::Tick()
     }
 
     // Therapy black hole sequence
-    if (mKillEventTimer > 0)
     {
-        mKillEventTimer -= mGame->GetDeltaTime();
-        mWarpFactor = Opal::OpalMath::Lerp(mBaseWarp, mMaxWarp, 1.0f - mKillEventTimer / mKillWaitTime);
-
-        mSparkSpeedUp = Opal::OpalMath::Lerp(1.0f, mMaxSparkSpeedUp, 1.0f - mKillEventTimer / mKillWaitTime);
-
-        if (mKillEventTimer <= 0)
+        if (mKillEventTimer > 0)
         {
-            mKillEventTimer = 0;
-            mIsWarped = true;
-            mZoomTimer = mZoomDuration;
-            //mCursorEntity->GetComponent<CursorComponent>()->Kill();
+            mKillEventTimer -= mGame->GetDeltaTime();
+            mWarpFactor = Opal::OpalMath::Lerp(mBaseWarp, mMaxWarp, 1.0f - mKillEventTimer / mKillWaitTime);
+
+            mSparkSpeedUp = Opal::OpalMath::Lerp(1.0f, mMaxSparkSpeedUp, 1.0f - mKillEventTimer / mKillWaitTime);
+
+            if (mKillEventTimer <= 0)
+            {
+                mKillEventTimer = 0;
+                mIsWarped = true;
+                mZoomTimer = mZoomDuration;
+                //mCursorEntity->GetComponent<CursorComponent>()->Kill();
+            }
         }
-    }
-    else if (mZoomTimer > 0)
-    {
-        mScreenShakeTimer = 0;
-        mZoomTimer -= mGame->GetDeltaTime();
-        if (mZoomTimer <= 0)
+        else if (mZoomTimer > 0)
         {
-            mZoomTimer = 0;
-            mZoom2Timer = mZoom2Duration;
+            mScreenShakeTimer = 0;
+            mZoomTimer -= mGame->GetDeltaTime();
+            if (mZoomTimer <= 0)
+            {
+                mZoomTimer = 0;
+                mZoom2Timer = mZoom2Duration;
+            }
+
+            float progress = 1.0f - mZoomTimer / mZoomDuration;
+            mCurrentZoom = Opal::OpalMath::Lerp(1.0f, mZoomTarget, progress);
+            Opal::Camera::ActiveCamera->SetZoom(mCurrentZoom);
+            float translation = 1080.0f / mCurrentZoom;
+            translation = translation - 1080.0f;
+            translation /= 2.0f;
+
+            Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, translation));
         }
-
-        float progress = 1.0f - mZoomTimer / mZoomDuration;
-        mCurrentZoom = Opal::OpalMath::Lerp(1.0f, mZoomTarget, progress);
-        Opal::Camera::ActiveCamera->SetZoom(mCurrentZoom);
-        float translation = 1080.0f / mCurrentZoom;
-        translation = translation - 1080.0f;
-        translation /= 2.0f;
-
-        Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, translation));
-    }
-    else if (mZoom2Timer > 0)
-    {
-        mScreenShakeTimer = 0;
-        mZoom2Timer -= mGame->GetDeltaTime();
-        if (mZoom2Timer <= 0)
+        else if (mZoom2Timer > 0)
         {
-            mZoom2Timer = 0;
+            mScreenShakeTimer = 0;
+            mZoom2Timer -= mGame->GetDeltaTime();
+            if (mZoom2Timer <= 0)
+            {
+                mZoom2Timer = 0;
 
-            Opal::Camera::ActiveCamera->SetZoom(1);
-            Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, 0));
-            DialogueManager::Instance->ProcessResponse("KILL");
-            DialogueManager::Instance->EatTransition = true;
-            mGame->PopState();
-            return;
+                Opal::Camera::ActiveCamera->SetZoom(1);
+                Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, 0));
+                DialogueManager::Instance->ProcessResponse("KILL");
+                DialogueManager::Instance->EatTransition = true;
+                mGame->PopState();
+                return;
+            }
+
+            float progress = 1.0f - mZoom2Timer / mZoom2Duration;
+            progress = pow(progress, mZoom2Pow);
+            mCurrentZoom = Opal::OpalMath::Lerp(mZoomTarget, mZoom2Target, progress);
+            Opal::Camera::ActiveCamera->SetZoom(mCurrentZoom);
+            float translation = 1080.0f / mCurrentZoom;
+            translation = translation - 1080.0f;
+            translation /= 2.0f;
+
+            mWarpFactor = Opal::OpalMath::Lerp(mMaxWarp, mBaseWarp, progress);
+
+            Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, translation));
         }
-
-        float progress = 1.0f - mZoom2Timer / mZoom2Duration;
-        progress = pow(progress, mZoom2Pow);
-        mCurrentZoom = Opal::OpalMath::Lerp(mZoomTarget, mZoom2Target, progress);
-        Opal::Camera::ActiveCamera->SetZoom(mCurrentZoom);
-        float translation = 1080.0f / mCurrentZoom;
-        translation = translation - 1080.0f;
-        translation /= 2.0f;
-
-        mWarpFactor = Opal::OpalMath::Lerp(mMaxWarp, mBaseWarp, progress);
-
-        Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, translation));
-    }
-    else if (mScreenShakeTimer > 0)
-    {
-        Opal::Camera::ActiveCamera->MoveCamera(glm::vec2((rand() % mScreenShakeIntensity * 1000) / 1000.0f - (float)mScreenShakeIntensity / 2, (rand() % mScreenShakeIntensity * 1000) / 1000.0f - (float)mScreenShakeIntensity / 2));
-        mScreenShakeTimer -= mGame->GetDeltaTime();
-
-        if (mScreenShakeTimer <= 0)
+        else if (mScreenShakeTimer > 0)
         {
-            Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, 0));
+            Opal::Camera::ActiveCamera->MoveCamera(glm::vec2((rand() % mScreenShakeIntensity * 1000) / 1000.0f - (float)mScreenShakeIntensity / 2, (rand() % mScreenShakeIntensity * 1000) / 1000.0f - (float)mScreenShakeIntensity / 2));
+            mScreenShakeTimer -= mGame->GetDeltaTime();
+
+            if (mScreenShakeTimer <= 0)
+            {
+                Opal::Camera::ActiveCamera->MoveCamera(glm::vec2(0, 0));
+            }
         }
     }
 
@@ -256,6 +259,11 @@ void SentenceFormingState::Tick()
             }
             else
             {
+                if (mTutorialTexture != nullptr)
+                {
+                    mTutorialTexture = nullptr;
+                    Opal::PlayerPrefs::SaveBool("HasPlayedMovementTutorial", true);
+                }
                 mGame->PopState();
             }
         }
@@ -370,6 +378,14 @@ void SentenceFormingState::Render()
 
     mBatch->StartBatch();
     mScene->Render(mBatch);
+    if (mTutorialTexture != nullptr)
+    {
+        float scale = 0.25f;
+        Opal::Sprite tutorialSprite(mTutorialTexture);
+        tutorialSprite.SetScale(scale, scale);
+        tutorialSprite.SetPosition(1920 - tutorialSprite.GetSize().x, 1080 - tutorialSprite.GetSize().y);
+        mBatch->BatchSprite(tutorialSprite);
+    }
     mBatch->RenderBatch();
 
     mBGPass->Record();
@@ -455,9 +471,17 @@ void SentenceFormingState::Begin()
         mLineRenderer = std::make_shared<Opal::LineRenderer>();
         mLineRenderer->Init(mGame->Renderer, mTextPass, true);
 
+        if (!Opal::PlayerPrefs::GetBool("HasPlayedMovementTutorial"))
+        {
+            mTutorialTexture = mGame->Renderer->CreateTexture(Opal::GetBaseContentPath().append("textures/MovementTutorial.png"));
+        }
+
         std::vector<std::shared_ptr<Opal::Texture> > textures;
         mCursorTexture = mGame->Renderer->CreateTexture(Opal::GetBaseContentPath().append("textures/cursor.png"));
         textures.push_back(mCursorTexture);
+        if (mTutorialTexture != nullptr)
+            textures.push_back(mTutorialTexture);
+
         mBatch = mGame->Renderer->CreateBatch(mTextPass, 1000, textures, true);
 
         mUIPass = mGame->Renderer->CreateRenderPass(false);
@@ -468,6 +492,8 @@ void SentenceFormingState::Begin()
         mResponseRenderer = mGame->Renderer->CreateFontRenderer(mUIPass, *mResponseFont, glm::vec2(1920 - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
     }
     mScene = std::make_shared<Opal::Scene>(mBatch);
+
+
 
     mNoiseFrequency *= mLineSpeed / 1000;
 
