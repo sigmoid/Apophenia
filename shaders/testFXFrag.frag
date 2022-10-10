@@ -149,6 +149,7 @@ void main() {
          else
          {
             outColor = texture(texSampler, newCoords);
+            outColor.a = 1.0;
          }
     }
 
