@@ -74,7 +74,10 @@ void DrawingState::Begin()
 
     mBatch = mGame->Renderer->CreateBatch(mRenderPass, 100, std::vector<std::shared_ptr<Opal::Texture> >(), true);
     mScene = std::make_shared<Opal::Scene>(mBatch);
-    mScene->Load(DrawingPath);
+    std::string updatedDrawingPath = DrawingPath;
+    updatedDrawingPath.erase(0, 3);
+    updatedDrawingPath = Opal::GetBaseContentPath().append(updatedDrawingPath);
+    mScene->Load(updatedDrawingPath);
     mScene->SortEntities(LinePointCompare());
 }
 

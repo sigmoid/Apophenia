@@ -206,6 +206,19 @@ void MainMenuState::Render()
     }
 
 
+    {
+        std::string version = "Version 1.0.0";
+        float padding = 25.f;
+        float width = mFontRenderer->MeasureText(version);
+        mFontRenderer->RenderString(version, 
+            1920 - padding - width,
+            1080 - padding - mFont->GetSize(),
+            1.0f,
+            1.0f,
+            1.0f,
+            0.7f,
+            1.0f);
+    }
     mBatch->StartBatch();
     mScene->Render(mBatch);
     mBatch->BatchSprite(mTitleSprite);

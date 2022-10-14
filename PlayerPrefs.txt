@@ -1,4 +1,4 @@
-MasterVolume,0.245000
+AntiAliasingEnabled,true
 HasPlayedMovementTutorial,true
 HasPlayedDialogueTutorial,true
-AntiAliasingEnabled,false
+MasterVolume,0.772485

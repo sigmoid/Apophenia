@@ -112,8 +112,11 @@ void CursorComponent::Update(float dTime)
         float yMovement = 0;
         float yPosNorm = mTransform->Position.y / (float)Opal::Game::Instance->GetHeight();
 
+        bool upPressed = false;
+        bool downPressed = false;
         if(Opal::InputHandler::GetKey(mUpBinding) || Opal::InputHandler::GetKey(mUpBindingAlt))
         {
+            upPressed = true;
             takingInput = !takingInput;
             yMovement = -1.0f;
         }
@@ -125,6 +128,7 @@ void CursorComponent::Update(float dTime)
 
         if(Opal::InputHandler::GetKey(mDownBinding) || Opal::InputHandler::GetKey(mDownBindingAlt))
         {
+            downPressed = true;
             takingInput = !takingInput;
             yMovement = 1.0f;
         }
@@ -137,7 +141,7 @@ void CursorComponent::Update(float dTime)
         float prevSpeed = mCurrentSpeed;
         mCurrentSpeed += mAcceleration * dTime * yMovement;
 
-        if ((prevSpeed >= 0 && mCurrentSpeed < 0) || (prevSpeed <= 0 && mCurrentSpeed >0))
+        if ((prevSpeed >= 0 && mCurrentSpeed < 0 && !downPressed) || (prevSpeed <= 0 && mCurrentSpeed >0 && !upPressed))
         {
             int blow = (rand() % 5) + 1;
             std::string filename = "blow";
