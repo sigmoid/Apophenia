@@ -73,6 +73,7 @@
 		61CE945A6D6345609EE0D935 /* SpriteRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52DF2D71AB48417DA47B9C26 /* SpriteRenderer.cpp */; };
 		61EC8F24B8AC40219AC2789B /* EndState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 064EBF525AD74EBC98BE6FC3 /* EndState.cpp */; };
 		62256BA9C67945BA85687DF5 /* VulkanRenderPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC58396BF754ED0AE7A59B9 /* VulkanRenderPass.cpp */; };
+		660AFCA128FB310600034601 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 660AFC9F28FB304300034601 /* Assets.xcassets */; };
 		664B9465288C76A8001BE983 /* libFreetype2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 664B9464288C76A8001BE983 /* libFreetype2.a */; };
 		664B9468288C7A20001BE983 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 664B9466288C76F2001BE983 /* libSDL2.a */; };
 		664B9469288C8897001BE983 /* libMoltenVK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 664B9460288C7468001BE983 /* libMoltenVK.a */; };
@@ -87,7 +88,16 @@
 		66B4791C2896EE3B008654E4 /* VulkanRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8751E5BE2E0045C49ABF981B /* VulkanRenderer.cpp */; };
 		66E56D49288C699A003DA096 /* IOS_Main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66E56D48288C699A003DA096 /* IOS_Main.mm */; };
 		66FA664328B7C3E700CC2DD8 /* CreditsState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66FA664228B7C3E700CC2DD8 /* CreditsState.cpp */; };
-		66FA664528B7C3FD00CC2DD8 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66FA664428B7C3FD00CC2DD8 /* Button.cpp */; };
+		66FA664F28F9EAF500CC2DD8 /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66FA664928F9EAF500CC2DD8 /* Slider.cpp */; };
+		66FA665028F9EAF500CC2DD8 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66FA664A28F9EAF500CC2DD8 /* Button.cpp */; };
+		66FA665128F9EAF500CC2DD8 /* CheckBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66FA664C28F9EAF500CC2DD8 /* CheckBox.cpp */; };
+		66FA665328F9EB5600CC2DD8 /* LogoState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66FA665228F9EB5600CC2DD8 /* LogoState.cpp */; };
+		66FA665728F9EB7700CC2DD8 /* GameSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66FA665628F9EB7700CC2DD8 /* GameSettings.cpp */; };
+		66FA665928F9EBA000CC2DD8 /* PlayerPrefs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66FA665828F9EBA000CC2DD8 /* PlayerPrefs.cpp */; };
+		66FA665A28F9EBA000CC2DD8 /* PlayerPrefs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66FA665828F9EBA000CC2DD8 /* PlayerPrefs.cpp */; };
+		66FA665D28F9EBFF00CC2DD8 /* AudioBank.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66FA665C28F9EBFF00CC2DD8 /* AudioBank.cpp */; };
+		66FA665E28F9EBFF00CC2DD8 /* AudioBank.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66FA665C28F9EBFF00CC2DD8 /* AudioBank.cpp */; };
+		66FA666128FAEE7300CC2DD8 /* PlayerPrefs.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FA666028FA1E6400CC2DD8 /* PlayerPrefs.txt */; };
 		6802BF15A48A4501AA9E781E /* TextureAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8BAD65FD74903BF5EA291 /* TextureAtlas.cpp */; };
 		697EE14D218B42AFB2F0F2D3 /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A3DEF46204280AA804637 /* Renderer.cpp */; };
 		6A1C3FD8771D4B93BE9B7733 /* LineRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00F3FB79C8E47B1BAD2D3F2 /* LineRenderer.cpp */; };
@@ -137,7 +147,7 @@
 		CE3FEF331A1746A29AF27851 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3960E135566B44889AD2205E /* Sprite.cpp */; };
 		CFE1345C2DA747BE83740E9A /* stb_vorbis.c in Sources */ = {isa = PBXBuildFile; fileRef = 02440193C68B429A865A7C92 /* stb_vorbis.c */; };
 		D5BEE05E937D49EBBD4914C4 /* soloud_audiosource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03B6D3A0EDA24ECD82136840 /* soloud_audiosource.cpp */; };
-		D606E5D57BFB431AA70814A7 /* soloud_miniaudio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4776A9F56D8847908DF7D4F9 /* soloud_miniaudio.cpp */; };
+		D606E5D57BFB431AA70814A7 /* soloud_sdl2_static.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4776A9F56D8847908DF7D4F9 /* soloud_sdl2_static.cpp */; };
 		D62CEC31C34240F09C4B67AF /* EntityUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7959909755DF43CBBC697500 /* EntityUI.cpp */; };
 		D7B8A436E9F94B128B16BE1D /* AudioClip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA2D75B9171246808333F881 /* AudioClip.cpp */; };
 		DBC47B3C0C48484AAEB6DAAD /* NoiseMoveComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9E144011E154DE69CB0AE51 /* NoiseMoveComponent.cpp */; };
@@ -207,6 +217,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				66FA666128FAEE7300CC2DD8 /* PlayerPrefs.txt in CopyFiles */,
 				66B47910288D94C4008654E4 /* textures in CopyFiles */,
 				66B47911288D94C7008654E4 /* shaders in CopyFiles */,
 				66B47912288D94C9008654E4 /* SaveGame in CopyFiles */,
@@ -309,7 +320,7 @@
 		4593CF1FB28747BA9B1165FD /* MainMenuState.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = MainMenuState.cpp; path = src/Gamestate/MainMenuState.cpp; sourceTree = SOURCE_ROOT; };
 		46D9EBC7F7394CA284A31126 /* libOpald.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libOpald.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		470BA3956BC3408BB972AC95 /* WordBank.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = WordBank.h; path = src/DialogueSystem/WordBank.h; sourceTree = SOURCE_ROOT; };
-		4776A9F56D8847908DF7D4F9 /* soloud_miniaudio.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_miniaudio.cpp; path = Opal/vendor/soloud/src/backend/miniaudio/soloud_miniaudio.cpp; sourceTree = SOURCE_ROOT; };
+		4776A9F56D8847908DF7D4F9 /* soloud_sdl2_static.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_sdl2_static.cpp; path = Opal/vendor/soloud/src/backend/miniaudio/soloud_sdl2_static.cpp; sourceTree = SOURCE_ROOT; };
 		4858ECAF8C024F07B2BCD2BC /* soloud_fft.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_fft.cpp; path = Opal/vendor/soloud/src/core/soloud_fft.cpp; sourceTree = SOURCE_ROOT; };
 		49AFC7FDD9C546A5AFC642E4 /* soloud_fft_lut.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_fft_lut.cpp; path = Opal/vendor/soloud/src/core/soloud_fft_lut.cpp; sourceTree = SOURCE_ROOT; };
 		49BBFD4AF4694A59A7ADF12B /* VulkanPipeline.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = VulkanPipeline.cpp; path = Opal/Graphics/Vulkan/VulkanPipeline.cpp; sourceTree = SOURCE_ROOT; };
@@ -346,6 +357,7 @@
 		651E07BE960C4F30BE53C117 /* BatchRenderer2D.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = BatchRenderer2D.h; path = Opal/Graphics/BatchRenderer2D.h; sourceTree = SOURCE_ROOT; };
 		65436DDAE414418FBAC57FCA /* PromptState.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PromptState.h; path = src/Gamestate/PromptState.h; sourceTree = SOURCE_ROOT; };
 		65E65712BA144344A9307A64 /* util.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = util.h; path = Opal/util.h; sourceTree = SOURCE_ROOT; };
+		660AFC9F28FB304300034601 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		664B945E288C7442001BE983 /* MoltenVK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MoltenVK; path = ../MoltenVK; sourceTree = "<group>"; };
 		664B9460288C7468001BE983 /* libMoltenVK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMoltenVK.a; path = "../MoltenVK/Package/Release/MoltenVK/MoltenVK.xcframework/ios-arm64/libMoltenVK.a"; sourceTree = "<group>"; };
 		664B9462288C749C001BE983 /* libMoltenVK.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMoltenVK.dylib; path = ../MoltenVK/Package/Release/MoltenVK/dylib/iOS/libMoltenVK.dylib; sourceTree = "<group>"; };
@@ -364,9 +376,23 @@
 		66E56D47288C695F003DA096 /* Main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Main.h; path = src/Main.h; sourceTree = "<group>"; };
 		66E56D48288C699A003DA096 /* IOS_Main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = IOS_Main.mm; path = src/IOS_Main.mm; sourceTree = "<group>"; };
 		66FA664228B7C3E700CC2DD8 /* CreditsState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CreditsState.cpp; path = src/Gamestate/CreditsState.cpp; sourceTree = "<group>"; };
-		66FA664428B7C3FD00CC2DD8 /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Button.cpp; path = src/MenuItems/Button.cpp; sourceTree = "<group>"; };
 		66FA664628B7C41300CC2DD8 /* CreditsState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditsState.h; path = src/Gamestate/CreditsState.h; sourceTree = "<group>"; };
-		66FA664728B7C42200CC2DD8 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Button.h; path = src/MenuItems/Button.h; sourceTree = "<group>"; };
+		66FA664828F9EAF400CC2DD8 /* Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Slider.h; path = src/MenuItems/Slider.h; sourceTree = "<group>"; };
+		66FA664928F9EAF500CC2DD8 /* Slider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Slider.cpp; path = src/MenuItems/Slider.cpp; sourceTree = "<group>"; };
+		66FA664A28F9EAF500CC2DD8 /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Button.cpp; path = src/MenuItems/Button.cpp; sourceTree = "<group>"; };
+		66FA664B28F9EAF500CC2DD8 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Button.h; path = src/MenuItems/Button.h; sourceTree = "<group>"; };
+		66FA664C28F9EAF500CC2DD8 /* CheckBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CheckBox.cpp; path = src/MenuItems/CheckBox.cpp; sourceTree = "<group>"; };
+		66FA664D28F9EAF500CC2DD8 /* UIElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIElement.h; path = src/MenuItems/UIElement.h; sourceTree = "<group>"; };
+		66FA664E28F9EAF500CC2DD8 /* CheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckBox.h; path = src/MenuItems/CheckBox.h; sourceTree = "<group>"; };
+		66FA665228F9EB5600CC2DD8 /* LogoState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LogoState.cpp; path = src/Gamestate/LogoState.cpp; sourceTree = "<group>"; };
+		66FA665428F9EB5D00CC2DD8 /* LogoState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LogoState.h; path = src/Gamestate/LogoState.h; sourceTree = "<group>"; };
+		66FA665528F9EB6E00CC2DD8 /* GameSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameSettings.h; path = src/GameSettings.h; sourceTree = "<group>"; };
+		66FA665628F9EB7700CC2DD8 /* GameSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameSettings.cpp; path = src/GameSettings.cpp; sourceTree = "<group>"; };
+		66FA665828F9EBA000CC2DD8 /* PlayerPrefs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlayerPrefs.cpp; path = Opal/PlayerPrefs.cpp; sourceTree = "<group>"; };
+		66FA665B28F9EBAD00CC2DD8 /* PlayerPrefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlayerPrefs.h; path = Opal/PlayerPrefs.h; sourceTree = "<group>"; };
+		66FA665C28F9EBFF00CC2DD8 /* AudioBank.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AudioBank.cpp; path = src/AudioBank.cpp; sourceTree = "<group>"; };
+		66FA665F28F9EC0D00CC2DD8 /* AudioBank.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AudioBank.h; path = src/AudioBank.h; sourceTree = "<group>"; };
+		66FA666028FA1E6400CC2DD8 /* PlayerPrefs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PlayerPrefs.txt; sourceTree = SOURCE_ROOT; };
 		674C8A5F243E44D0ABFA1DE7 /* soloud_core_filterops.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = soloud_core_filterops.cpp; path = Opal/vendor/soloud/src/core/soloud_core_filterops.cpp; sourceTree = SOURCE_ROOT; };
 		69814328CFB346E5B8C6283F /* CollisionManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CollisionManager.cpp; path = Opal/Collision/CollisionManager.cpp; sourceTree = SOURCE_ROOT; };
 		6AA9D22D4F5A497FBB36184C /* AudioEngine.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = AudioEngine.h; path = Opal/Audio/AudioEngine.h; sourceTree = SOURCE_ROOT; };
@@ -591,6 +617,7 @@
 		664B9471288CC82E001BE983 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				66FA666028FA1E6400CC2DD8 /* PlayerPrefs.txt */,
 				664B9478288CC88A001BE983 /* textures */,
 				664B9477288CC880001BE983 /* shaders */,
 				664B9476288CC877001BE983 /* SaveGame */,
@@ -605,6 +632,7 @@
 		6D5016C531374D28841E533C /* Header Files */ = {
 			isa = PBXGroup;
 			children = (
+				66FA665B28F9EBAD00CC2DD8 /* PlayerPrefs.h */,
 				4B14032602594BEE814FE78E /* AudioClip.h */,
 				E1151374EAB447C9A2C4ED66 /* AudioClipInstance.h */,
 				6AA9D22D4F5A497FBB36184C /* AudioEngine.h */,
@@ -794,6 +822,7 @@
 				E10F471A0BFB4755909E766F /* Header Files */,
 				CA3431ADDFB74B2D9E7212FB /* Resources */,
 				D1806D64A6DB41C7A3565D7A /* CMakeLists.txt */,
+				660AFC9F28FB304300034601 /* Assets.xcassets */,
 			);
 			name = OfMoonsAndMania;
 			sourceTree = "<group>";
@@ -813,7 +842,12 @@
 		992BFFCBE15F4903ACA34B1C /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
-				66FA664428B7C3FD00CC2DD8 /* Button.cpp */,
+				66FA665C28F9EBFF00CC2DD8 /* AudioBank.cpp */,
+				66FA665628F9EB7700CC2DD8 /* GameSettings.cpp */,
+				66FA665228F9EB5600CC2DD8 /* LogoState.cpp */,
+				66FA664A28F9EAF500CC2DD8 /* Button.cpp */,
+				66FA664C28F9EAF500CC2DD8 /* CheckBox.cpp */,
+				66FA664928F9EAF500CC2DD8 /* Slider.cpp */,
 				66FA664228B7C3E700CC2DD8 /* CreditsState.cpp */,
 				D85576265EC0440D9C7FED5D /* AttractableComponent.cpp */,
 				EBBFC2E73C0A432882403B24 /* CursorComponent.cpp */,
@@ -872,7 +906,13 @@
 		E10F471A0BFB4755909E766F /* Header Files */ = {
 			isa = PBXGroup;
 			children = (
-				66FA664728B7C42200CC2DD8 /* Button.h */,
+				66FA665F28F9EC0D00CC2DD8 /* AudioBank.h */,
+				66FA665528F9EB6E00CC2DD8 /* GameSettings.h */,
+				66FA665428F9EB5D00CC2DD8 /* LogoState.h */,
+				66FA664B28F9EAF500CC2DD8 /* Button.h */,
+				66FA664E28F9EAF500CC2DD8 /* CheckBox.h */,
+				66FA664828F9EAF400CC2DD8 /* Slider.h */,
+				66FA664D28F9EAF500CC2DD8 /* UIElement.h */,
 				66FA664628B7C41300CC2DD8 /* CreditsState.h */,
 				664B946D288CA509001BE983 /* GamePassThruController.h */,
 				66E56D47288C695F003DA096 /* Main.h */,
@@ -908,6 +948,7 @@
 		FD27ECE06B594FD081C440ED /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
+				66FA665828F9EBA000CC2DD8 /* PlayerPrefs.cpp */,
 				FA2D75B9171246808333F881 /* AudioClip.cpp */,
 				1BF6F63E0B554D46AED3637F /* AudioClipInstance.cpp */,
 				423077AE2C6345A5AE8E77A2 /* AudioEngine.cpp */,
@@ -970,7 +1011,7 @@
 				259E3F0702DD45EE95378BB6 /* soloud_wav.cpp */,
 				15926AA14CC845C2ACB3211A /* soloud_wavstream.cpp */,
 				02440193C68B429A865A7C92 /* stb_vorbis.c */,
-				4776A9F56D8847908DF7D4F9 /* soloud_miniaudio.cpp */,
+				4776A9F56D8847908DF7D4F9 /* soloud_sdl2_static.cpp */,
 				0E2A315C638D4A20862031DB /* soloud.cpp */,
 				03B6D3A0EDA24ECD82136840 /* soloud_audiosource.cpp */,
 				A46B1EC8886B4783807DFD0B /* soloud_bus.cpp */,
@@ -1151,8 +1192,10 @@
 				BE130E00AFCE40C291816D50 /* TileChunk.cpp in Sources */,
 				A792B713AF5D43D5B8A6D3A0 /* TileChunkManager.cpp in Sources */,
 				A50BA90C0D5D4302838EDE0A /* UIContext.cpp in Sources */,
+				66FA665E28F9EBFF00CC2DD8 /* AudioBank.cpp in Sources */,
 				C51EE08316A3429C9962E43E /* Window.cpp in Sources */,
 				EF7148E8A3A24F2193FC369A /* imgui.cpp in Sources */,
+				66FA665A28F9EBA000CC2DD8 /* PlayerPrefs.cpp in Sources */,
 				5526B0786F1E473BB62D69B6 /* imgui_demo.cpp in Sources */,
 				9444CEBA926041979B1D1568 /* imgui_draw.cpp in Sources */,
 				18E52598DF3D46A5A5F1723B /* imgui_impl_sdl.cpp in Sources */,
@@ -1166,7 +1209,7 @@
 				13B80A7C00884636B72EA896 /* soloud_wav.cpp in Sources */,
 				E19ED69695D54257B592D0D1 /* soloud_wavstream.cpp in Sources */,
 				CFE1345C2DA747BE83740E9A /* stb_vorbis.c in Sources */,
-				D606E5D57BFB431AA70814A7 /* soloud_miniaudio.cpp in Sources */,
+				D606E5D57BFB431AA70814A7 /* soloud_sdl2_static.cpp in Sources */,
 				32EC82C88AC04817B5B3E6B5 /* soloud.cpp in Sources */,
 				D5BEE05E937D49EBBD4914C4 /* soloud_audiosource.cpp in Sources */,
 				DDEB96FADA39400C9F247B7D /* soloud_bus.cpp in Sources */,
@@ -1194,30 +1237,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FA664528B7C3FD00CC2DD8 /* Button.cpp in Sources */,
+				66FA665728F9EB7700CC2DD8 /* GameSettings.cpp in Sources */,
 				66FA664328B7C3E700CC2DD8 /* CreditsState.cpp in Sources */,
 				95D3477DF09E4857AECCF8D3 /* AttractableComponent.cpp in Sources */,
 				75C5DD2807E94E1B95D9A8D1 /* CursorComponent.cpp in Sources */,
 				AF9D1FD10D5046AF8CCB31A1 /* DragComponent.cpp in Sources */,
+				66FA665028F9EAF500CC2DD8 /* Button.cpp in Sources */,
 				97A1664770004A6C8DDDD185 /* EndWallComponent.cpp in Sources */,
+				66FA664F28F9EAF500CC2DD8 /* Slider.cpp in Sources */,
 				DBC47B3C0C48484AAEB6DAAD /* NoiseMoveComponent.cpp in Sources */,
 				AE919355D4074AA59435D275 /* SentenceFragmentComponent.cpp in Sources */,
 				66B4791B2896C664008654E4 /* Launch Screen.storyboard in Sources */,
 				CA40017EA08F4804B5C32430 /* SparkComponent.cpp in Sources */,
+				66FA665128F9EAF500CC2DD8 /* CheckBox.cpp in Sources */,
 				66E56D49288C699A003DA096 /* IOS_Main.mm in Sources */,
 				547700A53DE14E1A8FB616E2 /* DialogueManager.cpp in Sources */,
+				66FA665D28F9EBFF00CC2DD8 /* AudioBank.cpp in Sources */,
 				60C86AF208B34C548FE26C52 /* DialogueSerializer.cpp in Sources */,
 				994758E6D64541518883C474 /* DrawingState.cpp in Sources */,
 				61EC8F24B8AC40219AC2789B /* EndState.cpp in Sources */,
 				E3B212919BBD46D99F078527 /* MainMenuState.cpp in Sources */,
+				66FA665928F9EBA000CC2DD8 /* PlayerPrefs.cpp in Sources */,
 				DE7298F026F24AAEB7B27AA0 /* ManagerState.cpp in Sources */,
 				C4E63882B158457AB81A1C41 /* NarrativeState.cpp in Sources */,
 				F5B1D24E98B945FCB78567CC /* PillState.cpp in Sources */,
 				2EDFB87261A645458A506CCB /* PromptState.cpp in Sources */,
 				C58CCB2F541E4E639A8FF601 /* SentenceFormingState.cpp in Sources */,
 				4C7B61035D314C708B8752B4 /* StrikesState.cpp in Sources */,
+				66FA665328F9EB5600CC2DD8 /* LogoState.cpp in Sources */,
 				0F3471AE0DBA4395A692B87F /* Main.cpp in Sources */,
 				66B4791C2896EE3B008654E4 /* VulkanRenderer.cpp in Sources */,
+				660AFCA128FB310600034601 /* Assets.xcassets in Sources */,
 				CC20A1D28EF443B0B5F6FCA0 /* Pill.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1320,6 +1370,8 @@
 		1A5A98DE598A43B9B8FCF287 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
@@ -1346,6 +1398,7 @@
 				INSTALL_PATH = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MARKETING_VERSION = 1.0.0;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-std=c++17",
 					"-DNDEBUG",
@@ -1479,6 +1532,8 @@
 		7A94C344467B452881790FC3 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
@@ -1505,6 +1560,7 @@
 				INSTALL_PATH = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MARKETING_VERSION = 1.0.0;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-std=c++17",
 					"-DNDEBUG",
@@ -1802,6 +1858,8 @@
 		DD46B368BEAE413AB81A7B39 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
@@ -1828,6 +1886,7 @@
 				INSTALL_PATH = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MARKETING_VERSION = 1.0.0;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-std=c++17",
 					"-DNDEBUG",
@@ -1927,6 +1986,8 @@
 		E7086A3E21184DF1B3B9513E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
@@ -1953,6 +2014,7 @@
 				INSTALL_PATH = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MARKETING_VERSION = 1.0.0;
 				OTHER_CPLUSPLUSFLAGS = "-std=c++17";
 				OTHER_LDFLAGS = (
 					"-Wl,-headerpad_max_install_names",

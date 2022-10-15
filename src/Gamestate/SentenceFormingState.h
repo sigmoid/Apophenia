@@ -180,4 +180,10 @@ class SentenceFormingState : public Opal::Gamestate
     bool mFlipPreviewText = false;
 
     static std::shared_ptr<Opal::Texture> mTutorialTexture;
+
+    float mJoystickRadius = 35, mJoystickControlRadius = 100;
+    std::shared_ptr<Opal::Mesh2D> mJoystickMesh, mJoystickBG;
+    int mJoystickResolution = 256;
+    void GenerateJoystickMeshes();
+    float ProcessVirtualJoystick();
 };

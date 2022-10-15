@@ -174,7 +174,7 @@ void PromptState::Begin()
         #ifdef __IPHONEOS__
         mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(Opal::Game::Instance->GetWidth() * (0.8), Opal::Game::Instance->GetHeight()), Opal::Camera::ActiveCamera);
         #else
-        mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(1920 - 300, 1080), Opal::Camera::ActiveCamera);
+        mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(1920 , 1080), Opal::Camera::ActiveCamera);
         #endif
         mPostProcessor = mGame->Renderer->CreatePostProcessor(mTextPass, Opal::GetBaseContentPath().append("shaders/PlayStateVert"), Opal::GetBaseContentPath().append("shaders/PlayStateFrag"), true, sizeof(PromptStateShaderData), VK_SHADER_STAGE_FRAGMENT_BIT);
     }

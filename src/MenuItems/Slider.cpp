@@ -28,7 +28,13 @@ void Slider::Tick(float dt)
     GenerateBGMesh();
     GenerateCursorMesh();
 
+    #ifndef __IPHONEOS__
     glm::vec2 mousePos = Opal::InputHandler::GetMousePos();
+    #else
+    glm::vec2 mousePos = Opal::InputHandler::GetTouchPos();
+    mousePos.x *= 1920;
+    mousePos.y *= 1080;
+    #endif
 
     if (abs(Opal::InputHandler::GetLeftJoystickX()) < 0.5f)
     {
@@ -78,8 +84,6 @@ void Slider::Tick(float dt)
 
     if (mIsHovering && !mControllerInput && Opal::InputHandler::GetLeftMouseButtonDown())
     {
-        auto mousePos = Opal::InputHandler::GetMousePos();
-        
         mousePos -= (mBounds.z + mBounds.x) / 2;
         mousePos /= ((mBounds.z - mBounds.x)/ 2);
 

@@ -44,6 +44,7 @@ class Button : public UIElement
     bool mLastMouseButton = true;
     bool mLastControllerButton = false;
     bool mLastEnterPressed = true, mLastSpacePressed = true;
+    bool mLastTouch = true;
 
     bool mCanPlaySound = true;
     void PlayToggleSound();

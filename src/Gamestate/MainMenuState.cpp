@@ -53,27 +53,19 @@ MainMenuState::MainMenuState()
         1080 / 2.0f - 50 + 125 * 2,
         1920 / 2.0f + 150,
         1080 / 2.0f + 50 + 125 * 2), Opal::Game::Instance->Renderer, [=]() {Opal::Game::Instance->PushState<CreditsState>(); });
-    mExitButton = std::make_shared<Button>("Exit", glm::vec4(1920 / 2.0f - 150,
-        1080 / 2.0f - 50 + 125 * 3,
-        1920 / 2.0f + 150,
-        1080 / 2.0f + 50 + 125 * 3), Opal::Game::Instance->Renderer, []() {Opal::Game::Instance->End(); });
 
-    mButtons = { mPlayButton, mOptionsButton, mCreditsButton, mExitButton };
+    mButtons = { mPlayButton, mOptionsButton, mCreditsButton };
 
     mVolumeSlider = std::make_shared<Slider>("Volume:", glm::vec4(1920 / 2.0f - 400,
         1080 / 2.0f - 40,
         1920 / 2.0f + 400,
         1080 / 2.0f + 40), Opal::Game::Instance->Renderer, GameSettings::GetMasterVolume(), [](float x) {GameSettings::SetMasterVolume(x); });
-    mToggleAntialiasingCheckBox = std::make_shared<CheckBox>("Anti-Aliasing", glm::vec4(1920 / 2.0f - 400,
+    mExitOptionsButton = std::make_shared<Button>("Back", glm::vec4(1920 / 2.0f - 400,
         1080 / 2.0f - 40 + 110 * 1,
         1920 / 2.0f + 400,
-        1080 / 2.0f + 40 + 110 * 1), Opal::Game::Instance->Renderer,GameSettings::GetAntiAliasingEnabled(), [=](bool isChecked) {GameSettings::SetAntiAliasingEnabled(isChecked); });
-    mExitOptionsButton = std::make_shared<Button>("Back", glm::vec4(1920 / 2.0f - 400,
-        1080 / 2.0f - 40 + 110 * 2,
-        1920 / 2.0f + 400,
-        1080 / 2.0f + 40 + 110 * 2), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Default; mSwitchThisFrame = true; mSelectedButton = 0; });
+        1080 / 2.0f + 40 + 110 * 1), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Default; mSwitchThisFrame = true; mSelectedButton = 0; });
 
-    mOptionsButtons = { mVolumeSlider, mToggleAntialiasingCheckBox, mExitOptionsButton };
+    mOptionsButtons = { mVolumeSlider, mExitOptionsButton };
     mSelectedButton = -1;
 }
 MainMenuState::~MainMenuState()
@@ -138,11 +130,9 @@ void MainMenuState::Tick()
                 mPlayButton->Tick(mGame->GetDeltaTime());
                 mOptionsButton->Tick(mGame->GetDeltaTime());
                 mCreditsButton->Tick(mGame->GetDeltaTime());
-                mExitButton->Tick(mGame->GetDeltaTime());
                 break;
             case MenuState::Options:
                 mVolumeSlider->Tick(mGame->GetDeltaTime());
-                mToggleAntialiasingCheckBox->Tick(mGame->GetDeltaTime());
                 mExitOptionsButton->Tick(mGame->GetDeltaTime());
                 break;
             }
@@ -196,11 +186,9 @@ void MainMenuState::Render()
         mPlayButton->Render(mMeshRenderer, mFontRenderer);
         mOptionsButton->Render(mMeshRenderer, mFontRenderer);
         mCreditsButton->Render(mMeshRenderer, mFontRenderer);
-        mExitButton->Render(mMeshRenderer, mFontRenderer);
         break;
     case MenuState::Options:
         mVolumeSlider->Render(mMeshRenderer, mFontRenderer);
-        mToggleAntialiasingCheckBox->Render(mMeshRenderer, mFontRenderer);
         mExitOptionsButton->Render(mMeshRenderer, mFontRenderer);
         break;
     }
@@ -294,7 +282,7 @@ void MainMenuState::CreateSparks()
 
 void MainMenuState::CreateRandomSpark()
 {
-    glm::vec2 pos = glm::vec2(rand() % 1920, rand() % 1080);
+    glm::vec2 pos = glm::vec2(rand() % 2100, rand() % 1080);
     glm::vec4 startColor = glm::vec4(1, 1, 1, 0.25f);
     glm::vec4 endColor = glm::vec4(1, 1, 1, 0);
     int length = rand() % 15 + 3;
@@ -347,7 +335,7 @@ void MainMenuState::RenderSparks()
         //spark->SetSpeedUp((mSparkSpeedUp - 1) * ((float)i / (float)mSparkEntities.size()) + 1);
         std::shared_ptr<Opal::TransformComponent> trans = mSparkEntities[i]->GetComponent<Opal::TransformComponent>();
 
-        if (trans->Position.x > 1920)
+        if (trans->Position.x > 2100)
         {
             mScene->RemoveEntity(mSparkEntities[i]);
             deleteIds.push_back(i);

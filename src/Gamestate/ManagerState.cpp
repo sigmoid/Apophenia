@@ -402,6 +402,27 @@ void ManagerState::SaveProgress()
 {
     std::ofstream saveFile;
     saveFile.open(mSavePath, std::ofstream::out | std::ofstream::trunc);
+    
+    if(!saveFile.good())
+    {
+        if(!std::filesystem::exists(Opal::GetBaseSavePath().append("SaveGame")))
+            std::filesystem::create_directory(Opal::GetBaseSavePath().append("SaveGame"));
+            
+        std::ofstream tmp(mSavePath);
+        tmp << "AntiAliasingEnabled,false" << std::endl;
+        tmp << "MasterVolume,1.000000" << std::endl;
+        tmp << "HasPlayedDialogueTutorial,false" << std::endl;
+        tmp << "HasPlayedMovementTutorial,false" << std::endl;
+        tmp.close();
+        saveFile.open(mSavePath, std::ofstream::out | std::ofstream::trunc);
+    }
+
+    char buffer[ 256 ];
+    strerror_r( errno, buffer, 256 ); // get string message from errno, XSI-compliant version
+    printf("Error %s", buffer);
+    
+    std::cout << mSavePath << std::endl;
+    
     if(!saveFile)
     {
         Opal::Logger::LogString("Failed to open save file!");
