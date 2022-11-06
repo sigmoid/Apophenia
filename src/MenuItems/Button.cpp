@@ -27,8 +27,8 @@ void Button::Tick(float dt)
     glm::vec2 mousePos = Opal::InputHandler::GetMousePos();
 #else
     glm::vec2 mousePos = Opal::InputHandler::GetTouchPos();
-    mousePos.x *= Opal::Game::Instance->GetWidth();
-    mousePos.y *= Opal::Game::Instance->GetHeight();
+    mousePos.x *= 1920;
+    mousePos.y *= 1080;
 #endif
     
     if (!mControllerInput)

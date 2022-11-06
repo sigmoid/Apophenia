@@ -250,10 +250,7 @@ void SentenceFormingState::Tick()
                 {
                     Opal::Logger::LogString("Playing sound");
                     Opal::Logger::LogString(DialogueManager::Instance->GetCurrentPrompt().Sound);
-                    std::string updatedAudioPath = DialogueManager::Instance->GetCurrentPrompt().Sound;
-                    updatedAudioPath.erase(0, 3);
-                    updatedAudioPath = Opal::GetBaseContentPath().append(updatedAudioPath);
-                    mSoundClip = mGame->mAudioEngine.LoadClip(updatedAudioPath);
+                    mSoundClip = mGame->mAudioEngine.LoadClip(DialogueManager::Instance->GetCurrentPrompt().Sound);
                     mSoundInstance = mGame->mAudioEngine.PlaySound(mSoundClip, 0.8f, 1.0f, 0.0f, false, true);
                     StartScreenShake();
                 }
@@ -387,7 +384,7 @@ void SentenceFormingState::Render()
         float scale = 0.25f;
         Opal::Sprite tutorialSprite(mTutorialTexture);
         tutorialSprite.SetScale(scale, scale);
-        tutorialSprite.SetPosition(mGame->GetWidth() * 0.9f - tutorialSprite.GetSize().x, mGame->GetHeight() - tutorialSprite.GetSize().y);
+        tutorialSprite.SetPosition(1920 - tutorialSprite.GetSize().x, 1080 - tutorialSprite.GetSize().y);
         mBatch->BatchSprite(tutorialSprite);
     }
     mBatch->RenderBatch();
@@ -491,11 +488,7 @@ void SentenceFormingState::Begin()
 
         if (!Opal::PlayerPrefs::GetBool("HasPlayedMovementTutorial"))
         {
-            #ifdef __IPHONEOS__
-            mTutorialTexture = mGame->Renderer->CreateTexture(Opal::GetBaseContentPath().append("textures/MovementTutorialMobile.png"));
-            #else
             mTutorialTexture = mGame->Renderer->CreateTexture(Opal::GetBaseContentPath().append("textures/MovementTutorial.png"));
-            #endif
         }
 
         std::vector<std::shared_ptr<Opal::Texture> > textures;
@@ -511,7 +504,7 @@ void SentenceFormingState::Begin()
         mUITextRenderer = mGame->Renderer->CreateFontRenderer(mUIPass, *mFont, glm::vec2(1920 - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
         
 
-        mResponseRenderer = mGame->Renderer->CreateFontRenderer(mUIPass, *mResponseFont, glm::vec2(mGame->GetWidth() * 0.6, mGame->GetHeight()), Opal::Camera::ActiveCamera);
+        mResponseRenderer = mGame->Renderer->CreateFontRenderer(mUIPass, *mResponseFont, glm::vec2(1920 - 200, mGame->GetHeight()), Opal::Camera::ActiveCamera);
     }
     mScene = std::make_shared<Opal::Scene>(mBatch);
 
@@ -564,7 +557,7 @@ void SentenceFormingState::Begin()
 void SentenceFormingState::RenderCurrentPrompt()
 {
     std::string prompt = DialogueManager::Instance->GetCurrentPrompt().Text[0];
-    mResponseRenderer->RenderString(prompt, mGame->GetWidth() * 0.2f, mGame->GetHeight() - 300, mFragmentColor.r, mFragmentColor.g, mFragmentColor.b, mFragmentColor.a, 1.0f);
+    mResponseRenderer->RenderString(prompt, 200, 1080 - 300, mFragmentColor.r, mFragmentColor.g, mFragmentColor.b, mFragmentColor.a, 1.0f);
 }
 
 void SentenceFormingState::CreateBounds()
@@ -894,7 +887,7 @@ void SentenceFormingState::StartScreenShake()
 void SentenceFormingState::RenderCurrentSelection()
 {
     std::string resp = ConcatSelection(mCursorEntity->GetComponent<CursorComponent>()->GetResponse());
-    mResponseRenderer->RenderString(resp, mGame->GetWidth() * 0.125f, (mFlipPreviewText) ? 300 : 1080 - 150, mFragmentColor.r, mFragmentColor.g, mFragmentColor.b, mFragmentColor.a, 1.0f);
+    mResponseRenderer->RenderString(resp, 200, (mFlipPreviewText) ? 300 : 1080 - 150, mFragmentColor.r, mFragmentColor.g, mFragmentColor.b, mFragmentColor.a, 1.0f);
 }
 
 std::string SentenceFormingState::ConcatSelection(std::vector<std::string> selection)
@@ -919,21 +912,21 @@ void SentenceFormingState::CreateSparks()
 
 void SentenceFormingState::PreBakeLines()
 {
-    // mScene->GetEntity(0)->GetComponent<CursorComponent>()->ToggleInput(false);
+    mScene->GetEntity(0)->GetComponent<CursorComponent>()->ToggleInput(false);
 
     for (int i = 0; i < 200; i++)
     {
-        // mScene->Update(1 / 60.0f);
+        mScene->Update(1 / 60.0f);
         UpdateCursorLine(1 / 60.0f);
     }
 
-    // mScene->GetEntity(0)->GetComponent<CursorComponent>()->ToggleInput(true);
+    mScene->GetEntity(0)->GetComponent<CursorComponent>()->ToggleInput(true);
 
 }
 
 void SentenceFormingState::CreateRandomSpark()
 {
-    glm::vec2 pos = glm::vec2(rand() % mGame->GetWidth(), rand() % mGame->GetHeight());
+    glm::vec2 pos = glm::vec2(rand() % 1920, rand() % 1080);
     glm::vec4 startColor = glm::vec4(1, 1, 1, 0.25f);
     glm::vec4 endColor = glm::vec4(1, 1, 1, 0);
     int length = rand() % 15 + 3;
@@ -986,7 +979,7 @@ void SentenceFormingState::RenderSparks()
         spark->SetSpeedUp((mSparkSpeedUp - 1) * ((float)i / (float)mSparkEntities.size()) + 1);
         std::shared_ptr<Opal::TransformComponent> trans = mSparkEntities[i]->GetComponent<Opal::TransformComponent>();
 
-        if (trans->Position.x > mGame->GetWidth() / mCurrentZoom)
+        if (trans->Position.x > 1920 / mCurrentZoom)
         {
             mScene->RemoveEntity(mSparkEntities[i]);
             deleteIds.push_back(i);

@@ -116,7 +116,7 @@ void PromptState::Tick()
 void PromptState::Render() 
 {
     #ifdef __IPHONEOS__
-    mTextRenderer->RenderString(DialogueManager::Instance->GetCurrentPrompt().Text[mCurrentCardIdx], Opal::Game::Instance->GetWidth() * 0.2, Opal::Game::Instance->GetHeight()/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
+    mTextRenderer->RenderString(DialogueManager::Instance->GetCurrentPrompt().Text[mCurrentCardIdx], Opal::Game::Instance->GetWidth() * 0.15, Opal::Game::Instance->GetHeight()/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
     #else
     mTextRenderer->RenderString(DialogueManager::Instance->GetCurrentPrompt().Text[mCurrentCardIdx], 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
     #endif
@@ -127,7 +127,7 @@ void PromptState::Render()
     {
         Opal::Sprite tutorialSprite(mTutorialTexture);
         tutorialSprite.SetScale(0.25f, 0.25f);
-        tutorialSprite.SetPosition(mGame->GetWidth() * 0.9f - tutorialSprite.GetSize().x, mGame->GetHeight() - tutorialSprite.GetSize().y);
+        tutorialSprite.SetPosition(1920 - tutorialSprite.GetSize().x, 1080 - tutorialSprite.GetSize().y);
         mSpriteRenderer->Submit(tutorialSprite);
     }
     mSpriteRenderer->RecordCommands();
@@ -172,7 +172,7 @@ void PromptState::Begin()
         mSpriteRenderer = mGame->Renderer->CreateSpriteRenderer(mTextPass);
 
         #ifdef __IPHONEOS__
-        mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(Opal::Game::Instance->GetWidth() * (0.6), Opal::Game::Instance->GetHeight()), Opal::Camera::ActiveCamera);
+        mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(Opal::Game::Instance->GetWidth() * (0.8), Opal::Game::Instance->GetHeight()), Opal::Camera::ActiveCamera);
         #else
         mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, *mFont, glm::vec2(1920 , 1080), Opal::Camera::ActiveCamera);
         #endif
@@ -183,11 +183,7 @@ void PromptState::Begin()
 
     if (!mHasPlayedTutorial)
     {
-        #ifdef __IPHONEOS__
-        mTutorialTexture = mGame->Renderer->CreateTexture(Opal::GetBaseContentPath().append("textures/DialogueTutorialMobile.png"));
-        #else
         mTutorialTexture = mGame->Renderer->CreateTexture(Opal::GetBaseContentPath().append("textures/DialogueTutorial.png"));
-        #endif
     }
 
     mCurrentCardIdx = 0;
@@ -251,15 +247,11 @@ void PromptState::UpdateShaderData()
         {
             if(DialogueManager::Instance != nullptr)
             {
-                #ifdef __IPHONEOS__
-                Opal::AABB box = mTextRenderer->GetTextRect(DialogueManager::Instance->GetCurrentPrompt().Text[mCurrentCardIdx],DialogueManager::Instance->GetCurrentPrompt().ObscuredWords[i], Opal::Game::Instance->GetWidth() * 0.2, Opal::Game::Instance->GetHeight()/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
-                #else
                 Opal::AABB box = mTextRenderer->GetTextRect(DialogueManager::Instance->GetCurrentPrompt().Text[mCurrentCardIdx],DialogueManager::Instance->GetCurrentPrompt().ObscuredWords[i] , 150, 1080/2- 60, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f, true);
-                #endif
                     
                     
                 // std::cout << box.min.x << " " << box.min.y << " " << box.max.x << " " << box.max.y << std::endl;
-                mShaderData->ObscuredRects[i] = glm::vec4(box.min.x / mGame->GetWidth(), box.min.y / mGame->GetHeight(), box.max.x / mGame->GetWidth(), box.max.y / mGame->GetHeight());
+                mShaderData->ObscuredRects[i] = glm::vec4(box.min.x / 1920, box.min.y / 1080, box.max.x / 1920, box.max.y / 1080);
             }
         }
         

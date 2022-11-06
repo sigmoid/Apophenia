@@ -58,6 +58,4 @@ class DrawingState : public Opal::Gamestate
     static std::shared_ptr<Opal::RenderPass> mRenderPass, mRenderPassToTexture;
     static std::shared_ptr<Opal::Texture> mRenderTexture;
     static std::shared_ptr<Opal::PostProcessRenderer> mPostProcess;
-
-    glm::vec2 mDrawingOffset = glm::vec2(0,0);
 };

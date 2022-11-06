@@ -129,7 +129,7 @@ void LogoState::CreateSparks()
 
 void LogoState::CreateRandomSpark()
 {
-    glm::vec2 pos = glm::vec2(rand() % mGame->GetWidth(), rand() % mGame->GetHeight());
+    glm::vec2 pos = glm::vec2(rand() % 2100, rand() % mGame->GetHeight());
     glm::vec4 startColor = glm::vec4(1, 1, 1, 0.25f);
     glm::vec4 endColor = glm::vec4(1, 1, 1, 0);
     int length = rand() % 15 + 3;
@@ -182,7 +182,7 @@ void LogoState::RenderSparks()
         //spark->SetSpeedUp((mSparkSpeedUp - 1) * ((float)i / (float)mSparkEntities.size()) + 1);
         std::shared_ptr<Opal::TransformComponent> trans = mSparkEntities[i]->GetComponent<Opal::TransformComponent>();
 
-        if (trans->Position.x > mGame->GetWidth())
+        if (trans->Position.x > 2100)
         {
             mScene->RemoveEntity(mSparkEntities[i]);
             deleteIds.push_back(i);

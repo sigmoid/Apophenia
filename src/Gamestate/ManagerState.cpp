@@ -394,7 +394,6 @@ void ManagerState::LoadProgress()
     else
     {
         saveFile >> mCurrentConversation;
-        std::cout << "Current progress: " << mCurrentConversation << std::endl;
         saveFile.close();
     }
 }
@@ -408,8 +407,14 @@ void ManagerState::SaveProgress()
     {
         if(!std::filesystem::exists(Opal::GetBaseSavePath().append("SaveGame")))
             std::filesystem::create_directory(Opal::GetBaseSavePath().append("SaveGame"));
+            
+        std::ofstream tmp(mSavePath);
+        tmp << "AntiAliasingEnabled,false" << std::endl;
+        tmp << "MasterVolume,1.000000" << std::endl;
+        tmp << "HasPlayedDialogueTutorial,false" << std::endl;
+        tmp << "HasPlayedMovementTutorial,false" << std::endl;
+        tmp.close();
         saveFile.open(mSavePath, std::ofstream::out | std::ofstream::trunc);
-    
     }
 
     char buffer[ 256 ];

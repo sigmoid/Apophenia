@@ -38,11 +38,7 @@ void StrikesState::Render()
 {
     mTextPass->Record();
 
-    #ifdef __IPHONEOS__
-    mTextRenderer->RenderString(mCurrentText, mGame->GetWidth() * 0.3f,0,1,1,1,1,1,true);
-    #else
     mTextRenderer->RenderString(mCurrentText, 200,0,1,1,1,1,1,true);
-    #endif
     mTextRenderer->RecordCommands();
 
     mTextPass->EndRecord();
@@ -58,12 +54,7 @@ void StrikesState::Begin()
         mTextPass = mGame->Renderer->CreateRenderPass(true);
         mTextPass->SetClearColor(mBGColor.r, mBGColor.g, mBGColor.b, mBGColor.a);
         Opal::Font mFont(mGame->Renderer, Opal::GetBaseContentPath().append("fonts/JosefinSans.ttf").c_str(), 180);
-
-        #ifdef __IPHONEOS__
-        mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, mFont, glm::vec2(mGame->GetWidth(), mGame->GetHeight()), Opal::Camera::ActiveCamera);
-        #else
         mTextRenderer = mGame->Renderer->CreateFontRenderer(mTextPass, mFont, glm::vec2(1920, 1080), Opal::Camera::ActiveCamera);
-        #endif
     }
 
     mCurrentText = mDisplayText;

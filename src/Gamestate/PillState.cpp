@@ -59,7 +59,7 @@ void PillState::Begin()
 
     for(int i = 0; i < NumPills; i++)
     {
-        mPills.push_back(Pill(glm::vec2(rand() % mGame->GetWidth(), -(rand() % 100)), rand()));
+        mPills.push_back(Pill(glm::vec2(rand() %1920, -(rand() % 100)), rand()));
     }
 }
 

@@ -41,31 +41,31 @@ std::shared_ptr<Opal::Texture> MainMenuState::mTitleTexture = nullptr;
 
 MainMenuState::MainMenuState()
 {
-    mPlayButton = std::make_shared<Button>("Play", glm::vec4(Opal::Game::Instance->GetWidth() / 2.0f - 200,
-        Opal::Game::Instance->GetHeight() / 2.0f - 75,
-        Opal::Game::Instance->GetWidth() / 2.0f + 200,
-        Opal::Game::Instance->GetHeight() / 2.0f + 75), Opal::Game::Instance->Renderer, [=]() {mShouldPopState = true; });
-    // mOptionsButton = std::make_shared<Button>("Options", glm::vec4(Opal::Game::Instance->GetWidth() / 2.0f - 200,
-    //     Opal::Game::Instance->GetHeight() / 2.0f - 75 + 175 * 1,
-    //     Opal::Game::Instance->GetWidth() / 2.0f + 200,
-    //     Opal::Game::Instance->GetHeight() / 2.0f + 75 + 175 * 1), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Options; mSwitchThisFrame = true; mSelectedButton = 0; });
-    mCreditsButton = std::make_shared<Button>("Credits", glm::vec4(Opal::Game::Instance->GetWidth() / 2.0f - 200,
-        Opal::Game::Instance->GetHeight() / 2.0f - 75 + 175 * 1,
-        Opal::Game::Instance->GetWidth() / 2.0f + 200,
-        Opal::Game::Instance->GetHeight() / 2.0f + 75 + 175 * 1), Opal::Game::Instance->Renderer, [=]() {Opal::Game::Instance->PushState<CreditsState>(); });
+    mPlayButton = std::make_shared<Button>("Play", glm::vec4(1920 / 2.0f - 150,
+        1080 / 2.0f - 50,
+        1920 / 2.0f + 150,
+        1080 / 2.0f + 50), Opal::Game::Instance->Renderer, [=]() {mShouldPopState = true; });
+    mOptionsButton = std::make_shared<Button>("Options", glm::vec4(1920 / 2.0f - 150,
+        1080 / 2.0f - 50 + 125 * 1,
+        1920 / 2.0f + 150,
+        1080 / 2.0f + 50 + 125 * 1), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Options; mSwitchThisFrame = true; mSelectedButton = 0; });
+    mCreditsButton = std::make_shared<Button>("Credits", glm::vec4(1920 / 2.0f - 150,
+        1080 / 2.0f - 50 + 125 * 2,
+        1920 / 2.0f + 150,
+        1080 / 2.0f + 50 + 125 * 2), Opal::Game::Instance->Renderer, [=]() {Opal::Game::Instance->PushState<CreditsState>(); });
 
-    mButtons = { mPlayButton, mCreditsButton };
+    mButtons = { mPlayButton, mOptionsButton, mCreditsButton };
 
-    // mVolumeSlider = std::make_shared<Slider>("Volume:", glm::vec4(Opal::Game::Instance->GetWidth() / 2.0f - 400,
-    //     Opal::Game::Instance->GetHeight() / 2.0f - 40,
-    //     Opal::Game::Instance->GetWidth() / 2.0f + 400,
-    //     Opal::Game::Instance->GetHeight() / 2.0f + 40), Opal::Game::Instance->Renderer, GameSettings::GetMasterVolume(), [](float x) {GameSettings::SetMasterVolume(x); });
-    // mExitOptionsButton = std::make_shared<Button>("Back", glm::vec4(Opal::Game::Instance->GetWidth() / 2.0f - 400,
-    //     Opal::Game::Instance->GetHeight() / 2.0f - 40 + 110 * 1,
-    //     Opal::Game::Instance->GetWidth() / 2.0f + 400,
-    //     Opal::Game::Instance->GetHeight() / 2.0f + 40 + 110 * 1), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Default; mSwitchThisFrame = true; mSelectedButton = 0; });
+    mVolumeSlider = std::make_shared<Slider>("Volume:", glm::vec4(1920 / 2.0f - 400,
+        1080 / 2.0f - 40,
+        1920 / 2.0f + 400,
+        1080 / 2.0f + 40), Opal::Game::Instance->Renderer, GameSettings::GetMasterVolume(), [](float x) {GameSettings::SetMasterVolume(x); });
+    mExitOptionsButton = std::make_shared<Button>("Back", glm::vec4(1920 / 2.0f - 400,
+        1080 / 2.0f - 40 + 110 * 1,
+        1920 / 2.0f + 400,
+        1080 / 2.0f + 40 + 110 * 1), Opal::Game::Instance->Renderer, [=]() {mCurrentState = MenuState::Default; mSwitchThisFrame = true; mSelectedButton = 0; });
 
-    // mOptionsButtons = { mVolumeSlider, mExitOptionsButton };
+    mOptionsButtons = { mVolumeSlider, mExitOptionsButton };
     mSelectedButton = -1;
 }
 MainMenuState::~MainMenuState()
@@ -128,12 +128,12 @@ void MainMenuState::Tick()
             {
             case MenuState::Default:
                 mPlayButton->Tick(mGame->GetDeltaTime());
-                // mOptionsButton->Tick(mGame->GetDeltaTime());
+                mOptionsButton->Tick(mGame->GetDeltaTime());
                 mCreditsButton->Tick(mGame->GetDeltaTime());
                 break;
             case MenuState::Options:
-                // mVolumeSlider->Tick(mGame->GetDeltaTime());
-                // mExitOptionsButton->Tick(mGame->GetDeltaTime());
+                mVolumeSlider->Tick(mGame->GetDeltaTime());
+                mExitOptionsButton->Tick(mGame->GetDeltaTime());
                 break;
             }
         }
@@ -184,23 +184,23 @@ void MainMenuState::Render()
     {
     case MenuState::Default:
         mPlayButton->Render(mMeshRenderer, mFontRenderer);
-        // mOptionsButton->Render(mMeshRenderer, mFontRenderer);
+        mOptionsButton->Render(mMeshRenderer, mFontRenderer);
         mCreditsButton->Render(mMeshRenderer, mFontRenderer);
         break;
     case MenuState::Options:
-        // mVolumeSlider->Render(mMeshRenderer, mFontRenderer);
-        // mExitOptionsButton->Render(mMeshRenderer, mFontRenderer);
+        mVolumeSlider->Render(mMeshRenderer, mFontRenderer);
+        mExitOptionsButton->Render(mMeshRenderer, mFontRenderer);
         break;
     }
 
 
     {
-        std::string version = "Version 1.0.2";
+        std::string version = "Version 1.0.0";
         float padding = 25.f;
         float width = mFontRenderer->MeasureText(version);
         mFontRenderer->RenderString(version, 
-            Opal::Game::Instance->GetWidth() * 0.9f - padding - width,
-            Opal::Game::Instance->GetHeight() - padding - mFont->GetSize(),
+            1920 - padding - width,
+            1080 - padding - mFont->GetSize(),
             1.0f,
             1.0f,
             1.0f,
@@ -234,7 +234,7 @@ void MainMenuState::Begin()
 
         mTitleTexture = mGame->Renderer->CreateTexture(Opal::GetBaseContentPath().append("textures/Title.png"));
         mTitleSprite.SetTexture(mTitleTexture);
-        float titleSpriteX = Opal::Game::Instance->GetWidth() / 2.0f - mTitleTexture->GetWidth() /2.0f;
+        float titleSpriteX = 1920 / 2.0f - mTitleTexture->GetWidth() /2.0f;
         float titleSpriteY = 50;
         mTitleSprite.SetPosition(titleSpriteX,titleSpriteY);
 
@@ -282,7 +282,7 @@ void MainMenuState::CreateSparks()
 
 void MainMenuState::CreateRandomSpark()
 {
-    glm::vec2 pos = glm::vec2(rand() % mGame->GetWidth(), rand() % mGame->GetHeight());
+    glm::vec2 pos = glm::vec2(rand() % 2100, rand() % 1080);
     glm::vec4 startColor = glm::vec4(1, 1, 1, 0.25f);
     glm::vec4 endColor = glm::vec4(1, 1, 1, 0);
     int length = rand() % 15 + 3;
@@ -335,7 +335,7 @@ void MainMenuState::RenderSparks()
         //spark->SetSpeedUp((mSparkSpeedUp - 1) * ((float)i / (float)mSparkEntities.size()) + 1);
         std::shared_ptr<Opal::TransformComponent> trans = mSparkEntities[i]->GetComponent<Opal::TransformComponent>();
 
-        if (trans->Position.x > mGame->GetWidth())
+        if (trans->Position.x > 2100)
         {
             mScene->RemoveEntity(mSparkEntities[i]);
             deleteIds.push_back(i);
