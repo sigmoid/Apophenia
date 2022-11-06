@@ -44,10 +44,13 @@ int main(int argc, char * argv[])
     //game->ToggleDebugInfo(false);
     
     auto cam = game->Renderer->CreateOrthoCamera(game->GetWidth(), game->GetHeight(), -1000, 1000);
+    cam->Resize(game->GetWidth(), game->GetHeight());
+    
     
     DialogueManager dialogue("../Dialogue/TestDialogue.xml");
 
     GameSettings::Load();
+
 
     auto managerState = game->PushState<ManagerState>();
 //    game->PushState<NarrativeState>();
@@ -67,13 +70,12 @@ int main(int argc, char * argv[])
     game->PushState<MainMenuState>();
     game->PushState<LogoState>();
     
+    
     auto bgMusic = Opal::AudioEngine::LoadClip(Opal::GetBaseContentPath().append("Audio/Canone_W.mp3"));
     Opal::AudioEngine::PlaySound(bgMusic, 0.8f, 1.0f, 0.0f, true, false);
 
     bool lastF11 = false;
     bool lastEsc = false;
-
-    GameSettings::SetMasterVolume(1.0f);
 
     managerState->StartGame(); 
 

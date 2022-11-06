@@ -109,44 +109,21 @@ void CursorComponent::Update(float dTime)
     {
         takingInput = false;
 
-        float leftJoystick = Opal::InputHandler::GetLeftJoystickY();
-
         float yMovement = 0;
         float yPosNorm = mTransform->Position.y / (float)Opal::Game::Instance->GetHeight();
 
         bool upPressed = false;
         bool downPressed = false;
-
-        #ifdef __IPHONEOS__
-
-        float yPos = Opal::InputHandler::GetTouchPos().y;
-
-        float cursorPos = mParent->GetComponent<Opal::TransformComponent>()->Position.y / 1080.0f;
-
-        if(yPos > 0 && (abs(yPos - cursorPos) > 0.1f || yPos < 0.15f || yPos > 0.85f))
-        {
-            if(yPos > cursorPos || yPos > 0.85f)
-            {
-                takingInput = true;
-                yMovement = 1.0f;
-            }
-            else if(yPos < cursorPos || yPos < 0.15f)
-            {
-                takingInput = true;
-                yMovement = -1.0f;
-            }
-        }
-        #else
         if(Opal::InputHandler::GetKey(mUpBinding) || Opal::InputHandler::GetKey(mUpBindingAlt))
         {
             upPressed = true;
             takingInput = !takingInput;
             yMovement = -1.0f;
         }
-        else if(leftJoystick > 0.3)
+        else if(Opal::InputHandler::GetLeftJoystickY() > 0.3)
         {
             takingInput = true;
-            yMovement = leftJoystick;
+            yMovement = Opal::InputHandler::GetLeftJoystickY();
         }
 
         if(Opal::InputHandler::GetKey(mDownBinding) || Opal::InputHandler::GetKey(mDownBindingAlt))
@@ -155,13 +132,11 @@ void CursorComponent::Update(float dTime)
             takingInput = !takingInput;
             yMovement = 1.0f;
         }
-        else if(leftJoystick < -0.3)
+        else if(Opal::InputHandler::GetLeftJoystickY() < -0.3)
         {
             takingInput = true;
-            yMovement = leftJoystick;
+            yMovement = Opal::InputHandler::GetLeftJoystickY();
         }
-
-        #endif
         
         float prevSpeed = mCurrentSpeed;
         mCurrentSpeed += mAcceleration * dTime * yMovement;
@@ -420,9 +395,4 @@ void CursorComponent::UpdateVerts()
         lastRadius = newRadius;
     }
     mMesh->SetVertices(mVertices.data(), mVertices.size() * sizeof(float));
-}
-
-void CursorComponent::SetInput(float inp)
-{
-    mCurrentInput = inp;
 }

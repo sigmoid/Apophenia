@@ -27,8 +27,6 @@ class CursorComponent : public Opal::Component
     virtual void Deserialize() override;
     virtual std::shared_ptr<Component> Clone() override;
 
-    void SetInput(float inp);
-
     void ToggleInput(bool takeInput);
 
     void Kill();
@@ -74,8 +72,6 @@ class CursorComponent : public Opal::Component
     std::vector<Attractor> mAttractors;
     std::shared_ptr<Opal::Mesh2D> mMesh;
     std::vector<float> mVertices;
-
-    float mCurrentInput = 1111110;
 
     glm::vec2 mTouchOrigin = glm::vec2(-10,-10);
 

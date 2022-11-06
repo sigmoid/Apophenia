@@ -28,13 +28,7 @@ void CheckBox::Tick(float dt)
     GenerateMesh();
     GenerateCheckboxMesh();
 
-    #ifndef __IPHONEOS__
     glm::vec2 mousePos = Opal::InputHandler::GetMousePos();
-#else
-    glm::vec2 mousePos = Opal::InputHandler::GetTouchPos();
-    mousePos.x *= 1920;
-    mousePos.y *= 1080;
-#endif
 
     if (!mControllerInput)
     {
@@ -50,8 +44,7 @@ void CheckBox::Tick(float dt)
     if(mIsHovering && ((Opal::InputHandler::GetLeftMouseButtonDown() && !mLastMouseButton) || 
         (Opal::InputHandler::GetGamepadButton(SDL_CONTROLLER_BUTTON_A) && !mLastControllerButton) ||
         (Opal::InputHandler::GetKey(SDL_SCANCODE_RETURN) && !mLastEnterPressed) ||
-        (Opal::InputHandler::GetKey(SDL_SCANCODE_SPACE) && !mLastSpacePressed) || 
-        (Opal::InputHandler::GetTouch() && !mLastTouch))
+        (Opal::InputHandler::GetKey(SDL_SCANCODE_SPACE) && !mLastSpacePressed))
         )
     {
         mIsChecked = !mIsChecked;
@@ -62,7 +55,6 @@ void CheckBox::Tick(float dt)
     mLastSpacePressed = Opal::InputHandler::GetKey(SDL_SCANCODE_SPACE);
     mLastEnterPressed = Opal::InputHandler::GetKey(SDL_SCANCODE_RETURN);
     mControllerInput = false;
-    mLastTouch = Opal::InputHandler::GetTouch();
 
     if (!mIsHovering && !mCanPlaySound)
         mCanPlaySound = true;

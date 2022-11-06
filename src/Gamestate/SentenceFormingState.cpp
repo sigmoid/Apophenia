@@ -65,7 +65,6 @@ void SentenceFormingState::Tick()
     //    mKillEventTimer = mKillWaitTime;
     //}
 
-
     // Isolation Zoom in sequence
     if(mZoomInTimer > 0)
     {
@@ -400,12 +399,7 @@ void SentenceFormingState::Render()
 
     mMeshRenderer->StartFrame();
     mMeshRenderer->Submit(mCursorEntity->GetComponent<CursorComponent>()->GetMesh());
-//#ifdef __IPHONEOS__ 
-    // GenerateJoystickMeshes();
-    // mMeshRenderer->Submit(mJoystickBG);
-    // mMeshRenderer->Submit(mJoystickMesh);
-    
-///#endif
+
     //mTextRenderer->RenderString("This is a response!", 1920/2 - 300, 1080/2, 0.9f, 0.9f, 0.9f, 1.0f, 1.0f);
     RenderSentenceFragments();
     if (!mIsWarped)
@@ -427,13 +421,8 @@ void SentenceFormingState::Render()
 
     UBO *ubo = new UBO();
     ubo->warpFactor = mWarpFactor;
-#ifndef  __IPHONEOS__
     ubo->xPadding = Opal::Camera::ActiveCamera->GetViewPort().x / mGame->GetWidth();
     ubo->yPadding = Opal::Camera::ActiveCamera->GetViewPort().y / mGame->GetHeight();
-#else
-    ubo->xPadding = 0.075f;
-    ubo->yPadding = 0;
-#endif
     ubo->playerX = mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.x / 1920; 
     ubo->playerY = mCursorEntity->GetComponent<Opal::TransformComponent>()->Position.y / 1080; 
     ubo->screenWidth = mGame->GetWidth();
@@ -464,11 +453,7 @@ void SentenceFormingState::Begin()
     Opal::Logger::LogString("GAMESTATE: Begin() SentenceFormingState");
     if (mTextRenderer == nullptr)
     {
-#ifdef __IPHONEOS__
-        mRenderTexture = mGame->Renderer->CreateRenderTexture(mGame->GetWidth(), mGame->GetHeight(), 4);
-#else
         mRenderTexture = mGame->Renderer->CreateRenderTexture(1920, 1080, 4);
-#endif
         mTextPass = mGame->Renderer->CreateRenderPass(mRenderTexture, true);
         mTextPass->SetClearColor(0.3f, 0.3f, 0.3f, 0.0f);
 
@@ -508,10 +493,7 @@ void SentenceFormingState::Begin()
     }
     mScene = std::make_shared<Opal::Scene>(mBatch);
 
-    //#ifdef __IPHONEOS__
-    mJoystickMesh = mGame->Renderer->CreateMesh(mJoystickResolution * 6);
-    mJoystickBG = mGame->Renderer->CreateMesh(mJoystickResolution * 6);
-    //#endif
+
 
     mNoiseFrequency *= mLineSpeed / 1000;
 
@@ -1073,120 +1055,4 @@ std::shared_ptr<Opal::Texture> SentenceFormingState::CreateNoiseTexture()
     auto res = mGame->Renderer->CreateTexture((unsigned char*)data, 1920, 1080, 4);
     free(data);
     return res;
-}
-
-void SentenceFormingState::GenerateJoystickMeshes()
-{
-    std::vector<float> cursorVerts;
-
-    glm::vec2 centerPoint = glm::vec2(1920 - mJoystickControlRadius - 75, 
-    1080/2);
-
-    float virtualJoystick = ProcessVirtualJoystick();
-    if(virtualJoystick != 0)
-
-    centerPoint.y += mJoystickControlRadius * virtualJoystick;
-
-    glm::vec4 color = glm::vec4(0.8f, 0.8f, 0.8f, 1.0f);
-
-    glm::vec2 lastPoint = centerPoint + glm::vec2(mJoystickRadius, 0);
-
-    for(int i = 0; i < mJoystickResolution + 1; i++)
-    {
-        float theta = ((float)i / (float)mJoystickResolution) * 2.0f * 3.14159f;
-        glm::vec2 nextPoint = centerPoint + glm::vec2(cos(theta), sin(theta)) * mJoystickRadius;
-
-        if(i == mJoystickResolution)
-            nextPoint = centerPoint + glm::vec2(mJoystickRadius, 0);
-
-        // top left
-        cursorVerts.push_back(lastPoint.x);
-        cursorVerts.push_back(lastPoint.y);
-        cursorVerts.push_back(color.r);
-        cursorVerts.push_back(color.g);
-        cursorVerts.push_back(color.b);
-        cursorVerts.push_back(color.a);
-
-        // top right
-        cursorVerts.push_back(nextPoint.x);
-        cursorVerts.push_back(nextPoint.y);
-        cursorVerts.push_back(color.r);
-        cursorVerts.push_back(color.g);
-        cursorVerts.push_back(color.b);
-        cursorVerts.push_back(color.a);
-
-        // bottom left
-        cursorVerts.push_back(centerPoint.x);
-        cursorVerts.push_back(centerPoint.y);
-        cursorVerts.push_back(color.r);
-        cursorVerts.push_back(color.g);
-        cursorVerts.push_back(color.b);
-        cursorVerts.push_back(color.a);
-
-        lastPoint = nextPoint;
-    }
-
-    mJoystickMesh->SetVertices(cursorVerts.data(), cursorVerts.size() * sizeof(float));
-    
-    centerPoint = glm::vec2(1920 - mJoystickControlRadius - 75, 
-    1080/2);
-    std::vector<float> cursorVertsBG;
-
-    color = glm::vec4(0.15f, 0.15f, 0.15f, 1.0f);
-
-    lastPoint = centerPoint + glm::vec2(mJoystickControlRadius, 0);
-
-    for(int i = 0; i < mJoystickResolution + 1; i++)
-    {
-        float theta = ((float)i / (float)mJoystickResolution) * 2.0f * 3.14159f;
-        glm::vec2 nextPoint = centerPoint + glm::vec2(cos(theta), sin(theta)) * mJoystickControlRadius;
-
-        if(i == mJoystickResolution)
-            nextPoint = centerPoint + glm::vec2(mJoystickControlRadius, 0);
-
-        // top left
-        cursorVertsBG.push_back(lastPoint.x);
-        cursorVertsBG.push_back(lastPoint.y);
-        cursorVertsBG.push_back(color.r);
-        cursorVertsBG.push_back(color.g);
-        cursorVertsBG.push_back(color.b);
-        cursorVertsBG.push_back(color.a);
-
-        // top right
-        cursorVertsBG.push_back(nextPoint.x);
-        cursorVertsBG.push_back(nextPoint.y);
-        cursorVertsBG.push_back(color.r);
-        cursorVertsBG.push_back(color.g);
-        cursorVertsBG.push_back(color.b);
-        cursorVertsBG.push_back(color.a);
-
-        // bottom left
-        cursorVertsBG.push_back(centerPoint.x);
-        cursorVertsBG.push_back(centerPoint.y);
-        cursorVertsBG.push_back(color.r);
-        cursorVertsBG.push_back(color.g);
-        cursorVertsBG.push_back(color.b);
-        cursorVertsBG.push_back(color.a);
-
-        lastPoint = nextPoint;
-    }
-    
-    mJoystickBG->SetVertices(cursorVertsBG.data(), cursorVertsBG.size() * sizeof(float));
-
-
-}
-
-float SentenceFormingState::ProcessVirtualJoystick()
-{
-    glm::vec2 centerPoint = glm::vec2(1920 - mJoystickControlRadius - 75, 
-    1080/2);
-
-    glm::vec2 touchPos = Opal::InputHandler::GetTouchPos();
-
-    if(touchPos.y > 0.3f && touchPos.y < 0.7f)
-
-    if(Opal::InputHandler::GetTouchPos() != glm::vec2(-1,-1))
-        return (touchPos.y - 0.5f) * 5.0f;
-
-    return 0;
 }

@@ -61,6 +61,5 @@ class CreditsState : public Opal::Gamestate
     float mScrollProgress = 0;
 
     bool mLastSpace = true;
-    bool mLastTouch = true;
     bool mLastA = true;
 };

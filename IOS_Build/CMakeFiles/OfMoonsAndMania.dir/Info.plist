@@ -4,14 +4,12 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
-	<key>CFBundleDisplayName</key>
-	<string>Of Moons and Mania</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleGetInfoString</key>
 	<string></string>
-	<key>CFBundleIcons~ipad</key>
-	<dict/>
+	<key>CFBundleIconFile</key>
+	<string></string>
 	<key>CFBundleIdentifier</key>
 	<string>com.AbsurdWalls.*</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -23,20 +21,16 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>$(MARKETING_VERSION)</string>
+	<string></string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string></string>
 	<key>CSResourcesFileMapped</key>
 	<true/>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
 	<key>NSHumanReadableCopyright</key>
 	<string></string>
 	<key>UILaunchStoryboardName</key>
-	<string>Launch Screen</string>
-	<key>UIMainStoryboardFile</key>
 	<string>Launch Screen</string>
 	<key>UIStatusBarHidden</key>
 	<false/>
