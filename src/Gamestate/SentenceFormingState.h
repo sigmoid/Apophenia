@@ -69,7 +69,7 @@ class SentenceFormingState : public Opal::Gamestate
     std::vector<glm::vec2> mLinePoints;
     glm::vec4 mLineColor = glm::vec4(0.9f, 0.9f, 0.9f, 0.8f);
     float mLineSpeed = 500;
-    float mLineCutoff = -50;
+    float mLineCutoff = -150;
     float mLineTimeStep = 0.05f, mLineTimer = 0;
     void UpdateCursorLine(float timeOverride = -1);
     void DrawCursorLine();

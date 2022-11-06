@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "43F2B578382440B08EC4B265"
-            BuildableName = "OfMoonsAndMania.app"
+            BuildableName = "Of Moons And Mania.app"
             BlueprintName = "OfMoonsAndMania"
             ReferencedContainer = "container:IOS_Build/OfMoonsAndMania.xcodeproj">
          </BuildableReference>
@@ -60,6 +60,13 @@
             ReferencedContainer = "container:build/OfMoonsAndMania.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "VK_LAYER_PATH"
+            value = "/Users/adam/Dev/Vulkan/macOS/share/vulkan/explicit_layer.d"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -83,6 +90,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "Of Moons and Mania"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

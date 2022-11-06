@@ -1,0 +1,11 @@
+Target dependency graph (4 targets)
+ZERO_CHECK in OfMoonsAndMania, no dependencies
+Opal in OfMoonsAndMania, depends on:
+ZERO_CHECK in OfMoonsAndMania (explicit)
+OfMoonsAndMania in OfMoonsAndMania, depends on:
+Opal in OfMoonsAndMania (explicit)
+ZERO_CHECK in OfMoonsAndMania (explicit)
+ALL_BUILD in OfMoonsAndMania, depends on:
+OfMoonsAndMania in OfMoonsAndMania (explicit)
+Opal in OfMoonsAndMania (explicit)
+ZERO_CHECK in OfMoonsAndMania (explicit)

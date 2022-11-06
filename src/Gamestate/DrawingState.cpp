@@ -42,7 +42,7 @@ void DrawingState::Render()
 
         if(draw)
         {
-            mLineRenderer->DrawLine(lastPoint->Position, line->Position, mLineColor, mLineColor, mLineWidth);
+            mLineRenderer->DrawLine(lastPoint->Position + mDrawingOffset, line->Position + mDrawingOffset, mLineColor, mLineColor, mLineWidth);
         }
 
         lastPoint = line;
@@ -79,6 +79,11 @@ void DrawingState::Begin()
     updatedDrawingPath = Opal::GetBaseContentPath().append(updatedDrawingPath);
     mScene->Load(updatedDrawingPath);
     mScene->SortEntities(LinePointCompare());
+    if(mGame->GetWidth() != 1920)
+    {
+        float x = (mGame->GetWidth() / 2.0f) - 1920.0f / 2.0f;
+        mDrawingOffset = glm::vec2(x,0);
+    }
 }
 
 void DrawingState::End() 
