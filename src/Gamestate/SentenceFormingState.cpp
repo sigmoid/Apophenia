@@ -8,7 +8,6 @@
 #include "../../Opal/EntityComponent/VelocityComponent.h"
 #include "../../Opal/Collision/AABBCollision.h"
 #include "../../Opal/vendor/FastNoiseLite.h"
-#include "../../Opal/vendor/imgui/implot.h"
 #include "../Components/CursorComponent.h"
 #include "../Components/NoiseMoveComponent.h"
 #include "../Components/SentenceFragmentComponent.h"
@@ -249,7 +248,10 @@ void SentenceFormingState::Tick()
                 {
                     Opal::Logger::LogString("Playing sound");
                     Opal::Logger::LogString(DialogueManager::Instance->GetCurrentPrompt().Sound);
-                    mSoundClip = mGame->mAudioEngine.LoadClip(DialogueManager::Instance->GetCurrentPrompt().Sound);
+                    std::string updatedAudioPath = DialogueManager::Instance->GetCurrentPrompt().Sound;
+                    updatedAudioPath.erase(0, 3);
+                    updatedAudioPath = Opal::GetBaseContentPath().append(updatedAudioPath);
+                    mSoundClip = mGame->mAudioEngine.LoadClip(updatedAudioPath);
                     mSoundInstance = mGame->mAudioEngine.PlaySound(mSoundClip, 0.8f, 1.0f, 0.0f, false, true);
                     StartScreenShake();
                 }
