@@ -1,8 +1,8 @@
 {
   "_buildCommand2" : {
-    "command" : "build",
-    "skipDependencies" : false,
-    "style" : "buildAndRun"
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : false,
+    "targets" : null
   },
   "buildCommand" : "build",
   "configuredTargets" : [
@@ -11,24 +11,29 @@
     }
   ],
   "containerPath" : "/Users/adam/Dev/Apophenia/IOS_Build/OfMoonsAndMania.xcodeproj",
-  "continueBuildingAfterErrors" : false,
+  "continueBuildingAfterErrors" : true,
   "enableIndexBuildArena" : false,
   "hideShellScriptEnvironment" : false,
   "parameters" : {
     "action" : "build",
-    "activeArchitecture" : "arm64",
+    "activeArchitecture" : "undefined_arch",
     "activeRunDestination" : {
-      "disableOnlyActiveArch" : false,
+      "disableOnlyActiveArch" : true,
       "platform" : "iphoneos",
       "sdk" : "iphoneos16.1",
       "sdkVariant" : "iphoneos",
       "supportedArchitectures" : [
-        "arm64e",
-        "arm64v8",
+        "armv4t",
+        "armv5",
+        "armv6",
+        "armv7",
+        "armv7f",
+        "armv7s",
+        "armv7k",
         "arm64",
-        "armv8"
+        "arm64e"
       ],
-      "targetArchitecture" : "arm64"
+      "targetArchitecture" : "undefined_arch"
     },
     "arenaInfo" : {
       "buildIntermediatesPath" : "",
@@ -43,24 +48,17 @@
     "overrides" : {
       "synthesized" : {
         "table" : {
-          "ASSETCATALOG_FILTER_FOR_DEVICE_MODEL" : "iPhone14,5",
-          "ASSETCATALOG_FILTER_FOR_DEVICE_OS_VERSION" : "15.7.1",
-          "ASSETCATALOG_FILTER_FOR_THINNING_DEVICE_CONFIGURATION" : "iPhone14,5",
-          "BUILD_ACTIVE_RESOURCES_ONLY" : "YES",
           "ENABLE_ADDRESS_SANITIZER" : "YES",
-          "ENABLE_PREVIEWS" : "NO",
-          "TARGET_DEVICE_IDENTIFIER" : "00008110-0019153E219A801E",
-          "TARGET_DEVICE_MODEL" : "iPhone14,5",
-          "TARGET_DEVICE_OS_VERSION" : "15.7.1",
-          "TARGET_DEVICE_PLATFORM_NAME" : "iphoneos"
+          "ENABLE_PREVIEWS" : "NO"
         }
       }
     }
   },
+  "qos" : "default",
   "schemeCommand" : "launch",
   "schemeCommand2" : "launch",
   "showNonLoggedProgress" : true,
-  "useDryRun" : false,
+  "useDryRun" : true,
   "useImplicitDependencies" : true,
   "useLegacyBuildLocations" : false,
   "useParallelTargets" : true
