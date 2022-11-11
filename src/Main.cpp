@@ -77,6 +77,9 @@ int main(int argc, char * argv[])
     bool lastF11 = false;
     bool lastEsc = false;
 
+    float resizeTimer = 0.3f;
+    bool hasResized = false;
+
     managerState->StartGame(); 
 
     while(!game->ShouldEnd())
@@ -96,6 +99,17 @@ int main(int argc, char * argv[])
                 game->PushState<MainMenuState>();
             }
         }
+
+        if (!hasResized)
+        {
+            resizeTimer -= game->GetDeltaTime();
+            if (resizeTimer <= 0)
+            {
+                game->Resize(1920 / 4.f, 1080 / 4.f);
+                hasResized = true;
+            }
+        }
+
         game->Tick();
     }
 
