@@ -1475,7 +1475,7 @@
 				LastUpgradeCheck = 1410;
 			};
 			buildConfigurationList = 0E69B559001044829C5C9D8F /* Build configuration list for PBXProject "OfMoonsAndMania" */;
-			compatibilityVersion = "Xcode 10.0";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
