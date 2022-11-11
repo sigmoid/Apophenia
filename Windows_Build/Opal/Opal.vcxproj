@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{03DA804C-92B6-331B-9C1C-147A8EE380D9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>Opal</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\Dev\Apophenia\build\Opal\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Opal.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Opal</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\Dev\Apophenia\build\Opal\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Opal.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Opal</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\Dev\Apophenia\build\Opal\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Opal.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Opal</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\Dev\Apophenia\build\Opal\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Opal.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Opal</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>F:\Dev\SDL2-2.0.22\include;F:\Dev\freetype-2.12.0\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>F:\Dev\SDL2-2.0.22\include;F:\Dev\freetype-2.12.0\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Dev\SDL2-2.0.22\include;F:\Dev\freetype-2.12.0\include;C:\VulkanSDK\1.3.204.1\Include;F:\Dev\Apophenia\Opal\vendor\soloud\include;F:\Dev\Apophenia\Opal\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -O3 -std=c++17</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.204.1\Include;F:\Dev\Apophenia\Opal\vendor\soloud\include;F:\Dev\Apophenia\Opal\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.204.1\Include;F:\Dev\Apophenia\Opal\vendor\soloud\include;F:\Dev\Apophenia\Opal\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Dev\freetype-2.12.0\include;F:\Dev\SDL2-2.0.22\include;C:\VulkanSDK\1.3.204.1\Include;F:\Dev\Apophenia\Opal\vendor\soloud\include;F:\Dev\Apophenia\Opal\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -O3 -std=c++17</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.204.1\Include;F:\Dev\Apophenia\Opal\vendor\soloud\include;F:\Dev\Apophenia\Opal\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.204.1\Include;F:\Dev\Apophenia\Opal\vendor\soloud\include;F:\Dev\Apophenia\Opal\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.204.1\Include;F:\Dev\Apophenia\Opal\vendor\soloud\include;F:\Dev\Apophenia\Opal\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -O3 -std=c++17</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.204.1\Include;F:\Dev\Apophenia\Opal\vendor\soloud\include;F:\Dev\Apophenia\Opal\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.204.1\Include;F:\Dev\Apophenia\Opal\vendor\soloud\include;F:\Dev\Apophenia\Opal\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.204.1\Include;F:\Dev\Apophenia\Opal\vendor\soloud\include;F:\Dev\Apophenia\Opal\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -O3 -std=c++17</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.204.1\Include;F:\Dev\Apophenia\Opal\vendor\soloud\include;F:\Dev\Apophenia\Opal\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.204.1\Include;F:\Dev\Apophenia\Opal\vendor\soloud\include;F:\Dev\Apophenia\Opal\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\Dev\Apophenia\Opal\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule F:/Dev/Apophenia/Opal/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SF:/Dev/Apophenia -BF:/Dev/Apophenia/build --check-stamp-file F:/Dev/Apophenia/build/Opal/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.23\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindVulkan.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\Dev\Apophenia\build\Opal\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule F:/Dev/Apophenia/Opal/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SF:/Dev/Apophenia -BF:/Dev/Apophenia/build --check-stamp-file F:/Dev/Apophenia/build/Opal/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.23\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindVulkan.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\Dev\Apophenia\build\Opal\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule F:/Dev/Apophenia/Opal/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SF:/Dev/Apophenia -BF:/Dev/Apophenia/build --check-stamp-file F:/Dev/Apophenia/build/Opal/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.23\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindVulkan.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\Dev\Apophenia\build\Opal\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule F:/Dev/Apophenia/Opal/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SF:/Dev/Apophenia -BF:/Dev/Apophenia/build --check-stamp-file F:/Dev/Apophenia/build/Opal/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.23\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindVulkan.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\Dev\Apophenia\build\Opal\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Audio\AudioClip.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Audio\AudioClip.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Audio\AudioClipInstance.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Audio\AudioClipInstance.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Audio\AudioEngine.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Audio\AudioEngine.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Collision\AABBCollision.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Collision\AABBCollision.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Collision\CollisionManager.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Collision\CollisionManager.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Editor\EntityUI.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Editor\EntityUI.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\EntityComponent\AnimatedSpriteComponent.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\EntityComponent\AnimatedSpriteComponent.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\EntityComponent\BoxColliderComponent2D.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\EntityComponent\BoxColliderComponent2D.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\EntityComponent\Component.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\EntityComponent\Component.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\EntityComponent\Entity.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\EntityComponent\Entity.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\EntityComponent\EntityComponentSerialization.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\EntityComponent\EntityComponentSerialization.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\EntityComponent\LightComponent2D.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\EntityComponent\LightComponent2D.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\EntityComponent\LinePointComponent.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\EntityComponent\LinePointComponent.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\EntityComponent\Scene.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\EntityComponent\Scene.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\EntityComponent\SpriteComponent.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\EntityComponent\SpriteComponent.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\EntityComponent\TransformComponent.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\EntityComponent\TransformComponent.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\EntityComponent\VelocityComponent.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\EntityComponent\VelocityComponent.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Game.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Game.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Gamestate\EditorGamestate.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Gamestate\EditorGamestate.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Gamestate\Gamestate.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Gamestate\Gamestate.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\AnimatedSprite.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\AnimatedSprite.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\BatchRenderer2D.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\BatchRenderer2D.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\BufferLayout.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\Camera.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\Camera.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\CircleRenderer.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\CircleRenderer.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\DescriptorSet.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\Font.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\Font.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\FontRenderer.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\FontRenderer.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\LineRenderer.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\LineRenderer.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\Mesh2D.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\Mesh2D.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\MeshRenderer2D.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\MeshRenderer2D.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\Pipeline.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\PostProcessRenderer.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\PostProcessRenderer.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\RenderBuffer.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\RenderCommand.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\RenderPass.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\Renderer.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\Renderer.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\Shader.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\Sprite.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\Sprite.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\SpriteRenderer.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\SpriteRenderer.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\Textmesh.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\Texture.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\Texture.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\TextureAtlas.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\TextureAtlas.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\UniformBufferInfo.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\Vulkan\VulkanBuffer.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\Vulkan\VulkanBuffer.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\Vulkan\VulkanDescriptorSet.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\Vulkan\VulkanDescriptorSet.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\Vulkan\VulkanPipeline.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\Vulkan\VulkanPipeline.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\Vulkan\VulkanRenderPass.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\Vulkan\VulkanRenderPass.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\Vulkan\VulkanRenderer.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\Vulkan\VulkanRenderer.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Graphics\Vulkan\VulkanTexture.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\Vulkan\VulkanTexture.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Graphics\stb_image.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Input\InputHandler.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Input\InputHandler.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Logger.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Logger.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\OpalMath.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\OpalMath.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\PlayerPrefs.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\PlayerPrefs.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Tilemap\TileChunk.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Tilemap\TileChunk.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Tilemap\TileChunkManager.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Tilemap\TileChunkManager.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Tilemap\TileSet.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\UI\Elements\UIButtonElement.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\UI\Elements\UISliderElement.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\UI\Elements\UIStackElement.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\UI\Elements\UITitleElement.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\UI\UIContext.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\UI\UIContext.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\UI\UIElement.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\UI\UIRect.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\UI\UIRenderer.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\Window.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\Window.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\common.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\exponential.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\ext.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\fwd.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\geometric.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\glm.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\bitfield.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\color_space.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\constants.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\epsilon.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\integer.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\matrix_access.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\matrix_integer.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\matrix_inverse.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\matrix_transform.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\noise.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\packing.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\quaternion.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\random.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\reciprocal.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\round.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\type_aligned.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\type_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\type_ptr.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\ulp.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\gtc\vec1.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\integer.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\mat2x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\mat2x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\mat2x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\mat3x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\mat3x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\mat3x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\mat4x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\mat4x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\mat4x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\matrix.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\packing.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\trigonometric.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\vec2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\vec3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\vec4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\glm\vector_relational.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\util.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\uuid.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\FastNoiseLite.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\imgui\imconfig.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\imgui\imgui.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\imgui\imgui.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\imgui\imgui_demo.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\imgui\imgui_draw.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\imgui\imgui_impl_sdl.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\imgui\imgui_impl_sdl.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\imgui\imgui_impl_vulkan.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\imgui\imgui_impl_vulkan.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\imgui\imgui_internal.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\imgui\imgui_stdlib.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\imgui\imgui_stdlib.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\imgui\imgui_tables.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\imgui\implot.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\imgui\implot.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\imgui\implot_internal.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\imgui\implot_items.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\imgui\imstb_rectpack.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\imgui\imstb_textedit.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\imgui\imstb_truetype.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_audiosource.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_bassboostfilter.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_biquadresonantfilter.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_bus.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_c.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_dcremovalfilter.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_echofilter.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_error.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_fader.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_fft.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_fftfilter.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_file.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_file_hack_off.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_file_hack_on.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_filter.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_flangerfilter.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_freeverbfilter.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_internal.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_lofifilter.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_misc.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_monotone.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_noise.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_openmpt.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_queue.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_robotizefilter.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_sfxr.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_speech.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_tedsid.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_thread.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_vic.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_vizsn.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_wav.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_waveshaperfilter.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\include\soloud_wavstream.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\audiosource\wav\dr_flac.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\audiosource\wav\dr_impl.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\audiosource\wav\dr_mp3.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\audiosource\wav\dr_wav.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\audiosource\wav\soloud_wav.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\audiosource\wav\soloud_wavstream.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\audiosource\wav\stb_vorbis.c" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\audiosource\wav\stb_vorbis.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\backend\miniaudio\miniaudio.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\backend\miniaudio\soloud_miniaudio.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_audiosource.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_bus.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_core_3d.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_core_basicops.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_core_faderops.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_core_filterops.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_core_getters.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_core_setters.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_core_voicegroup.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_core_voiceops.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_fader.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_fft.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_fft_lut.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_file.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_filter.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_misc.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_queue.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\soloud\src\core\soloud_thread.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\stb_image.h" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\stb_image_write.h" />
+    <ClCompile Include="F:\Dev\Apophenia\Opal\vendor\tinyxml2\tinyxml2.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\tinyxml2\tinyxml2.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="F:\Dev\Apophenia\build\ZERO_CHECK.vcxproj">
+      <Project>{295EBF9F-0F12-32F3-800E-7D9829659926}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

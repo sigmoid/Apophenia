@@ -1,0 +1,686 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{18D37459-F6D1-3695-8B9D-665841093585}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>OfMoonsAndMania</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\Dev\Apophenia\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">OfMoonsAndMania.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">OfMoonsAndMania</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\Dev\Apophenia\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">OfMoonsAndMania.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">OfMoonsAndMania</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\Dev\Apophenia\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">OfMoonsAndMania.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">OfMoonsAndMania</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\Dev\Apophenia\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">OfMoonsAndMania.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">OfMoonsAndMania</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>F:\Dev\SDL2-2.0.22\include;F:\Dev\freetype-2.12.0\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>F:\Dev\SDL2-2.0.22\include;F:\Dev\freetype-2.12.0\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Dev\SDL2-2.0.22\include;F:\Dev\freetype-2.12.0\include;F:\Dev\Apophenia\Opal\vendor\glm;F:\Dev\Apophenia\build;F:\Dev\Apophenia\Opal;C:\VulkanSDK\1.3.204.1\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -O3 -std=c++17</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Dev\Apophenia\Opal\vendor\glm;F:\Dev\Apophenia\build;F:\Dev\Apophenia\Opal;C:\VulkanSDK\1.3.204.1\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\Dev\Apophenia\Opal\vendor\glm;F:\Dev\Apophenia\build;F:\Dev\Apophenia\Opal;C:\VulkanSDK\1.3.204.1\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype.lib;C:\VulkanSDK\1.3.204.1\Lib\vulkan-1.lib;Opal\Debug\Opal.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>F:\Dev\freetype-2.12.0\objs\x64\Debug;F:\Dev\SDL2-2.0.22\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/Dev/Apophenia/build/Debug/OfMoonsAndMania.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/Dev/Apophenia/build/Debug/OfMoonsAndMania.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Dev\SDL2-2.0.22\include;F:\Dev\freetype-2.12.0\include;F:\Dev\Apophenia\Opal\vendor\glm;F:\Dev\Apophenia\build;F:\Dev\Apophenia\Opal;C:\VulkanSDK\1.3.204.1\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -O3 -std=c++17</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Dev\Apophenia\Opal\vendor\glm;F:\Dev\Apophenia\build;F:\Dev\Apophenia\Opal;C:\VulkanSDK\1.3.204.1\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\Dev\Apophenia\Opal\vendor\glm;F:\Dev\Apophenia\build;F:\Dev\Apophenia\Opal;C:\VulkanSDK\1.3.204.1\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype.lib;C:\VulkanSDK\1.3.204.1\Lib\vulkan-1.lib;Opal\Release\Opal.lib;C:\VulkanSDK\1.3.204.1\Lib\vulkan-1.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>F:\Dev\SDL2-2.0.22\lib\x64;F:\Dev\freetype-2.12.0\objs\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/Dev/Apophenia/build/Release/OfMoonsAndMania.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/Dev/Apophenia/build/Release/OfMoonsAndMania.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Dev\Apophenia\Opal\vendor\glm;F:\Dev\Apophenia\build;F:\Dev\Apophenia\Opal;C:\VulkanSDK\1.3.204.1\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -O3 -std=c++17</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Dev\Apophenia\Opal\vendor\glm;F:\Dev\Apophenia\build;F:\Dev\Apophenia\Opal;C:\VulkanSDK\1.3.204.1\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\Dev\Apophenia\Opal\vendor\glm;F:\Dev\Apophenia\build;F:\Dev\Apophenia\Opal;C:\VulkanSDK\1.3.204.1\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\VulkanSDK\1.3.204.1\Lib\vulkan-1.lib;Opal\MinSizeRel\Opal.lib;C:\VulkanSDK\1.3.204.1\Lib\vulkan-1.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/Dev/Apophenia/build/MinSizeRel/OfMoonsAndMania.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/Dev/Apophenia/build/MinSizeRel/OfMoonsAndMania.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Dev\Apophenia\Opal\vendor\glm;F:\Dev\Apophenia\build;F:\Dev\Apophenia\Opal;C:\VulkanSDK\1.3.204.1\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -O3 -std=c++17</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Dev\Apophenia\Opal\vendor\glm;F:\Dev\Apophenia\build;F:\Dev\Apophenia\Opal;C:\VulkanSDK\1.3.204.1\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\Dev\Apophenia\Opal\vendor\glm;F:\Dev\Apophenia\build;F:\Dev\Apophenia\Opal;C:\VulkanSDK\1.3.204.1\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\VulkanSDK\1.3.204.1\Lib\vulkan-1.lib;Opal\RelWithDebInfo\Opal.lib;C:\VulkanSDK\1.3.204.1\Lib\vulkan-1.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/Dev/Apophenia/build/RelWithDebInfo/OfMoonsAndMania.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/Dev/Apophenia/build/RelWithDebInfo/OfMoonsAndMania.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\Dev\Apophenia\CMakelists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule F:/Dev/Apophenia/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SF:/Dev/Apophenia -BF:/Dev/Apophenia/build --check-stamp-file F:/Dev/Apophenia/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindVulkan.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;F:\Dev\Apophenia\build\CMakeFiles\3.23.1\CMakeCCompiler.cmake;F:\Dev\Apophenia\build\CMakeFiles\3.23.1\CMakeCXXCompiler.cmake;F:\Dev\Apophenia\build\CMakeFiles\3.23.1\CMakeRCCompiler.cmake;F:\Dev\Apophenia\build\CMakeFiles\3.23.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\Dev\Apophenia\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule F:/Dev/Apophenia/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SF:/Dev/Apophenia -BF:/Dev/Apophenia/build --check-stamp-file F:/Dev/Apophenia/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindVulkan.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;F:\Dev\Apophenia\build\CMakeFiles\3.23.1\CMakeCCompiler.cmake;F:\Dev\Apophenia\build\CMakeFiles\3.23.1\CMakeCXXCompiler.cmake;F:\Dev\Apophenia\build\CMakeFiles\3.23.1\CMakeRCCompiler.cmake;F:\Dev\Apophenia\build\CMakeFiles\3.23.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\Dev\Apophenia\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule F:/Dev/Apophenia/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SF:/Dev/Apophenia -BF:/Dev/Apophenia/build --check-stamp-file F:/Dev/Apophenia/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindVulkan.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;F:\Dev\Apophenia\build\CMakeFiles\3.23.1\CMakeCCompiler.cmake;F:\Dev\Apophenia\build\CMakeFiles\3.23.1\CMakeCXXCompiler.cmake;F:\Dev\Apophenia\build\CMakeFiles\3.23.1\CMakeRCCompiler.cmake;F:\Dev\Apophenia\build\CMakeFiles\3.23.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\Dev\Apophenia\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule F:/Dev/Apophenia/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SF:/Dev/Apophenia -BF:/Dev/Apophenia/build --check-stamp-file F:/Dev/Apophenia/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\FindVulkan.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;F:\Dev\Apophenia\build\CMakeFiles\3.23.1\CMakeCCompiler.cmake;F:\Dev\Apophenia\build\CMakeFiles\3.23.1\CMakeCXXCompiler.cmake;F:\Dev\Apophenia\build\CMakeFiles\3.23.1\CMakeRCCompiler.cmake;F:\Dev\Apophenia\build\CMakeFiles\3.23.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\Dev\Apophenia\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\common.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\_features.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\_fixes.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\_noise.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\_swizzle.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\_swizzle_func.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\_vectorize.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\compute_common.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\compute_vector_relational.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\qualifier.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\setup.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\type_float.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\type_half.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\type_mat2x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\type_mat2x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\type_mat2x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\type_mat3x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\type_mat3x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\type_mat3x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\type_mat4x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\type_mat4x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\type_mat4x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\type_quat.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\type_vec1.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\type_vec2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\type_vec3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\detail\type_vec4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\exponential.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_clip_space.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_common.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double2x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double2x2_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double2x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double2x3_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double2x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double2x4_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double3x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double3x2_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double3x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double3x3_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double3x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double3x4_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double4x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double4x2_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double4x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double4x3_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double4x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_double4x4_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float2x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float2x2_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float2x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float2x3_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float2x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float2x4_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float3x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float3x2_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float3x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float3x3_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float3x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float3x4_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float4x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float4x2_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float4x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float4x3_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float4x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_float4x4_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int2x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int2x2_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int2x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int2x3_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int2x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int2x4_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int3x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int3x2_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int3x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int3x3_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int3x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int3x4_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int4x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int4x2_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int4x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int4x3_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int4x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_int4x4_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_integer.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_projection.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_relational.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_transform.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint2x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint2x2_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint2x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint2x3_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint2x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint2x4_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint3x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint3x2_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint3x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint3x3_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint3x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint3x4_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint4x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint4x2_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint4x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint4x3_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint4x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\matrix_uint4x4_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\quaternion_common.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\quaternion_double.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\quaternion_double_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\quaternion_exponential.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\quaternion_float.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\quaternion_float_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\quaternion_geometric.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\quaternion_relational.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\quaternion_transform.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\quaternion_trigonometric.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\scalar_common.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\scalar_constants.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\scalar_int_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\scalar_integer.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\scalar_packing.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\scalar_reciprocal.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\scalar_relational.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\scalar_uint_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\scalar_ulp.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_bool1.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_bool1_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_bool2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_bool2_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_bool3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_bool3_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_bool4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_bool4_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_common.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_double1.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_double1_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_double2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_double2_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_double3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_double3_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_double4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_double4_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_float1.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_float1_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_float2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_float2_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_float3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_float3_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_float4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_float4_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_int1.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_int1_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_int2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_int2_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_int3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_int3_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_int4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_int4_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_integer.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_packing.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_reciprocal.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_relational.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_uint1.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_uint1_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_uint2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_uint2_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_uint3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_uint3_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_uint4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_uint4_sized.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\ext\vector_ulp.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\fwd.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\geometric.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\glm.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\bitfield.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\color_space.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\constants.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\epsilon.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\integer.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\matrix_access.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\matrix_integer.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\matrix_inverse.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\matrix_transform.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\noise.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\packing.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\quaternion.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\random.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\reciprocal.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\round.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\type_aligned.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\type_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\type_ptr.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\ulp.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtc\vec1.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\associated_min_max.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\bit.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\closest_point.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\color_encoding.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\color_space.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\color_space_YCoCg.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\common.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\compatibility.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\component_wise.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\dual_quaternion.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\easing.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\euler_angles.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\extend.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\extended_min_max.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\exterior_product.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\fast_exponential.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\fast_square_root.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\fast_trigonometry.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\functions.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\gradient_paint.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\handed_coordinate_space.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\hash.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\integer.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\intersect.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\io.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\log_base.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\matrix_cross_product.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\matrix_decompose.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\matrix_factorisation.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\matrix_interpolation.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\matrix_major_storage.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\matrix_operation.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\matrix_query.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\matrix_transform_2d.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\mixed_product.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\norm.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\normal.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\normalize_dot.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\number_precision.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\optimum_pow.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\orthonormalize.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\perpendicular.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\polar_coordinates.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\projection.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\quaternion.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\range.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\raw_data.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\rotate_normalized_axis.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\rotate_vector.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\scalar_multiplication.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\scalar_relational.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\spline.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\std_based_type.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\string_cast.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\texture.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\transform.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\transform2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\type_aligned.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\type_trait.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\vec_swizzle.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\vector_angle.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\vector_query.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\gtx\wrap.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\integer.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\mat2x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\mat2x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\mat2x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\mat3x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\mat3x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\mat3x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\mat4x2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\mat4x3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\mat4x4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\matrix.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\packing.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\trigonometric.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\vec2.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\vec3.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\vec4.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\Opal\vendor\glm\vector_relational.hpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\AppDelegate.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\AudioBank.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\AudioBank.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Components\AttractableComponent.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Components\AttractableComponent.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Components\CursorComponent.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Components\CursorComponent.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Components\DragComponent.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Components\DragComponent.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Components\EndWallComponent.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Components\EndWallComponent.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Components\NoiseMoveComponent.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Components\NoiseMoveComponent.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Components\SentenceFragmentComponent.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Components\SentenceFragmentComponent.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Components\SparkComponent.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Components\SparkComponent.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\DialogueSystem\DialogueManager.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\DialogueSystem\DialogueManager.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\DialogueSystem\DialogueSerializer.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\DialogueSystem\DialogueSerializer.h" />
+    <ClInclude Include="F:\Dev\Apophenia\src\DialogueSystem\PillSequence.h" />
+    <ClInclude Include="F:\Dev\Apophenia\src\DialogueSystem\Prompt.h" />
+    <ClInclude Include="F:\Dev\Apophenia\src\DialogueSystem\Response.h" />
+    <ClInclude Include="F:\Dev\Apophenia\src\DialogueSystem\SentenceFragment.h" />
+    <ClInclude Include="F:\Dev\Apophenia\src\DialogueSystem\WordBank.h" />
+    <ClInclude Include="F:\Dev\Apophenia\src\GamePassThruController.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\GameSettings.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\GameSettings.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Gamestate\CreditsState.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Gamestate\CreditsState.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Gamestate\DrawingState.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Gamestate\DrawingState.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Gamestate\EndState.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Gamestate\EndState.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Gamestate\LogoState.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Gamestate\LogoState.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Gamestate\MainMenuState.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Gamestate\MainMenuState.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Gamestate\ManagerState.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Gamestate\ManagerState.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Gamestate\NarrativeState.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Gamestate\NarrativeState.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Gamestate\PillState.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Gamestate\PillState.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Gamestate\PromptState.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Gamestate\PromptState.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Gamestate\SentenceFormingState.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Gamestate\SentenceFormingState.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Gamestate\StrikesState.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Gamestate\StrikesState.h" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Gamestate\UIElement.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\Main.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\Main.h" />
+    <ClCompile Include="F:\Dev\Apophenia\src\MenuItems\Button.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\src\MenuItems\CheckBox.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\src\MenuItems\Slider.cpp" />
+    <ClCompile Include="F:\Dev\Apophenia\src\PillGeneration\Pill.cpp" />
+    <ClInclude Include="F:\Dev\Apophenia\src\PillGeneration\Pill.h" />
+    <ClInclude Include="resource1.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="F:\Dev\Apophenia\build\ZERO_CHECK.vcxproj">
+      <Project>{295EBF9F-0F12-32F3-800E-7D9829659926}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="F:\Dev\Apophenia\build\Opal\Opal.vcxproj">
+      <Project>{03DA804C-92B6-331B-9C1C-147A8EE380D9}</Project>
+      <Name>Opal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="OfMoonsAndMania1.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\textures\icon.bmp" />
+    <Image Include="..\textures\tightrope.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
