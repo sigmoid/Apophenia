@@ -46,7 +46,7 @@ int main(int argc, char * argv[])
     auto cam = game->Renderer->CreateOrthoCamera(game->GetWidth(), game->GetHeight(), -1000, 1000);
     cam->Resize(game->GetWidth(), game->GetHeight());
     
-
+    
     DialogueManager dialogue("../Dialogue/TestDialogue.xml");
 
     GameSettings::Load();
@@ -76,23 +76,11 @@ int main(int argc, char * argv[])
 
     bool lastF11 = false;
     bool lastEsc = false;
-    
-    float resizeTimer = 0.1;
-    bool hasResized = false;
 
     managerState->StartGame(); 
 
     while(!game->ShouldEnd())
     {
-        if(!hasResized)
-        {
-            resizeTimer -= game->GetDeltaTime();
-            if(resizeTimer <= 0)
-            {
-                game->Resize(1920/2, 1080/2);
-                hasResized = true;
-            }
-        }
         //if (Opal::InputHandler::GetKey(GLFW_KEY_F11) && !lastF11)
         //{
         //    game->ToggleFullscreen();
