@@ -1729,7 +1729,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					/Users/adam/Dev/Vulkan/macOS/include,
-					/opt/homebrew/Cellar/sdl2/2.0.18/include/SDL2,
+					/opt/homebrew/Cellar/sdl2/2.24.2/include/SDL2,
 					/Users/adam/Dev/Apophenia/Opal/vendor/soloud/include,
 					/Users/adam/Dev/Apophenia/Opal/vendor,
 					/Library/Frameworks/Mono.framework/Headers,
@@ -1804,7 +1804,7 @@
 					/Users/adam/Dev/Vulkan/macOS/include,
 					/Library/Frameworks/Mono.framework/Headers,
 					/opt/homebrew/include/freetype2,
-					/opt/homebrew/Cellar/sdl2/2.0.18/include/SDL2,
+					/opt/homebrew/Cellar/sdl2/2.24.2/include/SDL2,
 				);
 				INSTALL_PATH = "";
 				LD_RUNPATH_SEARCH_PATHS = /Users/adam/Dev/Vulkan/macOS/lib;
@@ -1816,7 +1816,7 @@
 					"-Wl,-headerpad_max_install_names",
 					/Users/adam/Dev/Vulkan/macOS/lib/libvulkan.dylib,
 					/Users/adam/Dev/Apophenia/MacOS_Build/Opal/RelWithDebInfo/libOpal.a,
-					"-L/opt/homebrew/Cellar/sdl2/2.0.18/lib",
+					"-L/opt/homebrew/Cellar/sdl2/2.24.2/lib",
 					"-lSDL2",
 					/opt/homebrew/lib/libfreetype.dylib,
 					/Users/adam/Dev/Vulkan/macOS/lib/libvulkan.dylib,
@@ -1863,7 +1863,7 @@
 					/Users/adam/Dev/Vulkan/macOS/include,
 					/Library/Frameworks/Mono.framework/Headers,
 					/opt/homebrew/include/freetype2,
-					/opt/homebrew/Cellar/sdl2/2.0.18/include/SDL2,
+					/opt/homebrew/Cellar/sdl2/2.24.2/include/SDL2,
 				);
 				INSTALL_PATH = "";
 				LD_RUNPATH_SEARCH_PATHS = /Users/adam/Dev/Vulkan/macOS/lib;
@@ -1875,7 +1875,7 @@
 					"-Wl,-headerpad_max_install_names",
 					/Users/adam/Dev/Vulkan/macOS/lib/libvulkan.dylib,
 					/Users/adam/Dev/Apophenia/MacOS_Build/Opal/MinSizeRel/libOpal.a,
-					"-L/opt/homebrew/Cellar/sdl2/2.0.18/lib",
+					"-L/opt/homebrew/Cellar/sdl2/2.24.2/lib",
 					"-lSDL2",
 					/opt/homebrew/lib/libfreetype.dylib,
 					/Users/adam/Dev/Vulkan/macOS/lib/libvulkan.dylib,
@@ -1992,7 +1992,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					/Users/adam/Dev/Vulkan/macOS/include,
-					/opt/homebrew/Cellar/sdl2/2.0.18/include/SDL2,
+					/opt/homebrew/Cellar/sdl2/2.24.2/include/SDL2,
 					/Users/adam/Dev/Apophenia/Opal/vendor/soloud/include,
 					/Users/adam/Dev/Apophenia/Opal/vendor,
 					/Library/Frameworks/Mono.framework/Headers,
@@ -2027,7 +2027,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					/Users/adam/Dev/Vulkan/macOS/include,
-					/opt/homebrew/Cellar/sdl2/2.0.18/include/SDL2,
+					/opt/homebrew/Cellar/sdl2/2.24.2/include/SDL2,
 					/Users/adam/Dev/Apophenia/Opal/vendor/soloud/include,
 					/Users/adam/Dev/Apophenia/Opal/vendor,
 					/Library/Frameworks/Mono.framework/Headers,
@@ -2070,7 +2070,7 @@
 					/Users/adam/Dev/Vulkan/macOS/include,
 					/Library/Frameworks/Mono.framework/Headers,
 					/opt/homebrew/include/freetype2,
-					/opt/homebrew/Cellar/sdl2/2.0.18/include/SDL2,
+					/opt/homebrew/Cellar/sdl2/2.24.2/include/SDL2,
 				);
 				INSTALL_PATH = "";
 				LD_RUNPATH_SEARCH_PATHS = /Users/adam/Dev/Vulkan/macOS/lib;
@@ -2082,7 +2082,7 @@
 					"-Wl,-headerpad_max_install_names",
 					/Users/adam/Dev/Vulkan/macOS/lib/libvulkan.dylib,
 					/Users/adam/Dev/Apophenia/MacOS_Build/Opal/Release/libOpal.a,
-					"-L/opt/homebrew/Cellar/sdl2/2.0.18/lib",
+					"-L/opt/homebrew/Cellar/sdl2/2.24.2/lib",
 					"-lSDL2",
 					/opt/homebrew/lib/libfreetype.dylib,
 					/Users/adam/Dev/Vulkan/macOS/lib/libvulkan.dylib,
@@ -2119,7 +2119,7 @@
 					/Users/adam/Dev/Vulkan/macOS/include,
 					/Library/Frameworks/Mono.framework/Headers,
 					/opt/homebrew/include/freetype2,
-					/opt/homebrew/Cellar/sdl2/2.0.18/include/SDL2,
+					/opt/homebrew/Cellar/sdl2/2.24.2/include/SDL2,
 				);
 				INSTALL_PATH = "";
 				LD_RUNPATH_SEARCH_PATHS = /Users/adam/Dev/Vulkan/macOS/lib;
@@ -2131,7 +2131,7 @@
 					"-Wl,-headerpad_max_install_names",
 					/Users/adam/Dev/Vulkan/macOS/lib/libvulkan.dylib,
 					/Users/adam/Dev/Apophenia/MacOS_Build/Opal/Debug/libOpal.a,
-					"-L/opt/homebrew/Cellar/sdl2/2.0.18/lib",
+					"-L/opt/homebrew/Cellar/sdl2/2.24.2/lib",
 					"-lSDL2",
 					/opt/homebrew/lib/libfreetype.dylib,
 					/Users/adam/Dev/Vulkan/macOS/lib/libvulkan.dylib,
@@ -2160,7 +2160,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					/Users/adam/Dev/Vulkan/macOS/include,
-					/opt/homebrew/Cellar/sdl2/2.0.18/include/SDL2,
+					/opt/homebrew/Cellar/sdl2/2.24.2/include/SDL2,
 					/Users/adam/Dev/Apophenia/Opal/vendor/soloud/include,
 					/Users/adam/Dev/Apophenia/Opal/vendor,
 					/Library/Frameworks/Mono.framework/Headers,

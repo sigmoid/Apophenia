@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "FBBEA011A31F6274B4E5D53D84EA0032BD22EB65",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C345E69FFFEDE544A5DE453693CF70A2DBEC308C" : 0,
+    "FBBEA011A31F6274B4E5D53D84EA0032BD22EB65" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E92A3900-AE9D-424C-B229-EEAFD02E0D1A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C345E69FFFEDE544A5DE453693CF70A2DBEC308C" : "Apophenia\/Opal\/",
+    "FBBEA011A31F6274B4E5D53D84EA0032BD22EB65" : "Apophenia\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "OfMoonsAndMania",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MacOS_Build\/OfMoonsAndMania.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sigmoid\/Opal.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C345E69FFFEDE544A5DE453693CF70A2DBEC308C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sigmoid\/Apophenia.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FBBEA011A31F6274B4E5D53D84EA0032BD22EB65"
+    }
+  ]
+}
