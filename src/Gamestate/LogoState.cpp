@@ -61,14 +61,17 @@ void LogoState::Render()
 {
     RenderSparks();
 
+    mSpriteRenderer->StartFrame();
+    mSpriteRenderer->Submit(mLogoSprite);
+    
 
     mBatch->StartBatch();
     mScene->Render(mBatch);
-    mBatch->BatchSprite(mLogoSprite);
     mBatch->RenderBatch();
 
     mRenderPass->Record();
     mLineRenderer->Render();
+    mSpriteRenderer->RecordCommands();
     mBatch->RecordCommands();
     mRenderPass->EndRecord();
     mGame->Renderer->SubmitRenderPass(mRenderPass);
@@ -88,7 +91,7 @@ void LogoState::Begin()
         mLogoSprite.SetPosition(titleSpriteX, titleSpriteY);
 
         std::vector<std::shared_ptr<Opal::Texture> > textures;
-        textures.push_back(mLogoTexture);
+        //textures.push_back(mLogoTexture);
         mBatch = mGame->Renderer->CreateBatch(mRenderPass, 1000, textures, true);
 
         mLineRenderer = std::make_shared<Opal::LineRenderer>();
@@ -102,6 +105,8 @@ void LogoState::Begin()
         dummyEntity->AddComponent(transform);
         std::shared_ptr<Opal::VelocityComponent> velocity = std::make_shared<Opal::VelocityComponent>();
         dummyEntity->AddComponent(velocity);
+
+        mSpriteRenderer = mGame->Renderer->CreateSpriteRenderer(mRenderPass);
 
         mScene->AddEntity(dummyEntity);
 
