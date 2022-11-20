@@ -1735,7 +1735,7 @@
 					/Library/Frameworks/Mono.framework/Headers,
 					/opt/homebrew/include/freetype2,
 				);
-				INSTALL_PATH = "";
+				INSTALL_PATH = /usr/local/lib;
 				LIBRARY_STYLE = STATIC;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = " ";
@@ -1786,8 +1786,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;
+				DEVELOPMENT_TEAM = A8529PSQJ8;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1806,7 +1810,7 @@
 					/opt/homebrew/include/freetype2,
 					/opt/homebrew/Cellar/sdl2/2.24.2/include/SDL2,
 				);
-				INSTALL_PATH = "";
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
 				LD_RUNPATH_SEARCH_PATHS = /Users/adam/Dev/Vulkan/macOS/lib;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
@@ -1823,7 +1827,9 @@
 					/opt/homebrew/lib/libfreetype.dylib,
 				);
 				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AbsurdWalls.OfMoonsAndMania;
 				PRODUCT_NAME = OfMoonsAndMania;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/adam/Dev/Apophenia/MacOS_Build;
 				USE_HEADERMAP = NO;
@@ -1845,8 +1851,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;
+				DEVELOPMENT_TEAM = A8529PSQJ8;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1865,7 +1875,7 @@
 					/opt/homebrew/include/freetype2,
 					/opt/homebrew/Cellar/sdl2/2.24.2/include/SDL2,
 				);
-				INSTALL_PATH = "";
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
 				LD_RUNPATH_SEARCH_PATHS = /Users/adam/Dev/Vulkan/macOS/lib;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
@@ -1882,7 +1892,9 @@
 					/opt/homebrew/lib/libfreetype.dylib,
 				);
 				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AbsurdWalls.OfMoonsAndMania;
 				PRODUCT_NAME = OfMoonsAndMania;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/adam/Dev/Apophenia/MacOS_Build;
 				USE_HEADERMAP = NO;
@@ -1998,7 +2010,7 @@
 					/Library/Frameworks/Mono.framework/Headers,
 					/opt/homebrew/include/freetype2,
 				);
-				INSTALL_PATH = "";
+				INSTALL_PATH = /usr/local/lib;
 				LIBRARY_STYLE = STATIC;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = " ";
@@ -2033,7 +2045,7 @@
 					/Library/Frameworks/Mono.framework/Headers,
 					/opt/homebrew/include/freetype2,
 				);
-				INSTALL_PATH = "";
+				INSTALL_PATH = /usr/local/lib;
 				LIBRARY_STYLE = STATIC;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = " ";
@@ -2052,8 +2064,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;
+				DEVELOPMENT_TEAM = A8529PSQJ8;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -2072,7 +2088,7 @@
 					/opt/homebrew/include/freetype2,
 					/opt/homebrew/Cellar/sdl2/2.24.2/include/SDL2,
 				);
-				INSTALL_PATH = "";
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
 				LD_RUNPATH_SEARCH_PATHS = /Users/adam/Dev/Vulkan/macOS/lib;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
@@ -2089,7 +2105,9 @@
 					/opt/homebrew/lib/libfreetype.dylib,
 				);
 				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AbsurdWalls.OfMoonsAndMania;
 				PRODUCT_NAME = OfMoonsAndMania;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/adam/Dev/Apophenia/MacOS_Build;
 				USE_HEADERMAP = NO;
@@ -2101,8 +2119,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;
+				DEVELOPMENT_TEAM = A8529PSQJ8;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -2121,7 +2143,7 @@
 					/opt/homebrew/include/freetype2,
 					/opt/homebrew/Cellar/sdl2/2.24.2/include/SDL2,
 				);
-				INSTALL_PATH = "";
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
 				LD_RUNPATH_SEARCH_PATHS = /Users/adam/Dev/Vulkan/macOS/lib;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
@@ -2138,7 +2160,9 @@
 					/opt/homebrew/lib/libfreetype.dylib,
 				);
 				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AbsurdWalls.OfMoonsAndMania;
 				PRODUCT_NAME = OfMoonsAndMania;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/adam/Dev/Apophenia/MacOS_Build;
 				USE_HEADERMAP = NO;
@@ -2166,7 +2190,7 @@
 					/Library/Frameworks/Mono.framework/Headers,
 					/opt/homebrew/include/freetype2,
 				);
-				INSTALL_PATH = "";
+				INSTALL_PATH = /usr/local/lib;
 				LIBRARY_STYLE = STATIC;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = " ";

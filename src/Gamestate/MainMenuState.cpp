@@ -207,7 +207,7 @@ void MainMenuState::Render()
 
 
     {
-        std::string version = "Version 1.0.0";
+        std::string version = "Version 1.0.3";
         float padding = 25.f;
         float width = mFontRenderer->MeasureText(version);
         mFontRenderer->RenderString(version, 

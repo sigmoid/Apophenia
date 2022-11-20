@@ -67,7 +67,7 @@ class ManagerState : public Opal::Gamestate
 
     glm::vec4 UpdateColor(float progress);
 
-    std::string mSavePath = Opal::GetBaseContentPath().append("SaveGame/SaveGame.txt");
+    std::string mSavePath = Opal::GetBaseSavePath().append("/SaveGame/SaveGame.txt");
     bool mProgressLoaded = false;
     bool mGamePaused = false;
     void LoadProgress();

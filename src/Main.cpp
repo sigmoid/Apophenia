@@ -20,6 +20,7 @@
 #include "GameSettings.h"
 
 #include <cstdio>
+#include <filesystem>
 
 #ifdef __IPHONEOS__
 #include "Main.h"
@@ -70,6 +71,10 @@ int main(int argc, char * argv[])
     game->PushState<MainMenuState>();
     game->PushState<LogoState>();
     
+    namespace fs = std::filesystem;
+    if (!fs::is_directory(Opal::GetBaseSavePath().append("/SaveGame")) || !fs::exists(Opal::GetBaseSavePath().append("/SaveGame"))) { // Check if src folder exists
+        fs::create_directory(Opal::GetBaseSavePath().append("/SaveGame"));
+}
     
     auto bgMusic = Opal::AudioEngine::LoadClip(Opal::GetBaseContentPath().append("Audio/Canone_W.mp3"));
     Opal::AudioEngine::PlaySound(bgMusic, 0.8f, 1.0f, 0.0f, true, false);
